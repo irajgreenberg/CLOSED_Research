@@ -30,15 +30,21 @@ protected:
     virtual void init() = 0;
     virtual void calcVerts() = 0;
     virtual void calcInds() = 0;
-    
     virtual void calcFaces(); //not necessary to override
     virtual void calcVertexNorms();
+    virtual void calcPrimitives();
     
-    // guts
+    // composite guts
     std::vector<Vertex> verts;
     std::vector<Vertex*> verts_p;
     std::vector<Face3> faces;
     std::vector< Tuple3<int> > inds;
+    
+    //primitive guts
+    std::vector<float> vecPrims;
+    std::vector<unsigned int> indPrims;
+    std::vector<float> normPrims;
+    std::vector<float> colorPrims;
     
     
 public:
