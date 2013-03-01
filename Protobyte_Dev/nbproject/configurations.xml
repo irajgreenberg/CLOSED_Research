@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
+      <itemPath>../Protobyte/Color4.h</itemPath>
+      <itemPath>../Protobyte/Dimension3.h</itemPath>
+      <itemPath>../Protobyte/Face3.cpp</itemPath>
+      <itemPath>../Protobyte/Face3.h</itemPath>
+      <itemPath>../Protobyte/GeomObj.cpp</itemPath>
+      <itemPath>../Protobyte/GeomObj.h</itemPath>
+      <itemPath>../Protobyte/Matrix4.cpp</itemPath>
+      <itemPath>../Protobyte/Matrix4.h</itemPath>
+      <itemPath>../Protobyte/Toroid.cpp</itemPath>
+      <itemPath>../Protobyte/Toroid.h</itemPath>
+      <itemPath>../Protobyte/Tuple2.h</itemPath>
+      <itemPath>../Protobyte/Tuple3.h</itemPath>
+      <itemPath>../Protobyte/Vector3.cpp</itemPath>
+      <itemPath>../Protobyte/Vector3.h</itemPath>
+      <itemPath>../Protobyte/Vertex.cpp</itemPath>
+      <itemPath>../Protobyte/Vertex.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../libprotobyte/include</Elem>
+    <Elem>../libprotobyte/src</Elem>
+    <Elem>../Protobyte</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/System/Library/Frameworks/GLUT.framework/Headers</pElem>
+            <pElem>/System/Library/Frameworks/GLUT.framework/Versions/A/Headers</pElem>
+            <pElem>/System/Library/Frameworks/OpenGL.framework/Headers</pElem>
+            <pElem>../libSFML/dylibs/root/usr/local/include</pElem>
+            <pElem>..</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.mono.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libLLVMContainer.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

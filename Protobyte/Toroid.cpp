@@ -1,0 +1,119 @@
+/* 
+ * File:   Toroid2.cpp
+ * Author: 33993405
+ * 
+ * Created on February 18, 2013, 3:55 PM
+ */
+
+#include "Toroid.h"
+
+
+//Toroid::Toroid() {
+//}
+
+Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<int>& col4, int ringCount, int ringDetail, float ringRadius) :
+GeomObj(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius) {
+
+    init();
+}
+
+/*void Toroid::display() {
+    sortFaces();
+    glPopMatrix();
+    glLoadIdentity();
+    glTranslatef(pos.x, pos.y, pos.z);
+    glScalef(size.w, size.h, size.d);
+    glRotatef(rot.x, 1, 0, 0); // x-axis
+    glRotatef(rot.y, 0, 1, 0); // y-axis
+    glRotatef(rot.z, 0, 0, 1); // z-axis
+    
+    for (int i = 0; i < faces.size(); ++i) {
+        faces.at(i).display();
+    }
+    glPushMatrix();
+
+}*/
+
+
+void Toroid::init() {
+    calcVerts();
+    calcInds();
+    calcFaces();
+    calcVertexNorms();
+}
+
+void Toroid::calcVerts() {
+    // vertices
+    float x, y, z;
+    float phi = 0; // ring rotations
+    for (int i = 0, k=0; i < ringCount; i++) {
+        float theta = 0;
+        // START CALCULATE VERTICES
+        for (int j = 0; j < ringDetail; j++) {
+            // 1.  Z rotation for inital ring
+            x = float(ringRadius * 4 + (cos(theta) - sin(theta)) * ringRadius);
+            y = float((sin(theta) + cos(theta)) * ringRadius);
+            z = 0;
+
+            // 2.  y rotation to place rings
+            float x2 = float(z * cos(phi) - x * sin(phi));
+            float z2 = float(z * sin(phi) + x * cos(phi));
+
+
+            // fill vertices with floats
+            verts.push_back( Vertex(Vector3(x2, y, z2), Color4<float>(1, 1, 1)) );
+
+            theta += float(M_PI * 2 / ringDetail);
+        }
+        phi += float(M_PI * 2 / ringCount);
+    }
+    
+    // collect mem addresses
+    for(int i=0; i<verts.size(); i++){
+        verts_p.push_back( &verts.at(i) );
+    }
+}
+
+void Toroid::calcInds() {
+    // indices
+    for (int i = 0; i < ringCount; i++) {
+        for (int j = 0; j < ringDetail; j++) {
+
+            int i0 = i * ringDetail + j;
+            int i1 = (i + 1) * ringDetail + j;
+            int i2 = i * ringDetail + j + 1;
+            int i3 = (i + 1) * ringDetail + j + 1;
+            int i4 = j;
+            int i5 = i*ringDetail;
+            int i6 = ringDetail + j + 1; // not used
+            int i7 = (i + 1) * ringDetail;
+            int i8 = j + 1;
+
+
+            if (i < ringCount - 1) {
+                if (j < ringDetail - 1) {
+                    inds.push_back(Tuple3<int>(i0, i2, i3));
+                    inds.push_back(Tuple3<int>(i0, i3, i1));
+
+                } else {
+                    // j+1 = 0
+                    inds.push_back(Tuple3<int>(i0, i5, i7));
+                    inds.push_back(Tuple3<int>(i0, i7, i1));
+                }
+            } else {
+                if (j < ringDetail - 1) {
+                    //i+1 = 0// HERE
+                    inds.push_back(Tuple3<int>(i0, i2, i8));
+                    inds.push_back(Tuple3<int>(i0, i8, i4));
+
+                } else {
+                    //i+1 =0, j+1 = 0
+                    inds.push_back(Tuple3<int>(i0, i5, 0));
+                    inds.push_back(Tuple3<int>(i0, 0, i4));
+                }
+            }
+        }
+    }
+}
+
+
