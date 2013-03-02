@@ -36,10 +36,10 @@ build/Debug/GNU-MacOSX/main.o: main.cpp \
   ../libSFML/dylibs/root/usr/local/include/SFML/Window/WindowHandle.hpp \
   ../libSFML/dylibs/root/usr/local/include/SFML/Window/WindowStyle.hpp \
   ../libSFML/dylibs/root/usr/local/include/SFML/OpenGL.hpp \
-  ../Protobyte/Toroid.h ../Protobyte/GeomObj.h ../Protobyte/Vector3.h \
+  ../Protobyte/Toroid.h ../Protobyte/GeomBase.h ../Protobyte/Vector3.h \
   ../Protobyte/Face3.h ../Protobyte/Vertex.h ../Protobyte/Color4.h \
   ../Protobyte/Tuple2.h ../Protobyte/Tuple3.h ../Protobyte/Dimension3.h \
-  ../Protobyte/Color3.h ../Protobyte/Matrix4.h
+  ../Protobyte/Matrix4.h
 
 ../libSFML/dylibs/root/usr/local/include/SFML/Window.hpp:
 
@@ -117,7 +117,7 @@ build/Debug/GNU-MacOSX/main.o: main.cpp \
 
 ../Protobyte/Toroid.h:
 
-../Protobyte/GeomObj.h:
+../Protobyte/GeomBase.h:
 
 ../Protobyte/Vector3.h:
 
@@ -132,7 +132,5 @@ build/Debug/GNU-MacOSX/main.o: main.cpp \
 ../Protobyte/Tuple3.h:
 
 ../Protobyte/Dimension3.h:
-
-../Protobyte/Color3.h:
 
 ../Protobyte/Matrix4.h:

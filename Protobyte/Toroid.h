@@ -8,14 +8,14 @@
 #ifndef TOROID_H
 #define	TOROID_H
 
-#include "GeomObj.h"
+#include "GeomBase.h"
 
-class Toroid : public GeomObj {
+class Toroid : public GeomBase {
 
     public:
     //Toroid();
     Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, 
-            const Color3<float>& col3, int ringCount, int ringDetail, float ringRadius);
+            const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius);
     
     //void display(); // overrides virtual method in base class
 

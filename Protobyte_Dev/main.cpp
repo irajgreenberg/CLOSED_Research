@@ -7,6 +7,7 @@
 
 
 
+
 /**********************************
  *           matrices             *
  *********************************/
@@ -23,14 +24,14 @@ void setView(double fovY, double aspect, double zNear, double zFar);
  *           LIGHTING             *
  *********************************/
 // Light01
-GLfloat light01_ambient[] = {0.5, 0.0, 0.0, 1.0};
-GLfloat light01_diffuse[] = {.5, 1.0, 1.0, 1.0};
+GLfloat light01_ambient[] = {0.3, 0.3, 0.3, 1.0};
+GLfloat light01_diffuse[] = {.6, .6, .8, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {30.0};
+GLfloat light01_mat_shininess[] = {308.0};
 
 void setLights();
 void setRenderingStates();
@@ -67,7 +68,12 @@ int main() {
     // print out current state of MODELVIEW and PROJECTION matrices
     printMatrices();
 
-    Toroid toroid(Vector3(0, 0, -250), Vector3(100, 125, -240), Dimension3<float>(50, 50, 50), Color3<float>(50, 145, 200), 56, 56, .5);
+    Toroid toroid(Vector3(0, 0, -250), Vector3(100, 180, 0),
+            Dimension3<float>(50, 50, 50), Color4<float>(0.7, 0.2, 0.1, .5), 56, 56, .5);
+
+    Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.5, 0.5, 0.7, 1.0), 56, 56, .3);
+
 
 
     // run the main loop
@@ -122,10 +128,10 @@ int main() {
         rotZ += M_PI / 180 * 2.2;
 
         //glLoadMatrixf(newM); // update modelview // turned this off
-        */
-
-
-        toroid.display();
+         */
+        
+        toroid2.display(GeomBase::IMMEDIATE); // draw opaque first 
+        toroid.display(GeomBase::VERTEX_ARRAY_INTERLEAVED);
 
 
         // end the current frame (internally swaps the front and back buffers)
@@ -166,10 +172,11 @@ void setLights() {
 }
 
 void setRenderingStates() {
-    //glEnable(GL_CULL_FACE);
+    glFrontFace(GL_CCW); // default
+    glEnable(GL_CULL_FACE);
     //glCullFace(GL_BACK);
     //glDisable(GL_CULL_FACE);
-    glShadeModel(GL_SMOOTH);// smooth by default
+    glShadeModel(GL_SMOOTH); // smooth by default
     //glShadeModel(GL_FLAT); 
     glEnable(GL_COLOR_MATERIAL); // incorporates per vertex color with lights
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

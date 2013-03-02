@@ -37,8 +37,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/_ext/1345892673/Face3.o \
 	${OBJECTDIR}/_ext/1345892673/Toroid.o \
-	${OBJECTDIR}/_ext/1345892673/GeomObj.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/_ext/1345892673/GeomBase.o \
 	${OBJECTDIR}/_ext/1345892673/Vertex.o \
 	${OBJECTDIR}/_ext/1345892673/Vector3.o \
 	${OBJECTDIR}/_ext/1345892673/Matrix4.o
@@ -78,15 +78,15 @@ ${OBJECTDIR}/_ext/1345892673/Toroid.o: ../Protobyte/Toroid.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1345892673/Toroid.o ../Protobyte/Toroid.cpp
 
-${OBJECTDIR}/_ext/1345892673/GeomObj.o: ../Protobyte/GeomObj.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/1345892673
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1345892673/GeomObj.o ../Protobyte/GeomObj.cpp
-
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/_ext/1345892673/GeomBase.o: ../Protobyte/GeomBase.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/1345892673
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1345892673/GeomBase.o ../Protobyte/GeomBase.cpp
 
 ${OBJECTDIR}/_ext/1345892673/Vertex.o: ../Protobyte/Vertex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1345892673

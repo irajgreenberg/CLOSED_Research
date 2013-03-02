@@ -11,8 +11,8 @@
       <itemPath>../Protobyte/Dimension3.h</itemPath>
       <itemPath>../Protobyte/Face3.cpp</itemPath>
       <itemPath>../Protobyte/Face3.h</itemPath>
-      <itemPath>../Protobyte/GeomObj.cpp</itemPath>
-      <itemPath>../Protobyte/GeomObj.h</itemPath>
+      <itemPath>../Protobyte/GeomBase.cpp</itemPath>
+      <itemPath>../Protobyte/GeomBase.h</itemPath>
       <itemPath>../Protobyte/Matrix4.cpp</itemPath>
       <itemPath>../Protobyte/Matrix4.h</itemPath>
       <itemPath>../Protobyte/Toroid.cpp</itemPath>
