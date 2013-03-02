@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=opengl02
+PROJECTNAME=Protobyte_Dev
 
 # Active Configuration
 DEFAULTCONF=Debug

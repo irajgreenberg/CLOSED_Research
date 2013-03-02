@@ -62,63 +62,63 @@ LDLIBSOPTIONS=/System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/l
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.mono.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.mono.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLProgrammability.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLVMPlugin.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libLLVMContainer.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libLLVMContainer.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-audio.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-network.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-system.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.dylib
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ../libSFML/dylibs/root/usr/local/lib/libsfml-window.dylib
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02 ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/_ext/1345892673/Face3.o: ../Protobyte/Face3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1345892673
@@ -161,7 +161,7 @@ ${OBJECTDIR}/_ext/1345892673/Matrix4.o: ../Protobyte/Matrix4.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev
 
 # Subprojects
 .clean-subprojects:

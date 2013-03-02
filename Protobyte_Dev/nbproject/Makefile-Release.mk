@@ -62,11 +62,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02 ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/_ext/1345892673/Face3.o: ../Protobyte/Face3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1345892673
@@ -109,7 +109,7 @@ ${OBJECTDIR}/_ext/1345892673/Matrix4.o: ../Protobyte/Matrix4.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/opengl02
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_dev
 
 # Subprojects
 .clean-subprojects:

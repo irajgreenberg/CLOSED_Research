@@ -30,7 +30,7 @@ GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {80.0};
+GLfloat light01_mat_shininess[] = {30.0};
 
 void setLights();
 void setRenderingStates();
@@ -67,7 +67,7 @@ int main() {
     // print out current state of MODELVIEW and PROJECTION matrices
     printMatrices();
 
-    Toroid toroid(Vector3(0, 0, -250), Vector3(100, 125, -240), Dimension3<float>(50, 50, 50), Color4<int>(200, 100, 145, 50), 40, 40, .5);
+    Toroid toroid(Vector3(0, 0, -250), Vector3(100, 125, -240), Dimension3<float>(50, 50, 50), Color3<float>(50, 145, 200), 56, 56, .5);
 
 
     // run the main loop

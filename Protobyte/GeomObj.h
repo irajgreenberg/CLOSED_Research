@@ -16,6 +16,7 @@
 #include "Face3.h"
 #include "Tuple3.h"
 #include "Dimension3.h"
+#include "Color3.h"
 #include "Color4.h"
 
 
@@ -25,7 +26,8 @@ protected:
     Vector3 pos, rot;
     Vector3 spd, rotSpd;
     Dimension3<float> size;
-    Color4<int> col4;
+    Color3<float> col3;
+    //Color4<float> //col4;
     
     virtual void init() = 0;
     virtual void calcVerts() = 0;
@@ -41,7 +43,7 @@ protected:
     std::vector< Tuple3<int> > inds;
     
     //primitive guts
-    std::vector<float> vecPrims;
+    std::vector<float> vertPrims;
     std::vector<unsigned int> indPrims;
     std::vector<float> normPrims;
     std::vector<float> colorPrims;
@@ -49,7 +51,7 @@ protected:
     
 public:
    // GeomObj();
-    GeomObj(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<int> col4);
+    GeomObj(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color3<float> col3);
     virtual ~GeomObj();
     
     void move(const Vector3& v);
@@ -61,12 +63,12 @@ public:
     void setPosition(const Vector3& pos);
     void setRotation(const Vector3& rot);
     void setSize(const Dimension3<float> size);
-    void setColor(const Color4<int> col4);
+    void setColor(const Color3<float> col3);
     
     Vector3& getPosition();
     Vector3& getRotation();
     Dimension3<float>& getSize();
-    Color4<int>& getColor();
+    Color3<float>& getColor();
     
     // a bit dangerous to return references, so be careful
     // justification, you got no 3d if you delete this stuff

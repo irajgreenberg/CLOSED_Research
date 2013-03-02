@@ -6,6 +6,7 @@
                    projectFiles="true">
     </logicalFolder>
     <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
+      <itemPath>../Protobyte/Color3.h</itemPath>
       <itemPath>../Protobyte/Color4.h</itemPath>
       <itemPath>../Protobyte/Dimension3.h</itemPath>
       <itemPath>../Protobyte/Face3.cpp</itemPath>

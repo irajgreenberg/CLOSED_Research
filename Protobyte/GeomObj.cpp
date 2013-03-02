@@ -12,8 +12,8 @@
 
 //}
 
-GeomObj::GeomObj(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<int> col4) :
-pos(pos), rot(rot), size(size), col4(col4) {
+GeomObj::GeomObj(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color3<float> col3) :
+pos(pos), rot(rot), size(size), col3(col3) {
 }
 
 GeomObj::~GeomObj() {
@@ -40,7 +40,6 @@ void GeomObj::calcVertexNorms() {
         for (int j = 0; j < faces.size(); j++) {
             if (verts_p.at(i) == faces.at(j)[0] || verts_p.at(i) == faces.at(j)[1] || verts_p.at(i) == faces.at(j)[2]) {
                 v += faces.at(j).getNorm();
-                //counter++;
             }
         }
         v.normalize();
@@ -55,7 +54,7 @@ void GeomObj::sortFaces() {
     while (swapped) {
         swapped = false;
         j++;
-        for (int i = 0; i <faces.size() - j; i++) {
+        for (int i = 0; i < faces.size() - j; i++) {
             if (faces.at(i).getCentroid().z > faces.at(i + 1).getCentroid().z) {
                 Face3 tmp = faces.at(i);
                 faces.at(i) = faces.at(i + 1);
@@ -67,38 +66,35 @@ void GeomObj::sortFaces() {
 }
 
 void GeomObj::calcPrimitives() {
-   /* for (int i = 0; i <verts_p.size(); i++) {
-        vecPrims.push_back(verts_p.at(i)->pos.x);
-        vecPrims.push_back(verts_p.at(i)->pos.y);
-        vecPrims.push_back(verts_p.at(i)->pos.z);
-    }*/
-    
-    for (int i = 0; i <faces.size(); i++) {
-        vecPrims.push_back(faces.at(i)[0]->pos.x);
-        vecPrims.push_back(faces.at(i)[0]->pos.y);
-        vecPrims.push_back(faces.at(i)[0]->pos.z);
-        vecPrims.push_back(faces.at(i)[1]->pos.x);
-        vecPrims.push_back(faces.at(i)[1]->pos.y);
-        vecPrims.push_back(faces.at(i)[1]->pos.z);
-        vecPrims.push_back(faces.at(i)[2]->pos.x);
-        vecPrims.push_back(faces.at(i)[2]->pos.y);
-        vecPrims.push_back(faces.at(i)[2]->pos.z);
+
+    for (int i = 0; i < verts.size(); i++) {
+        vertPrims.push_back(verts_p.at(i)->pos.x);
+        vertPrims.push_back(verts_p.at(i)->pos.y);
+        vertPrims.push_back(verts_p.at(i)->pos.z);
         
-        normPrims.push_back(faces.at(i)[0]->getNormal().x);
-        normPrims.push_back(faces.at(i)[0]->getNormal().y);
-        normPrims.push_back(faces.at(i)[0]->getNormal().z);
-        normPrims.push_back(faces.at(i)[1]->getNormal().x);
-        normPrims.push_back(faces.at(i)[1]->getNormal().y);
-        normPrims.push_back(faces.at(i)[1]->getNormal().z);
-        normPrims.push_back(faces.at(i)[2]->getNormal().x);
-        normPrims.push_back(faces.at(i)[2]->getNormal().y);
-        normPrims.push_back(faces.at(i)[2]->getNormal().z);
         
+        normPrims.push_back(verts_p.at(i)->getNormal().x);
+        normPrims.push_back(verts_p.at(i)->getNormal().y);
+        normPrims.push_back(verts_p.at(i)->getNormal().z);
+        
+        colorPrims.push_back(verts_p.at(i)->getColor().getR());
+        colorPrims.push_back(verts_p.at(i)->getColor().getG());
+        colorPrims.push_back(verts_p.at(i)->getColor().getB());
+        //colorPrims.push_back(verts_p.at(i)->getColor().getA());
+        
+    }
+
+
+    for (int i = 0; i <inds.size(); i++) {
+        indPrims.push_back(inds.at(i).elem0);
+        indPrims.push_back(inds.at(i).elem1);
+        indPrims.push_back(inds.at(i).elem2);
+
     }
 
 }
 
-/*void GeomObj::display() {
+void GeomObj::display() {
     // hackity-hack - fix eventually
     static float rx = .2;
     static float ry = .3;
@@ -114,26 +110,25 @@ void GeomObj::calcPrimitives() {
     rot.x += rx;
     rot.y += ry;
     rot.z += rz;
-   
+
 
     glEnableClientState(GL_NORMAL_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
     glEnableClientState(GL_VERTEX_ARRAY);
-    glNormalPointer(GL_FLOAT, 0, normals2);
-    glColorPointer(3, GL_FLOAT, 0, colors2);
-    glVertexPointer(3, GL_FLOAT, 0, vertices2);
-
-
-    // draw a cube
-    glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, indices);
+    
+    glNormalPointer(GL_FLOAT, 0, &normPrims[0]);
+    glColorPointer(3, GL_FLOAT, 0, &colorPrims[0]);
+    glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
+    glDrawElements(GL_TRIANGLES, faces.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
     glPopMatrix();
-    // deactivate vertex arrays after drawing
+    
+    // deactivate arrays after drawing
     glDisableClientState(GL_VERTEX_ARRAY); // disable vertex arrays
     glDisableClientState(GL_COLOR_ARRAY);
     glDisableClientState(GL_NORMAL_ARRAY);
-}*/
+}
 
-void GeomObj::display() {
+/*void GeomObj::display() {
     // hackity-hack - fix eventually
     static float rx = .2;
     static float ry = .3;
@@ -153,7 +148,7 @@ void GeomObj::display() {
         faces.at(i).display();
     }
     glPushMatrix();
-}
+}*/
 
 void GeomObj::move(const Vector3& v) {
     pos += v;
@@ -181,8 +176,8 @@ void GeomObj::setSize(const Dimension3<float> size) {
     this->size = size;
 }
 
-void GeomObj::setColor(const Color4<int> col4) {
-    this->col4 = col4;
+void GeomObj::setColor(const Color3<float> col3) {
+    this->col3 = col3;
 }
 
 Vector3& GeomObj::getPosition() {
@@ -197,8 +192,8 @@ Dimension3<float>& GeomObj::getSize() {
     return size;
 }
 
-Color4<int>& GeomObj::getColor() {
-    return col4;
+Color3<float>& GeomObj::getColor() {
+    return col3;
 }
 
 std::vector<Face3>& GeomObj::getFaces() {

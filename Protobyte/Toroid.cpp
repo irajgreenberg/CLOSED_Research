@@ -11,8 +11,8 @@
 //Toroid::Toroid() {
 //}
 
-Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<int>& col4, int ringCount, int ringDetail, float ringRadius) :
-GeomObj(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius) {
+Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color3<float>& col3, int ringCount, int ringDetail, float ringRadius) :
+GeomObj(pos, rot, size, col3), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius) {
 
     init();
 }
@@ -40,6 +40,7 @@ void Toroid::init() {
     calcInds();
     calcFaces();
     calcVertexNorms();
+    calcPrimitives();
 }
 
 void Toroid::calcVerts() {
