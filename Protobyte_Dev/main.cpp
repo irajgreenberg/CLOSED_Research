@@ -34,14 +34,14 @@ GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_mat_shininess[] = {308.0};
 
 void setLights();
-void setRenderingStates();
+void initGL();
 
 int main() {
     // create the window
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32));
     window.setVerticalSyncEnabled(true);
 
-    setRenderingStates();
+    initGL();
 
     setLights();
 
@@ -76,6 +76,7 @@ int main() {
 
 
 
+
     // run the main loop
     bool running = true;
     while (running) {
@@ -92,8 +93,9 @@ int main() {
             }
         }
 
-        // clear the buffers
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        // clear buffers
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+
 
 
         /*
@@ -129,7 +131,7 @@ int main() {
 
         //glLoadMatrixf(newM); // update modelview // turned this off
          */
-        
+
         toroid2.display(GeomBase::IMMEDIATE); // draw opaque first 
         toroid.display(GeomBase::VERTEX_ARRAY_INTERLEAVED);
 
@@ -171,11 +173,12 @@ void setLights() {
     glEnable(GL_LIGHT0);
 }
 
-void setRenderingStates() {
+void initGL() {
     glFrontFace(GL_CCW); // default
     glEnable(GL_CULL_FACE);
     //glCullFace(GL_BACK);
     //glDisable(GL_CULL_FACE);
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
     glShadeModel(GL_SMOOTH); // smooth by default
     //glShadeModel(GL_FLAT); 
     glEnable(GL_COLOR_MATERIAL); // incorporates per vertex color with lights
@@ -183,6 +186,12 @@ void setRenderingStates() {
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_RESCALE_NORMAL); //  good for uniform scaling
+
+    glClearColor(.1, .1, .2, 0); // background color
+    glClearStencil(0); // clear stencil buffer
+    glClearDepth(1.0f); // 0 is near, 1 is far
+    glDepthFunc(GL_LEQUAL);
+
 }
 
 void printMatrices() {

@@ -20,6 +20,42 @@ GeomBase::~GeomBase() {
 
 }
 
+void GeomBase::init() {
+    calcVerts();
+    calcInds();
+    calcFaces();
+    calcVertexNorms();
+    calcPrimitives();
+
+    
+    /*
+    // VBO stuff
+    glGenBuffers(1, &vboID); // Create the buffer ID
+    glBindBuffer(GL_ARRAY_BUFFER, vboID); // Bind the buffer (vertex array data)
+    int vertsDataSize = sizeof (GLfloat)*10 * faces.size()*3;
+    glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STATIC_DRAW); // allocate space
+    glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &interleavedPrims[0]); // upload the data
+
+    // set pointers to data
+    glNormalPointer(GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 3);
+    glColorPointer(4, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 6);
+    glVertexPointer(3, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0]);
+    // vertex data now on GPU
+
+    // now for indices
+    // Our Index Buffer, same as above, the variable needs to be accessible wherever we draw
+    glGenBuffers(1, &indexVBOID); // Generate buffer
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexVBOID); // Bind the element array buffer
+    // Upload the index array, this can be done the same way as above (with NULL as the data, then a 
+    // glBufferSubData call, but doing it all at once for convenience)
+    int indsDataSize = inds.size()*3 * sizeof (GL_UNSIGNED_INT);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indsDataSize, NULL, GL_STATIC_DRAW); // allocate
+    glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indsDataSize, &indPrims[0]); // upload the data
+    */
+
+
+}
+
 /*void GeomBase::calcFaces() {
     for (int i = 0; i < inds.size(); i++) {
         faces.push_back(Face3(verts.at(inds.at(i).elem0), verts.at(inds.at(i).elem1), verts.at(inds.at(i).elem2)));
@@ -145,13 +181,15 @@ void GeomBase::display(displayMode mode) {
             break;
 
         case VERTEX_ARRAY:
-            glEnableClientState(GL_VERTEX_ARRAY);
+
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
+            glEnableClientState(GL_VERTEX_ARRAY);
 
-            glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
+
             glNormalPointer(GL_FLOAT, 0, &normPrims[0]);
             glColorPointer(4, GL_FLOAT, 0, &colorPrims[0]);
+            glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
 
             // deactivate arrays after drawing
@@ -174,12 +212,31 @@ void GeomBase::display(displayMode mode) {
 
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
 
-            glDisableClientState(GL_VERTEX_ARRAY); // disable vertex arrays
+            // disable stuff
             glDisableClientState(GL_NORMAL_ARRAY);
             glDisableClientState(GL_COLOR_ARRAY);
+            glDisableClientState(GL_VERTEX_ARRAY);
             break;
 
         case FBO:
+            glBindBuffer(GL_ARRAY_BUFFER, vboID);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexVBOID);
+
+            glEnableClientState(GL_COLOR_ARRAY);
+            glEnableClientState(GL_NORMAL_ARRAY);
+            glEnableClientState(GL_VERTEX_ARRAY);
+
+            // stride is 10 : (x, y, z, nx, ny, nz, r, g, b, a)
+            glVertexPointer(3, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0]);
+            glNormalPointer(GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 3);
+            glColorPointer(4, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 6);
+
+            glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+
+            glDisableClientState(GL_COLOR_ARRAY);
+            glDisableClientState(GL_NORMAL_ARRAY);
+            glDisableClientState(GL_VERTEX_ARRAY);
+
             break;
 
     }

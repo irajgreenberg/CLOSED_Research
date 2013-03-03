@@ -25,7 +25,7 @@ protected:
     Dimension3<float> size;
     Color4<float> col4;
 
-    virtual void init() = 0;
+    virtual void init();
     virtual void calcVerts() = 0;
     virtual void calcInds() = 0;
     virtual void calcFaces(); // probably not necessary to override
@@ -44,6 +44,9 @@ protected:
     std::vector<float> normPrims;
     std::vector<float> colorPrims;
     std::vector<float> interleavedPrims;
+    
+    // VBO stuff
+     GLuint vboID, indexVBOID;;
 
 
 

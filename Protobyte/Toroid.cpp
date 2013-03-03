@@ -17,31 +17,6 @@ GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ri
     init();
 }
 
-/*void Toroid::display() {
-    sortFaces();
-    glPopMatrix();
-    glLoadIdentity();
-    glTranslatef(pos.x, pos.y, pos.z);
-    glScalef(size.w, size.h, size.d);
-    glRotatef(rot.x, 1, 0, 0); // x-axis
-    glRotatef(rot.y, 0, 1, 0); // y-axis
-    glRotatef(rot.z, 0, 0, 1); // z-axis
-    
-    for (int i = 0; i < faces.size(); ++i) {
-        faces.at(i).display();
-    }
-    glPushMatrix();
-
-}*/
-
-
-void Toroid::init() {
-    calcVerts();
-    calcInds();
-    calcFaces();
-    calcVertexNorms();
-    calcPrimitives();
-}
 
 void Toroid::calcVerts() {
     // vertices
