@@ -8,14 +8,22 @@
     <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
       <itemPath>Protobyte/Color3.h</itemPath>
       <itemPath>Protobyte/Color4.h</itemPath>
+      <itemPath>Protobyte/Curve3.cpp</itemPath>
+      <itemPath>Protobyte/Curve3.h</itemPath>
       <itemPath>Protobyte/Dimension3.h</itemPath>
       <itemPath>Protobyte/Face3.cpp</itemPath>
       <itemPath>Protobyte/Face3.h</itemPath>
+      <itemPath>Protobyte/FrenetFrame.cpp</itemPath>
+      <itemPath>Protobyte/FrenetFrame.h</itemPath>
       <itemPath>Protobyte/GeomBase.cpp</itemPath>
       <itemPath>Protobyte/GeomBase.h</itemPath>
       <itemPath>Protobyte/IGConstants.h</itemPath>
+      <itemPath>Protobyte/Matrix3.cpp</itemPath>
+      <itemPath>Protobyte/Matrix3.h</itemPath>
       <itemPath>Protobyte/Matrix4.cpp</itemPath>
       <itemPath>Protobyte/Matrix4.h</itemPath>
+      <itemPath>Protobyte/Spline3.cpp</itemPath>
+      <itemPath>Protobyte/Spline3.h</itemPath>
       <itemPath>Protobyte/Toroid.cpp</itemPath>
       <itemPath>Protobyte/Toroid.h</itemPath>
       <itemPath>Protobyte/Tuple2.h</itemPath>

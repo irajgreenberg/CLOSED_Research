@@ -9,28 +9,30 @@
 #ifndef Protobyte_iig001_FrenetFrame_h
 #define Protobyte_iig001_FrenetFrame_h
 
-#include "ofMain.h"
+#include <SFML/OpenGL.hpp>
+#include "Vector3.h"
 
-namespace ijg {
+
+//namespace ijg {
     
     class FrenetFrame {
     private:
-        ofVec3f p, T, N, B;
+        Vector3 p, T, N, B;
         
     public:
         friend std::ostream& operator<<(std::ostream& out, const FrenetFrame& frame);
         FrenetFrame();
-        FrenetFrame(const ofVec3f& p, const ofVec3f& T, const ofVec3f& B, const ofVec3f& N);
-        FrenetFrame(const ofVec3f TBN[3]);
+        FrenetFrame(const Vector3& p, const Vector3& T, const Vector3& B, const Vector3& N);
+        FrenetFrame(const Vector3 TBN[3]);
         
         void init();
-        ofVec3f getT() const;
-        ofVec3f getN() const;
-        ofVec3f getB() const;
+        Vector3 getT() const;
+        Vector3 getN() const;
+        Vector3 getB() const;
         
         void display(float len = 10);
         
     };
-}
+//}
 
 #endif

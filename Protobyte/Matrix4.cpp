@@ -12,19 +12,19 @@
 
 // non member function
 
-void transpose(float m4[16]) {
+void transpose(float mat4[16]) {
     float temp[16];
     // std::cout << "size of mat4 = " << sizeof (mat4) << std::endl; // this get smaller when passed 64 to 8 bytes
     // std::cout << "size of temp = " << sizeof (temp) << std::endl;
     for (int i = 0, k = 0; i < 4; i++) {
         for (int j = 0; j < 16; j += 4) {
-            temp[k++] = m4[i + j];
+            temp[k++] = mat4[i + j];
         }
     }
 
     // memcpy(mat4, temp, 16); doesn't work! sizes don't allign, grr!
     for (int i = 0; i < 16; i++) {
-        m4[i] = temp[i];
+        mat4[i] = temp[i];
     }
 
 }

@@ -4,6 +4,7 @@
 #include "Protobyte/Toroid.h"
 #include "Protobyte/Matrix4.h"
 #include <iomanip>
+#include "Protobyte/Spline3.h"
 
 
 
@@ -77,7 +78,13 @@ int main() {
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
 
-
+// test spline curve
+    std::vector<Vector3> cps;
+    cps.push_back(Vector3(2, 3, -1.5));
+    cps.push_back(Vector3(12, -3, -1.5));
+    cps.push_back(Vector3(22, -8, -1.5));
+    
+    Spline3 spline(cps, 4, false, .5);
 
 
     // run the main loop
@@ -139,7 +146,9 @@ int main() {
         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         toroid3.display(GeomBase::DISPLAY_LIST);
 
-
+        glDisable(GL_LIGHTING);
+        spline.display();
+        glEnable(GL_LIGHTING);
         // end the current frame (internally swaps the front and back buffers)
         window.display();
     }

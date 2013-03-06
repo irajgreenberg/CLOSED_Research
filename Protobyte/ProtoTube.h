@@ -10,7 +10,7 @@
 #define Protobyte_iig001_ProtoTube_h
 
 #include <iostream>
-#include "Spline3d.h"
+#include "Spline3.h"
 #include "ProtoOrgBase.h"
 
 namespace ijg {

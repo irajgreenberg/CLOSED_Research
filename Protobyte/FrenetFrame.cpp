@@ -27,11 +27,11 @@ FrenetFrame::FrenetFrame()
     
 }
 
-FrenetFrame::FrenetFrame(const ofVec3f& p, const ofVec3f& T, const ofVec3f& B, const ofVec3f& N):
+FrenetFrame::FrenetFrame(const Vector3& p, const Vector3& T, const Vector3& B, const Vector3& N):
 p(p), T(T), B(B), N(N) {
 }
 
-FrenetFrame::FrenetFrame(const ofVec3f TBN[3])
+FrenetFrame::FrenetFrame(const Vector3 TBN[3])
 {
     T = TBN[0];
     B = TBN[1];
@@ -39,17 +39,17 @@ FrenetFrame::FrenetFrame(const ofVec3f TBN[3])
 }
 
 
-ofVec3f FrenetFrame::getT() const
+Vector3 FrenetFrame::getT() const
 {
     return T;
 }
 
-ofVec3f FrenetFrame::getN() const
+Vector3 FrenetFrame::getN() const
 {
     return N;
 }
 
-ofVec3f FrenetFrame::getB() const
+Vector3 FrenetFrame::getB() const
 {
     return B;
 }

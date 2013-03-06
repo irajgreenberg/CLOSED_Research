@@ -39,7 +39,8 @@ build/Debug/GNU-MacOSX/main.o: main.cpp \
   Protobyte/Toroid.h Protobyte/GeomBase.h Protobyte/Vector3.h \
   Protobyte/Face3.h Protobyte/Vertex.h Protobyte/Color4.h \
   Protobyte/Tuple2.h Protobyte/Tuple3.h Protobyte/Dimension3.h \
-  Protobyte/Matrix4.h
+  Protobyte/Matrix4.h Protobyte/Spline3.h Protobyte/Curve3.h \
+  Protobyte/FrenetFrame.h
 
 ../libSFML/dylibs/root/usr/local/include/SFML/Window.hpp:
 
@@ -134,3 +135,9 @@ Protobyte/Tuple3.h:
 Protobyte/Dimension3.h:
 
 Protobyte/Matrix4.h:
+
+Protobyte/Spline3.h:
+
+Protobyte/Curve3.h:
+
+Protobyte/FrenetFrame.h:

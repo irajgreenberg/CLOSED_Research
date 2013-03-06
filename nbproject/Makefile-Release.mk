@@ -36,12 +36,16 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Face3.o \
+	${OBJECTDIR}/Protobyte/Curve3.o \
+	${OBJECTDIR}/Protobyte/Spline3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
-	${OBJECTDIR}/Protobyte/Toroid.o
+	${OBJECTDIR}/Protobyte/Toroid.o \
+	${OBJECTDIR}/Protobyte/FrenetFrame.o
 
 
 # C Compiler Flags
@@ -73,6 +77,16 @@ ${OBJECTDIR}/Protobyte/Face3.o: Protobyte/Face3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Face3.o Protobyte/Face3.cpp
 
+${OBJECTDIR}/Protobyte/Curve3.o: Protobyte/Curve3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Curve3.o Protobyte/Curve3.cpp
+
+${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
+
 ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
@@ -82,6 +96,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix3.o Protobyte/Matrix3.cpp
 
 ${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
@@ -102,6 +121,11 @@ ${OBJECTDIR}/Protobyte/Toroid.o: Protobyte/Toroid.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Toroid.o Protobyte/Toroid.cpp
+
+${OBJECTDIR}/Protobyte/FrenetFrame.o: Protobyte/FrenetFrame.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
 
 # Subprojects
 .build-subprojects:

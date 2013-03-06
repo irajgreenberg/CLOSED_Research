@@ -25,6 +25,12 @@
         return Vector3(lhs) -= rhs;
     }
     
+    Vector3 operator*(const Vector3& lhs, double rhs)
+    // postcondition: returns lhs *= rhs
+    {
+        return Vector3(lhs) *= rhs;
+    }
+    
     Vector3 operator*(const Vector3& lhs, const Vector3& rhs)
     // postcondition: returns lhs *= rhs
     {
