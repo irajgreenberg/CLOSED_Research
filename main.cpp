@@ -81,7 +81,6 @@ int main() {
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
 
-    // Hi Everyone. I'm Irrrra!
     
     // test spline curve
     srand(time(NULL));
