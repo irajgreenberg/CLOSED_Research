@@ -183,7 +183,7 @@ public:
      * @param uniqueVerts
      *            Vector array
      */
-    const std::vector<Vector3>& getVerts();
+    std::vector<Vector3>& getVerts();
 
     /**
      * Get std::vector of all vertices

@@ -37,9 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Face3.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
-	${OBJECTDIR}/Protobyte/Spline3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
+	${OBJECTDIR}/Protobyte/Spline3.o \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
@@ -82,20 +83,25 @@ ${OBJECTDIR}/Protobyte/Curve3.o: Protobyte/Curve3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Curve3.o Protobyte/Curve3.cpp
 
-${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Protobyte
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
-
 ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
 
+${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
+
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+
+${OBJECTDIR}/Protobyte/Tube.o: Protobyte/Tube.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tube.o Protobyte/Tube.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

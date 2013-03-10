@@ -28,282 +28,39 @@ Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
     init();
 }
 
+
 /**
  * Calculate the interpolated curve points populating the uniqueVerts array.
  */
 void Spline3::init() {
+    //verts.push_back(controlPts.at(1)); // add first (actually 2nd) control point
+    float step = 1.0 / (interpDetail + 1);
+    //std::cout << "step = " << step << std::endl;
+    for (int i = 3; i < controlPts.size(); i++) {
+        Vector3 v0 = controlPts.at(i - 3);
+        Vector3 v1 = controlPts.at(i - 2);
+        Vector3 v2 = controlPts.at(i - 1);
+        Vector3 v3 = controlPts.at(i);
+        //std::cout << "interpDetail = " << interpDetail << std::endl;
+        for (float t = 0; t < 1; t += step) {
+             //std::cout << "t = " << t << std::endl;
+            // new point between v1-v2
+            Vector3 pt = (
+                    ((v0*-1) + (v1 * 3) - (v2 * 3) + v3) * (t * t * t) +
+                    ((v0 * 2) - (v1 * 5) + (v2 * 4) - v3) * (t * t) +
+                    ((v0*-1) + v2) * t +
+                    v1 * 2) * smoothness;
+            verts.push_back(pt);
 
 
-    // std::cout<< "In Spline3 init method"<< std::endl;
-    int len = 0;
-    if (isCurveClosed) {
-        len = (controlPts.size()) * interpDetail;
-    } else {
-        len = (controlPts.size() - 1) * interpDetail;
+        }
     }
-    vertRad = 5;
+    verts.push_back(controlPts.at(controlPts.size() - 2)); // add last control point
 
-    // detect if curve should be closed
-    if (isCurveClosed) {
-        for (int i = 0; i < controlPts.size(); i++) {
-            //tempVecs.push_back(controlPts[i]);
-            //std::cout<< "controlPts["<<i<<"] = " << controlPts[i] << std::endl;
-            Vector3 t1;
-            Vector3 t2;
-            // equation to calculate spline tangents
-            // Ti = tension * ( Pi+1 - Pi-1 )
-
-            // tangent 1 (i)
-            // Pi+1
-            if (i < controlPts.size() - 1) {
-                t1 = controlPts[i + 1];
-            } else {
-                t1 = controlPts[0];
-            }
-            // Pi-1
-            if (i > 0) {
-                t1 -= controlPts[i - 1];
-            } else {
-                // if i==0, subtract last point as pi-i to form smooth curve back in
-                t1 -= controlPts[controlPts.size() - 1];
-            }
-            t1 *= smoothness;
-
-
-            // tangent 2 (i+1)
-            // Pi+1
-            if (i < controlPts.size() - 2) {
-                t2 = controlPts[i + 2];
-                //t2.sub(controlPts[i]);
-            } else if (i == controlPts.size() - 2) {
-                t2 = controlPts[0];
-            } else {
-                t2 = controlPts[1];
-            }
-            // Pi-1
-            t2 -= controlPts[i];
-            t2 *= smoothness;
-
-            //std::cout <<"t1 = " << t1 << std::endl;
-            //std::cout <<"t2 = " << t2 << std::endl;
-
-            // 1st plot control points
-            tempVecs.push_back(controlPts[i]);
-
-            // 2nd plot interpolated points
-            for (int t = 1; t < interpDetail + 1; t++) {
-                // std::cout <<"interpDetail = " << interpDetail << std::endl;
-                // scale between 0.0-1.0
-                double s = t / (double) (interpDetail + 1);
-                //std::cout <<"s = " << s << std::endl;
-                // calculate basis functions
-                // for controls
-                double h1 = 2.0 * s * s * s - 3.0 * s * s + 1.0; // y = 2s^3 - 3s^2 + 1, y' = 6s^2 - 6s
-                double h2 = -2.0 * s * s * s + 3.0 * s * s; // y = -2s^3 - 3s^2, y' = -6s^2 - 6s
-                // for tangents
-                double h3 = s * s * s - 2.0 * s * s + s; // y = s^3 - 2s^3, y' = s^2 - 6s^2
-                double h4 = s * s * s - s * s; // y = s^3 - s^2, y' = 3s^2 - 2s
-
-                // create temporary vector
-                Vector3 tempVec;
-                tempVec = controlPts[i]; // p0
-                tempVec *= h1;
-                if (i < controlPts.size() - 1) {
-                    tempVec += (controlPts[i + 1] * h2); // p3
-                } else {
-                    // final node
-                    tempVec += (controlPts[0] * h2); // p3
-                }
-                // tangent 1
-                tempVec += (t1 * h3); // p1
-                // tangent 2
-                tempVec += (t2 * h4); // p2
-                tempVecs.push_back(tempVec);
-            }
-        }
-        // smooth curves at end of paths
-    } else if (isTerminalSmooth) {
-        std::cout << "Inside isTerminalSmooth block" << std::endl;
-        for (int i = 0; i < controlPts.size() - 1; i++) {
-            // ONLY add inital control point to vertex list
-            if (i == 0) {
-                tempVecs.push_back(controlPts[i]);
-            }
-
-            Vector3 t1, t2;
-            // equation to calculate spline tangents
-            // Ti = a * ( Pi+1 - Pi-1 )
-
-            // tangent 1 (i)
-            // Pi+1
-            if (i < controlPts.size() - 1) {
-                t1 = controlPts[i + 1];
-            } else {
-                //uses 1st CP to control curvature on last point
-                t1 = controlPts[0];
-            }
-            // Pi-1
-            if (i > 0) {
-                t1 -= controlPts[i - 1];
-            } else {
-                // if i==0, subtract last point as pi-i to form smooth curve back in
-                t1 -= controlPts[controlPts.size() - 1];
-            }
-            t1 *= smoothness;
-
-            // tangent 2 (i+1)
-            // Pi+1
-            if (i < controlPts.size() - 2) {
-                t2 = controlPts[i + 2];
-            } else if (i == controlPts.size() - 2) {
-                //uses 1st CP to control curvature on last point
-                t2 = controlPts[0];
-            } else {
-                //uses 2nd CP to control curvature on last point
-                t2 = controlPts[1];
-            }
-            // Pi-1
-            t2 -= controlPts[i];
-            t2 *= smoothness;
-
-            //std::cout << "control point "<< i << " = " << controlPts[i] << std::endl;
-            // FIXED 8/9/10 to allow symmetry on curve
-            // ADDED 10/15/12 "<=" was "<"  - creates interpolated
-            // point at control point, allowing derivatives to be calculated
-            // for Frenet Frame (not sure I really need this once I get
-            // parralel transport implemented - oh well...
-            for (int t = 1; t <= interpDetail + 1; t++) { /*fixed*/
-                // scale between 0.0-1.0
-                double s = t / (double) (interpDetail + 1 /*fixed*/);
-                // std::cout <<"s = " << s << std::endl;
-                // calculate basis functions
-                // for controls
-                double h1 = 2.0 * s * s * s - 3.0 * s * s + 1.0; // 2*s^3 - 3*s^2 + 1
-                double h2 = -2.0 * s * s * s + 3.0 * s * s; // -2*s^3 + 3*s^2
-                // for tangents
-                double h3 = s * s * s - 2.0 * s * s + s; // s^3 - 2*s^2 + s
-                double h4 = s * s * s - s * s; // s^3 - s^2
-
-                // create temporary vector
-                Vector3 tempVec, tempVec2, T, B, N;
-                tempVec = controlPts[i]; // p0
-                tempVec *= h1;
-                if (i < controlPts.size() - 1) { // NOT at end of curve
-                    tempVec += (controlPts[i + 1] * h2); // p3
-                } else {
-                    // end of curve
-                    tempVec += (controlPts[0] * h2); // p3
-                }
-                // tangent 1
-                tempVec += (t1 * h3); // p1
-                // tangent 2
-                tempVec += (t2 * h4); // p2
-
-                //std::cout << "tempVec "<< t << " = " << tempVec << std::endl;
-                tempVecs.push_back(tempVec);
-
-
-            }
-        }
-        // add last control point to tempVecs
-        //tempVecs.push_back(controlPts[controlPts.size() - 1]);
-        // curve smoothness terminates at end of path
-    } else {
-        /******************************************/
-        /***********NOT WORKING BELOW HERE*********/
-        /******************************************/
-        std::cout << "in Spline3 catch all else" << std::endl;
-        for (int i = 0; i < controlPts.size() - 1; i++) {
-            tempVecs.push_back(controlPts[i]);
-            Vector3 t1;
-            Vector3 t2;
-            // equation to calculate spline tangents
-            // Ti = a * ( Pi+1 - Pi-1 )
-
-            // tangent 1 (i)
-            // Pi+1
-            t1 = controlPts[i + 1];
-            // Pi-1
-            if (i > 0) {
-                t1 -= controlPts[i - 1];
-            } else {
-                t1 -= controlPts[i];
-            }
-            t1 *= smoothness;
-
-            // tangent 2 (i+1)
-            // Pi+1
-            if (i < controlPts.size() - 2) {
-                t2 = controlPts[i + 2];
-
-                // Pi-1
-                t2 -= controlPts[i];
-            } else {
-                t2 = controlPts[i + 1];
-
-                // Pi-1
-                t2 -= controlPts[i];
-            }
-
-            t2 *= smoothness;
-
-            for (int t = 1; t < interpDetail + 1; t++) {
-                // scale between 0.0-1.0
-                double s = t / (double) (interpDetail + 1);
-                // calculate basis functions
-                // for controls
-                double h1 = 2.0 * s * s * s - 3.0 * s * s + 1.0; // 2*s^3-3*s^2 + 1
-                double h2 = -2.0 * s * s * s + 3.0 * s * s; // -2*s^3-3*s^2
-                // for tangents
-                double h3 = s * s * s - 2.0 * s * s + s; // s^3-2*s^3
-                double h4 = s * s * s - s * s; // s^3 - s^2
-
-                // 1st derivative for Frenet frame
-                double y1 = 6.0 * s * s - 6.0 * s; // 6*s^2-6*s
-                double y2 = -4.0 * s * s + 6.0 * s; // -6*s^2+6*s
-                // for tangents
-                double y3 = 3 * s * s - 6.0 * s * s; // 3s^2-6*s^2
-                double y4 = 3 * s * s - s; // 3s^2 - s
-
-                // 2nd derivative for Frenet frame
-                double yy1 = 12.0 * s - 6.0; // 12*s-6
-                double yy2 = -8.0 * s + 6.0; // -8*s+6
-                // for tangents
-                double yy3 = 6 * s - 12.0 * s; // 6s-12
-                double yy4 = 6 * s; // 6s
-
-                // create temporary vector
-                Vector3 tempVec, tempVec2, T, B, N;
-
-                // calculate vertex
-                tempVec = controlPts[i]; // p0
-                tempVec *= h1;
-                tempVec += (controlPts[i + 1] * h2); // p3
-                // tangent 1
-                tempVec += (t1 * h3); // p1
-                // tangent 2
-                tempVec += (t2 * h4); // p2
-                tempVecs.push_back(tempVec);
-                //std::cout << "tempVec "<< t << " = " << tempVec << std::endl;
-
-            }
-        }
-
-        // add last control point to tempVecs DOESN'T SEEM NECESSARY ANY MORE
-        // tempVecs.push_back(controlPts[controlPts.size() - 1]); // not needed
-
+    for (int i = 0; i < verts.size(); i++) {
+        std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
     }
-    // copy array vals to verts array - NOTE: not efficient to do this.
-    //verts = new Vector3[tempVecs.size()];
-    for (int i = 0; i < tempVecs.size(); i++) {
-        verts.push_back(tempVecs[i]);
-        if (i == 0) {
-            std::cout << "\n****VERTS****" << std::endl;
-        }
-        //std::cout <<"verts["<<i<<"] = " <<  verts[i] << std::endl;
-    }
-
-    /******* Create Frenet Frame for extrusion *****/
+    /* Frenet Frame for extrusion */
     createFrenetFrame();
 }
 
@@ -485,11 +242,11 @@ void Spline3::createFrenetFrame() {
         if (i == 1) {
 
             biNorm = cp1;
-            biNorm.cross(cp2);
+            biNorm = biNorm.cross(cp2);
             biNorm.normalize();
 
             norm = biNorm;
-            norm.cross(tan);
+            norm = norm.cross(tan);
             norm.normalize();
         }
         // std::cout << "tan = " << tan <<std::endl;
@@ -503,13 +260,13 @@ void Spline3::createFrenetFrame() {
         } else {
             theta = acos(tans.at(i).dot(tans.at(i + 1)));
             Vector3 axis = tans.at(i);
-            axis.cross(tans.at(i + 1));
+            axis = axis.cross(tans.at(i + 1));
             axis.normalize();
 
             Matrix3 m;
             nextNorm = m.getRotate(theta, axis, norm);
             nextBiNorm = tans.at(i + 1);
-            nextBiNorm.cross(nextNorm);
+            nextBiNorm = nextBiNorm.cross(nextNorm);
 
         }
 
@@ -521,6 +278,3 @@ void Spline3::createFrenetFrame() {
     }
 
 }
-
-
-

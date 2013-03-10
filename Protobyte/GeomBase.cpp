@@ -32,6 +32,7 @@ void GeomBase::init() {
     // vector data - use GL_ARRAY_BUFFER
     glGenBuffers(1, &vboID); // Create the buffer ID
 
+
     glBindBuffer(GL_ARRAY_BUFFER, vboID); // Bind the buffer (vertex array data)
     int vertsDataSize = sizeof (float) *interleavedPrims.size();
     glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STATIC_DRAW); // allocate space
@@ -45,6 +46,7 @@ void GeomBase::init() {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indsDataSize, NULL, GL_STATIC_DRAW); // allocate
     glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indsDataSize, &indPrims[0]); // upload the data
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, indsDataSize, &indPrims[0], GL_STATIC_DRAW); // allocate and upload
+
 }
 
 /*void GeomBase::calcFaces() {
@@ -54,6 +56,12 @@ void GeomBase::init() {
 }*/
 
 void GeomBase::calcFaces() {
+    verts_p.clear();
+    // collect mem addresses from verts
+    for (int i = 0; i < verts.size(); i++) {
+        verts_p.push_back(&verts.at(i));
+    }
+
     for (int i = 0; i < inds.size(); i++) {
         faces.push_back(Face3(verts_p.at(inds.at(i).elem0), verts_p.at(inds.at(i).elem1),
                 verts_p.at(inds.at(i).elem2)));
@@ -148,11 +156,26 @@ void GeomBase::fillDisplayLists() {
 /* NOTE:: Drawing will eventually get delegated to a 
  world type class, to enable aggregate face sorting and 
  and primitive processing*/
-void GeomBase::display(displayMode mode) {
+void GeomBase::display(displayMode mode, renderMode render) {
+    switch (render) {
+        case WIREFRAME:
+
+            glDisable(GL_CULL_FACE);
+            glDisable(GL_LIGHTING);
+            glLineWidth(1.0f);
+            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+            break;
+
+        case SURFACE:
+            glEnable(GL_CULL_FACE);
+            glEnable(GL_LIGHTING);
+            glPolygonMode(GL_FRONT, GL_FILL);
+            break;
+    }
     // hackity-hack - fix eventually
-    static float rx = .2;
-    static float ry = .3;
-    static float rz = .4;
+    static float rx = .02;
+    static float ry = .03;
+    static float rz = .04;
     glPushMatrix();
     glLoadIdentity();
     glTranslatef(pos.x, pos.y, pos.z);
@@ -173,7 +196,6 @@ void GeomBase::display(displayMode mode) {
     switch (mode) {
         case IMMEDIATE:
             //glDeleteLists(displayListIndex, 1);
-
             for (int i = 0; i < faces.size(); ++i) {
                 faces.at(i).display();
             }
@@ -189,6 +211,7 @@ void GeomBase::display(displayMode mode) {
             glNormalPointer(GL_FLOAT, 0, &normPrims[0]);
             glColorPointer(4, GL_FLOAT, 0, &colorPrims[0]);
             glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
+
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
 
             // deactivate arrays after drawing
@@ -235,12 +258,11 @@ void GeomBase::display(displayMode mode) {
             glEnableClientState(GL_COLOR_ARRAY);
 
             // stride is 10 : (x, y, z, nx, ny, nz, r, g, b, a)
-            int interleavedVertexSize = 10 * sizeof (GLfloat);
 
             // vertices, normals, color
-            glVertexPointer(3, GL_FLOAT, interleavedVertexSize, BUFFER_OFFSET(0));
-            glNormalPointer(GL_FLOAT, interleavedVertexSize, BUFFER_OFFSET(12)); // step over 3 bytes
-            glColorPointer(4, GL_FLOAT, interleavedVertexSize, BUFFER_OFFSET(24)); // step over 6 bytes
+            glVertexPointer(3, GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(0));
+            glNormalPointer(GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(12)); // step over 3 bytes
+            glColorPointer(4, GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(24)); // step over 6 bytes
 
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, BUFFER_OFFSET(0));
 
@@ -256,6 +278,10 @@ void GeomBase::display(displayMode mode) {
 
     }
     glPopMatrix();
+    
+    // reset fill and lighting
+     glEnable(GL_LIGHTING);
+     glPolygonMode(GL_FRONT, GL_FILL);
 }
 
 void GeomBase::move(const Vector3& v) {

@@ -104,6 +104,7 @@
         double angle(const Vector3& v);
         double dot(const Vector3& v);
         Vector3 cross(const Vector3& v);
+        void crossThis(const Vector3& v);
         double dist(const Vector3& v);
         Vector3& rotate(double theta, const Vector3& axis);
         

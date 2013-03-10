@@ -74,6 +74,11 @@ public:
         DISPLAY_LIST,
         VERTEX_BUFFER_OBJECT
     };
+    
+     enum renderMode {
+        WIREFRAME, // begin at 0
+        SURFACE
+    };
 
     // GeomBase();
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
@@ -85,7 +90,7 @@ public:
     void scale(const Dimension3<float>& s);
 
     // vertex arrays are implemented by default
-    virtual void display(displayMode mode = VERTEX_ARRAY);
+    virtual void display(displayMode mode = VERTEX_ARRAY, renderMode render = SURFACE);
 
     // setters/getters
     void setPosition(const Vector3& pos);

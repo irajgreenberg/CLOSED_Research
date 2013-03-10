@@ -45,10 +45,6 @@ void Toroid::calcVerts() {
         phi += float(M_PI * 2 / ringCount);
     }
     
-    // collect mem addresses
-    for(int i=0; i<verts.size(); i++){
-        verts_p.push_back( &verts.at(i) );
-    }
 }
 
 void Toroid::calcInds() {

@@ -301,6 +301,14 @@ Vector3 Vector3::cross(const Vector3& v){
     return rhs;
 }
 
+void Vector3::crossThis(const Vector3& v){
+    Vector3 temp;
+    temp.x = y*v.z - z*v.y;
+    temp.y = z*v.x - x*v.z;
+    temp.z = x*v.y - y*v.x;
+    *this = temp;
+}
+
 double Vector3::dist(const Vector3& v){
     double dx = x-v.x;
     double dy = y-v.y;

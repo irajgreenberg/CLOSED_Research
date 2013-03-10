@@ -5,6 +5,9 @@
 #include "Protobyte/Matrix4.h"
 #include <iomanip>
 #include "Protobyte/Spline3.h"
+#include "Protobyte/Tube.h"
+#include <ctime> 
+
 
 
 
@@ -32,7 +35,7 @@ GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {128.0}; // max 128
+GLfloat light01_mat_shininess[] = {70.0}; // max 128
 
 void setLights();
 void initGL();
@@ -45,7 +48,7 @@ int main() {
     initGL();
 
     setLights();
-
+    
     // about GL internal matrices
     // GL_MODELVIEW matrix is for position of camera - inverse of object transformations
     // GL_PROJECTIOIN matrix may be thought of as lens component of camera - 3d to 2d mapping
@@ -56,7 +59,7 @@ int main() {
     // set projection matrix to identity
     glLoadIdentity();
     // update projection matrix with perspective values
-    setView(75.0, window.getSize().x / (float) window.getSize().y, 1, 800);
+    setView(75.0, window.getSize().x / (float) window.getSize().y, .1, 800);
 
 
 
@@ -74,17 +77,35 @@ int main() {
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(30, 30, 30), Color4<float>(0.5, 0.5, 0.7, 1.0), 56, 56, .3);
-    
+
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
 
-// test spline curve
+    // test spline curve
+    srand(time(NULL));
     std::vector<Vector3> cps;
-    cps.push_back(Vector3(2, 3, -1.5));
-    cps.push_back(Vector3(12, -3, -1.5));
-    cps.push_back(Vector3(22, -8, -1.5));
-    
-    Spline3 spline(cps, 4, false, .5);
+    int controlPts = 5;
+    for (int i = 0; i < controlPts; i++) {
+        //rand() % 100;  // v1 in the range 0 to 99
+        float x = -1 + rand() % 3; // (-5 to 5)
+        float y = -1 + rand() % 3; // (-5 to 5)
+        float z = -3 + rand() % 7; // (-5 to 5)
+        //std::cout << "x = " << x << std::endl;
+        //std::cout << "y = " << y << std::endl;
+        std::cout << "( " << x << ", " << y << ", " << z << " )" << std::endl;
+        cps.push_back(Vector3(x, y, z));
+
+    }
+
+    // for testing
+    /*cps.push_back(Vector3(-4.0, 0, -.2));
+    cps.push_back(Vector3(-2.0, 0, -.2));
+    cps.push_back(Vector3(0, 0, -.2));
+    cps.push_back(Vector3(2.0, 0, -.2));
+    cps.push_back(Vector3(4.0, 0, -.2));*/
+
+    Spline3 spline(cps, 1, false, .5);
+    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.1, .85), spline, .25, 20);
 
 
     // run the main loop
@@ -142,13 +163,34 @@ int main() {
         //glLoadMatrixf(newM); // update modelview // turned this off
          */
 
-        toroid2.display(GeomBase::VERTEX_ARRAY_INTERLEAVED); // draw opaque first 
-        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
-        toroid3.display(GeomBase::DISPLAY_LIST);
+        //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
+        //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        //toroid3.display(GeomBase::DISPLAY_LIST);
 
+        tube.display(GeomBase::DISPLAY_LIST, GeomBase::SURFACE);
+
+
+        //glPushMatrix();
+        //glLoadIdentity();
+        //glTranslatef(0, 0, -5);
         glDisable(GL_LIGHTING);
-        spline.display();
+        glLineWidth(1.0f);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+        //spline.display();
+        //spline.displayControlPts();
+        //spline.displayInterpPts();
+        //glPopMatrix();
+
+
+        //spline.displayFrenetFrames(.2);
+
+
+
+        // put back fill state
         glEnable(GL_LIGHTING);
+        glPolygonMode(GL_FRONT, GL_FILL);
+
+
         // end the current frame (internally swaps the front and back buffers)
         window.display();
     }
@@ -198,7 +240,7 @@ void initGL() {
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_RESCALE_NORMAL); //  good for uniform scaling
+    glEnable(GL_NORMALIZE); //  good for uniform scaling
 
     glClearColor(.1, .1, .2, 0); // background color
     glClearStencil(0); // clear stencil buffer

@@ -79,7 +79,7 @@ void Curve3::setVerts(std::vector<Vector3> verts) {
  * @param uniqueVerts
  *            Vector array
  */
-const std::vector<Vector3>& Curve3::getVerts() {
+std::vector<Vector3>& Curve3::getVerts() {
     return verts;
 }
 
