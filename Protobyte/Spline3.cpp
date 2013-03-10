@@ -28,38 +28,39 @@ Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
     init();
 }
 
-
 /**
  * Calculate the interpolated curve points populating the uniqueVerts array.
  */
 void Spline3::init() {
-    //verts.push_back(controlPts.at(1)); // add first (actually 2nd) control point
+    // double up first and last control points
+    controlPts.insert(controlPts.begin(), controlPts.at(0));
+    controlPts.push_back(controlPts.at(controlPts.size() - 1));
+
+    Vector3 v0, v1, v2, v3;
     float step = 1.0 / (interpDetail + 1);
-    //std::cout << "step = " << step << std::endl;
-    for (int i = 3; i < controlPts.size(); i++) {
-        Vector3 v0 = controlPts.at(i - 3);
-        Vector3 v1 = controlPts.at(i - 2);
-        Vector3 v2 = controlPts.at(i - 1);
-        Vector3 v3 = controlPts.at(i);
-        //std::cout << "interpDetail = " << interpDetail << std::endl;
+    
+    for (int i = 0; i < controlPts.size() - 3; i++) {
+        v0 = controlPts.at(i);
+        v1 = controlPts.at(i + 1);
+        v2 = controlPts.at(i + 2);
+        v3 = controlPts.at(i + 3);
+
         for (float t = 0; t < 1; t += step) {
-             //std::cout << "t = " << t << std::endl;
-            // new point between v1-v2
+            // new point between vn-vn+1
             Vector3 pt = (
                     ((v0*-1) + (v1 * 3) - (v2 * 3) + v3) * (t * t * t) +
                     ((v0 * 2) - (v1 * 5) + (v2 * 4) - v3) * (t * t) +
                     ((v0*-1) + v2) * t +
                     v1 * 2) * smoothness;
             verts.push_back(pt);
-
-
         }
     }
-    verts.push_back(controlPts.at(controlPts.size() - 2)); // add last control point
+    // add last control point to verts vector
+    verts.push_back(controlPts.at(controlPts.size() - 2)); 
 
-    for (int i = 0; i < verts.size(); i++) {
-        std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
-    }
+    //for (int i = 0; i < verts.size(); i++) {
+       // std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
+    //}
     /* Frenet Frame for extrusion */
     createFrenetFrame();
 }
@@ -225,11 +226,29 @@ float Spline3::getSmoothness(float smoothness) const {
  */
 
 void Spline3::createFrenetFrame() {
+    //frenetFrames.push_back(FrenetFrame(verts[0], Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
+    std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
     std::vector<Vector3> tans;
     float theta;
     Vector3 cp0, cp1, cp2;
     Vector3 tan, biNorm, norm, nextBiNorm, nextNorm;
     for (int i = 1; i < verts.size(); i++) {
+
+        /* if (i == 0) {
+             cp0 = verts[i];
+             cp1 = verts[i];
+             cp2 = verts[i + 1];
+
+         } else if (i == verts.size()) {
+             cp0 = verts[i - 1];
+             cp1 = verts[i];
+             cp2 = verts[i];
+
+         } else {
+             cp0 = verts[i - 1];
+             cp1 = verts[i];
+             cp2 = verts[i + 1];
+         }*/
 
         cp0 = verts[i - 1];
         cp1 = verts[i];
@@ -276,5 +295,6 @@ void Spline3::createFrenetFrame() {
         norm = nextNorm;
         biNorm = nextBiNorm;
     }
+    std::cout << "in createFrenetFrame():  frenetFrames.size() = " << frenetFrames.size() << std::endl;
 
 }
