@@ -32,13 +32,35 @@ Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
  * Calculate the interpolated curve points populating the uniqueVerts array.
  */
 void Spline3::init() {
+    for (int i = 0; i < controlPts.size(); i++) {
+        std::cout << "pre: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
+    }
+
+
     // double up first and last control points
     controlPts.insert(controlPts.begin(), controlPts.at(0));
     controlPts.push_back(controlPts.at(controlPts.size() - 1));
 
+    /*
+    // add begin and end points based on vectors v1-v0 and v(n-1)-vn
+    Vector3 delta = controlPts.at(1);
+    delta -= controlPts.at(0);
+    Vector3 newVec = controlPts.at(0) - delta;
+    controlPts.insert(controlPts.begin(), newVec);
+
+    delta = controlPts.at(controlPts.size() - 2);
+    delta -= controlPts.at(controlPts.size() - 1);
+    newVec = controlPts.at(controlPts.size() - 1) - delta;
+    controlPts.push_back(newVec);
+     */
+
+    for (int i = 0; i < controlPts.size(); i++) {
+        std::cout << "Post: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
+    }
+
     Vector3 v0, v1, v2, v3;
     float step = 1.0 / (interpDetail + 1);
-    
+
     for (int i = 0; i < controlPts.size() - 3; i++) {
         v0 = controlPts.at(i);
         v1 = controlPts.at(i + 1);
@@ -56,13 +78,13 @@ void Spline3::init() {
         }
     }
     // add last control point to verts vector
-    verts.push_back(controlPts.at(controlPts.size() - 2)); 
+    verts.push_back(controlPts.at(controlPts.size() - 2));
 
-    //for (int i = 0; i < verts.size(); i++) {
-       // std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
-    //}
-    /* Frenet Frame for extrusion */
-    createFrenetFrame();
+    for (int i = 0; i < verts.size(); i++) {
+        //  std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
+    }
+    /* ensure tube section don't flip */
+    parallelTransport();
 }
 
 /**
@@ -225,56 +247,53 @@ float Spline3::getSmoothness(float smoothness) const {
  * - private access
  */
 
-void Spline3::createFrenetFrame() {
+void Spline3::parallelTransport() {
+    // double up first and last verts
+    //verts.insert(verts.begin(), verts.at(0));
+    //verts.push_back(verts.at(verts.size() - 1));
+
     //frenetFrames.push_back(FrenetFrame(verts[0], Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
     std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
     std::vector<Vector3> tans;
     float theta;
     Vector3 cp0, cp1, cp2;
     Vector3 tan, biNorm, norm, nextBiNorm, nextNorm;
-    for (int i = 1; i < verts.size(); i++) {
 
-        /* if (i == 0) {
-             cp0 = verts[i];
-             cp1 = verts[i];
-             cp2 = verts[i + 1];
 
-         } else if (i == verts.size()) {
-             cp0 = verts[i - 1];
-             cp1 = verts[i];
-             cp2 = verts[i];
-
-         } else {
-             cp0 = verts[i - 1];
-             cp1 = verts[i];
-             cp2 = verts[i + 1];
-         }*/
-
-        cp0 = verts[i - 1];
-        cp1 = verts[i];
-        cp2 = verts[i + 1];
-
+    for (int i = 1; i < verts.size()-1; i++) {
+        if (i == 0) {
+            cp0 = verts[verts.size()-1];
+            cp1 = verts[i];
+            cp2 = verts[i + 1];
+        } else if (i == verts.size() - 1) {
+            cp0 = verts[i - 1];
+            cp1 = verts[i];
+            cp2 = verts[0];
+        } else {
+            cp0 = verts[i - 1];
+            cp1 = verts[i];
+            cp2 = verts[i + 1];
+        }
+        // fill tangents
         tan = cp2 - cp0;
         tan.normalize();
         tans.push_back(tan);
 
+        // collect initial frame
         if (i == 1) {
-
-            biNorm = cp1;
-            biNorm = biNorm.cross(cp2);
+            biNorm = cp1.cross(cp2);
             biNorm.normalize();
 
-            norm = biNorm;
-            norm = norm.cross(tan);
+            norm = biNorm.cross(tan);
             norm.normalize();
         }
-        // std::cout << "tan = " << tan <<std::endl;
-        // std::cout << "biNorm = " << biNorm <<std::endl;
-        // std::cout << "norm = " << norm <<std::endl;
     }
     // rotate frame
+
+    std::cout << "tans.size() = " << tans.size() << std::endl;
     for (int i = 0; i < tans.size() - 1; i++) {
         if (biNorm.mag() == 0) {
+            std::cout << "in HERE " << std::endl;
             nextNorm = norm;
         } else {
             theta = acos(tans.at(i).dot(tans.at(i + 1)));
@@ -289,8 +308,8 @@ void Spline3::createFrenetFrame() {
 
         }
 
-        biNorm.normalize();
-        norm.normalize();
+        //biNorm.normalize();
+        //norm.normalize();
         frenetFrames.push_back(FrenetFrame(verts[i], tans.at(i), biNorm, norm));
         norm = nextNorm;
         biNorm = nextBiNorm;

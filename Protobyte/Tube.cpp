@@ -38,7 +38,8 @@ GeomBase(pos, rot, size, col4), path(path), radius(radius), crossSectionDetail(c
 // overrides method in base class
 
 void Tube::calcVerts() {
-    std::vector<FrenetFrame> ff = path.getFrenetFrame();
+    // IMPORTANT: ff and vecs NEED to be the same size
+    std::vector<FrenetFrame> ff = path.getFrenetFrame(); 
     std::vector<Vector3> vecs = path.getVerts();
     //std::cout << ff.size() << std::endl;
 
@@ -58,17 +59,18 @@ void Tube::calcVerts() {
             theta += M_PI * 2 / crossSectionDetail;
 
             // transform to Frenet frame of reference
-            float px = vecs.at(i + 1).x + x * ff.at(i).getN().x + y * ff.at(i).getB().x;
-            float py = vecs.at(i + 1).y + x * ff.at(i).getN().y + y * ff.at(i).getB().y;
-            float pz = vecs.at(i + 1).z + x * ff.at(i).getN().z + y * ff.at(i).getB().z;
-            //std::cout <<"ff[i].getB() = " << ff[i].getB() << std::endl;
-            verts.push_back(Vector3(px, py, pz));
+            float px = vecs.at(i+1).x + x * ff.at(i).getN().x + y * ff.at(i).getB().x;
+            float py = vecs.at(i+1).y + x * ff.at(i).getN().y + y * ff.at(i).getB().y;
+            float pz = vecs.at(i+1).z + x * ff.at(i).getN().z + y * ff.at(i).getB().z;
+           // std::cout <<"ff[i].getB() = " << ff[i].getB() << std::endl;
+            
+            verts.push_back(Vertex(Vector3(px, py, pz), col4));
 
         }
     }
-
-
 }
+
+
 
 void Tube::calcInds() {
     std::cout << "color.r = " << col4.getR() << std::endl;
@@ -79,7 +81,7 @@ void Tube::calcInds() {
     int frameCount = path.getFrenetFrame().size();
     int crossSectionCount = path.getVertsLength();
     // indices
-    for (int i = 0; i < frameCount - 2/*ringCount*/; i++) {
+    for (int i = 0; i < frameCount-2/*ringCount*/; i++) {
         for (int j = 0; j < crossSectionDetail/*ringDetail*/; j++) {
 
             int i0 = i * crossSectionDetail + j;

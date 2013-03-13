@@ -110,7 +110,7 @@ private:
      * along spline path (Tubes & Tendrils baby!).
      * Called automatically by init()
      */
-    void createFrenetFrame();
+    void parallelTransport();
 
 };
 //}

@@ -26,7 +26,7 @@ void GeomBase::init() {
     calcFaces();
     calcVertexNorms();
     calcPrimitives();
-    fillDisplayLists();
+    fillDisplayLists(); // just in case we want to render with display Lists: Data can't be changed though
 
     // generate vertex buffer objects
     // vector data - use GL_ARRAY_BUFFER
@@ -105,7 +105,7 @@ void GeomBase::sortFaces() {
 void GeomBase::calcPrimitives() {
 
     for (int i = 0; i < verts.size(); i++) {
-        // fill indiviual primitive arrays
+        // fill individual primitive arrays
         vertPrims.push_back(verts_p.at(i)->pos.x);
         vertPrims.push_back(verts_p.at(i)->pos.y);
         vertPrims.push_back(verts_p.at(i)->pos.z);
@@ -173,9 +173,9 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
     }
     // hackity-hack - fix eventually
-    static float rx = .02;
-    static float ry = .03;
-    static float rz = .04;
+    static float rx = .2;
+    static float ry = .3;
+    static float rz = .4;
     glPushMatrix();
     glLoadIdentity();
     glTranslatef(pos.x, pos.y, pos.z);
@@ -202,7 +202,13 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
 
         case VERTEX_ARRAY:
-            //glDeleteLists(displayListIndex, 1);
+            // ensure data not bound to VBO
+            glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
+            glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0);
+            
+            // ensure Diaplsy list released 
+            glDeleteLists(displayListIndex, 1);
+            
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
             glEnableClientState(GL_VERTEX_ARRAY);
@@ -221,7 +227,12 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
 
         case VERTEX_ARRAY_INTERLEAVED:
-            //glDeleteLists(displayListIndex, 1);
+             // ensure data not bound to VBO
+            glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
+            glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0);
+            
+            // ensure Diaplsy list released 
+            glDeleteLists(displayListIndex, 1);
 
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);

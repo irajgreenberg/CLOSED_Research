@@ -32,14 +32,29 @@ void Face3::init() {
 }
 
 void Face3::display() {
+    // flat shading
+    /*glBegin(GL_TRIANGLES);
+    glColor3f(.2, .3, 1.0); // for face normals
+    glNormal3f(norm.x, norm.y, norm.z);
+    glVertex3f(v0_p->pos.x, v0_p->pos.y, v0_p->pos.z);
+    glColor3f(.2, .3, 1.0);
+    //glNormal3f(v1_p->getNormal().x, v1_p->getNormal().y, v1_p->getNormal().z);
+    glVertex3f(v1_p->pos.x, v1_p->pos.y, v1_p->pos.z);
+    glColor3f(.2, .3, 1.0);
+    //glNormal3f(v2_p->getNormal().x, v2_p->getNormal().y, v2_p->getNormal().z);
+    glVertex3f(v2_p->pos.x, v2_p->pos.y, v2_p->pos.z);
+    glEnd();*/
+    
+    
+    // smooth shading
     glBegin(GL_TRIANGLES);
-    glColor3f(.4, .6, 1.0); // for face normals
+    glColor3f(.2, .3, 1.0); // for face normals
     glNormal3f(v0_p->getNormal().x, v0_p->getNormal().y, v0_p->getNormal().z);
     glVertex3f(v0_p->pos.x, v0_p->pos.y, v0_p->pos.z);
-    //glColor3f(1.0, .8, .8);
+    glColor3f(.2, .3, 1.0);
     glNormal3f(v1_p->getNormal().x, v1_p->getNormal().y, v1_p->getNormal().z);
     glVertex3f(v1_p->pos.x, v1_p->pos.y, v1_p->pos.z);
-    glColor3f(1.0, .5, 0);
+    glColor3f(.2, .3, 1.0);
     glNormal3f(v2_p->getNormal().x, v2_p->getNormal().y, v2_p->getNormal().z);
     glVertex3f(v2_p->pos.x, v2_p->pos.y, v2_p->pos.z);
     glEnd();
