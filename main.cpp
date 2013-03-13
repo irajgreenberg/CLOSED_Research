@@ -85,28 +85,33 @@ int main() {
     // test spline curve
     srand(time(NULL));
     std::vector<Vector3> cps;
-    int controlPts = 5;
-    for (int i = 0; i < controlPts; i++) {
+    int controlPts = 30;
+    float x, y, z = 5;
+    float t = 0;
+    for (int i = 0; i <controlPts; i++) {
         //rand() % 100;  // v1 in the range 0 to 99
-        float x = -1 + rand() % 3; // (-5 to 5)
-        float y = -1 + rand() % 3; // (-5 to 5)
-        float z = -3 + rand() % 7; // (-5 to 5)
+        x = -1 + rand() % 3; // (-5 to 5)
+        y = -1 + rand() % 3; // (-5 to 5)
+        z = -2 + rand() % 5; // (-5 to 5)
         //std::cout << "x = " << x << std::endl;
         //std::cout << "y = " << y << std::endl;
-        std::cout << "( " << x << ", " << y << ", " << z << " )" << std::endl;
+        //std::cout << "( " << x << ", " << y << ", " << z << " )" << std::endl;
+        //x = cos(t)*2;
+        //y = sin(t)*2;
+        //z=0;
         cps.push_back(Vector3(x, y, z));
-
+        t += M_PI*2/(controlPts);
     }
 
     // for testing
-    /*cps.push_back(Vector3(-4.0, 0, -.2));
-    cps.push_back(Vector3(-2.0, 0, -.2));
-    cps.push_back(Vector3(0, 0, -.2));
-    cps.push_back(Vector3(2.0, 0, -.2));
-    cps.push_back(Vector3(4.0, 0, -.2));*/
+    /*cps.push_back(Vector3(-4.0, 0, -2.2));
+    cps.push_back(Vector3(-2.0, 0, -2.2));
+    cps.push_back(Vector3(0, 0, -2.2));
+    cps.push_back(Vector3(2.0, 0, -2.2));
+    cps.push_back(Vector3(4.0, 0, -2.2));*/
 
-    Spline3 spline(cps, 1, false, .5);
-    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.1, .85), spline, .25, 20);
+    Spline3 spline(cps, 20, false, .5);
+    Tube tube(Vector3(0, 0, -100), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.1, .5), spline, .05, 12);
 
 
     // run the main loop
@@ -168,7 +173,7 @@ int main() {
         //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
-        tube.display(GeomBase::DISPLAY_LIST, GeomBase::SURFACE);
+        tube.display(GeomBase::VERTEX_ARRAY_INTERLEAVED, GeomBase::SURFACE);
 
 
         //glPushMatrix();
