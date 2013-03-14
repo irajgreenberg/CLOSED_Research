@@ -27,6 +27,7 @@ protected:
     Vector3 spd, rotSpd;
     Dimension3<float> size;
     Color4<float> col4;
+    std::vector< Color4<float> > col4s;
 
     virtual void init();
     virtual void calcVerts() = 0;
@@ -34,7 +35,7 @@ protected:
     virtual void calcFaces(); // probably not necessary to override
     virtual void calcVertexNorms();
     virtual void calcPrimitives();
-    
+
     void fillDisplayLists();
 
     // composite guts
@@ -74,8 +75,8 @@ public:
         DISPLAY_LIST,
         VERTEX_BUFFER_OBJECT
     };
-    
-     enum renderMode {
+
+    enum renderMode {
         WIREFRAME, // begin at 0
         SURFACE
     };
@@ -83,6 +84,10 @@ public:
     // GeomBase();
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const Color4<float> col4);
+
+    GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+            const std::vector< Color4<float> > col4s);
+    
     virtual ~GeomBase();
 
     void move(const Vector3& v);

@@ -23,6 +23,7 @@ public:
     //const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4
     Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Spline3& path, float radii[], int crossSectionDetail); // varied thickness
     Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Spline3& path, float radius, int crossSectionDetail);
+    
 
     // overrides base class
     void calcVerts();

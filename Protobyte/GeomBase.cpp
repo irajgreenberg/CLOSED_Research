@@ -16,6 +16,11 @@ GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<floa
 pos(pos), rot(rot), size(size), col4(col4) {
 }
 
+// pass array of colors
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
+pos(pos), rot(rot), size(size), col4s(col4s) {
+}
+
 GeomBase::~GeomBase() {
     glDeleteLists(displayListIndex, 1);
 }

@@ -73,10 +73,10 @@ int main() {
     printMatrices();
 
     Toroid toroid(Vector3(0, 0, -250), Vector3(100, 180, 0),
-            Dimension3<float>(50, 50, 50), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .5);
+            Dimension3<float>(20, 20, 20), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .5);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.5, 0.5, 0.7, 1.0), 56, 56, .3);
+            Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, 1.0), 56, 56, .3);
 
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
@@ -109,9 +109,15 @@ int main() {
     cps.push_back(Vector3(0, 0, -2.2));
     cps.push_back(Vector3(2.0, 0, -2.2));
     cps.push_back(Vector3(4.0, 0, -2.2));*/
-
-    Spline3 spline(cps, 20, false, .5);
-    Tube tube(Vector3(0, 0, -100), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.1, .5), spline, .05, 12);
+    float radii[630];
+    double theta2 = 0.0;
+    for(int i=0; i<630; i++){
+        radii[i] = .09 + sin(theta2)*.06;
+        std::cout << " radii[i] = " <<  radii[i] << std::endl;
+        theta2 += M_PI/5.0;
+    }
+    Spline3 spline(cps, 20, false, .8);
+    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
 
 
     // run the main loop
@@ -169,11 +175,11 @@ int main() {
         //glLoadMatrixf(newM); // update modelview // turned this off
          */
 
-        //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
-        //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
-        tube.display(GeomBase::VERTEX_ARRAY_INTERLEAVED, GeomBase::SURFACE);
+        tube.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
 
         //glPushMatrix();
