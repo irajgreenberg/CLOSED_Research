@@ -117,18 +117,18 @@ void Spline3::display() {
     // int len = vertsLength;
     glBegin(GL_LINE_STRIP);
     glColor3f(1, 1, 0);
-    //glVertex3d(controlPts[0].getX(), controlPts[0].getY(), controlPts[0].getZ());
-    //glVertex3d(tempVecs[0].getX(), tempVecs[0].getY(), tempVecs[0].getZ());
-    // std::cout << "controlPts[0] = " <<  controlPts[0] << std::endl;
+    //glVertex3d(controlPts.at(0).getX(), controlPts.at(0).getY(), controlPts.at(0).getZ());
+    //glVertex3d(tempVecs.at(0).getX(), tempVecs.at(0).getY(), tempVecs.at(0).getZ());
+    // std::cout << "controlPts.at(0) = " <<  controlPts.at(0) << std::endl;
     for (int i = 0; i < verts.size(); i++) {
-        //if (verts[i]) {
-        // std::cout <<" temp Vecs["<<i<<"] = " <<  tempVecs[i] << std::endl;
-        glVertex3d(verts[i].x, verts[i].y, verts[i].z);
-        //glVertex3d(tempVecs[i].getX(), tempVecs[i].getY(), tempVecs[i].getZ());
-        //  std::cout <<" TWO:: verts["<<i<<"] = " <<  verts[i] << std::endl;
+        //if (verts.at(i)) {
+        // std::cout <<" temp Vecs["<<i<<"] = " <<  tempVecs.at(i) << std::endl;
+        glVertex3d(verts.at(i).x, verts.at(i).y, verts.at(i).z);
+        //glVertex3d(tempVecs.at(i).getX(), tempVecs.at(i).getY(), tempVecs.at(i).getZ());
+        //  std::cout <<" TWO:: verts["<<i<<"] = " <<  verts.at(i) << std::endl;
         //}
-        if (/*verts[i] != null && */isCurveClosed && i == verts.size() - 1) {
-            glVertex3d(verts[0].x, verts[0].y, verts[0].z);
+        if (/*verts.at(i) != null && */isCurveClosed && i == verts.size() - 1) {
+            glVertex3d(verts.at(0).x, verts.at(0).y, verts.at(0).z);
         }
     }
     glEnd();
@@ -149,7 +149,7 @@ void Spline3::displayControlPts() {
             //vertRad = 2.5;
         }
         glPushMatrix();
-        glTranslatef(controlPts[i].x, controlPts[i].y, controlPts[i].z);
+        glTranslatef(controlPts.at(i).x, controlPts.at(i).y, controlPts.at(i).z);
         glRectd(-vertRad, -vertRad, vertRad * 2, vertRad * 2);
         glPopMatrix();
     }
@@ -166,7 +166,7 @@ void Spline3::displayInterpPts() {
     // draw points
     for (int i = 0; i < verts.size(); i++) {
         glPushMatrix();
-        glTranslatef(verts[i].x, verts[i].y, verts[i].z);
+        glTranslatef(verts.at(i).x, verts.at(i).y, verts.at(i).z);
         glRectd(-vertRad * .5, -vertRad * .5, vertRad, vertRad);
         glPopMatrix();
     }
@@ -178,7 +178,7 @@ void Spline3::displayInterpPts() {
  */
 void Spline3::displayFrenetFrames(float len) {
     for (int i = 0; i < verts.size(); i++) {
-        frenetFrames[i].display(len);
+        frenetFrames.at(i).display(len);
     }
 }
 
@@ -196,9 +196,9 @@ void Spline3::drawCrossSections() {
             float x = cos(th)*10;
             float y = sin(th)*10;
             float z = 0;
-            float px = verts[i + 1].x + x * frenetFrames[i].getN().x + y * frenetFrames[i].getB().x;
-            float py = verts[i + 1].y + x * frenetFrames[i].getN().y + y * frenetFrames[i].getB().y;
-            float pz = verts[i + 1].z + x * frenetFrames[i].getN().z + y * frenetFrames[i].getB().z;
+            float px = verts.at(i+1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
+            float py = verts.at(i+1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
+            float pz = verts.at(i+1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
             glVertex3f(px, py, pz);
             th += M_PI * 2.0 / 6.0;
         }
@@ -214,9 +214,9 @@ void Spline3::drawCrossSections() {
             float x = cos(th)*10;
             float y = sin(th)*10;
             float z = 0;
-            float px = verts[i + 1].x + x * frenetFrames[i].getN().x + y * frenetFrames[i].getB().x;
-            float py = verts[i + 1].y + x * frenetFrames[i].getN().y + y * frenetFrames[i].getB().y;
-            float pz = verts[i + 1].z + x * frenetFrames[i].getN().z + y * frenetFrames[i].getB().z;
+            float px = verts.at(i+1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
+            float py = verts.at(i+1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
+            float pz = verts.at(i+1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
             glColor3f(0, 1 - 1 / (j + 1), 1 / (j + 1));
             glVertex3f(px, py, pz);
             th += M_PI * 2 / 6;
@@ -252,7 +252,7 @@ void Spline3::parallelTransport() {
     //verts.insert(verts.begin(), verts.at(0));
     //verts.push_back(verts.at(verts.size() - 1));
 
-    //frenetFrames.push_back(FrenetFrame(verts[0], Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
+    //frenetFrames.push_back(FrenetFrame(verts.at(0), Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
     std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
     std::vector<Vector3> tans;
     float theta;
@@ -263,16 +263,16 @@ void Spline3::parallelTransport() {
     for (int i = 1; i < verts.size()-1; i++) {
         if (i == 0) {
             cp0 = verts[verts.size()-1];
-            cp1 = verts[i];
-            cp2 = verts[i + 1];
+            cp1 = verts.at(i);
+            cp2 = verts.at(i+1);
         } else if (i == verts.size() - 1) {
-            cp0 = verts[i - 1];
-            cp1 = verts[i];
-            cp2 = verts[0];
+            cp0 = verts.at(i-1);
+            cp1 = verts.at(i);
+            cp2 = verts.at(0);
         } else {
-            cp0 = verts[i - 1];
-            cp1 = verts[i];
-            cp2 = verts[i + 1];
+            cp0 = verts.at(i-1);
+            cp1 = verts.at(i);
+            cp2 = verts.at(i+1);
         }
         // fill tangents
         tan = cp2 - cp0;
@@ -310,7 +310,7 @@ void Spline3::parallelTransport() {
 
         //biNorm.normalize();
         //norm.normalize();
-        frenetFrames.push_back(FrenetFrame(verts[i], tans.at(i), biNorm, norm));
+        frenetFrames.push_back(FrenetFrame(verts.at(i), tans.at(i), biNorm, norm));
         norm = nextNorm;
         biNorm = nextBiNorm;
     }

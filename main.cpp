@@ -48,7 +48,7 @@ int main() {
     initGL();
 
     setLights();
-    
+
     // about GL internal matrices
     // GL_MODELVIEW matrix is for position of camera - inverse of object transformations
     // GL_PROJECTIOIN matrix may be thought of as lens component of camera - 3d to 2d mapping
@@ -81,14 +81,14 @@ int main() {
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
 
-    
+
     // test spline curve
     srand(time(NULL));
     std::vector<Vector3> cps;
     int controlPts = 30;
     float x, y, z = 5;
     float t = 0;
-    for (int i = 0; i <controlPts; i++) {
+    for (int i = 0; i < controlPts; i++) {
         //rand() % 100;  // v1 in the range 0 to 99
         x = -1 + rand() % 3; // (-5 to 5)
         y = -1 + rand() % 3; // (-5 to 5)
@@ -100,7 +100,7 @@ int main() {
         //y = sin(t)*2;
         //z=0;
         cps.push_back(Vector3(x, y, z));
-        t += M_PI*2/(controlPts);
+        t += M_PI * 2 / (controlPts);
     }
 
     // for testing
@@ -109,15 +109,32 @@ int main() {
     cps.push_back(Vector3(0, 0, -2.2));
     cps.push_back(Vector3(2.0, 0, -2.2));
     cps.push_back(Vector3(4.0, 0, -2.2));*/
-    float radii[630];
-    double theta2 = 0.0;
-    for(int i=0; i<630; i++){
-        radii[i] = .09 + sin(theta2)*.06;
-        std::cout << " radii[i] = " <<  radii[i] << std::endl;
-        theta2 += M_PI/5.0;
+    int interpDetail = 20;
+    float smoothness = .8;
+    Spline3 spline(cps, interpDetail, false, smoothness);
+
+    int totalSegCount = (controlPts - 1) * interpDetail + controlPts;
+    std::vector<float> radii;
+    radii.resize(totalSegCount);
+    std::vector< Color4<float> > cols;
+    cols.resize(totalSegCount);
+   
+    
+    for (int i = 0; i < totalSegCount; i++) {
+        // mult radii
+        static double theta2 = 0.0;
+        radii.at(i) = .15 + sin(theta2)*.09;
+        //std::cout << " radii.at(i) = " << radii.at(i) << std::endl;
+        theta2 += M_PI / 5.0;
+        
+        // mult colors
+        static float r = 0.0, a = 1.0;
+        static float nudger = 1.0/totalSegCount;
+        cols.at(i) = Color4<float>(r+=nudger, .4, .2, a-=nudger);
     }
-    Spline3 spline(cps, 20, false, .8);
-    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
+
+    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
+    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
 
     // run the main loop
