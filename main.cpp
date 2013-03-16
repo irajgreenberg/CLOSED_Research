@@ -7,7 +7,7 @@
 #include "Protobyte/Spline3.h"
 #include "Protobyte/Tube.h"
 #include <ctime> 
-
+#include "Protobyte/Math.h"
 
 
 
@@ -69,21 +69,23 @@ int main() {
     glLoadIdentity();
     //glTranslatef(20, 20, 220);
 
+    // enable random vals
+    srand(time(0)); // should only be called once (called 1 x per second)
+
     // print out current state of MODELVIEW and PROJECTION matrices
     printMatrices();
 
-    Toroid toroid(Vector3(0, 0, -250), Vector3(100, 180, 0),
-            Dimension3<float>(20, 20, 20), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .5);
+    Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .3), 56, 56, .8, .2);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
-            Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, 1.0), 56, 56, .3);
+            Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
 
     Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
             Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
 
-
     // test spline curve
-    srand(time(NULL));
+
     std::vector<Vector3> cps;
     int controlPts = 30;
     float x, y, z = 5;
@@ -118,23 +120,76 @@ int main() {
     radii.resize(totalSegCount);
     std::vector< Color4<float> > cols;
     cols.resize(totalSegCount);
-   
-    
+
+
     for (int i = 0; i < totalSegCount; i++) {
         // mult radii
         static double theta2 = 0.0;
         radii.at(i) = .15 + sin(theta2)*.09;
         //std::cout << " radii.at(i) = " << radii.at(i) << std::endl;
         theta2 += M_PI / 5.0;
-        
+
         // mult colors
-        static float r = 0.0, a = 1.0;
-        static float nudger = 1.0/totalSegCount;
-        cols.at(i) = Color4<float>(r+=nudger, .4, .2, a-=nudger);
+        static float r = 0.0, g = 0.0, b = 0.0, a = 1.0;
+        static float nudger = 1.0 / totalSegCount;
+        cols.at(i) = Color4<float>(r += nudger, g += nudger, b += nudger, a);
     }
 
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
-    Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
+    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
+
+    // tube around toroid
+    interpDetail = 4;
+    smoothness = .55;
+    std::vector<Vector3> cps2;
+    int segs = 400;
+
+
+    //int loops = 4;
+    cps2.resize(segs);
+    float xx, yy, zz = .1;
+
+    float tempX, tempZ;
+    for (int i = 0; i < segs; i++) {
+        static float theta = 0.0, phi = 0.0;
+        xx = .8 - .02 + cos(theta)*.33;
+        yy = sin(theta)*.31;
+        theta += M_PI / 1.95;
+
+
+        tempZ = cos(phi) * zz - sin(phi) * xx;
+        tempX = sin(phi) * zz + cos(phi) * xx;
+        cps2.at(i) = Vector3(tempX, yy, tempZ);
+
+        //phi += (-2+rand() % 5)*M_PI/360;
+        phi += M_PI / proto::Math::random(2.0, 50.0);
+        // zz += .2 / segs;
+
+    }
+
+    totalSegCount = (segs - 1) * interpDetail + segs;
+    radii.clear();
+    radii.resize(totalSegCount);
+    cols.clear();
+    cols.resize(totalSegCount);
+    
+    for (int i = 0; i < totalSegCount; i++) {
+        // mult radii
+        static double theta2 = 0.0;
+        radii.at(i) = .02 + sin(theta2)*.005;
+        //std::cout << " radii.at(i) = " << radii.at(i) << std::endl;
+        theta2 += M_PI / 5.0;
+
+        // mult colors
+        static float r = 0.0, g = 0.0, b = 0.0, a = 1.0;
+        static float nudger = 1.0 / totalSegCount;
+        cols.at(i) = Color4<float>(r += nudger, g += nudger, b += nudger, a);
+    }
+    /*Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+           Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
+
+    Spline3 spline2(cps2, interpDetail, false, smoothness);
+    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 8);
 
 
     // run the main loop
@@ -192,11 +247,12 @@ int main() {
         //glLoadMatrixf(newM); // update modelview // turned this off
          */
 
-        toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
-        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
+         tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
-        tube.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+       
 
 
         //glPushMatrix();
@@ -271,7 +327,7 @@ void initGL() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_NORMALIZE); //  good for uniform scaling
 
-    glClearColor(.1, .1, .2, 0); // background color
+    glClearColor(1, 1, 1, 1); // background color
     glClearStencil(0); // clear stencil buffer
     glClearDepth(1.0f); // 0 is near, 1 is far
     glDepthFunc(GL_LEQUAL);

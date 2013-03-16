@@ -18,6 +18,7 @@
       <itemPath>Protobyte/GeomBase.cpp</itemPath>
       <itemPath>Protobyte/GeomBase.h</itemPath>
       <itemPath>Protobyte/IGConstants.h</itemPath>
+      <itemPath>Protobyte/Math.h</itemPath>
       <itemPath>Protobyte/Matrix3.cpp</itemPath>
       <itemPath>Protobyte/Matrix3.h</itemPath>
       <itemPath>Protobyte/Matrix4.cpp</itemPath>

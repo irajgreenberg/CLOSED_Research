@@ -11,8 +11,9 @@
 //Toroid::Toroid() {
 //}
 
-Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius) :
-GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius) {
+Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
+                int ringCount, int ringDetail, float ringRadius, float ringThickness):
+GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
 
     init();
 }
@@ -27,8 +28,8 @@ void Toroid::calcVerts() {
         // START CALCULATE VERTICES
         for (int j = 0; j < ringDetail; j++) {
             // 1.  Z rotation for inital ring
-            x = float(ringRadius * 4 + (cos(theta) - sin(theta)) * ringRadius);
-            y = float((sin(theta) + cos(theta)) * ringRadius);
+            x = float(ringRadius + (cos(theta) - sin(theta)) * ringThickness);
+            y = float((sin(theta) + cos(theta)) * ringThickness);
             z = 0;
 
             // 2.  y rotation to place rings

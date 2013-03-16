@@ -33,7 +33,7 @@ Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
  */
 void Spline3::init() {
     for (int i = 0; i < controlPts.size(); i++) {
-        std::cout << "pre: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
+        //std::cout << "pre: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
     }
 
 
@@ -55,7 +55,7 @@ void Spline3::init() {
      */
 
     for (int i = 0; i < controlPts.size(); i++) {
-        std::cout << "Post: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
+        //std::cout << "Post: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
     }
 
     Vector3 v0, v1, v2, v3;
@@ -253,7 +253,7 @@ void Spline3::parallelTransport() {
     //verts.push_back(verts.at(verts.size() - 1));
 
     //frenetFrames.push_back(FrenetFrame(verts.at(0), Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
-    std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
+   // std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
     std::vector<Vector3> tans;
     float theta;
     Vector3 cp0, cp1, cp2;
@@ -290,10 +290,10 @@ void Spline3::parallelTransport() {
     }
     // rotate frame
 
-    std::cout << "tans.size() = " << tans.size() << std::endl;
+  //  std::cout << "tans.size() = " << tans.size() << std::endl;
     for (int i = 0; i < tans.size() - 1; i++) {
         if (biNorm.mag() == 0) {
-            std::cout << "in HERE " << std::endl;
+          //  std::cout << "in HERE " << std::endl;
             nextNorm = norm;
         } else {
             theta = acos(tans.at(i).dot(tans.at(i + 1)));
@@ -314,6 +314,6 @@ void Spline3::parallelTransport() {
         norm = nextNorm;
         biNorm = nextBiNorm;
     }
-    std::cout << "in createFrenetFrame():  frenetFrames.size() = " << frenetFrames.size() << std::endl;
+   // std::cout << "in createFrenetFrame():  frenetFrames.size() = " << frenetFrames.size() << std::endl;
 
 }
