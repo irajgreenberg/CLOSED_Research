@@ -8,6 +8,7 @@
 #include "Protobyte/Tube.h"
 #include <ctime> 
 #include "Protobyte/Math.h"
+#include "Protobyte/Shader.h"
 
 
 
@@ -25,6 +26,13 @@ void printMatrices();
 void setView(double fovY, double aspect, double zNear, double zFar);
 
 /**********************************
+ *             shaders               *
+ *********************************/
+Shader shader;
+void setShaders();
+
+
+/**********************************
  *           LIGHTING             *
  *********************************/
 // Light01
@@ -35,7 +43,7 @@ GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {70.0}; // max 128
+GLfloat light01_mat_shininess[] = {100.0}; // max 128
 
 void setLights();
 void initGL();
@@ -76,7 +84,7 @@ int main() {
     printMatrices();
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .3), 56, 56, .8, .2);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 80, 80, .87, .22);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
@@ -172,7 +180,7 @@ int main() {
     radii.resize(totalSegCount);
     cols.clear();
     cols.resize(totalSegCount);
-    
+
     for (int i = 0; i < totalSegCount; i++) {
         // mult radii
         static double theta2 = 0.0;
@@ -248,11 +256,13 @@ int main() {
          */
 
         //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
-         tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        shader.bind();
+        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
-       
+
 
 
         //glPushMatrix();
@@ -332,6 +342,17 @@ void initGL() {
     glClearDepth(1.0f); // 0 is near, 1 is far
     glDepthFunc(GL_LEQUAL);
 
+}
+
+//============================================================================
+// Set up shaders
+//============================================================================
+
+void setShaders() {
+    const char* vert = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.vert";
+    const char* frag = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.frag";
+    shader = Shader();
+    shader.init(vert, frag);
 }
 
 void printMatrices() {

@@ -23,6 +23,8 @@
       <itemPath>Protobyte/Matrix3.h</itemPath>
       <itemPath>Protobyte/Matrix4.cpp</itemPath>
       <itemPath>Protobyte/Matrix4.h</itemPath>
+      <itemPath>Protobyte/Shader.cpp</itemPath>
+      <itemPath>Protobyte/Shader.h</itemPath>
       <itemPath>Protobyte/Spline3.cpp</itemPath>
       <itemPath>Protobyte/Spline3.h</itemPath>
       <itemPath>Protobyte/Toroid.cpp</itemPath>
@@ -39,6 +41,8 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>shader.frag</itemPath>
+      <itemPath>shader.vert</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"

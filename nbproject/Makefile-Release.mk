@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Protobyte/Shader.o \
 	${OBJECTDIR}/Protobyte/Face3.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
@@ -72,6 +73,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/Protobyte/Shader.o: Protobyte/Shader.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Shader.o Protobyte/Shader.cpp
 
 ${OBJECTDIR}/Protobyte/Face3.o: Protobyte/Face3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

@@ -41,7 +41,7 @@ build/Debug/GNU-MacOSX/main.o: main.cpp \
   Protobyte/Tuple2.h Protobyte/Tuple3.h Protobyte/Dimension3.h \
   Protobyte/Matrix4.h Protobyte/Spline3.h Protobyte/Curve3.h \
   Protobyte/FrenetFrame.h Protobyte/Tube.h Protobyte/Spline3.h \
-  Protobyte/Math.h
+  Protobyte/Math.h Protobyte/Shader.h
 
 ../libSFML/dylibs/root/usr/local/include/SFML/Window.hpp:
 
@@ -148,3 +148,5 @@ Protobyte/Tube.h:
 Protobyte/Spline3.h:
 
 Protobyte/Math.h:
+
+Protobyte/Shader.h:
