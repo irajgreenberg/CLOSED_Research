@@ -176,15 +176,15 @@ void GeomBase::display(displayMode mode, renderMode render) {
     static float ry = .3;
     static float rz = .4;
     glPushMatrix();
-    glLoadIdentity();
+    //glLoadIdentity();
     glTranslatef(pos.x, pos.y, pos.z);
     glScalef(size.w, size.h, size.d);
     glRotatef(rot.x, 1, 0, 0); // x-axis
     glRotatef(rot.y, 0, 1, 0); // y-axis
     glRotatef(rot.z, 0, 0, 1); // z-axis
-    rot.x += rx;
+    /*rot.x += rx;
     rot.y += ry;
-    rot.z += rz;
+    rot.z += rz;*/
 
     //sortFaces(); 
     /* NOTE:: sorting here is not solving self-overlap highlighting with alpha

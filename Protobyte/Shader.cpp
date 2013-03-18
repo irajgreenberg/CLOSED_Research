@@ -44,13 +44,13 @@ void Shader::init(const char *vsFile, const char *fsFile) {
     //std::cout << "fsTextStr is" << fsTextStr.c_str() << std::endl;
 
     // convert sring to char*
-    char* vsText = new char[vsTextStr.size() + 1];
+   /* const GLchar* vsText = new char[vsTextStr.size() + 1];
     vsText[vsTextStr.size()] = 0;
     memcpy(vsText, vsTextStr.c_str(), vsTextStr.size());
 
-    char* fsText = new char[fsTextStr.size() + 1];
+    const GLchar* fsText = new char[fsTextStr.size() + 1];
     fsText[fsTextStr.size()] = 0;
-    memcpy(fsText, fsTextStr.c_str(), fsTextStr.size());
+    memcpy(fsText, fsTextStr.c_str(), fsTextStr.size());*/
 
 
     //const char* vsText = vsTextStr.c_str();
@@ -63,13 +63,13 @@ void Shader::init(const char *vsFile, const char *fsFile) {
     //std::cout << "vsText is" << vsText << std::endl;
 
 
-    if (vsText == NULL || fsText == NULL) {
+    /*if (vsText == NULL || fsText == NULL) {
         std::cerr << "Either vertex shader or fragment shader file not found." << std::endl;
         return;
-    }
+    }*/
 
-    glShaderSource(shader_vp, 1, &vsText, 0);
-    glShaderSource(shader_fp, 1, &fsText, 0);
+    glShaderSource(shader_vp, 1, (const GLchar**)&vsTextStr, 0);
+    glShaderSource(shader_fp, 1, (const GLchar**)&fsTextStr, 0);
 
     glCompileShader(shader_vp);
     glCompileShader(shader_fp);

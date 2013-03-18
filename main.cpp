@@ -36,14 +36,14 @@ void setShaders();
  *           LIGHTING             *
  *********************************/
 // Light01
-GLfloat light01_ambient[] = {0.1, 0.1, 0.1, 1.0};
-GLfloat light01_diffuse[] = {.1, .1, .1, 1.0};
+GLfloat light01_ambient[] = {0.0, 0.0, 0.0, 1.0};
+GLfloat light01_diffuse[] = {.7, .2, .2, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
+GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {128}; // max 128
+GLfloat light01_mat_shininess[] = {27}; // max 128
 
 void setLights();
 void initGL();
@@ -56,7 +56,7 @@ int main() {
     initGL();
 
     setLights();
-    
+
     setShaders();
 
     // about GL internal matrices
@@ -85,8 +85,8 @@ int main() {
     // print out current state of MODELVIEW and PROJECTION matrices
     printMatrices();
 
-    Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 60, 60, .87, .22);
+    Toroid toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .4), 10, 10, .87, .22);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
@@ -121,7 +121,7 @@ int main() {
     cps.push_back(Vector3(0, 0, -2.2));
     cps.push_back(Vector3(2.0, 0, -2.2));
     cps.push_back(Vector3(4.0, 0, -2.2));*/
-    int interpDetail = 20;
+    int interpDetail = 3;
     float smoothness = .8;
     Spline3 spline(cps, interpDetail, false, smoothness);
 
@@ -149,10 +149,10 @@ int main() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 2;
+    interpDetail = 3;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 400;
+    int segs = 20/*400*/;
 
 
     //int loops = 4;
@@ -199,7 +199,7 @@ int main() {
            Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 20);
+    Tube tube2(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 5);
 
 
     // run the main loop
@@ -258,8 +258,32 @@ int main() {
          */
 
         //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
-        shader.bind();
+        /*gluLookAt(	
+        GLdouble  	eyeX,
+        GLdouble  	eyeY,
+        GLdouble  	eyeZ,
+        GLdouble  	centerX,
+        GLdouble  	centerY,
+        GLdouble  	centerZ,
+        GLdouble  	upX,
+        GLdouble  	upY,
+        GLdouble  	upZ);
+         */
+        static float val = 0, t1 = 0.0, t2 = 0.0;
+        glMatrixMode(GL_MODELVIEW);
+        glLoadIdentity();
+        gluLookAt(sin(t1)*80, 0, cos(t2)*80, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+        t1 += M_PI / 720.0;
+        t2 += M_PI / 720.0;
+        //std::cout<< "val = " << val << std::endl;
+        val++;
+        //glMatrixMode(GL_MODELVIEW);
+        //glLoadIdentity();
+        //glTranslatef(0, 0, val++);
         tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+
+        // use shader for toroid
+        shader.bind();
         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
@@ -351,11 +375,11 @@ void initGL() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.vert";
-    const char* frag = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.frag";
-     std::cout << "vert = " << &vert << std::endl;
-     std::cout << "frag = " << &frag << std::endl;
-     
+    const char* vert = "resources/shaders/shader.vert";
+    const char* frag = "resources/shaders/shader.frag";
+    std::cout << "vert = " << &vert << std::endl;
+    std::cout << "frag = " << &frag << std::endl;
+
     //shader = Shader();
     shader.init(vert, frag);
 }
