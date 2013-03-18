@@ -61,17 +61,7 @@ void GeomBase::init() {
 }*/
 
 void GeomBase::calcFaces() {
-    verts_p.clear();
-    // collect mem addresses from verts
-    for (int i = 0; i < verts.size(); i++) {
-       // verts_p.push_back(&verts.at(i));
-    }
-
-   /* for (int i = 0; i < inds.size(); i++) {
-        faces.push_back(Face3(verts_p.at(inds.at(i).elem0), verts_p.at(inds.at(i).elem1),
-                verts_p.at(inds.at(i).elem2)));
-    }*/
-    
+   // pass vertex addresses
      for (int i = 0; i < inds.size(); i++) {
         faces.push_back(Face3(&verts.at(inds.at(i).elem0), &verts.at(inds.at(i).elem1),
                 &verts.at(inds.at(i).elem2)));
@@ -80,22 +70,8 @@ void GeomBase::calcFaces() {
 
 void GeomBase::calcVertexNorms() {
 
-    /*for (int i = 0; i < verts.size(); i++) {
-        Vector3 v;
-        //int counter = 0;
-        for (int j = 0; j < faces.size(); j++) {
-            if (verts_p.at(i) == faces.at(j)[0] || verts_p.at(i) == faces.at(j)[1] ||
-                    verts_p.at(i) == faces.at(j)[2]) {
-                v += faces.at(j).getNorm();
-            }
-        }
-        v.normalize();
-        verts_p.at(i)->setNormal(v);
-    }*/
-    
     for (int i = 0; i < verts.size(); i++) {
         Vector3 v;
-        //int counter = 0;
         for (int j = 0; j < faces.size(); j++) {
             if (&verts.at(i) == faces.at(j)[0] || &verts.at(i) == faces.at(j)[1] ||
                     &verts.at(i) == faces.at(j)[2]) {
@@ -128,34 +104,6 @@ void GeomBase::sortFaces() {
 void GeomBase::calcPrimitives() {
 
     for (int i = 0; i < verts.size(); i++) {
-        // fill individual primitive arrays
-        /*vertPrims.push_back(verts_p.at(i)->pos.x);
-        vertPrims.push_back(verts_p.at(i)->pos.y);
-        vertPrims.push_back(verts_p.at(i)->pos.z);
-
-        normPrims.push_back(verts_p.at(i)->getNormal().x);
-        normPrims.push_back(verts_p.at(i)->getNormal().y);
-        normPrims.push_back(verts_p.at(i)->getNormal().z);
-
-        colorPrims.push_back(verts_p.at(i)->getColor().getR());
-        colorPrims.push_back(verts_p.at(i)->getColor().getG());
-        colorPrims.push_back(verts_p.at(i)->getColor().getB());
-        colorPrims.push_back(verts_p.at(i)->getColor().getA());
-
-
-        // fill interleaved primitive arrays
-        interleavedPrims.push_back(verts_p.at(i)->pos.x);
-        interleavedPrims.push_back(verts_p.at(i)->pos.y);
-        interleavedPrims.push_back(verts_p.at(i)->pos.z);
-
-        interleavedPrims.push_back(verts_p.at(i)->getNormal().x);
-        interleavedPrims.push_back(verts_p.at(i)->getNormal().y);
-        interleavedPrims.push_back(verts_p.at(i)->getNormal().z);
-
-        interleavedPrims.push_back(verts_p.at(i)->getColor().getR());
-        interleavedPrims.push_back(verts_p.at(i)->getColor().getG());
-        interleavedPrims.push_back(verts_p.at(i)->getColor().getB());
-        interleavedPrims.push_back(verts_p.at(i)->getColor().getA());*/
         
         vertPrims.push_back(verts.at(i).pos.x);
         vertPrims.push_back(verts.at(i).pos.y);

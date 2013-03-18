@@ -36,14 +36,14 @@ void setShaders();
  *           LIGHTING             *
  *********************************/
 // Light01
-GLfloat light01_ambient[] = {0.3, 0.3, 0.3, 1.0};
-GLfloat light01_diffuse[] = {.6, .6, .8, 1.0};
+GLfloat light01_ambient[] = {0.1, 0.1, 0.1, 1.0};
+GLfloat light01_diffuse[] = {.1, .1, .1, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_position[] = {1.0, 1.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {100.0}; // max 128
+GLfloat light01_mat_shininess[] = {128}; // max 128
 
 void setLights();
 void initGL();
@@ -56,6 +56,8 @@ int main() {
     initGL();
 
     setLights();
+    
+    setShaders();
 
     // about GL internal matrices
     // GL_MODELVIEW matrix is for position of camera - inverse of object transformations
@@ -84,7 +86,7 @@ int main() {
     printMatrices();
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 80, 80, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 60, 60, .87, .22);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
@@ -147,7 +149,7 @@ int main() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 4;
+    interpDetail = 2;
     smoothness = .55;
     std::vector<Vector3> cps2;
     int segs = 400;
@@ -197,7 +199,7 @@ int main() {
            Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 8);
+    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 20);
 
 
     // run the main loop
@@ -351,7 +353,10 @@ void initGL() {
 void setShaders() {
     const char* vert = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.vert";
     const char* frag = "/Users/33993405/Dropbox/ira_dev/protobyte_research/shader.frag";
-    shader = Shader();
+     std::cout << "vert = " << &vert << std::endl;
+     std::cout << "frag = " << &frag << std::endl;
+     
+    //shader = Shader();
     shader.init(vert, frag);
 }
 
