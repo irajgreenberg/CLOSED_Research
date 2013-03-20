@@ -85,8 +85,8 @@ int main() {
     // print out current state of MODELVIEW and PROJECTION matrices
     printMatrices();
 
-    Toroid toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .4), 10, 10, .87, .22);
+    Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1), 50, 50, .87, .22);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
@@ -202,6 +202,23 @@ int main() {
     Tube tube2(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 5);
 
 
+
+    // TRACK
+    int trackLen = 30;
+    std::vector<Vector3> track;
+    track.resize(trackLen);
+
+    for (int i = 0; i < trackLen; i++) {
+        static float ttt = 0;
+        track.at(i) = Vector3(proto::Math::random(-50, 50), proto::Math::random(-50, 50), proto::Math::random(-250, -150));
+        ttt += M_PI * 2.0 / trackLen;
+    }
+    Spline3 splinePath(track, 150, false, .5);
+    std::vector<Vector3> path = splinePath.getVerts();
+    std::cout << "  path.size() = " << path.size() << std::endl;
+
+    // END TRACK
+
     // run the main loop
     bool running = true;
     while (running) {
@@ -272,7 +289,20 @@ int main() {
         static float val = 0, t1 = 0.0, t2 = 0.0;
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
-        gluLookAt(sin(t1)*80, 0, cos(t2)*80, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+
+
+
+
+        // gluLookAt(50, 0, -100, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+        static int ctr = 0;
+        if (ctr < path.size()) {
+            //glLoadIdentity();
+           // gluLookAt(path.at(ctr).x, path.at(ctr).y, path.at(ctr).z, 0, path.at(ctr).y, path.at(ctr).z+200, path.at(ctr).x, path.at(ctr).y, path.at(ctr).z);
+           // std::cout << "  path.at(ctr).x = " << path.at(ctr).x << std::endl;
+            ctr++;
+        } else {
+            ctr = 0;
+        }
         t1 += M_PI / 720.0;
         t2 += M_PI / 720.0;
         //std::cout<< "val = " << val << std::endl;
@@ -280,7 +310,7 @@ int main() {
         //glMatrixMode(GL_MODELVIEW);
         //glLoadIdentity();
         //glTranslatef(0, 0, val++);
-        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
         // use shader for toroid
         shader.bind();
