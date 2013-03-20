@@ -86,7 +86,7 @@ int main() {
     printMatrices();
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1), 50, 50, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .75), 30, 30, .87, .22);
 
     Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
             Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
@@ -149,10 +149,10 @@ int main() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 3;
+    interpDetail = 2;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 20/*400*/;
+    int segs = 400/*400*/;
 
 
     //int loops = 4;
@@ -199,7 +199,7 @@ int main() {
            Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    Tube tube2(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 5);
+    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 5);
 
 
 
@@ -297,8 +297,8 @@ int main() {
         static int ctr = 0;
         if (ctr < path.size()) {
             //glLoadIdentity();
-           // gluLookAt(path.at(ctr).x, path.at(ctr).y, path.at(ctr).z, 0, path.at(ctr).y, path.at(ctr).z+200, path.at(ctr).x, path.at(ctr).y, path.at(ctr).z);
-           // std::cout << "  path.at(ctr).x = " << path.at(ctr).x << std::endl;
+            // gluLookAt(path.at(ctr).x, path.at(ctr).y, path.at(ctr).z, 0, path.at(ctr).y, path.at(ctr).z+200, path.at(ctr).x, path.at(ctr).y, path.at(ctr).z);
+            // std::cout << "  path.at(ctr).x = " << path.at(ctr).x << std::endl;
             ctr++;
         } else {
             ctr = 0;
@@ -310,8 +310,9 @@ int main() {
         //glMatrixMode(GL_MODELVIEW);
         //glLoadIdentity();
         //glTranslatef(0, 0, val++);
-        //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
+
+        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
         // use shader for toroid
         shader.bind();
         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
