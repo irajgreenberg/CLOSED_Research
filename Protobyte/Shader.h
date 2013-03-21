@@ -44,7 +44,7 @@ public:
     void bind();
     void unbind();
 
-    unsigned int id();
+    unsigned int getID();
 
 private:
     char* vertCode, * fragCode;

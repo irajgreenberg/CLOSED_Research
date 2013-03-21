@@ -109,7 +109,7 @@ int main() {
         t += M_PI * 2 / (controlPts);
     }
 
-    int interpDetail = 3;
+    int interpDetail = 6;
     float smoothness = .8;
     Spline3 spline(cps, interpDetail, false, smoothness);
 
@@ -140,7 +140,7 @@ int main() {
     interpDetail = 6;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 400/*400*/;
+    int segs = 100/*400*/;
 
 
     //int loops = 4;
