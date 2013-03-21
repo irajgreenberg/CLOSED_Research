@@ -91,7 +91,7 @@ int main() {
     // test spline curve
 
     std::vector<Vector3> cps;
-    int controlPts = 30;
+    int controlPts = 10;
     float x, y, z = 5;
     float t = 0;
     for (int i = 0; i < controlPts; i++) {
@@ -109,7 +109,7 @@ int main() {
         t += M_PI * 2 / (controlPts);
     }
 
-    int interpDetail = 6;
+    int interpDetail = 2;
     float smoothness = .8;
     Spline3 spline(cps, interpDetail, false, smoothness);
 
@@ -137,7 +137,7 @@ int main() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 6;
+    interpDetail = 3;
     smoothness = .55;
     std::vector<Vector3> cps2;
     int segs = 100/*400*/;
@@ -221,7 +221,7 @@ int main() {
         setLights();
         // use shader for toroid
         //shader.bind();
-        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
         shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
 

@@ -11,6 +11,7 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>Protobyte</sourceRootElem>
+                <sourceRootElem>other_libs</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>
