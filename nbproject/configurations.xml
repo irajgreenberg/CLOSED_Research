@@ -27,6 +27,8 @@
       <itemPath>Protobyte/Shader.h</itemPath>
       <itemPath>Protobyte/Spline3.cpp</itemPath>
       <itemPath>Protobyte/Spline3.h</itemPath>
+      <itemPath>Protobyte/Tendril.cpp</itemPath>
+      <itemPath>Protobyte/Tendril.h</itemPath>
       <itemPath>Protobyte/Toroid.cpp</itemPath>
       <itemPath>Protobyte/Toroid.h</itemPath>
       <itemPath>Protobyte/Tube.cpp</itemPath>

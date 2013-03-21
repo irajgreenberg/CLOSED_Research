@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Protobyte/Tendril.o \
 	${OBJECTDIR}/Protobyte/Shader.o \
 	${OBJECTDIR}/Protobyte/Face3.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
@@ -107,6 +108,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: /System/Library/F
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research ${OBJECTFILES} ${LDLIBSOPTIONS} 
+
+${OBJECTDIR}/Protobyte/Tendril.o: Protobyte/Tendril.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -g -I../libSFML/dylibs/root/usr/local/include -I/System/Library/Frameworks/OpenGL.framework -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/System/Library/Frameworks/GLUT.framework -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tendril.o Protobyte/Tendril.cpp
 
 ${OBJECTDIR}/Protobyte/Shader.o: Protobyte/Shader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

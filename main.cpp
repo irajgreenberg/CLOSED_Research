@@ -43,7 +43,7 @@ GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {27}; // max 128
+GLfloat light01_mat_shininess[] = {95}; // max 128
 
 void setLights();
 void initGL();
@@ -82,18 +82,12 @@ int main() {
     // enable random vals
     srand(time(0)); // should only be called once (called 1 x per second)
 
-    // print out current state of MODELVIEW and PROJECTION matrices
-    printMatrices();
+    
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .75), 30, 30, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .65), 30, 30, .87, .22);
 
-    Toroid toroid2(Vector3(0, 0, -350), Vector3(100, 125, -240),
-            Dimension3<float>(8, 8, 8), Color4<float>(0.5, 0.5, 0.7, .3), 56, 56, .3);
-
-    Toroid toroid3(Vector3(0, 0, -100), Vector3(270, 125, -240),
-            Dimension3<float>(10, 10, 10), Color4<float>(0.7, 0.5, 0.7, 1.0), 24, 24, .8);
-
+  
     // test spline curve
 
     std::vector<Vector3> cps;
@@ -115,12 +109,6 @@ int main() {
         t += M_PI * 2 / (controlPts);
     }
 
-    // for testing
-    /*cps.push_back(Vector3(-4.0, 0, -2.2));
-    cps.push_back(Vector3(-2.0, 0, -2.2));
-    cps.push_back(Vector3(0, 0, -2.2));
-    cps.push_back(Vector3(2.0, 0, -2.2));
-    cps.push_back(Vector3(4.0, 0, -2.2));*/
     int interpDetail = 3;
     float smoothness = .8;
     Spline3 spline(cps, interpDetail, false, smoothness);
@@ -149,7 +137,7 @@ int main() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 2;
+    interpDetail = 6;
     smoothness = .55;
     std::vector<Vector3> cps2;
     int segs = 400/*400*/;
@@ -199,25 +187,7 @@ int main() {
            Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 5);
-
-
-
-    // TRACK
-    int trackLen = 30;
-    std::vector<Vector3> track;
-    track.resize(trackLen);
-
-    for (int i = 0; i < trackLen; i++) {
-        static float ttt = 0;
-        track.at(i) = Vector3(proto::Math::random(-50, 50), proto::Math::random(-50, 50), proto::Math::random(-250, -150));
-        ttt += M_PI * 2.0 / trackLen;
-    }
-    Spline3 splinePath(track, 150, false, .5);
-    std::vector<Vector3> path = splinePath.getVerts();
-    std::cout << "  path.size() = " << path.size() << std::endl;
-
-    // END TRACK
+    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
 
     // run the main loop
     bool running = true;
@@ -239,82 +209,18 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 
-
-        /*
-         * // manually set modelview matrix
-        // as example             
-        static float rotX = 0;
-        static float rotY = 0;
-        static float rotZ = 0;
-
-        float newM[16];
-        newM[0] = cos(rotY) * cos(rotZ);
-        newM[1] = cos(rotY) * sin(rotZ);
-        newM[2] = -sin(rotY);
-        newM[3] = 0;
-
-        newM[4] = -cos(rotX) * sin(rotZ) + sin(rotX) * sin(rotY) * cos(rotZ);
-        newM[5] = cos(rotX) * cos(rotZ) + sin(rotX) * sin(rotY) * sin(rotZ);
-        newM[6] = sin(rotX) * cos(rotY);
-        newM[7] = 0;
-
-        newM[8] = sin(rotX) * sin(rotZ) + cos(rotX) * sin(rotY) * cos(rotZ);
-        newM[9] = -sin(rotX) * cos(rotZ) + cos(rotX) * sin(rotY) * sin(rotZ);
-        newM[10] = cos(rotX) * cos(rotY);
-        newM[11] = 0;
-
-        newM[12] = 0;
-        newM[13] = 0;
-        newM[14] = 0;
-        newM[15] = 1;
-        rotX += M_PI / 180 * 3.2;
-        rotY += M_PI / 180 * 1.2;
-        rotZ += M_PI / 180 * 2.2;
-
-        //glLoadMatrixf(newM); // update modelview // turned this off
-         */
-
-        //toroid2.display(GeomBase::VERTEX_BUFFER_OBJECT); // draw opaque first 
-        /*gluLookAt(	
-        GLdouble  	eyeX,
-        GLdouble  	eyeY,
-        GLdouble  	eyeZ,
-        GLdouble  	centerX,
-        GLdouble  	centerY,
-        GLdouble  	centerZ,
-        GLdouble  	upX,
-        GLdouble  	upY,
-        GLdouble  	upZ);
-         */
-        static float val = 0, t1 = 0.0, t2 = 0.0;
-        glMatrixMode(GL_MODELVIEW);
-        glLoadIdentity();
-
-
-
-
-        // gluLookAt(50, 0, -100, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
-        static int ctr = 0;
-        if (ctr < path.size()) {
-            //glLoadIdentity();
-            // gluLookAt(path.at(ctr).x, path.at(ctr).y, path.at(ctr).z, 0, path.at(ctr).y, path.at(ctr).z+200, path.at(ctr).x, path.at(ctr).y, path.at(ctr).z);
-            // std::cout << "  path.at(ctr).x = " << path.at(ctr).x << std::endl;
-            ctr++;
-        } else {
-            ctr = 0;
-        }
-        t1 += M_PI / 720.0;
-        t2 += M_PI / 720.0;
-        //std::cout<< "val = " << val << std::endl;
-        val++;
-        //glMatrixMode(GL_MODELVIEW);
-        //glLoadIdentity();
-        //glTranslatef(0, 0, val++);
-
-
-        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        light01_diffuse[0] = 1.0;
+        light01_diffuse[1] = 1.0;
+        light01_diffuse[2] = 1.0;
+        setLights();
+         shader.bind();
+         tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        
+        light01_diffuse[1] = .2;
+        light01_diffuse[2] = .2;
+        setLights();
         // use shader for toroid
-        shader.bind();
+        //shader.bind();
         toroid.display(GeomBase::VERTEX_BUFFER_OBJECT);
         shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);

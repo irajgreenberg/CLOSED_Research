@@ -17,8 +17,8 @@ void main() {
     float diffuse_value = max(dot(vertex_normal, vertex_light_position), 0.0);
 
     // Set the output color of our current pixel
-    gl_FragColor = ambient_color + diffuse_color * diffuse_value + specular_color + gl_Color*.3;
+    gl_FragColor = ambient_color + diffuse_color * diffuse_value + specular_color + gl_Color;
     
     // set alpha 
-    gl_FragColor.a = 1.0;
+    gl_FragColor.a = gl_Color.aaaa;
 }
