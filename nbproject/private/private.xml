@@ -5,26 +5,4 @@
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Shader.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Shader.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/resources/shaders/shader.vert</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/resources/shaders/shader.frag</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Matrix4.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Curve3.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Matrix3.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Toroid.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/main.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Vertex.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/FrenetFrame.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/FrenetFrame.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Matrix4.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Spline3.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/GeomBase.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Vector3.cpp</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Vector3.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Curve3.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/GeomBase.h</file>
-        <file>file:/Users/ira/Dropbox/ira_dev/protobyte_research/Protobyte/Toroid.cpp</file>
-    </open-files>
 </project-private>
