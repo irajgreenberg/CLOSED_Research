@@ -82,12 +82,12 @@ int main() {
     // enable random vals
     srand(time(0)); // should only be called once (called 1 x per second)
 
-    
+
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
             Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .65), 30, 30, .87, .22);
 
-  
+
     // test spline curve
 
     std::vector<Vector3> cps;
@@ -213,9 +213,9 @@ int main() {
         light01_diffuse[1] = 1.0;
         light01_diffuse[2] = 1.0;
         setLights();
-         shader.bind();
-         tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-        
+        shader.bind();
+        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+
         light01_diffuse[1] = .2;
         light01_diffuse[2] = .2;
         setLights();

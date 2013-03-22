@@ -65,7 +65,6 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>Protobyte</Elem>
-    <Elem>other_libs</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -77,11 +76,62 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>other_libs/SFML/dylibs/root/usr/local/include</pElem>
-            <pElem>other_libs/GLUT/Headers</pElem>
-            <pElem>other_libs/OPENGL/Headers</pElem>
+            <pElem>../libSFML/dylibs/root/usr/local/include</pElem>
+            <pElem>/System/Library/Frameworks/GLUT.framework/Headers</pElem>
+            <pElem>/System/Library/Frameworks/OpenGL.framework/Headers</pElem>
           </incDir>
         </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>/System/Library/Frameworks/GLUT.framework/GLUT</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-audio.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-network.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-system.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>../libSFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include</pElem>
+            <pElem>other_libs/gl/Headers</pElem>
+            <pElem>other_libs/glut/Headers</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include/SFML/Audio</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include/SFML/Graphics</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include/SFML/Network</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include/SFML/System</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include/SFML/Window</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
@@ -99,30 +149,10 @@
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/OPENGL.framework/OpenGL</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/GLUT.framework/GLUT</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/gl/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/glut/GLUT</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
-      </compileType>
-    </conf>
-    <conf name="Release" type="1">
-      <toolsSet>
-        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
-        <compilerSet>default</compilerSet>
-      </toolsSet>
-      <compileType>
-        <cTool>
-          <developmentMode>5</developmentMode>
-        </cTool>
-        <ccTool>
-          <developmentMode>5</developmentMode>
-        </ccTool>
-        <fortranCompilerTool>
-          <developmentMode>5</developmentMode>
-        </fortranCompilerTool>
-        <asmTool>
-          <developmentMode>5</developmentMode>
-        </asmTool>
       </compileType>
     </conf>
   </confs>

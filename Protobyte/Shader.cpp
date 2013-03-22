@@ -40,6 +40,8 @@ void Shader::init(const char *vsFile, const char *fsFile) {
     std::string vsTextStr = fileRead(vsFile);
     std::string fsTextStr = fileRead(fsFile);
 
+    std::cout << "vsTextStr = " << vsTextStr << std::endl;
+    std::cout << "fsTextStr = " << fsTextStr << std::endl;
 
     glShaderSource(shader_vp, 1, (const GLchar**) &vsTextStr, 0);
     glShaderSource(shader_fp, 1, (const GLchar**) &fsTextStr, 0);
@@ -56,6 +58,21 @@ void Shader::init(const char *vsFile, const char *fsFile) {
     }*/
 
 
+    /*GLint status;
+    glGetProgramiv(shader_vp, GL_ACTIVE_UNIFORMS, &status);
+    if (status) {
+        std::cout << "yes it compiled!" << std::endl;
+    }
+
+    //std::cout << status << std::endl;
+
+    glGetProgramiv(shader_fp, GL_ACTIVE_UNIFORMS, &status);
+    if (status) {
+        std::cout << "yes it compiled!" << std::endl;
+    }*/
+
+
+
 
     shader_id = glCreateProgram();
 
@@ -64,12 +81,23 @@ void Shader::init(const char *vsFile, const char *fsFile) {
 
     glLinkProgram(shader_id);
 
+    //glUseProgram(shader_id);
+    
     // check linking 
-    GLint linked;
+    /*GLint linked;
     glGetProgramiv(shader_id, GL_LINK_STATUS, &linked);
+    std::cout << "linked = " << linked << std::endl;
     if (linked) {
-        std::cout << "Llinking ok" << std::endl;
-    }
+        std::cout << "Linking ok" << std::endl;
+    }*/
+    
+
+    /*int loglen;
+    char logbuffer[1000];
+    glGetShaderInfoLog(shader_id, sizeof(logbuffer), &loglen, logbuffer);
+    if (loglen > 0) {
+        std::cout<< "logBuffer = " << logbuffer << std::endl;
+    }*/
 }
 
 Shader::~Shader() {
