@@ -213,16 +213,15 @@ int main() {
         light01_diffuse[1] = 1.0;
         light01_diffuse[2] = 1.0;
         setLights();
-       // shader.bind();
-        //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        shader.bind();
+        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
         light01_diffuse[1] = .2;
         light01_diffuse[2] = .2;
         setLights();
-        // use shader for toroid
-        //shader.bind();
-        //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
-        //shader.unbind();
+
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+        shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
 
