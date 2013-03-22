@@ -77,30 +77,30 @@
       <compileType>
         <ccTool>
           <incDir>
-            <pElem>other_libs/libSFML/dylibs/root/usr/local/include</pElem>
-            <pElem>other_libs/GLUT.framework/Headers</pElem>
-            <pElem>other_libs/OpenGL.framework/Headers</pElem>
+            <pElem>other_libs/SFML/dylibs/root/usr/local/include</pElem>
+            <pElem>other_libs/GLUT/Headers</pElem>
+            <pElem>other_libs/OPENGL/Headers</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-audio.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-network.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-system.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/libSFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/GLUT.framework/GLUT</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/OpenGL.framework/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/OPENGL.framework/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
