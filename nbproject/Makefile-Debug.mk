@@ -65,15 +65,11 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=other_libs/GLUT.framework/GLUT other_libs/OPENGL.framework/OpenGL other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib
+LDLIBSOPTIONS=other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-graphics.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-network.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-system.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib other_libs/OPENGL.framework/OpenGL other_libs/GLUT.framework/GLUT
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/GLUT.framework/GLUT
-
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/OPENGL.framework/OpenGL
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib
 
@@ -104,6 +100,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/SFML/d
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/OPENGL.framework/OpenGL
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: other_libs/GLUT.framework/GLUT
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}

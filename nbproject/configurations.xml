@@ -84,8 +84,6 @@
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerLibFileItem>other_libs/GLUT.framework/GLUT</linkerLibFileItem>
-            <linkerLibFileItem>other_libs/OPENGL.framework/OpenGL</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.0.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.2.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-audio.dylib</linkerLibFileItem>
@@ -101,6 +99,8 @@
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.0.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.2.dylib</linkerLibFileItem>
             <linkerLibFileItem>other_libs/SFML/dylibs/root/usr/local/lib/libsfml-window.dylib</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/OPENGL.framework/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>other_libs/GLUT.framework/GLUT</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
