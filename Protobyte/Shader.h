@@ -20,7 +20,8 @@
 
 #include <stdlib.h>
 #include <string>
-#include <SFML/OpenGL.hpp>
+#include <OpenGL/gl.h>
+//#include <SFML/OpenGL.hpp>
 
 #if ( (defined(__MACH__)) && (defined(__APPLE__)) )   
 #else

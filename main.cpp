@@ -1,36 +1,49 @@
-#include <SFML/Window.hpp>
-#include <SFML/OpenGL.hpp>
+//#include <SFML/Window.hpp>
+//#include <SFML/OpenGL.hpp>
+
+#include <GLUT/glut.h>
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+
 #include <cmath>
 #include "Protobyte/Toroid.h"
 #include "Protobyte/Matrix4.h"
 #include <iomanip>
 #include "Protobyte/Spline3.h"
 #include "Protobyte/Tube.h"
-#include <ctime> 
+#include <ctime>
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
 
-
-
-
 /**********************************
- *           matrices             *
+ *           Window             *
  *********************************/
-GLfloat modelViewMatrix[16];
-GLfloat projectionMatrix[16];
-void printMatrices();
+
+struct glutWindow {
+    int x;
+    int y;
+    int w;
+    int h;
+    char* title;
+    float fovAngle;
+    float nearClipPlane;
+    float farClipPlane;
+};
+glutWindow win;
+
 
 /**********************************
  *             VIEW               *
  *********************************/
 void setView(double fovY, double aspect, double zNear, double zFar);
 
+
 /**********************************
  *             shaders               *
  *********************************/
 
- static Shader shader;
- void setShaders();
+static Shader shader;
+void setShaders();
 
 
 /**********************************
@@ -47,51 +60,18 @@ GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_mat_shininess[] = {95}; // max 128
 
 void setLights();
+
 void initGL();
+void setGeom();
 
-int main() {
-    // create the window
-    sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32));
-    window.setVerticalSyncEnabled(true);
+Toroid toroid;
+Tube tube2;
 
-    
-    initGL();
-
-    setLights();
-
-    
-
-    // about GL internal matrices
-    // GL_MODELVIEW matrix is for position of camera - inverse of object transformations
-    // GL_PROJECTIOIN matrix may be thought of as lens component of camera - 3d to 2d mapping
-
-
-    // make projection matrix active
-    glMatrixMode(GL_PROJECTION);
-    // set projection matrix to identity
-    glLoadIdentity();
-    // update projection matrix with perspective values
-    setView(75.0, window.getSize().x / (float) window.getSize().y, .1, 800);
-
-
-
-    // make Modelview matrix active
-    glMatrixMode(GL_MODELVIEW); // reload modelview matrix
-    //set ModelView Matrix to identity
-    glLoadIdentity();
-    //glTranslatef(20, 20, 220);
-
-    // enable random vals
-    srand(time(0)); // should only be called once (called 1 x per second)
-
-
-
-    Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 30, 30, .87, .22);
-
+void setGeom() {
+    toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .75), 30, 30, .87, .22);
 
     // test spline curve
-
     std::vector<Vector3> cps;
     int controlPts = 10;
     float x, y, z = 5;
@@ -185,93 +165,172 @@ int main() {
         static float nudger = 1.0 / totalSegCount;
         cols.at(i) = Color4<float>(r += nudger, g += nudger, b += nudger, a);
     }
-    /*Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-           Dimension3<float>(30, 30, 30), Color4<float>(0.7, 0.2, 0.1, .85), 56, 56, .8, .2);*/
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
-   
+    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
+}
+
+void init() {
+    
+    
+    initGL();
+    setLights();
+    srand(time(0)); // seed random, should only be called once
+    setGeom();
     setShaders();
-   
-   
-    // run the main loop
-    bool running = true;
-    while (running) {
-        // handle events
-        sf::Event event;
-        while (window.pollEvent(event)) {
-            if (event.type == sf::Event::Closed) {
-                // end the program
-                running = false;
-            } else if (event.type == sf::Event::Resized) {
+}
 
-                // adjust the viewport when the window is resized
-                glViewport(0, 0, event.size.width, event.size.height);
-            }
-        }
+void initGL() {
 
-        // clear buffers
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+    // make projection matrix active
+    glMatrixMode(GL_PROJECTION);
 
-        light01_diffuse[0] = 1.0;
-        light01_diffuse[1] = 1.0;
-        light01_diffuse[2] = 1.0;
-        setLights();
-        shader.bind();
-        tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    // set the viewport
+    glViewport(win.x, win.y, win.w, win.h);
 
-        light01_diffuse[1] = .2;
-        light01_diffuse[2] = .2;
-        setLights();
+    glMatrixMode(GL_PROJECTION);
 
-        toroid.display(GeomBase::IMMEDIATE, GeomBase::SURFACE);
-        shader.unbind();
-        //toroid3.display(GeomBase::DISPLAY_LIST);
+    // update projection matrix with perspective values
+    setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
 
+    // make Modelview matrix active
+    glMatrixMode(GL_MODELVIEW); // reload modelview matrix
+    //set ModelView Matrix to identity
+    glLoadIdentity();
 
+    glFrontFace(GL_CCW); // default
+    glEnable(GL_CULL_FACE);
+    //glCullFace(GL_BACK);
+    //glDisable(GL_CULL_FACE);
+    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
+    glShadeModel(GL_SMOOTH); // smooth by default
+    //glShadeModel(GL_FLAT); 
+    glEnable(GL_COLOR_MATERIAL); // incorporates per vertex color with lights
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glEnable(GL_BLEND);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_NORMALIZE); //  good for uniform scaling
 
-
-        //glPushMatrix();
-        //glLoadIdentity();
-        //glTranslatef(0, 0, -5);
-        glDisable(GL_LIGHTING);
-        glLineWidth(1.0f);
-        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        //spline.display();
-        //spline.displayControlPts();
-        //spline.displayInterpPts();
-        //glPopMatrix();
+    glClearColor(.2, 1, 1, 1); // background color
+    glClearStencil(0); // clear stencil buffer
+    glClearDepth(1.0f); // 0 is near, 1 is far
+    glDepthFunc(GL_LEQUAL);
+}
 
 
-        //spline.displayFrenetFrames(.2);
+// Called every time a window is resized to resize the projection matrix
+
+void reshape(int w, int h) {
+
+    // make projection matrix active
+    glMatrixMode(GL_PROJECTION);
+    
+    // set projection matrix to identity
+    glLoadIdentity();
+    
+    // update projection matrix with perspective values
+    setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
+
+    // Define a viewing transformation
+    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+
+    // make Modelview matrix active
+    glMatrixMode(GL_MODELVIEW);
+    
+    // set modelvioew matrix to identity
+    glLoadIdentity();
+
+}
 
 
+// animation loop
 
-        // put back fill state
-        glEnable(GL_LIGHTING);
-        glPolygonMode(GL_FRONT, GL_FILL);
+void display() {
+    // clear buffers
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    // make modelview matrix active
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+
+    // Define a viewing transformation
+    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+
+    // use different lighting on the different geometry
+    light01_diffuse[0] = 1.0;
+    light01_diffuse[1] = 1.0;
+    light01_diffuse[2] = 1.0;
+    setLights();
+    shader.bind();
+    tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+
+    light01_diffuse[1] = .2;
+    light01_diffuse[2] = .2;
+    setLights();
+
+    toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+    shader.unbind();
+    
+    // required by glut
+    glutSwapBuffers();
+}
+
+int main(int argc, char **argv) {
+
+     // set window values
+    win.x = 0;
+    win.y = 0;
+    win.w = 1280;
+    win.h = 800;
+    win.title = "Protobyte Glut Project";
+    win.fovAngle = 65;
+    win.nearClipPlane = .1f;
+    win.farClipPlane = 50000.0f;
+    
+    // set up GLUT
+
+    glutInit(&argc, argv); // Initializes glut
+
+    // Sets up a double buffer with RGBA components and a depth component
+    glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH | GLUT_RGBA);
+
+    // Sets the window position to the upper left
+    glutInitWindowPosition(win.x, win.y);
+
+    // Sets the window size to 512*512 square pixels
+    glutInitWindowSize(win.w, win.h);
 
 
-        // end the current frame (internally swaps the front and back buffers)
-        window.display();
-    }
+    // Creates a window using internal glut functionality
+    glutCreateWindow(win.title);
 
-    // release resources...
+    // passes reshape and display functions to the OpenGL machine for callback
+    glutReshapeFunc(reshape);
+    glutDisplayFunc(display); //call display
+    glutIdleFunc(display); // start animation
+
+    init();
+
+    // Starts the program.
+    glutMainLoop();
+
+    // release any resources...
 
     return 0;
 }
 
+
+
+
+
+
+
 // function from nehe.gamedev.net (http://nehe.gamedev.net/article/replacement_for_gluperspective/21002/)
 
-void setView(double fovY, double aspect, double zNear, double zFar) {
-    const double pi = 3.1415926535897932384626433832795;
-    double fW, fH;
-    //Formula below corrected by Carsten Jurenz: 
-    //fH = tan( (fovY / 2) / 180 * pi ) * zNear reduces to
-    fH = tan(fovY / 360 * pi) * zNear;
-    fW = fH * aspect;
-    glFrustum(-fW, fW, -fH, fH, zNear, zFar);
-    //gluPerspective(fovY, aspect, zNear, zFar);
+void setView(double fovAngle, double aspect, double nearClipPlane, double farClipPlane) {
+    glLoadIdentity();
+    // set up a perspective projection matrix
+    gluPerspective(fovAngle, aspect, nearClipPlane, farClipPlane);
 }
 
 void setLights() {
@@ -289,26 +348,6 @@ void setLights() {
     glEnable(GL_LIGHT0);
 }
 
-void initGL() {
-    glFrontFace(GL_CCW); // default
-    glEnable(GL_CULL_FACE);
-    //glCullFace(GL_BACK);
-    //glDisable(GL_CULL_FACE);
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
-    glShadeModel(GL_SMOOTH); // smooth by default
-    //glShadeModel(GL_FLAT); 
-    glEnable(GL_COLOR_MATERIAL); // incorporates per vertex color with lights
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    glEnable(GL_BLEND);
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_NORMALIZE); //  good for uniform scaling
-
-    glClearColor(1, 1, 1, 1); // background color
-    glClearStencil(0); // clear stencil buffer
-    glClearDepth(1.0f); // 0 is near, 1 is far
-    glDepthFunc(GL_LEQUAL);
-
-}
 
 //============================================================================
 // Set up shaders
@@ -321,43 +360,4 @@ void setShaders() {
     //std::cout << "frag = " << &frag << std::endl;
 
     shader.init(vert, frag);
-}
-
-void printMatrices() {
-
-    glGetFloatv(GL_MODELVIEW_MATRIX, modelViewMatrix);
-    std::cout << "size of modelViewMatrix = " << sizeof (modelViewMatrix) << std::endl;
-    transpose(modelViewMatrix);
-    std::cout << "\n  ==================GL_MODELVIEW MATRIX==================" << "\n";
-    for (int i = 0; i < 16; i++) {
-        if (i % 4 == 0 && i != 0) {
-            std::cout << " |  \n |  ";
-        }
-        if (i == 0) {
-            std::cout << " |  ";
-        }
-        std::cout << std::setw(12) << modelViewMatrix[i] << " ";
-        if (i == 15) {
-            std::cout << " |  ";
-        }
-    }
-    std::cout << "\n  =======================================================" << "\n";
-
-
-    glGetFloatv(GL_PROJECTION_MATRIX, projectionMatrix);
-    //inverse(projectionMatrix);
-    std::cout << "\n  ==================GL_PROJECTION MATRIX=================" << "\n";
-    for (int i = 0; i < 16; i++) {
-        if (i % 4 == 0 && i != 0) {
-            std::cout << " |  \n |  ";
-        }
-        if (i == 0) {
-            std::cout << " |  ";
-        }
-        std::cout << std::setw(12) << projectionMatrix[i] << " ";
-        if (i == 15) {
-            std::cout << " |  ";
-        }
-    }
-    std::cout << "\n  =======================================================" << "\n";
 }

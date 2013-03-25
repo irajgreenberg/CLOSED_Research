@@ -11,6 +11,7 @@
 
 #include <vector>
 #include "Vertex.h"
+#include <OpenGL/gl.h>
 #include "Vector3.h"
 #include <cmath>
 #include <iostream>

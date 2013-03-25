@@ -8,9 +8,7 @@
 
 #include "GeomBase.h"
 
-//GeomBase::GeomBase() {
-
-//}
+GeomBase::GeomBase() {}
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4):
 pos(pos), rot(rot), size(size), col4(col4) {
@@ -22,7 +20,7 @@ pos(pos), rot(rot), size(size), col4s(col4s) {
 }
 
 GeomBase::~GeomBase() {
-    glDeleteLists(displayListIndex, 1);
+   // glDeleteLists(displayListIndex, 1);
 }
 
 void GeomBase::init() {
@@ -172,9 +170,9 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
     }
     // hackity-hack - fix eventually
-    static float rx = .2;
-    static float ry = .3;
-    static float rz = .4;
+    static float rx = .002;
+    static float ry = .003;
+    static float rz = .004;
     glPushMatrix();
     //glLoadIdentity();
     glTranslatef(pos.x, pos.y, pos.z);

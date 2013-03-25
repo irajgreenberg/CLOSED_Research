@@ -11,6 +11,8 @@
 //Toroid::Toroid() {
 //}
 
+Toroid::Toroid() {}
+
 Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
                 int ringCount, int ringDetail, float ringRadius, float ringThickness):
 GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {

@@ -32,6 +32,8 @@ class Spline3 : public Curve3 {
     
 public:
 
+    Spline3();
+            
     Spline3(const std::vector<Vector3>& controlPts, int interpDetail, bool isCurveClosed, float smoothness);
 
 

@@ -21,6 +21,7 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const Tube& tube);
 
     //const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4
+    Tube();
     Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Spline3& path, float radius, int crossSectionDetail);
     Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Spline3& path, std::vector<float> radii, int crossSectionDetail); // varied thickness
     Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Spline3& path, float radius, int crossSectionDetail); // varied color 

@@ -15,6 +15,8 @@ std::ostream& operator<<(std::ostream& out, const Tube& tube) {
     return out;
 }
 
+Tube::Tube() { }
+
 Tube::Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Spline3& path, float radius, int crossSectionDetail) :
 GeomBase(pos, rot, size, col4), path(path), radius(radius), crossSectionDetail(crossSectionDetail) {
     // float t = 0;

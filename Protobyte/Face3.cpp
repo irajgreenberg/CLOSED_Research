@@ -7,7 +7,6 @@
 //
 
 #include "Face3.h"
-#include <SFML/OpenGL.hpp>
 
 
 // overloaded << operator for outputting field values in objects

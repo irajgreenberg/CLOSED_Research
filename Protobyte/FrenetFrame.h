@@ -9,7 +9,7 @@
 #ifndef Protobyte_iig001_FrenetFrame_h
 #define Protobyte_iig001_FrenetFrame_h
 
-#include <SFML/OpenGL.hpp>
+#include <OpenGL/gl.h>
 #include "Vector3.h"
 
 

@@ -9,7 +9,7 @@
 #ifndef __SFML_simple_renderer_06__GeomBase__
 #define __SFML_simple_renderer_06__GeomBase__
 
-#include <SFML/OpenGL.hpp>
+#include <OpenGL/gl.h>
 #include <iostream>
 #include <vector>
 #include "Vector3.h"
@@ -23,6 +23,7 @@
 
 class GeomBase {
 protected:
+    
     Vector3 pos, rot;
     Vector3 spd, rotSpd;
     Dimension3<float> size;
@@ -80,7 +81,8 @@ public:
         SURFACE
     };
 
-    // GeomBase();
+    GeomBase();
+    
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const Color4<float> col4);
 
