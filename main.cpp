@@ -1,12 +1,13 @@
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
+#include <GLUT/glut.h>
 #include <cmath>
 #include "Protobyte/Toroid.h"
 #include "Protobyte/Matrix4.h"
 #include <iomanip>
 #include "Protobyte/Spline3.h"
 #include "Protobyte/Tube.h"
-#include <ctime> 
+#include <ctime>
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
 
@@ -87,7 +88,7 @@ int main() {
 
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 30, 30, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .95), 30, 30, .87, .22);
 
 
     // test spline curve
@@ -224,7 +225,8 @@ int main() {
         light01_diffuse[2] = .2;
         setLights();
 
-        toroid.display(GeomBase::IMMEDIATE, GeomBase::SURFACE);
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+        
         shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
 

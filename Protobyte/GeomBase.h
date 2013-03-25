@@ -40,6 +40,7 @@ protected:
 
     // composite guts
     std::vector<Vertex> verts;
+    std::vector<Vertex*> verts_ptrs;
     std::vector<Face3> faces;
     std::vector< Tuple3<int> > inds;
 
