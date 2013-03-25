@@ -13,8 +13,10 @@
 class Toroid : public GeomBase {
 public:
 
-    explicit Toroid(const Vector3& pos = Vector3(0,0,0), const Vector3& rot = Vector3(0,0,0), const Dimension3<float>& size = Dimension3<float>(1, 1, 1),
-            const Color4<float>& col4 = Color4<float>(1, 1, 1, 1), int ringCount = 12, int ringDetail = 12, float ringRadius = .5, float ringThickness = .1);
+    Toroid();
+    
+    Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
+            const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius, float ringThickness);
 
     // get/sets inlined below class
     void setRingThickness(float ringThickness);

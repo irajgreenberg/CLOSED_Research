@@ -21,7 +21,7 @@
  * <p>
  */
 
-
+Spline3::Spline3() { }
 
 Spline3::Spline3(const std::vector<Vector3>& controlPts, int interpDetail, bool isCurveClosed, float smoothness) :
 Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {

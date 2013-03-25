@@ -12,6 +12,8 @@
 //using namespace ijg;
 
 //
+Curve3::Curve3() { }
+
 
 Curve3::Curve3(const std::vector<Vector3>& controlPts,int interpDetail, bool isCurveClosed):
 controlPts(controlPts), interpDetail(interpDetail), isCurveClosed(isCurveClosed){

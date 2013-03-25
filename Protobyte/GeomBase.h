@@ -80,7 +80,8 @@ public:
         SURFACE
     };
 
-    // GeomBase();
+    GeomBase();
+    
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const Color4<float> col4);
 
