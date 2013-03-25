@@ -18,7 +18,6 @@
 #ifndef Protobyte_Library_V01_Shader_h
 #define Protobyte_Library_V01_Shader_h
 
-
 #include <stdlib.h>
 #include <string>
 #include <SFML/OpenGL.hpp>
@@ -32,29 +31,24 @@
 #endif
 
 class Shader {
+    
 public:
-    Shader();
-    Shader(const char *vsFile, const char *fsFile);
-    ~Shader();
-
-    std::string fileRead(const char *fileName);
-
+	Shader();
+	Shader(const char *vsFile, const char *fsFile);
+	~Shader();
+	
     void init(const char *vsFile, const char *fsFile);
-
-    void bind();
-    void unbind();
-
-    unsigned int getID();
-
+    
+	void bind();
+	void unbind();
+	
+	unsigned int id();
+	
 private:
-    char* vertCode, * fragCode;
+	unsigned int shader_id;
+	unsigned int shader_vp;
+	unsigned int shader_fp;
     
-    FILE* vertFile, * fragFile;
-    
-    unsigned int shader_id;
-    unsigned int shader_vp;
-    unsigned int shader_fp;
-
 };
 
 

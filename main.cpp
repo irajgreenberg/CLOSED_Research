@@ -28,8 +28,9 @@ void setView(double fovY, double aspect, double zNear, double zFar);
 /**********************************
  *             shaders               *
  *********************************/
-Shader shader;
-void setShaders();
+
+ static Shader shader;
+ void setShaders();
 
 
 /**********************************
@@ -53,11 +54,12 @@ int main() {
     sf::Window window(sf::VideoMode(800, 600), "OpenGL", sf::Style::Default, sf::ContextSettings(32));
     window.setVerticalSyncEnabled(true);
 
+    
     initGL();
 
     setLights();
 
-    setShaders();
+    
 
     // about GL internal matrices
     // GL_MODELVIEW matrix is for position of camera - inverse of object transformations
@@ -85,7 +87,7 @@ int main() {
 
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .65), 30, 30, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, 1.0), 30, 30, .87, .22);
 
 
     // test spline curve
@@ -188,7 +190,10 @@ int main() {
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
     Tube tube2(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
-
+   
+    setShaders();
+   
+   
     // run the main loop
     bool running = true;
     while (running) {
@@ -208,7 +213,6 @@ int main() {
         // clear buffers
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
-
         light01_diffuse[0] = 1.0;
         light01_diffuse[1] = 1.0;
         light01_diffuse[2] = 1.0;
@@ -220,7 +224,7 @@ int main() {
         light01_diffuse[2] = .2;
         setLights();
 
-        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+        toroid.display(GeomBase::IMMEDIATE, GeomBase::SURFACE);
         shader.unbind();
         //toroid3.display(GeomBase::DISPLAY_LIST);
 
@@ -313,10 +317,9 @@ void initGL() {
 void setShaders() {
     const char* vert = "resources/shaders/shader.vert";
     const char* frag = "resources/shaders/shader.frag";
-    std::cout << "vert = " << &vert << std::endl;
-    std::cout << "frag = " << &frag << std::endl;
+    //std::cout << "vert = " << &vert << std::endl;
+    //std::cout << "frag = " << &frag << std::endl;
 
-    //shader = Shader();
     shader.init(vert, frag);
 }
 
