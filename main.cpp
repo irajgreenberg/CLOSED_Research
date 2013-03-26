@@ -33,6 +33,13 @@ glutWindow win;
 
 
 /**********************************
+ *      animation and timer       *
+ *********************************/
+int interframeDelay = 15;
+void animationLoop(int delay);
+
+
+/**********************************
  *             VIEW               *
  *********************************/
 void setView(double fovY, double aspect, double zNear, double zFar);
@@ -69,7 +76,7 @@ Tube tube2;
 
 void setGeom() {
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .75), 30, 30, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.2, 0.2, 0.8, 1.0), 60, 60, .87, .22);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -231,14 +238,15 @@ void reshape(int w, int h) {
     // update projection matrix with perspective values
     setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
 
-    // Define a viewing transformation
-    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 
     // make Modelview matrix active
     glMatrixMode(GL_MODELVIEW);
     
     // set modelvioew matrix to identity
     glLoadIdentity();
+    
+    // Define a viewing transformation
+    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 
 }
 
@@ -261,14 +269,14 @@ void display() {
     light01_diffuse[1] = 1.0;
     light01_diffuse[2] = 1.0;
     setLights();
+   
+    //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.bind();
-    tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
 
-    toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+    toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
     
     // required by glut
@@ -307,7 +315,7 @@ int main(int argc, char **argv) {
     // passes reshape and display functions to the OpenGL machine for callback
     glutReshapeFunc(reshape);
     glutDisplayFunc(display); //call display
-    glutIdleFunc(display); // start animation
+    glutTimerFunc(interframeDelay, animationLoop, 0); // start animation
 
     init();
 
@@ -320,15 +328,19 @@ int main(int argc, char **argv) {
 }
 
 
-
-
+// animation based on internal timer
+void animationLoop(int delay) 
+{
+   glutPostRedisplay();
+   glutTimerFunc(delay, animationLoop, 0);
+   return;
+}
 
 
 
 // function from nehe.gamedev.net (http://nehe.gamedev.net/article/replacement_for_gluperspective/21002/)
 
 void setView(double fovAngle, double aspect, double nearClipPlane, double farClipPlane) {
-    glLoadIdentity();
     // set up a perspective projection matrix
     gluPerspective(fovAngle, aspect, nearClipPlane, farClipPlane);
 }
@@ -354,10 +366,8 @@ void setLights() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/shader.vert";
-    const char* frag = "resources/shaders/shader.frag";
-    //std::cout << "vert = " << &vert << std::endl;
-    //std::cout << "frag = " << &frag << std::endl;
+    const char* vert = "resources/shaders/phong_shader.vert";
+    const char* frag = "resources/shaders/phong_shader.frag";
 
     shader.init(vert, frag);
 }

@@ -43,6 +43,9 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>resources/shaders/phong_shader.frag</itemPath>
+      <itemPath>resources/shaders/phong_shader.vert</itemPath>
+      <itemPath>resources/shaders/phong_shader_frag</itemPath>
       <itemPath>resources/shaders/shader.frag</itemPath>
       <itemPath>resources/shaders/shader.vert</itemPath>
     </logicalFolder>

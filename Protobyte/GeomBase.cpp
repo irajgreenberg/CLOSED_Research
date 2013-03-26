@@ -170,9 +170,9 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
     }
     // hackity-hack - fix eventually
-    static float rx = .002;
-    static float ry = .003;
-    static float rz = .004;
+    static float rx = .02;
+    static float ry = .03;
+    static float rz = .04;
     glPushMatrix();
     //glLoadIdentity();
     glTranslatef(pos.x, pos.y, pos.z);
