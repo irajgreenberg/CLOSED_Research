@@ -43,11 +43,6 @@ void main()
 	}
 	
 	gl_FrontColor = globalAmbient + NdotL*.5 * diffuse + ambient + specular + gl_Color*.5;
-	
-	gl_Position = ftransform();
-	
-	
-	
-	
-	
+        gl_Position = ftransform();
+
 } 

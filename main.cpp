@@ -64,7 +64,7 @@ GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {95}; // max 128
+GLfloat light01_mat_shininess[] = {128}; // max 128
 
 void setLights();
 
@@ -76,7 +76,7 @@ Tube tube2;
 
 void setGeom() {
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.2, 0.2, 0.8, 1.0), 60, 60, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .2), 60, 60, .87, .22);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -191,11 +191,10 @@ void initGL() {
 
     // make projection matrix active
     glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
 
     // set the viewport
     glViewport(win.x, win.y, win.w, win.h);
-
-    glMatrixMode(GL_PROJECTION);
 
     // update projection matrix with perspective values
     setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
@@ -270,12 +269,12 @@ void display() {
     light01_diffuse[2] = 1.0;
     setLights();
    
-    //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.bind();
+   // tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+   
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
-
     toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
     
