@@ -88,7 +88,7 @@ int main() {
 
 
     Toroid toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.8, 0.2, 0.1, .95), 30, 30, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.2, 0.2, 0.9, .95), 30, 30, .87, .22);
 
 
     // test spline curve
@@ -317,10 +317,8 @@ void initGL() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/shader.vert";
-    const char* frag = "resources/shaders/shader.frag";
-    //std::cout << "vert = " << &vert << std::endl;
-    //std::cout << "frag = " << &frag << std::endl;
+    const char* vert = "resources/shaders/phong_shader.vert";
+    const char* frag = "resources/shaders/phong_shader.frag";
 
     shader.init(vert, frag);
 }

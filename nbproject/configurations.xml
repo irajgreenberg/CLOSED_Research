@@ -31,10 +31,13 @@
       <itemPath>Protobyte/Tendril.h</itemPath>
       <itemPath>Protobyte/Toroid.cpp</itemPath>
       <itemPath>Protobyte/Toroid.h</itemPath>
+      <itemPath>Protobyte/Tree.cpp</itemPath>
+      <itemPath>Protobyte/Tree.h</itemPath>
       <itemPath>Protobyte/Tube.cpp</itemPath>
       <itemPath>Protobyte/Tube.h</itemPath>
       <itemPath>Protobyte/Tuple2.h</itemPath>
       <itemPath>Protobyte/Tuple3.h</itemPath>
+      <itemPath>Protobyte/Tuple6.h</itemPath>
       <itemPath>Protobyte/Vector3.cpp</itemPath>
       <itemPath>Protobyte/Vector3.h</itemPath>
       <itemPath>Protobyte/Vertex.cpp</itemPath>

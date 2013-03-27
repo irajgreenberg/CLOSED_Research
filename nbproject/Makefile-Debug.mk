@@ -44,11 +44,12 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
-	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
+	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
-	${OBJECTDIR}/Protobyte/FrenetFrame.o
+	${OBJECTDIR}/Protobyte/FrenetFrame.o \
+	${OBJECTDIR}/Protobyte/Tree.o
 
 
 # C Compiler Flags
@@ -154,15 +155,15 @@ ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix3.o Protobyte/Matrix3.cpp
 
-${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Protobyte
-	${RM} $@.d
-	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
-
 ${OBJECTDIR}/Protobyte/Matrix4.o: Protobyte/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix4.o Protobyte/Matrix4.cpp
+
+${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
 
 ${OBJECTDIR}/Protobyte/Vertex.o: Protobyte/Vertex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
@@ -178,6 +179,11 @@ ${OBJECTDIR}/Protobyte/FrenetFrame.o: Protobyte/FrenetFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
+
+${OBJECTDIR}/Protobyte/Tree.o: Protobyte/Tree.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -g -Iother_libs/gl/Headers -Iother_libs/glut/Headers -Iother_libs/SFML/dylibs/root/usr/local/include -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tree.o Protobyte/Tree.cpp
 
 # Subprojects
 .build-subprojects:
