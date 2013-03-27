@@ -30,8 +30,8 @@ public:
 
     /*!
      * Constructor */
-    Tree(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, 
-                int sproutLimit, const Tuple2<int>& subBranchCount, int branchDetail);
+    Tree(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4,
+            int sproutLimit, const Tuple2<int>& subBranchCount, int branchDetail);
 
     /*!
      * Destructor */
@@ -41,20 +41,22 @@ public:
      * Declared pure virtual in GeomBase base class
      * and must be implemented in all derived classes.
      * 
-     * Generates all vertices for tree.
-     * \param none
-     * \return none */
+     * Generates all vertices for tree.*/
     void calcVerts();
+
+    /*!
+     * Recursive function constructs tree.
+     * \params pos Position of new branch
+     * \params len Length of new branch*/
+    void buildTree(const Vector3& pos, float len);
 
     /*!
      * Declared pure virtual in GeomBase base class
      * and must be implemented in all derived classes: 
      * 
-     * Generates indices to group vertices to triangle faces.
-     * \params none
-     * \return void */
+     * Generates indices to group vertices to triangle faces.*/
     void calcInds();
-    
+
     /* Begin setters/getters, inlined below class */
     void setSproutTaperJitter(Tuple2<float> sproutTaperJitter);
     Tuple2<float> getSproutTaperJitter() const;
@@ -72,7 +74,11 @@ public:
     Tuple2<int> getSubBranchCount() const;
     void setSproutLimit(int sproutLimit);
     int getSproutLimit() const;
- 
+    void setBranchAttenuatorJitter(Tuple2<float> branchAttenuatorJitter);
+    Tuple2<float> getBranchAttenuatorJitter() const;
+    void setBranchAttenuator(float branchAttenuator);
+    float getBranchAttenuator() const;
+
 
 private:
     /*! Overall sprouting limit of tree
@@ -80,11 +86,11 @@ private:
     int sproutLimit;
 
     /*! Max/Min branch count per each new sprout.
-     * Default = 2 */
+     * Default = 3 */
     Tuple2<int> subBranchCount;
 
     /*! Number of points describing branches
-    * Default = 10 */
+     * Default = 10 */
     int branchDetail;
 
     /*! Vector of splines describing overall tree structure*/
@@ -101,6 +107,12 @@ private:
 
     /*! Max/Min factors to randomly perturb sprout taper */
     Tuple2<float> sproutTaperJitter;
+
+    /*! Factor attenuating successive branches */
+    float branchAttenuator;
+
+    /*! Max/Min factors to randomly perturb branch attenuations */
+    Tuple2<float> branchAttenuatorJitter;
 
 };
 
@@ -167,6 +179,22 @@ inline void Tree::setSproutLimit(int sproutLimit) {
 
 inline int Tree::getSproutLimit() const {
     return sproutLimit;
+}
+
+inline void Tree::setBranchAttenuatorJitter(Tuple2<float> branchAttenuatorJitter) {
+    this->branchAttenuatorJitter = branchAttenuatorJitter;
+}
+
+inline Tuple2<float> Tree::getBranchAttenuatorJitter() const {
+    return branchAttenuatorJitter;
+}
+
+inline void Tree::setBranchAttenuator(float branchAttenuator) {
+    this->branchAttenuator = branchAttenuator;
+}
+
+inline float Tree::getBranchAttenuator() const {
+    return branchAttenuator;
 }
 
 #endif	/* TREE_H */
