@@ -32,36 +32,36 @@ void GeomBase::init() {
     calcPrimitives();
     fillDisplayLists(); // just in case we want to render with display Lists: Data can't be changed though
 
- /*     if(glInfo.isExtensionSupported("GL_ARB_vertex_buffer_object"))
+ /*     if(glInfo.isExtensionSupported("GL_vertex_buffer_object"))
     {
         vboSupported = vboUsed = true;
-        std::cout << "Video card supports GL_ARB_vertex_buffer_object." << std::endl;
+        std::cout << "Video card supports GL_vertex_buffer_object." << std::endl;
     }
     else
     {
         vboSupported = vboUsed = false;
-        std::cout << "Video card does NOT support GL_ARB_vertex_buffer_object." << std::endl;
+        std::cout << "Video card does NOT support GL_vertex_buffer_object." << std::endl;
     }*/
     // generate vertex buffer objects
     // vector data - use GL_ARRAY_BUFFER
     //glGenBuffers(1, &vboID); // Create the buffer ID // OSX
    //glewInit();
-   glGenBuffersARB(1, &vboID); // Create the buffer ID
+   glGenBuffers(1, &vboID); // Create the buffer ID
     
 
 
-    glBindBufferARB(GL_ARRAY_BUFFER_ARB, vboID); // Bind the buffer (vertex array data)
+    glBindBuffer(GL_ARRAY_BUFFER, vboID); // Bind the buffer (vertex array data)
     int vertsDataSize = sizeof (float) *interleavedPrims.size();
-    glBufferDataARB(GL_ARRAY_BUFFER_ARB, vertsDataSize, NULL, GL_STATIC_DRAW); // allocate space
-    glBufferSubDataARB(GL_ARRAY_BUFFER_ARB, 0, vertsDataSize, &interleavedPrims[0]); // upload the data
+    glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STATIC_DRAW); // allocate space
+    glBufferSubData(GL_ARRAY_BUFFER, 0, vertsDataSize, &interleavedPrims[0]); // upload the data
     //glBufferData(GL_ARRAY_BUFFER, vertsDataSize, &interleavedPrims[0], GL_STATIC_DRAW); // allocate and upload
 
     //indices data - use GL_ELEMENT_ARRAY_BUFFER
-    glGenBuffersARB(1, &indexVBOID); // Generate buffer
-    glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, indexVBOID); // Bind the element array buffer
+    glGenBuffers(1, &indexVBOID); // Generate buffer
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indexVBOID); // Bind the element array buffer
     int indsDataSize = inds.size()*3 * sizeof (GL_UNSIGNED_INT);
-    glBufferDataARB(GL_ELEMENT_ARRAY_BUFFER_ARB, indsDataSize, NULL, GL_STATIC_DRAW_ARB); // allocate
-    glBufferSubDataARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0, indsDataSize, &indPrims[0]); // upload the data
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indsDataSize, NULL, GL_STATIC_DRAW); // allocate
+    glBufferSubData(GL_ELEMENT_ARRAY_BUFFER, 0, indsDataSize, &indPrims[0]); // upload the data
     //glBufferData(GL_ELEMENT_ARRAY_BUFFER, indsDataSize, &indPrims[0], GL_STATIC_DRAW); // allocate and upload
 
 }
@@ -209,8 +209,8 @@ void GeomBase::display(displayMode mode, renderMode render) {
 
         case VERTEX_ARRAY:
             // ensure data not bound to VBO
-            glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
-            glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0);
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
             
             // ensure Diaplsy list released 
             glDeleteLists(displayListIndex, 1);
@@ -234,8 +234,8 @@ void GeomBase::display(displayMode mode, renderMode render) {
 
         case VERTEX_ARRAY_INTERLEAVED:
              // ensure data not bound to VBO
-            glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
-            glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0);
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
             
             // ensure Diaplsy list released 
             glDeleteLists(displayListIndex, 1);
@@ -288,8 +288,8 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glDisableClientState(GL_VERTEX_ARRAY);
 
             // free pointers to data
-            glBindBufferARB(GL_ARRAY_BUFFER_ARB, 0);
-            glBindBufferARB(GL_ELEMENT_ARRAY_BUFFER_ARB, 0);
+            glBindBuffer(GL_ARRAY_BUFFER, 0);
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
             break;
 

@@ -28,6 +28,9 @@
   #include <GL/gl.h>
   #define GL_GLEXT_PROTOTYPES
   #include <GL/glext.h>
+#elif defined __APPLE__ || __MACH__
+  //#include <OpenGL/GLEW.h>
+  #include <OpenGL/gl.h>
 #endif
 
 

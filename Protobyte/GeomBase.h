@@ -75,7 +75,6 @@ protected:
 
     // VBO stuff
     GLuint vboID, indexVBOID;
-    ;
 
 
 

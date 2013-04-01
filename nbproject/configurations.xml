@@ -86,7 +86,7 @@
         </ccTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerOptionItem>-lGLEW -lglut -lGLU -lX11 -lpthread -lXxf86vm -lm</linkerOptionItem>
+            <linkerOptionItem>-lGLEW -lglut -lGLU</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -199,7 +199,7 @@
         </asmTool>
         <linkerTool>
           <linkerLibItems>
-            <linkerOptionItem>-lGLEW -lglut -lGL -lGLU -lX11 -lpthread -lXxf86vm -lm</linkerOptionItem>
+            <linkerOptionItem>-lGLEW -lglut -lGLU</linkerOptionItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

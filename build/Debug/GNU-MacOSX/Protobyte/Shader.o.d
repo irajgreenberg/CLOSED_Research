@@ -1,4 +1,4 @@
 build/Debug/GNU-MacOSX/Protobyte/Shader.o: Protobyte/Shader.cpp \
-  Protobyte/shader.h
+  Protobyte/Shader.h
 
-Protobyte/shader.h:
+Protobyte/Shader.h:
