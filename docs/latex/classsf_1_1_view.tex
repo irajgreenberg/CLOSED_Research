@@ -1,0 +1,492 @@
+\hypertarget{classsf_1_1_view}{\section{sf\-:\-:View Class Reference}
+\label{classsf_1_1_view}\index{sf\-::\-View@{sf\-::\-View}}
+}
+
+
+2\-D camera that defines what region is shown on screen  
+
+
+
+
+{\ttfamily \#include $<$View.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_view_a28c38308ff089ae5bdacd001d12286d3}{View} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_view_a1d63bc49e041b3b1ff992bb6430e1326}{View} (const \hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Construct the view from a rectangle. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_view_afdaf84cfc910ef160450d63603457ea4}{View} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&center, const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Construct the view from its center and size. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})
+\begin{DoxyCompactList}\small\item\em Set the center of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_ab0296b03793e0873e6ae9e15311f3e78}{set\-Center} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&center)
+\begin{DoxyCompactList}\small\item\em Set the center of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size} (float \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, float \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height})
+\begin{DoxyCompactList}\small\item\em Set the size of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a9e08d471ce21aa0e69ce55ff9de66d29}{set\-Size} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Set the size of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}{set\-Rotation} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle})
+\begin{DoxyCompactList}\small\item\em Set the orientation of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}{set\-Viewport} (const \hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \&viewport)
+\begin{DoxyCompactList}\small\item\em Set the target viewport. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_ac95b636eafab3922b7e8304fb6c00d7d}{reset} (const \hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Reset the view to the given rectangle. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center} () const 
+\begin{DoxyCompactList}\small\item\em Get the center of the view. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_view_aa130cf34676d715242bee661537a6257}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the view. \end{DoxyCompactList}\item 
+float \hyperlink{classsf_1_1_view_a8ad320469a27f96f6f49de1c14f0978d}{get\-Rotation} () const 
+\begin{DoxyCompactList}\small\item\em Get the current orientation of the view. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \& \hyperlink{classsf_1_1_view_af1db1e4f21d104a9691fd38be9165758}{get\-Viewport} () const 
+\begin{DoxyCompactList}\small\item\em Get the target viewport rectangle of the view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a0c82144b837caf812f7cb25a43d80c41}{move} (float offset\-X, float offset\-Y)
+\begin{DoxyCompactList}\small\item\em Move the view relatively to its current position. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a4c98a6e04fed756dfaff8f629de50862}{move} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_ae1b92ae085ddef4b1cdca7d749339fb0}{offset})
+\begin{DoxyCompactList}\small\item\em Move the view relatively to its current position. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{rotate} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle})
+\begin{DoxyCompactList}\small\item\em Rotate the view relatively to its current orientation. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} (float factor)
+\begin{DoxyCompactList}\small\item\em Resize the view rectangle relatively to its current size. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_view_a0109dba48aee769126f670a212b3ed7f}{get\-Transform} () const 
+\begin{DoxyCompactList}\small\item\em Get the projection transform of the view. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_view_ae7643324b2d8807cf0d9efe9dadfc8cc}{get\-Inverse\-Transform} () const 
+\begin{DoxyCompactList}\small\item\em Get the inverse projection transform of the view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+2\-D camera that defines what region is shown on screen 
+
+\hyperlink{classsf_1_1_view}{sf\-::\-View} defines a camera in the 2\-D scene. This is a very powerful concept\-: you can scroll, rotate or zoom the entire scene without altering the way that your drawable objects are drawn.
+
+A view is composed of a source rectangle, which defines what part of the 2\-D scene is shown, and a target viewport, which defines where the contents of the source rectangle will be displayed on the render target (window or texture).
+
+The viewport allows to map the scene to a custom part of the render target, and can be used for split-\/screen or for displaying a minimap, for example. If the source rectangle has not the same size as the viewport, its contents will be stretched to fit in.
+
+To apply a view, you have to assign it to the render target. Then, every objects drawn in this render target will be affected by the view until you use another view.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_render_window}{sf::RenderWindow} window;
+\hyperlink{classsf_1_1_view}{sf::View} view;
+
+\textcolor{comment}{// Initialize the view to a rectangle located at (100, 100) and with a size of 400x200}
+view.\hyperlink{classsf_1_1_view_ac95b636eafab3922b7e8304fb6c00d7d}{reset}(\hyperlink{classsf_1_1_rect}{sf::FloatRect}(100, 100, 400, 200));
+
+\textcolor{comment}{// Rotate it by 45 degrees}
+view.\hyperlink{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{rotate}(45);
+
+\textcolor{comment}{// Set its target viewport to be half of the window}
+view.\hyperlink{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}{setViewport}(\hyperlink{classsf_1_1_rect}{sf::FloatRect}(0.f, 0.f, 0.5f, 1.f));
+
+\textcolor{comment}{// Apply it}
+window.\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{setView}(view);
+
+\textcolor{comment}{// Render stuff}
+window.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(someSprite);
+
+\textcolor{comment}{// Set the default view back}
+window.\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{setView}(window.\hyperlink{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{getDefaultView}());
+
+\textcolor{comment}{// Render stuff not affected by the view}
+window.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(someText);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}, \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture} 
+\end{DoxySeeAlso}
+
+
+Definition at line 43 of file View.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_view_a28c38308ff089ae5bdacd001d12286d3}{\index{sf\-::\-View@{sf\-::\-View}!View@{View}}
+\index{View@{View}!sf::View@{sf\-::\-View}}
+\subsubsection[{View}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-View\-::\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a28c38308ff089ae5bdacd001d12286d3}
+
+
+Default constructor. 
+
+This constructor creates a default view of (0, 0, 1000, 1000) \hypertarget{classsf_1_1_view_a1d63bc49e041b3b1ff992bb6430e1326}{\index{sf\-::\-View@{sf\-::\-View}!View@{View}}
+\index{View@{View}!sf::View@{sf\-::\-View}}
+\subsubsection[{View}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-View\-::\-View (
+\begin{DoxyParamCaption}
+\item[{const {\bf Float\-Rect} \&}]{rectangle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_view_a1d63bc49e041b3b1ff992bb6430e1326}
+
+
+Construct the view from a rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle defining the zone to display \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_view_afdaf84cfc910ef160450d63603457ea4}{\index{sf\-::\-View@{sf\-::\-View}!View@{View}}
+\index{View@{View}!sf::View@{sf\-::\-View}}
+\subsubsection[{View}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-View\-::\-View (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{center, }
+\item[{const {\bf Vector2f} \&}]{size}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_afdaf84cfc910ef160450d63603457ea4}
+
+
+Construct the view from its center and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & Center of the zone to display \\
+\hline
+{\em size} & Size of zone to display \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{\index{sf\-::\-View@{sf\-::\-View}!get\-Center@{get\-Center}}
+\index{get\-Center@{get\-Center}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Center}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-View\-::get\-Center (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}
+
+
+Get the center of the view. 
+
+\begin{DoxyReturn}{Returns}
+Center of the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa130cf34676d715242bee661537a6257}{get\-Size}, \hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_ae7643324b2d8807cf0d9efe9dadfc8cc}{\index{sf\-::\-View@{sf\-::\-View}!get\-Inverse\-Transform@{get\-Inverse\-Transform}}
+\index{get\-Inverse\-Transform@{get\-Inverse\-Transform}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Inverse\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transform}\& sf\-::\-View\-::get\-Inverse\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_ae7643324b2d8807cf0d9efe9dadfc8cc}
+
+
+Get the inverse projection transform of the view. 
+
+This function is meant for internal use only.
+
+\begin{DoxyReturn}{Returns}
+Inverse of the projection transform defining the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a0109dba48aee769126f670a212b3ed7f}{get\-Transform} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a8ad320469a27f96f6f49de1c14f0978d}{\index{sf\-::\-View@{sf\-::\-View}!get\-Rotation@{get\-Rotation}}
+\index{get\-Rotation@{get\-Rotation}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}float sf\-::\-View\-::get\-Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_a8ad320469a27f96f6f49de1c14f0978d}
+
+
+Get the current orientation of the view. 
+
+\begin{DoxyReturn}{Returns}
+Rotation angle of the view, in degrees
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}{set\-Rotation} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_aa130cf34676d715242bee661537a6257}{\index{sf\-::\-View@{sf\-::\-View}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-View\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_aa130cf34676d715242bee661537a6257}
+
+
+Get the size of the view. 
+
+\begin{DoxyReturn}{Returns}
+Size of the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center}, \hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a0109dba48aee769126f670a212b3ed7f}{\index{sf\-::\-View@{sf\-::\-View}!get\-Transform@{get\-Transform}}
+\index{get\-Transform@{get\-Transform}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transform}\& sf\-::\-View\-::get\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_a0109dba48aee769126f670a212b3ed7f}
+
+
+Get the projection transform of the view. 
+
+This function is meant for internal use only.
+
+\begin{DoxyReturn}{Returns}
+Projection transform defining the view
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_ae7643324b2d8807cf0d9efe9dadfc8cc}{get\-Inverse\-Transform} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_af1db1e4f21d104a9691fd38be9165758}{\index{sf\-::\-View@{sf\-::\-View}!get\-Viewport@{get\-Viewport}}
+\index{get\-Viewport@{get\-Viewport}!sf::View@{sf\-::\-View}}
+\subsubsection[{get\-Viewport}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Float\-Rect}\& sf\-::\-View\-::get\-Viewport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_view_af1db1e4f21d104a9691fd38be9165758}
+
+
+Get the target viewport rectangle of the view. 
+
+\begin{DoxyReturn}{Returns}
+Viewport rectangle, expressed as a factor of the target size
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}{set\-Viewport} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a0c82144b837caf812f7cb25a43d80c41}{\index{sf\-::\-View@{sf\-::\-View}!move@{move}}
+\index{move@{move}!sf::View@{sf\-::\-View}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::move (
+\begin{DoxyParamCaption}
+\item[{float}]{offset\-X, }
+\item[{float}]{offset\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a0c82144b837caf812f7cb25a43d80c41}
+
+
+Move the view relatively to its current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset\-X} & X coordinate of the move offset \\
+\hline
+{\em offset\-Y} & Y coordinate of the move offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center}, \hyperlink{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{rotate}, \hyperlink{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a4c98a6e04fed756dfaff8f629de50862}{\index{sf\-::\-View@{sf\-::\-View}!move@{move}}
+\index{move@{move}!sf::View@{sf\-::\-View}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a4c98a6e04fed756dfaff8f629de50862}
+
+
+Move the view relatively to its current position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Move offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center}, \hyperlink{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{rotate}, \hyperlink{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_ac95b636eafab3922b7e8304fb6c00d7d}{\index{sf\-::\-View@{sf\-::\-View}!reset@{reset}}
+\index{reset@{reset}!sf::View@{sf\-::\-View}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::reset (
+\begin{DoxyParamCaption}
+\item[{const {\bf Float\-Rect} \&}]{rectangle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_ac95b636eafab3922b7e8304fb6c00d7d}
+
+
+Reset the view to the given rectangle. 
+
+Note that this function resets the rotation angle to 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle defining the zone to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center}, \hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size}, \hyperlink{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}{set\-Rotation} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{\index{sf\-::\-View@{sf\-::\-View}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::View@{sf\-::\-View}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}
+
+
+Rotate the view relatively to its current orientation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle to rotate, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}{set\-Rotation}, \hyperlink{classsf_1_1_view_a0c82144b837caf812f7cb25a43d80c41}{move}, \hyperlink{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}{zoom} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{\index{sf\-::\-View@{sf\-::\-View}!set\-Center@{set\-Center}}
+\index{set\-Center@{set\-Center}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Center (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}
+
+
+Set the center of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new center \\
+\hline
+{\em y} & Y coordinate of the new center\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size}, \hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_ab0296b03793e0873e6ae9e15311f3e78}{\index{sf\-::\-View@{sf\-::\-View}!set\-Center@{set\-Center}}
+\index{set\-Center@{set\-Center}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Center (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{center}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_ab0296b03793e0873e6ae9e15311f3e78}
+
+
+Set the center of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em center} & New center\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size}, \hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}{\index{sf\-::\-View@{sf\-::\-View}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a24d0503c9c51f5ef5918612786d325c1}
+
+
+Set the orientation of the view. 
+
+The default rotation of a view is 0 degree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & New angle, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a8ad320469a27f96f6f49de1c14f0978d}{get\-Rotation} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{\index{sf\-::\-View@{sf\-::\-View}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{float}]{width, }
+\item[{float}]{height}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}
+
+
+Set the size of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & New width of the view \\
+\hline
+{\em height} & New height of the view\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center}, \hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a9e08d471ce21aa0e69ce55ff9de66d29}{\index{sf\-::\-View@{sf\-::\-View}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{size}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a9e08d471ce21aa0e69ce55ff9de66d29}
+
+
+Set the size of the view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_aa8e3fedb008306ff9811163545fb75f2}{set\-Center}, \hyperlink{classsf_1_1_view_adae81dede405b91bb3c487e28f536fe9}{get\-Center} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}{\index{sf\-::\-View@{sf\-::\-View}!set\-Viewport@{set\-Viewport}}
+\index{set\-Viewport@{set\-Viewport}!sf::View@{sf\-::\-View}}
+\subsubsection[{set\-Viewport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::set\-Viewport (
+\begin{DoxyParamCaption}
+\item[{const {\bf Float\-Rect} \&}]{viewport}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}
+
+
+Set the target viewport. 
+
+The viewport is the rectangle into which the contents of the view are displayed, expressed as a factor (between 0 and 1) of the size of the \hyperlink{classsf_1_1_render_target}{Render\-Target} to which the view is applied. For example, a view which takes the left side of the target would be defined with \hyperlink{classsf_1_1_view_a8eaec46b7d332fe834f016d0187d4b4a}{View.\-set\-Viewport}(\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{sf\-::\-Float\-Rect}(0, 0, 0.\-5, 1)). By default, a view has a viewport which covers the entire target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em viewport} & New viewport rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_af1db1e4f21d104a9691fd38be9165758}{get\-Viewport} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}{\index{sf\-::\-View@{sf\-::\-View}!zoom@{zoom}}
+\index{zoom@{zoom}!sf::View@{sf\-::\-View}}
+\subsubsection[{zoom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-View\-::zoom (
+\begin{DoxyParamCaption}
+\item[{float}]{factor}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_view_a4a72a360a5792fbe4e99cd6feaf7726e}
+
+
+Resize the view rectangle relatively to its current size. 
+
+Resizing the view simulates a zoom, as the zone displayed on screen grows or shrinks. {\itshape factor} is a multiplier\-: \begin{DoxyItemize}
+\item 1 keeps the size unchanged \item $>$ 1 makes the view bigger (objects appear smaller) \item $<$ 1 makes the view smaller (objects appear bigger)\end{DoxyItemize}
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & Zoom factor to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_view_a9525b73fe9fbaceb9568faf56b399dab}{set\-Size}, \hyperlink{classsf_1_1_view_a0c82144b837caf812f7cb25a43d80c41}{move}, \hyperlink{classsf_1_1_view_a5fd3901aae1845586ca40add94faa378}{rotate} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_view_8hpp}{View.\-hpp}\end{DoxyCompactItemize}

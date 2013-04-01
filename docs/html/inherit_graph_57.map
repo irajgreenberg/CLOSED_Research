@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsf_1_1_sound_recorder.html" title="Abstract base class for capturing sound data." alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$classsf_1_1_sound_buffer_recorder.html" title="Specialized SoundRecorder which stores the captured audio data into a sound buffer." alt="" coords="187,5,357,32"/>
+</map>

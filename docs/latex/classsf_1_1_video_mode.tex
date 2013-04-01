@@ -1,0 +1,350 @@
+\hypertarget{classsf_1_1_video_mode}{\section{sf\-:\-:Video\-Mode Class Reference}
+\label{classsf_1_1_video_mode}\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}}
+}
+
+
+\hyperlink{classsf_1_1_video_mode}{Video\-Mode} defines a video mode (width, height, bpp)  
+
+
+
+
+{\ttfamily \#include $<$Video\-Mode.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}{Video\-Mode} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}{Video\-Mode} (unsigned int mode\-Width, unsigned int mode\-Height, unsigned int mode\-Bits\-Per\-Pixel=32)
+\begin{DoxyCompactList}\small\item\em Construct the video mode with its attributes. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_video_mode_aa64ff5420dde3b31c24b9c4e2be9cd9c}{is\-Valid} () const 
+\begin{DoxyCompactList}\small\item\em Tell whether or not the video mode is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\-Desktop\-Mode} ()
+\begin{DoxyCompactList}\small\item\em Get the current desktop video mode. \end{DoxyCompactList}\item 
+static const std\-::vector\\*
+$<$ \hyperlink{classsf_1_1_video_mode}{Video\-Mode} $>$ \& \hyperlink{classsf_1_1_video_mode_a6815b9b3b35767d5b4563fbed4bfc67b}{get\-Fullscreen\-Modes} ()
+\begin{DoxyCompactList}\small\item\em Retrieve all the video modes supported in fullscreen mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}{width}
+\begin{DoxyCompactList}\small\item\em Video mode width, in pixels. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}{height}
+\begin{DoxyCompactList}\small\item\em Video mode height, in pixels. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bits\-Per\-Pixel}
+\begin{DoxyCompactList}\small\item\em Video mode pixel depth, in bits per pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}{operator==} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two video modes. \end{DoxyCompactList}\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}{operator!=} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two video modes. \end{DoxyCompactList}\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}{operator$<$} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $<$ operator to compare video modes. \end{DoxyCompactList}\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}{operator$>$} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $>$ operator to compare video modes. \end{DoxyCompactList}\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}{operator$<$=} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $<$= operator to compare video modes. \end{DoxyCompactList}\item 
+\hyperlink{_window_2_export_8hpp_a1ab885b7907ee088350359516d68be64}{S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}{operator$>$=} (const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&left, const \hyperlink{classsf_1_1_video_mode}{Video\-Mode} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $>$= operator to compare video modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsf_1_1_video_mode}{Video\-Mode} defines a video mode (width, height, bpp) 
+
+A video mode is defined by a width and a height (in pixels) and a depth (in bits per pixel). Video modes are used to setup windows (\hyperlink{classsf_1_1_window}{sf\-::\-Window}) at creation time.
+
+The main usage of video modes is for fullscreen mode\-: indeed you must use one of the valid video modes allowed by the O\-S (which are defined by what the monitor and the graphics card support), otherwise your window creation will just fail.
+
+\hyperlink{classsf_1_1_video_mode}{sf\-::\-Video\-Mode} provides a static function for retrieving the list of all the video modes supported by the system\-: \hyperlink{classsf_1_1_video_mode_a6815b9b3b35767d5b4563fbed4bfc67b}{get\-Fullscreen\-Modes()}.
+
+A custom video mode can also be checked directly for fullscreen compatibility with its Is\-Valid() function.
+
+Additionnally, \hyperlink{classsf_1_1_video_mode}{sf\-::\-Video\-Mode} provides a static function to get the mode currently used by the desktop\-: \hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{get\-Desktop\-Mode()}. This allows to build windows with the same size or pixel depth as the current resolution.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Display the list of all the video modes available for fullscreen}
+std::vector<sf::VideoMode> modes = \hyperlink{classsf_1_1_video_mode_a6815b9b3b35767d5b4563fbed4bfc67b}{sf::VideoMode::getFullscreenModes}();
+\textcolor{keywordflow}{for} (std::size\_t i = 0; i < modes.size(); ++i)
+\{
+    \hyperlink{classsf_1_1_video_mode}{sf::VideoMode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode} = modes[i];
+    std::cout << \textcolor{stringliteral}{"Mode #"} << i << \textcolor{stringliteral}{": "}
+              << mode.\hyperlink{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}{width} << \textcolor{stringliteral}{"x"} << mode.\hyperlink{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}{height} << \textcolor{stringliteral}{" - "}
+              << mode.\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel} << \textcolor{stringliteral}{" bpp"} << std::endl;
+\}
+
+\textcolor{comment}{// Create a window with the same pixel depth as the desktop}
+\hyperlink{classsf_1_1_video_mode}{sf::VideoMode} desktop = \hyperlink{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{sf::VideoMode::getDesktopMode}();
+window.\hyperlink{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}{create}(\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}(1024, 768, desktop.\hyperlink{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{bitsPerPixel}), \textcolor{stringliteral}{"SFML window"})
+      ;
+\end{DoxyCode}
+ 
+
+Definition at line 41 of file Video\-Mode.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!Video\-Mode@{Video\-Mode}}
+\index{Video\-Mode@{Video\-Mode}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{Video\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Video\-Mode\-::\-Video\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_video_mode_a04c9417e5c304510bef5f6aeb03f6ce1}
+
+
+Default constructor. 
+
+This constructors initializes all members to 0. \hypertarget{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!Video\-Mode@{Video\-Mode}}
+\index{Video\-Mode@{Video\-Mode}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{Video\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Video\-Mode\-::\-Video\-Mode (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{mode\-Width, }
+\item[{unsigned int}]{mode\-Height, }
+\item[{unsigned int}]{mode\-Bits\-Per\-Pixel = {\ttfamily 32}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_video_mode_a46c35ed41de9e115661dcd529d64e9d3}
+
+
+Construct the video mode with its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode\-Width} & Width in pixels \\
+\hline
+{\em mode\-Height} & Height in pixels \\
+\hline
+{\em mode\-Bits\-Per\-Pixel} & Pixel depths in bits per pixel \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!get\-Desktop\-Mode@{get\-Desktop\-Mode}}
+\index{get\-Desktop\-Mode@{get\-Desktop\-Mode}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{get\-Desktop\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Video\-Mode} sf\-::\-Video\-Mode\-::get\-Desktop\-Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_video_mode_ac1be160a4342e6eafb2cb0e8c9b18d44}
+
+
+Get the current desktop video mode. 
+
+\begin{DoxyReturn}{Returns}
+Current desktop video mode 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_a6815b9b3b35767d5b4563fbed4bfc67b}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!get\-Fullscreen\-Modes@{get\-Fullscreen\-Modes}}
+\index{get\-Fullscreen\-Modes@{get\-Fullscreen\-Modes}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{get\-Fullscreen\-Modes}]{\setlength{\rightskip}{0pt plus 5cm}static const std\-::vector$<${\bf Video\-Mode}$>$\& sf\-::\-Video\-Mode\-::get\-Fullscreen\-Modes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_video_mode_a6815b9b3b35767d5b4563fbed4bfc67b}
+
+
+Retrieve all the video modes supported in fullscreen mode. 
+
+When creating a fullscreen window, the video mode is restricted to be compatible with what the graphics driver and monitor support. This function returns the complete list of all video modes that can be used in fullscreen mode. The returned array is sorted from best to worst, so that the first element will always give the best mode (higher width, height and bits-\/per-\/pixel).
+
+\begin{DoxyReturn}{Returns}
+Array containing all the supported fullscreen modes 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_aa64ff5420dde3b31c24b9c4e2be9cd9c}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!is\-Valid@{is\-Valid}}
+\index{is\-Valid@{is\-Valid}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{is\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Video\-Mode\-::is\-Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_video_mode_aa64ff5420dde3b31c24b9c4e2be9cd9c}
+
+
+Tell whether or not the video mode is valid. 
+
+The validity of video modes is only relevant when using fullscreen windows; otherwise any video mode can be used with no restriction.
+
+\begin{DoxyReturn}{Returns}
+True if the video mode is valid for fullscreen mode 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_abd7bf172d318085ea572b8c10033f7b7}
+
+
+Overload of != operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are different 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_a8e3d8fa57fa10dca05edbc34c4e2f1a8}
+
+
+Overload of $<$ operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_a09b0a83f9135d934e540800bad12f0ca}
+
+
+Overload of $<$= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_a03c51c119811ffd4403c6e2bcbd4ceaf}
+
+
+Overload of == operator to compare two video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if modes are equal 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_ab6e5b2c65a428a4b56de8551b3706a36}
+
+
+Overload of $>$ operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-W\-I\-N\-D\-O\-W\-\_\-\-A\-P\-I} bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Video\-Mode} \&}]{left, }
+\item[{const {\bf Video\-Mode} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_video_mode_a7f7983e336203d34c9878c77fff60f1f}
+
+
+Overload of $>$= operator to compare video modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a video mode) \\
+\hline
+{\em right} & Right operand (a video mode)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is greater or equal than {\itshape right} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!bits\-Per\-Pixel@{bits\-Per\-Pixel}}
+\index{bits\-Per\-Pixel@{bits\-Per\-Pixel}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{bits\-Per\-Pixel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Video\-Mode\-::bits\-Per\-Pixel}}\label{classsf_1_1_video_mode_aa080f1ef96a1008d58b1920eceb189df}
+
+
+Video mode pixel depth, in bits per pixels. 
+
+
+
+Definition at line 104 of file Video\-Mode.\-hpp.
+
+\hypertarget{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!height@{height}}
+\index{height@{height}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Video\-Mode\-::height}}\label{classsf_1_1_video_mode_a5a88d44c9470db7474361a42a189342d}
+
+
+Video mode height, in pixels. 
+
+
+
+Definition at line 103 of file Video\-Mode.\-hpp.
+
+\hypertarget{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}{\index{sf\-::\-Video\-Mode@{sf\-::\-Video\-Mode}!width@{width}}
+\index{width@{width}!sf::VideoMode@{sf\-::\-Video\-Mode}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Video\-Mode\-::width}}\label{classsf_1_1_video_mode_a9b3b2ad2cac6b9c266823fb5ed506d90}
+
+
+Video mode width, in pixels. 
+
+
+
+Definition at line 102 of file Video\-Mode.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_video_mode_8hpp}{Video\-Mode.\-hpp}\end{DoxyCompactItemize}

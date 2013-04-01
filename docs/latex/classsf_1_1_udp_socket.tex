@@ -1,0 +1,350 @@
+\hypertarget{classsf_1_1_udp_socket}{\section{sf\-:\-:Udp\-Socket Class Reference}
+\label{classsf_1_1_udp_socket}\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}}
+}
+
+
+Specialized socket using the U\-D\-P protocol.  
+
+
+
+
+{\ttfamily \#include $<$Udp\-Socket.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Udp\-Socket\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_udp_socket__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Udp\-Socket\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_udp_socket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73a728a7d33027bee0d65f70f964dd9c9eb}{Max\-Datagram\-Size} = 65507
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_udp_socket_abb10725e26dee9d3a8165fe87ffb71bb}{Udp\-Socket} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+unsigned short \hyperlink{classsf_1_1_udp_socket_a8ce625debd4b1f885366a69faa270086}{get\-Local\-Port} () const 
+\begin{DoxyCompactList}\small\item\em Get the port to which the socket is bound locally. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status} \hyperlink{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{bind} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Bind the socket to a specific port. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_udp_socket_a2c4abb8102a1bd31f51fcfe7f15427a3}{unbind} ()
+\begin{DoxyCompactList}\small\item\em Unbind the socket from the local port to which it is bound. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status} \hyperlink{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{send} (const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \&remote\-Address, unsigned short remote\-Port)
+\begin{DoxyCompactList}\small\item\em Send raw data to a remote peer. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status} \hyperlink{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{receive} (\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, std\-::size\-\_\-t \&received, \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \&remote\-Address, unsigned short \&remote\-Port)
+\begin{DoxyCompactList}\small\item\em Receive raw data from a remote peer. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status} \hyperlink{classsf_1_1_udp_socket_a48969a62c80d40fd74293a740798e435}{send} (\hyperlink{classsf_1_1_packet}{Packet} \&packet, const \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \&remote\-Address, unsigned short remote\-Port)
+\begin{DoxyCompactList}\small\item\em Send a formatted packet of data to a remote peer. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_socket_a51bf0fd51057b98a10fbb866246176dc}{Status} \hyperlink{classsf_1_1_udp_socket_afdd5c655d00c96222d5b477fc057a22b}{receive} (\hyperlink{classsf_1_1_packet}{Packet} \&packet, \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \&remote\-Address, unsigned short \&remote\-Port)
+\begin{DoxyCompactList}\small\item\em Receive a formatted packet of data from a remote peer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specialized socket using the U\-D\-P protocol. 
+
+A U\-D\-P socket is a connectionless socket. Instead of connecting once to a remote host, like T\-C\-P sockets, it can send to and receive from any host at any time.
+
+It is a datagram protocol\-: bounded blocks of data (datagrams) are transfered over the network rather than a continuous stream of data (T\-C\-P). Therefore, one call to send will always match one call to receive (if the datagram is not lost), with the same data that was sent.
+
+The U\-D\-P protocol is lightweight but unreliable. Unreliable means that datagrams may be duplicated, be lost or arrive reordered. However, if a datagram arrives, its data is guaranteed to be valid.
+
+U\-D\-P is generally used for real-\/time communication (audio or video streaming, real-\/time games, etc.) where speed is crucial and lost data doesn't matter much.
+
+Sending and receiving data can use either the low-\/level or the high-\/level functions. The low-\/level functions process a raw sequence of bytes, whereas the high-\/level interface uses packets (see \hyperlink{classsf_1_1_packet}{sf\-::\-Packet}), which are easier to use and provide more safety regarding the data that is exchanged. You can look at the \hyperlink{classsf_1_1_packet}{sf\-::\-Packet} class to get more details about how they work.
+
+It is important to note that \hyperlink{classsf_1_1_udp_socket}{Udp\-Socket} is unable to send datagrams bigger than Max\-Datagram\-Size. In this case, it returns an error and doesn't send anything. This applies to both raw data and packets. Indeed, even packets are unable to split and recompose data, due to the unreliability of the protocol (dropped, mixed or duplicated datagrams may lead to a big mess when trying to recompose a packet).
+
+If the socket is bound to a port, it is automatically unbound from it when the socket is destroyed. However, you can unbind the socket explicitely with the Unbind function if necessary, to stop receiving messages or make the port available for other sockets.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// ----- The client -----}
+
+\textcolor{comment}{// Create a socket and bind it to the port 55001}
+\hyperlink{classsf_1_1_udp_socket}{sf::UdpSocket} socket;
+socket.\hyperlink{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{bind}(55001);
+
+\textcolor{comment}{// Send a message to 192.168.1.50 on port 55002}
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} message = \textcolor{stringliteral}{"Hi, I am "} + \hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{sf::IpAddress::getLocalAddress}
+      ().\hyperlink{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}{toString}();
+socket.\hyperlink{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{send}(message.c\_str(), message.size() + 1, \textcolor{stringliteral}{"192.168.1.50"}, 55002);
+
+\textcolor{comment}{// Receive an answer (most likely from 192.168.1.50, but could be anyone else)}
+\textcolor{keywordtype}{char} buffer[1024];
+std::size\_t received = 0;
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} sender;
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port;
+socket.\hyperlink{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{receive}(buffer, \textcolor{keyword}{sizeof}(buffer), received, sender, port);
+std::cout << sender.ToString() << \textcolor{stringliteral}{" said: "} << buffer << std::endl;
+
+\textcolor{comment}{// ----- The server -----}
+
+\textcolor{comment}{// Create a socket and bind it to the port 55002}
+\hyperlink{classsf_1_1_udp_socket}{sf::UdpSocket} socket;
+socket.\hyperlink{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{bind}(55002);
+
+\textcolor{comment}{// Receive a message from anyone}
+\textcolor{keywordtype}{char} buffer[1024];
+std::size\_t received = 0;
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} sender;
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} port;
+socket.\hyperlink{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{receive}(buffer, \textcolor{keyword}{sizeof}(buffer), received, sender, port);
+std::cout << sender.ToString() << \textcolor{stringliteral}{" said: "} << buffer << std::endl;
+
+\textcolor{comment}{// Send an answer}
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} message = \textcolor{stringliteral}{"Welcome "} + sender.\hyperlink{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}{toString}();
+socket.\hyperlink{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{send}(message.c\_str(), message.size() + 1, sender, port);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_socket}{sf\-::\-Socket}, \hyperlink{classsf_1_1_tcp_socket}{sf\-::\-Tcp\-Socket}, \hyperlink{classsf_1_1_packet}{sf\-::\-Packet} 
+\end{DoxySeeAlso}
+
+
+Definition at line 45 of file Udp\-Socket.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Max\-Datagram\-Size@{Max\-Datagram\-Size}!sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}}\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!Max\-Datagram\-Size@{Max\-Datagram\-Size}}\item[{\em 
+\hypertarget{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73a728a7d33027bee0d65f70f964dd9c9eb}{Max\-Datagram\-Size}\label{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73a728a7d33027bee0d65f70f964dd9c9eb}
+}]The maximum number of bytes that can be sent in a single U\-D\-P datagram. \end{description}
+\end{Desc}
+
+
+Definition at line 52 of file Udp\-Socket.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_udp_socket_abb10725e26dee9d3a8165fe87ffb71bb}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!Udp\-Socket@{Udp\-Socket}}
+\index{Udp\-Socket@{Udp\-Socket}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{Udp\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Udp\-Socket\-::\-Udp\-Socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_abb10725e26dee9d3a8165fe87ffb71bb}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!bind@{bind}}
+\index{bind@{bind}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Udp\-Socket\-::bind (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}
+
+
+Bind the socket to a specific port. 
+
+Binding the socket to a port is necessary for being able to receive data on that port. You can use the special value \hyperlink{classsf_1_1_socket_a1b900779ad24d3604a4a000e2e38f372a5a3c30fd128895403afc11076f461b19}{Socket\-::\-Any\-Port} to tell the system to automatically pick an available port, and then call get\-Local\-Port to retrieve the chosen port.
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & Port to bind the socket to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_a2c4abb8102a1bd31f51fcfe7f15427a3}{unbind}, \hyperlink{classsf_1_1_udp_socket_a8ce625debd4b1f885366a69faa270086}{get\-Local\-Port} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_a8ce625debd4b1f885366a69faa270086}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!get\-Local\-Port@{get\-Local\-Port}}
+\index{get\-Local\-Port@{get\-Local\-Port}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{get\-Local\-Port}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short sf\-::\-Udp\-Socket\-::get\-Local\-Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_udp_socket_a8ce625debd4b1f885366a69faa270086}
+
+
+Get the port to which the socket is bound locally. 
+
+If the socket is not bound to a port, this function returns 0.
+
+\begin{DoxyReturn}{Returns}
+Port to which the socket is bound
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{bind} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!receive@{receive}}
+\index{receive@{receive}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{receive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Udp\-Socket\-::receive (
+\begin{DoxyParamCaption}
+\item[{{\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size, }
+\item[{std\-::size\-\_\-t \&}]{received, }
+\item[{{\bf Ip\-Address} \&}]{remote\-Address, }
+\item[{unsigned short \&}]{remote\-Port}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}
+
+
+Receive raw data from a remote peer. 
+
+In blocking mode, this function will wait until some bytes are actually received. Be careful to use a buffer which is large enough for the data that you intend to receive, if it is too small then an error will be returned and {\itshape all} the data will be lost.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array to fill with the received bytes \\
+\hline
+{\em size} & Maximum number of bytes that can be received \\
+\hline
+{\em received} & This variable is filled with the actual number of bytes received \\
+\hline
+{\em remote\-Address} & Address of the peer that sent the data \\
+\hline
+{\em remote\-Port} & Port of the peer that sent the data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{send} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_afdd5c655d00c96222d5b477fc057a22b}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!receive@{receive}}
+\index{receive@{receive}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{receive}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Udp\-Socket\-::receive (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{packet, }
+\item[{{\bf Ip\-Address} \&}]{remote\-Address, }
+\item[{unsigned short \&}]{remote\-Port}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_afdd5c655d00c96222d5b477fc057a22b}
+
+
+Receive a formatted packet of data from a remote peer. 
+
+In blocking mode, this function will wait until the whole packet has been received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \hyperlink{classsf_1_1_packet}{Packet} to fill with the received data \\
+\hline
+{\em remote\-Address} & Address of the peer that sent the data \\
+\hline
+{\em remote\-Port} & Port of the peer that sent the data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{send} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!send@{send}}
+\index{send@{send}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Udp\-Socket\-::send (
+\begin{DoxyParamCaption}
+\item[{const {\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size, }
+\item[{const {\bf Ip\-Address} \&}]{remote\-Address, }
+\item[{unsigned short}]{remote\-Port}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_a664ab8f26f37c21cc4de1b847c2efcca}
+
+
+Send raw data to a remote peer. 
+
+Make sure that {\itshape size} is not greater than \hyperlink{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73a728a7d33027bee0d65f70f964dd9c9eb}{Udp\-Socket\-::\-Max\-Datagram\-Size}, otherwise this function will fail and no data will be sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to send \\
+\hline
+{\em size} & Number of bytes to send \\
+\hline
+{\em remote\-Address} & Address of the receiver \\
+\hline
+{\em remote\-Port} & Port of the receiver to send the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{receive} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_a48969a62c80d40fd74293a740798e435}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!send@{send}}
+\index{send@{send}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Udp\-Socket\-::send (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{packet, }
+\item[{const {\bf Ip\-Address} \&}]{remote\-Address, }
+\item[{unsigned short}]{remote\-Port}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_a48969a62c80d40fd74293a740798e435}
+
+
+Send a formatted packet of data to a remote peer. 
+
+Make sure that the packet size is not greater than \hyperlink{classsf_1_1_udp_socket_acd0ca8dca28f171715078d01684ddd73a728a7d33027bee0d65f70f964dd9c9eb}{Udp\-Socket\-::\-Max\-Datagram\-Size}, otherwise this function will fail and no data will be sent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em packet} & \hyperlink{classsf_1_1_packet}{Packet} to send \\
+\hline
+{\em remote\-Address} & Address of the receiver \\
+\hline
+{\em remote\-Port} & Port of the receiver to send the data to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_ade9ca0f7ed7919136917b0b997a9833a}{receive} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_udp_socket_a2c4abb8102a1bd31f51fcfe7f15427a3}{\index{sf\-::\-Udp\-Socket@{sf\-::\-Udp\-Socket}!unbind@{unbind}}
+\index{unbind@{unbind}!sf::UdpSocket@{sf\-::\-Udp\-Socket}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Udp\-Socket\-::unbind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_udp_socket_a2c4abb8102a1bd31f51fcfe7f15427a3}
+
+
+Unbind the socket from the local port to which it is bound. 
+
+The port that the socket was previously using is immediately available after this function is called. If the socket is not bound to a port, this function has no effect.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_udp_socket_ab0bf8d32849836f92beb2fd734565481}{bind} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Network/\hyperlink{_udp_socket_8hpp}{Udp\-Socket.\-hpp}\end{DoxyCompactItemize}

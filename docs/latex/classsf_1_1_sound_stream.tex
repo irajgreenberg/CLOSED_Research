@@ -1,0 +1,410 @@
+\hypertarget{classsf_1_1_sound_stream}{\section{sf\-:\-:Sound\-Stream Class Reference}
+\label{classsf_1_1_sound_stream}\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}}
+}
+
+
+Abstract base class for streamed audio sources.  
+
+
+
+
+{\ttfamily \#include $<$Sound\-Stream.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Sound\-Stream\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_sound_stream__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Sound\-Stream\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_sound_stream__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsf_1_1_sound_stream_1_1_chunk}{Chunk}
+\begin{DoxyCompactList}\small\item\em Structure defining a chunk of audio data to stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classsf_1_1_sound_stream_a1fafb9f1ca572d23d7d6a17921860d85}{$\sim$\-Sound\-Stream} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play} ()
+\begin{DoxyCompactList}\small\item\em Start or resume playing the audio stream. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{pause} ()
+\begin{DoxyCompactList}\small\item\em Pause the audio stream. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}{stop} ()
+\begin{DoxyCompactList}\small\item\em Stop playing the audio stream. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_sound_stream_a68dedd0a2c26e6937c80fab3d235edea}{get\-Channel\-Count} () const 
+\begin{DoxyCompactList}\small\item\em Return the number of channels of the stream. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_sound_stream_aad1da51c7a752682ca208bf11e3349bb}{get\-Sample\-Rate} () const 
+\begin{DoxyCompactList}\small\item\em Get the stream sample rate of the stream. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_sound_source_ac43af72c98c077500b239bc75b812f03}{Status} \hyperlink{classsf_1_1_sound_stream_a75f722e7edcfa9952ff0c643966c6858}{get\-Status} () const 
+\begin{DoxyCompactList}\small\item\em Get the current status of the stream (stopped, paused, playing) \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_af416a5f84c8750d2acb9821d78bc8646}{set\-Playing\-Offset} (\hyperlink{classsf_1_1_time}{Time} time\-Offset)
+\begin{DoxyCompactList}\small\item\em Change the current playing position of the stream. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_time}{Time} \hyperlink{classsf_1_1_sound_stream_a6070416e1e1a11b5915e9314dd6638f7}{get\-Playing\-Offset} () const 
+\begin{DoxyCompactList}\small\item\em Get the current playing position of the stream. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}{set\-Loop} (bool loop)
+\begin{DoxyCompactList}\small\item\em Set whether or not the stream should loop after reaching the end. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_sound_stream_ad8bbf6c0d2ff2d75e19035dea3fd77c3}{get\-Loop} () const 
+\begin{DoxyCompactList}\small\item\em Tell whether or not the stream is in loop mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_sound_stream_a769d08f4c3c6b4340ef3a838329d2e5c}{Sound\-Stream} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_a9c351711198ee1aa77c2fefd3ced4d2c}{initialize} (unsigned int channel\-Count, unsigned int sample\-Rate)
+\begin{DoxyCompactList}\small\item\em Define the audio stream parameters. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{on\-Get\-Data} (\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{Chunk} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})=0
+\begin{DoxyCompactList}\small\item\em Request a new chunk of audio samples from the stream source. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{on\-Seek} (\hyperlink{classsf_1_1_time}{Time} time\-Offset)=0
+\begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Abstract base class for streamed audio sources. 
+
+Unlike audio buffers (see \hyperlink{classsf_1_1_sound_buffer}{sf\-::\-Sound\-Buffer}), audio streams are never completely loaded in memory. Instead, the audio data is acquired continuously while the stream is playing. This behaviour allows to play a sound with no loading delay, and keeps the memory consumption very low.
+
+\hyperlink{classsf_1_1_sound}{Sound} sources that need to be streamed are usually big files (compressed audio musics that would eat hundreds of M\-B in memory) or files that would take a lot of time to be received (sounds played over the network).
+
+\hyperlink{classsf_1_1_sound_stream}{sf\-::\-Sound\-Stream} is a base class that doesn't care about the stream source, which is left to the derived class. S\-F\-M\-L provides a built-\/in specialization for big files (see \hyperlink{classsf_1_1_music}{sf\-::\-Music}). No network stream source is provided, but you can write your own by combining this class with the network module.
+
+A derived class has to override two virtual functions\-: \begin{DoxyItemize}
+\item on\-Get\-Data fills a new chunk of audio data to be played \item on\-Seek changes the current playing position in the source\end{DoxyItemize}
+It is important to note that each \hyperlink{classsf_1_1_sound_stream}{Sound\-Stream} is played in its own separate thread, so that the streaming loop doesn't block the rest of the program. In particular, the On\-Get\-Data and On\-Seek virtual functions may sometimes be called from this separate thread. It is important to keep this in mind, because you may have to take care of synchronization issues if you share data between threads.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }CustomStream : \textcolor{keyword}{public} \hyperlink{classsf_1_1_sound_stream}{sf::SoundStream}
+\{
+\textcolor{keyword}{public} :
+
+    \textcolor{keywordtype}{bool} open(\textcolor{keyword}{const} \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string}& \hyperlink{gl3_8h_a6f0165ed903f22b8bb600c3e0b628e73}{location})
+    \{
+        \textcolor{comment}{// Open the source and get audio settings}
+        ...
+        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount = ...;
+        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sampleRate = ...;
+
+        \textcolor{comment}{// Initialize the stream -- important!}
+        \hyperlink{classsf_1_1_sound_stream_a9c351711198ee1aa77c2fefd3ced4d2c}{initialize}(channelCount, sampleRate);
+    \}
+
+\textcolor{keyword}{private} :
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{onGetData}(Chunk& \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+    \{
+        \textcolor{comment}{// Fill the chunk with audio data from the stream source}
+        data.samples = ...;
+        data.sampleCount = ...;
+
+        \textcolor{comment}{// Return true to continue playing}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{onSeek}(\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} timeOffset)
+    \{
+        \textcolor{comment}{// Change the current position in the stream source}
+        ...
+    \}
+\}
+
+\textcolor{comment}{// Usage}
+CustomStream stream;
+stream.open(\textcolor{stringliteral}{"path/to/stream"});
+stream.play();
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_music}{sf\-::\-Music} 
+\end{DoxySeeAlso}
+
+
+Definition at line 44 of file Sound\-Stream.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_sound_stream_a1fafb9f1ca572d23d7d6a17921860d85}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!$\sim$\-Sound\-Stream@{$\sim$\-Sound\-Stream}}
+\index{$\sim$\-Sound\-Stream@{$\sim$\-Sound\-Stream}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{$\sim$\-Sound\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Sound\-Stream\-::$\sim$\-Sound\-Stream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_sound_stream_a1fafb9f1ca572d23d7d6a17921860d85}
+
+
+Destructor. 
+
+\hypertarget{classsf_1_1_sound_stream_a769d08f4c3c6b4340ef3a838329d2e5c}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!Sound\-Stream@{Sound\-Stream}}
+\index{Sound\-Stream@{Sound\-Stream}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{Sound\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Sound\-Stream\-::\-Sound\-Stream (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_sound_stream_a769d08f4c3c6b4340ef3a838329d2e5c}
+
+
+Default constructor. 
+
+This constructor is only meant to be called by derived classes. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_sound_stream_a68dedd0a2c26e6937c80fab3d235edea}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!get\-Channel\-Count@{get\-Channel\-Count}}
+\index{get\-Channel\-Count@{get\-Channel\-Count}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{get\-Channel\-Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Sound\-Stream\-::get\-Channel\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_stream_a68dedd0a2c26e6937c80fab3d235edea}
+
+
+Return the number of channels of the stream. 
+
+1 channel means a mono sound, 2 means stereo, etc.
+
+\begin{DoxyReturn}{Returns}
+Number of channels 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sound_stream_ad8bbf6c0d2ff2d75e19035dea3fd77c3}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!get\-Loop@{get\-Loop}}
+\index{get\-Loop@{get\-Loop}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{get\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Sound\-Stream\-::get\-Loop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_stream_ad8bbf6c0d2ff2d75e19035dea3fd77c3}
+
+
+Tell whether or not the stream is in loop mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the stream is looping, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}{set\-Loop} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_a6070416e1e1a11b5915e9314dd6638f7}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!get\-Playing\-Offset@{get\-Playing\-Offset}}
+\index{get\-Playing\-Offset@{get\-Playing\-Offset}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{get\-Playing\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} sf\-::\-Sound\-Stream\-::get\-Playing\-Offset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_stream_a6070416e1e1a11b5915e9314dd6638f7}
+
+
+Get the current playing position of the stream. 
+
+\begin{DoxyReturn}{Returns}
+Current playing position, from the beginning of the stream
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_af416a5f84c8750d2acb9821d78bc8646}{set\-Playing\-Offset} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_aad1da51c7a752682ca208bf11e3349bb}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!get\-Sample\-Rate@{get\-Sample\-Rate}}
+\index{get\-Sample\-Rate@{get\-Sample\-Rate}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{get\-Sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Sound\-Stream\-::get\-Sample\-Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_stream_aad1da51c7a752682ca208bf11e3349bb}
+
+
+Get the stream sample rate of the stream. 
+
+The sample rate is the number of audio samples played per second. The higher, the better the quality.
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in number of samples per second 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sound_stream_a75f722e7edcfa9952ff0c643966c6858}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!get\-Status@{get\-Status}}
+\index{get\-Status@{get\-Status}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{get\-Status}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Status} sf\-::\-Sound\-Stream\-::get\-Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_stream_a75f722e7edcfa9952ff0c643966c6858}
+
+
+Get the current status of the stream (stopped, paused, playing) 
+
+\begin{DoxyReturn}{Returns}
+Current status 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sound_stream_a9c351711198ee1aa77c2fefd3ced4d2c}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!initialize@{initialize}}
+\index{initialize@{initialize}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::initialize (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{channel\-Count, }
+\item[{unsigned int}]{sample\-Rate}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_sound_stream_a9c351711198ee1aa77c2fefd3ced4d2c}
+
+
+Define the audio stream parameters. 
+
+This function must be called by derived classes as soon as they know the audio settings of the stream to play. Any attempt to manipulate the stream (\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play()}, ...) before calling this function will fail. It can be called multiple times if the settings of the audio stream change, but only when the stream is stopped.
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel\-Count} & Number of channels of the stream \\
+\hline
+{\em sample\-Rate} & Sample rate, in samples per second \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!on\-Get\-Data@{on\-Get\-Data}}
+\index{on\-Get\-Data@{on\-Get\-Data}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{on\-Get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool sf\-::\-Sound\-Stream\-::on\-Get\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Chunk} \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}
+
+
+Request a new chunk of audio samples from the stream source. 
+
+This function must be overriden by derived classes to provide the audio samples to play. It is called continuously by the streaming loop, in a separate thread. The source can choose to stop the streaming loop at any time, by returning false to the caller.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \hyperlink{structsf_1_1_sound_stream_1_1_chunk}{Chunk} of data to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue playback, false to stop 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{sf\-::\-Music}.
+
+\hypertarget{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!on\-Seek@{on\-Seek}}
+\index{on\-Seek@{on\-Seek}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{on\-Seek}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Sound\-Stream\-::on\-Seek (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{time\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}
+
+
+Change the current playing position in the stream source. 
+
+This function must be overriden by derived classes to allow random seeking into the stream source.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\-Offset} & New playing position, relative to the beginning of the stream \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{sf\-::\-Music}.
+
+\hypertarget{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!pause@{pause}}
+\index{pause@{pause}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{pause}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::pause (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}
+
+
+Pause the audio stream. 
+
+This function pauses the stream if it was playing, otherwise (stream already paused or stopped) it has no effect.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}, \hyperlink{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}{stop} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!play@{play}}
+\index{play@{play}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{play}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::play (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}
+
+
+Start or resume playing the audio stream. 
+
+This function starts the stream if it was stopped, resumes it if it was paused, and restarts it from beginning if it was it already playing. This function uses its own thread so that it doesn't block the rest of the program while the stream is played.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{pause}, \hyperlink{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}{stop} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!set\-Loop@{set\-Loop}}
+\index{set\-Loop@{set\-Loop}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{set\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::set\-Loop (
+\begin{DoxyParamCaption}
+\item[{bool}]{loop}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}
+
+
+Set whether or not the stream should loop after reaching the end. 
+
+If set, the stream will restart from beginning after reaching the end and so on, until it is stopped or set\-Loop(false) is called. The default looping state for streams is false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em loop} & True to play in loop, false to play once\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_ad8bbf6c0d2ff2d75e19035dea3fd77c3}{get\-Loop} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_af416a5f84c8750d2acb9821d78bc8646}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!set\-Playing\-Offset@{set\-Playing\-Offset}}
+\index{set\-Playing\-Offset@{set\-Playing\-Offset}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{set\-Playing\-Offset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::set\-Playing\-Offset (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{time\-Offset}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_stream_af416a5f84c8750d2acb9821d78bc8646}
+
+
+Change the current playing position of the stream. 
+
+The playing position can be changed when the stream is either paused or playing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\-Offset} & New playing position, from the beginning of the stream\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_a6070416e1e1a11b5915e9314dd6638f7}{get\-Playing\-Offset} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}{\index{sf\-::\-Sound\-Stream@{sf\-::\-Sound\-Stream}!stop@{stop}}
+\index{stop@{stop}!sf::SoundStream@{sf\-::\-Sound\-Stream}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Stream\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_stream_a16cc6a0404b32e42c4dce184bb94d0f4}
+
+
+Stop playing the audio stream. 
+
+This function stops the stream if it was playing or paused, and does nothing if it was already stopped. It also resets the playing position (unlike \hyperlink{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{pause()}).
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}, \hyperlink{classsf_1_1_sound_stream_a932ff181e661503cad288b4bb6fe45ca}{pause} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Audio/\hyperlink{_sound_stream_8hpp}{Sound\-Stream.\-hpp}\end{DoxyCompactItemize}

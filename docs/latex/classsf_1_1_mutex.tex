@@ -1,0 +1,150 @@
+\hypertarget{classsf_1_1_mutex}{\section{sf\-:\-:Mutex Class Reference}
+\label{classsf_1_1_mutex}\index{sf\-::\-Mutex@{sf\-::\-Mutex}}
+}
+
+
+Blocks concurrent access to shared resources from multiple threads.  
+
+
+
+
+{\ttfamily \#include $<$Mutex.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Mutex\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_mutex__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Mutex\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_mutex__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_mutex_a9bd52a48320fd7b6db8a78037aad276e}{Mutex} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_mutex_a9f76a67b7b6d3918131a692179b4e3f2}{$\sim$\-Mutex} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}{lock} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_lock}{Lock} the mutex. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}{unlock} ()
+\begin{DoxyCompactList}\small\item\em Unlock the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Blocks concurrent access to shared resources from multiple threads. 
+
+\hyperlink{classsf_1_1_mutex}{Mutex} stands for \char`\"{}\-M\-U\-Tual E\-Xclusion\char`\"{}. A mutex is a synchronization object, used when multiple threads are involved.
+
+When you want to protect a part of the code from being accessed simultaneously by multiple threads, you typically use a mutex. When a thread is locked by a mutex, any other thread trying to lock it will be blocked until the mutex is released by the thread that locked it. This way, you can allow only one thread at a time to access a critical region of your code.
+
+Usage example\-: 
+\begin{DoxyCode}
+Database database; \textcolor{comment}{// this is a critical resource that needs some protection}
+\hyperlink{classsf_1_1_mutex}{sf::Mutex} mutex;
+
+\textcolor{keywordtype}{void} thread1()
+\{
+    mutex.\hyperlink{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}{lock}(); \textcolor{comment}{// this call will block the thread if the mutex is already locked by thread2}
+    database.write(...);
+    mutex.\hyperlink{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}{unlock}(); \textcolor{comment}{// if thread2 was waiting, it will now be unblocked}
+\}
+
+\textcolor{keywordtype}{void} thread2()
+\{
+    mutex.\hyperlink{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}{lock}(); \textcolor{comment}{// this call will block the thread if the mutex is already locked by thread1}
+    database.write(...);
+    mutex.\hyperlink{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}{unlock}(); \textcolor{comment}{// if thread1 was waiting, it will now be unblocked}
+\}
+\end{DoxyCode}
+
+
+Be very careful with mutexes. A bad usage can lead to bad problems, like deadlocks (two threads are waiting for each other and the application is globally stuck).
+
+To make the usage of mutexes more robust, particularly in environments where exceptions can be thrown, you should use the helper class \hyperlink{classsf_1_1_lock}{sf\-::\-Lock} to lock/unlock mutexes.
+
+S\-F\-M\-L mutexes are recursive, which means that you can lock a mutex multiple times in the same thread without creating a deadlock. In this case, the first call to Lock() behaves as usual, and the following ones have no effect. However, you must call \hyperlink{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}{unlock()} exactly as many times as you called \hyperlink{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}{lock()}. If you don't, the mutex won't be released.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_lock}{sf\-::\-Lock} 
+\end{DoxySeeAlso}
+
+
+Definition at line 47 of file Mutex.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_mutex_a9bd52a48320fd7b6db8a78037aad276e}{\index{sf\-::\-Mutex@{sf\-::\-Mutex}!Mutex@{Mutex}}
+\index{Mutex@{Mutex}!sf::Mutex@{sf\-::\-Mutex}}
+\subsubsection[{Mutex}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Mutex\-::\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_mutex_a9bd52a48320fd7b6db8a78037aad276e}
+
+
+Default constructor. 
+
+\hypertarget{classsf_1_1_mutex_a9f76a67b7b6d3918131a692179b4e3f2}{\index{sf\-::\-Mutex@{sf\-::\-Mutex}!$\sim$\-Mutex@{$\sim$\-Mutex}}
+\index{$\sim$\-Mutex@{$\sim$\-Mutex}!sf::Mutex@{sf\-::\-Mutex}}
+\subsubsection[{$\sim$\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Mutex\-::$\sim$\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_mutex_a9f76a67b7b6d3918131a692179b4e3f2}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}{\index{sf\-::\-Mutex@{sf\-::\-Mutex}!lock@{lock}}
+\index{lock@{lock}!sf::Mutex@{sf\-::\-Mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_mutex_a1a16956a6bbea764480c1b80f2e45763}
+
+
+\hyperlink{classsf_1_1_lock}{Lock} the mutex. 
+
+If the mutex is already locked in another thread, this call will block the execution until the mutex is released.
+
+\begin{DoxySeeAlso}{See Also}
+Unlock 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}{\index{sf\-::\-Mutex@{sf\-::\-Mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!sf::Mutex@{sf\-::\-Mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_mutex_ade71268ffc5e80756652058b01c23c33}
+
+
+Unlock the mutex. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_lock}{Lock} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_mutex_8hpp}{Mutex.\-hpp}\end{DoxyCompactItemize}

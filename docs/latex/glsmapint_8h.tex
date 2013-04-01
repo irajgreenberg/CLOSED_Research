@@ -1,0 +1,230 @@
+\hypertarget{glsmapint_8h}{\section{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/glsmapint.h File Reference}
+\label{glsmapint_8h}\index{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/glsmapint.\-h@{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/glsmapint.\-h}}
+}
+{\ttfamily \#include \char`\"{}glsmap.\-h\char`\"{}}\\*
+Include dependency graph for glsmapint.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{glsmapint_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct___s_t_x_y}{\-\_\-\-S\-T\-X\-Y}
+\item 
+struct \hyperlink{struct___sphere_map_mesh}{\-\_\-\-Sphere\-Map\-Mesh}
+\item 
+struct \hyperlink{struct___sphere_map}{\-\_\-\-Sphere\-Map}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{glsmapint_8h_a6c4ebb3c1bae78569ba1c0e594d6b578}{I\-N\-I\-T\-F\-A\-C\-E}(mesh)
+\item 
+\#define \hyperlink{glsmapint_8h_a3b2196b7b6ccc0d84be537d2b0d8faf1}{F\-A\-C\-E}(side, \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x})~mesh-\/$>$face\mbox{[}(side)$\ast$sqsteps + (\hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})$\ast$steps + (\hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x})\mbox{]}
+\item 
+\#define \hyperlink{glsmapint_8h_ae35244e82f5c3fd9c8e2220ee8f0bbcf}{F\-A\-C\-Exy}(side, i, j)~(\&\hyperlink{glsmapint_8h_a3b2196b7b6ccc0d84be537d2b0d8faf1}{F\-A\-C\-E}(side,i,j).\hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x})
+\item 
+\#define \hyperlink{glsmapint_8h_a8789a2aca8ed61e6d724475f1d73a59c}{F\-A\-C\-Est}(side, i, j)~(\&\hyperlink{glsmapint_8h_a3b2196b7b6ccc0d84be537d2b0d8faf1}{F\-A\-C\-E}(side,i,j).s)
+\item 
+\#define \hyperlink{glsmapint_8h_ac203e1d64c591fd875bf699e7972dbf4}{I\-N\-I\-T\-B\-A\-C\-K}(mesh)
+\item 
+\#define \hyperlink{glsmapint_8h_a063388fb7114644b1638474626ad6841}{B\-A\-C\-K}(edge, ring, spoke)~mesh-\/$>$back\mbox{[}(edge)$\ast$ringedspokes + (ring)$\ast$mesh-\/$>$steps + (spoke)\mbox{]}
+\item 
+\#define \hyperlink{glsmapint_8h_a2ca038f0e97bbfec0bed4cd5825fee48}{B\-A\-C\-Kxy}(edge, ring, spoke)~(\&\hyperlink{port_8h_ab303ee384877c80cb8855bf0113faf88}{B\-A\-C\-K}(edge,ring,spoke).\hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x})
+\item 
+\#define \hyperlink{glsmapint_8h_a9fb05d5a543432961922f7affff8771f}{B\-A\-C\-Kst}(edge, ring, spoke)~(\&\hyperlink{port_8h_ab303ee384877c80cb8855bf0113faf88}{B\-A\-C\-K}(edge,ring,spoke).s)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct___s_t_x_y}{\-\_\-\-S\-T\-X\-Y} \hyperlink{glsmapint_8h_ac1c4fff4fc00c8cd3d4a318e152fce9e}{S\-T\-X\-Y}
+\item 
+typedef struct \hyperlink{struct___sphere_map_mesh}{\-\_\-\-Sphere\-Map\-Mesh} \hyperlink{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}{Sphere\-Map\-Mesh}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a58833a3110c570fb05130d40c365d1e4}{X} = 0, 
+\hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a5596231eabd6cf29050967d5ac83ad84}{Y} = 1, 
+\hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7aa70478ce277ffc322f8e1e3418e07355}{Z} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{glsmapint_8h_ab3c338dd2ba56d7038406158590db65f}{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side} (\hyperlink{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}{Sphere\-Map\-Mesh} $\ast$mesh, int side)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{glsmapint_8h_a3dfc0a2204985e1e848731317150bd85}{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back} (\hyperlink{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}{Sphere\-Map\-Mesh} $\ast$mesh)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{glsmapint_8h_a24e1ee6d173ce14a79d6539888acb258}{\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh} (\hyperlink{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}{Sphere\-Map\-Mesh} $\ast$mesh)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{glsmapint_8h_a063388fb7114644b1638474626ad6841}{\index{glsmapint.\-h@{glsmapint.\-h}!B\-A\-C\-K@{B\-A\-C\-K}}
+\index{B\-A\-C\-K@{B\-A\-C\-K}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{edge, }
+\item[{}]{ring, }
+\item[{}]{spoke}
+\end{DoxyParamCaption}
+)~mesh-\/$>$back\mbox{[}(edge)$\ast$ringedspokes + (ring)$\ast$mesh-\/$>$steps + (spoke)\mbox{]}}}\label{glsmapint_8h_a063388fb7114644b1638474626ad6841}
+
+
+Definition at line 31 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_a9fb05d5a543432961922f7affff8771f}{\index{glsmapint.\-h@{glsmapint.\-h}!B\-A\-C\-Kst@{B\-A\-C\-Kst}}
+\index{B\-A\-C\-Kst@{B\-A\-C\-Kst}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{B\-A\-C\-Kst}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-C\-Kst(
+\begin{DoxyParamCaption}
+\item[{}]{edge, }
+\item[{}]{ring, }
+\item[{}]{spoke}
+\end{DoxyParamCaption}
+)~(\&{\bf B\-A\-C\-K}(edge,ring,spoke).s)}}\label{glsmapint_8h_a9fb05d5a543432961922f7affff8771f}
+
+
+Definition at line 37 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_a2ca038f0e97bbfec0bed4cd5825fee48}{\index{glsmapint.\-h@{glsmapint.\-h}!B\-A\-C\-Kxy@{B\-A\-C\-Kxy}}
+\index{B\-A\-C\-Kxy@{B\-A\-C\-Kxy}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{B\-A\-C\-Kxy}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-A\-C\-Kxy(
+\begin{DoxyParamCaption}
+\item[{}]{edge, }
+\item[{}]{ring, }
+\item[{}]{spoke}
+\end{DoxyParamCaption}
+)~(\&{\bf B\-A\-C\-K}(edge,ring,spoke).{\bf x})}}\label{glsmapint_8h_a2ca038f0e97bbfec0bed4cd5825fee48}
+
+
+Definition at line 34 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_a3b2196b7b6ccc0d84be537d2b0d8faf1}{\index{glsmapint.\-h@{glsmapint.\-h}!F\-A\-C\-E@{F\-A\-C\-E}}
+\index{F\-A\-C\-E@{F\-A\-C\-E}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-A\-C\-E(
+\begin{DoxyParamCaption}
+\item[{}]{side, }
+\item[{}]{{\bf y}, }
+\item[{}]{{\bf x}}
+\end{DoxyParamCaption}
+)~mesh-\/$>$face\mbox{[}(side)$\ast$sqsteps + ({\bf y})$\ast$steps + ({\bf x})\mbox{]}}}\label{glsmapint_8h_a3b2196b7b6ccc0d84be537d2b0d8faf1}
+
+
+Definition at line 18 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_a8789a2aca8ed61e6d724475f1d73a59c}{\index{glsmapint.\-h@{glsmapint.\-h}!F\-A\-C\-Est@{F\-A\-C\-Est}}
+\index{F\-A\-C\-Est@{F\-A\-C\-Est}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{F\-A\-C\-Est}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-A\-C\-Est(
+\begin{DoxyParamCaption}
+\item[{}]{side, }
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(\&{\bf F\-A\-C\-E}(side,i,j).s)}}\label{glsmapint_8h_a8789a2aca8ed61e6d724475f1d73a59c}
+
+
+Definition at line 24 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_ae35244e82f5c3fd9c8e2220ee8f0bbcf}{\index{glsmapint.\-h@{glsmapint.\-h}!F\-A\-C\-Exy@{F\-A\-C\-Exy}}
+\index{F\-A\-C\-Exy@{F\-A\-C\-Exy}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{F\-A\-C\-Exy}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\-A\-C\-Exy(
+\begin{DoxyParamCaption}
+\item[{}]{side, }
+\item[{}]{i, }
+\item[{}]{j}
+\end{DoxyParamCaption}
+)~(\&{\bf F\-A\-C\-E}(side,i,j).{\bf x})}}\label{glsmapint_8h_ae35244e82f5c3fd9c8e2220ee8f0bbcf}
+
+
+Definition at line 21 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_ac203e1d64c591fd875bf699e7972dbf4}{\index{glsmapint.\-h@{glsmapint.\-h}!I\-N\-I\-T\-B\-A\-C\-K@{I\-N\-I\-T\-B\-A\-C\-K}}
+\index{I\-N\-I\-T\-B\-A\-C\-K@{I\-N\-I\-T\-B\-A\-C\-K}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{I\-N\-I\-T\-B\-A\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-I\-T\-B\-A\-C\-K(
+\begin{DoxyParamCaption}
+\item[{}]{mesh}
+\end{DoxyParamCaption}
+)}}\label{glsmapint_8h_ac203e1d64c591fd875bf699e7972dbf4}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} allrings = mesh->rings + mesh->edgeExtend; \(\backslash\)
+    int ringedspokes = allrings * mesh->steps
+\end{DoxyCode}
+
+
+Definition at line 27 of file glsmapint.\-h.
+
+\hypertarget{glsmapint_8h_a6c4ebb3c1bae78569ba1c0e594d6b578}{\index{glsmapint.\-h@{glsmapint.\-h}!I\-N\-I\-T\-F\-A\-C\-E@{I\-N\-I\-T\-F\-A\-C\-E}}
+\index{I\-N\-I\-T\-F\-A\-C\-E@{I\-N\-I\-T\-F\-A\-C\-E}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{I\-N\-I\-T\-F\-A\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-N\-I\-T\-F\-A\-C\-E(
+\begin{DoxyParamCaption}
+\item[{}]{mesh}
+\end{DoxyParamCaption}
+)}}\label{glsmapint_8h_a6c4ebb3c1bae78569ba1c0e594d6b578}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keywordtype}{int} steps = mesh->steps; \(\backslash\)
+    int sqsteps = mesh->steps * mesh->steps
+\end{DoxyCode}
+
+
+Definition at line 14 of file glsmapint.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}{\index{glsmapint.\-h@{glsmapint.\-h}!Sphere\-Map\-Mesh@{Sphere\-Map\-Mesh}}
+\index{Sphere\-Map\-Mesh@{Sphere\-Map\-Mesh}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{Sphere\-Map\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-\-Sphere\-Map\-Mesh}  {\bf Sphere\-Map\-Mesh}}}\label{glsmapint_8h_a4965d0c8132b5c0f5a11f1b238d91a7a}
+\hypertarget{glsmapint_8h_ac1c4fff4fc00c8cd3d4a318e152fce9e}{\index{glsmapint.\-h@{glsmapint.\-h}!S\-T\-X\-Y@{S\-T\-X\-Y}}
+\index{S\-T\-X\-Y@{S\-T\-X\-Y}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{S\-T\-X\-Y}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-\-S\-T\-X\-Y}  {\bf S\-T\-X\-Y}}}\label{glsmapint_8h_ac1c4fff4fc00c8cd3d4a318e152fce9e}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{X@{X}!glsmapint.\-h@{glsmapint.\-h}}\index{glsmapint.\-h@{glsmapint.\-h}!X@{X}}\item[{\em 
+\hypertarget{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a58833a3110c570fb05130d40c365d1e4}{X}\label{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a58833a3110c570fb05130d40c365d1e4}
+}]\index{Y@{Y}!glsmapint.\-h@{glsmapint.\-h}}\index{glsmapint.\-h@{glsmapint.\-h}!Y@{Y}}\item[{\em 
+\hypertarget{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a5596231eabd6cf29050967d5ac83ad84}{Y}\label{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a5596231eabd6cf29050967d5ac83ad84}
+}]\index{Z@{Z}!glsmapint.\-h@{glsmapint.\-h}}\index{glsmapint.\-h@{glsmapint.\-h}!Z@{Z}}\item[{\em 
+\hypertarget{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7aa70478ce277ffc322f8e1e3418e07355}{Z}\label{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7aa70478ce277ffc322f8e1e3418e07355}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 12 of file glsmapint.\-h.
+
+
+
+\subsection{Function Documentation}
+\hypertarget{glsmapint_8h_a3dfc0a2204985e1e848731317150bd85}{\index{glsmapint.\-h@{glsmapint.\-h}!\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back@{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back}}
+\index{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back@{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} \-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Back (
+\begin{DoxyParamCaption}
+\item[{{\bf Sphere\-Map\-Mesh} $\ast$}]{mesh}
+\end{DoxyParamCaption}
+)}}\label{glsmapint_8h_a3dfc0a2204985e1e848731317150bd85}
+\hypertarget{glsmapint_8h_ab3c338dd2ba56d7038406158590db65f}{\index{glsmapint.\-h@{glsmapint.\-h}!\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side@{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side}}
+\index{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side@{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{\-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} \-\_\-\-\_\-smap\-Draw\-Sphere\-Map\-Mesh\-Side (
+\begin{DoxyParamCaption}
+\item[{{\bf Sphere\-Map\-Mesh} $\ast$}]{mesh, }
+\item[{int}]{side}
+\end{DoxyParamCaption}
+)}}\label{glsmapint_8h_ab3c338dd2ba56d7038406158590db65f}
+\hypertarget{glsmapint_8h_a24e1ee6d173ce14a79d6539888acb258}{\index{glsmapint.\-h@{glsmapint.\-h}!\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh@{\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh}}
+\index{\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh@{\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh}!glsmapint.h@{glsmapint.\-h}}
+\subsubsection[{\-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} \-\_\-\-\_\-smap\-Validate\-Sphere\-Map\-Mesh (
+\begin{DoxyParamCaption}
+\item[{{\bf Sphere\-Map\-Mesh} $\ast$}]{mesh}
+\end{DoxyParamCaption}
+)}}\label{glsmapint_8h_a24e1ee6d173ce14a79d6539888acb258}

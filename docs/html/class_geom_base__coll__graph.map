@@ -1,0 +1,5 @@
+<map id="GeomBase" name="GeomBase">
+<area shape="rect" id="node2" href="$class_vector3.html" title="Vector3" alt="" coords="5,5,72,32"/>
+<area shape="rect" id="node3" href="$class_dimension3.html" title="Dimension3\&lt; float \&gt;" alt="" coords="97,5,236,32"/>
+<area shape="rect" id="node4" href="$class_color4.html" title="Color4\&lt; float \&gt;" alt="" coords="261,5,371,32"/>
+</map>

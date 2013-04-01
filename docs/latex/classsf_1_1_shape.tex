@@ -1,0 +1,412 @@
+\hypertarget{classsf_1_1_shape}{\section{sf\-:\-:Shape Class Reference}
+\label{classsf_1_1_shape}\index{sf\-::\-Shape@{sf\-::\-Shape}}
+}
+
+
+Base class for textured shapes with outline.  
+
+
+
+
+{\ttfamily \#include $<$Shape.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Shape\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsf_1_1_shape__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Shape\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classsf_1_1_shape__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}{$\sim$\-Shape} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\-Texture} (const \hyperlink{classsf_1_1_texture}{Texture} $\ast$\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture}, bool reset\-Rect=false)
+\begin{DoxyCompactList}\small\item\em Change the source texture of the shape. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\-Texture\-Rect} (const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \&rect)
+\begin{DoxyCompactList}\small\item\em Set the sub-\/rectangle of the texture that the shape will display. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\-Fill\-Color} (const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color})
+\begin{DoxyCompactList}\small\item\em Set the fill color of the shape. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\-Outline\-Color} (const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color})
+\begin{DoxyCompactList}\small\item\em Set the outline color of the shape. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\-Outline\-Thickness} (float thickness)
+\begin{DoxyCompactList}\small\item\em Set the thickness of the shape's outline. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_texture}{Texture} $\ast$ \hyperlink{classsf_1_1_shape_a1bf27ac425fcce36efd0eed67531a403}{get\-Texture} () const 
+\begin{DoxyCompactList}\small\item\em Get the source texture of the shape. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \& \hyperlink{classsf_1_1_shape_af7c4c80a435b85a622812711cf510439}{get\-Texture\-Rect} () const 
+\begin{DoxyCompactList}\small\item\em Get the sub-\/rectangle of the texture displayed by the shape. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_color}{Color} \& \hyperlink{classsf_1_1_shape_ad7f7fe601a8bb24efe9aa77809a35c12}{get\-Fill\-Color} () const 
+\begin{DoxyCompactList}\small\item\em Get the fill color of the shape. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_color}{Color} \& \hyperlink{classsf_1_1_shape_a4fa7d3bf5ee2332f6b9d9bebe9b1e2fd}{get\-Outline\-Color} () const 
+\begin{DoxyCompactList}\small\item\em Get the outline color of the shape. \end{DoxyCompactList}\item 
+float \hyperlink{classsf_1_1_shape_ac66f917b41eda6159a8ba6571d77f2ad}{get\-Outline\-Thickness} () const 
+\begin{DoxyCompactList}\small\item\em Get the outline thickness of the shape. \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{classsf_1_1_shape_ad84e1b675ecd270ad8151aea4e271a78}{get\-Point\-Count} () const =0
+\begin{DoxyCompactList}\small\item\em Get the total number of points of the shape. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_shape_a397f3b4cdb7ad98cdc6c034816c652d2}{get\-Point} (unsigned int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}) const =0
+\begin{DoxyCompactList}\small\item\em Get a point of the shape. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_shape_a5d26a18ccfe850ff8d327ca97edbc34a}{get\-Local\-Bounds} () const 
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_shape_a5257341fe832884dbba6b9dc855e33cc}{get\-Global\-Bounds} () const 
+\begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}{Shape} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}{update} ()
+\begin{DoxyCompactList}\small\item\em Recompute the internal geometry of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for textured shapes with outline. 
+
+\hyperlink{classsf_1_1_shape}{sf\-::\-Shape} is a drawable class that allows to define and display a custom convex shape on a render target. It's only an abstract base, it needs to be specialized for concrete types of shapes (circle, rectangle, convex polygon, star, ...).
+
+In addition to the attributes provided by the specialized shape classes, a shape always has the following attributes\-: \begin{DoxyItemize}
+\item a texture \item a texture rectangle \item a fill color \item an outline color \item an outline thickness\end{DoxyItemize}
+Each feature is optional, and can be disabled easily\-: \begin{DoxyItemize}
+\item the texture can be null \item the fill/outline colors can be \hyperlink{classsf_1_1_color_a569b45471737f770656f50ae7bbac292}{sf\-::\-Color\-::\-Transparent} \item the outline thickness can be zero\end{DoxyItemize}
+You can write your own derived shape class, there are only two virtual functions to override\-: \begin{DoxyItemize}
+\item get\-Point\-Count must return the number of points of the shape \item get\-Point must return the points of the shape\end{DoxyItemize}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_rectangle_shape}{sf\-::\-Rectangle\-Shape}, \hyperlink{classsf_1_1_circle_shape}{sf\-::\-Circle\-Shape}, \hyperlink{classsf_1_1_convex_shape}{sf\-::\-Convex\-Shape}, \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} 
+\end{DoxySeeAlso}
+
+
+Definition at line 44 of file Shape.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}{\index{sf\-::\-Shape@{sf\-::\-Shape}!$\sim$\-Shape@{$\sim$\-Shape}}
+\index{$\sim$\-Shape@{$\sim$\-Shape}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{$\sim$\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Shape\-::$\sim$\-Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_shape_a2262aceb9df52d4275c19633592f19bf}
+
+
+Virtual destructor. 
+
+\hypertarget{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}{\index{sf\-::\-Shape@{sf\-::\-Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{Shape}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Shape\-::\-Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_shape_a413a457f720835b9f5d8e97ca8b80960}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_shape_ad7f7fe601a8bb24efe9aa77809a35c12}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Fill\-Color@{get\-Fill\-Color}}
+\index{get\-Fill\-Color@{get\-Fill\-Color}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Color}\& sf\-::\-Shape\-::get\-Fill\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_ad7f7fe601a8bb24efe9aa77809a35c12}
+
+
+Get the fill color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Fill color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\-Fill\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a5257341fe832884dbba6b9dc855e33cc}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Global\-Bounds@{get\-Global\-Bounds}}
+\index{get\-Global\-Bounds@{get\-Global\-Bounds}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Global\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Shape\-::get\-Global\-Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_a5257341fe832884dbba6b9dc855e33cc}
+
+
+Get the global bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes in account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the sprite in the global 2\-D world's coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_shape_a5d26a18ccfe850ff8d327ca97edbc34a}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Local\-Bounds@{get\-Local\-Bounds}}
+\index{get\-Local\-Bounds@{get\-Local\-Bounds}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Local\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Shape\-::get\-Local\-Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_a5d26a18ccfe850ff8d327ca97edbc34a}
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity's coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_shape_a4fa7d3bf5ee2332f6b9d9bebe9b1e2fd}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Outline\-Color@{get\-Outline\-Color}}
+\index{get\-Outline\-Color@{get\-Outline\-Color}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Outline\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Color}\& sf\-::\-Shape\-::get\-Outline\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_a4fa7d3bf5ee2332f6b9d9bebe9b1e2fd}
+
+
+Get the outline color of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline color of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\-Outline\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_ac66f917b41eda6159a8ba6571d77f2ad}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Outline\-Thickness@{get\-Outline\-Thickness}}
+\index{get\-Outline\-Thickness@{get\-Outline\-Thickness}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Outline\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}float sf\-::\-Shape\-::get\-Outline\-Thickness (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_ac66f917b41eda6159a8ba6571d77f2ad}
+
+
+Get the outline thickness of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Outline thickness of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{set\-Outline\-Thickness} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a397f3b4cdb7ad98cdc6c034816c652d2}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Point@{get\-Point}}
+\index{get\-Point@{get\-Point}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Point}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector2f} sf\-::\-Shape\-::get\-Point (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classsf_1_1_shape_a397f3b4cdb7ad98cdc6c034816c652d2}
+
+
+Get a point of the shape. 
+
+The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. Get\-Point\-Count() -\/ 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index-\/th point of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_ad84e1b675ecd270ad8151aea4e271a78}{get\-Point\-Count} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classsf_1_1_convex_shape_ae2a18b837cd4454e340599a220c09a34}{sf\-::\-Convex\-Shape}, \hyperlink{classsf_1_1_circle_shape_a05139deaef220ed3d5a3bc4ca9aa9dbe}{sf\-::\-Circle\-Shape}, and \hyperlink{classsf_1_1_rectangle_shape_a3994f7f937d6332fe64b6990d5bc43a1}{sf\-::\-Rectangle\-Shape}.
+
+\hypertarget{classsf_1_1_shape_ad84e1b675ecd270ad8151aea4e271a78}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Point\-Count@{get\-Point\-Count}}
+\index{get\-Point\-Count@{get\-Point\-Count}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Point\-Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int sf\-::\-Shape\-::get\-Point\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classsf_1_1_shape_ad84e1b675ecd270ad8151aea4e271a78}
+
+
+Get the total number of points of the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a397f3b4cdb7ad98cdc6c034816c652d2}{get\-Point} 
+\end{DoxySeeAlso}
+
+
+Implemented in \hyperlink{classsf_1_1_circle_shape_ae41ed830ca8f459e88ea6f125c240949}{sf\-::\-Circle\-Shape}, \hyperlink{classsf_1_1_rectangle_shape_a439f5a92583baf972878c836b73bf955}{sf\-::\-Rectangle\-Shape}, and \hyperlink{classsf_1_1_convex_shape_af81b86134fe54f2d50d9fab0db065ef1}{sf\-::\-Convex\-Shape}.
+
+\hypertarget{classsf_1_1_shape_a1bf27ac425fcce36efd0eed67531a403}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Texture@{get\-Texture}}
+\index{get\-Texture@{get\-Texture}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Texture}$\ast$ sf\-::\-Shape\-::get\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_a1bf27ac425fcce36efd0eed67531a403}
+
+
+Get the source texture of the shape. 
+
+If the shape has no source texture, a N\-U\-L\-L pointer is returned. The returned pointer is const, which means that you can't modify the texture when you retrieve it with this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the shape's texture
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\-Texture} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_af7c4c80a435b85a622812711cf510439}{\index{sf\-::\-Shape@{sf\-::\-Shape}!get\-Texture\-Rect@{get\-Texture\-Rect}}
+\index{get\-Texture\-Rect@{get\-Texture\-Rect}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{get\-Texture\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Int\-Rect}\& sf\-::\-Shape\-::get\-Texture\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shape_af7c4c80a435b85a622812711cf510439}
+
+
+Get the sub-\/rectangle of the texture displayed by the shape. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_texture}{Texture} rectangle of the shape
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\-Texture\-Rect} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{\index{sf\-::\-Shape@{sf\-::\-Shape}!set\-Fill\-Color@{set\-Fill\-Color}}
+\index{set\-Fill\-Color@{set\-Fill\-Color}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{set\-Fill\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::set\-Fill\-Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color} \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}
+
+
+Set the fill color of the shape. 
+
+This color is modulated (multiplied) with the shape's texture if any. It can be used to colorize the shape, or change its global opacity. You can use \hyperlink{classsf_1_1_color_a569b45471737f770656f50ae7bbac292}{sf\-::\-Color\-::\-Transparent} to make the inside of the shape transparent, and have the outline alone. By default, the shape's fill color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_ad7f7fe601a8bb24efe9aa77809a35c12}{get\-Fill\-Color}, \hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{set\-Outline\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{\index{sf\-::\-Shape@{sf\-::\-Shape}!set\-Outline\-Color@{set\-Outline\-Color}}
+\index{set\-Outline\-Color@{set\-Outline\-Color}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{set\-Outline\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::set\-Outline\-Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color} \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}
+
+
+Set the outline color of the shape. 
+
+You can use \hyperlink{classsf_1_1_color_a569b45471737f770656f50ae7bbac292}{sf\-::\-Color\-::\-Transparent} to disable the outline. By default, the shape's outline color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New outline color of the shape\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a4fa7d3bf5ee2332f6b9d9bebe9b1e2fd}{get\-Outline\-Color}, \hyperlink{classsf_1_1_shape_a3506f9b5d916fec14d583d16f23c2485}{set\-Fill\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{\index{sf\-::\-Shape@{sf\-::\-Shape}!set\-Outline\-Thickness@{set\-Outline\-Thickness}}
+\index{set\-Outline\-Thickness@{set\-Outline\-Thickness}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{set\-Outline\-Thickness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::set\-Outline\-Thickness (
+\begin{DoxyParamCaption}
+\item[{float}]{thickness}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}
+
+
+Set the thickness of the shape's outline. 
+
+This number cannot be negative. Using zero disables the outline. By default, the outline thickness is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em thickness} & New outline thickness\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_ac66f917b41eda6159a8ba6571d77f2ad}{get\-Outline\-Thickness} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{\index{sf\-::\-Shape@{sf\-::\-Shape}!set\-Texture@{set\-Texture}}
+\index{set\-Texture@{set\-Texture}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{set\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::set\-Texture (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} $\ast$}]{texture, }
+\item[{bool}]{reset\-Rect = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}
+
+
+Change the source texture of the shape. 
+
+The {\itshape texture} argument refers to a texture that must exist as long as the shape uses it. Indeed, the shape doesn't store its own copy of the texture, but rather keeps a pointer to the one that you passed to this function. If the source texture is destroyed and the shape tries to use it, the behaviour is undefined. {\itshape texture} can be N\-U\-L\-L to disable texturing. If {\itshape reset\-Rect} is true, the Texture\-Rect property of the shape is automatically adjusted to the size of the new texture. If it is false, the texture rect is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & New texture \\
+\hline
+{\em reset\-Rect} & Should the texture rect be reset to the size of the new texture?\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_a1bf27ac425fcce36efd0eed67531a403}{get\-Texture}, \hyperlink{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{set\-Texture\-Rect} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}{\index{sf\-::\-Shape@{sf\-::\-Shape}!set\-Texture\-Rect@{set\-Texture\-Rect}}
+\index{set\-Texture\-Rect@{set\-Texture\-Rect}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{set\-Texture\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::set\-Texture\-Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Int\-Rect} \&}]{rect}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shape_a2029cc820d1740d14ac794b82525e157}
+
+
+Set the sub-\/rectangle of the texture that the shape will display. 
+
+The texture rect is useful when you don't want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect} & Rectangle defining the region of the texture to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape_af7c4c80a435b85a622812711cf510439}{get\-Texture\-Rect}, \hyperlink{classsf_1_1_shape_af8fb22bab1956325be5d62282711e3b6}{set\-Texture} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}{\index{sf\-::\-Shape@{sf\-::\-Shape}!update@{update}}
+\index{update@{update}!sf::Shape@{sf\-::\-Shape}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shape\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_shape_adfb2bd966c8edbc5d6c92ebc375e4ac1}
+
+
+Recompute the internal geometry of the shape. 
+
+This function must be called by the derived class everytime the shape's points change (ie. the result of either get\-Point\-Count or get\-Point is different). 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_shape_8hpp}{Shape.\-hpp}\end{DoxyCompactItemize}

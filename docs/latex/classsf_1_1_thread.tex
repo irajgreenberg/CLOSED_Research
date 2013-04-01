@@ -1,0 +1,329 @@
+\hypertarget{classsf_1_1_thread}{\section{sf\-:\-:Thread Class Reference}
+\label{classsf_1_1_thread}\index{sf\-::\-Thread@{sf\-::\-Thread}}
+}
+
+
+Utility class to manipulate threads.  
+
+
+
+
+{\ttfamily \#include $<$Thread.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Thread\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_thread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Thread\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_thread__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename F $>$ }\\\hyperlink{classsf_1_1_thread_a4cc65399bbb111cf8132537783b8e96c}{Thread} (F function)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a functor with no argument. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F , typename A $>$ }\\\hyperlink{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}{Thread} (F function, A argument)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a functor with an argument. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename C $>$ }\\\hyperlink{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{Thread} (\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void}(C\-::$\ast$function)(), C $\ast$object)
+\begin{DoxyCompactList}\small\item\em Construct the thread from a member function and an object. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_thread_af77942fc1730af7c31bc4c3a913a9c1d}{$\sim$\-Thread} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}{launch} ()
+\begin{DoxyCompactList}\small\item\em Run the thread. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_thread_a724b1f94c2d54f84280f2f78bde95fa0}{wait} ()
+\begin{DoxyCompactList}\small\item\em Wait until the thread finishes. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}{terminate} ()
+\begin{DoxyCompactList}\small\item\em Terminate the thread. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\\hyperlink{classsf_1_1_thread_a00b88f036de66eb63765f4c12ceb6870}{Thread} (F functor)
+\item 
+{\footnotesize template$<$typename F , typename A $>$ }\\\hyperlink{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}{Thread} (F function, A argument)
+\item 
+{\footnotesize template$<$typename C $>$ }\\\hyperlink{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{Thread} (\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void}(C\-::$\ast$function)(), C $\ast$object)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_thread_a5ed4f3acfcb44de47de196437c39f9ef}{priv\-::\-Thread\-Impl}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Utility class to manipulate threads. 
+
+Threads provide a way to run multiple parts of the code in parallel. When you launch a new thread, the execution is split and both the new thread and the caller run in parallel.
+
+To use a \hyperlink{classsf_1_1_thread}{sf\-::\-Thread}, you construct it directly with the function to execute as the entry point of the thread. \hyperlink{classsf_1_1_thread}{sf\-::\-Thread} has multiple template constructors, which means that you can use several types of entry points\-: \begin{DoxyItemize}
+\item non-\/member functions with no argument \item non-\/member functions with one argument of any type \item functors with no argument (this one is particularly useful for compatibility with boost/std\-::bind) \item functors with one argument of any type \item member functions from any class with no argument\end{DoxyItemize}
+The function argument, if any, is copied in the \hyperlink{classsf_1_1_thread}{sf\-::\-Thread} instance, as well as the functor (if the corresponding constructor is used). Class instances, however, are passed by pointer to you must make sure that the object won't be destroyed while the thread is still using it.
+
+The thread ends when its function is terminated. If the owner \hyperlink{classsf_1_1_thread}{sf\-::\-Thread} instance is destroyed before the thread is finished, the destructor will wait (see \hyperlink{classsf_1_1_thread_a724b1f94c2d54f84280f2f78bde95fa0}{wait()})
+
+Usage examples\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// example 1: non member function with one argument}
+
+\textcolor{keywordtype}{void} threadFunc(\textcolor{keywordtype}{int} argument)
+\{
+    ...
+\}
+
+\hyperlink{classsf_1_1_thread}{sf::Thread} thread(&threadFunc, 5);
+thread.launch(); \textcolor{comment}{// start the thread (internally calls threadFunc(5))}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// example 2: member function}
+
+\textcolor{keyword}{class }Task
+\{
+\textcolor{keyword}{public} :
+    \textcolor{keywordtype}{void} run()
+    \{
+        ...
+    \}
+\};
+
+Task task;
+\hyperlink{classsf_1_1_thread}{sf::Thread} thread(&Task::run, &task);
+thread.launch(); \textcolor{comment}{// start the thread (internally calls task.run())}
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// example 3: functor}
+
+\textcolor{keyword}{struct }Task
+\{
+    \textcolor{keywordtype}{void} operator()()
+    \{
+        ...
+    \}
+\};
+
+\hyperlink{classsf_1_1_thread}{sf::Thread} thread(Task());
+thread.launch(); \textcolor{comment}{// start the thread (internally calls operator() on the Task instance)}
+\end{DoxyCode}
+
+
+Creating parallel threads of execution can be dangerous\-: all threads inside the same process share the same memory space, which means that you may end up accessing the same variable from multiple threads at the same time. To prevent this kind of situations, you can use mutexes (see \hyperlink{classsf_1_1_mutex}{sf\-::\-Mutex}).
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_mutex}{sf\-::\-Mutex} 
+\end{DoxySeeAlso}
+
+
+Definition at line 48 of file Thread.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_thread_a4cc65399bbb111cf8132537783b8e96c}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{F}]{function}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a4cc65399bbb111cf8132537783b8e96c}
+
+
+Construct the thread from a functor with no argument. 
+
+This constructor works for function objects, as well as free function.
+
+Use this constructor for this kind of function\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} \textcolor{keyword}{function}();
+
+\textcolor{comment}{// --- or ----}
+
+\textcolor{keyword}{struct }Functor
+\{
+    \textcolor{keywordtype}{void} operator()();
+\};
+\end{DoxyCode}
+ Note\-: this does {\itshape not} run the thread, use Launch().
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Functor or free function to use as the entry point of the thread \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F , typename A $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{F}]{function, }
+\item[{A}]{argument}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}
+
+
+Construct the thread from a functor with an argument. 
+
+This constructor works for function objects, as well as free function. It is a template, which means that the argument can have any type (int, std\-::string, void$\ast$, Toto, ...).
+
+Use this constructor for this kind of function\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} \textcolor{keyword}{function}(\textcolor{keywordtype}{int} arg);
+
+\textcolor{comment}{// --- or ----}
+
+\textcolor{keyword}{struct }Functor
+\{
+    \textcolor{keywordtype}{void} operator()(\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} arg);
+\};
+\end{DoxyCode}
+ Note\-: this does {\itshape not} run the thread, use Launch().
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Functor or free function to use as the entry point of the thread \\
+\hline
+{\em argument} & argument to forward to the function \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf void}(C\-::$\ast$)()}]{function, }
+\item[{C $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}
+
+
+Construct the thread from a member function and an object. 
+
+This constructor is template, which means that you can use it with any class. Use this constructor for this kind of function\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyClass
+\{
+\textcolor{keyword}{public} :
+
+    \textcolor{keywordtype}{void} \textcolor{keyword}{function}();
+\};
+\end{DoxyCode}
+ Note\-: this does {\itshape not} run the thread, use Launch().
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & Entry point of the thread \\
+\hline
+{\em object} & Pointer to the object to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_thread_af77942fc1730af7c31bc4c3a913a9c1d}{\index{sf\-::\-Thread@{sf\-::\-Thread}!$\sim$\-Thread@{$\sim$\-Thread}}
+\index{$\sim$\-Thread@{$\sim$\-Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{$\sim$\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Thread\-::$\sim$\-Thread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_af77942fc1730af7c31bc4c3a913a9c1d}
+
+
+Destructor. 
+
+This destructor calls Wait(), so that the internal thread cannot survive after its \hyperlink{classsf_1_1_thread}{sf\-::\-Thread} instance is destroyed. \hypertarget{classsf_1_1_thread_a00b88f036de66eb63765f4c12ceb6870}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{F}]{functor}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a00b88f036de66eb63765f4c12ceb6870}
+
+
+Definition at line 68 of file Thread.\-inl.
+
+\hypertarget{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F , typename A $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{F}]{function, }
+\item[{A}]{argument}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a719b2cc067d92d52c35064a49d850a53}
+
+
+Definition at line 77 of file Thread.\-inl.
+
+\hypertarget{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}{\index{sf\-::\-Thread@{sf\-::\-Thread}!Thread@{Thread}}
+\index{Thread@{Thread}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{Thread}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ sf\-::\-Thread\-::\-Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf void}(C\-::$\ast$)()}]{function, }
+\item[{C $\ast$}]{object}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_aa9f473c8cbb078900c62b1fd14a83a34}
+
+
+Definition at line 86 of file Thread.\-inl.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}{\index{sf\-::\-Thread@{sf\-::\-Thread}!launch@{launch}}
+\index{launch@{launch}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{launch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Thread\-::launch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a74f75a9e86e1eb47479496314048b5f6}
+
+
+Run the thread. 
+
+This function starts the entry point passed to the thread's constructor, and returns immediately. After this function returns, the thread's function is running in parallel to the calling code. \hypertarget{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}{\index{sf\-::\-Thread@{sf\-::\-Thread}!terminate@{terminate}}
+\index{terminate@{terminate}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{terminate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Thread\-::terminate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_ad6b205d4f1ce38b8d44bba0f5501477c}
+
+
+Terminate the thread. 
+
+This function immediately stops the thread, without waiting for its function to finish. Terminating a thread with this function is not safe, and can lead to local variables not being destroyed on some operating systems. You should rather try to make the thread function terminate by itself. \hypertarget{classsf_1_1_thread_a724b1f94c2d54f84280f2f78bde95fa0}{\index{sf\-::\-Thread@{sf\-::\-Thread}!wait@{wait}}
+\index{wait@{wait}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Thread\-::wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_a724b1f94c2d54f84280f2f78bde95fa0}
+
+
+Wait until the thread finishes. 
+
+This function will block the execution until the thread's function ends. Warning\-: if the thread function never ends, the calling thread will block forever. If this function is called from its owner thread, it returns without doing anything. 
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_thread_a5ed4f3acfcb44de47de196437c39f9ef}{\index{sf\-::\-Thread@{sf\-::\-Thread}!priv\-::\-Thread\-Impl@{priv\-::\-Thread\-Impl}}
+\index{priv\-::\-Thread\-Impl@{priv\-::\-Thread\-Impl}!sf::Thread@{sf\-::\-Thread}}
+\subsubsection[{priv\-::\-Thread\-Impl}]{\setlength{\rightskip}{0pt plus 5cm}friend class priv\-::\-Thread\-Impl\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_thread_a5ed4f3acfcb44de47de196437c39f9ef}
+
+
+Definition at line 176 of file Thread.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_thread_8hpp}{Thread.\-hpp}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_thread_8inl}{Thread.\-inl}\end{DoxyCompactItemize}

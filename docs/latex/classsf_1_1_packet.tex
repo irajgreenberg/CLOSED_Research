@@ -1,0 +1,639 @@
+\hypertarget{classsf_1_1_packet}{\section{sf\-:\-:Packet Class Reference}
+\label{classsf_1_1_packet}\index{sf\-::\-Packet@{sf\-::\-Packet}}
+}
+
+
+Utility class to build blocks of data to transfer over the network.  
+
+
+
+
+{\ttfamily \#include $<$Packet.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_packet_a786e5d4ced83992ceefa1799963ea858}{Packet} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classsf_1_1_packet_adc0490ca3c7c3d1e321bd742e5213913}{$\sim$\-Packet} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}{append} (const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t size\-In\-Bytes)
+\begin{DoxyCompactList}\small\item\em Append data to the end of the packet. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the packet. \end{DoxyCompactList}\item 
+const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$ \hyperlink{classsf_1_1_packet_a304ba9ec94c992710f4dfff879c6340e}{get\-Data} () const 
+\begin{DoxyCompactList}\small\item\em Get a pointer to the data contained in the packet. \end{DoxyCompactList}\item 
+std\-::size\-\_\-t \hyperlink{classsf_1_1_packet_a004b62aa5bafa69df8917171a3fe1fa0}{get\-Data\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the data contained in the packet. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_packet_aee3adfca6303f1e6bde3c62be392b945}{end\-Of\-Packet} () const 
+\begin{DoxyCompactList}\small\item\em Tell if the reading position has reached the end of the packet. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_packet_addcb990cde37859c748273d9de55e628}{operator Bool\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Test the validity of the packet, for reading. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_af8e26c63ba9bdccd262565ff0d3eeba2}{operator$>$$>$} (bool \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a70fd5abb9095b5335b79c0cefd17b222}{operator$>$$>$} (\hyperlink{namespacesf_a69b109973eac74e22b97e5339bdb68dd}{Int8} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_aa67738284a7efc16c7594b358ef35510}{operator$>$$>$} (\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_af82d6c4e6d74f2ca39732c1e29f30781}{operator$>$$>$} (\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_afd8706f092bc830ebb438aeee9271647}{operator$>$$>$} (\hyperlink{namespacesf_a2fcaf787248b0b83dfb6b145ca348246}{Uint16} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_ae7b44e79f12d500b63f5dc2a10d78d8c}{operator$>$$>$} (\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{Int32} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a4b57e1953db5bec39a851929df9a339a}{operator$>$$>$} (\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a6704b4d13d6f798efe6fa836a8b5fa24}{operator$>$$>$} (float \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_ac84239a8ba0a165394805c17b35a88cf}{operator$>$$>$} (double \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_ae9f8d8b0c776204f79f615b1e58bccec}{operator$>$$>$} (char $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_aabace32063c44e1a5cc54af6267c1fab}{operator$>$$>$} (\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a1444500d29df0991e630ac78933c6282}{operator$>$$>$} (wchar\-\_\-t $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_ab74c37a290385fd7b1f962bf954a2005}{operator$>$$>$} (std\-::wstring \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a081233e0cab2182a219b129a1383dc0b}{operator$>$$>$} (\hyperlink{classsf_1_1_string}{String} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_aa5a465ed02ba29d83ecdafb0ac3fff21}{operator$<$$<$} (bool \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a034b68a4281cae0b53a43af7aa4172f6}{operator$<$$<$} (\hyperlink{namespacesf_a69b109973eac74e22b97e5339bdb68dd}{Int8} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_af27e4498bf83151b0591d5f04a8b30e1}{operator$<$$<$} (\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_afda8754ab4f2a34600f0153ba9ff24fa}{operator$<$$<$} (\hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a557cbc0289135209248aca1aa2117c40}{operator$<$$<$} (\hyperlink{namespacesf_a2fcaf787248b0b83dfb6b145ca348246}{Uint16} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_ad60c9ad6e4e92399e2a36938ad122d05}{operator$<$$<$} (\hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{Int32} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_afb113b73749efb662a75deb98257ad34}{operator$<$$<$} (\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a76d31c4f864253a7e9b53701b4660fe5}{operator$<$$<$} (float \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a3b3077720a486b569ac8e7dec638a3f0}{operator$<$$<$} (double \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a67c9985f7b3d6e90886e56e309280a9d}{operator$<$$<$} (const char $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a59a21671caaa69da5d47c54b50e1eb54}{operator$<$$<$} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a6f7c6a9ce795fac342ea937896d98016}{operator$<$$<$} (const wchar\-\_\-t $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_a9f3401d038470f629d0c2c6be928a14b}{operator$<$$<$} (const std\-::wstring \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\item 
+\hyperlink{classsf_1_1_packet}{Packet} \& \hyperlink{classsf_1_1_packet_abc17272df082a36b202e10045bd9e220}{operator$<$$<$} (const \hyperlink{classsf_1_1_string}{String} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$ \hyperlink{classsf_1_1_packet_a052e955906c9bfd671622cb625380edc}{on\-Send} (std\-::size\-\_\-t \&\hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Called before the packet is sent over the network. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}{on\-Receive} (const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Called after the packet is received over the network. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_packet_aa8b32310b01d4bb702d6bcb969d5f130}{Tcp\-Socket}
+\item 
+class \hyperlink{classsf_1_1_packet_ae128c6687ced82c6157c5f865f8dec5c}{Udp\-Socket}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class to build blocks of data to transfer over the network. 
+
+Packets provide a safe and easy way to serialize data, in order to send it over the network using sockets (\hyperlink{classsf_1_1_tcp_socket}{sf\-::\-Tcp\-Socket}, \hyperlink{classsf_1_1_udp_socket}{sf\-::\-Udp\-Socket}).
+
+Packets solve 2 fundamental problems that arise when transfering data over the network\-: \begin{DoxyItemize}
+\item data is interpreted correctly according to the endianness \item the bounds of the packet are preserved (one send == one receive)\end{DoxyItemize}
+The \hyperlink{classsf_1_1_packet}{sf\-::\-Packet} class provides both input and output modes. It is designed to follow the behaviour of standard C++ streams, using operators $>$$>$ and $<$$<$ to extract and insert data.
+
+It is recommended to use only fixed-\/size types (like \hyperlink{namespacesf_ac2dfd4952377a26dee4750e2e4a30a15}{sf\-::\-Int32}, etc.), to avoid possible differences between the sender and the receiver. Indeed, the native C++ types may have different sizes on two platforms and your data may be corrupted if that happens.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{sf::Uint32} x = 24;
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} s = \textcolor{stringliteral}{"hello"};
+\textcolor{keywordtype}{double} d = 5.89;
+
+\textcolor{comment}{// Group the variables to send into a packet}
+\hyperlink{classsf_1_1_packet}{sf::Packet} packet;
+packet << x << s << d;
+
+\textcolor{comment}{// Send it over the network (socket is a valid sf::TcpSocket)}
+socket.send(packet);
+
+-----------------------------------------------------------------
+
+\textcolor{comment}{// Receive the packet at the other end}
+\hyperlink{classsf_1_1_packet}{sf::Packet} packet;
+socket.receive(packet);
+
+\textcolor{comment}{// Extract the variables contained in the packet}
+\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{sf::Uint32} \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x};
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} s;
+\textcolor{keywordtype}{double} d;
+\textcolor{keywordflow}{if} (packet >> x >> s >> d)
+\{
+    \textcolor{comment}{// Data extracted successfully...}
+\}
+\end{DoxyCode}
+
+
+Packets have built-\/in operator $>$$>$ and $<$$<$ overloads for standard types\-: \begin{DoxyItemize}
+\item bool \item fixed-\/size integer types (\hyperlink{namespacesf_a69b109973eac74e22b97e5339bdb68dd}{sf\-::\-Int8}/16/32, \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{sf\-::\-Uint8}/16/32) \item floating point numbers (float, double) \item string types (char$\ast$, wchar\-\_\-t$\ast$, std\-::string, std\-::wstring, \hyperlink{classsf_1_1_string}{sf\-::\-String})\end{DoxyItemize}
+Like standard streams, it is also possible to define your own overloads of operators $>$$>$ and $<$$<$ in order to handle your custom types.
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{struct }MyStruct
+\{
+    \textcolor{keywordtype}{float}       number;
+    \hyperlink{namespacesf_a69b109973eac74e22b97e5339bdb68dd}{sf::Int8}    integer;
+    \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} str;
+\};
+
+\hyperlink{classsf_1_1_packet}{sf::Packet}& \hyperlink{classsf_1_1_packet_aa5a465ed02ba29d83ecdafb0ac3fff21}{operator <<}(\hyperlink{classsf_1_1_packet}{sf::Packet}& packet, \textcolor{keyword}{const} MyStruct& m)
+\{
+    \textcolor{keywordflow}{return} packet << m.number << m.integer << m.str;
+\}
+
+\hyperlink{classsf_1_1_packet}{sf::Packet}& \hyperlink{classsf_1_1_packet_af8e26c63ba9bdccd262565ff0d3eeba2}{operator >>}(\hyperlink{classsf_1_1_packet}{sf::Packet}& packet, MyStruct& m)
+\{
+    \textcolor{keywordflow}{return} packet >> m.number >> m.integer >> m.str;
+\}
+\end{DoxyCode}
+
+
+Packets also provide an extra feature that allows to apply custom transformations to the data before it is sent, and after it is received. This is typically used to handle automatic compression or encryption of the data. This is achieved by inheriting from \hyperlink{classsf_1_1_packet}{sf\-::\-Packet}, and overriding the on\-Send and on\-Receive functions.
+
+Here is an example\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }ZipPacket : \textcolor{keyword}{public} \hyperlink{classsf_1_1_packet}{sf::Packet}
+\{
+    \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{void}* \hyperlink{classsf_1_1_packet_a052e955906c9bfd671622cb625380edc}{onSend}(std::size\_t& \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+    \{
+        \textcolor{keyword}{const} \textcolor{keywordtype}{void}* srcData = \hyperlink{classsf_1_1_packet_a304ba9ec94c992710f4dfff879c6340e}{getData}();
+        std::size\_t srcSize = \hyperlink{classsf_1_1_packet_a004b62aa5bafa69df8917171a3fe1fa0}{getDataSize}();
+
+        \textcolor{keywordflow}{return} MySuperZipFunction(srcData, srcSize, &size);
+    \}
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}{onReceive}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* \hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std::size\_t \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+    \{
+        std::size\_t dstSize;
+        \textcolor{keyword}{const} \textcolor{keywordtype}{void}* dstData = MySuperUnzipFunction(data, size, &dstSize);
+
+        \hyperlink{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}{append}(dstData, dstSize);
+    \}
+\};
+
+\textcolor{comment}{// Use like regular packets:}
+ZipPacket packet;
+packet << x << s << d;
+...
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_tcp_socket}{sf\-::\-Tcp\-Socket}, \hyperlink{classsf_1_1_udp_socket}{sf\-::\-Udp\-Socket} 
+\end{DoxySeeAlso}
+
+
+Definition at line 47 of file Packet.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_packet_a786e5d4ced83992ceefa1799963ea858}{\index{sf\-::\-Packet@{sf\-::\-Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Packet\-::\-Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a786e5d4ced83992ceefa1799963ea858}
+
+
+Default constructor. 
+
+Creates an empty packet. \hypertarget{classsf_1_1_packet_adc0490ca3c7c3d1e321bd742e5213913}{\index{sf\-::\-Packet@{sf\-::\-Packet}!$\sim$\-Packet@{$\sim$\-Packet}}
+\index{$\sim$\-Packet@{$\sim$\-Packet}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{$\sim$\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Packet\-::$\sim$\-Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_packet_adc0490ca3c7c3d1e321bd742e5213913}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}{\index{sf\-::\-Packet@{sf\-::\-Packet}!append@{append}}
+\index{append@{append}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Packet\-::append (
+\begin{DoxyParamCaption}
+\item[{const {\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size\-In\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}
+
+
+Append data to the end of the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the sequence of bytes to append \\
+\hline
+{\em size\-In\-Bytes} & Number of bytes to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}{clear} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}{\index{sf\-::\-Packet@{sf\-::\-Packet}!clear@{clear}}
+\index{clear@{clear}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Packet\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a133ea8b8fe6e93c230f0d79f19a3bf0d}
+
+
+Clear the packet. 
+
+After calling Clear, the packet is empty.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_a7dd6e429b87520008326c4d71f1cf011}{append} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_aee3adfca6303f1e6bde3c62be392b945}{\index{sf\-::\-Packet@{sf\-::\-Packet}!end\-Of\-Packet@{end\-Of\-Packet}}
+\index{end\-Of\-Packet@{end\-Of\-Packet}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{end\-Of\-Packet}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Packet\-::end\-Of\-Packet (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_packet_aee3adfca6303f1e6bde3c62be392b945}
+
+
+Tell if the reading position has reached the end of the packet. 
+
+This function is useful to know if there is some data left to be read, without actually reading it.
+
+\begin{DoxyReturn}{Returns}
+True if all data was read, false otherwise
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+operator bool 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_a304ba9ec94c992710f4dfff879c6340e}{\index{sf\-::\-Packet@{sf\-::\-Packet}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf void}$\ast$ sf\-::\-Packet\-::get\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_packet_a304ba9ec94c992710f4dfff879c6340e}
+
+
+Get a pointer to the data contained in the packet. 
+
+Warning\-: the returned pointer may become invalid after you append data to the packet, therefore it should never be stored. The return pointer is N\-U\-L\-L if the packet is empty.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the data
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_a004b62aa5bafa69df8917171a3fe1fa0}{get\-Data\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_a004b62aa5bafa69df8917171a3fe1fa0}{\index{sf\-::\-Packet@{sf\-::\-Packet}!get\-Data\-Size@{get\-Data\-Size}}
+\index{get\-Data\-Size@{get\-Data\-Size}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{get\-Data\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::size\-\_\-t sf\-::\-Packet\-::get\-Data\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_packet_a004b62aa5bafa69df8917171a3fe1fa0}
+
+
+Get the size of the data contained in the packet. 
+
+This function returns the number of bytes pointed to by what get\-Data returns.
+
+\begin{DoxyReturn}{Returns}
+Data size, in bytes
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_a304ba9ec94c992710f4dfff879c6340e}{get\-Data} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}{\index{sf\-::\-Packet@{sf\-::\-Packet}!on\-Receive@{on\-Receive}}
+\index{on\-Receive@{on\-Receive}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{on\-Receive}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Packet\-::on\-Receive (
+\begin{DoxyParamCaption}
+\item[{const {\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}
+
+
+Called after the packet is received over the network. 
+
+This function can be defined by derived classes to transform the data after it is received; this can be used for uncompression, decryption, etc. The function receives a pointer to the received data, and must fill the packet with the transformed bytes. The default implementation fills the packet directly without transforming the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the received bytes \\
+\hline
+{\em size} & Number of bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_a052e955906c9bfd671622cb625380edc}{on\-Send} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_a052e955906c9bfd671622cb625380edc}{\index{sf\-::\-Packet@{sf\-::\-Packet}!on\-Send@{on\-Send}}
+\index{on\-Send@{on\-Send}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{on\-Send}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf void}$\ast$ sf\-::\-Packet\-::on\-Send (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t \&}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_packet_a052e955906c9bfd671622cb625380edc}
+
+
+Called before the packet is sent over the network. 
+
+This function can be defined by derived classes to transform the data before it is sent; this can be used for compression, encryption, etc. The function must return a pointer to the modified data, as well as the number of bytes pointed. The default implementation provides the packet's data without transforming it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Variable to fill with the size of data to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the array of bytes to send
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_ab71a31ef0f1d5d856de6f9fc75434128}{on\-Receive} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_addcb990cde37859c748273d9de55e628}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator Bool\-Type@{operator Bool\-Type}}
+\index{operator Bool\-Type@{operator Bool\-Type}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator Bool\-Type}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Packet\-::operator Bool\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_packet_addcb990cde37859c748273d9de55e628}
+
+
+Test the validity of the packet, for reading. 
+
+This operator allows to test the packet as a boolean variable, to check if a reading operation was successful.
+
+A packet will be in an invalid state if it has no more data to read.
+
+This behaviour is the same as standard C++ streams.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{float} \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x};
+packet >> \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x};
+\textcolor{keywordflow}{if} (packet)
+\{
+   \textcolor{comment}{// ok, x was extracted successfully}
+\}
+
+\textcolor{comment}{// -- or --}
+
+\textcolor{keywordtype}{float} \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x};
+\textcolor{keywordflow}{if} (packet >> x)
+\{
+   \textcolor{comment}{// ok, x was extracted successfully}
+\}
+\end{DoxyCode}
+
+
+Don't focus on the return type, it's equivalent to bool but it disallows unwanted implicit conversions to integer or pointer types.
+
+\begin{DoxyReturn}{Returns}
+True if last data extraction from packet was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_packet_aee3adfca6303f1e6bde3c62be392b945}{end\-Of\-Packet} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_packet_aa5a465ed02ba29d83ecdafb0ac3fff21}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{bool}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_aa5a465ed02ba29d83ecdafb0ac3fff21}
+Overloads of operator $<$$<$ to write data into the packet \hypertarget{classsf_1_1_packet_a034b68a4281cae0b53a43af7aa4172f6}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int8}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a034b68a4281cae0b53a43af7aa4172f6}
+\hypertarget{classsf_1_1_packet_af27e4498bf83151b0591d5f04a8b30e1}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_af27e4498bf83151b0591d5f04a8b30e1}
+\hypertarget{classsf_1_1_packet_afda8754ab4f2a34600f0153ba9ff24fa}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int16}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_afda8754ab4f2a34600f0153ba9ff24fa}
+\hypertarget{classsf_1_1_packet_a557cbc0289135209248aca1aa2117c40}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint16}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a557cbc0289135209248aca1aa2117c40}
+\hypertarget{classsf_1_1_packet_ad60c9ad6e4e92399e2a36938ad122d05}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int32}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_ad60c9ad6e4e92399e2a36938ad122d05}
+\hypertarget{classsf_1_1_packet_afb113b73749efb662a75deb98257ad34}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_afb113b73749efb662a75deb98257ad34}
+\hypertarget{classsf_1_1_packet_a76d31c4f864253a7e9b53701b4660fe5}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{float}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a76d31c4f864253a7e9b53701b4660fe5}
+\hypertarget{classsf_1_1_packet_a3b3077720a486b569ac8e7dec638a3f0}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{double}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a3b3077720a486b569ac8e7dec638a3f0}
+\hypertarget{classsf_1_1_packet_a67c9985f7b3d6e90886e56e309280a9d}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a67c9985f7b3d6e90886e56e309280a9d}
+\hypertarget{classsf_1_1_packet_a59a21671caaa69da5d47c54b50e1eb54}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a59a21671caaa69da5d47c54b50e1eb54}
+\hypertarget{classsf_1_1_packet_a6f7c6a9ce795fac342ea937896d98016}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const wchar\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a6f7c6a9ce795fac342ea937896d98016}
+\hypertarget{classsf_1_1_packet_a9f3401d038470f629d0c2c6be928a14b}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const std\-::wstring \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a9f3401d038470f629d0c2c6be928a14b}
+\hypertarget{classsf_1_1_packet_abc17272df082a36b202e10045bd9e220}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_abc17272df082a36b202e10045bd9e220}
+\hypertarget{classsf_1_1_packet_af8e26c63ba9bdccd262565ff0d3eeba2}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{bool \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_af8e26c63ba9bdccd262565ff0d3eeba2}
+Overloads of operator $>$$>$ to read data from the packet \hypertarget{classsf_1_1_packet_a70fd5abb9095b5335b79c0cefd17b222}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int8} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a70fd5abb9095b5335b79c0cefd17b222}
+\hypertarget{classsf_1_1_packet_aa67738284a7efc16c7594b358ef35510}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_aa67738284a7efc16c7594b358ef35510}
+\hypertarget{classsf_1_1_packet_af82d6c4e6d74f2ca39732c1e29f30781}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int16} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_af82d6c4e6d74f2ca39732c1e29f30781}
+\hypertarget{classsf_1_1_packet_afd8706f092bc830ebb438aeee9271647}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint16} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_afd8706f092bc830ebb438aeee9271647}
+\hypertarget{classsf_1_1_packet_ae7b44e79f12d500b63f5dc2a10d78d8c}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Int32} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_ae7b44e79f12d500b63f5dc2a10d78d8c}
+\hypertarget{classsf_1_1_packet_a4b57e1953db5bec39a851929df9a339a}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a4b57e1953db5bec39a851929df9a339a}
+\hypertarget{classsf_1_1_packet_a6704b4d13d6f798efe6fa836a8b5fa24}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{float \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a6704b4d13d6f798efe6fa836a8b5fa24}
+\hypertarget{classsf_1_1_packet_ac84239a8ba0a165394805c17b35a88cf}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{double \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_ac84239a8ba0a165394805c17b35a88cf}
+\hypertarget{classsf_1_1_packet_ae9f8d8b0c776204f79f615b1e58bccec}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_ae9f8d8b0c776204f79f615b1e58bccec}
+\hypertarget{classsf_1_1_packet_aabace32063c44e1a5cc54af6267c1fab}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf std\-::string} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_aabace32063c44e1a5cc54af6267c1fab}
+\hypertarget{classsf_1_1_packet_a1444500d29df0991e630ac78933c6282}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{wchar\-\_\-t $\ast$}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a1444500d29df0991e630ac78933c6282}
+\hypertarget{classsf_1_1_packet_ab74c37a290385fd7b1f962bf954a2005}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::wstring \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_ab74c37a290385fd7b1f962bf954a2005}
+\hypertarget{classsf_1_1_packet_a081233e0cab2182a219b129a1383dc0b}{\index{sf\-::\-Packet@{sf\-::\-Packet}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet}\& sf\-::\-Packet\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf String} \&}]{data}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_packet_a081233e0cab2182a219b129a1383dc0b}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_packet_aa8b32310b01d4bb702d6bcb969d5f130}{\index{sf\-::\-Packet@{sf\-::\-Packet}!Tcp\-Socket@{Tcp\-Socket}}
+\index{Tcp\-Socket@{Tcp\-Socket}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{Tcp\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Tcp\-Socket}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_packet_aa8b32310b01d4bb702d6bcb969d5f130}
+
+
+Definition at line 213 of file Packet.\-hpp.
+
+\hypertarget{classsf_1_1_packet_ae128c6687ced82c6157c5f865f8dec5c}{\index{sf\-::\-Packet@{sf\-::\-Packet}!Udp\-Socket@{Udp\-Socket}}
+\index{Udp\-Socket@{Udp\-Socket}!sf::Packet@{sf\-::\-Packet}}
+\subsubsection[{Udp\-Socket}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Udp\-Socket}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_packet_ae128c6687ced82c6157c5f865f8dec5c}
+
+
+Definition at line 214 of file Packet.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Network/\hyperlink{_packet_8hpp}{Packet.\-hpp}\end{DoxyCompactItemize}

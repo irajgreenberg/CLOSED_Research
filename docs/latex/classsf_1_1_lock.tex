@@ -1,0 +1,131 @@
+\hypertarget{classsf_1_1_lock}{\section{sf\-:\-:Lock Class Reference}
+\label{classsf_1_1_lock}\index{sf\-::\-Lock@{sf\-::\-Lock}}
+}
+
+
+Automatic wrapper for locking and unlocking mutexes.  
+
+
+
+
+{\ttfamily \#include $<$Lock.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Lock\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_lock__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Lock\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_lock__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_lock_a1a4c5d7a15da61103d85c9aa7f118920}{Lock} (\hyperlink{classsf_1_1_mutex}{Mutex} \&mutex)
+\begin{DoxyCompactList}\small\item\em Construct the lock with a target mutex. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_lock_a8168b36323a18ccf5b6bc531d964aec5}{$\sim$\-Lock} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Automatic wrapper for locking and unlocking mutexes. 
+
+\hyperlink{classsf_1_1_lock}{sf\-::\-Lock} is a R\-A\-I\-I wrapper for \hyperlink{classsf_1_1_mutex}{sf\-::\-Mutex}. By unlocking it in its destructor, it ensures that the mutex will always be released when the current scope (most likely a function) ends. This is even more important when an exception or an early return statement can interrupt the execution flow of the function.
+
+For maximum robustness, \hyperlink{classsf_1_1_lock}{sf\-::\-Lock} should always be used to lock/unlock a mutex.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_mutex}{sf::Mutex} mutex;
+
+\textcolor{keywordtype}{void} \textcolor{keyword}{function}()
+\{
+    \hyperlink{classsf_1_1_lock}{sf::Lock} lock(mutex); \textcolor{comment}{// mutex is now locked}
+
+    functionThatMayThrowAnException(); \textcolor{comment}{// mutex is unlocked if this function throws}
+
+    \textcolor{keywordflow}{if} (someCondition)
+        \textcolor{keywordflow}{return}; \textcolor{comment}{// mutex is unlocked}
+
+\} \textcolor{comment}{// mutex is unlocked}
+\end{DoxyCode}
+
+
+Because the mutex is not explicitely unlocked in the code, it may remain locked longer than needed. If the region of the code that needs to be protected by the mutex is not the entire function, a good practice is to create a smaller, inner scope so that the lock is limited to this part of the code.
+
+
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_mutex}{sf::Mutex} mutex;
+
+\textcolor{keywordtype}{void} \textcolor{keyword}{function}()
+\{
+    \{
+      \hyperlink{classsf_1_1_lock}{sf::Lock} lock(mutex);
+      codeThatRequiresProtection();
+
+    \} \textcolor{comment}{// mutex is unlocked here}
+
+    codeThatDoesntCareAboutTheMutex();
+\}
+\end{DoxyCode}
+
+
+Having a mutex locked longer than required is a bad practice which can lead to bad performances. Don't forget that when a mutex is locked, other threads may be waiting doing nothing until it is released.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_mutex}{sf\-::\-Mutex} 
+\end{DoxySeeAlso}
+
+
+Definition at line 43 of file Lock.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_lock_a1a4c5d7a15da61103d85c9aa7f118920}{\index{sf\-::\-Lock@{sf\-::\-Lock}!Lock@{Lock}}
+\index{Lock@{Lock}!sf::Lock@{sf\-::\-Lock}}
+\subsubsection[{Lock}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Lock\-::\-Lock (
+\begin{DoxyParamCaption}
+\item[{{\bf Mutex} \&}]{mutex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_lock_a1a4c5d7a15da61103d85c9aa7f118920}
+
+
+Construct the lock with a target mutex. 
+
+The mutex passed to \hyperlink{classsf_1_1_lock}{sf\-::\-Lock} is automatically locked.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mutex} & \hyperlink{classsf_1_1_mutex}{Mutex} to lock \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_lock_a8168b36323a18ccf5b6bc531d964aec5}{\index{sf\-::\-Lock@{sf\-::\-Lock}!$\sim$\-Lock@{$\sim$\-Lock}}
+\index{$\sim$\-Lock@{$\sim$\-Lock}!sf::Lock@{sf\-::\-Lock}}
+\subsubsection[{$\sim$\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Lock\-::$\sim$\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_lock_a8168b36323a18ccf5b6bc531d964aec5}
+
+
+Destructor. 
+
+The destructor of \hyperlink{classsf_1_1_lock}{sf\-::\-Lock} automatically unlocks its mutex. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_lock_8hpp}{Lock.\-hpp}\end{DoxyCompactItemize}

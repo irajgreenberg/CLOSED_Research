@@ -1,0 +1,152 @@
+\hypertarget{class_frenet_frame}{\section{Frenet\-Frame Class Reference}
+\label{class_frenet_frame}\index{Frenet\-Frame@{Frenet\-Frame}}
+}
+
+
+{\ttfamily \#include $<$Frenet\-Frame.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_frenet_frame_a1d0a484ae5e6da177302409869d822e2}{Frenet\-Frame} ()
+\item 
+\hyperlink{class_frenet_frame_a115c0c67742fbd4147e36f4d5023df5b}{Frenet\-Frame} (const \hyperlink{class_vector3}{Vector3} \&p, const \hyperlink{class_vector3}{Vector3} \&T, const \hyperlink{class_vector3}{Vector3} \&B, const \hyperlink{class_vector3}{Vector3} \&N)
+\item 
+\hyperlink{class_frenet_frame_a390c635ada812b9298c9df7caf8868ba}{Frenet\-Frame} (const \hyperlink{class_vector3}{Vector3} T\-B\-N\mbox{[}3\mbox{]})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_frenet_frame_a46d6e3b7939b8647ecf376aed9b3b256}{init} ()
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_frenet_frame_aa9aca4050a4f56affa30d5c3f9bccaf0}{get\-T} () const 
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_frenet_frame_a1db49d18fa3426f4ed9ef6f9317384a7}{get\-N} () const 
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_frenet_frame_a57182bc2f128a2ac3f4e3aaf89bd4e1f}{get\-B} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_frenet_frame_a949ed9af9e4aa96d1c69c7b33e0fc316}{display} (float len=10)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_frenet_frame_a111f393ee20140cb0b21bdf92f5d005b}{operator$<$$<$} (std\-::ostream \&out, const \hyperlink{class_frenet_frame}{Frenet\-Frame} \&frame)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Frenet\-Frame.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_frenet_frame_a1d0a484ae5e6da177302409869d822e2}{\index{Frenet\-Frame@{Frenet\-Frame}!Frenet\-Frame@{Frenet\-Frame}}
+\index{Frenet\-Frame@{Frenet\-Frame}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{Frenet\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}Frenet\-Frame\-::\-Frenet\-Frame (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_frenet_frame_a1d0a484ae5e6da177302409869d822e2}
+
+
+Definition at line 25 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_a115c0c67742fbd4147e36f4d5023df5b}{\index{Frenet\-Frame@{Frenet\-Frame}!Frenet\-Frame@{Frenet\-Frame}}
+\index{Frenet\-Frame@{Frenet\-Frame}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{Frenet\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}Frenet\-Frame\-::\-Frenet\-Frame (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{p, }
+\item[{const {\bf Vector3} \&}]{T, }
+\item[{const {\bf Vector3} \&}]{B, }
+\item[{const {\bf Vector3} \&}]{N}
+\end{DoxyParamCaption}
+)}}\label{class_frenet_frame_a115c0c67742fbd4147e36f4d5023df5b}
+
+
+Definition at line 30 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_a390c635ada812b9298c9df7caf8868ba}{\index{Frenet\-Frame@{Frenet\-Frame}!Frenet\-Frame@{Frenet\-Frame}}
+\index{Frenet\-Frame@{Frenet\-Frame}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{Frenet\-Frame}]{\setlength{\rightskip}{0pt plus 5cm}Frenet\-Frame\-::\-Frenet\-Frame (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}}]{T\-B\-N\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_frenet_frame_a390c635ada812b9298c9df7caf8868ba}
+
+
+Definition at line 34 of file Frenet\-Frame.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_frenet_frame_a949ed9af9e4aa96d1c69c7b33e0fc316}{\index{Frenet\-Frame@{Frenet\-Frame}!display@{display}}
+\index{display@{display}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Frenet\-Frame\-::display (
+\begin{DoxyParamCaption}
+\item[{float}]{len = {\ttfamily 10}}
+\end{DoxyParamCaption}
+)}}\label{class_frenet_frame_a949ed9af9e4aa96d1c69c7b33e0fc316}
+
+
+Definition at line 57 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_a57182bc2f128a2ac3f4e3aaf89bd4e1f}{\index{Frenet\-Frame@{Frenet\-Frame}!get\-B@{get\-B}}
+\index{get\-B@{get\-B}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{get\-B}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Frenet\-Frame\-::get\-B (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_frenet_frame_a57182bc2f128a2ac3f4e3aaf89bd4e1f}
+
+
+Definition at line 52 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_a1db49d18fa3426f4ed9ef6f9317384a7}{\index{Frenet\-Frame@{Frenet\-Frame}!get\-N@{get\-N}}
+\index{get\-N@{get\-N}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{get\-N}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Frenet\-Frame\-::get\-N (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_frenet_frame_a1db49d18fa3426f4ed9ef6f9317384a7}
+
+
+Definition at line 47 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_aa9aca4050a4f56affa30d5c3f9bccaf0}{\index{Frenet\-Frame@{Frenet\-Frame}!get\-T@{get\-T}}
+\index{get\-T@{get\-T}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{get\-T}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Frenet\-Frame\-::get\-T (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_frenet_frame_aa9aca4050a4f56affa30d5c3f9bccaf0}
+
+
+Definition at line 42 of file Frenet\-Frame.\-cpp.
+
+\hypertarget{class_frenet_frame_a46d6e3b7939b8647ecf376aed9b3b256}{\index{Frenet\-Frame@{Frenet\-Frame}!init@{init}}
+\index{init@{init}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Frenet\-Frame\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_frenet_frame_a46d6e3b7939b8647ecf376aed9b3b256}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_frenet_frame_a111f393ee20140cb0b21bdf92f5d005b}{\index{Frenet\-Frame@{Frenet\-Frame}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!FrenetFrame@{Frenet\-Frame}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{const {\bf Frenet\-Frame} \&}]{frame}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_frenet_frame_a111f393ee20140cb0b21bdf92f5d005b}
+
+
+Definition at line 16 of file Frenet\-Frame.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_frenet_frame_8h}{Frenet\-Frame.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_frenet_frame_8cpp}{Frenet\-Frame.\-cpp}\end{DoxyCompactItemize}

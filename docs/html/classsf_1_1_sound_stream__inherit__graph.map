@@ -1,0 +1,4 @@
+<map id="sf::SoundStream" name="sf::SoundStream">
+<area shape="rect" id="node3" href="$classsf_1_1_music.html" title="Streamed music played from an audio file." alt="" coords="28,155,103,181"/>
+<area shape="rect" id="node2" href="$classsf_1_1_sound_source.html" title="Base class defining a sound&#39;s properties." alt="" coords="5,5,125,32"/>
+</map>

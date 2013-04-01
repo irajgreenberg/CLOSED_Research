@@ -1,0 +1,285 @@
+\hypertarget{classsf_1_1_render_texture}{\section{sf\-:\-:Render\-Texture Class Reference}
+\label{classsf_1_1_render_texture}\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}}
+}
+
+
+Target for off-\/screen 2\-D rendering into an texture.  
+
+
+
+
+{\ttfamily \#include $<$Render\-Texture.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Render\-Texture\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classsf_1_1_render_texture__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Render\-Texture\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{classsf_1_1_render_texture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_render_texture_a19ee6e5b4c40ad251803389b3953a9c6}{Render\-Texture} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classsf_1_1_render_texture_a94b84ab9335be84d2a014c964d973304}{$\sim$\-Render\-Texture} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_render_texture_aefbb76eb3b87e368ab974b2660931ccb}{create} (unsigned int \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, unsigned int \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height}, bool depth\-Buffer=false)
+\begin{DoxyCompactList}\small\item\em Create the render-\/texture. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_texture_af08991e63c6020865dd07b20e27305b6}{set\-Smooth} (bool smooth)
+\begin{DoxyCompactList}\small\item\em Enable or disable texture smoothing. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_render_texture_ae385f4f4dbd2af50fb11947bf0bcb83d}{is\-Smooth} () const 
+\begin{DoxyCompactList}\small\item\em Tell whether the smooth filtering is enabled or not. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_render_texture_a5da95ecdbce615a80bb78399012508cf}{set\-Active} (bool active=true)
+\begin{DoxyCompactList}\small\item\em Activate of deactivate the render-\/texture for rendering. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_texture_af92886d5faef3916caff9fa9ab32c555}{display} ()
+\begin{DoxyCompactList}\small\item\em Update the contents of the target texture. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{classsf_1_1_render_texture_a757ba45ec7a7deefcaef717049b00b8c}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Return the size of the rendering region of the texture. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_texture}{Texture} \& \hyperlink{classsf_1_1_render_texture_a95bc5152c497066d31fdc57da8e17678}{get\-Texture} () const 
+\begin{DoxyCompactList}\small\item\em Get a read-\/only reference to the target texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Target for off-\/screen 2\-D rendering into an texture. 
+
+\hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture} is the little brother of \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}. It implements the same 2\-D drawing and Open\-G\-L-\/related functions (see their base class \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target} for more details), the difference is that the result is stored in an off-\/screen texture rather than being show in a window.
+
+Rendering to a texture can be useful in a variety of situations\-: \begin{DoxyItemize}
+\item precomputing a complex static texture (like a level's background from multiple tiles) \item applying post-\/effects to the whole scene with shaders \item creating a sprite from a 3\-D object rendered with Open\-G\-L \item etc.\end{DoxyItemize}
+Usage example\-:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Create a new render-window}
+\hyperlink{classsf_1_1_render_window}{sf::RenderWindow} window(\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}(800, 600), \textcolor{stringliteral}{"SFML window"});
+
+\textcolor{comment}{// Create a new render-texture}
+\hyperlink{classsf_1_1_render_texture}{sf::RenderTexture} \hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture};
+\textcolor{keywordflow}{if} (!texture.\hyperlink{classsf_1_1_render_texture_aefbb76eb3b87e368ab974b2660931ccb}{create}(500, 500))
+    \textcolor{keywordflow}{return} -1
+
+\textcolor{comment}{// The main loop}
+\textcolor{keywordflow}{while} (window.isOpen())
+\{
+   \textcolor{comment}{// Event processing}
+   \textcolor{comment}{// ...}
+
+   \textcolor{comment}{// Clear the whole texture with red color}
+   texture.\hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear}(\hyperlink{classsf_1_1_color_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red});
+
+   \textcolor{comment}{// Draw stuff to the texture}
+   texture.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(sprite);  \textcolor{comment}{// sprite is a sf::Sprite}
+   texture.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(shape);   \textcolor{comment}{// shape is a sf::Shape}
+   texture.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(text);    \textcolor{comment}{// text is a sf::Text}
+
+   \textcolor{comment}{// We're done drawing to the texture}
+   texture.\hyperlink{classsf_1_1_render_texture_af92886d5faef3916caff9fa9ab32c555}{display}();
+
+   \textcolor{comment}{// Now we start rendering to the window, clear it first}
+   window.clear();
+
+   \textcolor{comment}{// Draw the texture}
+   \hyperlink{classsf_1_1_sprite}{sf::Sprite} sprite(texture.\hyperlink{classsf_1_1_render_texture_a95bc5152c497066d31fdc57da8e17678}{getTexture}());
+   window.draw(sprite);
+
+   \textcolor{comment}{// End the current frame and display its contents on screen}
+   window.display();
+\}
+\end{DoxyCode}
+
+
+Like \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}, \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture} is still able to render direct Open\-G\-L stuff. It is even possible to mix together Open\-G\-L calls and regular S\-F\-M\-L drawing commands. If you need a depth buffer for 3\-D rendering, don't forget to request it when calling Render\-Texture\-::\-Create.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target}, \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}, \hyperlink{classsf_1_1_view}{sf\-::\-View}, \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} 
+\end{DoxySeeAlso}
+
+
+Definition at line 47 of file Render\-Texture.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_render_texture_a19ee6e5b4c40ad251803389b3953a9c6}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!Render\-Texture@{Render\-Texture}}
+\index{Render\-Texture@{Render\-Texture}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{Render\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-Texture\-::\-Render\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_texture_a19ee6e5b4c40ad251803389b3953a9c6}
+
+
+Default constructor. 
+
+Constructs an empty, invalid render-\/texture. You must call create to have a valid render-\/texture.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_texture_aefbb76eb3b87e368ab974b2660931ccb}{create} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_texture_a94b84ab9335be84d2a014c964d973304}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!$\sim$\-Render\-Texture@{$\sim$\-Render\-Texture}}
+\index{$\sim$\-Render\-Texture@{$\sim$\-Render\-Texture}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{$\sim$\-Render\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Render\-Texture\-::$\sim$\-Render\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_render_texture_a94b84ab9335be84d2a014c964d973304}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_render_texture_aefbb76eb3b87e368ab974b2660931ccb}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!create@{create}}
+\index{create@{create}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Render\-Texture\-::create (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{height, }
+\item[{bool}]{depth\-Buffer = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_texture_aefbb76eb3b87e368ab974b2660931ccb}
+
+
+Create the render-\/texture. 
+
+Before calling this function, the render-\/texture is in an invalid state, thus it is mandatory to call it before doing anything with the render-\/texture. The last parameter, {\itshape depth\-Buffer}, is useful if you want to use the render-\/texture for 3\-D Open\-G\-L rendering that requires a depth-\/buffer. Otherwise it is unnecessary, and you should leave this parameter to false (which is its default value).
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the render-\/texture \\
+\hline
+{\em height} & Height of the render-\/texture \\
+\hline
+{\em depth\-Buffer} & Do you want this render-\/texture to have a depth buffer?\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if creation has been successful 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_texture_af92886d5faef3916caff9fa9ab32c555}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!display@{display}}
+\index{display@{display}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Texture\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_texture_af92886d5faef3916caff9fa9ab32c555}
+
+
+Update the contents of the target texture. 
+
+This function updates the target texture with what has been drawn so far. Like for windows, calling this function is mandatory at the end of rendering. Not calling it may leave the texture in an undefined state. \hypertarget{classsf_1_1_render_texture_a757ba45ec7a7deefcaef717049b00b8c}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector2u} sf\-::\-Render\-Texture\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_render_texture_a757ba45ec7a7deefcaef717049b00b8c}
+
+
+Return the size of the rendering region of the texture. 
+
+The returned value is the size that you passed to the create function.
+
+\begin{DoxyReturn}{Returns}
+Size in pixels 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}{sf\-::\-Render\-Target}.
+
+\hypertarget{classsf_1_1_render_texture_a95bc5152c497066d31fdc57da8e17678}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!get\-Texture@{get\-Texture}}
+\index{get\-Texture@{get\-Texture}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{get\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Texture}\& sf\-::\-Render\-Texture\-::get\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_texture_a95bc5152c497066d31fdc57da8e17678}
+
+
+Get a read-\/only reference to the target texture. 
+
+After drawing to the render-\/texture and calling Display, you can retrieve the updated texture using this function, and draw it using a sprite (for example). The internal \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} of a render-\/texture is always the same instance, so that it is possible to call this function once and keep a reference to the texture even after it is modified.
+
+\begin{DoxyReturn}{Returns}
+Const reference to the texture 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_texture_ae385f4f4dbd2af50fb11947bf0bcb83d}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!is\-Smooth@{is\-Smooth}}
+\index{is\-Smooth@{is\-Smooth}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{is\-Smooth}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Render\-Texture\-::is\-Smooth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_texture_ae385f4f4dbd2af50fb11947bf0bcb83d}
+
+
+Tell whether the smooth filtering is enabled or not. 
+
+\begin{DoxyReturn}{Returns}
+True if texture smoothing is enabled
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_texture_af08991e63c6020865dd07b20e27305b6}{set\-Smooth} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_texture_a5da95ecdbce615a80bb78399012508cf}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!set\-Active@{set\-Active}}
+\index{set\-Active@{set\-Active}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{set\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Render\-Texture\-::set\-Active (
+\begin{DoxyParamCaption}
+\item[{bool}]{active = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_texture_a5da95ecdbce615a80bb78399012508cf}
+
+
+Activate of deactivate the render-\/texture for rendering. 
+
+This function makes the render-\/texture's context current for future Open\-G\-L rendering operations (so you shouldn't care about it if you're not doing direct Open\-G\-L stuff). Only one context can be current in a thread, so if you want to draw Open\-G\-L geometry to another render target (like a \hyperlink{classsf_1_1_render_window}{Render\-Window}) don't forget to activate it again.
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & True to activate, false to deactivate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if operation was successful, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_texture_af08991e63c6020865dd07b20e27305b6}{\index{sf\-::\-Render\-Texture@{sf\-::\-Render\-Texture}!set\-Smooth@{set\-Smooth}}
+\index{set\-Smooth@{set\-Smooth}!sf::RenderTexture@{sf\-::\-Render\-Texture}}
+\subsubsection[{set\-Smooth}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Texture\-::set\-Smooth (
+\begin{DoxyParamCaption}
+\item[{bool}]{smooth}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_texture_af08991e63c6020865dd07b20e27305b6}
+
+
+Enable or disable texture smoothing. 
+
+This function is similar to \hyperlink{classsf_1_1_texture_a0c3bd6825b9a99714f10d44179d74324}{Texture\-::set\-Smooth}. This parameter is disabled by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em smooth} & True to enable smoothing, false to disable it\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_texture_ae385f4f4dbd2af50fb11947bf0bcb83d}{is\-Smooth} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_render_texture_8hpp}{Render\-Texture.\-hpp}\end{DoxyCompactItemize}

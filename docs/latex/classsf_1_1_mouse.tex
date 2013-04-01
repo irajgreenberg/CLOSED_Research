@@ -1,0 +1,205 @@
+\hypertarget{classsf_1_1_mouse}{\section{sf\-:\-:Mouse Class Reference}
+\label{classsf_1_1_mouse}\index{sf\-::\-Mouse@{sf\-::\-Mouse}}
+}
+
+
+Give access to the real-\/time state of the mouse.  
+
+
+
+
+{\ttfamily \#include $<$Mouse.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button} \{ \\*
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}{Left}, 
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4}{Right}, 
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d}{Middle}, 
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7}{X\-Button1}, 
+\\*
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a}{X\-Button2}, 
+\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402}{Button\-Count}
+ \}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_mouse}{Mouse} buttons. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{is\-Button\-Pressed} (\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{Button} button)
+\begin{DoxyCompactList}\small\item\em Check if a mouse button is pressed. \end{DoxyCompactList}\item 
+static \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{get\-Position} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \hyperlink{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}{get\-Position} (const \hyperlink{classsf_1_1_window}{Window} \&relative\-To)
+\begin{DoxyCompactList}\small\item\em Get the current position of the mouse in window coordinates. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{set\-Position} (const \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \&position)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in desktop coordinates. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}{set\-Position} (const \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \&position, const \hyperlink{classsf_1_1_window}{Window} \&relative\-To)
+\begin{DoxyCompactList}\small\item\em Set the current position of the mouse in window coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Give access to the real-\/time state of the mouse. 
+
+\hyperlink{classsf_1_1_mouse}{sf\-::\-Mouse} provides an interface to the state of the mouse. It only contains static functions (a single mouse is assumed), so it's not meant to be instanciated.
+
+This class allows users to query the mouse state at any time and directly, without having to deal with a window and its events. Compared to the Mouse\-Moved, Mouse\-Button\-Pressed and Mouse\-Button\-Released events, \hyperlink{classsf_1_1_mouse}{sf\-::\-Mouse} can retrieve the state of the cursor and the buttons at any time (you don't need to store and update a boolean on your side in order to know if a button is pressed or released), and you always get the real state of the mouse, even if it is moved, pressed or released when your window is out of focus and no event is triggered.
+
+The Set\-Position and Get\-Position functions can be used to change or retrieve the current position of the mouse pointer. There are two versions\-: one that operates in global coordinates (relative to the desktop) and one that operates in window coordinates (relative to a specific window).
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{keywordflow}{if} (\hyperlink{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{sf::Mouse::isButtonPressed}(\hyperlink{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}{sf::Mouse::Left}))
+\{
+    \textcolor{comment}{// left click...}
+\}
+
+\textcolor{comment}{// get global mouse position}
+\hyperlink{classsf_1_1_vector2}{sf::Vector2i} position = \hyperlink{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{sf::Mouse::getPosition}();
+
+\textcolor{comment}{// set mouse position relative to a window}
+\hyperlink{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{sf::Mouse::setPosition}(\hyperlink{classsf_1_1_vector2}{sf::Vector2i}(100, 200), window);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_joystick}{sf\-::\-Joystick}, \hyperlink{classsf_1_1_keyboard}{sf\-::\-Keyboard} 
+\end{DoxySeeAlso}
+
+
+Definition at line 43 of file Mouse.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!Button@{Button}}
+\index{Button@{Button}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{Button}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Mouse\-::\-Button}}}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90}
+
+
+\hyperlink{classsf_1_1_mouse}{Mouse} buttons. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Left@{Left}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!Left@{Left}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}{Left}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a8bb4856e1ec7f6b6a8605effdfc0eee8}
+}]The left mouse button. \index{Right@{Right}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!Right@{Right}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4}{Right}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90af2cff24ab6c26daf079b11189f982fc4}
+}]The right mouse button. \index{Middle@{Middle}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!Middle@{Middle}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d}{Middle}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a2c353189c4b11cf216d7caddafcc609d}
+}]The middle (wheel) mouse button. \index{X\-Button1@{X\-Button1}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!X\-Button1@{X\-Button1}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7}{X\-Button1}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90aecc7f3ce9ad6a60b9b0027876446b8d7}
+}]The first extra mouse button. \index{X\-Button2@{X\-Button2}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!X\-Button2@{X\-Button2}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a}{X\-Button2}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a03fa056fd0dd9d629c205d91a8ef1b5a}
+}]The second extra mouse button. \index{Button\-Count@{Button\-Count}!sf\-::\-Mouse@{sf\-::\-Mouse}}\index{sf\-::\-Mouse@{sf\-::\-Mouse}!Button\-Count@{Button\-Count}}\item[{\em 
+\hypertarget{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402}{Button\-Count}\label{classsf_1_1_mouse_a4fb128be433f9aafe66bc0c605daaa90a52a1d434289774240ddaa22496762402}
+}]Keep last -- the total number of mouse buttons. \end{description}
+\end{Desc}
+
+
+Definition at line 51 of file Mouse.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Vector2i} sf\-::\-Mouse\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_mouse_ac368680f797b7f6e4f50b5b7928c1387}
+
+
+Get the current position of the mouse in desktop coordinates. 
+
+This function returns the global position of the mouse cursor on the desktop.
+
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Vector2i} sf\-::\-Mouse\-::get\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Window} \&}]{relative\-To}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_mouse_a93b4d2ebef728e77a0ec9d83c1e0b0c8}
+
+
+Get the current position of the mouse in window coordinates. 
+
+This function returns the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em relative\-To} & Reference window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position of the mouse 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!is\-Button\-Pressed@{is\-Button\-Pressed}}
+\index{is\-Button\-Pressed@{is\-Button\-Pressed}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{is\-Button\-Pressed}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Mouse\-::is\-Button\-Pressed (
+\begin{DoxyParamCaption}
+\item[{{\bf Button}}]{button}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_mouse_ab647159eb88e369a0332a9c5a7ba6687}
+
+
+Check if a mouse button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em button} & Button to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Mouse\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2i} \&}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_mouse_a1222e16c583be9e3d176d86e0b7817d7}
+
+
+Set the current position of the mouse in desktop coordinates. 
+
+This function sets the global position of the mouse cursor on the desktop.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}{\index{sf\-::\-Mouse@{sf\-::\-Mouse}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Mouse@{sf\-::\-Mouse}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Mouse\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2i} \&}]{position, }
+\item[{const {\bf Window} \&}]{relative\-To}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_mouse_ad9b16ec7041531315f06b26b413dfea8}
+
+
+Set the current position of the mouse in window coordinates. 
+
+This function sets the current position of the mouse cursor, relative to the given window.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position of the mouse \\
+\hline
+{\em relative\-To} & Reference window \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_mouse_8hpp}{Mouse.\-hpp}\end{DoxyCompactItemize}

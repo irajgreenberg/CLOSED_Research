@@ -1,9 +1,12 @@
-//#include <SFML/Window.hpp>
-//#include <SFML/OpenGL.hpp>
-
-#include <GLUT/glut.h>
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
+#ifdef  __APPLE__ || __MACH__
+  #include <GLUT/glut.h>
+#elif defined __linux__
+  #include <GL/glut.h>
+#elif defined _WIN32
+  #include <GL/glut.h>
+#else
+#error "unknown platform"
+#endif
 
 #include <cmath>
 #include "Protobyte/Toroid.h"
@@ -18,7 +21,6 @@
 /**********************************
  *           Window             *
  *********************************/
-
 struct glutWindow {
     int x;
     int y;

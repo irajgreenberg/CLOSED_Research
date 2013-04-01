@@ -18,8 +18,6 @@
 #ifndef Protobyte_Library_V01_Curve3_h
 #define Protobyte_Library_V01_Curve3_h
 
-
-
 #include "Dimension3.h"
 #include <vector>
 #include "FrenetFrame.h"

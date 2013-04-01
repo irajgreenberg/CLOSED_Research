@@ -1,0 +1,631 @@
+\hypertarget{class_geom_base}{\section{Geom\-Base Class Reference}
+\label{class_geom_base}\index{Geom\-Base@{Geom\-Base}}
+}
+
+
+{\ttfamily \#include $<$Geom\-Base.\-h$>$}
+
+
+
+Inheritance diagram for Geom\-Base\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=301pt]{class_geom_base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Geom\-Base\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_geom_base__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eb}{display\-Mode} \{ \\*
+\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba26366b3d7c1226aaea4c80fa725116e3}{I\-M\-M\-E\-D\-I\-A\-T\-E}, 
+\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba68fe3d2e6fab911d713140e124294e9b}{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}, 
+\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebadf4d9f5dab8ef3b7e4870d81a40c733e}{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D}, 
+\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebae91981c414821bfab61a65228dc8fc57}{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T}, 
+\\*
+\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba7431471ddf565855d64c64cb569e10cf}{V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T}
+ \}
+\item 
+enum \hyperlink{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2}{render\-Mode} \{ \hyperlink{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a8f44b953b7e493103c192eb7c434481f}{W\-I\-R\-E\-F\-R\-A\-M\-E}, 
+\hyperlink{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a5795acdbf2229751e91ab3bf59fec100}{S\-U\-R\-F\-A\-C\-E}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_geom_base_a3321d8df2aabb01e54cebc102051626d}{Geom\-Base} ()
+\item 
+\hyperlink{class_geom_base_a9ebb09df37f80ec29489710fc3eb8775}{Geom\-Base} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4})
+\item 
+\hyperlink{class_geom_base_ae967f73a791c307df2aa08d00dcf908a}{Geom\-Base} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const std\-::vector$<$ \hyperlink{class_color4}{Color4}$<$ float $>$ $>$ \hyperlink{class_geom_base_a0a55c12de2788567600e4477017df3fb}{col4s})
+\item 
+virtual \hyperlink{class_geom_base_acbba0a4d5b9bcdb0564efc8696f52fc6}{$\sim$\-Geom\-Base} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_aa62a1d16a4b8bc95be85faa4f454ec89}{move} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_aaf54ae14260d05c92a915c3736693ee8}{rotate} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_abe08814c2f72843fde4d8df41440d5a0}{r})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ac1a2a5b5e8538f0a881eb93acb27d760}{scale} (const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \&s)
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_abdf4aad3e45d3f71bcfa653c5200b9a6}{display} (\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eb}{display\-Mode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}=\hyperlink{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba68fe3d2e6fab911d713140e124294e9b}{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}, \hyperlink{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2}{render\-Mode} render=\hyperlink{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a5795acdbf2229751e91ab3bf59fec100}{S\-U\-R\-F\-A\-C\-E})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a2f791ec87256e94cfb904ea4781e9067}{set\-Position} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ace131749842b2d1bc8f84c31b04062fc}{set\-Rotation} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a4466237c7798bf2139dae782e48a759f}{set\-Size} (const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a8bf68aafc4c2abaabc76ccc25a07b194}{set\-Color} (const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_geom_base_acb68ae1ee36f69af0061f513845b1b68}{get\-Position} ()
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_geom_base_a099e7104e7ee1fe9d7f6fad94bf1b996}{get\-Rotation} ()
+\item 
+\hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \& \hyperlink{class_geom_base_a4837a0f2d85a917a61eec1d1cb67f8d9}{get\-Size} ()
+\item 
+\hyperlink{class_color4}{Color4}$<$ float $>$ \& \hyperlink{class_geom_base_a9b272fc89d2c29c9a64ab573624fa279}{get\-Color} ()
+\item 
+std\-::vector$<$ \hyperlink{class_face3}{Face3} $>$ \& \hyperlink{class_geom_base_afc2f6a684afc994e627b2d67c79485fd}{get\-Faces} ()
+\item 
+std\-::vector$<$ \hyperlink{class_vertex}{Vertex} $>$ \& \hyperlink{class_geom_base_aa735fa06a3056ba24fa1dcd3d70b3756}{get\-Vertices} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a19dcf3697cebd27060e9389263dd44b7}{sort\-Faces} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ad5bf288e10ecdb5dbd274a11c77768fc}{init} ()
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a2d4e1dd21534e89978ec7f7c8268a20b}{calc\-Verts} ()=0
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a7eb4db1216fe90f25387fc20b9d77c8f}{calc\-Inds} ()=0
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_a659196826d2409ac115cf5ae9ed0b625}{calc\-Faces} ()
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ab7d23639ed6d570a373d82fa4726307b}{calc\-Vertex\-Norms} ()
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ac3b8d29efc624fe705729b58db87a4ed}{calc\-Primitives} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_geom_base_ae282e9f026e7c2cafddbac779917e292}{fill\-Display\-Lists} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_geom_base_a00d3b4512a14c19c818caf93681d36df}{spd}
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_geom_base_a4be21b8e87e34a60ad9a2a38aae69ea1}{rot\-Spd}
+\item 
+\hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{class_geom_base_a3361cbbc26a1ef9768b1f0216af70bd1}{size}
+\item 
+\hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4}
+\item 
+std\-::vector$<$ \hyperlink{class_color4}{Color4}$<$ float $>$ $>$ \hyperlink{class_geom_base_a0a55c12de2788567600e4477017df3fb}{col4s}
+\item 
+std\-::vector$<$ \hyperlink{class_vertex}{Vertex} $>$ \hyperlink{class_geom_base_ad9a00c1c60c9283b3a5995e8cfc6afb5}{verts}
+\item 
+std\-::vector$<$ \hyperlink{class_vertex}{Vertex} $\ast$ $>$ \hyperlink{class_geom_base_a345dad26b0f2e40b097546774baed95d}{verts\-\_\-ptrs}
+\item 
+std\-::vector$<$ \hyperlink{class_face3}{Face3} $>$ \hyperlink{class_geom_base_ac267e0a8d536d8f46d21c886cd809fdb}{faces}
+\item 
+std\-::vector$<$ \hyperlink{class_tuple3}{Tuple3}$<$ int $>$ $>$ \hyperlink{class_geom_base_ab6559c65d93ef3e006b66a951fa40300}{inds}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{class_geom_base_abb278debe87d4c0882d946d520e24715}{vert\-Prims}
+\item 
+std\-::vector$<$ unsigned int $>$ \hyperlink{class_geom_base_a99010b39b4d43e01a899f9c88f64cb28}{ind\-Prims}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{class_geom_base_ab225e16399ab6264821b49160f0fe437}{norm\-Prims}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{class_geom_base_a9cbaa9c2f3d392874bdf96dbdf426852}{color\-Prims}
+\item 
+std\-::vector$<$ float $>$ \hyperlink{class_geom_base_a0800fd85697c8b330d0635a2c80f1c8d}{interleaved\-Prims}
+\item 
+\hyperlink{gl_8h_a68c4714e43d8e827d80759f9cb864f3c}{G\-Luint} \hyperlink{class_geom_base_ade5e0a77c4a4488cb449406fdaa14524}{display\-List\-Index}
+\item 
+\hyperlink{gl_8h_a68c4714e43d8e827d80759f9cb864f3c}{G\-Luint} \hyperlink{class_geom_base_a9fd2238f1b31b148d70f22a98c6d30b5}{vbo\-I\-D}
+\item 
+\hyperlink{gl_8h_a68c4714e43d8e827d80759f9cb864f3c}{G\-Luint} \hyperlink{class_geom_base_ac9801ee653f63ed5d544a237cc485183}{index\-V\-B\-O\-I\-D}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 24 of file Geom\-Base.\-h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eb}{\index{Geom\-Base@{Geom\-Base}!display\-Mode@{display\-Mode}}
+\index{display\-Mode@{display\-Mode}!GeomBase@{Geom\-Base}}
+\subsubsection[{display\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Geom\-Base\-::display\-Mode}}}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eb}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{I\-M\-M\-E\-D\-I\-A\-T\-E@{I\-M\-M\-E\-D\-I\-A\-T\-E}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!I\-M\-M\-E\-D\-I\-A\-T\-E@{I\-M\-M\-E\-D\-I\-A\-T\-E}}\item[{\em 
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba26366b3d7c1226aaea4c80fa725116e3}{I\-M\-M\-E\-D\-I\-A\-T\-E}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba26366b3d7c1226aaea4c80fa725116e3}
+}]\index{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y@{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y@{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}}\item[{\em 
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba68fe3d2e6fab911d713140e124294e9b}{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba68fe3d2e6fab911d713140e124294e9b}
+}]\index{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D@{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D@{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D}}\item[{\em 
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebadf4d9f5dab8ef3b7e4870d81a40c733e}{V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-L\-E\-A\-V\-E\-D}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebadf4d9f5dab8ef3b7e4870d81a40c733e}
+}]\index{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T@{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T}}\item[{\em 
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebae91981c414821bfab61a65228dc8fc57}{D\-I\-S\-P\-L\-A\-Y\-\_\-\-L\-I\-S\-T}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8ebae91981c414821bfab61a65228dc8fc57}
+}]\index{V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T@{V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T@{V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T}}\item[{\em 
+\hypertarget{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba7431471ddf565855d64c64cb569e10cf}{V\-E\-R\-T\-E\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-O\-B\-J\-E\-C\-T}\label{class_geom_base_a3259d41feab8f1c2b3e93e44ea06c8eba7431471ddf565855d64c64cb569e10cf}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 71 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2}{\index{Geom\-Base@{Geom\-Base}!render\-Mode@{render\-Mode}}
+\index{render\-Mode@{render\-Mode}!GeomBase@{Geom\-Base}}
+\subsubsection[{render\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Geom\-Base\-::render\-Mode}}}\label{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-I\-R\-E\-F\-R\-A\-M\-E@{W\-I\-R\-E\-F\-R\-A\-M\-E}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!W\-I\-R\-E\-F\-R\-A\-M\-E@{W\-I\-R\-E\-F\-R\-A\-M\-E}}\item[{\em 
+\hypertarget{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a8f44b953b7e493103c192eb7c434481f}{W\-I\-R\-E\-F\-R\-A\-M\-E}\label{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a8f44b953b7e493103c192eb7c434481f}
+}]\index{S\-U\-R\-F\-A\-C\-E@{S\-U\-R\-F\-A\-C\-E}!Geom\-Base@{Geom\-Base}}\index{Geom\-Base@{Geom\-Base}!S\-U\-R\-F\-A\-C\-E@{S\-U\-R\-F\-A\-C\-E}}\item[{\em 
+\hypertarget{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a5795acdbf2229751e91ab3bf59fec100}{S\-U\-R\-F\-A\-C\-E}\label{class_geom_base_a5ac81c5c0144bf51c40efc219f1973e2a5795acdbf2229751e91ab3bf59fec100}
+}]\end{description}
+\end{Desc}
+
+
+Definition at line 79 of file Geom\-Base.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_geom_base_a3321d8df2aabb01e54cebc102051626d}{\index{Geom\-Base@{Geom\-Base}!Geom\-Base@{Geom\-Base}}
+\index{Geom\-Base@{Geom\-Base}!GeomBase@{Geom\-Base}}
+\subsubsection[{Geom\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Geom\-Base\-::\-Geom\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a3321d8df2aabb01e54cebc102051626d}
+
+
+Definition at line 11 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a9ebb09df37f80ec29489710fc3eb8775}{\index{Geom\-Base@{Geom\-Base}!Geom\-Base@{Geom\-Base}}
+\index{Geom\-Base@{Geom\-Base}!GeomBase@{Geom\-Base}}
+\subsubsection[{Geom\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Geom\-Base\-::\-Geom\-Base (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const {\bf Color4}$<$ float $>$}]{col4}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a9ebb09df37f80ec29489710fc3eb8775}
+
+
+Definition at line 13 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ae967f73a791c307df2aa08d00dcf908a}{\index{Geom\-Base@{Geom\-Base}!Geom\-Base@{Geom\-Base}}
+\index{Geom\-Base@{Geom\-Base}!GeomBase@{Geom\-Base}}
+\subsubsection[{Geom\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Geom\-Base\-::\-Geom\-Base (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const std\-::vector$<$ {\bf Color4}$<$ float $>$ $>$}]{col4s}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_ae967f73a791c307df2aa08d00dcf908a}
+
+
+Definition at line 18 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_acbba0a4d5b9bcdb0564efc8696f52fc6}{\index{Geom\-Base@{Geom\-Base}!$\sim$\-Geom\-Base@{$\sim$\-Geom\-Base}}
+\index{$\sim$\-Geom\-Base@{$\sim$\-Geom\-Base}!GeomBase@{Geom\-Base}}
+\subsubsection[{$\sim$\-Geom\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Geom\-Base\-::$\sim$\-Geom\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_geom_base_acbba0a4d5b9bcdb0564efc8696f52fc6}
+
+
+Definition at line 22 of file Geom\-Base.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_geom_base_a659196826d2409ac115cf5ae9ed0b625}{\index{Geom\-Base@{Geom\-Base}!calc\-Faces@{calc\-Faces}}
+\index{calc\-Faces@{calc\-Faces}!GeomBase@{Geom\-Base}}
+\subsubsection[{calc\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::calc\-Faces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_geom_base_a659196826d2409ac115cf5ae9ed0b625}
+
+
+Definition at line 61 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a7eb4db1216fe90f25387fc20b9d77c8f}{\index{Geom\-Base@{Geom\-Base}!calc\-Inds@{calc\-Inds}}
+\index{calc\-Inds@{calc\-Inds}!GeomBase@{Geom\-Base}}
+\subsubsection[{calc\-Inds}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} Geom\-Base\-::calc\-Inds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_geom_base_a7eb4db1216fe90f25387fc20b9d77c8f}
+
+
+Implemented in \hyperlink{class_tree_a9a5187e7eb5f8820f0fb2498de13607d}{Tree}, \hyperlink{class_tube_a417a92bd1277cfaa5e1229cd99f151d2}{Tube}, and \hyperlink{class_tendril_a4d9f404ec1246d878c9c381d96157d4a}{Tendril}.
+
+\hypertarget{class_geom_base_ac3b8d29efc624fe705729b58db87a4ed}{\index{Geom\-Base@{Geom\-Base}!calc\-Primitives@{calc\-Primitives}}
+\index{calc\-Primitives@{calc\-Primitives}!GeomBase@{Geom\-Base}}
+\subsubsection[{calc\-Primitives}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::calc\-Primitives (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_geom_base_ac3b8d29efc624fe705729b58db87a4ed}
+
+
+Definition at line 102 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ab7d23639ed6d570a373d82fa4726307b}{\index{Geom\-Base@{Geom\-Base}!calc\-Vertex\-Norms@{calc\-Vertex\-Norms}}
+\index{calc\-Vertex\-Norms@{calc\-Vertex\-Norms}!GeomBase@{Geom\-Base}}
+\subsubsection[{calc\-Vertex\-Norms}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::calc\-Vertex\-Norms (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_geom_base_ab7d23639ed6d570a373d82fa4726307b}
+
+
+Definition at line 69 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a2d4e1dd21534e89978ec7f7c8268a20b}{\index{Geom\-Base@{Geom\-Base}!calc\-Verts@{calc\-Verts}}
+\index{calc\-Verts@{calc\-Verts}!GeomBase@{Geom\-Base}}
+\subsubsection[{calc\-Verts}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} Geom\-Base\-::calc\-Verts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{class_geom_base_a2d4e1dd21534e89978ec7f7c8268a20b}
+
+
+Implemented in \hyperlink{class_tree_a3fb4686854dabed151c413bce40875cd}{Tree}, \hyperlink{class_tube_a8e6846a15da4af900f9b164e0fad04ea}{Tube}, and \hyperlink{class_tendril_a5f5a7e7eb5fa8a0accb30783390ea7fd}{Tendril}.
+
+\hypertarget{class_geom_base_abdf4aad3e45d3f71bcfa653c5200b9a6}{\index{Geom\-Base@{Geom\-Base}!display@{display}}
+\index{display@{display}!GeomBase@{Geom\-Base}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::display (
+\begin{DoxyParamCaption}
+\item[{{\bf display\-Mode}}]{mode = {\ttfamily {\bf V\-E\-R\-T\-E\-X\-\_\-\-A\-R\-R\-A\-Y}}, }
+\item[{{\bf render\-Mode}}]{render = {\ttfamily {\bf S\-U\-R\-F\-A\-C\-E}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_geom_base_abdf4aad3e45d3f71bcfa653c5200b9a6}
+
+
+Definition at line 156 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ae282e9f026e7c2cafddbac779917e292}{\index{Geom\-Base@{Geom\-Base}!fill\-Display\-Lists@{fill\-Display\-Lists}}
+\index{fill\-Display\-Lists@{fill\-Display\-Lists}!GeomBase@{Geom\-Base}}
+\subsubsection[{fill\-Display\-Lists}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::fill\-Display\-Lists (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ae282e9f026e7c2cafddbac779917e292}
+
+
+Definition at line 144 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a9b272fc89d2c29c9a64ab573624fa279}{\index{Geom\-Base@{Geom\-Base}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color4}$<$ float $>$ \& Geom\-Base\-::get\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a9b272fc89d2c29c9a64ab573624fa279}
+
+
+Definition at line 337 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_afc2f6a684afc994e627b2d67c79485fd}{\index{Geom\-Base@{Geom\-Base}!get\-Faces@{get\-Faces}}
+\index{get\-Faces@{get\-Faces}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Face3} $>$ \& Geom\-Base\-::get\-Faces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_afc2f6a684afc994e627b2d67c79485fd}
+
+
+Definition at line 341 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_acb68ae1ee36f69af0061f513845b1b68}{\index{Geom\-Base@{Geom\-Base}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Geom\-Base\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_acb68ae1ee36f69af0061f513845b1b68}
+
+
+Definition at line 325 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a099e7104e7ee1fe9d7f6fad94bf1b996}{\index{Geom\-Base@{Geom\-Base}!get\-Rotation@{get\-Rotation}}
+\index{get\-Rotation@{get\-Rotation}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Geom\-Base\-::get\-Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a099e7104e7ee1fe9d7f6fad94bf1b996}
+
+
+Definition at line 329 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a4837a0f2d85a917a61eec1d1cb67f8d9}{\index{Geom\-Base@{Geom\-Base}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dimension3}$<$ float $>$ \& Geom\-Base\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a4837a0f2d85a917a61eec1d1cb67f8d9}
+
+
+Definition at line 333 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_aa735fa06a3056ba24fa1dcd3d70b3756}{\index{Geom\-Base@{Geom\-Base}!get\-Vertices@{get\-Vertices}}
+\index{get\-Vertices@{get\-Vertices}!GeomBase@{Geom\-Base}}
+\subsubsection[{get\-Vertices}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Vertex} $>$ \& Geom\-Base\-::get\-Vertices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_aa735fa06a3056ba24fa1dcd3d70b3756}
+
+
+Definition at line 345 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ad5bf288e10ecdb5dbd274a11c77768fc}{\index{Geom\-Base@{Geom\-Base}!init@{init}}
+\index{init@{init}!GeomBase@{Geom\-Base}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_geom_base_ad5bf288e10ecdb5dbd274a11c77768fc}
+
+
+Definition at line 26 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_aa62a1d16a4b8bc95be85faa4f454ec89}{\index{Geom\-Base@{Geom\-Base}!move@{move}}
+\index{move@{move}!GeomBase@{Geom\-Base}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_aa62a1d16a4b8bc95be85faa4f454ec89}
+
+
+Definition at line 295 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_aaf54ae14260d05c92a915c3736693ee8}{\index{Geom\-Base@{Geom\-Base}!rotate@{rotate}}
+\index{rotate@{rotate}!GeomBase@{Geom\-Base}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::rotate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{r}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_aaf54ae14260d05c92a915c3736693ee8}
+
+
+Definition at line 299 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ac1a2a5b5e8538f0a881eb93acb27d760}{\index{Geom\-Base@{Geom\-Base}!scale@{scale}}
+\index{scale@{scale}!GeomBase@{Geom\-Base}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::scale (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dimension3}$<$ float $>$ \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_ac1a2a5b5e8538f0a881eb93acb27d760}
+
+
+Definition at line 303 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a8bf68aafc4c2abaabc76ccc25a07b194}{\index{Geom\-Base@{Geom\-Base}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!GeomBase@{Geom\-Base}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color4}$<$ float $>$}]{col4}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a8bf68aafc4c2abaabc76ccc25a07b194}
+
+
+Definition at line 321 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a2f791ec87256e94cfb904ea4781e9067}{\index{Geom\-Base@{Geom\-Base}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!GeomBase@{Geom\-Base}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a2f791ec87256e94cfb904ea4781e9067}
+
+
+Definition at line 309 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_ace131749842b2d1bc8f84c31b04062fc}{\index{Geom\-Base@{Geom\-Base}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!GeomBase@{Geom\-Base}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{rot}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_ace131749842b2d1bc8f84c31b04062fc}
+
+
+Definition at line 313 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a4466237c7798bf2139dae782e48a759f}{\index{Geom\-Base@{Geom\-Base}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!GeomBase@{Geom\-Base}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Dimension3}$<$ float $>$}]{size}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a4466237c7798bf2139dae782e48a759f}
+
+
+Definition at line 317 of file Geom\-Base.\-cpp.
+
+\hypertarget{class_geom_base_a19dcf3697cebd27060e9389263dd44b7}{\index{Geom\-Base@{Geom\-Base}!sort\-Faces@{sort\-Faces}}
+\index{sort\-Faces@{sort\-Faces}!GeomBase@{Geom\-Base}}
+\subsubsection[{sort\-Faces}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Geom\-Base\-::sort\-Faces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_geom_base_a19dcf3697cebd27060e9389263dd44b7}
+
+
+Definition at line 84 of file Geom\-Base.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{\index{Geom\-Base@{Geom\-Base}!col4@{col4}}
+\index{col4@{col4}!GeomBase@{Geom\-Base}}
+\subsubsection[{col4}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color4}$<$float$>$ Geom\-Base\-::col4\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}
+
+
+Definition at line 29 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a0a55c12de2788567600e4477017df3fb}{\index{Geom\-Base@{Geom\-Base}!col4s@{col4s}}
+\index{col4s@{col4s}!GeomBase@{Geom\-Base}}
+\subsubsection[{col4s}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Color4}$<$float$>$ $>$ Geom\-Base\-::col4s\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a0a55c12de2788567600e4477017df3fb}
+
+
+Definition at line 30 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a9cbaa9c2f3d392874bdf96dbdf426852}{\index{Geom\-Base@{Geom\-Base}!color\-Prims@{color\-Prims}}
+\index{color\-Prims@{color\-Prims}!GeomBase@{Geom\-Base}}
+\subsubsection[{color\-Prims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ Geom\-Base\-::color\-Prims\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a9cbaa9c2f3d392874bdf96dbdf426852}
+
+
+Definition at line 51 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ade5e0a77c4a4488cb449406fdaa14524}{\index{Geom\-Base@{Geom\-Base}!display\-List\-Index@{display\-List\-Index}}
+\index{display\-List\-Index@{display\-List\-Index}!GeomBase@{Geom\-Base}}
+\subsubsection[{display\-List\-Index}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Luint} Geom\-Base\-::display\-List\-Index\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ade5e0a77c4a4488cb449406fdaa14524}
+
+
+Definition at line 55 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ac267e0a8d536d8f46d21c886cd809fdb}{\index{Geom\-Base@{Geom\-Base}!faces@{faces}}
+\index{faces@{faces}!GeomBase@{Geom\-Base}}
+\subsubsection[{faces}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Face3}$>$ Geom\-Base\-::faces\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ac267e0a8d536d8f46d21c886cd809fdb}
+
+
+Definition at line 44 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ac9801ee653f63ed5d544a237cc485183}{\index{Geom\-Base@{Geom\-Base}!index\-V\-B\-O\-I\-D@{index\-V\-B\-O\-I\-D}}
+\index{index\-V\-B\-O\-I\-D@{index\-V\-B\-O\-I\-D}!GeomBase@{Geom\-Base}}
+\subsubsection[{index\-V\-B\-O\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Luint} Geom\-Base\-::index\-V\-B\-O\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ac9801ee653f63ed5d544a237cc485183}
+
+
+Definition at line 58 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a99010b39b4d43e01a899f9c88f64cb28}{\index{Geom\-Base@{Geom\-Base}!ind\-Prims@{ind\-Prims}}
+\index{ind\-Prims@{ind\-Prims}!GeomBase@{Geom\-Base}}
+\subsubsection[{ind\-Prims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$unsigned int$>$ Geom\-Base\-::ind\-Prims\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a99010b39b4d43e01a899f9c88f64cb28}
+
+
+Definition at line 49 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ab6559c65d93ef3e006b66a951fa40300}{\index{Geom\-Base@{Geom\-Base}!inds@{inds}}
+\index{inds@{inds}!GeomBase@{Geom\-Base}}
+\subsubsection[{inds}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Tuple3}$<$int$>$ $>$ Geom\-Base\-::inds\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ab6559c65d93ef3e006b66a951fa40300}
+
+
+Definition at line 45 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a0800fd85697c8b330d0635a2c80f1c8d}{\index{Geom\-Base@{Geom\-Base}!interleaved\-Prims@{interleaved\-Prims}}
+\index{interleaved\-Prims@{interleaved\-Prims}!GeomBase@{Geom\-Base}}
+\subsubsection[{interleaved\-Prims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ Geom\-Base\-::interleaved\-Prims\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a0800fd85697c8b330d0635a2c80f1c8d}
+
+
+Definition at line 52 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ab225e16399ab6264821b49160f0fe437}{\index{Geom\-Base@{Geom\-Base}!norm\-Prims@{norm\-Prims}}
+\index{norm\-Prims@{norm\-Prims}!GeomBase@{Geom\-Base}}
+\subsubsection[{norm\-Prims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ Geom\-Base\-::norm\-Prims\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ab225e16399ab6264821b49160f0fe437}
+
+
+Definition at line 50 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{\index{Geom\-Base@{Geom\-Base}!pos@{pos}}
+\index{pos@{pos}!GeomBase@{Geom\-Base}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Geom\-Base\-::pos\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}
+
+
+Definition at line 26 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{\index{Geom\-Base@{Geom\-Base}!rot@{rot}}
+\index{rot@{rot}!GeomBase@{Geom\-Base}}
+\subsubsection[{rot}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Geom\-Base\-::rot\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a7de363bab1e976c73e495cf973a51de7}
+
+
+Definition at line 26 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a4be21b8e87e34a60ad9a2a38aae69ea1}{\index{Geom\-Base@{Geom\-Base}!rot\-Spd@{rot\-Spd}}
+\index{rot\-Spd@{rot\-Spd}!GeomBase@{Geom\-Base}}
+\subsubsection[{rot\-Spd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Geom\-Base\-::rot\-Spd\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a4be21b8e87e34a60ad9a2a38aae69ea1}
+
+
+Definition at line 27 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a3361cbbc26a1ef9768b1f0216af70bd1}{\index{Geom\-Base@{Geom\-Base}!size@{size}}
+\index{size@{size}!GeomBase@{Geom\-Base}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Dimension3}$<$float$>$ Geom\-Base\-::size\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a3361cbbc26a1ef9768b1f0216af70bd1}
+
+
+Definition at line 28 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a00d3b4512a14c19c818caf93681d36df}{\index{Geom\-Base@{Geom\-Base}!spd@{spd}}
+\index{spd@{spd}!GeomBase@{Geom\-Base}}
+\subsubsection[{spd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Geom\-Base\-::spd\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a00d3b4512a14c19c818caf93681d36df}
+
+
+Definition at line 27 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a9fd2238f1b31b148d70f22a98c6d30b5}{\index{Geom\-Base@{Geom\-Base}!vbo\-I\-D@{vbo\-I\-D}}
+\index{vbo\-I\-D@{vbo\-I\-D}!GeomBase@{Geom\-Base}}
+\subsubsection[{vbo\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Luint} Geom\-Base\-::vbo\-I\-D\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a9fd2238f1b31b148d70f22a98c6d30b5}
+
+
+Definition at line 58 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_abb278debe87d4c0882d946d520e24715}{\index{Geom\-Base@{Geom\-Base}!vert\-Prims@{vert\-Prims}}
+\index{vert\-Prims@{vert\-Prims}!GeomBase@{Geom\-Base}}
+\subsubsection[{vert\-Prims}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$float$>$ Geom\-Base\-::vert\-Prims\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_abb278debe87d4c0882d946d520e24715}
+
+
+Definition at line 48 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_ad9a00c1c60c9283b3a5995e8cfc6afb5}{\index{Geom\-Base@{Geom\-Base}!verts@{verts}}
+\index{verts@{verts}!GeomBase@{Geom\-Base}}
+\subsubsection[{verts}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Vertex}$>$ Geom\-Base\-::verts\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_ad9a00c1c60c9283b3a5995e8cfc6afb5}
+
+
+Definition at line 42 of file Geom\-Base.\-h.
+
+\hypertarget{class_geom_base_a345dad26b0f2e40b097546774baed95d}{\index{Geom\-Base@{Geom\-Base}!verts\-\_\-ptrs@{verts\-\_\-ptrs}}
+\index{verts\-\_\-ptrs@{verts\-\_\-ptrs}!GeomBase@{Geom\-Base}}
+\subsubsection[{verts\-\_\-ptrs}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Vertex}$\ast$$>$ Geom\-Base\-::verts\-\_\-ptrs\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_geom_base_a345dad26b0f2e40b097546774baed95d}
+
+
+Definition at line 43 of file Geom\-Base.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_geom_base_8h}{Geom\-Base.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_geom_base_8cpp}{Geom\-Base.\-cpp}\end{DoxyCompactItemize}

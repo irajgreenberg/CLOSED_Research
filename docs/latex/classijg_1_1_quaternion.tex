@@ -1,0 +1,203 @@
+\hypertarget{classijg_1_1_quaternion}{\section{ijg\-:\-:Quaternion Class Reference}
+\label{classijg_1_1_quaternion}\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}}
+}
+
+
+{\ttfamily \#include $<$Quaternion.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classijg_1_1_quaternion_ae10432deb8607c654e8c0b2991c0c5e8}{Quaternion} (const of\-Vec3f \&axis=of\-Vec3f(0, 0, 1), float theta=0)
+\item 
+\hyperlink{classijg_1_1_quaternion_af1293ea7f1913326a47270aa3a2092fe}{Quaternion} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, float \hyperlink{gl3_8h_acb78bf1972d3eaf07da34ff2e0a2f133}{z}, float \hyperlink{gl3_8h_a1d0296e9e835f2e1ee17634af95fc1ec}{w})
+\item 
+of\-Vec3f \hyperlink{classijg_1_1_quaternion_adf9e1b2a22b48558081ea4431ecf5b40}{get\-Rotate} (const of\-Vec3f \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classijg_1_1_quaternion_a94d667fcbac1ced532698a3c55b034a6}{rotate} (of\-Vec3f \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+float \hyperlink{classijg_1_1_quaternion_ac5456b45a7eff794fbf2644002695798}{mag} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classijg_1_1_quaternion_a48e6bafb249c895ed25f29dc9170e11e}{normalize} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classijg_1_1_quaternion_aa667e7d9d797a11ac0511226fdf49e58}{operator$\ast$=} (const \hyperlink{classijg_1_1_quaternion}{Quaternion} \&q)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classijg_1_1_quaternion_a212e143c26f7c7fe02ec2a9a7ab80726}{set\-Axis} (const of\-Vec3f \&axis)
+\item 
+const of\-Vec3f \& \hyperlink{classijg_1_1_quaternion_a6b7bd36aa1f92283d482fa8b3c891bcd}{get\-Axis} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \hyperlink{classijg_1_1_quaternion_aec41d09c899d038633fcf916ee461526}{x}
+\item 
+float \hyperlink{classijg_1_1_quaternion_af193eeb8684b68a7ded57fd713d9c7e2}{y}
+\item 
+float \hyperlink{classijg_1_1_quaternion_a505ee92b39476b32c09f5178114a4b7a}{z}
+\item 
+float \hyperlink{classijg_1_1_quaternion_a8f59840859527ac9ab7d070c7a03da90}{w}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classijg_1_1_quaternion}{Quaternion} \& \hyperlink{classijg_1_1_quaternion_a54dfa82b8709f278958359313c16da95}{operator$\ast$} (const \hyperlink{classijg_1_1_quaternion}{Quaternion} \&q)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Quaternion.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classijg_1_1_quaternion_ae10432deb8607c654e8c0b2991c0c5e8}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Quaternion\-::\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{const of\-Vec3f \&}]{axis = {\ttfamily ofVec3f(0,~0,~1)}, }
+\item[{float}]{theta = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_ae10432deb8607c654e8c0b2991c0c5e8}
+
+
+Definition at line 12 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_af1293ea7f1913326a47270aa3a2092fe}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{Quaternion}]{\setlength{\rightskip}{0pt plus 5cm}Quaternion\-::\-Quaternion (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z, }
+\item[{float}]{w}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_af1293ea7f1913326a47270aa3a2092fe}
+
+
+Definition at line 26 of file Quaternion.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classijg_1_1_quaternion_a6b7bd36aa1f92283d482fa8b3c891bcd}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!get\-Axis@{get\-Axis}}
+\index{get\-Axis@{get\-Axis}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{get\-Axis}]{\setlength{\rightskip}{0pt plus 5cm}const of\-Vec3f \& Quaternion\-::get\-Axis (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classijg_1_1_quaternion_a6b7bd36aa1f92283d482fa8b3c891bcd}
+
+
+Definition at line 89 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_adf9e1b2a22b48558081ea4431ecf5b40}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!get\-Rotate@{get\-Rotate}}
+\index{get\-Rotate@{get\-Rotate}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{get\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}of\-Vec3f Quaternion\-::get\-Rotate (
+\begin{DoxyParamCaption}
+\item[{const of\-Vec3f \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_adf9e1b2a22b48558081ea4431ecf5b40}
+
+
+Definition at line 51 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_ac5456b45a7eff794fbf2644002695798}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!mag@{mag}}
+\index{mag@{mag}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{mag}]{\setlength{\rightskip}{0pt plus 5cm}float Quaternion\-::mag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classijg_1_1_quaternion_ac5456b45a7eff794fbf2644002695798}
+
+
+Definition at line 68 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_a48e6bafb249c895ed25f29dc9170e11e}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Quaternion\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_a48e6bafb249c895ed25f29dc9170e11e}
+
+
+Definition at line 72 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_aa667e7d9d797a11ac0511226fdf49e58}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} ijg\-::\-Quaternion\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_aa667e7d9d797a11ac0511226fdf49e58}
+\hypertarget{classijg_1_1_quaternion_a94d667fcbac1ced532698a3c55b034a6}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!rotate@{rotate}}
+\index{rotate@{rotate}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Quaternion\-::rotate (
+\begin{DoxyParamCaption}
+\item[{of\-Vec3f \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_a94d667fcbac1ced532698a3c55b034a6}
+
+
+Definition at line 59 of file Quaternion.\-cpp.
+
+\hypertarget{classijg_1_1_quaternion_a212e143c26f7c7fe02ec2a9a7ab80726}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!set\-Axis@{set\-Axis}}
+\index{set\-Axis@{set\-Axis}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{set\-Axis}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Quaternion\-::set\-Axis (
+\begin{DoxyParamCaption}
+\item[{const of\-Vec3f \&}]{axis}
+\end{DoxyParamCaption}
+)}}\label{classijg_1_1_quaternion_a212e143c26f7c7fe02ec2a9a7ab80726}
+
+
+Definition at line 84 of file Quaternion.\-cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classijg_1_1_quaternion_a54dfa82b8709f278958359313c16da95}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Quaternion}\& operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Quaternion} \&}]{q}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classijg_1_1_quaternion_a54dfa82b8709f278958359313c16da95}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classijg_1_1_quaternion_a8f59840859527ac9ab7d070c7a03da90}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!w@{w}}
+\index{w@{w}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{w}]{\setlength{\rightskip}{0pt plus 5cm}float ijg\-::\-Quaternion\-::w}}\label{classijg_1_1_quaternion_a8f59840859527ac9ab7d070c7a03da90}
+
+
+Definition at line 20 of file Quaternion.\-h.
+
+\hypertarget{classijg_1_1_quaternion_aec41d09c899d038633fcf916ee461526}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!x@{x}}
+\index{x@{x}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}float ijg\-::\-Quaternion\-::x}}\label{classijg_1_1_quaternion_aec41d09c899d038633fcf916ee461526}
+
+
+Definition at line 20 of file Quaternion.\-h.
+
+\hypertarget{classijg_1_1_quaternion_af193eeb8684b68a7ded57fd713d9c7e2}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!y@{y}}
+\index{y@{y}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}float ijg\-::\-Quaternion\-::y}}\label{classijg_1_1_quaternion_af193eeb8684b68a7ded57fd713d9c7e2}
+
+
+Definition at line 20 of file Quaternion.\-h.
+
+\hypertarget{classijg_1_1_quaternion_a505ee92b39476b32c09f5178114a4b7a}{\index{ijg\-::\-Quaternion@{ijg\-::\-Quaternion}!z@{z}}
+\index{z@{z}!ijg::Quaternion@{ijg\-::\-Quaternion}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}float ijg\-::\-Quaternion\-::z}}\label{classijg_1_1_quaternion_a505ee92b39476b32c09f5178114a4b7a}
+
+
+Definition at line 20 of file Quaternion.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_quaternion_8h}{Quaternion.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_quaternion_8cpp}{Quaternion.\-cpp}\end{DoxyCompactItemize}

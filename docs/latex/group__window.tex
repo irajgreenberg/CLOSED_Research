@@ -1,0 +1,69 @@
+\hypertarget{group__window}{\section{Window module}
+\label{group__window}\index{Window module@{Window module}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_context}{sf\-::\-Context}
+\begin{DoxyCompactList}\small\item\em Class holding a valid drawing context. \end{DoxyCompactList}\item 
+class \hyperlink{structsf_1_1_context_settings}{sf\-::\-Context\-Settings}
+\begin{DoxyCompactList}\small\item\em Structure defining the settings of the Open\-G\-L context attached to a window. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_event}{sf\-::\-Event}
+\begin{DoxyCompactList}\small\item\em Defines a system event and its parameters. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_gl_resource}{sf\-::\-Gl\-Resource}
+\begin{DoxyCompactList}\small\item\em Base class for classes that require an Open\-G\-L context. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_joystick}{sf\-::\-Joystick}
+\begin{DoxyCompactList}\small\item\em Give access to the real-\/time state of the joysticks. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_keyboard}{sf\-::\-Keyboard}
+\begin{DoxyCompactList}\small\item\em Give access to the real-\/time state of the keyboard. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_mouse}{sf\-::\-Mouse}
+\begin{DoxyCompactList}\small\item\em Give access to the real-\/time state of the mouse. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_video_mode}{sf\-::\-Video\-Mode}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_video_mode}{Video\-Mode} defines a video mode (width, height, bpp) \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_window}{sf\-::\-Window}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_window}{Window} that serves as a target for Open\-G\-L rendering. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a8c35a9c8507559e455387fc4a83ce422}{sf\-::\-Style\-::\-None} = 0, 
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2ab4c8b32b05ed715928513787cb1e85b6}{sf\-::\-Style\-::\-Titlebar} = 1 $<$$<$ 0, 
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2accff967648ebcd5db2007eff7352b50f}{sf\-::\-Style\-::\-Resize} = 1 $<$$<$ 1, 
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2ae07a7d411d5acf28f4a9a4b76a3a9493}{sf\-::\-Style\-::\-Close} = 1 $<$$<$ 2, 
+\\*
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a6288ec86830245cf957e2d234f79f50d}{sf\-::\-Style\-::\-Fullscreen} = 1 $<$$<$ 3, 
+\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}{sf\-::\-Style\-::\-Default} = Titlebar $|$ Resize $|$ Close
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of the window styles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{group__window_gae1db07091f9745bd223882ba55e7fae2}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{group__window_gae1db07091f9745bd223882ba55e7fae2}
+
+
+Enumeration of the window styles. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{None@{None}!Window module@{Window module}}\index{Window module@{Window module}!None@{None}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2a8c35a9c8507559e455387fc4a83ce422}{None}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2a8c35a9c8507559e455387fc4a83ce422}
+}]No border / title bar (this flag and all others are mutually exclusive) \index{Titlebar@{Titlebar}!Window module@{Window module}}\index{Window module@{Window module}!Titlebar@{Titlebar}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2ab4c8b32b05ed715928513787cb1e85b6}{Titlebar}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2ab4c8b32b05ed715928513787cb1e85b6}
+}]Title bar + fixed border. \index{Resize@{Resize}!Window module@{Window module}}\index{Window module@{Window module}!Resize@{Resize}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2accff967648ebcd5db2007eff7352b50f}{Resize}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2accff967648ebcd5db2007eff7352b50f}
+}]Titlebar + resizable border + maximize button. \index{Close@{Close}!Window module@{Window module}}\index{Window module@{Window module}!Close@{Close}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2ae07a7d411d5acf28f4a9a4b76a3a9493}{Close}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2ae07a7d411d5acf28f4a9a4b76a3a9493}
+}]Titlebar + close button. \index{Fullscreen@{Fullscreen}!Window module@{Window module}}\index{Window module@{Window module}!Fullscreen@{Fullscreen}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2a6288ec86830245cf957e2d234f79f50d}{Fullscreen}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2a6288ec86830245cf957e2d234f79f50d}
+}]Fullscreen mode (this flag and all others are mutually exclusive) \index{Default@{Default}!Window module@{Window module}}\index{Window module@{Window module}!Default@{Default}}\item[{\em 
+\hypertarget{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}{Default}\label{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}
+}]Default window style. \end{description}
+\end{Desc}
+
+
+Definition at line 38 of file Window\-Style.\-hpp.
+

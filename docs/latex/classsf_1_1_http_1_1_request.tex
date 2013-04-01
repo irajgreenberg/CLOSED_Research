@@ -1,0 +1,213 @@
+\hypertarget{classsf_1_1_http_1_1_request}{\section{sf\-:\-:Http\-:\-:Request Class Reference}
+\label{classsf_1_1_http_1_1_request}\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}}
+}
+
+
+Define a H\-T\-T\-P request.  
+
+
+
+
+{\ttfamily \#include $<$Http.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598}{Method} \{ \hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}, 
+\hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a}{Post}, 
+\hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b}{Head}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumerate the available H\-T\-T\-P methods for a request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_http_1_1_request_a8e89d9e8ffcc1163259b35d79809a61c}{Request} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&uri=\char`\"{}/\char`\"{}, \hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598}{Method} method=\hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&body=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_http_1_1_request_aea672fae5dd089f4b6b3745ed46210d2}{set\-Field} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&field, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_a8ad81492d410ff2ac11f754f4042150f}{value})
+\begin{DoxyCompactList}\small\item\em Set the value of a field. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_http_1_1_request_abab148554e873e80d2e41376fde1cb62}{set\-Method} (\hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598}{Method} method)
+\begin{DoxyCompactList}\small\item\em Set the request method. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_http_1_1_request_a3723de4b4f1a14b744477841c4ac22e6}{set\-Uri} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&uri)
+\begin{DoxyCompactList}\small\item\em Set the requested U\-R\-I. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_http_1_1_request_aa683b607b737a6224a91387b4108d3c7}{set\-Http\-Version} (unsigned int major, unsigned int minor)
+\begin{DoxyCompactList}\small\item\em Set the H\-T\-T\-P version for the request. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_http_1_1_request_ae9f61ec3fa1639c70e9b5780cb35578e}{set\-Body} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&body)
+\begin{DoxyCompactList}\small\item\em Set the body of the request. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_http_1_1_request_aba95e2a7762bb5df986048b05d03a22e}{Http}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a H\-T\-T\-P request. 
+
+Definition at line 54 of file Http.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Method@{Method}}
+\index{Method@{Method}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{Method}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Http\-::\-Request\-::\-Method}}}\label{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598}
+
+
+Enumerate the available H\-T\-T\-P methods for a request. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Get@{Get}!sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}}\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Get@{Get}}\item[{\em 
+\hypertarget{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Get}\label{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}
+}]\hyperlink{classsf_1_1_http_1_1_request}{Request} in get mode, standard method to retrieve a page. \index{Post@{Post}!sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}}\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Post@{Post}}\item[{\em 
+\hypertarget{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a}{Post}\label{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ae8ec4048b9550f8d0747d4199603141a}
+}]\hyperlink{classsf_1_1_http_1_1_request}{Request} in post mode, usually to send data to a page. \index{Head@{Head}!sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}}\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Head@{Head}}\item[{\em 
+\hypertarget{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b}{Head}\label{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598a4df23138be7ed60f47aba6548ba65e7b}
+}]\hyperlink{classsf_1_1_http_1_1_request}{Request} a page's header only. \end{description}
+\end{Desc}
+
+
+Definition at line 62 of file Http.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_http_1_1_request_a8e89d9e8ffcc1163259b35d79809a61c}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Request@{Request}}
+\index{Request@{Request}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{Request}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Http\-::\-Request\-::\-Request (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{uri = {\ttfamily \char`\"{}/\char`\"{}}, }
+\item[{{\bf Method}}]{method = {\ttfamily {\bf Get}}, }
+\item[{const {\bf std\-::string} \&}]{body = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_a8e89d9e8ffcc1163259b35d79809a61c}
+
+
+Default constructor. 
+
+This constructor creates a G\-E\-T request, with the root U\-R\-I (\char`\"{}/\char`\"{}) and an empty body.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & Target U\-R\-I \\
+\hline
+{\em method} & Method to use for the request \\
+\hline
+{\em body} & Content of the request's body \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_http_1_1_request_ae9f61ec3fa1639c70e9b5780cb35578e}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!set\-Body@{set\-Body}}
+\index{set\-Body@{set\-Body}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{set\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Http\-::\-Request\-::set\-Body (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{body}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_ae9f61ec3fa1639c70e9b5780cb35578e}
+
+
+Set the body of the request. 
+
+The body of a request is optional and only makes sense for P\-O\-S\-T requests. It is ignored for all other methods. The body is empty by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em body} & Content of the body \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_http_1_1_request_aea672fae5dd089f4b6b3745ed46210d2}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!set\-Field@{set\-Field}}
+\index{set\-Field@{set\-Field}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{set\-Field}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Http\-::\-Request\-::set\-Field (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{field, }
+\item[{const {\bf std\-::string} \&}]{value}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_aea672fae5dd089f4b6b3745ed46210d2}
+
+
+Set the value of a field. 
+
+The field is created if it doesn't exist. The name of the field is case insensitive. By default, a request doesn't contain any field (but the mandatory fields are added later by the H\-T\-T\-P client when sending the request).
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & Name of the field to set \\
+\hline
+{\em value} & Value of the field \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_http_1_1_request_aa683b607b737a6224a91387b4108d3c7}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!set\-Http\-Version@{set\-Http\-Version}}
+\index{set\-Http\-Version@{set\-Http\-Version}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{set\-Http\-Version}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Http\-::\-Request\-::set\-Http\-Version (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{major, }
+\item[{unsigned int}]{minor}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_aa683b607b737a6224a91387b4108d3c7}
+
+
+Set the H\-T\-T\-P version for the request. 
+
+The H\-T\-T\-P version is 1.\-0 by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em major} & Major H\-T\-T\-P version number \\
+\hline
+{\em minor} & Minor H\-T\-T\-P version number \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_http_1_1_request_abab148554e873e80d2e41376fde1cb62}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!set\-Method@{set\-Method}}
+\index{set\-Method@{set\-Method}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{set\-Method}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Http\-::\-Request\-::set\-Method (
+\begin{DoxyParamCaption}
+\item[{{\bf Method}}]{method}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_abab148554e873e80d2e41376fde1cb62}
+
+
+Set the request method. 
+
+See the Method enumeration for a complete list of all the availale methods. The method is \hyperlink{classsf_1_1_http_1_1_request_a620f8bff6f43e1378f321bf53fbf5598ab822baed393f3d0353621e5378b9fcb4}{Http\-::\-Request\-::\-Get} by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em method} & Method to use for the request \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_http_1_1_request_a3723de4b4f1a14b744477841c4ac22e6}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!set\-Uri@{set\-Uri}}
+\index{set\-Uri@{set\-Uri}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{set\-Uri}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Http\-::\-Request\-::set\-Uri (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{uri}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_http_1_1_request_a3723de4b4f1a14b744477841c4ac22e6}
+
+
+Set the requested U\-R\-I. 
+
+The U\-R\-I is the resource (usually a web page or a file) that you want to get or post. The U\-R\-I is \char`\"{}/\char`\"{} (the root page) by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em uri} & U\-R\-I to request, relative to the host \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_http_1_1_request_aba95e2a7762bb5df986048b05d03a22e}{\index{sf\-::\-Http\-::\-Request@{sf\-::\-Http\-::\-Request}!Http@{Http}}
+\index{Http@{Http}!sf::Http::Request@{sf\-::\-Http\-::\-Request}}
+\subsubsection[{Http}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Http}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_http_1_1_request_aba95e2a7762bb5df986048b05d03a22e}
+
+
+Definition at line 146 of file Http.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Network/\hyperlink{_http_8hpp}{Http.\-hpp}\end{DoxyCompactItemize}

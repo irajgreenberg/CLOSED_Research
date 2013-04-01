@@ -1,0 +1,253 @@
+\hypertarget{classsf_1_1_render_states}{\section{sf\-:\-:Render\-States Class Reference}
+\label{classsf_1_1_render_states}\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}}
+}
+
+
+Define the states used for drawing to a \hyperlink{classsf_1_1_render_target}{Render\-Target}.  
+
+
+
+
+{\ttfamily \#include $<$Render\-States.\-hpp$>$}
+
+
+
+Collaboration diagram for sf\-:\-:Render\-States\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsf_1_1_render_states__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_render_states_a885bf14070d0d5391f062f62b270b7d0}{Render\-States} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_states_a4e3378a224f67513b95d58184e85210c}{Render\-States} (\hyperlink{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{Blend\-Mode} the\-Blend\-Mode)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom blend mode. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_states_a3e99cad6ab05971d40357949930ed890}{Render\-States} (const \hyperlink{classsf_1_1_transform}{Transform} \&the\-Transform)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom transform. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_states_a8f4ca3be0e27dafea0c4ab8547439bb1}{Render\-States} (const \hyperlink{classsf_1_1_texture}{Texture} $\ast$the\-Texture)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom texture. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_states_a39f94233f464739d8d8522f3aefe97d0}{Render\-States} (const \hyperlink{classsf_1_1_shader}{Shader} $\ast$the\-Shader)
+\begin{DoxyCompactList}\small\item\em Construct a default set of render states with a custom shader. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_states_ae508c91ac7b8992dc22b8d8a4027ad09}{Render\-States} (\hyperlink{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{Blend\-Mode} the\-Blend\-Mode, const \hyperlink{classsf_1_1_transform}{Transform} \&the\-Transform, const \hyperlink{classsf_1_1_texture}{Texture} $\ast$the\-Texture, const \hyperlink{classsf_1_1_shader}{Shader} $\ast$the\-Shader)
+\begin{DoxyCompactList}\small\item\em Construct a set of render states with all its attributes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{Blend\-Mode} \hyperlink{classsf_1_1_render_states_ad6ac87f1b5006dae7ebfee4b5d40f5a8}{blend\-Mode}
+\begin{DoxyCompactList}\small\item\em Blending mode. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_transform}{Transform}. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_texture}{Texture} $\ast$ \hyperlink{classsf_1_1_render_states_a457fc5a41731889de9cf39cf9b3436c3}{texture}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_texture}{Texture}. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_shader}{Shader} $\ast$ \hyperlink{classsf_1_1_render_states_ad4f79ecdd0c60ed0d24fbe555b221bd8}{shader}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_shader}{Shader}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classsf_1_1_render_states}{Render\-States} \hyperlink{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}{Default}
+\begin{DoxyCompactList}\small\item\em Special instance holding the default render states. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define the states used for drawing to a \hyperlink{classsf_1_1_render_target}{Render\-Target}. 
+
+There are four global states that can be applied to the drawn objects\-: \begin{DoxyItemize}
+\item the blend mode\-: how pixels of the object are blended with the background \item the transform\-: how the object is positioned/rotated/scaled \item the texture\-: what image is mapped to the object \item the shader\-: what custom effect is applied to the object\end{DoxyItemize}
+High-\/level objects such as sprites or text force some of these states when they are drawn. For example, a sprite will set its own texture, so that you don't have to care about it when drawing the sprite.
+
+The transform is a special case\-: sprites, texts and shapes (and it's a good idea to do it with your own drawable classes too) combine their transform with the one that is passed in the \hyperlink{classsf_1_1_render_states}{Render\-States} structure. So that you can use a \char`\"{}global\char`\"{} transform on top of each object's transform.
+
+Most objects, especially high-\/level drawables, can be drawn directly without defining render states explicitely -- the default set of states is ok in most cases. 
+\begin{DoxyCode}
+window.Draw(sprite);
+\end{DoxyCode}
+
+
+If you want to use a single specific render state, for example a shader, you can pass it directly to the Draw function\-: \hyperlink{classsf_1_1_render_states}{sf\-::\-Render\-States} has an implicit one-\/argument constructor for each state. 
+\begin{DoxyCode}
+window.draw(sprite, \hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader});
+\end{DoxyCode}
+
+
+When you're inside the Draw function of a drawable object (inherited from \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable}), you can either pass the render states unmodified, or change some of them. For example, a transformable object will combine the current transform with its own transform. A sprite will set its texture. Etc.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target}, \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable} 
+\end{DoxySeeAlso}
+
+
+Definition at line 45 of file Render\-States.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_render_states_a885bf14070d0d5391f062f62b270b7d0}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_a885bf14070d0d5391f062f62b270b7d0}
+
+
+Default constructor. 
+
+Constructing a default set of render states is equivalent to using \hyperlink{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}{sf\-::\-Render\-States\-::\-Default}. The default set defines\-: \begin{DoxyItemize}
+\item the Blend\-Alpha blend mode \item the identity transform \item a null texture \item a null shader \end{DoxyItemize}
+\hypertarget{classsf_1_1_render_states_a4e3378a224f67513b95d58184e85210c}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+\item[{{\bf Blend\-Mode}}]{the\-Blend\-Mode}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_a4e3378a224f67513b95d58184e85210c}
+
+
+Construct a default set of render states with a custom blend mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Blend\-Mode} & Blend mode to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_states_a3e99cad6ab05971d40357949930ed890}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transform} \&}]{the\-Transform}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_a3e99cad6ab05971d40357949930ed890}
+
+
+Construct a default set of render states with a custom transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Transform} & \hyperlink{classsf_1_1_transform}{Transform} to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_states_a8f4ca3be0e27dafea0c4ab8547439bb1}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} $\ast$}]{the\-Texture}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_a8f4ca3be0e27dafea0c4ab8547439bb1}
+
+
+Construct a default set of render states with a custom texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Texture} & \hyperlink{classsf_1_1_texture}{Texture} to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_states_a39f94233f464739d8d8522f3aefe97d0}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader} $\ast$}]{the\-Shader}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_a39f94233f464739d8d8522f3aefe97d0}
+
+
+Construct a default set of render states with a custom shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Shader} & \hyperlink{classsf_1_1_shader}{Shader} to use \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_states_ae508c91ac7b8992dc22b8d8a4027ad09}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Render\-States@{Render\-States}}
+\index{Render\-States@{Render\-States}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Render\-States}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-States\-::\-Render\-States (
+\begin{DoxyParamCaption}
+\item[{{\bf Blend\-Mode}}]{the\-Blend\-Mode, }
+\item[{const {\bf Transform} \&}]{the\-Transform, }
+\item[{const {\bf Texture} $\ast$}]{the\-Texture, }
+\item[{const {\bf Shader} $\ast$}]{the\-Shader}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_states_ae508c91ac7b8992dc22b8d8a4027ad09}
+
+
+Construct a set of render states with all its attributes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the\-Blend\-Mode} & Blend mode to use \\
+\hline
+{\em the\-Transform} & \hyperlink{classsf_1_1_transform}{Transform} to use \\
+\hline
+{\em the\-Texture} & \hyperlink{classsf_1_1_texture}{Texture} to use \\
+\hline
+{\em the\-Shader} & \hyperlink{classsf_1_1_shader}{Shader} to use \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_render_states_ad6ac87f1b5006dae7ebfee4b5d40f5a8}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!blend\-Mode@{blend\-Mode}}
+\index{blend\-Mode@{blend\-Mode}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{blend\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Blend\-Mode} sf\-::\-Render\-States\-::blend\-Mode}}\label{classsf_1_1_render_states_ad6ac87f1b5006dae7ebfee4b5d40f5a8}
+
+
+Blending mode. 
+
+
+
+Definition at line 115 of file Render\-States.\-hpp.
+
+\hypertarget{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!Default@{Default}}
+\index{Default@{Default}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{Default}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Render\-States} sf\-::\-Render\-States\-::\-Default\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}
+
+
+Special instance holding the default render states. 
+
+
+
+Definition at line 110 of file Render\-States.\-hpp.
+
+\hypertarget{classsf_1_1_render_states_ad4f79ecdd0c60ed0d24fbe555b221bd8}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!shader@{shader}}
+\index{shader@{shader}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{shader}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Shader}$\ast$ sf\-::\-Render\-States\-::shader}}\label{classsf_1_1_render_states_ad4f79ecdd0c60ed0d24fbe555b221bd8}
+
+
+\hyperlink{classsf_1_1_shader}{Shader}. 
+
+
+
+Definition at line 118 of file Render\-States.\-hpp.
+
+\hypertarget{classsf_1_1_render_states_a457fc5a41731889de9cf39cf9b3436c3}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!texture@{texture}}
+\index{texture@{texture}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{texture}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Texture}$\ast$ sf\-::\-Render\-States\-::texture}}\label{classsf_1_1_render_states_a457fc5a41731889de9cf39cf9b3436c3}
+
+
+\hyperlink{classsf_1_1_texture}{Texture}. 
+
+
+
+Definition at line 117 of file Render\-States.\-hpp.
+
+\hypertarget{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{\index{sf\-::\-Render\-States@{sf\-::\-Render\-States}!transform@{transform}}
+\index{transform@{transform}!sf::RenderStates@{sf\-::\-Render\-States}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform} sf\-::\-Render\-States\-::transform}}\label{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}
+
+
+\hyperlink{classsf_1_1_transform}{Transform}. 
+
+
+
+Definition at line 116 of file Render\-States.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_render_states_8hpp}{Render\-States.\-hpp}\end{DoxyCompactItemize}

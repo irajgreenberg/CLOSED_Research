@@ -1,0 +1,446 @@
+\hypertarget{class_tree}{\section{Tree Class Reference}
+\label{class_tree}\index{Tree@{Tree}}
+}
+
+
+Class to generate simple tree forms Author\-: Ira Greenberg.  
+
+
+
+
+{\ttfamily \#include $<$Tree.\-h$>$}
+
+
+
+Inheritance diagram for Tree\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_tree__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tree\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tree_ad376a7c639d857312f5de2ef47482f68}{Tree} ()
+\item 
+\hyperlink{class_tree_a0e6d9e18c96a1a4fc22e8085a6e442ec}{Tree} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4})
+\item 
+\hyperlink{class_tree_a6e95be26eea55b8519a7c2330bd91f9b}{Tree} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4}, int sprout\-Limit, const \hyperlink{class_tuple2}{Tuple2}$<$ int $>$ \&sub\-Branch\-Count, int branch\-Detail)
+\item 
+virtual \hyperlink{class_tree_abdc38545cf3f588725b5d8b8075b3866}{$\sim$\-Tree} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a3fb4686854dabed151c413bce40875cd}{calc\-Verts} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a7685c536c875deeecafb9da04ec5173b}{build\-Tree} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, float len)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a9a5187e7eb5f8820f0fb2498de13607d}{calc\-Inds} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a31e90b11c7ff6012671d2ab8f4181147}{set\-Sprout\-Taper\-Jitter} (\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ sprout\-Taper\-Jitter)
+\item 
+\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ \hyperlink{class_tree_a9d776009fc0dd77f4e12cbbfba539a7a}{get\-Sprout\-Taper\-Jitter} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a7d07632f883e80f1c59c59dd81753791}{set\-Sprout\-Taper} (float sprout\-Taper)
+\item 
+float \hyperlink{class_tree_ae6633bd780ecef9fcf62f33014ca5289}{get\-Sprout\-Taper} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a1132920d1c79ffbe0cf7bde260c681ea}{set\-Branch\-Jitter} (\hyperlink{class_tuple6}{Tuple6}$<$ float $>$ branch\-Jitter)
+\item 
+\hyperlink{class_tuple6}{Tuple6}$<$ float $>$ \hyperlink{class_tree_ac25bd9ef029c3e52b37774b88775d50f}{get\-Branch\-Jitter} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a540b5f868d3faa6bf2e9dad39fce3c9b}{set\-Branch\-Radial\-Jitter} (\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ branch\-Radial\-Jitter)
+\item 
+\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ \hyperlink{class_tree_a01789c47b05843bd71672cf5b97ee24a}{get\-Branch\-Radial\-Jitter} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a11bac68ee2ba2f5a3d69520b2cf40022}{set\-Tree\-Spline\-Path} (std\-::vector$<$ \hyperlink{class_spline3}{Spline3} $>$ tree\-Spline\-Path)
+\item 
+std\-::vector$<$ \hyperlink{class_spline3}{Spline3} $>$ \hyperlink{class_tree_ab13b3a2b754c10594c34cb0b221cda5b}{get\-Tree\-Spline\-Path} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a4c1e5509eb34a40581e59db8ea61a3b9}{set\-Branch\-Detail} (int branch\-Detail)
+\item 
+int \hyperlink{class_tree_a7ed8f5af55f33e9ad69cf9dc1388e850}{get\-Branch\-Detail} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_ab6b0388beca15cfbfdf2b092decc4570}{set\-Sub\-Branch\-Count} (\hyperlink{class_tuple2}{Tuple2}$<$ int $>$ sub\-Branch\-Count)
+\item 
+\hyperlink{class_tuple2}{Tuple2}$<$ int $>$ \hyperlink{class_tree_ad10d3008d8ec5b4bf048dbe83e8448df}{get\-Sub\-Branch\-Count} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_aa436f90177ee5b77717dc0aa1d6fcc27}{set\-Sprout\-Limit} (int sprout\-Limit)
+\item 
+int \hyperlink{class_tree_aa6eaa981627705e3fab279854f6c7168}{get\-Sprout\-Limit} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_aeaee2154a42020a1ed22455225714759}{set\-Branch\-Attenuator\-Jitter} (\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ branch\-Attenuator\-Jitter)
+\item 
+\hyperlink{class_tuple2}{Tuple2}$<$ float $>$ \hyperlink{class_tree_ae4cb7e89537ad9a3fc8649b36697eef9}{get\-Branch\-Attenuator\-Jitter} () const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tree_a5fd9185ad02d5d3743a5d6fc243f6fba}{set\-Branch\-Attenuator} (float branch\-Attenuator)
+\item 
+float \hyperlink{class_tree_af29c9b4eb7b2403447db6e31b6e119a4}{get\-Branch\-Attenuator} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_tree_a55b90c79423ef8a57350dd8cd335cfb6}{operator$<$$<$} (std\-::ostream \&out, const \hyperlink{class_tree}{Tree} \&tree)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class to generate simple tree forms Author\-: Ira Greenberg. 
+
+Created on March 27, 2013, 11\-:51 A\-M 
+
+Definition at line 18 of file Tree.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tree_ad376a7c639d857312f5de2ef47482f68}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-::\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tree_ad376a7c639d857312f5de2ef47482f68}
+Default Constructor 
+
+Definition at line 10 of file Tree.\-cpp.
+
+\hypertarget{class_tree_a0e6d9e18c96a1a4fc22e8085a6e442ec}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-::\-Tree (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const {\bf Color4}$<$ float $>$}]{col4}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a0e6d9e18c96a1a4fc22e8085a6e442ec}
+Constructor 
+
+Definition at line 13 of file Tree.\-cpp.
+
+\hypertarget{class_tree_a6e95be26eea55b8519a7c2330bd91f9b}{\index{Tree@{Tree}!Tree@{Tree}}
+\index{Tree@{Tree}!Tree@{Tree}}
+\subsubsection[{Tree}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-::\-Tree (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const {\bf Color4}$<$ float $>$}]{col4, }
+\item[{int}]{sprout\-Limit, }
+\item[{const {\bf Tuple2}$<$ int $>$ \&}]{sub\-Branch\-Count, }
+\item[{int}]{branch\-Detail}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a6e95be26eea55b8519a7c2330bd91f9b}
+Constructor 
+
+Definition at line 22 of file Tree.\-cpp.
+
+\hypertarget{class_tree_abdc38545cf3f588725b5d8b8075b3866}{\index{Tree@{Tree}!$\sim$\-Tree@{$\sim$\-Tree}}
+\index{$\sim$\-Tree@{$\sim$\-Tree}!Tree@{Tree}}
+\subsubsection[{$\sim$\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}Tree\-::$\sim$\-Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_tree_abdc38545cf3f588725b5d8b8075b3866}
+Destructor 
+
+Definition at line 30 of file Tree.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tree_a7685c536c875deeecafb9da04ec5173b}{\index{Tree@{Tree}!build\-Tree@{build\-Tree}}
+\index{build\-Tree@{build\-Tree}!Tree@{Tree}}
+\subsubsection[{build\-Tree}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::build\-Tree (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{float}]{len}
+\end{DoxyParamCaption}
+)}}\label{class_tree_a7685c536c875deeecafb9da04ec5173b}
+Recursive function constructs tree.  pos Position of new branch  len Length of new branch 
+
+Definition at line 45 of file Tree.\-cpp.
+
+\hypertarget{class_tree_a9a5187e7eb5f8820f0fb2498de13607d}{\index{Tree@{Tree}!calc\-Inds@{calc\-Inds}}
+\index{calc\-Inds@{calc\-Inds}!Tree@{Tree}}
+\subsubsection[{calc\-Inds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::calc\-Inds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_tree_a9a5187e7eb5f8820f0fb2498de13607d}
+Declared pure virtual in \hyperlink{class_geom_base}{Geom\-Base} base class and must be implemented in all derived classes\-:
+
+Generates indices to group vertices to triangle faces. 
+
+Implements \hyperlink{class_geom_base_a7eb4db1216fe90f25387fc20b9d77c8f}{Geom\-Base}.
+
+
+
+Definition at line 41 of file Tree.\-cpp.
+
+\hypertarget{class_tree_a3fb4686854dabed151c413bce40875cd}{\index{Tree@{Tree}!calc\-Verts@{calc\-Verts}}
+\index{calc\-Verts@{calc\-Verts}!Tree@{Tree}}
+\subsubsection[{calc\-Verts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::calc\-Verts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_tree_a3fb4686854dabed151c413bce40875cd}
+Declared pure virtual in \hyperlink{class_geom_base}{Geom\-Base} base class and must be implemented in all derived classes.
+
+Generates all vertices for tree. 
+
+Implements \hyperlink{class_geom_base_a2d4e1dd21534e89978ec7f7c8268a20b}{Geom\-Base}.
+
+
+
+Definition at line 34 of file Tree.\-cpp.
+
+\hypertarget{class_tree_af29c9b4eb7b2403447db6e31b6e119a4}{\index{Tree@{Tree}!get\-Branch\-Attenuator@{get\-Branch\-Attenuator}}
+\index{get\-Branch\-Attenuator@{get\-Branch\-Attenuator}!Tree@{Tree}}
+\subsubsection[{get\-Branch\-Attenuator}]{\setlength{\rightskip}{0pt plus 5cm}float Tree\-::get\-Branch\-Attenuator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_af29c9b4eb7b2403447db6e31b6e119a4}
+
+
+Definition at line 196 of file Tree.\-h.
+
+\hypertarget{class_tree_ae4cb7e89537ad9a3fc8649b36697eef9}{\index{Tree@{Tree}!get\-Branch\-Attenuator\-Jitter@{get\-Branch\-Attenuator\-Jitter}}
+\index{get\-Branch\-Attenuator\-Jitter@{get\-Branch\-Attenuator\-Jitter}!Tree@{Tree}}
+\subsubsection[{get\-Branch\-Attenuator\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple2}$<$ float $>$ Tree\-::get\-Branch\-Attenuator\-Jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ae4cb7e89537ad9a3fc8649b36697eef9}
+
+
+Definition at line 188 of file Tree.\-h.
+
+\hypertarget{class_tree_a7ed8f5af55f33e9ad69cf9dc1388e850}{\index{Tree@{Tree}!get\-Branch\-Detail@{get\-Branch\-Detail}}
+\index{get\-Branch\-Detail@{get\-Branch\-Detail}!Tree@{Tree}}
+\subsubsection[{get\-Branch\-Detail}]{\setlength{\rightskip}{0pt plus 5cm}int Tree\-::get\-Branch\-Detail (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a7ed8f5af55f33e9ad69cf9dc1388e850}
+
+
+Definition at line 164 of file Tree.\-h.
+
+\hypertarget{class_tree_ac25bd9ef029c3e52b37774b88775d50f}{\index{Tree@{Tree}!get\-Branch\-Jitter@{get\-Branch\-Jitter}}
+\index{get\-Branch\-Jitter@{get\-Branch\-Jitter}!Tree@{Tree}}
+\subsubsection[{get\-Branch\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple6}$<$ float $>$ Tree\-::get\-Branch\-Jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ac25bd9ef029c3e52b37774b88775d50f}
+
+
+Definition at line 140 of file Tree.\-h.
+
+\hypertarget{class_tree_a01789c47b05843bd71672cf5b97ee24a}{\index{Tree@{Tree}!get\-Branch\-Radial\-Jitter@{get\-Branch\-Radial\-Jitter}}
+\index{get\-Branch\-Radial\-Jitter@{get\-Branch\-Radial\-Jitter}!Tree@{Tree}}
+\subsubsection[{get\-Branch\-Radial\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple2}$<$ float $>$ Tree\-::get\-Branch\-Radial\-Jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a01789c47b05843bd71672cf5b97ee24a}
+
+
+Definition at line 148 of file Tree.\-h.
+
+\hypertarget{class_tree_aa6eaa981627705e3fab279854f6c7168}{\index{Tree@{Tree}!get\-Sprout\-Limit@{get\-Sprout\-Limit}}
+\index{get\-Sprout\-Limit@{get\-Sprout\-Limit}!Tree@{Tree}}
+\subsubsection[{get\-Sprout\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}int Tree\-::get\-Sprout\-Limit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_aa6eaa981627705e3fab279854f6c7168}
+
+
+Definition at line 180 of file Tree.\-h.
+
+\hypertarget{class_tree_ae6633bd780ecef9fcf62f33014ca5289}{\index{Tree@{Tree}!get\-Sprout\-Taper@{get\-Sprout\-Taper}}
+\index{get\-Sprout\-Taper@{get\-Sprout\-Taper}!Tree@{Tree}}
+\subsubsection[{get\-Sprout\-Taper}]{\setlength{\rightskip}{0pt plus 5cm}float Tree\-::get\-Sprout\-Taper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ae6633bd780ecef9fcf62f33014ca5289}
+
+
+Definition at line 132 of file Tree.\-h.
+
+\hypertarget{class_tree_a9d776009fc0dd77f4e12cbbfba539a7a}{\index{Tree@{Tree}!get\-Sprout\-Taper\-Jitter@{get\-Sprout\-Taper\-Jitter}}
+\index{get\-Sprout\-Taper\-Jitter@{get\-Sprout\-Taper\-Jitter}!Tree@{Tree}}
+\subsubsection[{get\-Sprout\-Taper\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple2}$<$ float $>$ Tree\-::get\-Sprout\-Taper\-Jitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a9d776009fc0dd77f4e12cbbfba539a7a}
+
+
+Definition at line 124 of file Tree.\-h.
+
+\hypertarget{class_tree_ad10d3008d8ec5b4bf048dbe83e8448df}{\index{Tree@{Tree}!get\-Sub\-Branch\-Count@{get\-Sub\-Branch\-Count}}
+\index{get\-Sub\-Branch\-Count@{get\-Sub\-Branch\-Count}!Tree@{Tree}}
+\subsubsection[{get\-Sub\-Branch\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Tuple2}$<$ int $>$ Tree\-::get\-Sub\-Branch\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ad10d3008d8ec5b4bf048dbe83e8448df}
+
+
+Definition at line 172 of file Tree.\-h.
+
+\hypertarget{class_tree_ab13b3a2b754c10594c34cb0b221cda5b}{\index{Tree@{Tree}!get\-Tree\-Spline\-Path@{get\-Tree\-Spline\-Path}}
+\index{get\-Tree\-Spline\-Path@{get\-Tree\-Spline\-Path}!Tree@{Tree}}
+\subsubsection[{get\-Tree\-Spline\-Path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Spline3} $>$ Tree\-::get\-Tree\-Spline\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ab13b3a2b754c10594c34cb0b221cda5b}
+
+
+Definition at line 156 of file Tree.\-h.
+
+\hypertarget{class_tree_a5fd9185ad02d5d3743a5d6fc243f6fba}{\index{Tree@{Tree}!set\-Branch\-Attenuator@{set\-Branch\-Attenuator}}
+\index{set\-Branch\-Attenuator@{set\-Branch\-Attenuator}!Tree@{Tree}}
+\subsubsection[{set\-Branch\-Attenuator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Branch\-Attenuator (
+\begin{DoxyParamCaption}
+\item[{float}]{branch\-Attenuator}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a5fd9185ad02d5d3743a5d6fc243f6fba}
+
+
+Definition at line 192 of file Tree.\-h.
+
+\hypertarget{class_tree_aeaee2154a42020a1ed22455225714759}{\index{Tree@{Tree}!set\-Branch\-Attenuator\-Jitter@{set\-Branch\-Attenuator\-Jitter}}
+\index{set\-Branch\-Attenuator\-Jitter@{set\-Branch\-Attenuator\-Jitter}!Tree@{Tree}}
+\subsubsection[{set\-Branch\-Attenuator\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Branch\-Attenuator\-Jitter (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple2}$<$ float $>$}]{branch\-Attenuator\-Jitter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_aeaee2154a42020a1ed22455225714759}
+
+
+Definition at line 184 of file Tree.\-h.
+
+\hypertarget{class_tree_a4c1e5509eb34a40581e59db8ea61a3b9}{\index{Tree@{Tree}!set\-Branch\-Detail@{set\-Branch\-Detail}}
+\index{set\-Branch\-Detail@{set\-Branch\-Detail}!Tree@{Tree}}
+\subsubsection[{set\-Branch\-Detail}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Branch\-Detail (
+\begin{DoxyParamCaption}
+\item[{int}]{branch\-Detail}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a4c1e5509eb34a40581e59db8ea61a3b9}
+
+
+Definition at line 160 of file Tree.\-h.
+
+\hypertarget{class_tree_a1132920d1c79ffbe0cf7bde260c681ea}{\index{Tree@{Tree}!set\-Branch\-Jitter@{set\-Branch\-Jitter}}
+\index{set\-Branch\-Jitter@{set\-Branch\-Jitter}!Tree@{Tree}}
+\subsubsection[{set\-Branch\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Branch\-Jitter (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple6}$<$ float $>$}]{branch\-Jitter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a1132920d1c79ffbe0cf7bde260c681ea}
+
+
+Definition at line 136 of file Tree.\-h.
+
+\hypertarget{class_tree_a540b5f868d3faa6bf2e9dad39fce3c9b}{\index{Tree@{Tree}!set\-Branch\-Radial\-Jitter@{set\-Branch\-Radial\-Jitter}}
+\index{set\-Branch\-Radial\-Jitter@{set\-Branch\-Radial\-Jitter}!Tree@{Tree}}
+\subsubsection[{set\-Branch\-Radial\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Branch\-Radial\-Jitter (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple2}$<$ float $>$}]{branch\-Radial\-Jitter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a540b5f868d3faa6bf2e9dad39fce3c9b}
+
+
+Definition at line 144 of file Tree.\-h.
+
+\hypertarget{class_tree_aa436f90177ee5b77717dc0aa1d6fcc27}{\index{Tree@{Tree}!set\-Sprout\-Limit@{set\-Sprout\-Limit}}
+\index{set\-Sprout\-Limit@{set\-Sprout\-Limit}!Tree@{Tree}}
+\subsubsection[{set\-Sprout\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Sprout\-Limit (
+\begin{DoxyParamCaption}
+\item[{int}]{sprout\-Limit}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_aa436f90177ee5b77717dc0aa1d6fcc27}
+
+
+Definition at line 176 of file Tree.\-h.
+
+\hypertarget{class_tree_a7d07632f883e80f1c59c59dd81753791}{\index{Tree@{Tree}!set\-Sprout\-Taper@{set\-Sprout\-Taper}}
+\index{set\-Sprout\-Taper@{set\-Sprout\-Taper}!Tree@{Tree}}
+\subsubsection[{set\-Sprout\-Taper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Sprout\-Taper (
+\begin{DoxyParamCaption}
+\item[{float}]{sprout\-Taper}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a7d07632f883e80f1c59c59dd81753791}
+
+
+Definition at line 128 of file Tree.\-h.
+
+\hypertarget{class_tree_a31e90b11c7ff6012671d2ab8f4181147}{\index{Tree@{Tree}!set\-Sprout\-Taper\-Jitter@{set\-Sprout\-Taper\-Jitter}}
+\index{set\-Sprout\-Taper\-Jitter@{set\-Sprout\-Taper\-Jitter}!Tree@{Tree}}
+\subsubsection[{set\-Sprout\-Taper\-Jitter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Sprout\-Taper\-Jitter (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple2}$<$ float $>$}]{sprout\-Taper\-Jitter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a31e90b11c7ff6012671d2ab8f4181147}
+
+
+Definition at line 120 of file Tree.\-h.
+
+\hypertarget{class_tree_ab6b0388beca15cfbfdf2b092decc4570}{\index{Tree@{Tree}!set\-Sub\-Branch\-Count@{set\-Sub\-Branch\-Count}}
+\index{set\-Sub\-Branch\-Count@{set\-Sub\-Branch\-Count}!Tree@{Tree}}
+\subsubsection[{set\-Sub\-Branch\-Count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Sub\-Branch\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf Tuple2}$<$ int $>$}]{sub\-Branch\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_ab6b0388beca15cfbfdf2b092decc4570}
+
+
+Definition at line 168 of file Tree.\-h.
+
+\hypertarget{class_tree_a11bac68ee2ba2f5a3d69520b2cf40022}{\index{Tree@{Tree}!set\-Tree\-Spline\-Path@{set\-Tree\-Spline\-Path}}
+\index{set\-Tree\-Spline\-Path@{set\-Tree\-Spline\-Path}!Tree@{Tree}}
+\subsubsection[{set\-Tree\-Spline\-Path}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tree\-::set\-Tree\-Spline\-Path (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Spline3} $>$}]{tree\-Spline\-Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_tree_a11bac68ee2ba2f5a3d69520b2cf40022}
+
+
+Definition at line 152 of file Tree.\-h.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_tree_a55b90c79423ef8a57350dd8cd335cfb6}{\index{Tree@{Tree}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Tree@{Tree}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{const {\bf Tree} \&}]{tree}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_tree_a55b90c79423ef8a57350dd8cd335cfb6}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_tree_8h}{Tree.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_tree_8cpp}{Tree.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,211 @@
+\hypertarget{classsf_1_1_vector3}{\section{sf\-:\-:Vector3$<$ T $>$ Class Template Reference}
+\label{classsf_1_1_vector3}\index{sf\-::\-Vector3$<$ T $>$@{sf\-::\-Vector3$<$ T $>$}}
+}
+
+
+Utility template class for manipulating 3-\/dimensional vectors.  
+
+
+
+
+{\ttfamily \#include $<$Vector3.\-hpp$>$}
+
+
+
+Collaboration diagram for sf\-:\-:Vector3$<$ T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=168pt]{classsf_1_1_vector3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_vector3_aee8be1985c6e45e381ad4071265636f9}{Vector3} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_vector3_a99ed75b68f58adfa3e9fa0561b424bf6}{Vector3} (T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a58833a3110c570fb05130d40c365d1e4}{X}, T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a5596231eabd6cf29050967d5ac83ad84}{Y}, T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7aa70478ce277ffc322f8e1e3418e07355}{Z})
+\begin{DoxyCompactList}\small\item\em Construct the vector from its coordinates. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename U $>$ }\\\hyperlink{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}{Vector3} (const \hyperlink{classsf_1_1_vector3}{Vector3}$<$ U $>$ \&vector)
+\begin{DoxyCompactList}\small\item\em Construct the vector from another type of vector. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classsf_1_1_vector3_a49536881e57dd6f1bec692bb85b39413}{Vector3} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{classsf_1_1_vector3_a6d71676baa113af029006c01620fd4ca}{Vector3} (T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a58833a3110c570fb05130d40c365d1e4}{X}, T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7a5596231eabd6cf29050967d5ac83ad84}{Y}, T \hyperlink{glsmapint_8h_adf764cbdea00d65edcd07bb9953ad2b7aa70478ce277ffc322f8e1e3418e07355}{Z})
+\item 
+{\footnotesize template$<$typename U $>$ }\\\hyperlink{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}{Vector3} (const \hyperlink{classsf_1_1_vector3}{Vector3}$<$ U $>$ \&vector)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{x}
+\begin{DoxyCompactList}\small\item\em X coordinate of the vector. \end{DoxyCompactList}\item 
+T \hyperlink{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{y}
+\begin{DoxyCompactList}\small\item\em Y coordinate of the vector. \end{DoxyCompactList}\item 
+T \hyperlink{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{z}
+\begin{DoxyCompactList}\small\item\em Z coordinate of the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class sf\-::\-Vector3$<$ T $>$}
+
+Utility template class for manipulating 3-\/dimensional vectors. 
+
+\hyperlink{classsf_1_1_vector3}{sf\-::\-Vector3} is a simple class that defines a mathematical vector with three coordinates (x, y and z). It can be used to represent anything that has three dimensions\-: a size, a point, a velocity, etc.
+
+The template parameter T is the type of the coordinates. It can be any type that supports arithmetic operations (+, -\/, /, $\ast$) and comparisons (==, !=), for example int or float.
+
+You generally don't have to care about the templated form (sf\-::\-Vector3$<$\-T$>$), the two most common specializations have special typedefs\-: \begin{DoxyItemize}
+\item sf\-::\-Vector3$<$float$>$ is \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{sf\-::\-Vector3f} \item sf\-::\-Vector3$<$int$>$ is \hyperlink{namespacesf_ad066a8774efaf7b623df8909ba219dc7}{sf\-::\-Vector3i}\end{DoxyItemize}
+The \hyperlink{classsf_1_1_vector3}{sf\-::\-Vector3} class has a small and simple interface, its x and y members can be accessed directly (there's no accessor like Set\-X(), Get\-X()) and it contains no mathematical function like dot product, cross product, length, etc.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_vector3}{sf::Vector3f} \hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1}(16.5f, 24.f, -8.2f);
+\hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1}.x = 18.2f;
+\textcolor{keywordtype}{float} y = \hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1}.y;
+\textcolor{keywordtype}{float} z = \hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1}.z;
+
+\hyperlink{classsf_1_1_vector3}{sf::Vector3f} v2 = \hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1} * 5.f;
+\hyperlink{classsf_1_1_vector3}{sf::Vector3f} \hyperlink{gl3_8h_ac2343f93cabb4191bf67057b0d22167c}{v3};
+v3 = \hyperlink{gl3_8h_aabdd9aabede45fcf97cea04f88d2ad60}{v1} + \hyperlink{gl3_8h_ae35401c8c2fcdcc48c20ba325ee473ea}{v2};
+
+\textcolor{keywordtype}{bool} different = (v2 != \hyperlink{gl3_8h_ac2343f93cabb4191bf67057b0d22167c}{v3});
+\end{DoxyCode}
+
+
+Note\-: for 2-\/dimensional vectors, see \hyperlink{classsf_1_1_vector2}{sf\-::\-Vector2}. 
+
+Definition at line 37 of file Vector3.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_vector3_aee8be1985c6e45e381ad4071265636f9}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vector3_aee8be1985c6e45e381ad4071265636f9}
+
+
+Default constructor. 
+
+Creates a Vector3(0, 0, 0). \hypertarget{classsf_1_1_vector3_a99ed75b68f58adfa3e9fa0561b424bf6}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+\item[{T}]{X, }
+\item[{T}]{Y, }
+\item[{T}]{Z}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vector3_a99ed75b68f58adfa3e9fa0561b424bf6}
+
+
+Construct the vector from its coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em X} & X coordinate \\
+\hline
+{\em Y} & Y coordinate \\
+\hline
+{\em Z} & Z coordinate \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename U $>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ U $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}
+
+
+Construct the vector from another type of vector. 
+
+This constructor doesn't replace the copy constructor, it's called only when U != T. A call to this constructor will fail to compile if U is not convertible to T.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vector} & Vector to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_vector3_a49536881e57dd6f1bec692bb85b39413}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename T $>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classsf_1_1_vector3_a49536881e57dd6f1bec692bb85b39413}
+
+
+Definition at line 28 of file Vector3.\-inl.
+
+\hypertarget{classsf_1_1_vector3_a6d71676baa113af029006c01620fd4ca}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename T $>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+\item[{T}]{X, }
+\item[{T}]{Y, }
+\item[{T}]{Z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classsf_1_1_vector3_a6d71676baa113af029006c01620fd4ca}
+
+
+Definition at line 39 of file Vector3.\-inl.
+
+\hypertarget{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ template$<$typename U $>$ {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf Vector3} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ U $>$ \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classsf_1_1_vector3_adb2b2e150025e97ccfa96219bbed59d1}
+
+
+Definition at line 51 of file Vector3.\-inl.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!x@{x}}
+\index{x@{x}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf x}}}\label{classsf_1_1_vector3_a3cb0c769390bc37c346bb1a69e510d16}
+
+
+X coordinate of the vector. 
+
+
+
+Definition at line 76 of file Vector3.\-hpp.
+
+\hypertarget{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!y@{y}}
+\index{y@{y}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf y}}}\label{classsf_1_1_vector3_a6590d50ccb862c5efc5512e974e9b794}
+
+
+Y coordinate of the vector. 
+
+
+
+Definition at line 77 of file Vector3.\-hpp.
+
+\hypertarget{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}{\index{sf\-::\-Vector3@{sf\-::\-Vector3}!z@{z}}
+\index{z@{z}!sf::Vector3@{sf\-::\-Vector3}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T {\bf sf\-::\-Vector3}$<$ T $>$\-::{\bf z}}}\label{classsf_1_1_vector3_a2f36ab4b552c028e3a9734c1ad4df7d1}
+
+
+Z coordinate of the vector. 
+
+
+
+Definition at line 78 of file Vector3.\-hpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_vector3_8hpp}{Vector3.\-hpp}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_vector3_8inl}{Vector3.\-inl}\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\hypertarget{classsf_1_1_glyph}{\section{sf\-:\-:Glyph Class Reference}
+\label{classsf_1_1_glyph}\index{sf\-::\-Glyph@{sf\-::\-Glyph}}
+}
+
+
+Structure describing a glyph.  
+
+
+
+
+{\ttfamily \#include $<$Glyph.\-hpp$>$}
+
+
+
+Collaboration diagram for sf\-:\-:Glyph\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{classsf_1_1_glyph__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_glyph_ab15cfc37eb7b40a94b3b3aedf934010b}{Glyph} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classsf_1_1_glyph_a50b93f441db501d10308007f63382166}{advance}
+\begin{DoxyCompactList}\small\item\em Offset to move horizontically to the next character. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \hyperlink{classsf_1_1_glyph_afe4cd37e5839955d7dd008e178d41f0c}{bounds}
+\begin{DoxyCompactList}\small\item\em Bounding rectangle of the glyph, in coordinates relative to the baseline. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \hyperlink{classsf_1_1_glyph_a0d502d326449f8c49011ed91d2805f5b}{texture\-Rect}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_texture}{Texture} coordinates of the glyph inside the font's texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure describing a glyph. 
+
+A glyph is the visual representation of a character.
+
+The \hyperlink{classsf_1_1_glyph}{sf\-::\-Glyph} structure provides the information needed to handle the glyph\-: \begin{DoxyItemize}
+\item its coordinates in the font's texture \item its bounding rectangle \item the offset to apply to get the starting position of the next glyph\end{DoxyItemize}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_font}{sf\-::\-Font} 
+\end{DoxySeeAlso}
+
+
+Definition at line 41 of file Glyph.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_glyph_ab15cfc37eb7b40a94b3b3aedf934010b}{\index{sf\-::\-Glyph@{sf\-::\-Glyph}!Glyph@{Glyph}}
+\index{Glyph@{Glyph}!sf::Glyph@{sf\-::\-Glyph}}
+\subsubsection[{Glyph}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Glyph\-::\-Glyph (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classsf_1_1_glyph_ab15cfc37eb7b40a94b3b3aedf934010b}
+
+
+Default constructor. 
+
+
+
+Definition at line 49 of file Glyph.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_glyph_a50b93f441db501d10308007f63382166}{\index{sf\-::\-Glyph@{sf\-::\-Glyph}!advance@{advance}}
+\index{advance@{advance}!sf::Glyph@{sf\-::\-Glyph}}
+\subsubsection[{advance}]{\setlength{\rightskip}{0pt plus 5cm}int sf\-::\-Glyph\-::advance}}\label{classsf_1_1_glyph_a50b93f441db501d10308007f63382166}
+
+
+Offset to move horizontically to the next character. 
+
+
+
+Definition at line 54 of file Glyph.\-hpp.
+
+\hypertarget{classsf_1_1_glyph_afe4cd37e5839955d7dd008e178d41f0c}{\index{sf\-::\-Glyph@{sf\-::\-Glyph}!bounds@{bounds}}
+\index{bounds@{bounds}!sf::Glyph@{sf\-::\-Glyph}}
+\subsubsection[{bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\-Rect} sf\-::\-Glyph\-::bounds}}\label{classsf_1_1_glyph_afe4cd37e5839955d7dd008e178d41f0c}
+
+
+Bounding rectangle of the glyph, in coordinates relative to the baseline. 
+
+
+
+Definition at line 55 of file Glyph.\-hpp.
+
+\hypertarget{classsf_1_1_glyph_a0d502d326449f8c49011ed91d2805f5b}{\index{sf\-::\-Glyph@{sf\-::\-Glyph}!texture\-Rect@{texture\-Rect}}
+\index{texture\-Rect@{texture\-Rect}!sf::Glyph@{sf\-::\-Glyph}}
+\subsubsection[{texture\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\-Rect} sf\-::\-Glyph\-::texture\-Rect}}\label{classsf_1_1_glyph_a0d502d326449f8c49011ed91d2805f5b}
+
+
+\hyperlink{classsf_1_1_texture}{Texture} coordinates of the glyph inside the font's texture. 
+
+
+
+Definition at line 56 of file Glyph.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_glyph_8hpp}{Glyph.\-hpp}\end{DoxyCompactItemize}

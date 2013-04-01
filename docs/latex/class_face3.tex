@@ -1,0 +1,116 @@
+\hypertarget{class_face3}{\section{Face3 Class Reference}
+\label{class_face3}\index{Face3@{Face3}}
+}
+
+
+{\ttfamily \#include $<$Face3.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_face3_a0f1498f8fdb47eb15d6f5ad9eb355671}{Face3} (\hyperlink{class_vertex}{Vertex} $\ast$v0\-\_\-p, \hyperlink{class_vertex}{Vertex} $\ast$v1\-\_\-p, \hyperlink{class_vertex}{Vertex} $\ast$v2\-\_\-p)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_face3_ad63869f6950c65a327a6c5bc5d742154}{display} ()
+\item 
+const \hyperlink{class_vector3}{Vector3} \& \hyperlink{class_face3_a30feef340693ff8f5ea1f732f692d33f}{get\-Norm} () const 
+\item 
+const \hyperlink{class_vector3}{Vector3} \& \hyperlink{class_face3_a2ef3d1aea90175978c0240589959b762}{get\-Centroid} () const 
+\item 
+const \hyperlink{class_vertex}{Vertex} $\ast$ \hyperlink{class_face3_a7d1d444d697b588fcee74aa79b0f74eb}{operator\mbox{[}$\,$\mbox{]}} (int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index})
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_face3_adf81375bd8fe97e6b11413afd6295943}{operator$<$$<$} (std\-::ostream \&output, const \hyperlink{class_face3}{Face3} \&face3)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Face3.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_face3_a0f1498f8fdb47eb15d6f5ad9eb355671}{\index{Face3@{Face3}!Face3@{Face3}}
+\index{Face3@{Face3}!Face3@{Face3}}
+\subsubsection[{Face3}]{\setlength{\rightskip}{0pt plus 5cm}Face3\-::\-Face3 (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertex} $\ast$}]{v0\-\_\-p, }
+\item[{{\bf Vertex} $\ast$}]{v1\-\_\-p, }
+\item[{{\bf Vertex} $\ast$}]{v2\-\_\-p}
+\end{DoxyParamCaption}
+)}}\label{class_face3_a0f1498f8fdb47eb15d6f5ad9eb355671}
+
+
+Definition at line 19 of file Face3.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_face3_ad63869f6950c65a327a6c5bc5d742154}{\index{Face3@{Face3}!display@{display}}
+\index{display@{display}!Face3@{Face3}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Face3\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_face3_ad63869f6950c65a327a6c5bc5d742154}
+
+
+Definition at line 34 of file Face3.\-cpp.
+
+\hypertarget{class_face3_a2ef3d1aea90175978c0240589959b762}{\index{Face3@{Face3}!get\-Centroid@{get\-Centroid}}
+\index{get\-Centroid@{get\-Centroid}!Face3@{Face3}}
+\subsubsection[{get\-Centroid}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector3} \& Face3\-::get\-Centroid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_face3_a2ef3d1aea90175978c0240589959b762}
+
+
+Definition at line 83 of file Face3.\-cpp.
+
+\hypertarget{class_face3_a30feef340693ff8f5ea1f732f692d33f}{\index{Face3@{Face3}!get\-Norm@{get\-Norm}}
+\index{get\-Norm@{get\-Norm}!Face3@{Face3}}
+\subsubsection[{get\-Norm}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector3} \& Face3\-::get\-Norm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_face3_a30feef340693ff8f5ea1f732f692d33f}
+
+
+Definition at line 79 of file Face3.\-cpp.
+
+\hypertarget{class_face3_a7d1d444d697b588fcee74aa79b0f74eb}{\index{Face3@{Face3}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Face3@{Face3}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vertex} $\ast$ Face3\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_face3_a7d1d444d697b588fcee74aa79b0f74eb}
+
+
+Definition at line 87 of file Face3.\-cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_face3_adf81375bd8fe97e6b11413afd6295943}{\index{Face3@{Face3}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Face3@{Face3}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output, }
+\item[{const {\bf Face3} \&}]{face3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_face3_adf81375bd8fe97e6b11413afd6295943}
+
+
+Definition at line 14 of file Face3.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_face3_8h}{Face3.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_face3_8cpp}{Face3.\-cpp}\end{DoxyCompactItemize}

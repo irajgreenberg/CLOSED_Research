@@ -18,18 +18,22 @@
 #ifndef Protobyte_Library_V01_Shader_h
 #define Protobyte_Library_V01_Shader_h
 
-#include <stdlib.h>
-#include <string>
-#include <OpenGL/gl.h>
-//#include <SFML/OpenGL.hpp>
-
-#if ( (defined(__MACH__)) && (defined(__APPLE__)) )   
-#else
-// glew library needs to be installed 
-// in windows for this to work
-#include <GL/glew.h>
-#include <GL/glext.h>
+#ifdef  __linux__ 
+  #include <GL/glew.h>
+  #include <GL/gl.h>
+  #define GL_GLEXT_PROTOTYPES
+  #include <GL/glext.h>
+#elif defined _WIN32
+  #include <GL/glew.h>
+  #include <GL/gl.h>
+  #define GL_GLEXT_PROTOTYPES
+  #include <GL/glext.h>
 #endif
+
+
+#include <stdlib.h>
+#include <stdio.h> // for File input
+#include <string>
 
 class Shader {
     

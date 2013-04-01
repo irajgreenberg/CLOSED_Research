@@ -1,0 +1,311 @@
+\hypertarget{classsf_1_1_sprite}{\section{sf\-:\-:Sprite Class Reference}
+\label{classsf_1_1_sprite}\index{sf\-::\-Sprite@{sf\-::\-Sprite}}
+}
+
+
+\hyperlink{classsf_1_1_drawable}{Drawable} representation of a texture, with its own transformations, color, etc.  
+
+
+
+
+{\ttfamily \#include $<$Sprite.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Sprite\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classsf_1_1_sprite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Sprite\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classsf_1_1_sprite__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_sprite_a92559fbca895a96758abf5eabab96984}{Sprite} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_sprite_a2a9fca374d7abf084bb1c143a879ff4a}{Sprite} (const \hyperlink{classsf_1_1_texture}{Texture} \&\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture})
+\begin{DoxyCompactList}\small\item\em Construct the sprite from a source texture. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_sprite_a01cfe1402372d243dbaa2ffa96020206}{Sprite} (const \hyperlink{classsf_1_1_texture}{Texture} \&\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture}, const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Construct the sprite from a sub-\/rectangle of a source texture. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\-Texture} (const \hyperlink{classsf_1_1_texture}{Texture} \&\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture}, bool reset\-Rect=false)
+\begin{DoxyCompactList}\small\item\em Change the source texture of the sprite. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{set\-Texture\-Rect} (const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \&rectangle)
+\begin{DoxyCompactList}\small\item\em Set the sub-\/rectangle of the texture that the sprite will display. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{set\-Color} (const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color})
+\begin{DoxyCompactList}\small\item\em Set the global color of the sprite. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_texture}{Texture} $\ast$ \hyperlink{classsf_1_1_sprite_a2c4fbb983b29e14f9bb69a3a75feae46}{get\-Texture} () const 
+\begin{DoxyCompactList}\small\item\em Get the source texture of the sprite. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \& \hyperlink{classsf_1_1_sprite_a89aa58bc39e2072c6afe7c547d27b5a0}{get\-Texture\-Rect} () const 
+\begin{DoxyCompactList}\small\item\em Get the sub-\/rectangle of the texture displayed by the sprite. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_color}{Color} \& \hyperlink{classsf_1_1_sprite_ab05fafd4e9999608a5cae4985e7b52df}{get\-Color} () const 
+\begin{DoxyCompactList}\small\item\em Get the global color of the sprite. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_sprite_a69557a8369bc2e26dd2e2eb2c50f5c90}{get\-Local\-Bounds} () const 
+\begin{DoxyCompactList}\small\item\em Get the local bounding rectangle of the entity. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_sprite_a203d2d8087bfdca2ebc3c0485cdb7409}{get\-Global\-Bounds} () const 
+\begin{DoxyCompactList}\small\item\em Get the global bounding rectangle of the entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsf_1_1_drawable}{Drawable} representation of a texture, with its own transformations, color, etc. 
+
+\hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} is a drawable class that allows to easily display a texture (or a part of it) on a render target.
+
+It inherits all the functions from \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable}\-: position, rotation, scale, origin. It also adds sprite-\/specific properties such as the texture to use, the part of it to display, and some convenience functions to change the overall color of the sprite, or to get its bounding rectangle.
+
+\hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} works in combination with the \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} class, which loads and provides the pixel data of a given texture.
+
+The separation of \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} and \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} allows more flexibility and better performances\-: indeed a \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} is a heavy resource, and any operation on it is slow (often too slow for real-\/time applications). On the other side, a \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} is a lightweight object which can use the pixel data of a \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} and draw it with its own transformation/color/blending attributes.
+
+It is important to note that the \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} instance doesn't copy the texture that it uses, it only keeps a reference to it. Thus, a \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} must not be destroyed while it is used by a \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} (i.\-e. never write a function that uses a local \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} instance for creating a sprite).
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Declare and load a texture}
+\hyperlink{classsf_1_1_texture}{sf::Texture} \hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture};
+texture.\hyperlink{classsf_1_1_texture_a8e1b56eabfe33e2e0e1cb03712c7fcc7}{loadFromFile}(\textcolor{stringliteral}{"texture.png"});
+
+\textcolor{comment}{// Create a sprite}
+\hyperlink{classsf_1_1_sprite}{sf::Sprite} sprite;
+sprite.\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{setTexture}(texture);
+sprite.\hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{setTextureRect}(\hyperlink{classsf_1_1_rect}{sf::IntRect}(10, 10, 50, 30));
+sprite.\hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{setColor}(\hyperlink{classsf_1_1_color}{sf::Color}(255, 255, 255, 200));
+sprite.\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}(100, 25);
+
+\textcolor{comment}{// Draw it}
+window.draw(sprite);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_texture}{sf\-::\-Texture}, \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} 
+\end{DoxySeeAlso}
+
+
+Definition at line 47 of file Sprite.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_sprite_a92559fbca895a96758abf5eabab96984}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{Sprite}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Sprite\-::\-Sprite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sprite_a92559fbca895a96758abf5eabab96984}
+
+
+Default constructor. 
+
+Creates an empty sprite with no source texture. \hypertarget{classsf_1_1_sprite_a2a9fca374d7abf084bb1c143a879ff4a}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{Sprite}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Sprite\-::\-Sprite (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} \&}]{texture}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_sprite_a2a9fca374d7abf084bb1c143a879ff4a}
+
+
+Construct the sprite from a source texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & Source texture\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\-Texture} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a01cfe1402372d243dbaa2ffa96020206}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{Sprite}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Sprite\-::\-Sprite (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} \&}]{texture, }
+\item[{const {\bf Int\-Rect} \&}]{rectangle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sprite_a01cfe1402372d243dbaa2ffa96020206}
+
+
+Construct the sprite from a sub-\/rectangle of a source texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & Source texture \\
+\hline
+{\em rectangle} & Sub-\/rectangle of the texture to assign to the sprite\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\-Texture}, \hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{set\-Texture\-Rect} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_sprite_ab05fafd4e9999608a5cae4985e7b52df}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!get\-Color@{get\-Color}}
+\index{get\-Color@{get\-Color}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{get\-Color}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Color}\& sf\-::\-Sprite\-::get\-Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sprite_ab05fafd4e9999608a5cae4985e7b52df}
+
+
+Get the global color of the sprite. 
+
+\begin{DoxyReturn}{Returns}
+Global color of the sprite
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{set\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a203d2d8087bfdca2ebc3c0485cdb7409}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!get\-Global\-Bounds@{get\-Global\-Bounds}}
+\index{get\-Global\-Bounds@{get\-Global\-Bounds}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{get\-Global\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Sprite\-::get\-Global\-Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sprite_a203d2d8087bfdca2ebc3c0485cdb7409}
+
+
+Get the global bounding rectangle of the entity. 
+
+The returned rectangle is in global coordinates, which means that it takes in account the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the sprite in the global 2\-D world's coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Global bounding rectangle of the entity 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sprite_a69557a8369bc2e26dd2e2eb2c50f5c90}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!get\-Local\-Bounds@{get\-Local\-Bounds}}
+\index{get\-Local\-Bounds@{get\-Local\-Bounds}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{get\-Local\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Sprite\-::get\-Local\-Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sprite_a69557a8369bc2e26dd2e2eb2c50f5c90}
+
+
+Get the local bounding rectangle of the entity. 
+
+The returned rectangle is in local coordinates, which means that it ignores the transformations (translation, rotation, scale, ...) that are applied to the entity. In other words, this function returns the bounds of the entity in the entity's coordinate system.
+
+\begin{DoxyReturn}{Returns}
+Local bounding rectangle of the entity 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sprite_a2c4fbb983b29e14f9bb69a3a75feae46}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!get\-Texture@{get\-Texture}}
+\index{get\-Texture@{get\-Texture}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{get\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Texture}$\ast$ sf\-::\-Sprite\-::get\-Texture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sprite_a2c4fbb983b29e14f9bb69a3a75feae46}
+
+
+Get the source texture of the sprite. 
+
+If the sprite has no source texture, a N\-U\-L\-L pointer is returned. The returned pointer is const, which means that you can't modify the texture when you retrieve it with this function.
+
+\begin{DoxyReturn}{Returns}
+Pointer to the sprite's texture
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\-Texture} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a89aa58bc39e2072c6afe7c547d27b5a0}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!get\-Texture\-Rect@{get\-Texture\-Rect}}
+\index{get\-Texture\-Rect@{get\-Texture\-Rect}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{get\-Texture\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Int\-Rect}\& sf\-::\-Sprite\-::get\-Texture\-Rect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sprite_a89aa58bc39e2072c6afe7c547d27b5a0}
+
+
+Get the sub-\/rectangle of the texture displayed by the sprite. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_texture}{Texture} rectangle of the sprite
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{set\-Texture\-Rect} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!set\-Color@{set\-Color}}
+\index{set\-Color@{set\-Color}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{set\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sprite\-::set\-Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color} \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sprite_a14def44da6437bfea20c4df5e71aba4c}
+
+
+Set the global color of the sprite. 
+
+This color is modulated (multiplied) with the sprite's texture. It can be used to colorize the sprite, or change its global opacity. By default, the sprite's color is opaque white.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & New color of the sprite\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_ab05fafd4e9999608a5cae4985e7b52df}{get\-Color} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!set\-Texture@{set\-Texture}}
+\index{set\-Texture@{set\-Texture}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{set\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sprite\-::set\-Texture (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} \&}]{texture, }
+\item[{bool}]{reset\-Rect = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}
+
+
+Change the source texture of the sprite. 
+
+The {\itshape texture} argument refers to a texture that must exist as long as the sprite uses it. Indeed, the sprite doesn't store its own copy of the texture, but rather keeps a pointer to the one that you passed to this function. If the source texture is destroyed and the sprite tries to use it, the behaviour is undefined. If {\itshape reset\-Rect} is true, the Texture\-Rect property of the sprite is automatically adjusted to the size of the new texture. If it is false, the texture rect is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & New texture \\
+\hline
+{\em reset\-Rect} & Should the texture rect be reset to the size of the new texture?\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a2c4fbb983b29e14f9bb69a3a75feae46}{get\-Texture}, \hyperlink{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{set\-Texture\-Rect} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}{\index{sf\-::\-Sprite@{sf\-::\-Sprite}!set\-Texture\-Rect@{set\-Texture\-Rect}}
+\index{set\-Texture\-Rect@{set\-Texture\-Rect}!sf::Sprite@{sf\-::\-Sprite}}
+\subsubsection[{set\-Texture\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sprite\-::set\-Texture\-Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Int\-Rect} \&}]{rectangle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sprite_a3fefec419a4e6a90c0fd54c793d82ec2}
+
+
+Set the sub-\/rectangle of the texture that the sprite will display. 
+
+The texture rect is useful when you don't want to display the whole texture, but rather a part of it. By default, the texture rect covers the entire texture.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle defining the region of the texture to display\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sprite_a89aa58bc39e2072c6afe7c547d27b5a0}{get\-Texture\-Rect}, \hyperlink{classsf_1_1_sprite_a3729c88d88ac38c19317c18e87242560}{set\-Texture} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_sprite_8hpp}{Sprite.\-hpp}\end{DoxyCompactItemize}

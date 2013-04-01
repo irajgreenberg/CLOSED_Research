@@ -1,0 +1,226 @@
+\hypertarget{class_spline3}{\section{Spline3 Class Reference}
+\label{class_spline3}\index{Spline3@{Spline3}}
+}
+
+
+{\ttfamily \#include $<$Spline3.\-h$>$}
+
+
+
+Inheritance diagram for Spline3\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=130pt]{class_spline3__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Spline3\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{class_spline3__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_spline3_ab42a566a389afc58c51c3bd647b4677a}{Spline3} ()
+\item 
+\hyperlink{class_spline3_adc99ac4835977956934ad5ffb59ee625}{Spline3} (const std\-::vector$<$ \hyperlink{class_vector3}{Vector3} $>$ \&\hyperlink{class_curve3_a2e9e6cfb4a03fffea0b4adbec17bba80}{control\-Pts}, int \hyperlink{class_curve3_a5ab0207ec14b339175e0aa9d621d70a7}{interp\-Detail}, bool \hyperlink{class_curve3_a94b01af1a451e35dbcec9ef36c4b4a64}{is\-Curve\-Closed}, float smoothness)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a9fc88b7f2b5ede8e7fa345f414cb34d8}{set\-Terminal\-Smooth} (bool \hyperlink{class_curve3_af842d273f3cdbb907f66ffed7b72d2a5}{is\-Terminal\-Smooth})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a503db55ba1523698067210952c2e470d}{display} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a303fadd7700a53382145ab961c123cc6}{display\-Control\-Pts} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a45cf582905d29565589cebfd12139f0a}{display\-Interp\-Pts} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_ad480f955275c7004b451857db6605ac2}{display\-Frenet\-Frames} (float len=20)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a23748fc53b2c6892e8a55abe3c1a3381}{set\-Smoothness} (float smoothness)
+\item 
+float \hyperlink{class_spline3_a2f42946594cdef0359a3c3d2e05d6cff}{get\-Smoothness} (float smoothness) const 
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_ae664644a1b2435cf6053d09bd0d8ac3b}{set\-Curve\-Closed} (bool \hyperlink{class_curve3_a94b01af1a451e35dbcec9ef36c4b4a64}{is\-Curve\-Closed})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_spline3_a534586484dcff0d7b28c3231ced4e9ab}{draw\-Cross\-Sections} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Spline cubic curve class, where curve goes through all points. Curve is specified by 6 points, with a smoothness value specifying tension. 
+
+Definition at line 31 of file Spline3.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_spline3_ab42a566a389afc58c51c3bd647b4677a}{\index{Spline3@{Spline3}!Spline3@{Spline3}}
+\index{Spline3@{Spline3}!Spline3@{Spline3}}
+\subsubsection[{Spline3}]{\setlength{\rightskip}{0pt plus 5cm}Spline3\-::\-Spline3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_ab42a566a389afc58c51c3bd647b4677a}
+Spline cubic curve class, where curve goes through all points. Curve is specified by 6 points, with a constant specifying tension. 
+
+Definition at line 24 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_adc99ac4835977956934ad5ffb59ee625}{\index{Spline3@{Spline3}!Spline3@{Spline3}}
+\index{Spline3@{Spline3}!Spline3@{Spline3}}
+\subsubsection[{Spline3}]{\setlength{\rightskip}{0pt plus 5cm}Spline3\-::\-Spline3 (
+\begin{DoxyParamCaption}
+\item[{const std\-::vector$<$ {\bf Vector3} $>$ \&}]{control\-Pts, }
+\item[{int}]{interp\-Detail, }
+\item[{bool}]{is\-Curve\-Closed, }
+\item[{float}]{smoothness}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_adc99ac4835977956934ad5ffb59ee625}
+
+
+Definition at line 26 of file Spline3.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_spline3_a503db55ba1523698067210952c2e470d}{\index{Spline3@{Spline3}!display@{display}}
+\index{display@{display}!Spline3@{Spline3}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spline3_a503db55ba1523698067210952c2e470d}
+Draw the curve. 
+
+Implements \hyperlink{class_curve3_ae566fa302081043360e311be599377c3}{Curve3}.
+
+
+
+Definition at line 116 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a303fadd7700a53382145ab961c123cc6}{\index{Spline3@{Spline3}!display\-Control\-Pts@{display\-Control\-Pts}}
+\index{display\-Control\-Pts@{display\-Control\-Pts}!Spline3@{Spline3}}
+\subsubsection[{display\-Control\-Pts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::display\-Control\-Pts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spline3_a303fadd7700a53382145ab961c123cc6}
+Draw the control points. 
+
+Implements \hyperlink{class_curve3_a8183be163e44fd6030ea3831df2fe8f3}{Curve3}.
+
+
+
+Definition at line 141 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_ad480f955275c7004b451857db6605ac2}{\index{Spline3@{Spline3}!display\-Frenet\-Frames@{display\-Frenet\-Frames}}
+\index{display\-Frenet\-Frames@{display\-Frenet\-Frames}!Spline3@{Spline3}}
+\subsubsection[{display\-Frenet\-Frames}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::display\-Frenet\-Frames (
+\begin{DoxyParamCaption}
+\item[{float}]{len = {\ttfamily 20}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spline3_ad480f955275c7004b451857db6605ac2}
+Draw the Frenet Frames. 
+
+Implements \hyperlink{class_curve3_a5c0803a212a6792c17afd816a15af449}{Curve3}.
+
+
+
+Definition at line 179 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a45cf582905d29565589cebfd12139f0a}{\index{Spline3@{Spline3}!display\-Interp\-Pts@{display\-Interp\-Pts}}
+\index{display\-Interp\-Pts@{display\-Interp\-Pts}!Spline3@{Spline3}}
+\subsubsection[{display\-Interp\-Pts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::display\-Interp\-Pts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_spline3_a45cf582905d29565589cebfd12139f0a}
+Draw the interpolated points. 
+
+Implements \hyperlink{class_curve3_a28ddf803ec40027cc21782467145bf38}{Curve3}.
+
+
+
+Definition at line 163 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a534586484dcff0d7b28c3231ced4e9ab}{\index{Spline3@{Spline3}!draw\-Cross\-Sections@{draw\-Cross\-Sections}}
+\index{draw\-Cross\-Sections@{draw\-Cross\-Sections}!Spline3@{Spline3}}
+\subsubsection[{draw\-Cross\-Sections}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::draw\-Cross\-Sections (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_a534586484dcff0d7b28c3231ced4e9ab}
+Draw cross-\/section extruded along the spline path. Default cross-\/section is an ellipse 
+
+Definition at line 189 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a2f42946594cdef0359a3c3d2e05d6cff}{\index{Spline3@{Spline3}!get\-Smoothness@{get\-Smoothness}}
+\index{get\-Smoothness@{get\-Smoothness}!Spline3@{Spline3}}
+\subsubsection[{get\-Smoothness}]{\setlength{\rightskip}{0pt plus 5cm}float Spline3\-::get\-Smoothness (
+\begin{DoxyParamCaption}
+\item[{float}]{smoothness}
+\end{DoxyParamCaption}
+) const}}\label{class_spline3_a2f42946594cdef0359a3c3d2e05d6cff}
+get the smoothenss value. 
+
+Definition at line 241 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_ae664644a1b2435cf6053d09bd0d8ac3b}{\index{Spline3@{Spline3}!set\-Curve\-Closed@{set\-Curve\-Closed}}
+\index{set\-Curve\-Closed@{set\-Curve\-Closed}!Spline3@{Spline3}}
+\subsubsection[{set\-Curve\-Closed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::set\-Curve\-Closed (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Curve\-Closed}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_ae664644a1b2435cf6053d09bd0d8ac3b}
+sets flag for curve closed
+
+Set flag for Curve to be closed overrides 
+\begin{DoxyParams}{Parameters}
+{\em is\-Curve\-Closed} & boolean value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a23748fc53b2c6892e8a55abe3c1a3381}{\index{Spline3@{Spline3}!set\-Smoothness@{set\-Smoothness}}
+\index{set\-Smoothness@{set\-Smoothness}!Spline3@{Spline3}}
+\subsubsection[{set\-Smoothness}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::set\-Smoothness (
+\begin{DoxyParamCaption}
+\item[{float}]{smoothness}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_a23748fc53b2c6892e8a55abe3c1a3381}
+Set the smoothenss value. 
+
+Definition at line 233 of file Spline3.\-cpp.
+
+\hypertarget{class_spline3_a9fc88b7f2b5ede8e7fa345f414cb34d8}{\index{Spline3@{Spline3}!set\-Terminal\-Smooth@{set\-Terminal\-Smooth}}
+\index{set\-Terminal\-Smooth@{set\-Terminal\-Smooth}!Spline3@{Spline3}}
+\subsubsection[{set\-Terminal\-Smooth}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Spline3\-::set\-Terminal\-Smooth (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-Terminal\-Smooth}
+\end{DoxyParamCaption}
+)}}\label{class_spline3_a9fc88b7f2b5ede8e7fa345f414cb34d8}
+Set flag for Curve at Terminals to be continuous
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\-Terminal\-Smooth} & boolean value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 107 of file Spline3.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_spline3_8h}{Spline3.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_spline3_8cpp}{Spline3.\-cpp}\end{DoxyCompactItemize}

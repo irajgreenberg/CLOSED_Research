@@ -1,0 +1,275 @@
+\hypertarget{classsf_1_1_sound_recorder}{\section{sf\-:\-:Sound\-Recorder Class Reference}
+\label{classsf_1_1_sound_recorder}\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}}
+}
+
+
+Abstract base class for capturing sound data.  
+
+
+
+
+{\ttfamily \#include $<$Sound\-Recorder.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Sound\-Recorder\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classsf_1_1_sound_recorder__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classsf_1_1_sound_recorder_acc599e61aaa47edaae88cf43f0a43549}{$\sim$\-Sound\-Recorder} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_recorder_a777e633114f7221cd7554a6ed486259e}{start} (unsigned int sample\-Rate=44100)
+\begin{DoxyCompactList}\small\item\em Start the capture. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop} ()
+\begin{DoxyCompactList}\small\item\em Stop the capture. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_sound_recorder_a1f3726cbe0a2b2b291b36beea57960d7}{get\-Sample\-Rate} () const 
+\begin{DoxyCompactList}\small\item\em Get the sample rate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{is\-Available} ()
+\begin{DoxyCompactList}\small\item\em Check if the system supports audio capture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_sound_recorder_a50ebad413c4f157408a0fa49f23212a9}{Sound\-Recorder} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{on\-Start} ()
+\begin{DoxyCompactList}\small\item\em Start capturing audio data. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{on\-Process\-Samples} (const \hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16} $\ast$\hyperlink{gl3_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}, std\-::size\-\_\-t sample\-Count)=0
+\begin{DoxyCompactList}\small\item\em Process a new chunk of recorded samples. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{on\-Stop} ()
+\begin{DoxyCompactList}\small\item\em Stop capturing audio data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class for capturing sound data. 
+
+\hyperlink{classsf_1_1_sound_buffer}{sf\-::\-Sound\-Buffer} provides a simple interface to access the audio recording capabilities of the computer (the microphone). As an abstract base class, it only cares about capturing sound samples, the task of making something useful with them is left to the derived class. Note that S\-F\-M\-L provides a built-\/in specialization for saving the captured data to a sound buffer (see \hyperlink{classsf_1_1_sound_buffer_recorder}{sf\-::\-Sound\-Buffer\-Recorder}).
+
+A derived class has only one virtual function to override\-: \begin{DoxyItemize}
+\item On\-Process\-Samples provides the new chunks of audio samples while the capture happens\end{DoxyItemize}
+Moreover, two additionnal virtual functions can be overriden as well if necessary\-: \begin{DoxyItemize}
+\item On\-Start is called before the capture happens, to perform custom initializations \item On\-Stop is called after the capture ends, to perform custom cleanup\end{DoxyItemize}
+The audio capture feature may not be supported or activated on every platform, thus it is recommended to check its availability with the Is\-Available() function. If it returns false, then any attempt to use an audio recorder will fail.
+
+It is important to note that the audio capture happens in a separate thread, so that it doesn't block the rest of the program. In particular, the on\-Process\-Samples and on\-Stop virtual functions (but not on\-Start) will be called from this separate thread. It is important to keep this in mind, because you may have to take care of synchronization issues if you share data between threads.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }CustomRecorder : \textcolor{keyword}{public} \hyperlink{classsf_1_1_sound_recorder}{sf::SoundRecorder}
+\{
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{onStart}() \textcolor{comment}{// optional}
+    \{
+        \textcolor{comment}{// Initialize whatever has to be done before the capture starts}
+        ...
+
+        \textcolor{comment}{// Return true to start playing}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} \hyperlink{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{onProcessSamples}(\textcolor{keyword}{const} \hyperlink{namespacesf_a3c8e10435e2a310a7741755e66b5c94e}{Int16}* \hyperlink{gl3_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}, std::size\_t sampleCount
+      )
+    \{
+        \textcolor{comment}{// Do something with the new chunk of samples (store them, send them, ...)}
+        ...
+
+        \textcolor{comment}{// Return true to continue playing}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{onStop}() \textcolor{comment}{// optional}
+    \{
+        \textcolor{comment}{// Clean up whatever has to be done after the capture ends}
+        ...
+    \}
+\}
+
+\textcolor{comment}{// Usage}
+\textcolor{keywordflow}{if} (CustomRecorder::isAvailable())
+\{
+    CustomRecorder recorder;
+    recorder.start();
+    ...
+    recorder.stop();
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_buffer_recorder}{sf\-::\-Sound\-Buffer\-Recorder} 
+\end{DoxySeeAlso}
+
+
+Definition at line 42 of file Sound\-Recorder.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_sound_recorder_acc599e61aaa47edaae88cf43f0a43549}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!$\sim$\-Sound\-Recorder@{$\sim$\-Sound\-Recorder}}
+\index{$\sim$\-Sound\-Recorder@{$\sim$\-Sound\-Recorder}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{$\sim$\-Sound\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Sound\-Recorder\-::$\sim$\-Sound\-Recorder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_sound_recorder_acc599e61aaa47edaae88cf43f0a43549}
+
+
+destructor 
+
+\hypertarget{classsf_1_1_sound_recorder_a50ebad413c4f157408a0fa49f23212a9}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!Sound\-Recorder@{Sound\-Recorder}}
+\index{Sound\-Recorder@{Sound\-Recorder}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{Sound\-Recorder}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Sound\-Recorder\-::\-Sound\-Recorder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_sound_recorder_a50ebad413c4f157408a0fa49f23212a9}
+
+
+Default constructor. 
+
+This constructor is only meant to be called by derived classes. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_sound_recorder_a1f3726cbe0a2b2b291b36beea57960d7}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!get\-Sample\-Rate@{get\-Sample\-Rate}}
+\index{get\-Sample\-Rate@{get\-Sample\-Rate}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{get\-Sample\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Sound\-Recorder\-::get\-Sample\-Rate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_sound_recorder_a1f3726cbe0a2b2b291b36beea57960d7}
+
+
+Get the sample rate. 
+
+The sample rate defines the number of audio samples captured per second. The higher, the better the quality (for example, 44100 samples/sec is C\-D quality).
+
+\begin{DoxyReturn}{Returns}
+Sample rate, in samples per second 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!is\-Available@{is\-Available}}
+\index{is\-Available@{is\-Available}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{is\-Available}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Sound\-Recorder\-::is\-Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_sound_recorder_aab2bd0fee9e48d6cfd449b1cb078ce5a}
+
+
+Check if the system supports audio capture. 
+
+This function should always be called before using the audio capture features. If it returns false, then any attempt to use \hyperlink{classsf_1_1_sound_recorder}{sf\-::\-Sound\-Recorder} or one of its derived classes will fail.
+
+\begin{DoxyReturn}{Returns}
+True if audio capture is supported, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!on\-Process\-Samples@{on\-Process\-Samples}}
+\index{on\-Process\-Samples@{on\-Process\-Samples}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{on\-Process\-Samples}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool sf\-::\-Sound\-Recorder\-::on\-Process\-Samples (
+\begin{DoxyParamCaption}
+\item[{const {\bf Int16} $\ast$}]{samples, }
+\item[{std\-::size\-\_\-t}]{sample\-Count}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classsf_1_1_sound_recorder_a2670124cbe7a87c7e46b4840807f4fd7}
+
+
+Process a new chunk of recorded samples. 
+
+This virtual function is called every time a new chunk of recorded data is available. The derived class can then do whatever it wants with it (storing it, playing it, sending it over the network, etc.).
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Pointer to the new chunk of recorded samples \\
+\hline
+{\em sample\-Count} & Number of samples pointed by {\itshape samples} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue the capture, or false to stop it 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classsf_1_1_sound_buffer_recorder_a9ceb94de14632ae8c1b78faf603b4767}{sf\-::\-Sound\-Buffer\-Recorder}.
+
+\hypertarget{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!on\-Start@{on\-Start}}
+\index{on\-Start@{on\-Start}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{on\-Start}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool sf\-::\-Sound\-Recorder\-::on\-Start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_sound_recorder_a7af418fb036201d3f85745bef78ce77f}
+
+
+Start capturing audio data. 
+
+This virtual function may be overriden by a derived class if something has to be done every time a new capture starts. If not, this function can be ignored; the default implementation does nothing.
+
+\begin{DoxyReturn}{Returns}
+True to start the capture, or false to abort it 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classsf_1_1_sound_buffer_recorder_a531a7445fc8a48eaf9fc039c83f17c6f}{sf\-::\-Sound\-Buffer\-Recorder}.
+
+\hypertarget{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!on\-Stop@{on\-Stop}}
+\index{on\-Stop@{on\-Stop}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{on\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Sound\-Recorder\-::on\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_sound_recorder_aefc36138ca1e96c658301280e4a31b64}
+
+
+Stop capturing audio data. 
+
+This virtual function may be overriden by a derived class if something has to be done every time the capture ends. If not, this function can be ignored; the default implementation does nothing. 
+
+Reimplemented in \hyperlink{classsf_1_1_sound_buffer_recorder_ab8e53849312413431873a5869d509f1e}{sf\-::\-Sound\-Buffer\-Recorder}.
+
+\hypertarget{classsf_1_1_sound_recorder_a777e633114f7221cd7554a6ed486259e}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!start@{start}}
+\index{start@{start}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Recorder\-::start (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sample\-Rate = {\ttfamily 44100}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_recorder_a777e633114f7221cd7554a6ed486259e}
+
+
+Start the capture. 
+
+The {\itshape sample\-Rate} parameter defines the number of audio samples captured per second. The higher, the better the quality (for example, 44100 samples/sec is C\-D quality). This function uses its own thread so that it doesn't block the rest of the program while the capture runs. Please note that only one capture can happen at the same time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\-Rate} & Desired capture rate, in number of samples per second\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{stop} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}{\index{sf\-::\-Sound\-Recorder@{sf\-::\-Sound\-Recorder}!stop@{stop}}
+\index{stop@{stop}!sf::SoundRecorder@{sf\-::\-Sound\-Recorder}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Sound\-Recorder\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_sound_recorder_a8d9c8346aa9aa409cfed4a1101159c4c}
+
+
+Stop the capture. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound_recorder_a777e633114f7221cd7554a6ed486259e}{start} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Audio/\hyperlink{_sound_recorder_8hpp}{Sound\-Recorder.\-hpp}\end{DoxyCompactItemize}

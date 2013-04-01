@@ -1,0 +1,682 @@
+\hypertarget{classsf_1_1_transform}{\section{sf\-:\-:Transform Class Reference}
+\label{classsf_1_1_transform}\index{sf\-::\-Transform@{sf\-::\-Transform}}
+}
+
+
+Define a 3x3 transform matrix.  
+
+
+
+
+{\ttfamily \#include $<$Transform.\-hpp$>$}
+
+
+
+Collaboration diagram for sf\-:\-:Transform\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classsf_1_1_transform__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_transform_ac32de51bd0b9f3d52fbe0838225ee83b}{Transform} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform_a78c48677712fcf41122d02f1301d71a3}{Transform} (float a00, float a01, float a02, float a10, float a11, float a12, float a20, float a21, float a22)
+\begin{DoxyCompactList}\small\item\em Construct a transform from a 3x3 matrix. \end{DoxyCompactList}\item 
+const float $\ast$ \hyperlink{classsf_1_1_transform_ae4c1969c47533e2b01deb526ff73b37f}{get\-Matrix} () const 
+\begin{DoxyCompactList}\small\item\em Return the transform as a 4x4 matrix. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \hyperlink{classsf_1_1_transform_ab1c033198b0aae8cdb9daa3d3bef3fc1}{get\-Inverse} () const 
+\begin{DoxyCompactList}\small\item\em Return the inverse of the transform. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_transform_af20913c6a27087c26192c116397ab40a}{transform\-Point} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_transform}{Transform} a 2\-D point. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_transform_ac322cd8f6d606598d1aacc4d1d160ad6}{transform\-Point} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&point) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_transform}{Transform} a 2\-D point. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_transform_a345112559981d988e92b54b7976fca8a}{transform\-Rect} (const \hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \&rectangle) const 
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_transform}{Transform} a rectangle. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_acd978f60421a0f839bb9a8263e8877ff}{combine} (const \hyperlink{classsf_1_1_transform}{Transform} \&transform)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with another one. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a translation. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a452ff6e32d5120fa8c132c1bf0ad83cd}{translate} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_ae1b92ae085ddef4b1cdca7d749339fb0}{offset})
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a translation. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle})
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_af0b7cc3fed36d0fa22d5d331a779eee2}{rotate} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle}, float center\-X, float center\-Y)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_ad2a2520ad81724079d109d4a986f9902}{rotate} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle}, const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&center)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a rotation. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} (float scale\-X, float scale\-Y)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a6eaeedd35e289cb17f9bf7f24dc28daa}{scale} (float scale\-X, float scale\-Y, float center\-X, float center\-Y)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a3d57622a7ab309925c9d9887c99cc720}{scale} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&factors)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a9198da375173127901f3095e0165ee1b}{scale} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&factors, const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&center)
+\begin{DoxyCompactList}\small\item\em Combine the current transform with a scaling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classsf_1_1_transform}{Transform} \hyperlink{classsf_1_1_transform_aa4eb1eecbcb9979d76e2543b337fdb13}{Identity}
+\begin{DoxyCompactList}\small\item\em The identity transform (does nothing) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\hyperlink{_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} \hyperlink{classsf_1_1_transform}{Transform} \hyperlink{classsf_1_1_transform_a423ade8d6aa1378c695f8eb4bfce8981}{operator$\ast$} (const \hyperlink{classsf_1_1_transform}{Transform} \&left, const \hyperlink{classsf_1_1_transform}{Transform} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$ to combine two transforms. \end{DoxyCompactList}\item 
+\hyperlink{_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} \hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transform_a45a9de70a463117f851f1264a6f558ba}{operator$\ast$=} (\hyperlink{classsf_1_1_transform}{Transform} \&left, const \hyperlink{classsf_1_1_transform}{Transform} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$= to combine two transforms. \end{DoxyCompactList}\item 
+\hyperlink{_graphics_2_export_8hpp_ab84c9f1035e146917de3bc0f98d72b35}{S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_transform_ac729169ec3036f3f3f3024c98efd041d}{operator$\ast$} (const \hyperlink{classsf_1_1_transform}{Transform} \&left, const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$ to transform a point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a 3x3 transform matrix. 
+
+A \hyperlink{classsf_1_1_transform}{sf\-::\-Transform} specifies how to translate, rotate, scale, shear, project, whatever things. In mathematical terms, it defines how to transform a coordinate system into another.
+
+For example, if you apply a rotation transform to a sprite, the result will be a rotated sprite. And anything that is transformed by this rotation transform will be rotated the same way, according to its initial position.
+
+Transforms are typically used for drawing. But they can also be used for any computation that requires to transform points between the local and global coordinate systems of an entity (like collision detection).
+
+Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// define a translation transform}
+\hyperlink{classsf_1_1_transform}{sf::Transform} translation;
+translation.\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(20, 50);
+
+\textcolor{comment}{// define a rotation transform}
+\hyperlink{classsf_1_1_transform}{sf::Transform} rotation;
+rotation.\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+
+\textcolor{comment}{// combine them}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform = translation * rotation;
+
+\textcolor{comment}{// use the result to transform stuff...}
+\hyperlink{classsf_1_1_vector2}{sf::Vector2f} point = transform.\hyperlink{classsf_1_1_transform_af20913c6a27087c26192c116397ab40a}{transformPoint}(10, 20);
+\hyperlink{classsf_1_1_rect}{sf::FloatRect} rect = transform.\hyperlink{classsf_1_1_transform_a345112559981d988e92b54b7976fca8a}{transformRect}(
+      \hyperlink{classsf_1_1_rect}{sf::FloatRect}(0, 0, 10, 100));
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable}, \hyperlink{classsf_1_1_render_states}{sf\-::\-Render\-States} 
+\end{DoxySeeAlso}
+
+
+Definition at line 42 of file Transform.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_transform_ac32de51bd0b9f3d52fbe0838225ee83b}{\index{sf\-::\-Transform@{sf\-::\-Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{Transform}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Transform\-::\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_ac32de51bd0b9f3d52fbe0838225ee83b}
+
+
+Default constructor. 
+
+Creates an identity transform (a transform that does nothing). \hypertarget{classsf_1_1_transform_a78c48677712fcf41122d02f1301d71a3}{\index{sf\-::\-Transform@{sf\-::\-Transform}!Transform@{Transform}}
+\index{Transform@{Transform}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{Transform}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Transform\-::\-Transform (
+\begin{DoxyParamCaption}
+\item[{float}]{a00, }
+\item[{float}]{a01, }
+\item[{float}]{a02, }
+\item[{float}]{a10, }
+\item[{float}]{a11, }
+\item[{float}]{a12, }
+\item[{float}]{a20, }
+\item[{float}]{a21, }
+\item[{float}]{a22}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a78c48677712fcf41122d02f1301d71a3}
+
+
+Construct a transform from a 3x3 matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a00} & Element (0, 0) of the matrix \\
+\hline
+{\em a01} & Element (0, 1) of the matrix \\
+\hline
+{\em a02} & Element (0, 2) of the matrix \\
+\hline
+{\em a10} & Element (1, 0) of the matrix \\
+\hline
+{\em a11} & Element (1, 1) of the matrix \\
+\hline
+{\em a12} & Element (1, 2) of the matrix \\
+\hline
+{\em a20} & Element (2, 0) of the matrix \\
+\hline
+{\em a21} & Element (2, 1) of the matrix \\
+\hline
+{\em a22} & Element (2, 2) of the matrix \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_transform_acd978f60421a0f839bb9a8263e8877ff}{\index{sf\-::\-Transform@{sf\-::\-Transform}!combine@{combine}}
+\index{combine@{combine}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{combine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::combine (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transform} \&}]{transform}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_acd978f60421a0f839bb9a8263e8877ff}
+
+
+Combine the current transform with another one. 
+
+The result is a transform that is equivalent to applying $\ast$this followed by {\itshape transform}. Mathematically, it is equivalent to a matrix multiplication.
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & \hyperlink{classsf_1_1_transform}{Transform} to combine with this transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_ab1c033198b0aae8cdb9daa3d3bef3fc1}{\index{sf\-::\-Transform@{sf\-::\-Transform}!get\-Inverse@{get\-Inverse}}
+\index{get\-Inverse@{get\-Inverse}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{get\-Inverse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform} sf\-::\-Transform\-::get\-Inverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transform_ab1c033198b0aae8cdb9daa3d3bef3fc1}
+
+
+Return the inverse of the transform. 
+
+If the inverse cannot be computed, an identity transform is returned.
+
+\begin{DoxyReturn}{Returns}
+A new transform which is the inverse of self 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_ae4c1969c47533e2b01deb526ff73b37f}{\index{sf\-::\-Transform@{sf\-::\-Transform}!get\-Matrix@{get\-Matrix}}
+\index{get\-Matrix@{get\-Matrix}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{get\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}const float$\ast$ sf\-::\-Transform\-::get\-Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transform_ae4c1969c47533e2b01deb526ff73b37f}
+
+
+Return the transform as a 4x4 matrix. 
+
+This function returns a pointer to an array of 16 floats containing the transform elements as a 4x4 matrix, which is directly compatible with Open\-G\-L functions.
+
+
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform = ...;
+\hyperlink{gl_8h_a1f86071917bebae26a9b99fff64b3937}{glLoadMatrixf}(transform.\hyperlink{classsf_1_1_transform_ae4c1969c47533e2b01deb526ff73b37f}{getMatrix}());
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Pointer to a 4x4 matrix 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{\index{sf\-::\-Transform@{sf\-::\-Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}
+
+
+Combine the current transform with a rotation. 
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(90).\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(50, 20);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_af0b7cc3fed36d0fa22d5d331a779eee2}{\index{sf\-::\-Transform@{sf\-::\-Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle, }
+\item[{float}]{center\-X, }
+\item[{float}]{center\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_af0b7cc3fed36d0fa22d5d331a779eee2}
+
+
+Combine the current transform with a rotation. 
+
+The center of rotation is provided for convenience as a second argument, so that you can build rotations around arbitrary points more easily (and efficiently) than the usual translate(-\/center).rotate(angle).translate(center).
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(90, 8, 3).\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(50, 20);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees \\
+\hline
+{\em center\-X} & X coordinate of the center of rotation \\
+\hline
+{\em center\-Y} & Y coordinate of the center of rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_ad2a2520ad81724079d109d4a986f9902}{\index{sf\-::\-Transform@{sf\-::\-Transform}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle, }
+\item[{const {\bf Vector2f} \&}]{center}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_ad2a2520ad81724079d109d4a986f9902}
+
+
+Combine the current transform with a rotation. 
+
+The center of rotation is provided for convenience as a second argument, so that you can build rotations around arbitrary points more easily (and efficiently) than the usual translate(-\/center).rotate(angle).translate(center).
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(90, \hyperlink{classsf_1_1_vector2}{sf::Vector2f}(8, 3)).\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(
+      \hyperlink{classsf_1_1_vector2}{sf::Vector2f}(50, 20));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Rotation angle, in degrees \\
+\hline
+{\em center} & Center of rotation\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{\index{sf\-::\-Transform@{sf\-::\-Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::scale (
+\begin{DoxyParamCaption}
+\item[{float}]{scale\-X, }
+\item[{float}]{scale\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}
+
+
+Combine the current transform with a scaling. 
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale}(2, 1).\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\-X} & Scaling factor on the X axis \\
+\hline
+{\em scale\-Y} & Scaling factor on the Y axis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_a6eaeedd35e289cb17f9bf7f24dc28daa}{\index{sf\-::\-Transform@{sf\-::\-Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::scale (
+\begin{DoxyParamCaption}
+\item[{float}]{scale\-X, }
+\item[{float}]{scale\-Y, }
+\item[{float}]{center\-X, }
+\item[{float}]{center\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a6eaeedd35e289cb17f9bf7f24dc28daa}
+
+
+Combine the current transform with a scaling. 
+
+The center of scaling is provided for convenience as a second argument, so that you can build scaling around arbitrary points more easily (and efficiently) than the usual translate(-\/center).scale(factors).translate(center).
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale}(2, 1, 8, 3).\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale\-X} & Scaling factor on X axis \\
+\hline
+{\em scale\-Y} & Scaling factor on Y axis \\
+\hline
+{\em center\-X} & X coordinate of the center of scaling \\
+\hline
+{\em center\-Y} & Y coordinate of the center of scaling\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_a3d57622a7ab309925c9d9887c99cc720}{\index{sf\-::\-Transform@{sf\-::\-Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::scale (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{factors}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a3d57622a7ab309925c9d9887c99cc720}
+
+
+Combine the current transform with a scaling. 
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale}(\hyperlink{classsf_1_1_vector2}{sf::Vector2f}(2, 1)).\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & Scaling factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_a9198da375173127901f3095e0165ee1b}{\index{sf\-::\-Transform@{sf\-::\-Transform}!scale@{scale}}
+\index{scale@{scale}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::scale (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{factors, }
+\item[{const {\bf Vector2f} \&}]{center}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a9198da375173127901f3095e0165ee1b}
+
+
+Combine the current transform with a scaling. 
+
+The center of scaling is provided for convenience as a second argument, so that you can build scaling around arbitrary points more easily (and efficiently) than the usual translate(-\/center).scale(factors).translate(center).
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale}(\hyperlink{classsf_1_1_vector2}{sf::Vector2f}(2, 1), \hyperlink{classsf_1_1_vector2}{sf::Vector2f}(8, 3)).
+      \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & Scaling factors \\
+\hline
+{\em center} & Center of scaling\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}, \hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_af20913c6a27087c26192c116397ab40a}{\index{sf\-::\-Transform@{sf\-::\-Transform}!transform\-Point@{transform\-Point}}
+\index{transform\-Point@{transform\-Point}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{transform\-Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} sf\-::\-Transform\-::transform\-Point (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transform_af20913c6a27087c26192c116397ab40a}
+
+
+\hyperlink{classsf_1_1_transform}{Transform} a 2\-D point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the point to transform \\
+\hline
+{\em y} & Y coordinate of the point to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed point 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_ac322cd8f6d606598d1aacc4d1d160ad6}{\index{sf\-::\-Transform@{sf\-::\-Transform}!transform\-Point@{transform\-Point}}
+\index{transform\-Point@{transform\-Point}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{transform\-Point}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} sf\-::\-Transform\-::transform\-Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{point}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transform_ac322cd8f6d606598d1aacc4d1d160ad6}
+
+
+\hyperlink{classsf_1_1_transform}{Transform} a 2\-D point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed point 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_a345112559981d988e92b54b7976fca8a}{\index{sf\-::\-Transform@{sf\-::\-Transform}!transform\-Rect@{transform\-Rect}}
+\index{transform\-Rect@{transform\-Rect}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{transform\-Rect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Transform\-::transform\-Rect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Float\-Rect} \&}]{rectangle}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transform_a345112559981d988e92b54b7976fca8a}
+
+
+\hyperlink{classsf_1_1_transform}{Transform} a rectangle. 
+
+Since S\-F\-M\-L doesn't provide support for oriented rectangles, the result of this function is always an axis-\/aligned rectangle. Which means that if the transform contains a rotation, the bounding rectangle of the transformed rectangle is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rectangle} & Rectangle to transform\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Transformed rectangle 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{\index{sf\-::\-Transform@{sf\-::\-Transform}!translate@{translate}}
+\index{translate@{translate}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::translate (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}
+
+
+Combine the current transform with a translation. 
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(100, 200).\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Offset to apply on X axis \\
+\hline
+{\em y} & Offset to apply on Y axis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}, \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transform_a452ff6e32d5120fa8c132c1bf0ad83cd}{\index{sf\-::\-Transform@{sf\-::\-Transform}!translate@{translate}}
+\index{translate@{translate}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Transform}\& sf\-::\-Transform\-::translate (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transform_a452ff6e32d5120fa8c132c1bf0ad83cd}
+
+
+Combine the current transform with a translation. 
+
+This function returns a reference to $\ast$this, so that calls can be chained. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.\hyperlink{classsf_1_1_transform_ab54f6c8070cc05e2afcb3145fbf4395a}{translate}(\hyperlink{classsf_1_1_vector2}{sf::Vector2f}(100, 200)).\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}(45);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Translation offset to apply\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to $\ast$this
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform_a3e548c3c9e3fb9d4bd43cf852669e555}{rotate}, \hyperlink{classsf_1_1_transform_a3f46af807f69d74120fb836334268671}{scale} 
+\end{DoxySeeAlso}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_transform_a423ade8d6aa1378c695f8eb4bfce8981}{\index{sf\-::\-Transform@{sf\-::\-Transform}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} {\bf Transform} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transform} \&}]{left, }
+\item[{const {\bf Transform} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_transform_a423ade8d6aa1378c695f8eb4bfce8981}
+
+
+Overload of binary operator $\ast$ to combine two transforms. 
+
+This call is equivalent to calling Transform(left).combine(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New combined transform 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_ac729169ec3036f3f3f3024c98efd041d}{\index{sf\-::\-Transform@{sf\-::\-Transform}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} {\bf Vector2f} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transform} \&}]{left, }
+\item[{const {\bf Vector2f} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_transform_ac729169ec3036f3f3f3024c98efd041d}
+
+
+Overload of binary operator $\ast$ to transform a point. 
+
+This call is equivalent to calling left.\-transform\-Point(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the transform) \\
+\hline
+{\em right} & Right operand (the point to transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+New transformed point 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_transform_a45a9de70a463117f851f1264a6f558ba}{\index{sf\-::\-Transform@{sf\-::\-Transform}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-G\-R\-A\-P\-H\-I\-C\-S\-\_\-\-A\-P\-I} {\bf Transform} \& operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Transform} \&}]{left, }
+\item[{const {\bf Transform} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_transform_a45a9de70a463117f851f1264a6f558ba}
+
+
+Overload of binary operator $\ast$= to combine two transforms. 
+
+This call is equivalent to calling left.\-combine(right).
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (the first transform) \\
+\hline
+{\em right} & Right operand (the second transform)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The combined transform 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_transform_aa4eb1eecbcb9979d76e2543b337fdb13}{\index{sf\-::\-Transform@{sf\-::\-Transform}!Identity@{Identity}}
+\index{Identity@{Identity}!sf::Transform@{sf\-::\-Transform}}
+\subsubsection[{Identity}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transform} sf\-::\-Transform\-::\-Identity\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_transform_aa4eb1eecbcb9979d76e2543b337fdb13}
+
+
+The identity transform (does nothing) 
+
+
+
+Definition at line 354 of file Transform.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_transform_8hpp}{Transform.\-hpp}\end{DoxyCompactItemize}

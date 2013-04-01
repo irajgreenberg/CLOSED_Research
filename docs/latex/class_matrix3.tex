@@ -1,0 +1,147 @@
+\hypertarget{class_matrix3}{\section{Matrix3 Class Reference}
+\label{class_matrix3}\index{Matrix3@{Matrix3}}
+}
+
+
+{\ttfamily \#include $<$Matrix3.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrix3_a773fdcf139826ddb39c30e7d08bbdb90}{Matrix3} ()
+\item 
+\hyperlink{class_matrix3_a054d0d36d98a27b8ca185ee4b374ebfc}{Matrix3} (float mat3\mbox{[}9\mbox{]})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_a1a588e856ea84d9f9dd060da9a9cf12e}{rotate} (float theta, const \hyperlink{class_vector3}{Vector3} \&axis, \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_matrix3_a2aa9f6c49840a56eec111cd4f732f58f}{get\-Rotate} (float theta, const \hyperlink{class_vector3}{Vector3} \&axis, const \hyperlink{class_vector3}{Vector3} \&vec)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_a8bcc33f78083797f0c9d56a0e48c2363}{transpose} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_afd7e77fa940c21813cf9385ffa5f48dc}{determinent} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_a88dd27bcab250f39e533836496685401}{mult} (const \hyperlink{class_matrix3}{Matrix3} \&m)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_matrix3_a1cefb3d3ce92aa27c59f6ef74fd65604}{mult} (const \hyperlink{class_vector3}{Vector3} \&vec)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_a13fa30e99a7837e19857e4423adfcb61}{add} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix3_a3746fa5497e3cd1e5ab6aa4dd6a2021a}{identity} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Matrix3.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_matrix3_a773fdcf139826ddb39c30e7d08bbdb90}{\index{Matrix3@{Matrix3}!Matrix3@{Matrix3}}
+\index{Matrix3@{Matrix3}!Matrix3@{Matrix3}}
+\subsubsection[{Matrix3}]{\setlength{\rightskip}{0pt plus 5cm}Matrix3\-::\-Matrix3 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a773fdcf139826ddb39c30e7d08bbdb90}
+
+
+Definition at line 16 of file Matrix3.\-cpp.
+
+\hypertarget{class_matrix3_a054d0d36d98a27b8ca185ee4b374ebfc}{\index{Matrix3@{Matrix3}!Matrix3@{Matrix3}}
+\index{Matrix3@{Matrix3}!Matrix3@{Matrix3}}
+\subsubsection[{Matrix3}]{\setlength{\rightskip}{0pt plus 5cm}Matrix3\-::\-Matrix3 (
+\begin{DoxyParamCaption}
+\item[{float}]{mat3\mbox{[}9\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a054d0d36d98a27b8ca185ee4b374ebfc}
+
+
+Definition at line 20 of file Matrix3.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_matrix3_a13fa30e99a7837e19857e4423adfcb61}{\index{Matrix3@{Matrix3}!add@{add}}
+\index{add@{add}!Matrix3@{Matrix3}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::add (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a13fa30e99a7837e19857e4423adfcb61}
+\hypertarget{class_matrix3_afd7e77fa940c21813cf9385ffa5f48dc}{\index{Matrix3@{Matrix3}!determinent@{determinent}}
+\index{determinent@{determinent}!Matrix3@{Matrix3}}
+\subsubsection[{determinent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::determinent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_afd7e77fa940c21813cf9385ffa5f48dc}
+
+
+Definition at line 38 of file Matrix3.\-cpp.
+
+\hypertarget{class_matrix3_a2aa9f6c49840a56eec111cd4f732f58f}{\index{Matrix3@{Matrix3}!get\-Rotate@{get\-Rotate}}
+\index{get\-Rotate@{get\-Rotate}!Matrix3@{Matrix3}}
+\subsubsection[{get\-Rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Matrix3\-::get\-Rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{theta, }
+\item[{const {\bf Vector3} \&}]{axis, }
+\item[{const {\bf Vector3} \&}]{vec}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a2aa9f6c49840a56eec111cd4f732f58f}
+
+
+Definition at line 52 of file Matrix3.\-cpp.
+
+\hypertarget{class_matrix3_a3746fa5497e3cd1e5ab6aa4dd6a2021a}{\index{Matrix3@{Matrix3}!identity@{identity}}
+\index{identity@{identity}!Matrix3@{Matrix3}}
+\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a3746fa5497e3cd1e5ab6aa4dd6a2021a}
+
+
+Definition at line 42 of file Matrix3.\-cpp.
+
+\hypertarget{class_matrix3_a88dd27bcab250f39e533836496685401}{\index{Matrix3@{Matrix3}!mult@{mult}}
+\index{mult@{mult}!Matrix3@{Matrix3}}
+\subsubsection[{mult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::mult (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix3} \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a88dd27bcab250f39e533836496685401}
+\hypertarget{class_matrix3_a1cefb3d3ce92aa27c59f6ef74fd65604}{\index{Matrix3@{Matrix3}!mult@{mult}}
+\index{mult@{mult}!Matrix3@{Matrix3}}
+\subsubsection[{mult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Matrix3\-::mult (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{vec}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a1cefb3d3ce92aa27c59f6ef74fd65604}
+\hypertarget{class_matrix3_a1a588e856ea84d9f9dd060da9a9cf12e}{\index{Matrix3@{Matrix3}!rotate@{rotate}}
+\index{rotate@{rotate}!Matrix3@{Matrix3}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{theta, }
+\item[{const {\bf Vector3} \&}]{axis, }
+\item[{{\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a1a588e856ea84d9f9dd060da9a9cf12e}
+\hypertarget{class_matrix3_a8bcc33f78083797f0c9d56a0e48c2363}{\index{Matrix3@{Matrix3}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix3@{Matrix3}}
+\subsubsection[{transpose}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix3\-::transpose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix3_a8bcc33f78083797f0c9d56a0e48c2363}
+
+
+Definition at line 26 of file Matrix3.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_matrix3_8h}{Matrix3.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_matrix3_8cpp}{Matrix3.\-cpp}\end{DoxyCompactItemize}

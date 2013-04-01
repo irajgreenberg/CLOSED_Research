@@ -1,0 +1,206 @@
+\hypertarget{class_tube}{\section{Tube Class Reference}
+\label{class_tube}\index{Tube@{Tube}}
+}
+
+
+{\ttfamily \#include $<$Tube.\-h$>$}
+
+
+
+Inheritance diagram for Tube\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_tube__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Tube\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_tube__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_tube_a0c92973d2be8bc65f8f971cbc97c97f1}{Tube} ()
+\item 
+\hyperlink{class_tube_af7386bb9d7e113e8014fd0bad771592b}{Tube} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4}, const \hyperlink{class_spline3}{Spline3} \&path, float radius, int cross\-Section\-Detail)
+\item 
+\hyperlink{class_tube_a995bae01cb3e2b903440297b767d7f97}{Tube} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const \hyperlink{class_color4}{Color4}$<$ float $>$ \hyperlink{class_geom_base_acd58b67fcdac4428f66bea2c58c3aad8}{col4}, const \hyperlink{class_spline3}{Spline3} \&path, std\-::vector$<$ float $>$ radii, int cross\-Section\-Detail)
+\item 
+\hyperlink{class_tube_a36f0bfcdea284cfa54229531937a5d56}{Tube} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const std\-::vector$<$ \hyperlink{class_color4}{Color4}$<$ float $>$ $>$ \hyperlink{class_geom_base_a0a55c12de2788567600e4477017df3fb}{col4s}, const \hyperlink{class_spline3}{Spline3} \&path, float radius, int cross\-Section\-Detail)
+\item 
+\hyperlink{class_tube_a7b0677ab3a81f935f5768ceb397e7e00}{Tube} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_ace2fc0557767dbb702aaf1655a85ed92}{pos}, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{class_geom_base_a7de363bab1e976c73e495cf973a51de7}{rot}, const \hyperlink{class_dimension3}{Dimension3}$<$ float $>$ \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}, const std\-::vector$<$ \hyperlink{class_color4}{Color4}$<$ float $>$ $>$ \hyperlink{class_geom_base_a0a55c12de2788567600e4477017df3fb}{col4s}, const \hyperlink{class_spline3}{Spline3} \&path, std\-::vector$<$ float $>$ radii, int cross\-Section\-Detail)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tube_a8e6846a15da4af900f9b164e0fad04ea}{calc\-Verts} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_tube_a417a92bd1277cfaa5e1229cd99f151d2}{calc\-Inds} ()
+\item 
+const \hyperlink{class_spline3}{Spline3} \& \hyperlink{class_tube_a7741223d94ae9cb37c8e3948e42dcf23}{get\-Path} () const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_tube_a65110a6887750ef9dce74b885267429d}{operator$<$$<$} (std\-::ostream \&out, const \hyperlink{class_tube}{Tube} \&tube)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Tube.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_tube_a0c92973d2be8bc65f8f971cbc97c97f1}{\index{Tube@{Tube}!Tube@{Tube}}
+\index{Tube@{Tube}!Tube@{Tube}}
+\subsubsection[{Tube}]{\setlength{\rightskip}{0pt plus 5cm}Tube\-::\-Tube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_tube_a0c92973d2be8bc65f8f971cbc97c97f1}
+
+
+Definition at line 18 of file Tube.\-cpp.
+
+\hypertarget{class_tube_af7386bb9d7e113e8014fd0bad771592b}{\index{Tube@{Tube}!Tube@{Tube}}
+\index{Tube@{Tube}!Tube@{Tube}}
+\subsubsection[{Tube}]{\setlength{\rightskip}{0pt plus 5cm}Tube\-::\-Tube (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const {\bf Color4}$<$ float $>$}]{col4, }
+\item[{const {\bf Spline3} \&}]{path, }
+\item[{float}]{radius, }
+\item[{int}]{cross\-Section\-Detail}
+\end{DoxyParamCaption}
+)}}\label{class_tube_af7386bb9d7e113e8014fd0bad771592b}
+
+
+Definition at line 21 of file Tube.\-cpp.
+
+\hypertarget{class_tube_a995bae01cb3e2b903440297b767d7f97}{\index{Tube@{Tube}!Tube@{Tube}}
+\index{Tube@{Tube}!Tube@{Tube}}
+\subsubsection[{Tube}]{\setlength{\rightskip}{0pt plus 5cm}Tube\-::\-Tube (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const {\bf Color4}$<$ float $>$}]{col4, }
+\item[{const {\bf Spline3} \&}]{path, }
+\item[{std\-::vector$<$ float $>$}]{radii, }
+\item[{int}]{cross\-Section\-Detail}
+\end{DoxyParamCaption}
+)}}\label{class_tube_a995bae01cb3e2b903440297b767d7f97}
+
+
+Definition at line 31 of file Tube.\-cpp.
+
+\hypertarget{class_tube_a36f0bfcdea284cfa54229531937a5d56}{\index{Tube@{Tube}!Tube@{Tube}}
+\index{Tube@{Tube}!Tube@{Tube}}
+\subsubsection[{Tube}]{\setlength{\rightskip}{0pt plus 5cm}Tube\-::\-Tube (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const std\-::vector$<$ {\bf Color4}$<$ float $>$ $>$}]{col4s, }
+\item[{const {\bf Spline3} \&}]{path, }
+\item[{float}]{radius, }
+\item[{int}]{cross\-Section\-Detail}
+\end{DoxyParamCaption}
+)}}\label{class_tube_a36f0bfcdea284cfa54229531937a5d56}
+
+
+Definition at line 39 of file Tube.\-cpp.
+
+\hypertarget{class_tube_a7b0677ab3a81f935f5768ceb397e7e00}{\index{Tube@{Tube}!Tube@{Tube}}
+\index{Tube@{Tube}!Tube@{Tube}}
+\subsubsection[{Tube}]{\setlength{\rightskip}{0pt plus 5cm}Tube\-::\-Tube (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{pos, }
+\item[{const {\bf Vector3} \&}]{rot, }
+\item[{const {\bf Dimension3}$<$ float $>$}]{size, }
+\item[{const std\-::vector$<$ {\bf Color4}$<$ float $>$ $>$}]{col4s, }
+\item[{const {\bf Spline3} \&}]{path, }
+\item[{std\-::vector$<$ float $>$}]{radii, }
+\item[{int}]{cross\-Section\-Detail}
+\end{DoxyParamCaption}
+)}}\label{class_tube_a7b0677ab3a81f935f5768ceb397e7e00}
+
+
+Definition at line 49 of file Tube.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_tube_a417a92bd1277cfaa5e1229cd99f151d2}{\index{Tube@{Tube}!calc\-Inds@{calc\-Inds}}
+\index{calc\-Inds@{calc\-Inds}!Tube@{Tube}}
+\subsubsection[{calc\-Inds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tube\-::calc\-Inds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_tube_a417a92bd1277cfaa5e1229cd99f151d2}
+
+
+Implements \hyperlink{class_geom_base_a7eb4db1216fe90f25387fc20b9d77c8f}{Geom\-Base}.
+
+
+
+Definition at line 96 of file Tube.\-cpp.
+
+\hypertarget{class_tube_a8e6846a15da4af900f9b164e0fad04ea}{\index{Tube@{Tube}!calc\-Verts@{calc\-Verts}}
+\index{calc\-Verts@{calc\-Verts}!Tube@{Tube}}
+\subsubsection[{calc\-Verts}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Tube\-::calc\-Verts (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_tube_a8e6846a15da4af900f9b164e0fad04ea}
+
+
+Implements \hyperlink{class_geom_base_a2d4e1dd21534e89978ec7f7c8268a20b}{Geom\-Base}.
+
+
+
+Definition at line 60 of file Tube.\-cpp.
+
+\hypertarget{class_tube_a7741223d94ae9cb37c8e3948e42dcf23}{\index{Tube@{Tube}!get\-Path@{get\-Path}}
+\index{get\-Path@{get\-Path}!Tube@{Tube}}
+\subsubsection[{get\-Path}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Spline3} \& Tube\-::get\-Path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{class_tube_a7741223d94ae9cb37c8e3948e42dcf23}
+
+
+Definition at line 148 of file Tube.\-cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_tube_a65110a6887750ef9dce74b885267429d}{\index{Tube@{Tube}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Tube@{Tube}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{const {\bf Tube} \&}]{tube}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_tube_a65110a6887750ef9dce74b885267429d}
+
+
+Definition at line 13 of file Tube.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_protobyte_2tube_8h}{Tube.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_tube_8cpp}{Tube.\-cpp}\end{DoxyCompactItemize}

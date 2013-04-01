@@ -1,0 +1,51 @@
+\hypertarget{copy_8h}{\section{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/copy.h File Reference}
+\label{copy_8h}\index{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/copy.\-h@{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/glut/\-Headers/copy.\-h}}
+}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{copy_8h_ab72f0e44c2ec15f5ede8c4eb35f90882}{C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S}(A, B)
+\item 
+\#define \hyperlink{copy_8h_a940b27355724693bf1f3c57600868f9f}{C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S}(A, B)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{copy_8h_a940b27355724693bf1f3c57600868f9f}{\index{copy.\-h@{copy.\-h}!C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S@{C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S}}
+\index{C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S@{C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S}!copy.h@{copy.\-h}}
+\subsubsection[{C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-P\-Y\-\_\-\-F\-O\-U\-R\-\_\-\-W\-O\-R\-D\-S(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}}\label{copy_8h_a940b27355724693bf1f3c57600868f9f}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                       \(\backslash\)
+    struct four\_words \{ \textcolor{keywordtype}{int} \hyperlink{gl3_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}, \hyperlink{gl3_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}, c, d, \};                \(\backslash\)
+    *(\textcolor{keyword}{struct }four\_words *) (A) = *(\textcolor{keyword}{struct }four\_words *) (B);    \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Definition at line 13 of file copy.\-h.
+
+\hypertarget{copy_8h_ab72f0e44c2ec15f5ede8c4eb35f90882}{\index{copy.\-h@{copy.\-h}!C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S@{C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S}}
+\index{C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S@{C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S}!copy.h@{copy.\-h}}
+\subsubsection[{C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-P\-Y\-\_\-\-T\-H\-R\-E\-E\-\_\-\-W\-O\-R\-D\-S(
+\begin{DoxyParamCaption}
+\item[{}]{A, }
+\item[{}]{B}
+\end{DoxyParamCaption}
+)}}\label{copy_8h_ab72f0e44c2ec15f5ede8c4eb35f90882}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\{                       \(\backslash\)
+    struct three\_words \{ \textcolor{keywordtype}{int} \hyperlink{gl3_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}, \hyperlink{gl3_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}, c, \};              \(\backslash\)
+    *(\textcolor{keyword}{struct }three\_words *) (A) = *(\textcolor{keyword}{struct }three\_words *) (B);  \(\backslash\)
+\}
+\end{DoxyCode}
+
+
+Definition at line 8 of file copy.\-h.
+

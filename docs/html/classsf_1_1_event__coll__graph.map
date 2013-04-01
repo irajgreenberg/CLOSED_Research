@@ -1,0 +1,11 @@
+<map id="sf::Event" name="sf::Event">
+<area shape="rect" id="node2" href="$structsf_1_1_event_1_1_mouse_wheel_event.html" title="Mouse wheel events parameters (MouseWheelMoved)" alt="" coords="7,8,201,35"/>
+<area shape="rect" id="node3" href="$structsf_1_1_event_1_1_key_event.html" title="Keyboard event parameters (KeyPressed, KeyReleased)" alt="" coords="35,59,173,85"/>
+<area shape="rect" id="node4" href="$structsf_1_1_event_1_1_size_event.html" title="Size events parameters (Resized)" alt="" coords="33,109,175,136"/>
+<area shape="rect" id="node5" href="$structsf_1_1_event_1_1_text_event.html" title="Text event parameters (TextEntered)" alt="" coords="33,160,175,187"/>
+<area shape="rect" id="node6" href="$structsf_1_1_event_1_1_mouse_button_event.html" title="Mouse buttons events parameters (MouseButtonPressed, MouseButtonReleased)" alt="" coords="7,211,201,237"/>
+<area shape="rect" id="node7" href="$structsf_1_1_event_1_1_joystick_connect_event.html" title="Joystick connection events parameters (JoystickConnected, JoystickDisconnected)" alt="" coords="15,262,193,303"/>
+<area shape="rect" id="node8" href="$structsf_1_1_event_1_1_joystick_button_event.html" title="Joystick buttons events parameters (JoystickButtonPressed, JoystickButtonReleased)" alt="" coords="21,327,187,369"/>
+<area shape="rect" id="node9" href="$structsf_1_1_event_1_1_mouse_move_event.html" title="Mouse move event parameters (MouseMoved)" alt="" coords="10,393,198,420"/>
+<area shape="rect" id="node10" href="$structsf_1_1_event_1_1_joystick_move_event.html" title="Joystick axis move event parameters (JoystickMoved)" alt="" coords="6,444,202,471"/>
+</map>

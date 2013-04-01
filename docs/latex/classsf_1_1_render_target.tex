@@ -1,0 +1,497 @@
+\hypertarget{classsf_1_1_render_target}{\section{sf\-:\-:Render\-Target Class Reference}
+\label{classsf_1_1_render_target}\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}}
+}
+
+
+Base class for all render targets (window, texture, ...)  
+
+
+
+
+{\ttfamily \#include $<$Render\-Target.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Render\-Target\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{classsf_1_1_render_target__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Render\-Target\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classsf_1_1_render_target__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classsf_1_1_render_target_a9abd1654a99fba46f6887b9c625b9b06}{$\sim$\-Render\-Target} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{clear} (const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color}=\hyperlink{classsf_1_1_color}{Color}(0, 0, 0, 255))
+\begin{DoxyCompactList}\small\item\em Clear the entire target with a single color. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{set\-View} (const \hyperlink{classsf_1_1_view}{View} \&view)
+\begin{DoxyCompactList}\small\item\em Change the current active view. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_view}{View} \& \hyperlink{classsf_1_1_render_target_a98f721cc6dc11478922427fedfb2288b}{get\-View} () const 
+\begin{DoxyCompactList}\small\item\em Get the view currently in use in the render target. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_view}{View} \& \hyperlink{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{get\-Default\-View} () const 
+\begin{DoxyCompactList}\small\item\em Get the default view of the render target. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \hyperlink{classsf_1_1_render_target_aae035b0d45f87a0da2a28a0de6ba1086}{get\-Viewport} (const \hyperlink{classsf_1_1_view}{View} \&view) const 
+\begin{DoxyCompactList}\small\item\em Get the viewport of a view, applied to this render target. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_render_target_afc047333937f7cb7fe557aec60239233}{convert\-Coords} (const \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \&point) const 
+\begin{DoxyCompactList}\small\item\em Convert a point from target coordinates to view coordinates. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_render_target_ae5e7ba65ef73df2778b29b7fdcdb20ee}{convert\-Coords} (const \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \&point, const \hyperlink{classsf_1_1_view}{View} \&view) const 
+\begin{DoxyCompactList}\small\item\em Convert a point from target coordinates to view coordinates. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw} (const \hyperlink{classsf_1_1_drawable}{Drawable} \&drawable, const \hyperlink{classsf_1_1_render_states}{Render\-States} \&states=\hyperlink{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}{Render\-States\-::\-Default})
+\begin{DoxyCompactList}\small\item\em Draw a drawable object to the render-\/target. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_ab636d7363f6681077361ee274ba89a8d}{draw} (const \hyperlink{classsf_1_1_vertex}{Vertex} $\ast$vertices, unsigned int vertex\-Count, \hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\-Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type}, const \hyperlink{classsf_1_1_render_states}{Render\-States} \&states=\hyperlink{classsf_1_1_render_states_ad29672df29f19ce50c3021d95f2bb062}{Render\-States\-::\-Default})
+\begin{DoxyCompactList}\small\item\em Draw primitives defined by an array of vertices. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}{get\-Size} () const =0
+\begin{DoxyCompactList}\small\item\em Return the size of the rendering region of the target. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{push\-G\-L\-States} ()
+\begin{DoxyCompactList}\small\item\em Save the current Open\-G\-L render states and matrices. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{pop\-G\-L\-States} ()
+\begin{DoxyCompactList}\small\item\em Restore the previously saved Open\-G\-L render states and matrices. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_aac7504990d27dada4bfe3c7866920765}{reset\-G\-L\-States} ()
+\begin{DoxyCompactList}\small\item\em Reset the internal Open\-G\-L states so that the target is ready for drawing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_render_target_a2997c96cbd93cb8ce0aba2ddae35b86f}{Render\-Target} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_af530274b34159d644e509b4b4dc43eb7}{initialize} ()
+\begin{DoxyCompactList}\small\item\em Performs the common initialization step after creation. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}{apply\-Current\-View} ()
+\begin{DoxyCompactList}\small\item\em Apply the current view. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_aefd4b1cc8e264598b94bd70aaac5bc99}{apply\-Blend\-Mode} (\hyperlink{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{Blend\-Mode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode})
+\begin{DoxyCompactList}\small\item\em Apply a new blending mode. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}{apply\-Transform} (const \hyperlink{classsf_1_1_transform}{Transform} \&transform)
+\begin{DoxyCompactList}\small\item\em Apply a new transform. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}{apply\-Texture} (const \hyperlink{classsf_1_1_texture}{Texture} $\ast$\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture})
+\begin{DoxyCompactList}\small\item\em Apply a new texture. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}{apply\-Shader} (const \hyperlink{classsf_1_1_shader}{Shader} $\ast$\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader})
+\begin{DoxyCompactList}\small\item\em Apply a new shader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Base class for all render targets (window, texture, ...) 
+
+\hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target} defines the common behaviour of all the 2\-D render targets usable in the graphics module. It makes it possible to draw 2\-D entities like sprites, shapes, text without using any Open\-G\-L command directly.
+
+A \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target} is also able to use views (\hyperlink{classsf_1_1_view}{sf\-::\-View}), which are a kind of 2\-D cameras. With views you can globally scroll, rotate or zoom everything that is drawn, without having to transform every single entity. See the documentation of \hyperlink{classsf_1_1_view}{sf\-::\-View} for more details and sample pieces of code about this class.
+
+On top of that, render targets are still able to render direct Open\-G\-L stuff. It is even possible to mix together Open\-G\-L calls and regular S\-F\-M\-L drawing commands. When doing so, make sure that Open\-G\-L states are not messed up by calling the push\-G\-L\-States/pop\-G\-L\-States functions.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}, \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture}, \hyperlink{classsf_1_1_view}{sf\-::\-View} 
+\end{DoxySeeAlso}
+
+
+Definition at line 51 of file Render\-Target.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_render_target_a9abd1654a99fba46f6887b9c625b9b06}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!$\sim$\-Render\-Target@{$\sim$\-Render\-Target}}
+\index{$\sim$\-Render\-Target@{$\sim$\-Render\-Target}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{$\sim$\-Render\-Target}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Render\-Target\-::$\sim$\-Render\-Target (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_render_target_a9abd1654a99fba46f6887b9c625b9b06}
+
+
+Destructor. 
+
+\hypertarget{classsf_1_1_render_target_a2997c96cbd93cb8ce0aba2ddae35b86f}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!Render\-Target@{Render\-Target}}
+\index{Render\-Target@{Render\-Target}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{Render\-Target}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-Target\-::\-Render\-Target (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_a2997c96cbd93cb8ce0aba2ddae35b86f}
+
+
+Default constructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_render_target_aefd4b1cc8e264598b94bd70aaac5bc99}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!apply\-Blend\-Mode@{apply\-Blend\-Mode}}
+\index{apply\-Blend\-Mode@{apply\-Blend\-Mode}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{apply\-Blend\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::apply\-Blend\-Mode (
+\begin{DoxyParamCaption}
+\item[{{\bf Blend\-Mode}}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_aefd4b1cc8e264598b94bd70aaac5bc99}
+
+
+Apply a new blending mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Blending mode to apply \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!apply\-Current\-View@{apply\-Current\-View}}
+\index{apply\-Current\-View@{apply\-Current\-View}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{apply\-Current\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::apply\-Current\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_a3ed439c5445e9c7d7ff786ff37005efa}
+
+
+Apply the current view. 
+
+\hypertarget{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!apply\-Shader@{apply\-Shader}}
+\index{apply\-Shader@{apply\-Shader}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{apply\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::apply\-Shader (
+\begin{DoxyParamCaption}
+\item[{const {\bf Shader} $\ast$}]{shader}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_a6f8bc92f07c70ccd57cbf632fe9de0ba}
+
+
+Apply a new shader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \hyperlink{classsf_1_1_shader}{Shader} to apply \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!apply\-Texture@{apply\-Texture}}
+\index{apply\-Texture@{apply\-Texture}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{apply\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::apply\-Texture (
+\begin{DoxyParamCaption}
+\item[{const {\bf Texture} $\ast$}]{texture}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_afb8a49305171aad158a27e0dfbb03709}
+
+
+Apply a new texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & \hyperlink{classsf_1_1_texture}{Texture} to apply \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!apply\-Transform@{apply\-Transform}}
+\index{apply\-Transform@{apply\-Transform}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{apply\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::apply\-Transform (
+\begin{DoxyParamCaption}
+\item[{const {\bf Transform} \&}]{transform}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_a0b23bd7c287d0fc12b0521b649a0a0e0}
+
+
+Apply a new transform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transform} & \hyperlink{classsf_1_1_transform}{Transform} to apply \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!clear@{clear}}
+\index{clear@{clear}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::clear (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color} \&}]{color = {\ttfamily {\bf Color}(0,~0,~0,~255)}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_a6bb6f0ba348f2b1e2f46114aeaf60f26}
+
+
+Clear the entire target with a single color. 
+
+This function is usually called once every frame, to clear the previous contents of the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & Fill color to use to clear the render target \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_afc047333937f7cb7fe557aec60239233}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!convert\-Coords@{convert\-Coords}}
+\index{convert\-Coords@{convert\-Coords}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{convert\-Coords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} sf\-::\-Render\-Target\-::convert\-Coords (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2i} \&}]{point}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_target_afc047333937f7cb7fe557aec60239233}
+
+
+Convert a point from target coordinates to view coordinates. 
+
+Initially, a unit of the 2\-D world matches a pixel of the render target. But if you define a custom view, this assertion is not true anymore, ie. a point located at (10, 50) in your render target (for example a window) may map to the point (150, 75) in your 2\-D world -- for example if the view is translated by (140, 25).
+
+For render windows, this function is typically used to find which point (or object) is located below the mouse cursor.
+
+This version uses the current view of the render target. See the other overload to specify a custom view.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to convert, relative to the render target\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted point, in \char`\"{}world\char`\"{} units 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_target_ae5e7ba65ef73df2778b29b7fdcdb20ee}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!convert\-Coords@{convert\-Coords}}
+\index{convert\-Coords@{convert\-Coords}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{convert\-Coords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2f} sf\-::\-Render\-Target\-::convert\-Coords (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2i} \&}]{point, }
+\item[{const {\bf View} \&}]{view}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_target_ae5e7ba65ef73df2778b29b7fdcdb20ee}
+
+
+Convert a point from target coordinates to view coordinates. 
+
+Initially, a unit of the 2\-D world matches a pixel of the render target. But if you define a custom view, this assertion is not true anymore, ie. a point located at (10, 50) in your render target (for example a window) may map to the point (150, 75) in your 2\-D world -- for example if the view is translated by (140, 25).
+
+For render windows, this function is typically used to find which point (or object) is located below the mouse cursor.
+
+This version uses a custom view for calculations, see the other overload of the function to use the current view of the render target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point to convert, relative to the render target \\
+\hline
+{\em view} & The view to use for converting the point\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The converted point, in \char`\"{}world\char`\"{} units 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!draw@{draw}}
+\index{draw@{draw}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::draw (
+\begin{DoxyParamCaption}
+\item[{const {\bf Drawable} \&}]{drawable, }
+\item[{const {\bf Render\-States} \&}]{states = {\ttfamily {\bf Render\-States\-::\-Default}}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}
+
+
+Draw a drawable object to the render-\/target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em drawable} & Object to draw \\
+\hline
+{\em states} & Render states to use for drawing \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_ab636d7363f6681077361ee274ba89a8d}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!draw@{draw}}
+\index{draw@{draw}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::draw (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} $\ast$}]{vertices, }
+\item[{unsigned int}]{vertex\-Count, }
+\item[{{\bf Primitive\-Type}}]{type, }
+\item[{const {\bf Render\-States} \&}]{states = {\ttfamily {\bf Render\-States\-::\-Default}}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_ab636d7363f6681077361ee274ba89a8d}
+
+
+Draw primitives defined by an array of vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertices} & Pointer to the vertices \\
+\hline
+{\em vertex\-Count} & Number of vertices in the array \\
+\hline
+{\em type} & Type of primitives to draw \\
+\hline
+{\em states} & Render states to use for drawing \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!get\-Default\-View@{get\-Default\-View}}
+\index{get\-Default\-View@{get\-Default\-View}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{get\-Default\-View}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf View}\& sf\-::\-Render\-Target\-::get\-Default\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}
+
+
+Get the default view of the render target. 
+
+The default view has the initial size of the render target, and never changes after the target has been created.
+
+\begin{DoxyReturn}{Returns}
+The default view of the render target
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{set\-View}, \hyperlink{classsf_1_1_render_target_a98f721cc6dc11478922427fedfb2288b}{get\-View} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector2u} sf\-::\-Render\-Target\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}
+
+
+Return the size of the rendering region of the target. 
+
+\begin{DoxyReturn}{Returns}
+Size in pixels 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classsf_1_1_render_texture_a757ba45ec7a7deefcaef717049b00b8c}{sf\-::\-Render\-Texture}, and \hyperlink{classsf_1_1_render_window_a2c7ff414be32621a453745cf2a0f8a3e}{sf\-::\-Render\-Window}.
+
+\hypertarget{classsf_1_1_render_target_a98f721cc6dc11478922427fedfb2288b}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!get\-View@{get\-View}}
+\index{get\-View@{get\-View}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{get\-View}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf View}\& sf\-::\-Render\-Target\-::get\-View (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_target_a98f721cc6dc11478922427fedfb2288b}
+
+
+Get the view currently in use in the render target. 
+
+\begin{DoxyReturn}{Returns}
+The view object that is currently used
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{set\-View}, \hyperlink{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{get\-Default\-View} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_target_aae035b0d45f87a0da2a28a0de6ba1086}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!get\-Viewport@{get\-Viewport}}
+\index{get\-Viewport@{get\-Viewport}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{get\-Viewport}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Int\-Rect} sf\-::\-Render\-Target\-::get\-Viewport (
+\begin{DoxyParamCaption}
+\item[{const {\bf View} \&}]{view}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_target_aae035b0d45f87a0da2a28a0de6ba1086}
+
+
+Get the viewport of a view, applied to this render target. 
+
+The viewport is defined in the view as a ratio, this function simply applies this ratio to the current dimensions of the render target to calculate the pixels rectangle that the viewport actually covers in the target.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & The view for which we want to compute the viewport\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Viewport rectangle, expressed in pixels 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_target_af530274b34159d644e509b4b4dc43eb7}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!initialize@{initialize}}
+\index{initialize@{initialize}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{initialize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classsf_1_1_render_target_af530274b34159d644e509b4b4dc43eb7}
+
+
+Performs the common initialization step after creation. 
+
+The derived classes must call this function after the target is created and ready for drawing. \hypertarget{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!pop\-G\-L\-States@{pop\-G\-L\-States}}
+\index{pop\-G\-L\-States@{pop\-G\-L\-States}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{pop\-G\-L\-States}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::pop\-G\-L\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}
+
+
+Restore the previously saved Open\-G\-L render states and matrices. 
+
+See the description of push\-G\-L\-States to get a detailed description of these functions.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{push\-G\-L\-States} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!push\-G\-L\-States@{push\-G\-L\-States}}
+\index{push\-G\-L\-States@{push\-G\-L\-States}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{push\-G\-L\-States}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::push\-G\-L\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_a8d1998464ccc54e789aaf990242b47f7}
+
+
+Save the current Open\-G\-L render states and matrices. 
+
+This function can be used when you mix S\-F\-M\-L drawing and direct Open\-G\-L rendering. Combined with Pop\-G\-L\-States, it ensures that\-: \begin{DoxyItemize}
+\item S\-F\-M\-L's internal states are not messed up by your Open\-G\-L code \item your Open\-G\-L states are not modified by a call to a S\-F\-M\-L function\end{DoxyItemize}
+More specifically, it must be used around code that calls Draw functions. Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// OpenGL code here...}
+window.pushGLStates();
+window.draw(...);
+window.draw(...);
+window.popGLStates();
+\textcolor{comment}{// OpenGL code here...}
+\end{DoxyCode}
+
+
+Note that this function is quite expensive\-: it saves all the possible Open\-G\-L states and matrices, even the ones you don't care about. Therefore it should be used wisely. It is provided for convenience, but the best results will be achieved if you handle Open\-G\-L states yourself (because you know which states have really changed, and need to be saved and restored). Take a look at the Reset\-G\-L\-States function if you do so.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target_ad5a98401113df931ddcd54c080f7aa8e}{pop\-G\-L\-States} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_render_target_aac7504990d27dada4bfe3c7866920765}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!reset\-G\-L\-States@{reset\-G\-L\-States}}
+\index{reset\-G\-L\-States@{reset\-G\-L\-States}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{reset\-G\-L\-States}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::reset\-G\-L\-States (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_aac7504990d27dada4bfe3c7866920765}
+
+
+Reset the internal Open\-G\-L states so that the target is ready for drawing. 
+
+This function can be used when you mix S\-F\-M\-L drawing and direct Open\-G\-L rendering, if you choose not to use push\-G\-L\-States/pop\-G\-L\-States. It makes sure that all Open\-G\-L states needed by S\-F\-M\-L are set, so that subsequent \hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw()} calls will work as expected.
+
+Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// OpenGL code here...}
+\hyperlink{gl_8h_a1917b00fe1a903f7db1352e308fd3b52}{glPushAttrib}(...);
+window.resetGLStates();
+window.draw(...);
+window.draw(...);
+\hyperlink{gl_8h_ad0f886ee4d236c3902c1a2f566eeb8ad}{glPopAttrib}(...);
+\textcolor{comment}{// OpenGL code here...}
+\end{DoxyCode}
+ \hypertarget{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}{\index{sf\-::\-Render\-Target@{sf\-::\-Render\-Target}!set\-View@{set\-View}}
+\index{set\-View@{set\-View}!sf::RenderTarget@{sf\-::\-Render\-Target}}
+\subsubsection[{set\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Render\-Target\-::set\-View (
+\begin{DoxyParamCaption}
+\item[{const {\bf View} \&}]{view}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_target_a063db6dd0a14913504af30e50cb6d946}
+
+
+Change the current active view. 
+
+The view is like a 2\-D camera, it controls which part of the 2\-D scene is visible, and how it is viewed in the render-\/target. The new view will affect everything that is drawn, until another view is set. The render target keeps its own copy of the view object, so it is not necessary to keep the original one alive after calling this function. To restore the original view of the target, you can pass the result of \hyperlink{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{get\-Default\-View()} to this function.
+
+
+\begin{DoxyParams}{Parameters}
+{\em view} & New view to use\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target_a98f721cc6dc11478922427fedfb2288b}{get\-View}, \hyperlink{classsf_1_1_render_target_a718b1aa6296bf855171699cc18251ced}{get\-Default\-View} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_render_target_8hpp}{Render\-Target.\-hpp}\end{DoxyCompactItemize}

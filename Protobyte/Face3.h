@@ -9,9 +9,18 @@
 #ifndef __SFML_simple_renderer_03__Face3__
 #define __SFML_simple_renderer_03__Face3__
 
+#ifdef  __APPLE__ || __MACH__
+  #include <OpenGL/gl.h>
+#elif defined __linux__
+  #include <GL/gl.h>
+#elif defined _WIN32
+  #include <GL/gl.h>
+#else
+#error "unknown platform"
+#endif
+
 #include <vector>
 #include "Vertex.h"
-#include <OpenGL/gl.h>
 #include "Vector3.h"
 #include <cmath>
 #include <iostream>

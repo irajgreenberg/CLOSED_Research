@@ -1,0 +1,121 @@
+\hypertarget{class_matrix4}{\section{Matrix4 Class Reference}
+\label{class_matrix4}\index{Matrix4@{Matrix4}}
+}
+
+
+{\ttfamily \#include $<$Matrix4.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrix4_a21e70a74447b9b05cf9a06400bc9c661}{Matrix4} ()
+\item 
+\hyperlink{class_matrix4_a95d00cb5d22df1f9d5982de9f9686707}{Matrix4} (float mat4\mbox{[}16\mbox{]})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix4_aafc3ab1288768d0ff18ed7116a8270db}{transpose} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix4_a28574cfb21c61eaa6c6d38ffe460921e}{determinent} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix4_a80bbae89990f98d581bb22c169770268}{mult} (const \hyperlink{class_matrix4}{Matrix4} \&m)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_matrix4_a2a6972939ece4b76d163df24e18fc7a5}{mult} (const \hyperlink{class_vector3}{Vector3} \&vec)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix4_adcc51df79c2eb0de2ee2d76e789d8dcb}{add} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_matrix4_ab09bc36bf102e3fc6c4506e1bb069aa9}{identity} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Matrix4.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_matrix4_a21e70a74447b9b05cf9a06400bc9c661}{\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\subsubsection[{Matrix4}]{\setlength{\rightskip}{0pt plus 5cm}Matrix4\-::\-Matrix4 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_a21e70a74447b9b05cf9a06400bc9c661}
+
+
+Definition at line 34 of file Matrix4.\-cpp.
+
+\hypertarget{class_matrix4_a95d00cb5d22df1f9d5982de9f9686707}{\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\index{Matrix4@{Matrix4}!Matrix4@{Matrix4}}
+\subsubsection[{Matrix4}]{\setlength{\rightskip}{0pt plus 5cm}Matrix4\-::\-Matrix4 (
+\begin{DoxyParamCaption}
+\item[{float}]{mat4\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_a95d00cb5d22df1f9d5982de9f9686707}
+
+
+Definition at line 38 of file Matrix4.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_matrix4_adcc51df79c2eb0de2ee2d76e789d8dcb}{\index{Matrix4@{Matrix4}!add@{add}}
+\index{add@{add}!Matrix4@{Matrix4}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix4\-::add (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_adcc51df79c2eb0de2ee2d76e789d8dcb}
+\hypertarget{class_matrix4_a28574cfb21c61eaa6c6d38ffe460921e}{\index{Matrix4@{Matrix4}!determinent@{determinent}}
+\index{determinent@{determinent}!Matrix4@{Matrix4}}
+\subsubsection[{determinent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix4\-::determinent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_a28574cfb21c61eaa6c6d38ffe460921e}
+
+
+Definition at line 56 of file Matrix4.\-cpp.
+
+\hypertarget{class_matrix4_ab09bc36bf102e3fc6c4506e1bb069aa9}{\index{Matrix4@{Matrix4}!identity@{identity}}
+\index{identity@{identity}!Matrix4@{Matrix4}}
+\subsubsection[{identity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix4\-::identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_ab09bc36bf102e3fc6c4506e1bb069aa9}
+
+
+Definition at line 60 of file Matrix4.\-cpp.
+
+\hypertarget{class_matrix4_a80bbae89990f98d581bb22c169770268}{\index{Matrix4@{Matrix4}!mult@{mult}}
+\index{mult@{mult}!Matrix4@{Matrix4}}
+\subsubsection[{mult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix4\-::mult (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix4} \&}]{m}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_a80bbae89990f98d581bb22c169770268}
+\hypertarget{class_matrix4_a2a6972939ece4b76d163df24e18fc7a5}{\index{Matrix4@{Matrix4}!mult@{mult}}
+\index{mult@{mult}!Matrix4@{Matrix4}}
+\subsubsection[{mult}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Matrix4\-::mult (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{vec}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_a2a6972939ece4b76d163df24e18fc7a5}
+\hypertarget{class_matrix4_aafc3ab1288768d0ff18ed7116a8270db}{\index{Matrix4@{Matrix4}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix4@{Matrix4}}
+\subsubsection[{transpose}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Matrix4\-::transpose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_matrix4_aafc3ab1288768d0ff18ed7116a8270db}
+
+
+Definition at line 44 of file Matrix4.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_matrix4_8h}{Matrix4.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_matrix4_8cpp}{Matrix4.\-cpp}\end{DoxyCompactItemize}

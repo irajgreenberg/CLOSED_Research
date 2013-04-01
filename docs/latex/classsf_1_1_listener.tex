@@ -1,0 +1,233 @@
+\hypertarget{classsf_1_1_listener}{\section{sf\-:\-:Listener Class Reference}
+\label{classsf_1_1_listener}\index{sf\-::\-Listener@{sf\-::\-Listener}}
+}
+
+
+The audio listener is the point in the scene from where all the sounds are heard.  
+
+
+
+
+{\ttfamily \#include $<$Listener.\-hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_listener_a803a24a1fc04620cacc9f88c6fbc0e3a}{set\-Global\-Volume} (float volume)
+\begin{DoxyCompactList}\small\item\em Change the global volume of all the sounds and musics. \end{DoxyCompactList}\item 
+static float \hyperlink{classsf_1_1_listener_a137ea535799bdf70be6ec969673d4d33}{get\-Global\-Volume} ()
+\begin{DoxyCompactList}\small\item\em Get the current value of the global volume. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{set\-Position} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, float \hyperlink{gl3_8h_acb78bf1972d3eaf07da34ff2e0a2f133}{z})
+\begin{DoxyCompactList}\small\item\em Set the position of the listener in the scene. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_listener_a28a27d85cfbf8065c535c39176898fcb}{set\-Position} (const \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f} \&position)
+\begin{DoxyCompactList}\small\item\em Set the position of the listener in the scene. \end{DoxyCompactList}\item 
+static \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f} \hyperlink{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}{get\-Position} ()
+\begin{DoxyCompactList}\small\item\em Get the current position of the listener in the scene. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{set\-Direction} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, float \hyperlink{gl3_8h_acb78bf1972d3eaf07da34ff2e0a2f133}{z})
+\begin{DoxyCompactList}\small\item\em Set the orientation of the listener in the scene. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_listener_a1d99d9457c6ddad93449ecb4f504c2bf}{set\-Direction} (const \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f} \&direction)
+\begin{DoxyCompactList}\small\item\em Set the orientation of the listener in the scene. \end{DoxyCompactList}\item 
+static \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f} \hyperlink{classsf_1_1_listener_a54e91baba51d4431474f53ff7f9309f9}{get\-Direction} ()
+\begin{DoxyCompactList}\small\item\em Get the current orientation of the listener in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The audio listener is the point in the scene from where all the sounds are heard. 
+
+The audio listener defines the global properties of the audio environment, it defines where and how sounds and musics are heard. If \hyperlink{classsf_1_1_view}{sf\-::\-View} is the eyes of the user, then \hyperlink{classsf_1_1_listener}{sf\-::\-Listener} is his ears (by the way, they are often linked together -- same position, orientation, etc.).
+
+\hyperlink{classsf_1_1_listener}{sf\-::\-Listener} is a simple interface, which allows to setup the listener in the 3\-D audio environment (position and direction), and to adjust the global volume.
+
+Because the listener is unique in the scene, \hyperlink{classsf_1_1_listener}{sf\-::\-Listener} only contains static functions and doesn't have to be instanciated.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Move the listener to the position (1, 0, -5)}
+\hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{sf::Listener::setPosition}(1, 0, -5);
+
+\textcolor{comment}{// Make it face the right axis (1, 0, 0)}
+sf::Listener::SetDirection(1, 0, 0);
+
+\textcolor{comment}{// Reduce the global volume}
+sf::Listener::SetGlobalVolume(50);
+\end{DoxyCode}
+ 
+
+Definition at line 42 of file Listener.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_listener_a54e91baba51d4431474f53ff7f9309f9}{\index{sf\-::\-Listener@{sf\-::\-Listener}!get\-Direction@{get\-Direction}}
+\index{get\-Direction@{get\-Direction}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{get\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Vector3f} sf\-::\-Listener\-::get\-Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a54e91baba51d4431474f53ff7f9309f9}
+
+
+Get the current orientation of the listener in the scene. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_listener}{Listener}'s orientation
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{set\-Direction} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_a137ea535799bdf70be6ec969673d4d33}{\index{sf\-::\-Listener@{sf\-::\-Listener}!get\-Global\-Volume@{get\-Global\-Volume}}
+\index{get\-Global\-Volume@{get\-Global\-Volume}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{get\-Global\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}static float sf\-::\-Listener\-::get\-Global\-Volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a137ea535799bdf70be6ec969673d4d33}
+
+
+Get the current value of the global volume. 
+
+\begin{DoxyReturn}{Returns}
+Current global volume, in the range \mbox{[}0, 100\mbox{]}
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_a803a24a1fc04620cacc9f88c6fbc0e3a}{set\-Global\-Volume} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}{\index{sf\-::\-Listener@{sf\-::\-Listener}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Vector3f} sf\-::\-Listener\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}
+
+
+Get the current position of the listener in the scene. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_listener}{Listener}'s position
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{\index{sf\-::\-Listener@{sf\-::\-Listener}!set\-Direction@{set\-Direction}}
+\index{set\-Direction@{set\-Direction}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{set\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Listener\-::set\-Direction (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}
+
+
+Set the orientation of the listener in the scene. 
+
+The orientation defines the 3\-D axes of the listener (left, up, front) in the scene. The orientation vector doesn't have to be normalized. The default listener's orientation is (0, 0, -\/1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the listener's orientation \\
+\hline
+{\em y} & Y coordinate of the listener's orientation \\
+\hline
+{\em z} & Z coordinate of the listener's orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_a54e91baba51d4431474f53ff7f9309f9}{get\-Direction}, \hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_a1d99d9457c6ddad93449ecb4f504c2bf}{\index{sf\-::\-Listener@{sf\-::\-Listener}!set\-Direction@{set\-Direction}}
+\index{set\-Direction@{set\-Direction}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{set\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Listener\-::set\-Direction (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3f} \&}]{direction}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a1d99d9457c6ddad93449ecb4f504c2bf}
+
+
+Set the orientation of the listener in the scene. 
+
+The orientation defines the 3\-D axes of the listener (left, up, front) in the scene. The orientation vector doesn't have to be normalized. The default listener's orientation is (0, 0, -\/1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & New listener's orientation\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_a54e91baba51d4431474f53ff7f9309f9}{get\-Direction}, \hyperlink{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_a803a24a1fc04620cacc9f88c6fbc0e3a}{\index{sf\-::\-Listener@{sf\-::\-Listener}!set\-Global\-Volume@{set\-Global\-Volume}}
+\index{set\-Global\-Volume@{set\-Global\-Volume}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{set\-Global\-Volume}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Listener\-::set\-Global\-Volume (
+\begin{DoxyParamCaption}
+\item[{float}]{volume}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a803a24a1fc04620cacc9f88c6fbc0e3a}
+
+
+Change the global volume of all the sounds and musics. 
+
+The volume is a number between 0 and 100; it is combined with the individual volume of each sound / music. The default value for the volume is 100 (maximum).
+
+
+\begin{DoxyParams}{Parameters}
+{\em volume} & New global volume, in the range \mbox{[}0, 100\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_a137ea535799bdf70be6ec969673d4d33}{get\-Global\-Volume} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}{\index{sf\-::\-Listener@{sf\-::\-Listener}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Listener\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a5bc2d8d18ea2d8f339d23cbf17678564}
+
+
+Set the position of the listener in the scene. 
+
+The default listener's position is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the listener's position \\
+\hline
+{\em y} & Y coordinate of the listener's position \\
+\hline
+{\em z} & Z coordinate of the listener's position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}{get\-Position}, \hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{set\-Direction} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_listener_a28a27d85cfbf8065c535c39176898fcb}{\index{sf\-::\-Listener@{sf\-::\-Listener}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Listener@{sf\-::\-Listener}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Listener\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3f} \&}]{position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_listener_a28a27d85cfbf8065c535c39176898fcb}
+
+
+Set the position of the listener in the scene. 
+
+The default listener's position is (0, 0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New listener's position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_listener_acd7ee65bc948ca38e1c669aa12340c54}{get\-Position}, \hyperlink{classsf_1_1_listener_ae479dc15513c6557984d26e32d06d06e}{set\-Direction} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Audio/\hyperlink{_listener_8hpp}{Listener.\-hpp}\end{DoxyCompactItemize}

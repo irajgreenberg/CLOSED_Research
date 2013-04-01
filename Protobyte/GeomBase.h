@@ -9,7 +9,24 @@
 #ifndef __SFML_simple_renderer_06__GeomBase__
 #define __SFML_simple_renderer_06__GeomBase__
 
-#include <OpenGL/gl.h>
+
+#ifdef  __APPLE__ || __MACH__
+  #include <OpenGL/gl.h>
+  #include <OpenGL/glu.h>
+#elif defined __linux__
+  #include <GL/gl.h>
+  #include <GL/glu.h>
+  #define GL_GLEXT_PROTOTYPES
+  #include <GL/glext.h>
+#elif defined _WIN32
+  #include <GL/gl.h>
+  #include <GL/glu.h>
+  #define GL_GLEXT_PROTOTYPES
+  #include <GL/glext.h>
+#else
+#error "unknown platform"
+#endif
+
 #include <iostream>
 #include <vector>
 #include "Vector3.h"
@@ -17,6 +34,8 @@
 #include "Tuple3.h"
 #include "Dimension3.h"
 #include "Color4.h"
+
+
 
 // for offset into the FBO interleaved buffer (ugly I know!)
 #define BUFFER_OFFSET(i) ((void*)(i)) 

@@ -1,0 +1,281 @@
+\hypertarget{classsf_1_1_vertex_array}{\section{sf\-:\-:Vertex\-Array Class Reference}
+\label{classsf_1_1_vertex_array}\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}}
+}
+
+
+Define a set of one or more 2\-D primitives.  
+
+
+
+
+{\ttfamily \#include $<$Vertex\-Array.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Vertex\-Array\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classsf_1_1_vertex_array__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Vertex\-Array\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classsf_1_1_vertex_array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_vertex_array_a15729e01df8fc0021f9774dfb56295c1}{Vertex\-Array} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_vertex_array_abf85f4baff4c282e2d07ea97b5913aad}{Vertex\-Array} (\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\-Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type}, unsigned int vertex\-Count=0)
+\begin{DoxyCompactList}\small\item\em Construct the vertex array with a type and an initial number of vertices. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classsf_1_1_vertex_array_a683fa176683f3b0343bab164608378f9}{get\-Vertex\-Count} () const 
+\begin{DoxyCompactList}\small\item\em Return the vertex count. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_vertex}{Vertex} \& \hyperlink{classsf_1_1_vertex_array_a5db1da21b170ecf4c52d49030db385fd}{operator\mbox{[}$\,$\mbox{]}} (unsigned int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index})
+\begin{DoxyCompactList}\small\item\em Get a read-\/write access to a vertex by its index. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_vertex}{Vertex} \& \hyperlink{classsf_1_1_vertex_array_a0e95bde955c929651b0d9f8f00a354be}{operator\mbox{[}$\,$\mbox{]}} (unsigned int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}) const 
+\begin{DoxyCompactList}\small\item\em Get a read-\/only access to a vertex by its index. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_vertex_array_a3654c424aca1f9e468f369bc777c839c}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the vertex array. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_vertex_array_a9884c43c4f5ba152046ab3a5c91efb3b}{resize} (unsigned int vertex\-Count)
+\begin{DoxyCompactList}\small\item\em Resize the vertex array. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_vertex_array_a80c8f6865e53bd21fc6cb10fffa10035}{append} (const \hyperlink{classsf_1_1_vertex}{Vertex} \&vertex)
+\begin{DoxyCompactList}\small\item\em Add a vertex to the array. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_vertex_array_aa38c10707c28a97f4627ae8b2f3ad969}{set\-Primitive\-Type} (\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\-Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type})
+\begin{DoxyCompactList}\small\item\em Set the type of primitives to draw. \end{DoxyCompactList}\item 
+\hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{Primitive\-Type} \hyperlink{classsf_1_1_vertex_array_af2205f76fe98fb3cf1f303f25d43c045}{get\-Primitive\-Type} () const 
+\begin{DoxyCompactList}\small\item\em Get the type of primitives drawn by the vertex array. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aed4e58f586b2eed2621c0365d0b7554e}{Float\-Rect} \hyperlink{classsf_1_1_vertex_array_a741d1b1acbb175289eab37bbf49cbb24}{get\-Bounds} () const 
+\begin{DoxyCompactList}\small\item\em Compute the bounding rectangle of the vertex array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define a set of one or more 2\-D primitives. 
+
+\hyperlink{classsf_1_1_vertex_array}{sf\-::\-Vertex\-Array} is a very simple wrapper around a dynamic array of vertices and a primitives type.
+
+It inherits \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable}, but unlike other drawables it is not transformable.
+
+Example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_vertex_array}{sf::VertexArray} lines(\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}{sf::LinesStrip}, 4);
+lines[0].position = \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{sf::Vector2f}(10, 0);
+lines[1].position = \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{sf::Vector2f}(20, 0);
+lines[2].position = \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{sf::Vector2f}(30, 5);
+lines[3].position = \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{sf::Vector2f}(40, 2);
+
+window.draw(lines);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_vertex}{sf\-::\-Vertex} 
+\end{DoxySeeAlso}
+
+
+Definition at line 45 of file Vertex\-Array.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_vertex_array_a15729e01df8fc0021f9774dfb56295c1}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!Vertex\-Array@{Vertex\-Array}}
+\index{Vertex\-Array@{Vertex\-Array}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{Vertex\-Array}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Vertex\-Array\-::\-Vertex\-Array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_a15729e01df8fc0021f9774dfb56295c1}
+
+
+Default constructor. 
+
+Creates an empty vertex array. \hypertarget{classsf_1_1_vertex_array_abf85f4baff4c282e2d07ea97b5913aad}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!Vertex\-Array@{Vertex\-Array}}
+\index{Vertex\-Array@{Vertex\-Array}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{Vertex\-Array}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Vertex\-Array\-::\-Vertex\-Array (
+\begin{DoxyParamCaption}
+\item[{{\bf Primitive\-Type}}]{type, }
+\item[{unsigned int}]{vertex\-Count = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_vertex_array_abf85f4baff4c282e2d07ea97b5913aad}
+
+
+Construct the vertex array with a type and an initial number of vertices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of primitives \\
+\hline
+{\em vertex\-Count} & Initial number of vertices in the array \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_vertex_array_a80c8f6865e53bd21fc6cb10fffa10035}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!append@{append}}
+\index{append@{append}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Vertex\-Array\-::append (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{vertex}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_a80c8f6865e53bd21fc6cb10fffa10035}
+
+
+Add a vertex to the array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex} & \hyperlink{classsf_1_1_vertex}{Vertex} to add \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_vertex_array_a3654c424aca1f9e468f369bc777c839c}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!clear@{clear}}
+\index{clear@{clear}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Vertex\-Array\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_a3654c424aca1f9e468f369bc777c839c}
+
+
+Clear the vertex array. 
+
+This function removes all the vertices from the array. It doesn't deallocate the corresponding memory, so that adding new vertices after clearing doesn't involve reallocating all the memory. \hypertarget{classsf_1_1_vertex_array_a741d1b1acbb175289eab37bbf49cbb24}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!get\-Bounds@{get\-Bounds}}
+\index{get\-Bounds@{get\-Bounds}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{get\-Bounds}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Float\-Rect} sf\-::\-Vertex\-Array\-::get\-Bounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_vertex_array_a741d1b1acbb175289eab37bbf49cbb24}
+
+
+Compute the bounding rectangle of the vertex array. 
+
+This function returns the axis-\/aligned rectangle that contains all the vertices of the array.
+
+\begin{DoxyReturn}{Returns}
+Bounding rectangle of the vertex array 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_vertex_array_af2205f76fe98fb3cf1f303f25d43c045}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!get\-Primitive\-Type@{get\-Primitive\-Type}}
+\index{get\-Primitive\-Type@{get\-Primitive\-Type}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{get\-Primitive\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Primitive\-Type} sf\-::\-Vertex\-Array\-::get\-Primitive\-Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_vertex_array_af2205f76fe98fb3cf1f303f25d43c045}
+
+
+Get the type of primitives drawn by the vertex array. 
+
+\begin{DoxyReturn}{Returns}
+Primitive type 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_vertex_array_a683fa176683f3b0343bab164608378f9}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!get\-Vertex\-Count@{get\-Vertex\-Count}}
+\index{get\-Vertex\-Count@{get\-Vertex\-Count}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{get\-Vertex\-Count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Vertex\-Array\-::get\-Vertex\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_vertex_array_a683fa176683f3b0343bab164608378f9}
+
+
+Return the vertex count. 
+
+\begin{DoxyReturn}{Returns}
+Number of vertices in the array 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_vertex_array_a5db1da21b170ecf4c52d49030db385fd}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex}\& sf\-::\-Vertex\-Array\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_a5db1da21b170ecf4c52d49030db385fd}
+
+
+Get a read-\/write access to a vertex by its index. 
+
+This function doesn't check {\itshape index}, it must be in range \mbox{[}0, Get\-Vertex\-Count() -\/ 1\mbox{]}. The behaviour is undefined otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the vertex to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the index-\/th vertex
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_vertex_array_a683fa176683f3b0343bab164608378f9}{get\-Vertex\-Count} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_vertex_array_a0e95bde955c929651b0d9f8f00a354be}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vertex}\& sf\-::\-Vertex\-Array\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_vertex_array_a0e95bde955c929651b0d9f8f00a354be}
+
+
+Get a read-\/only access to a vertex by its index. 
+
+This function doesn't check {\itshape index}, it must be in range \mbox{[}0, Get\-Vertex\-Count() -\/ 1\mbox{]}. The behaviour is undefined otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the vertex to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Const reference to the index-\/th vertex
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_vertex_array_a683fa176683f3b0343bab164608378f9}{get\-Vertex\-Count} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_vertex_array_a9884c43c4f5ba152046ab3a5c91efb3b}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!resize@{resize}}
+\index{resize@{resize}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Vertex\-Array\-::resize (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{vertex\-Count}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_a9884c43c4f5ba152046ab3a5c91efb3b}
+
+
+Resize the vertex array. 
+
+If {\itshape vertex\-Count} is greater than the current size, the previous vertices are kept and new (default-\/constructed) vertices are added. If {\itshape vertex\-Count} is less than the current size, existing vertices are removed from the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\-Count} & New size of the array (number of vertices) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_vertex_array_aa38c10707c28a97f4627ae8b2f3ad969}{\index{sf\-::\-Vertex\-Array@{sf\-::\-Vertex\-Array}!set\-Primitive\-Type@{set\-Primitive\-Type}}
+\index{set\-Primitive\-Type@{set\-Primitive\-Type}!sf::VertexArray@{sf\-::\-Vertex\-Array}}
+\subsubsection[{set\-Primitive\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Vertex\-Array\-::set\-Primitive\-Type (
+\begin{DoxyParamCaption}
+\item[{{\bf Primitive\-Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_vertex_array_aa38c10707c28a97f4627ae8b2f3ad969}
+
+
+Set the type of primitives to draw. 
+
+This function defines how the vertices must be interpreted when it's time to draw them\-: \begin{DoxyItemize}
+\item As points \item As lines \item As triangles \item As quads The default primitive type is \hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}{sf\-::\-Points}.\end{DoxyItemize}
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of primitive \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_vertex_array_8hpp}{Vertex\-Array.\-hpp}\end{DoxyCompactItemize}

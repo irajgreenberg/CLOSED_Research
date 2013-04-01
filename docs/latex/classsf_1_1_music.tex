@@ -1,0 +1,262 @@
+\hypertarget{classsf_1_1_music}{\section{sf\-:\-:Music Class Reference}
+\label{classsf_1_1_music}\index{sf\-::\-Music@{sf\-::\-Music}}
+}
+
+
+Streamed music played from an audio file.  
+
+
+
+
+{\ttfamily \#include $<$Music.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Music\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_music__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Music\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{classsf_1_1_music__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_music_a0bc787d8e022b3a9b89cf2c28befd42e}{Music} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_music_a4c65860fed2f01d0eaa6c4199870414b}{$\sim$\-Music} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\-From\-File} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&filename)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}{open\-From\-Memory} (const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t size\-In\-Bytes)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file in memory. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}{open\-From\-Stream} (\hyperlink{classsf_1_1_input_stream}{Input\-Stream} \&stream)
+\begin{DoxyCompactList}\small\item\em Open a music from an audio file in a custom stream. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_time}{Time} \hyperlink{classsf_1_1_music_af4738b69c4c5038f71414ad7ffbbdc2b}{get\-Duration} () const 
+\begin{DoxyCompactList}\small\item\em Get the total duration of the music. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \hyperlink{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{on\-Get\-Data} (\hyperlink{structsf_1_1_sound_stream_1_1_chunk}{Chunk} \&\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data})
+\begin{DoxyCompactList}\small\item\em Request a new chunk of audio samples from the stream source. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{on\-Seek} (\hyperlink{classsf_1_1_time}{Time} time\-Offset)
+\begin{DoxyCompactList}\small\item\em Change the current playing position in the stream source. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Streamed music played from an audio file. 
+
+Musics are sounds that are streamed rather than completely loaded in memory. This is especially useful for compressed musics that usually take hundreds of M\-B when they are uncompressed\-: by streaming it instead of loading it entirely, you avoid saturating the memory and have almost no loading delay.
+
+Apart from that, a \hyperlink{classsf_1_1_music}{sf\-::\-Music} has almost the same features as the \hyperlink{classsf_1_1_sound_buffer}{sf\-::\-Sound\-Buffer} / \hyperlink{classsf_1_1_sound}{sf\-::\-Sound} pair\-: you can play/pause/stop it, request its parameters (channels, sample rate), change the way it is played (pitch, volume, 3\-D position, ...), etc.
+
+As a sound stream, a music is played in its own thread in order not to block the rest of the program. This means that you can leave the music alone after calling \hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play()}, it will manage itself very well.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Declare a new music}
+\hyperlink{classsf_1_1_music}{sf::Music} music;
+
+\textcolor{comment}{// Open it from an audio file}
+\textcolor{keywordflow}{if} (!music.\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{openFromFile}(\textcolor{stringliteral}{"music.ogg"}))
+\{
+    \textcolor{comment}{// error...}
+\}
+
+\textcolor{comment}{// Change some parameters}
+music.\hyperlink{classsf_1_1_sound_source_a0480257ea25d986eba6cc3c1a6f8d7c2}{setPosition}(0, 1, 10); \textcolor{comment}{// change its 3D position}
+music.\hyperlink{classsf_1_1_sound_source_a72a13695ed48b7f7b55e7cd4431f4bb6}{setPitch}(2);           \textcolor{comment}{// increase the pitch}
+music.\hyperlink{classsf_1_1_sound_source_a2f192f2b49fb8e2b82f3498d3663fcc2}{setVolume}(50);         \textcolor{comment}{// reduce the volume}
+music.\hyperlink{classsf_1_1_sound_stream_a43fade018ffba7e4f847a9f00b353f3d}{setLoop}(\textcolor{keyword}{true});         \textcolor{comment}{// make it loop}
+
+\textcolor{comment}{// Play it}
+music.\hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play}();
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_sound}{sf\-::\-Sound}, \hyperlink{classsf_1_1_sound_stream}{sf\-::\-Sound\-Stream} 
+\end{DoxySeeAlso}
+
+
+Definition at line 52 of file Music.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_music_a0bc787d8e022b3a9b89cf2c28befd42e}{\index{sf\-::\-Music@{sf\-::\-Music}!Music@{Music}}
+\index{Music@{Music}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{Music}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Music\-::\-Music (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_music_a0bc787d8e022b3a9b89cf2c28befd42e}
+
+
+Default constructor. 
+
+\hypertarget{classsf_1_1_music_a4c65860fed2f01d0eaa6c4199870414b}{\index{sf\-::\-Music@{sf\-::\-Music}!$\sim$\-Music@{$\sim$\-Music}}
+\index{$\sim$\-Music@{$\sim$\-Music}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{$\sim$\-Music}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Music\-::$\sim$\-Music (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_music_a4c65860fed2f01d0eaa6c4199870414b}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_music_af4738b69c4c5038f71414ad7ffbbdc2b}{\index{sf\-::\-Music@{sf\-::\-Music}!get\-Duration@{get\-Duration}}
+\index{get\-Duration@{get\-Duration}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{get\-Duration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} sf\-::\-Music\-::get\-Duration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_music_af4738b69c4c5038f71414ad7ffbbdc2b}
+
+
+Get the total duration of the music. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_music}{Music} duration 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}{\index{sf\-::\-Music@{sf\-::\-Music}!on\-Get\-Data@{on\-Get\-Data}}
+\index{on\-Get\-Data@{on\-Get\-Data}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{on\-Get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool sf\-::\-Music\-::on\-Get\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf Chunk} \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_music_aca1bcb4e5d56a854133e74bd86374463}
+
+
+Request a new chunk of audio samples from the stream source. 
+
+This function fills the chunk from the next samples to read from the audio file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Chunk of data to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True to continue playback, false to stop 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classsf_1_1_sound_stream_a968ec024a6e45490962c8a1121cb7c5f}{sf\-::\-Sound\-Stream}.
+
+\hypertarget{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}{\index{sf\-::\-Music@{sf\-::\-Music}!on\-Seek@{on\-Seek}}
+\index{on\-Seek@{on\-Seek}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{on\-Seek}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Music\-::on\-Seek (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{time\-Offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_music_a15119cc0419c16bb334fa0698699c02e}
+
+
+Change the current playing position in the stream source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\-Offset} & New playing position, from the beginning of the music \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classsf_1_1_sound_stream_a907036dd2ca7d3af5ead316e54b75997}{sf\-::\-Sound\-Stream}.
+
+\hypertarget{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{\index{sf\-::\-Music@{sf\-::\-Music}!open\-From\-File@{open\-From\-File}}
+\index{open\-From\-File@{open\-From\-File}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{open\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Music\-::open\-From\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}
+
+
+Open a music from an audio file. 
+
+This function doesn't start playing the music (call \hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). Here is a complete list of all the supported audio formats\-: ogg, wav, flac, aiff, au, raw, paf, svx, nist, voc, ircam, w64, mat4, mat5 pvf, htk, sds, avr, sd2, caf, wve, mpc2k, rf64.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the music file to open\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}{open\-From\-Memory}, \hyperlink{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}{open\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}{\index{sf\-::\-Music@{sf\-::\-Music}!open\-From\-Memory@{open\-From\-Memory}}
+\index{open\-From\-Memory@{open\-From\-Memory}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{open\-From\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Music\-::open\-From\-Memory (
+\begin{DoxyParamCaption}
+\item[{const {\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size\-In\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}
+
+
+Open a music from an audio file in memory. 
+
+This function doesn't start playing the music (call \hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). Here is a complete list of all the supported audio formats\-: ogg, wav, flac, aiff, au, raw, paf, svx, nist, voc, ircam, w64, mat4, mat5 pvf, htk, sds, avr, sd2, caf, wve, mpc2k, rf64. Since the music is not loaded completely but rather streamed continuously, the {\itshape data} must remain available as long as the music is playing (ie. you can't deallocate it right after calling this function).
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size\-In\-Bytes} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\-From\-File}, \hyperlink{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}{open\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}{\index{sf\-::\-Music@{sf\-::\-Music}!open\-From\-Stream@{open\-From\-Stream}}
+\index{open\-From\-Stream@{open\-From\-Stream}!sf::Music@{sf\-::\-Music}}
+\subsubsection[{open\-From\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Music\-::open\-From\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Stream} \&}]{stream}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_music_a4e55d1910a26858b44778c26b237d673}
+
+
+Open a music from an audio file in a custom stream. 
+
+This function doesn't start playing the music (call \hyperlink{classsf_1_1_sound_stream_afdc08b69cab5f243d9324940a85a1144}{play()} to do so). Here is a complete list of all the supported audio formats\-: ogg, wav, flac, aiff, au, raw, paf, svx, nist, voc, ircam, w64, mat4, mat5 pvf, htk, sds, avr, sd2, caf, wve, mpc2k, rf64. Since the music is not loaded completely but rather streamed continuously, the {\itshape stream} must remain alive as long as the music is playing (ie. you can't destroy it right after calling this function).
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_music_a3edc66e5f5b3f11e84b90eaec9c7d7c0}{open\-From\-File}, \hyperlink{classsf_1_1_music_ae93b21bcf28ff0b5fec458039111386e}{open\-From\-Memory} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Audio/\hyperlink{_music_8hpp}{Music.\-hpp}\end{DoxyCompactItemize}

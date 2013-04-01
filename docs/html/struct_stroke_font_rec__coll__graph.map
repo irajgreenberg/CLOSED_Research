@@ -1,0 +1,5 @@
+<map id="StrokeFontRec" name="StrokeFontRec">
+<area shape="rect" id="node2" href="$struct_stroke_char_rec.html" title="StrokeCharRec" alt="" coords="5,187,117,213"/>
+<area shape="rect" id="node3" href="$struct_stroke_rec.html" title="StrokeRec" alt="" coords="19,96,103,123"/>
+<area shape="rect" id="node4" href="$struct_coord_rec.html" title="CoordRec" alt="" coords="20,5,103,32"/>
+</map>

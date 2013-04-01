@@ -1,0 +1,178 @@
+\hypertarget{classsf_1_1_rectangle_shape}{\section{sf\-:\-:Rectangle\-Shape Class Reference}
+\label{classsf_1_1_rectangle_shape}\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}}
+}
+
+
+Specialized shape representing a rectangle.  
+
+
+
+
+{\ttfamily \#include $<$Rectangle\-Shape.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Rectangle\-Shape\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classsf_1_1_rectangle_shape__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Rectangle\-Shape\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classsf_1_1_rectangle_shape__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}{Rectangle\-Shape} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size}=\hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f}(0, 0))
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\-Size} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Set the size of the rectangle. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_rectangle_shape_acaacbaee87c38a526a9d895742faab54}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the rectangle. \end{DoxyCompactList}\item 
+virtual unsigned int \hyperlink{classsf_1_1_rectangle_shape_a439f5a92583baf972878c836b73bf955}{get\-Point\-Count} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of points defining the shape. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \hyperlink{classsf_1_1_rectangle_shape_a3994f7f937d6332fe64b6990d5bc43a1}{get\-Point} (unsigned int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}) const 
+\begin{DoxyCompactList}\small\item\em Get a point of the shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Specialized shape representing a rectangle. 
+
+This class inherits all the functions of \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} (position, rotation, scale, bounds, ...) as well as the functions of \hyperlink{classsf_1_1_shape}{sf\-::\-Shape} (outline, color, texture, ...).
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_rectangle_shape}{sf::RectangleShape} rectangle;
+rectangle.\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{setSize}(\hyperlink{classsf_1_1_vector2}{sf::Vector2f}(100, 50));
+rectangle.\hyperlink{classsf_1_1_shape_a5978f41ee349ac3c52942996dcb184f7}{setOutlineColor}(\hyperlink{classsf_1_1_color_a127dbf55db9c07d0fa8f4bfcbb97594a}{sf::Color::Red});
+rectangle.\hyperlink{classsf_1_1_shape_a5ad336ad74fc1f567fce3b7e44cf87dc}{setOutlineThickness}(5);
+rectangle.\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{setPosition}(10, 20);
+...
+window.draw(rectangle);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shape}{sf\-::\-Shape}, \hyperlink{classsf_1_1_circle_shape}{sf\-::\-Circle\-Shape}, \hyperlink{classsf_1_1_convex_shape}{sf\-::\-Convex\-Shape} 
+\end{DoxySeeAlso}
+
+
+Definition at line 41 of file Rectangle\-Shape.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}{\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}!Rectangle\-Shape@{Rectangle\-Shape}}
+\index{Rectangle\-Shape@{Rectangle\-Shape}!sf::RectangleShape@{sf\-::\-Rectangle\-Shape}}
+\subsubsection[{Rectangle\-Shape}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Rectangle\-Shape\-::\-Rectangle\-Shape (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{size = {\ttfamily {\bf Vector2f}(0,~0)}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_rectangle_shape_a83a2be157ebee85c95ed491c3e78dd7c}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & Size of the rectangle \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_rectangle_shape_a3994f7f937d6332fe64b6990d5bc43a1}{\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}!get\-Point@{get\-Point}}
+\index{get\-Point@{get\-Point}!sf::RectangleShape@{sf\-::\-Rectangle\-Shape}}
+\subsubsection[{get\-Point}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector2f} sf\-::\-Rectangle\-Shape\-::get\-Point (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_rectangle_shape_a3994f7f937d6332fe64b6990d5bc43a1}
+
+
+Get a point of the shape. 
+
+The result is undefined if {\itshape index} is out of the valid range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the point to get, in range \mbox{[}0 .. Get\-Point\-Count() -\/ 1\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Index-\/th point of the shape 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classsf_1_1_shape_a397f3b4cdb7ad98cdc6c034816c652d2}{sf\-::\-Shape}.
+
+\hypertarget{classsf_1_1_rectangle_shape_a439f5a92583baf972878c836b73bf955}{\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}!get\-Point\-Count@{get\-Point\-Count}}
+\index{get\-Point\-Count@{get\-Point\-Count}!sf::RectangleShape@{sf\-::\-Rectangle\-Shape}}
+\subsubsection[{get\-Point\-Count}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int sf\-::\-Rectangle\-Shape\-::get\-Point\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_rectangle_shape_a439f5a92583baf972878c836b73bf955}
+
+
+Get the number of points defining the shape. 
+
+\begin{DoxyReturn}{Returns}
+Number of points of the shape 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classsf_1_1_shape_ad84e1b675ecd270ad8151aea4e271a78}{sf\-::\-Shape}.
+
+\hypertarget{classsf_1_1_rectangle_shape_acaacbaee87c38a526a9d895742faab54}{\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::RectangleShape@{sf\-::\-Rectangle\-Shape}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-Rectangle\-Shape\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_rectangle_shape_acaacbaee87c38a526a9d895742faab54}
+
+
+Get the size of the rectangle. 
+
+\begin{DoxyReturn}{Returns}
+Size of the rectangle
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{set\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}{\index{sf\-::\-Rectangle\-Shape@{sf\-::\-Rectangle\-Shape}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!sf::RectangleShape@{sf\-::\-Rectangle\-Shape}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Rectangle\-Shape\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{size}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_rectangle_shape_a5c65d374d4a259dfdc24efdd24a5dbec}
+
+
+Set the size of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size of the rectangle\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_rectangle_shape_acaacbaee87c38a526a9d895742faab54}{get\-Size} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_rectangle_shape_8hpp}{Rectangle\-Shape.\-hpp}\end{DoxyCompactItemize}

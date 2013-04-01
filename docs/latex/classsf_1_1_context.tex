@@ -1,0 +1,150 @@
+\hypertarget{classsf_1_1_context}{\section{sf\-:\-:Context Class Reference}
+\label{classsf_1_1_context}\index{sf\-::\-Context@{sf\-::\-Context}}
+}
+
+
+Class holding a valid drawing context.  
+
+
+
+
+{\ttfamily \#include $<$Context.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Context\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsf_1_1_context__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Context\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsf_1_1_context__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_context_aba22797a790706ca2c5c04ee39f2b555}{Context} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_context_a805b1bbdb3e52b1fda7c9bf2cd6ca86b}{$\sim$\-Context} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_context_a0806f915ea81ae1f4e8135a7a3696562}{set\-Active} (bool active)
+\begin{DoxyCompactList}\small\item\em Activate or deactivate explicitely the context. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_context_a2a9e3529e48919120e6b6fc10bad296c}{Context} (const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings, unsigned int \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, unsigned int \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height})
+\begin{DoxyCompactList}\small\item\em Construct a in-\/memory context. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class holding a valid drawing context. 
+
+If you need to make Open\-G\-L calls without having an active window (like in a thread), you can use an instance of this class to get a valid context.
+
+Having a valid context is necessary for {\itshape every} Open\-G\-L call.
+
+Note that a context is only active in its current thread, if you create a new thread it will have no valid context by default.
+
+To use a \hyperlink{classsf_1_1_context}{sf\-::\-Context} instance, just construct it and let it live as long as you need a valid context. No explicit activation is needed, all it has to do is to exist. Its destructor will take care of deactivating and freeing all the attached resources.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} threadFunction(\textcolor{keywordtype}{void}*)
+\{
+   \hyperlink{classsf_1_1_context}{sf::Context} context;
+   \textcolor{comment}{// from now on, you have a valid context}
+
+   \textcolor{comment}{// you can make OpenGL calls}
+   \hyperlink{gl_8h_a17b651906e2eed37f6615b50ebb97b98}{glClear}(\hyperlink{gl_8h_aef2a9e9a4b130bc4de57514327847b4f}{GL\_DEPTH\_BUFFER\_BIT});
+\}
+\textcolor{comment}{// the context is automatically deactivated and destroyed}
+\textcolor{comment}{// by the sf::Context destructor}
+\end{DoxyCode}
+ 
+
+Definition at line 48 of file Context.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_context_aba22797a790706ca2c5c04ee39f2b555}{\index{sf\-::\-Context@{sf\-::\-Context}!Context@{Context}}
+\index{Context@{Context}!sf::Context@{sf\-::\-Context}}
+\subsubsection[{Context}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Context\-::\-Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_context_aba22797a790706ca2c5c04ee39f2b555}
+
+
+Default constructor. 
+
+The constructor creates and activates the context \hypertarget{classsf_1_1_context_a805b1bbdb3e52b1fda7c9bf2cd6ca86b}{\index{sf\-::\-Context@{sf\-::\-Context}!$\sim$\-Context@{$\sim$\-Context}}
+\index{$\sim$\-Context@{$\sim$\-Context}!sf::Context@{sf\-::\-Context}}
+\subsubsection[{$\sim$\-Context}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Context\-::$\sim$\-Context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_context_a805b1bbdb3e52b1fda7c9bf2cd6ca86b}
+
+
+Destructor. 
+
+The desctructor deactivates and destroys the context \hypertarget{classsf_1_1_context_a2a9e3529e48919120e6b6fc10bad296c}{\index{sf\-::\-Context@{sf\-::\-Context}!Context@{Context}}
+\index{Context@{Context}!sf::Context@{sf\-::\-Context}}
+\subsubsection[{Context}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Context\-::\-Context (
+\begin{DoxyParamCaption}
+\item[{const {\bf Context\-Settings} \&}]{settings, }
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{height}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_context_a2a9e3529e48919120e6b6fc10bad296c}
+
+
+Construct a in-\/memory context. 
+
+This constructor is for internal use, you don't need to bother with it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em settings} & Creation parameters \\
+\hline
+{\em width} & Back buffer width \\
+\hline
+{\em height} & Back buffer height \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_context_a0806f915ea81ae1f4e8135a7a3696562}{\index{sf\-::\-Context@{sf\-::\-Context}!set\-Active@{set\-Active}}
+\index{set\-Active@{set\-Active}!sf::Context@{sf\-::\-Context}}
+\subsubsection[{set\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Context\-::set\-Active (
+\begin{DoxyParamCaption}
+\item[{bool}]{active}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_context_a0806f915ea81ae1f4e8135a7a3696562}
+
+
+Activate or deactivate explicitely the context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & True to activate, false to deactivate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True on success, false on failure 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_context_8hpp}{Context.\-hpp}\end{DoxyCompactItemize}

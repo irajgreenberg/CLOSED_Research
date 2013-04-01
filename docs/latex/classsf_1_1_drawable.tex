@@ -1,0 +1,144 @@
+\hypertarget{classsf_1_1_drawable}{\section{sf\-:\-:Drawable Class Reference}
+\label{classsf_1_1_drawable}\index{sf\-::\-Drawable@{sf\-::\-Drawable}}
+}
+
+
+Abstract base class for objects that can be drawn to a render target.  
+
+
+
+
+{\ttfamily \#include $<$Drawable.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Drawable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsf_1_1_drawable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}{$\sim$\-Drawable} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{draw} (\hyperlink{classsf_1_1_render_target}{Render\-Target} \&\hyperlink{gl3ext_8h_af9d0cbbbeb7414e786c41899e5a856d7}{target}, \hyperlink{classsf_1_1_render_states}{Render\-States} states) const =0
+\begin{DoxyCompactList}\small\item\em Draw the object to a render target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_drawable_aa5afc6f82b7b587ed5ada4d227ce32aa}{Render\-Target}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class for objects that can be drawn to a render target. 
+
+\hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable} is a very simple base class that allows objects of derived classes to be drawn to a \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target}.
+
+All you have to do in your derived class is to override the draw virtual function.
+
+Note that inheriting from \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable} is not mandatory, but it allows this nice syntax \char`\"{}window.\-draw(object)\char`\"{} rather than \char`\"{}object.\-draw(window)\char`\"{}, which is more consistent with other S\-F\-M\-L classes.
+
+Example\-: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyDrawable : \textcolor{keyword}{public} \hyperlink{classsf_1_1_drawable}{sf::Drawable}
+\{
+\textcolor{keyword}{public} :
+
+   ...
+
+private :
+
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \hyperlink{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{draw}(\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}& target, RenderStates states)\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        \textcolor{comment}{// You can draw other high-level objects}
+        target.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(m\_sprite, states);
+
+        \textcolor{comment}{// ... or use the low-level API}
+        states.texture = &m\_texture;
+        target.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(m\_vertices, states);
+
+        \textcolor{comment}{// ... or draw with OpenGL directly}
+        \hyperlink{gl_8h_a78d1cc551d8585ab6aee14f75cd6671f}{glBegin}(\hyperlink{gl_8h_a36b428225d54dd9cf2e564e5ada3ad3d}{GL\_QUADS});
+        ...
+        \hyperlink{gl_8h_af50123535ec586f448744e0bc5a35923}{glEnd}();
+    \}
+
+    \hyperlink{classsf_1_1_sprite}{sf::Sprite} m\_sprite;
+    \hyperlink{classsf_1_1_texture}{sf::Texture} m\_texture;
+    \hyperlink{classsf_1_1_vertex_array}{sf::VertexArray} m\_vertices;
+\};
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target} 
+\end{DoxySeeAlso}
+
+
+Definition at line 44 of file Drawable.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}{\index{sf\-::\-Drawable@{sf\-::\-Drawable}!$\sim$\-Drawable@{$\sim$\-Drawable}}
+\index{$\sim$\-Drawable@{$\sim$\-Drawable}!sf::Drawable@{sf\-::\-Drawable}}
+\subsubsection[{$\sim$\-Drawable}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Drawable\-::$\sim$\-Drawable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classsf_1_1_drawable_a906002f2df7beb5edbddf5bbef96f120}
+
+
+Virtual destructor. 
+
+
+
+Definition at line 52 of file Drawable.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}{\index{sf\-::\-Drawable@{sf\-::\-Drawable}!draw@{draw}}
+\index{draw@{draw}!sf::Drawable@{sf\-::\-Drawable}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Drawable\-::draw (
+\begin{DoxyParamCaption}
+\item[{{\bf Render\-Target} \&}]{target, }
+\item[{{\bf Render\-States}}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classsf_1_1_drawable_a90d2c88bba9b035a0844eccb380ef631}
+
+
+Draw the object to a render target. 
+
+This is a pure virtual function that has to be implemented by the derived class to define how the drawable should be drawn.
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & Render target to draw to \\
+\hline
+{\em states} & Current render states \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_drawable_aa5afc6f82b7b587ed5ada4d227ce32aa}{\index{sf\-::\-Drawable@{sf\-::\-Drawable}!Render\-Target@{Render\-Target}}
+\index{Render\-Target@{Render\-Target}!sf::Drawable@{sf\-::\-Drawable}}
+\subsubsection[{Render\-Target}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Render\-Target}\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_drawable_aa5afc6f82b7b587ed5ada4d227ce32aa}
+
+
+Definition at line 56 of file Drawable.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_drawable_8hpp}{Drawable.\-hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,301 @@
+\hypertarget{classsf_1_1_render_window}{\section{sf\-:\-:Render\-Window Class Reference}
+\label{classsf_1_1_render_window}\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}}
+}
+
+
+\hyperlink{classsf_1_1_window}{Window} that can serve as a target for 2\-D drawing.  
+
+
+
+
+{\ttfamily \#include $<$Render\-Window.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Render\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classsf_1_1_render_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Render\-Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classsf_1_1_render_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_render_window_a839bbf336bdcafb084dafc3076fc9021}{Render\-Window} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_window_a828cf38403a246c11ae98a316f271941}{Render\-Window} (\hyperlink{classsf_1_1_video_mode}{Video\-Mode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&title, \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} style=\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}{Style\-::\-Default}, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Construct a new window. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_render_window_a25c0af7d515e710b6eebc9c6be952aa5}{Render\-Window} (Window\-Handle handle, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Construct the window from an existing control. \end{DoxyCompactList}\item 
+virtual \hyperlink{classsf_1_1_render_window_a3407e36bfc1752d723140438a825365c}{$\sim$\-Render\-Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{classsf_1_1_render_window_a2c7ff414be32621a453745cf2a0f8a3e}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the rendering region of the window. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_image}{Image} \hyperlink{classsf_1_1_render_window_a9bd8655d0bac83145bfc329ea7a6d538}{capture} () const 
+\begin{DoxyCompactList}\small\item\em Copy the current contents of the window to an image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_window_a5bef0040b0fa87bed9fbd459c980d53a}{on\-Create} ()
+\begin{DoxyCompactList}\small\item\em Function called after the window has been created. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_render_window_a5c85fe482313562d33ffd24a194b6fef}{on\-Resize} ()
+\begin{DoxyCompactList}\small\item\em Function called after the window has been resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsf_1_1_window}{Window} that can serve as a target for 2\-D drawing. 
+
+\hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window} is the main class of the Graphics module. It defines an O\-S window that can be painted using the other classes of the graphics module.
+
+\hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window} is derived from \hyperlink{classsf_1_1_window}{sf\-::\-Window}, thus it inherits all its features\-: events, window management, Open\-G\-L rendering, etc. See the documentation of \hyperlink{classsf_1_1_window}{sf\-::\-Window} for a more complete description of all these features, as well as code examples.
+
+On top of that, \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window} adds more features related to 2\-D drawing with the graphics module (see its base class \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target} for more details). Here is a typical rendering and event loop with a \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}\-:
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Declare and create a new render-window}
+\hyperlink{classsf_1_1_render_window}{sf::RenderWindow} window(\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}(800, 600), \textcolor{stringliteral}{"SFML window"});
+
+\textcolor{comment}{// Limit the framerate to 60 frames per second (this step is optional)}
+window.setFramerateLimit(60);
+
+\textcolor{comment}{// The main loop - ends as soon as the window is closed}
+\textcolor{keywordflow}{while} (window.isOpen())
+\{
+   \textcolor{comment}{// Event processing}
+   \hyperlink{classsf_1_1_event}{sf::Event} event;
+   \textcolor{keywordflow}{while} (window.pollEvent(event))
+   \{
+       \textcolor{comment}{// Request for closing the window}
+       \textcolor{keywordflow}{if} (event.\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type} == \hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa316e4212e083f1dce79efd8d9e9c0a95}{sf::Event::Closed})
+           window.close();
+   \}
+
+   \textcolor{comment}{// Clear the whole window before rendering a new frame}
+   window.clear();
+
+   \textcolor{comment}{// Draw some graphical entities}
+   window.draw(sprite);
+   window.draw(circle);
+   window.draw(text);
+
+   \textcolor{comment}{// End the current frame and display its contents on screen}
+   window.display();
+\}
+\end{DoxyCode}
+
+
+Like \hyperlink{classsf_1_1_window}{sf\-::\-Window}, \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window} is still able to render direct Open\-G\-L stuff. It is even possible to mix together Open\-G\-L calls and regular S\-F\-M\-L drawing commands.
+
+
+\begin{DoxyCode}
+\textcolor{comment}{// Create the render window}
+\hyperlink{classsf_1_1_render_window}{sf::RenderWindow} window(\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}(800, 600), \textcolor{stringliteral}{"SFML OpenGL"});
+
+\textcolor{comment}{// Create a sprite and a text to display}
+\hyperlink{classsf_1_1_sprite}{sf::Sprite} sprite;
+\hyperlink{classsf_1_1_text}{sf::Text} text;
+...
+
+\textcolor{comment}{// Perform OpenGL initializations}
+glMatrixMode(\hyperlink{gl_8h_a85e93b355494186ced027f1a1142fefb}{GL\_PROJECTION});
+...
+
+\textcolor{comment}{// Start the rendering loop}
+while (window.isOpen())
+\{
+    \textcolor{comment}{// Process events}
+    ...
+
+    \textcolor{comment}{// Draw a background sprite}
+    window.pushGLStates();
+    window.draw(sprite);
+    window.popGLStates();
+
+    \textcolor{comment}{// Draw a 3D object using OpenGL}
+    \hyperlink{gl_8h_a78d1cc551d8585ab6aee14f75cd6671f}{glBegin}(\hyperlink{gl_8h_a36b428225d54dd9cf2e564e5ada3ad3d}{GL\_QUADS});
+        \hyperlink{gl_8h_a958e3235784668353fe641e7b4fafa83}{glVertex3f}(...);
+        ...
+    \hyperlink{gl_8h_af50123535ec586f448744e0bc5a35923}{glEnd}();
+
+    \textcolor{comment}{// Draw text on top of the 3D object}
+    window.pushGLStates();
+    window.draw(text);
+    window.popGLStates();
+
+    \textcolor{comment}{// Finally, display the rendered frame on screen}
+    window.display();
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window}{sf\-::\-Window}, \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target}, \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture}, \hyperlink{classsf_1_1_view}{sf\-::\-View} 
+\end{DoxySeeAlso}
+
+
+Definition at line 44 of file Render\-Window.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_render_window_a839bbf336bdcafb084dafc3076fc9021}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!Render\-Window@{Render\-Window}}
+\index{Render\-Window@{Render\-Window}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{Render\-Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-Window\-::\-Render\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_window_a839bbf336bdcafb084dafc3076fc9021}
+
+
+Default constructor. 
+
+This constructor doesn't actually create the window, use the other constructors or call Create to do so. \hypertarget{classsf_1_1_render_window_a828cf38403a246c11ae98a316f271941}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!Render\-Window@{Render\-Window}}
+\index{Render\-Window@{Render\-Window}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{Render\-Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-Window\-::\-Render\-Window (
+\begin{DoxyParamCaption}
+\item[{{\bf Video\-Mode}}]{mode, }
+\item[{const {\bf std\-::string} \&}]{title, }
+\item[{{\bf Uint32}}]{style = {\ttfamily {\bf Style\-::\-Default}}, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_render_window_a828cf38403a246c11ae98a316f271941}
+
+
+Construct a new window. 
+
+This constructor creates the window with the size and pixel depth defined in {\itshape mode}. An optional style can be passed to customize the look and behaviour of the window (borders, title bar, resizable, closable, ...).
+
+The fourth parameter is an optional structure specifying advanced Open\-G\-L context settings such as antialiasing, depth-\/buffer bits, etc. You shouldn't care about these parameters for a regular usage of the graphics module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Video mode to use (defines the width, height and depth of the rendering area of the window) \\
+\hline
+{\em title} & Title of the window \\
+\hline
+{\em style} & \hyperlink{classsf_1_1_window}{Window} style \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_window_a25c0af7d515e710b6eebc9c6be952aa5}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!Render\-Window@{Render\-Window}}
+\index{Render\-Window@{Render\-Window}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{Render\-Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Render\-Window\-::\-Render\-Window (
+\begin{DoxyParamCaption}
+\item[{Window\-Handle}]{handle, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_render_window_a25c0af7d515e710b6eebc9c6be952aa5}
+
+
+Construct the window from an existing control. 
+
+Use this constructor if you want to create an S\-F\-M\-L rendering area into an already existing control.
+
+The fourth parameter is an optional structure specifying advanced Open\-G\-L context settings such as antialiasing, depth-\/buffer bits, etc. You shouldn't care about these parameters for a regular usage of the graphics module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Platform-\/specific handle of the control \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_render_window_a3407e36bfc1752d723140438a825365c}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!$\sim$\-Render\-Window@{$\sim$\-Render\-Window}}
+\index{$\sim$\-Render\-Window@{$\sim$\-Render\-Window}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{$\sim$\-Render\-Window}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Render\-Window\-::$\sim$\-Render\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_render_window_a3407e36bfc1752d723140438a825365c}
+
+
+Destructor. 
+
+Closes the window and free all the resources attached to it. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_render_window_a9bd8655d0bac83145bfc329ea7a6d538}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!capture@{capture}}
+\index{capture@{capture}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{capture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Image} sf\-::\-Render\-Window\-::capture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_render_window_a9bd8655d0bac83145bfc329ea7a6d538}
+
+
+Copy the current contents of the window to an image. 
+
+This is a slow operation, whose main purpose is to make screenshots of the application. If you want to update an image with the contents of the window and then use it for drawing, you should rather use a \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} and its update(\-Window\&) function. You can also draw things directly to a texture with the \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture} class.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_image}{Image} containing the captured contents 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_render_window_a2c7ff414be32621a453745cf2a0f8a3e}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Vector2u} sf\-::\-Render\-Window\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_render_window_a2c7ff414be32621a453745cf2a0f8a3e}
+
+
+Get the size of the rendering region of the window. 
+
+The size doesn't include the titlebar and borders of the window.
+
+\begin{DoxyReturn}{Returns}
+Size in pixels 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classsf_1_1_render_target_a2e5ade2457d9fb4c4907ae5b3d9e94a5}{sf\-::\-Render\-Target}.
+
+\hypertarget{classsf_1_1_render_window_a5bef0040b0fa87bed9fbd459c980d53a}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!on\-Create@{on\-Create}}
+\index{on\-Create@{on\-Create}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{on\-Create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Render\-Window\-::on\-Create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_render_window_a5bef0040b0fa87bed9fbd459c980d53a}
+
+
+Function called after the window has been created. 
+
+This function is called so that derived classes can perform their own specific initialization as soon as the window is created. 
+
+Reimplemented from \hyperlink{classsf_1_1_window_a106633b9be49b27f83d4712689b493eb}{sf\-::\-Window}.
+
+\hypertarget{classsf_1_1_render_window_a5c85fe482313562d33ffd24a194b6fef}{\index{sf\-::\-Render\-Window@{sf\-::\-Render\-Window}!on\-Resize@{on\-Resize}}
+\index{on\-Resize@{on\-Resize}!sf::RenderWindow@{sf\-::\-Render\-Window}}
+\subsubsection[{on\-Resize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Render\-Window\-::on\-Resize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_render_window_a5c85fe482313562d33ffd24a194b6fef}
+
+
+Function called after the window has been resized. 
+
+This function is called so that derived classes can perform custom actions when the size of the window changes. 
+
+Reimplemented from \hyperlink{classsf_1_1_window_a10f567a387da7b49f417f73321fcf64d}{sf\-::\-Window}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_render_window_8hpp}{Render\-Window.\-hpp}\end{DoxyCompactItemize}

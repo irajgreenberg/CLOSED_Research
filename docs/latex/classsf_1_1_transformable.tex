@@ -1,0 +1,551 @@
+\hypertarget{classsf_1_1_transformable}{\section{sf\-:\-:Transformable Class Reference}
+\label{classsf_1_1_transformable}\index{sf\-::\-Transformable@{sf\-::\-Transformable}}
+}
+
+
+Decomposed transform defined by a position, a rotation and a scale.  
+
+
+
+
+{\ttfamily \#include $<$Transformable.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Transformable\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsf_1_1_transformable__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_transformable_ae71710de0fef423121bab1c684954a2e}{Transformable} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classsf_1_1_transformable_a43253abcb863195a673c2a347a7425cc}{$\sim$\-Transformable} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{set\-Position} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_af1a42209ce2b5d3f07b00f917bcd8015}{set\-Position} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&position)
+\begin{DoxyCompactList}\small\item\em set the position of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{set\-Rotation} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle})
+\begin{DoxyCompactList}\small\item\em set the orientation of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}{set\-Scale} (float factor\-X, float factor\-Y)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a4c48a87f1626047e448f9c1a68ff167e}{set\-Scale} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&factors)
+\begin{DoxyCompactList}\small\item\em set the scale factors of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{set\-Origin} (float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_aa93a835ffbf3bee2098dfbbc695a7f05}{set\-Origin} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&origin)
+\begin{DoxyCompactList}\small\item\em set the local origin of the object \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}{get\-Position} () const 
+\begin{DoxyCompactList}\small\item\em get the position of the object \end{DoxyCompactList}\item 
+float \hyperlink{classsf_1_1_transformable_ad783a7e9971398ec613d22455252809e}{get\-Rotation} () const 
+\begin{DoxyCompactList}\small\item\em get the orientation of the object \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_transformable_a3ea9639abd7a430ac99afb0aaf1ea562}{get\-Scale} () const 
+\begin{DoxyCompactList}\small\item\em get the current scale of the object \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \& \hyperlink{classsf_1_1_transformable_a6bddc485d22bb64449d9d2d3a99a778f}{get\-Origin} () const 
+\begin{DoxyCompactList}\small\item\em get the local origin of the object \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move} (float offset\-X, float offset\-Y)
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_ab9ca691522f6ddc1a40406849b87c469}{move} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&\hyperlink{gl3_8h_ae1b92ae085ddef4b1cdca7d749339fb0}{offset})
+\begin{DoxyCompactList}\small\item\em Move the object by a given offset. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate} (float \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle})
+\begin{DoxyCompactList}\small\item\em Rotate the object. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_a3de0c6d8957f3cf318092f3f60656391}{scale} (float factor\-X, float factor\-Y)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_transformable_adecaa6c69b1f27dd5194b067d96bb694}{scale} (const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&factor)
+\begin{DoxyCompactList}\small\item\em Scale the object. \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transformable_a3b48c3362e3e2c14fef7551252deb7bb}{get\-Transform} () const 
+\begin{DoxyCompactList}\small\item\em get the combined transform of the object \end{DoxyCompactList}\item 
+const \hyperlink{classsf_1_1_transform}{Transform} \& \hyperlink{classsf_1_1_transformable_ab00de62b5d1efb2ee4cf2566dea98175}{get\-Inverse\-Transform} () const 
+\begin{DoxyCompactList}\small\item\em get the inverse of the combined transform of the object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Decomposed transform defined by a position, a rotation and a scale. 
+
+This class is provided for convenience, on top of \hyperlink{classsf_1_1_transform}{sf\-::\-Transform}.
+
+\hyperlink{classsf_1_1_transform}{sf\-::\-Transform}, as a low-\/level class, offers a great level of flexibility but it is not always convenient to manage. Indeed, one can easily combine any kind of operation, such as a translation followed by a rotation followed by a scaling, but once the result transform is built, there's no way to go backward and, let's say, change only the rotation without modifying the translation and scaling. The entire transform must be recomputed, which means that you need to retrieve the initial translation and scale factors as well, and combine them the same way you did before updating the rotation. This is a tedious operation, and it requires to store all the individual components of the final transform.
+
+That's exactly what \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} was written for\-: it hides these variables and the composed transform behind an easy to use interface. You can set or get any of the individual components without worrying about the others. It also provides the composed transform (as a \hyperlink{classsf_1_1_transform}{sf\-::\-Transform}), and keeps it up-\/to-\/date.
+
+In addition to the position, rotation and scale, \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} provides an \char`\"{}origin\char`\"{} component, which represents the local origin of the three other components. Let's take an example with a 10x10 pixels sprite. By default, the sprite is positionned/rotated/scaled relatively to its top-\/left corner, because it is the local point (0, 0). But if we change the origin to be (5, 5), the sprite will be positionned/rotated/scaled around its center instead. And if we set the origin to (10, 10), it will be transformed around its bottom-\/right corner.
+
+To keep the \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} class simple, there's only one origin for all the components. You cannot position the sprite relatively to its top-\/left corner while rotating it around its center, for example. To do such things, use \hyperlink{classsf_1_1_transform}{sf\-::\-Transform} directly.
+
+\hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable} can be used as a base class. It is often combined with \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable} -- that's what S\-F\-M\-L's sprites, texts and shapes do. 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyEntity : \textcolor{keyword}{public} \hyperlink{classsf_1_1_transformable}{sf::Transformable}, \textcolor{keyword}{public} \hyperlink{classsf_1_1_drawable}{sf::Drawable}
+\{
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} draw(\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}& target, \hyperlink{classsf_1_1_render_states}{sf::RenderStates} states)\textcolor{keyword}{
+       const}
+\textcolor{keyword}{    }\{
+        states.\hyperlink{classsf_1_1_render_states_a1f737981a0f2f0d4bb8dac866a8d1149}{transform} *= \hyperlink{classsf_1_1_transformable_a3b48c3362e3e2c14fef7551252deb7bb}{getTransform}();
+        target.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(..., states);
+    \}
+\};
+
+MyEntity entity;
+entity.setPosition(10, 20);
+entity.setRotation(45);
+window.draw(entity);
+\end{DoxyCode}
+
+
+It can also be used as a member, if you don't want to use its A\-P\-I directly (because you don't need all its functions, or you have different naming conventions for example). 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyEntity
+\{
+\textcolor{keyword}{public} :
+    \textcolor{keywordtype}{void} SetPosition(\textcolor{keyword}{const} MyVector& v)
+    \{
+        myTransform.setPosition(v.x(), v.y());
+    \}
+
+    \textcolor{keywordtype}{void} Draw(\hyperlink{classsf_1_1_render_target}{sf::RenderTarget}& target)\textcolor{keyword}{ const}
+\textcolor{keyword}{    }\{
+        target.\hyperlink{classsf_1_1_render_target_a12417a3bcc245c41d957b29583556f39}{draw}(..., myTransform.getTransform());
+    \}
+
+\textcolor{keyword}{private} :
+    \hyperlink{classsf_1_1_transformable}{sf::Transformable} myTransform;
+\};
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transform}{sf\-::\-Transform} 
+\end{DoxySeeAlso}
+
+
+Definition at line 41 of file Transformable.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_transformable_ae71710de0fef423121bab1c684954a2e}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!Transformable@{Transformable}}
+\index{Transformable@{Transformable}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{Transformable}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Transformable\-::\-Transformable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_ae71710de0fef423121bab1c684954a2e}
+
+
+Default constructor. 
+
+\hypertarget{classsf_1_1_transformable_a43253abcb863195a673c2a347a7425cc}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!$\sim$\-Transformable@{$\sim$\-Transformable}}
+\index{$\sim$\-Transformable@{$\sim$\-Transformable}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{$\sim$\-Transformable}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Transformable\-::$\sim$\-Transformable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_transformable_a43253abcb863195a673c2a347a7425cc}
+
+
+Virtual destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_transformable_ab00de62b5d1efb2ee4cf2566dea98175}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Inverse\-Transform@{get\-Inverse\-Transform}}
+\index{get\-Inverse\-Transform@{get\-Inverse\-Transform}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Inverse\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transform}\& sf\-::\-Transformable\-::get\-Inverse\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_ab00de62b5d1efb2ee4cf2566dea98175}
+
+
+get the inverse of the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+Inverse of the combined transformations applied to the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a3b48c3362e3e2c14fef7551252deb7bb}{get\-Transform} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a6bddc485d22bb64449d9d2d3a99a778f}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Origin@{get\-Origin}}
+\index{get\-Origin@{get\-Origin}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-Transformable\-::get\-Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_a6bddc485d22bb64449d9d2d3a99a778f}
+
+
+get the local origin of the object 
+
+\begin{DoxyReturn}{Returns}
+Current origin
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{set\-Origin} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-Transformable\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}
+
+
+get the position of the object 
+
+\begin{DoxyReturn}{Returns}
+Current position
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_ad783a7e9971398ec613d22455252809e}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Rotation@{get\-Rotation}}
+\index{get\-Rotation@{get\-Rotation}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}float sf\-::\-Transformable\-::get\-Rotation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_ad783a7e9971398ec613d22455252809e}
+
+
+get the orientation of the object 
+
+The rotation is always in the range \mbox{[}0, 360\mbox{]}.
+
+\begin{DoxyReturn}{Returns}
+Current rotation, in degrees
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{set\-Rotation} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a3ea9639abd7a430ac99afb0aaf1ea562}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Scale@{get\-Scale}}
+\index{get\-Scale@{get\-Scale}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vector2f}\& sf\-::\-Transformable\-::get\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_a3ea9639abd7a430ac99afb0aaf1ea562}
+
+
+get the current scale of the object 
+
+\begin{DoxyReturn}{Returns}
+Current scale factors
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}{set\-Scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a3b48c3362e3e2c14fef7551252deb7bb}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!get\-Transform@{get\-Transform}}
+\index{get\-Transform@{get\-Transform}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{get\-Transform}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Transform}\& sf\-::\-Transformable\-::get\-Transform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_transformable_a3b48c3362e3e2c14fef7551252deb7bb}
+
+
+get the combined transform of the object 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_transform}{Transform} combining the position/rotation/scale/origin of the object
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_ab00de62b5d1efb2ee4cf2566dea98175}{get\-Inverse\-Transform} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!move@{move}}
+\index{move@{move}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::move (
+\begin{DoxyParamCaption}
+\item[{float}]{offset\-X, }
+\item[{float}]{offset\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\-Position which overwrites it. Thus, it is equivalent to the following code\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_vector2}{sf::Vector2f} pos = \textcolor{keywordtype}{object}.getPosition();
+\textcolor{keywordtype}{object}.setPosition(pos.\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x} + offsetX, pos.\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y} + offsetY);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset\-X} & X offset \\
+\hline
+{\em offset\-Y} & Y offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_ab9ca691522f6ddc1a40406849b87c469}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!move@{move}}
+\index{move@{move}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{move}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::move (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{offset}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_ab9ca691522f6ddc1a40406849b87c469}
+
+
+Move the object by a given offset. 
+
+This function adds to the current position of the object, unlike set\-Position which overwrites it. Thus, it is equivalent to the following code\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{object}.setPosition(\textcolor{keywordtype}{object}.\hyperlink{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}{getPosition}() + \hyperlink{gl3_8h_ae1b92ae085ddef4b1cdca7d749339fb0}{offset});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Offset\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_af8a5ffddc0d93f238fee3bf8efe1ebda}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!rotate@{rotate}}
+\index{rotate@{rotate}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::rotate (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_af8a5ffddc0d93f238fee3bf8efe1ebda}
+
+
+Rotate the object. 
+
+This function adds to the current rotation of the object, unlike set\-Rotation which overwrites it. Thus, it is equivalent to the following code\-: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{object}.setRotation(\textcolor{keywordtype}{object}.\hyperlink{classsf_1_1_transformable_ad783a7e9971398ec613d22455252809e}{getRotation}() + \hyperlink{_vector3_8cpp_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Angle of rotation, in degrees \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_transformable_a3de0c6d8957f3cf318092f3f60656391}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!scale@{scale}}
+\index{scale@{scale}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::scale (
+\begin{DoxyParamCaption}
+\item[{float}]{factor\-X, }
+\item[{float}]{factor\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a3de0c6d8957f3cf318092f3f60656391}
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\-Scale which overwrites it. Thus, it is equivalent to the following code\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_vector2}{sf::Vector2f} scale = \textcolor{keywordtype}{object}.getScale();
+\textcolor{keywordtype}{object}.setScale(scale.\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x} * factorX, scale.\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y} * factorY);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor\-X} & Horizontal scale factor \\
+\hline
+{\em factor\-Y} & Vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}{set\-Scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_adecaa6c69b1f27dd5194b067d96bb694}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!scale@{scale}}
+\index{scale@{scale}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::scale (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{factor}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_adecaa6c69b1f27dd5194b067d96bb694}
+
+
+Scale the object. 
+
+This function multiplies the current scale of the object, unlike set\-Scale which overwrites it. Thus, it is equivalent to the following code\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_vector2}{sf::Vector2f} scale = \textcolor{keywordtype}{object}.getScale();
+\textcolor{keywordtype}{object}.setScale(scale.\hyperlink{classsf_1_1_vector2_a1e6ad77fa155f3753bfb92699bd28141}{x} * factor.x, scale.\hyperlink{classsf_1_1_vector2_a420f2481b015f4eb929c75f2af564299}{y} * factor.y);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor} & Scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}{set\-Scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Origin@{set\-Origin}}
+\index{set\-Origin@{set\-Origin}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Origin (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a56c67bd80aae8418d13fb96c034d25ec}
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new origin \\
+\hline
+{\em y} & Y coordinate of the new origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a6bddc485d22bb64449d9d2d3a99a778f}{get\-Origin} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_aa93a835ffbf3bee2098dfbbc695a7f05}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Origin@{set\-Origin}}
+\index{set\-Origin@{set\-Origin}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Origin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Origin (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{origin}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_aa93a835ffbf3bee2098dfbbc695a7f05}
+
+
+set the local origin of the object 
+
+The origin of an object defines the center point for all transformations (position, scale, rotation). The coordinates of this point must be relative to the top-\/left corner of the object, and ignore all transformations (position, scale, rotation). The default origin of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & New origin\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a6bddc485d22bb64449d9d2d3a99a778f}{get\-Origin} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a4dbfb1a7c80688b0b4c477d706550208}
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See Move to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of the new position \\
+\hline
+{\em y} & Y coordinate of the new position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \hyperlink{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}{get\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_af1a42209ce2b5d3f07b00f917bcd8015}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_af1a42209ce2b5d3f07b00f917bcd8015}
+
+
+set the position of the object 
+
+This function completely overwrites the previous position. See Move to apply an offset based on the previous position instead. The default position of a transformable object is (0, 0).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a86b461d6a941ad390c2ad8b6a4a20391}{move}, \hyperlink{classsf_1_1_transformable_a6a0552d8cf155b7df25f6ceda8ee45a5}{get\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Rotation@{set\-Rotation}}
+\index{set\-Rotation@{set\-Rotation}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Rotation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Rotation (
+\begin{DoxyParamCaption}
+\item[{float}]{angle}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a32baf2bf1a74699b03bf8c95030a38ed}
+
+
+set the orientation of the object 
+
+This function completely overwrites the previous rotation. See Rotate to add an angle based on the previous rotation instead. The default rotation of a transformable object is 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & New rotation, in degrees\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_af8a5ffddc0d93f238fee3bf8efe1ebda}{rotate}, \hyperlink{classsf_1_1_transformable_ad783a7e9971398ec613d22455252809e}{get\-Rotation} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Scale@{set\-Scale}}
+\index{set\-Scale@{set\-Scale}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Scale (
+\begin{DoxyParamCaption}
+\item[{float}]{factor\-X, }
+\item[{float}]{factor\-Y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_aaec50b46b3f41b054763304d1e727471}
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See Scale to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factor\-X} & New horizontal scale factor \\
+\hline
+{\em factor\-Y} & New vertical scale factor\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a3de0c6d8957f3cf318092f3f60656391}{scale}, \hyperlink{classsf_1_1_transformable_a3ea9639abd7a430ac99afb0aaf1ea562}{get\-Scale} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_transformable_a4c48a87f1626047e448f9c1a68ff167e}{\index{sf\-::\-Transformable@{sf\-::\-Transformable}!set\-Scale@{set\-Scale}}
+\index{set\-Scale@{set\-Scale}!sf::Transformable@{sf\-::\-Transformable}}
+\subsubsection[{set\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Transformable\-::set\-Scale (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2f} \&}]{factors}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_transformable_a4c48a87f1626047e448f9c1a68ff167e}
+
+
+set the scale factors of the object 
+
+This function completely overwrites the previous scale. See Scale to add a factor based on the previous scale instead. The default scale of a transformable object is (1, 1).
+
+
+\begin{DoxyParams}{Parameters}
+{\em factors} & New scale factors\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_transformable_a3de0c6d8957f3cf318092f3f60656391}{scale}, \hyperlink{classsf_1_1_transformable_a3ea9639abd7a430ac99afb0aaf1ea562}{get\-Scale} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_transformable_8hpp}{Transformable.\-hpp}\end{DoxyCompactItemize}

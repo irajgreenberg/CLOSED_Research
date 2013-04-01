@@ -1,0 +1,925 @@
+\hypertarget{classsf_1_1_string}{\section{sf\-:\-:String Class Reference}
+\label{classsf_1_1_string}\index{sf\-::\-String@{sf\-::\-String}}
+}
+
+
+Utility string class that automatically handles conversions between types and encodings.  
+
+
+
+
+{\ttfamily \#include $<$String.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} $>$\-::iterator \hyperlink{classsf_1_1_string_ac90f2b7b28f703020f8d027e98806235}{Iterator}
+\begin{DoxyCompactList}\small\item\em Iterator type. \end{DoxyCompactList}\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} $>$\-::const\-\_\-iterator \hyperlink{classsf_1_1_string_a8e18efc2e8464f6eb82818902d527efa}{Const\-Iterator}
+\begin{DoxyCompactList}\small\item\em Constant iterator type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_string_a9563a4e93f692e0c8e8702b374ef8692}{String} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_ac9df7f7696cff164794e338f3c89ccc5}{String} (char ansi\-Char, const std\-::locale \&locale=std\-::locale())
+\begin{DoxyCompactList}\small\item\em Construct from a single A\-N\-S\-I character and a locale. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_aefaa202d2aa5ff85b4f75a5983367e86}{String} (wchar\-\_\-t wide\-Char)
+\begin{DoxyCompactList}\small\item\em Construct from single wide character. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a8e1a5027416d121187908e2ed77079ff}{String} (\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} utf32\-Char)
+\begin{DoxyCompactList}\small\item\em Construct from single U\-T\-F-\/32 character. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a57d2b8c289f9894f859564cad034bfc7}{String} (const char $\ast$ansi\-String, const std\-::locale \&locale=std\-::locale())
+\begin{DoxyCompactList}\small\item\em Construct from a null-\/terminated C-\/style A\-N\-S\-I string and a locale. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a0aa41dcbd17b0c36c74d03d3b0147f1e}{String} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&ansi\-String, const std\-::locale \&locale=std\-::locale())
+\begin{DoxyCompactList}\small\item\em Construct from an A\-N\-S\-I string and a locale. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a5742d0a9b0c754f711820c2b5c40fa55}{String} (const wchar\-\_\-t $\ast$wide\-String)
+\begin{DoxyCompactList}\small\item\em Construct from null-\/terminated C-\/style wide string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a5e38151340af4f9a5f74ad24c0664074}{String} (const std\-::wstring \&wide\-String)
+\begin{DoxyCompactList}\small\item\em Construct from a wide string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_aea3629adf19f9fe713d4946f6c75b214}{String} (const \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} $\ast$utf32\-String)
+\begin{DoxyCompactList}\small\item\em Construct from a null-\/terminated C-\/style U\-T\-F-\/32 string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a6eee86dbe75d16bbcc26e97416c2e1ca}{String} (const std\-::basic\-\_\-string$<$ \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} $>$ \&utf32\-String)
+\begin{DoxyCompactList}\small\item\em Construct from an U\-T\-F-\/32 string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_af862594d3c4070d8ddbf08cf8dce4f59}{String} (const \hyperlink{classsf_1_1_string}{String} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a3664f92c3b488bf9f60f6b8eafe1844d}{operator std\-::string} () const 
+\begin{DoxyCompactList}\small\item\em Implicit cast operator to std\-::string (A\-N\-S\-I string) \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a20d50d45020d1dbe1779dda69ee83732}{operator std\-::wstring} () const 
+\begin{DoxyCompactList}\small\item\em Implicit cast operator to std\-::wstring (wide string) \end{DoxyCompactList}\item 
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \hyperlink{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{to\-Ansi\-String} (const std\-::locale \&locale=std\-::locale()) const 
+\begin{DoxyCompactList}\small\item\em Convert the unicode string to an A\-N\-S\-I string. \end{DoxyCompactList}\item 
+std\-::wstring \hyperlink{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}{to\-Wide\-String} () const 
+\begin{DoxyCompactList}\small\item\em Convert the unicode string to a wide string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string}{String} \& \hyperlink{classsf_1_1_string_a096255c066e5ef8c31952216b8ce9c42}{operator=} (const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string}{String} \& \hyperlink{classsf_1_1_string_ae6563ce2c243ae2160eea8a354199f4e}{operator+=} (const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of += operator to append an U\-T\-F-\/32 string. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} \hyperlink{classsf_1_1_string_a649b89a65866bf03652f7b5cb6de3bb6}{operator\mbox{[}$\,$\mbox{]}} (std\-::size\-\_\-t \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}) const 
+\begin{DoxyCompactList}\small\item\em Overload of \mbox{[}\mbox{]} operator to access a character by its position. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} \& \hyperlink{classsf_1_1_string_abc989da7f4fb873ab29188d40772ab24}{operator\mbox{[}$\,$\mbox{]}} (std\-::size\-\_\-t \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index})
+\begin{DoxyCompactList}\small\item\em Overload of \mbox{[}\mbox{]} operator to access a character by its position. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_string_a391c1b4950cbf3d3f8040cea73af2969}{clear} ()
+\begin{DoxyCompactList}\small\item\em Clear the string. \end{DoxyCompactList}\item 
+std\-::size\-\_\-t \hyperlink{classsf_1_1_string_a635d75c4cd830d5f639a41815dd0ce23}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the string. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_string_a6c43f0cbe84cf17fa6ba93d58b75fcdc}{is\-Empty} () const 
+\begin{DoxyCompactList}\small\item\em Check whether the string is empty or not. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_string_aaa78a0a46b3fbe200a4ccdedc326eb93}{erase} (std\-::size\-\_\-t position, std\-::size\-\_\-t \hyperlink{gl3_8h_a5b40aca7a9682963dd00a8f5aef0a901}{count}=1)
+\begin{DoxyCompactList}\small\item\em Erase one or more characters from the string. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_string_ad0b1455deabf07af13ee79812e05fa02}{insert} (std\-::size\-\_\-t position, const \hyperlink{classsf_1_1_string}{String} \&str)
+\begin{DoxyCompactList}\small\item\em Insert one or more characters into the string. \end{DoxyCompactList}\item 
+std\-::size\-\_\-t \hyperlink{classsf_1_1_string_ae1fc8d6ced3b6082853f8013ea051b5c}{find} (const \hyperlink{classsf_1_1_string}{String} \&str, std\-::size\-\_\-t \hyperlink{gl3_8h_ac55adc720a3098c1b454d2a4647f4361}{start}=0) const 
+\begin{DoxyCompactList}\small\item\em Find a sequence of one or more characters in the string. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} $\ast$ \hyperlink{classsf_1_1_string_af2d4e70869ebd38e225c6796e1325ae4}{get\-Data} () const 
+\begin{DoxyCompactList}\small\item\em Get a pointer to the C-\/style array of characters. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_ac90f2b7b28f703020f8d027e98806235}{Iterator} \hyperlink{classsf_1_1_string_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a8e18efc2e8464f6eb82818902d527efa}{Const\-Iterator} \hyperlink{classsf_1_1_string_a09bbf7704847ed35bf1c18aca6fba2a2}{begin} () const 
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_ac90f2b7b28f703020f8d027e98806235}{Iterator} \hyperlink{classsf_1_1_string_ac823012f39cb6f61100418876e99d53b}{end} ()
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_string_a8e18efc2e8464f6eb82818902d527efa}{Const\-Iterator} \hyperlink{classsf_1_1_string_ab6fb6ee1b21bd5dbdc9d6840f035eb79}{end} () const 
+\begin{DoxyCompactList}\small\item\em Return an iterator to the beginning of the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\-::size\-\_\-t \hyperlink{classsf_1_1_string_abaadecaf12a6b41c54d725c75fd28527}{Invalid\-Pos}
+\begin{DoxyCompactList}\small\item\em Represents an invalid position in the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}{operator==} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}{operator$<$} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}{operator==} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of == operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_a2b592c36be218b4811795fdc84eecc69}{operator!=} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of != operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}{operator$<$} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $<$ operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_a5efc1eca58cf5c17d01eb8501d303538}{operator$>$} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $>$ operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_abd342b6094b81cd086c7929b53b112ae}{operator$<$=} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $<$= operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool \hyperlink{classsf_1_1_string_a8d2979d7829d6616330a768956f251e1}{operator$>$=} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of $>$= operator to compare two U\-T\-F-\/32 strings. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} \hyperlink{classsf_1_1_string}{String} \hyperlink{classsf_1_1_string_a55ef2bf7dc6b295ef7127b0bc1e58760}{operator+} (const \hyperlink{classsf_1_1_string}{String} \&left, const \hyperlink{classsf_1_1_string}{String} \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary + operator to concatenate two strings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility string class that automatically handles conversions between types and encodings. 
+
+\hyperlink{classsf_1_1_string}{sf\-::\-String} is a utility string class defined mainly for convenience. It is a Unicode string (implemented using U\-T\-F-\/32), thus it can store any character in the world (european, chinese, arabic, hebrew, etc.).
+
+It automatically handles conversions from/to A\-N\-S\-I and wide strings, so that you can work with standard string classes and still be compatible with functions taking a \hyperlink{classsf_1_1_string}{sf\-::\-String}.
+
+
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_string}{sf::String} s;
+
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std::string} s1 = s;  \textcolor{comment}{// automatically converted to ANSI string}
+std::wstring s2 = s; \textcolor{comment}{// automatically converted to wide string}
+s = \textcolor{stringliteral}{"hello"};         \textcolor{comment}{// automatically converted from ANSI string}
+s = L\textcolor{stringliteral}{"hello"};        \textcolor{comment}{// automatically converted from wide string}
+s += \textcolor{charliteral}{'a'};            \textcolor{comment}{// automatically converted from ANSI string}
+s += L\textcolor{charliteral}{'a'};           \textcolor{comment}{// automatically converted from wide string}
+\end{DoxyCode}
+
+
+Conversions involving A\-N\-S\-I strings use the default user locale. However it is possible to use a custom locale if necessary\-: 
+\begin{DoxyCode}
+std::locale locale;
+\hyperlink{classsf_1_1_string}{sf::String} s;
+...
+std::string s1 = s.\hyperlink{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{toAnsiString}(locale);
+s = \hyperlink{classsf_1_1_string}{sf::String}(\textcolor{stringliteral}{"hello"}, locale);
+\end{DoxyCode}
+
+
+\hyperlink{classsf_1_1_string}{sf\-::\-String} defines the most important functions of the standard std\-::string class\-: removing, random access, iterating, appending, comparing, etc. However it is a simple class provided for convenience, and you may have to consider using a more optimized class if your program requires complex string handling. The automatic conversion functions will then take care of converting your string to \hyperlink{classsf_1_1_string}{sf\-::\-String} whenever S\-F\-M\-L requires it.
+
+Please note that S\-F\-M\-L also defines a low-\/level, generic interface for Unicode handling, see the \hyperlink{classsf_1_1_utf}{sf\-::\-Utf} classes. 
+
+Definition at line 43 of file String.\-hpp.
+
+
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classsf_1_1_string_a8e18efc2e8464f6eb82818902d527efa}{\index{sf\-::\-String@{sf\-::\-String}!Const\-Iterator@{Const\-Iterator}}
+\index{Const\-Iterator@{Const\-Iterator}!sf::String@{sf\-::\-String}}
+\subsubsection[{Const\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::basic\-\_\-string$<${\bf Uint32}$>$\-::const\-\_\-iterator {\bf sf\-::\-String\-::\-Const\-Iterator}}}\label{classsf_1_1_string_a8e18efc2e8464f6eb82818902d527efa}
+
+
+Constant iterator type. 
+
+
+
+Definition at line 51 of file String.\-hpp.
+
+\hypertarget{classsf_1_1_string_ac90f2b7b28f703020f8d027e98806235}{\index{sf\-::\-String@{sf\-::\-String}!Iterator@{Iterator}}
+\index{Iterator@{Iterator}!sf::String@{sf\-::\-String}}
+\subsubsection[{Iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::basic\-\_\-string$<${\bf Uint32}$>$\-::iterator {\bf sf\-::\-String\-::\-Iterator}}}\label{classsf_1_1_string_ac90f2b7b28f703020f8d027e98806235}
+
+
+Iterator type. 
+
+
+
+Definition at line 50 of file String.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_string_a9563a4e93f692e0c8e8702b374ef8692}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a9563a4e93f692e0c8e8702b374ef8692}
+
+
+Default constructor. 
+
+This constructor creates an empty string. \hypertarget{classsf_1_1_string_ac9df7f7696cff164794e338f3c89ccc5}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{char}]{ansi\-Char, }
+\item[{const std\-::locale \&}]{locale = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_ac9df7f7696cff164794e338f3c89ccc5}
+
+
+Construct from a single A\-N\-S\-I character and a locale. 
+
+The source character is converted to U\-T\-F-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\-Char} & A\-N\-S\-I character to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_aefaa202d2aa5ff85b4f75a5983367e86}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{wchar\-\_\-t}]{wide\-Char}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_aefaa202d2aa5ff85b4f75a5983367e86}
+
+
+Construct from single wide character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\-Char} & Wide character to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a8e1a5027416d121187908e2ed77079ff}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{utf32\-Char}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a8e1a5027416d121187908e2ed77079ff}
+
+
+Construct from single U\-T\-F-\/32 character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\-Char} & U\-T\-F-\/32 character to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a57d2b8c289f9894f859564cad034bfc7}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ansi\-String, }
+\item[{const std\-::locale \&}]{locale = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a57d2b8c289f9894f859564cad034bfc7}
+
+
+Construct from a null-\/terminated C-\/style A\-N\-S\-I string and a locale. 
+
+The source string is converted to U\-T\-F-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\-String} & A\-N\-S\-I string to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a0aa41dcbd17b0c36c74d03d3b0147f1e}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{ansi\-String, }
+\item[{const std\-::locale \&}]{locale = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a0aa41dcbd17b0c36c74d03d3b0147f1e}
+
+
+Construct from an A\-N\-S\-I string and a locale. 
+
+The source string is converted to U\-T\-F-\/32 according to the given locale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ansi\-String} & A\-N\-S\-I string to convert \\
+\hline
+{\em locale} & Locale to use for conversion \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a5742d0a9b0c754f711820c2b5c40fa55}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const wchar\-\_\-t $\ast$}]{wide\-String}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a5742d0a9b0c754f711820c2b5c40fa55}
+
+
+Construct from null-\/terminated C-\/style wide string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\-String} & Wide string to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a5e38151340af4f9a5f74ad24c0664074}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const std\-::wstring \&}]{wide\-String}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a5e38151340af4f9a5f74ad24c0664074}
+
+
+Construct from a wide string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wide\-String} & Wide string to convert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_aea3629adf19f9fe713d4946f6c75b214}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf Uint32} $\ast$}]{utf32\-String}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_aea3629adf19f9fe713d4946f6c75b214}
+
+
+Construct from a null-\/terminated C-\/style U\-T\-F-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\-String} & U\-T\-F-\/32 string to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a6eee86dbe75d16bbcc26e97416c2e1ca}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const std\-::basic\-\_\-string$<$ {\bf Uint32} $>$ \&}]{utf32\-String}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a6eee86dbe75d16bbcc26e97416c2e1ca}
+
+
+Construct from an U\-T\-F-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em utf32\-String} & U\-T\-F-\/32 string to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_af862594d3c4070d8ddbf08cf8dce4f59}{\index{sf\-::\-String@{sf\-::\-String}!String@{String}}
+\index{String@{String}!sf::String@{sf\-::\-String}}
+\subsubsection[{String}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::\-String (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{copy}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_af862594d3c4070d8ddbf08cf8dce4f59}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em copy} & Instance to copy \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_string_a8ec30ddc08e3a6bd11c99aed782f6dfe}{\index{sf\-::\-String@{sf\-::\-String}!begin@{begin}}
+\index{begin@{begin}!sf::String@{sf\-::\-String}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Iterator} sf\-::\-String\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a8ec30ddc08e3a6bd11c99aed782f6dfe}
+
+
+Return an iterator to the beginning of the string. 
+
+\begin{DoxyReturn}{Returns}
+Read-\/write iterator to the beginning of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_ac823012f39cb6f61100418876e99d53b}{end} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_a09bbf7704847ed35bf1c18aca6fba2a2}{\index{sf\-::\-String@{sf\-::\-String}!begin@{begin}}
+\index{begin@{begin}!sf::String@{sf\-::\-String}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Const\-Iterator} sf\-::\-String\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a09bbf7704847ed35bf1c18aca6fba2a2}
+
+
+Return an iterator to the beginning of the string. 
+
+\begin{DoxyReturn}{Returns}
+Read-\/only iterator to the beginning of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_ac823012f39cb6f61100418876e99d53b}{end} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_a391c1b4950cbf3d3f8040cea73af2969}{\index{sf\-::\-String@{sf\-::\-String}!clear@{clear}}
+\index{clear@{clear}!sf::String@{sf\-::\-String}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-String\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a391c1b4950cbf3d3f8040cea73af2969}
+
+
+Clear the string. 
+
+This function removes all the characters from the string.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a6c43f0cbe84cf17fa6ba93d58b75fcdc}{is\-Empty}, \hyperlink{classsf_1_1_string_aaa78a0a46b3fbe200a4ccdedc326eb93}{erase} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_ac823012f39cb6f61100418876e99d53b}{\index{sf\-::\-String@{sf\-::\-String}!end@{end}}
+\index{end@{end}!sf::String@{sf\-::\-String}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Iterator} sf\-::\-String\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_ac823012f39cb6f61100418876e99d53b}
+
+
+Return an iterator to the beginning of the string. 
+
+The end iterator refers to 1 position past the last character; thus it represents an invalid character and should never be accessed.
+
+\begin{DoxyReturn}{Returns}
+Read-\/write iterator to the end of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_ab6fb6ee1b21bd5dbdc9d6840f035eb79}{\index{sf\-::\-String@{sf\-::\-String}!end@{end}}
+\index{end@{end}!sf::String@{sf\-::\-String}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Const\-Iterator} sf\-::\-String\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_ab6fb6ee1b21bd5dbdc9d6840f035eb79}
+
+
+Return an iterator to the beginning of the string. 
+
+The end iterator refers to 1 position past the last character; thus it represents an invalid character and should never be accessed.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only iterator to the end of the string characters
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a8ec30ddc08e3a6bd11c99aed782f6dfe}{begin} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_aaa78a0a46b3fbe200a4ccdedc326eb93}{\index{sf\-::\-String@{sf\-::\-String}!erase@{erase}}
+\index{erase@{erase}!sf::String@{sf\-::\-String}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-String\-::erase (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t}]{position, }
+\item[{std\-::size\-\_\-t}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_aaa78a0a46b3fbe200a4ccdedc326eb93}
+
+
+Erase one or more characters from the string. 
+
+This function removes a sequence of {\itshape count} characters starting from {\itshape position}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the first character to erase \\
+\hline
+{\em count} & Number of characters to erase \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_ae1fc8d6ced3b6082853f8013ea051b5c}{\index{sf\-::\-String@{sf\-::\-String}!find@{find}}
+\index{find@{find}!sf::String@{sf\-::\-String}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}std\-::size\-\_\-t sf\-::\-String\-::find (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{str, }
+\item[{std\-::size\-\_\-t}]{start = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_ae1fc8d6ced3b6082853f8013ea051b5c}
+
+
+Find a sequence of one or more characters in the string. 
+
+This function searches for the characters of {\itshape str} into the string, starting from {\itshape start}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Characters to find \\
+\hline
+{\em start} & Where to begin searching\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Position of {\itshape str} in the string, or \hyperlink{classsf_1_1_string_abaadecaf12a6b41c54d725c75fd28527}{String\-::\-Invalid\-Pos} if not found 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_af2d4e70869ebd38e225c6796e1325ae4}{\index{sf\-::\-String@{sf\-::\-String}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!sf::String@{sf\-::\-String}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Uint32}$\ast$ sf\-::\-String\-::get\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_af2d4e70869ebd38e225c6796e1325ae4}
+
+
+Get a pointer to the C-\/style array of characters. 
+
+This functions provides a read-\/only access to a null-\/terminated C-\/style representation of the string. The returned pointer is temporary and is meant only for immediate use, thus it is not recommended to store it.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only pointer to the array of characters 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a635d75c4cd830d5f639a41815dd0ce23}{\index{sf\-::\-String@{sf\-::\-String}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::String@{sf\-::\-String}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}std\-::size\-\_\-t sf\-::\-String\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a635d75c4cd830d5f639a41815dd0ce23}
+
+
+Get the size of the string. 
+
+\begin{DoxyReturn}{Returns}
+Number of characters in the string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a6c43f0cbe84cf17fa6ba93d58b75fcdc}{is\-Empty} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_ad0b1455deabf07af13ee79812e05fa02}{\index{sf\-::\-String@{sf\-::\-String}!insert@{insert}}
+\index{insert@{insert}!sf::String@{sf\-::\-String}}
+\subsubsection[{insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-String\-::insert (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t}]{position, }
+\item[{const {\bf String} \&}]{str}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_ad0b1455deabf07af13ee79812e05fa02}
+
+
+Insert one or more characters into the string. 
+
+This function inserts the characters of {\itshape str} into the string, starting from {\itshape position}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of insertion \\
+\hline
+{\em str} & Characters to insert \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_string_a6c43f0cbe84cf17fa6ba93d58b75fcdc}{\index{sf\-::\-String@{sf\-::\-String}!is\-Empty@{is\-Empty}}
+\index{is\-Empty@{is\-Empty}!sf::String@{sf\-::\-String}}
+\subsubsection[{is\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-String\-::is\-Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a6c43f0cbe84cf17fa6ba93d58b75fcdc}
+
+
+Check whether the string is empty or not. 
+
+\begin{DoxyReturn}{Returns}
+True if the string is empty (i.\-e. contains no character)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a391c1b4950cbf3d3f8040cea73af2969}{clear}, \hyperlink{classsf_1_1_string_a635d75c4cd830d5f639a41815dd0ce23}{get\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_a3664f92c3b488bf9f60f6b8eafe1844d}{\index{sf\-::\-String@{sf\-::\-String}!operator std\-::string@{operator std\-::string}}
+\index{operator std\-::string@{operator std\-::string}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator std\-::string}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::operator {\bf std\-::string} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a3664f92c3b488bf9f60f6b8eafe1844d}
+
+
+Implicit cast operator to std\-::string (A\-N\-S\-I string) 
+
+The current global locale is used for conversion. If you want to explicitely specify a locale, see to\-Ansi\-String. Characters that do not fit in the target encoding are discarded from the returned string. This operator is defined for convenience, and is equivalent to calling \hyperlink{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{to\-Ansi\-String()}.
+
+\begin{DoxyReturn}{Returns}
+Converted A\-N\-S\-I string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{to\-Ansi\-String}, operator std\-::wstring 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_a20d50d45020d1dbe1779dda69ee83732}{\index{sf\-::\-String@{sf\-::\-String}!operator std\-::wstring@{operator std\-::wstring}}
+\index{operator std\-::wstring@{operator std\-::wstring}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator std\-::wstring}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-String\-::operator std\-::wstring (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a20d50d45020d1dbe1779dda69ee83732}
+
+
+Implicit cast operator to std\-::wstring (wide string) 
+
+Characters that do not fit in the target encoding are discarded from the returned string. This operator is defined for convenience, and is equivalent to calling \hyperlink{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}{to\-Wide\-String()}.
+
+\begin{DoxyReturn}{Returns}
+Converted wide string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}{to\-Wide\-String}, operator std\-::string 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_ae6563ce2c243ae2160eea8a354199f4e}{\index{sf\-::\-String@{sf\-::\-String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String}\& sf\-::\-String\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_ae6563ce2c243ae2160eea8a354199f4e}
+
+
+Overload of += operator to append an U\-T\-F-\/32 string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & \hyperlink{classsf_1_1_string}{String} to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a096255c066e5ef8c31952216b8ce9c42}{\index{sf\-::\-String@{sf\-::\-String}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf String}\& sf\-::\-String\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_a096255c066e5ef8c31952216b8ce9c42}
+
+
+Overload of assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & Instance to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a649b89a65866bf03652f7b5cb6de3bb6}{\index{sf\-::\-String@{sf\-::\-String}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} sf\-::\-String\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a649b89a65866bf03652f7b5cb6de3bb6}
+
+
+Overload of \mbox{[}\mbox{]} operator to access a character by its position. 
+
+This function provides read-\/only access to characters. Note\-: this function doesn't throw if {\itshape index} is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Character at position {\itshape index} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_abc989da7f4fb873ab29188d40772ab24}{\index{sf\-::\-String@{sf\-::\-String}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32}\& sf\-::\-String\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{std\-::size\-\_\-t}]{index}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_string_abc989da7f4fb873ab29188d40772ab24}
+
+
+Overload of \mbox{[}\mbox{]} operator to access a character by its position. 
+
+This function provides read and write access to characters. Note\-: this function doesn't throw if {\itshape index} is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of the character to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to the character at position {\itshape index} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{\index{sf\-::\-String@{sf\-::\-String}!to\-Ansi\-String@{to\-Ansi\-String}}
+\index{to\-Ansi\-String@{to\-Ansi\-String}!sf::String@{sf\-::\-String}}
+\subsubsection[{to\-Ansi\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::string} sf\-::\-String\-::to\-Ansi\-String (
+\begin{DoxyParamCaption}
+\item[{const std\-::locale \&}]{locale = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}
+
+
+Convert the unicode string to an A\-N\-S\-I string. 
+
+The U\-T\-F-\/32 string is converted to an A\-N\-S\-I string in the encoding defined by {\itshape locale}. Characters that do not fit in the target encoding are discarded from the returned string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em locale} & Locale to use for conversion\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Converted A\-N\-S\-I string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}{to\-Wide\-String}, operator std\-::string 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}{\index{sf\-::\-String@{sf\-::\-String}!to\-Wide\-String@{to\-Wide\-String}}
+\index{to\-Wide\-String@{to\-Wide\-String}!sf::String@{sf\-::\-String}}
+\subsubsection[{to\-Wide\-String}]{\setlength{\rightskip}{0pt plus 5cm}std\-::wstring sf\-::\-String\-::to\-Wide\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_string_afd8b085ad7255543e4dc1285389d2d82}
+
+
+Convert the unicode string to a wide string. 
+
+Characters that do not fit in the target encoding are discarded from the returned string.
+
+\begin{DoxyReturn}{Returns}
+Converted wide string
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_string_a71d111ccfaf295b8b8be8ca4a3ceb5f4}{to\-Ansi\-String}, operator std\-::wstring 
+\end{DoxySeeAlso}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classsf_1_1_string_a2b592c36be218b4811795fdc84eecc69}{\index{sf\-::\-String@{sf\-::\-String}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_a2b592c36be218b4811795fdc84eecc69}
+
+
+Overload of != operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both strings are different 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a55ef2bf7dc6b295ef7127b0bc1e58760}{\index{sf\-::\-String@{sf\-::\-String}!operator+@{operator+}}
+\index{operator+@{operator+}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} {\bf String} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_a55ef2bf7dc6b295ef7127b0bc1e58760}
+
+
+Overload of binary + operator to concatenate two strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Concatenated string 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}{\index{sf\-::\-String@{sf\-::\-String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}
+\hypertarget{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}{\index{sf\-::\-String@{sf\-::\-String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_ac2ca5a7703402a2bbafd85eec6d1e846}
+
+
+Overload of $<$ operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is alphabetically lesser than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_abd342b6094b81cd086c7929b53b112ae}{\index{sf\-::\-String@{sf\-::\-String}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_abd342b6094b81cd086c7929b53b112ae}
+
+
+Overload of $<$= operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is alphabetically lesser or equal than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}{\index{sf\-::\-String@{sf\-::\-String}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}
+\hypertarget{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}{\index{sf\-::\-String@{sf\-::\-String}!operator==@{operator==}}
+\index{operator==@{operator==}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_a2a385459fa9a237e61a712fa956d489e}
+
+
+Overload of == operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if both strings are equal 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a5efc1eca58cf5c17d01eb8501d303538}{\index{sf\-::\-String@{sf\-::\-String}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_a5efc1eca58cf5c17d01eb8501d303538}
+
+
+Overload of $>$ operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is alphabetically greater than {\itshape right} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_string_a8d2979d7829d6616330a768956f251e1}{\index{sf\-::\-String@{sf\-::\-String}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!sf::String@{sf\-::\-String}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf String} \&}]{left, }
+\item[{const {\bf String} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{classsf_1_1_string_a8d2979d7829d6616330a768956f251e1}
+
+
+Overload of $>$= operator to compare two U\-T\-F-\/32 strings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a string) \\
+\hline
+{\em right} & Right operand (a string)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is alphabetically greater or equal than {\itshape right} 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_string_abaadecaf12a6b41c54d725c75fd28527}{\index{sf\-::\-String@{sf\-::\-String}!Invalid\-Pos@{Invalid\-Pos}}
+\index{Invalid\-Pos@{Invalid\-Pos}!sf::String@{sf\-::\-String}}
+\subsubsection[{Invalid\-Pos}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::size\-\_\-t sf\-::\-String\-::\-Invalid\-Pos\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_string_abaadecaf12a6b41c54d725c75fd28527}
+
+
+Represents an invalid position in the string. 
+
+
+
+Definition at line 56 of file String.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_string_8hpp}{String.\-hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classsf_1_1_sound_source.html" title="Base class defining a sound&#39;s properties." alt="" coords="5,31,125,57"/>
+<area shape="rect" id="node2" href="$classsf_1_1_sound.html" title="Regular sound that can be played in the audio environment." alt="" coords="195,5,274,32"/>
+<area shape="rect" id="node3" href="$classsf_1_1_sound_stream.html" title="Abstract base class for streamed audio sources." alt="" coords="174,56,295,83"/>
+<area shape="rect" id="node4" href="$classsf_1_1_music.html" title="Streamed music played from an audio file." alt="" coords="344,56,419,83"/>
+</map>

@@ -1,0 +1,188 @@
+\hypertarget{main_8cpp}{\section{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/main.cpp File Reference}
+\label{main_8cpp}\index{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/main.\-cpp@{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/main.\-cpp}}
+}
+{\ttfamily \#include $<$S\-F\-M\-L/\-Window.\-hpp$>$}\\*
+{\ttfamily \#include $<$S\-F\-M\-L/\-Open\-G\-L.\-hpp$>$}\\*
+{\ttfamily \#include $<$G\-L\-U\-T/glut.\-h$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Toroid.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Matrix4.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Spline3.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Tube.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Math.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Protobyte/\-Shader.\-h\char`\"{}}\\*
+Include dependency graph for main.\-cpp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{main_8cpp_a81698de17f9abe25fc53a11539c49490}{print\-Matrices} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{main_8cpp_ac30f7d2cfb360238ed2349dc111478c0}{set\-View} (double fov\-Y, double aspect, double z\-Near, double z\-Far)
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{main_8cpp_a11f63bba0c9bac7bf2aa81ab6f1ec3ca}{set\-Shaders} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{main_8cpp_abbd64f8cf84372fc87aadcc4ad1e2687}{set\-Lights} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{main_8cpp_a12791d9e49a2fd3306290a226864aba4}{init\-G\-L} ()
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a4595a8e289e871683c0d9ff5cf44642c}{model\-View\-Matrix} \mbox{[}16\mbox{]}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a34ea9ce4b2d8cea7b52b3295435f5ef7}{projection\-Matrix} \mbox{[}16\mbox{]}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a7ca8a43db132445290dd72c343c2ce86}{light01\-\_\-ambient} \mbox{[}$\,$\mbox{]} = \{0.\-0, 0.\-0, 0.\-0, 1.\-0\}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a1f61601c034ae834b3211b0d78d5d473}{light01\-\_\-diffuse} \mbox{[}$\,$\mbox{]} = \{.\-7, .\-2, .\-2, 1.\-0\}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a9a49391a53dfe8a27b3dd694fb745b8e}{light01\-\_\-specular} \mbox{[}$\,$\mbox{]} = \{1.\-0, 1.\-0, 1.\-0, 1.\-0\}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a10098db8bce51e3d96174fde2bd47efa}{light01\-\_\-position} \mbox{[}$\,$\mbox{]} = \{1.\-0, 10.\-0, 1.\-0, 0.\-0\}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a04559fb3c00089cba09888bf237a9087}{light01\-\_\-mat\-\_\-specular} \mbox{[}$\,$\mbox{]} = \{1.\-0, 1.\-0, 1.\-0, 1.\-0\}
+\item 
+\hyperlink{gl_8h_a31aeedaeef29442c9c015ab355c8f5ab}{G\-Lfloat} \hyperlink{main_8cpp_a997f0f180fb50b8e1ea3dd0cc1006f4b}{light01\-\_\-mat\-\_\-shininess} \mbox{[}$\,$\mbox{]} = \{95\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{main_8cpp_a12791d9e49a2fd3306290a226864aba4}{\index{main.\-cpp@{main.\-cpp}!init\-G\-L@{init\-G\-L}}
+\index{init\-G\-L@{init\-G\-L}!main.cpp@{main.\-cpp}}
+\subsubsection[{init\-G\-L}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} init\-G\-L (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a12791d9e49a2fd3306290a226864aba4}
+
+
+Definition at line 294 of file main.\-cpp.
+
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\-cpp@{main.\-cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+
+Definition at line 53 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a81698de17f9abe25fc53a11539c49490}{\index{main.\-cpp@{main.\-cpp}!print\-Matrices@{print\-Matrices}}
+\index{print\-Matrices@{print\-Matrices}!main.cpp@{main.\-cpp}}
+\subsubsection[{print\-Matrices}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} print\-Matrices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a81698de17f9abe25fc53a11539c49490}
+
+
+Definition at line 326 of file main.\-cpp.
+
+\hypertarget{main_8cpp_abbd64f8cf84372fc87aadcc4ad1e2687}{\index{main.\-cpp@{main.\-cpp}!set\-Lights@{set\-Lights}}
+\index{set\-Lights@{set\-Lights}!main.cpp@{main.\-cpp}}
+\subsubsection[{set\-Lights}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} set\-Lights (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_abbd64f8cf84372fc87aadcc4ad1e2687}
+
+
+Definition at line 279 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a11f63bba0c9bac7bf2aa81ab6f1ec3ca}{\index{main.\-cpp@{main.\-cpp}!set\-Shaders@{set\-Shaders}}
+\index{set\-Shaders@{set\-Shaders}!main.cpp@{main.\-cpp}}
+\subsubsection[{set\-Shaders}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} set\-Shaders (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_a11f63bba0c9bac7bf2aa81ab6f1ec3ca}
+
+
+Definition at line 319 of file main.\-cpp.
+
+\hypertarget{main_8cpp_ac30f7d2cfb360238ed2349dc111478c0}{\index{main.\-cpp@{main.\-cpp}!set\-View@{set\-View}}
+\index{set\-View@{set\-View}!main.cpp@{main.\-cpp}}
+\subsubsection[{set\-View}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} set\-View (
+\begin{DoxyParamCaption}
+\item[{double}]{fov\-Y, }
+\item[{double}]{aspect, }
+\item[{double}]{z\-Near, }
+\item[{double}]{z\-Far}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ac30f7d2cfb360238ed2349dc111478c0}
+
+
+Definition at line 268 of file main.\-cpp.
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{main_8cpp_a7ca8a43db132445290dd72c343c2ce86}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-ambient@{light01\-\_\-ambient}}
+\index{light01\-\_\-ambient@{light01\-\_\-ambient}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-ambient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-ambient\mbox{[}$\,$\mbox{]} = \{0.\-0, 0.\-0, 0.\-0, 1.\-0\}}}\label{main_8cpp_a7ca8a43db132445290dd72c343c2ce86}
+
+
+Definition at line 41 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a1f61601c034ae834b3211b0d78d5d473}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-diffuse@{light01\-\_\-diffuse}}
+\index{light01\-\_\-diffuse@{light01\-\_\-diffuse}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-diffuse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-diffuse\mbox{[}$\,$\mbox{]} = \{.\-7, .\-2, .\-2, 1.\-0\}}}\label{main_8cpp_a1f61601c034ae834b3211b0d78d5d473}
+
+
+Definition at line 42 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a997f0f180fb50b8e1ea3dd0cc1006f4b}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-mat\-\_\-shininess@{light01\-\_\-mat\-\_\-shininess}}
+\index{light01\-\_\-mat\-\_\-shininess@{light01\-\_\-mat\-\_\-shininess}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-mat\-\_\-shininess}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-mat\-\_\-shininess\mbox{[}$\,$\mbox{]} = \{95\}}}\label{main_8cpp_a997f0f180fb50b8e1ea3dd0cc1006f4b}
+
+
+Definition at line 48 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a04559fb3c00089cba09888bf237a9087}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-mat\-\_\-specular@{light01\-\_\-mat\-\_\-specular}}
+\index{light01\-\_\-mat\-\_\-specular@{light01\-\_\-mat\-\_\-specular}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-mat\-\_\-specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-mat\-\_\-specular\mbox{[}$\,$\mbox{]} = \{1.\-0, 1.\-0, 1.\-0, 1.\-0\}}}\label{main_8cpp_a04559fb3c00089cba09888bf237a9087}
+
+
+Definition at line 47 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a10098db8bce51e3d96174fde2bd47efa}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-position@{light01\-\_\-position}}
+\index{light01\-\_\-position@{light01\-\_\-position}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-position\mbox{[}$\,$\mbox{]} = \{1.\-0, 10.\-0, 1.\-0, 0.\-0\}}}\label{main_8cpp_a10098db8bce51e3d96174fde2bd47efa}
+
+
+Definition at line 44 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a9a49391a53dfe8a27b3dd694fb745b8e}{\index{main.\-cpp@{main.\-cpp}!light01\-\_\-specular@{light01\-\_\-specular}}
+\index{light01\-\_\-specular@{light01\-\_\-specular}!main.cpp@{main.\-cpp}}
+\subsubsection[{light01\-\_\-specular}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} light01\-\_\-specular\mbox{[}$\,$\mbox{]} = \{1.\-0, 1.\-0, 1.\-0, 1.\-0\}}}\label{main_8cpp_a9a49391a53dfe8a27b3dd694fb745b8e}
+
+
+Definition at line 43 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a4595a8e289e871683c0d9ff5cf44642c}{\index{main.\-cpp@{main.\-cpp}!model\-View\-Matrix@{model\-View\-Matrix}}
+\index{model\-View\-Matrix@{model\-View\-Matrix}!main.cpp@{main.\-cpp}}
+\subsubsection[{model\-View\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} model\-View\-Matrix\mbox{[}16\mbox{]}}}\label{main_8cpp_a4595a8e289e871683c0d9ff5cf44642c}
+
+
+Definition at line 20 of file main.\-cpp.
+
+\hypertarget{main_8cpp_a34ea9ce4b2d8cea7b52b3295435f5ef7}{\index{main.\-cpp@{main.\-cpp}!projection\-Matrix@{projection\-Matrix}}
+\index{projection\-Matrix@{projection\-Matrix}!main.cpp@{main.\-cpp}}
+\subsubsection[{projection\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf G\-Lfloat} projection\-Matrix\mbox{[}16\mbox{]}}}\label{main_8cpp_a34ea9ce4b2d8cea7b52b3295435f5ef7}
+
+
+Definition at line 21 of file main.\-cpp.
+

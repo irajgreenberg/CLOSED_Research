@@ -1,0 +1,6 @@
+<map id="sf::Socket" name="sf::Socket">
+<area shape="rect" id="node3" href="$classsf_1_1_tcp_listener.html" title="Socket that listens to new TCP connections." alt="" coords="5,155,115,181"/>
+<area shape="rect" id="node4" href="$classsf_1_1_tcp_socket.html" title="Specialized socket using the TCP protocol." alt="" coords="139,155,241,181"/>
+<area shape="rect" id="node5" href="$classsf_1_1_udp_socket.html" title="Specialized socket using the UDP protocol." alt="" coords="266,155,371,181"/>
+<area shape="rect" id="node2" href="$classsf_1_1_non_copyable.html" title="Utility class that makes any derived class non&#45;copyable." alt="" coords="131,5,251,32"/>
+</map>

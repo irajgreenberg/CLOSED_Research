@@ -1,0 +1,173 @@
+\hypertarget{_vector3_8h}{\section{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\-Vector3.h File Reference}
+\label{_vector3_8h}\index{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\-Vector3.\-h@{/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\-Vector3.\-h}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+Include dependency graph for Vector3.\-h\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_vector3_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_vector3_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_vector3}{Vector3}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_a6681b3e5e6d724dbcf54022c728ced4f}{operator+} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_ae9304bb1ba585bec57f86dfae43dec51}{operator-\/} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_a9acb077dfb62054c3482f7f7bc1e9691}{operator$\ast$} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&vrhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_aacd147502c272041ac67e8a7022d1cbd}{operator$\ast$} (const \hyperlink{class_vector3}{Vector3} \&lhs, double rhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_a6840ff3e69e13a8c725d4b430403e983}{operator/} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_a2d0614e9f8710393808b90e0460ed2b0}{cross} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\item 
+double \hyperlink{_vector3_8h_aa577719449d2a7220230d4d1f0a21167}{mag} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+double \hyperlink{_vector3_8h_a505b13880742b30a076009047ac89397}{dot} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{_vector3_8h_a4f7cfbc3830cb5da775657c73038ae97}{rotate} (double theta, const \hyperlink{class_vector3}{Vector3} \&axis, const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+double \hyperlink{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{angle} (const \hyperlink{class_vector3}{Vector3} \&lhs, const \hyperlink{class_vector3}{Vector3} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}{\index{Vector3.\-h@{Vector3.\-h}!angle@{angle}}
+\index{angle@{angle}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double angle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_abd17f37dc7bb5b2bd9a569193ebcdda4}
+
+
+Definition at line 84 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a2d0614e9f8710393808b90e0460ed2b0}{\index{Vector3.\-h@{Vector3.\-h}!cross@{cross}}
+\index{cross@{cross}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} cross (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a2d0614e9f8710393808b90e0460ed2b0}
+
+
+Definition at line 46 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a505b13880742b30a076009047ac89397}{\index{Vector3.\-h@{Vector3.\-h}!dot@{dot}}
+\index{dot@{dot}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}double dot (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a505b13880742b30a076009047ac89397}
+
+
+Definition at line 60 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_aa577719449d2a7220230d4d1f0a21167}{\index{Vector3.\-h@{Vector3.\-h}!mag@{mag}}
+\index{mag@{mag}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{mag}]{\setlength{\rightskip}{0pt plus 5cm}double mag (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_aa577719449d2a7220230d4d1f0a21167}
+
+
+Definition at line 55 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a9acb077dfb62054c3482f7f7bc1e9691}{\index{Vector3.\-h@{Vector3.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{vrhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a9acb077dfb62054c3482f7f7bc1e9691}
+
+
+Definition at line 34 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_aacd147502c272041ac67e8a7022d1cbd}{\index{Vector3.\-h@{Vector3.\-h}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{double}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_aacd147502c272041ac67e8a7022d1cbd}
+
+
+Definition at line 28 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a6681b3e5e6d724dbcf54022c728ced4f}{\index{Vector3.\-h@{Vector3.\-h}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a6681b3e5e6d724dbcf54022c728ced4f}
+
+
+Definition at line 16 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_ae9304bb1ba585bec57f86dfae43dec51}{\index{Vector3.\-h@{Vector3.\-h}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_ae9304bb1ba585bec57f86dfae43dec51}
+
+
+Definition at line 22 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a6840ff3e69e13a8c725d4b430403e983}{\index{Vector3.\-h@{Vector3.\-h}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{lhs, }
+\item[{const {\bf Vector3} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a6840ff3e69e13a8c725d4b430403e983}
+
+
+Definition at line 40 of file Vector3.\-cpp.
+
+\hypertarget{_vector3_8h_a4f7cfbc3830cb5da775657c73038ae97}{\index{Vector3.\-h@{Vector3.\-h}!rotate@{rotate}}
+\index{rotate@{rotate}!Vector3.h@{Vector3.\-h}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} rotate (
+\begin{DoxyParamCaption}
+\item[{double}]{theta, }
+\item[{const {\bf Vector3} \&}]{axis, }
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{_vector3_8h_a4f7cfbc3830cb5da775657c73038ae97}
+
+
+Definition at line 65 of file Vector3.\-cpp.
+

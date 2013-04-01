@@ -1,0 +1,310 @@
+\hypertarget{classsf_1_1_ip_address}{\section{sf\-:\-:Ip\-Address Class Reference}
+\label{classsf_1_1_ip_address}\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}}
+}
+
+
+Encapsulate an I\-Pv4 network address.  
+
+
+
+
+{\ttfamily \#include $<$Ip\-Address.\-hpp$>$}
+
+
+
+Collaboration diagram for sf\-:\-:Ip\-Address\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classsf_1_1_ip_address__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}{Ip\-Address} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}{Ip\-Address} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}{Ip\-Address} (const char $\ast$address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a string. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}{Ip\-Address} (\hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} byte0, \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} byte1, \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} byte2, \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} byte3)
+\begin{DoxyCompactList}\small\item\em Construct the address from 4 bytes. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}{Ip\-Address} (\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} address)
+\begin{DoxyCompactList}\small\item\em Construct the address from a 32-\/bits integer. \end{DoxyCompactList}\item 
+\hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \hyperlink{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}{to\-String} () const 
+\begin{DoxyCompactList}\small\item\em Get a string representation of the address. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} \hyperlink{classsf_1_1_ip_address_af42678b08b23def2560aed7d98b24d89}{to\-Integer} () const 
+\begin{DoxyCompactList}\small\item\em Get an integer representation of the address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\-Local\-Address} ()
+\begin{DoxyCompactList}\small\item\em Get the computer's local address. \end{DoxyCompactList}\item 
+static \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\-Public\-Address} (\hyperlink{classsf_1_1_time}{Time} \hyperlink{gl3_8h_ad29bb0d8468b264a4e3d9204366cfaab}{timeout}=\hyperlink{classsf_1_1_time_a8db127b632fa8da21550e7282af11fa0}{Time\-::\-Zero})
+\begin{DoxyCompactList}\small\item\em Get the computer's public address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \hyperlink{classsf_1_1_ip_address_a4619b4abbe3c8fef056e7299db967404}{None}
+\begin{DoxyCompactList}\small\item\em Value representing an empty/invalid address. \end{DoxyCompactList}\item 
+static const \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \hyperlink{classsf_1_1_ip_address_a594d3a8e2559f8fa8ab0a96fa597333b}{Local\-Host}
+\begin{DoxyCompactList}\small\item\em The \char`\"{}localhost\char`\"{} address (for connecting a computer to itself locally) \end{DoxyCompactList}\item 
+static const \hyperlink{classsf_1_1_ip_address}{Ip\-Address} \hyperlink{classsf_1_1_ip_address_aa93d1d57b65d243f2baf804b6035465c}{Broadcast}
+\begin{DoxyCompactList}\small\item\em The \char`\"{}broadcast\char`\"{} address (for sending U\-D\-P messages to everyone on a local network) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encapsulate an I\-Pv4 network address. 
+
+\hyperlink{classsf_1_1_ip_address}{sf\-::\-Ip\-Address} is a utility class for manipulating network addresses. It provides a set a implicit constructors and conversion functions to easily build or transform an I\-P address from/to various representations.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a0;                                     \textcolor{comment}{// an invalid address}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a1 = \hyperlink{classsf_1_1_ip_address_a4619b4abbe3c8fef056e7299db967404}{sf::IpAddress::None};               \textcolor{comment}{// an invalid address
+       (same as a0)}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a2(\textcolor{stringliteral}{"127.0.0.1"});                        \textcolor{comment}{// the local host address}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a3 = \hyperlink{classsf_1_1_ip_address_aa93d1d57b65d243f2baf804b6035465c}{sf::IpAddress::Broadcast};          \textcolor{comment}{// the broadcast
+       address}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a4(192, 168, 1, 56);                    \textcolor{comment}{// a local address}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a5(\textcolor{stringliteral}{"my\_computer"});                      \textcolor{comment}{// a local address created from a
+       network name}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a6(\textcolor{stringliteral}{"89.54.1.169"});                      \textcolor{comment}{// a distant address}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a7(\textcolor{stringliteral}{"www.google.com"});                   \textcolor{comment}{// a distant address created from a
+       network name}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a8 = \hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{sf::IpAddress::getLocalAddress}();  \textcolor{comment}{// my
+       address on the local network}
+\hyperlink{classsf_1_1_ip_address}{sf::IpAddress} a9 = \hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{sf::IpAddress::getPublicAddress}(); \textcolor{comment}{// my
+       address on the internet}
+\end{DoxyCode}
+
+
+Note that \hyperlink{classsf_1_1_ip_address}{sf\-::\-Ip\-Address} currently doesn't support I\-Pv6 nor other types of network addresses. 
+
+Definition at line 44 of file Ip\-Address.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Ip\-Address@{Ip\-Address}}
+\index{Ip\-Address@{Ip\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Ip\-Address}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Ip\-Address\-::\-Ip\-Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_ip_address_af32a0574baa0f46e48deb2d83ca7658b}
+
+
+Default constructor. 
+
+This constructor creates an empty (invalid) address \hypertarget{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Ip\-Address@{Ip\-Address}}
+\index{Ip\-Address@{Ip\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Ip\-Address}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Ip\-Address\-::\-Ip\-Address (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{address}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_ip_address_a656b7445ab04cabaa7398685bc09c3f7}
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\-: \char`\"{}192.\-168.\-1.\-56\char`\"{}) or a network name (ex\-: \char`\"{}localhost\char`\"{}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & I\-P address or network name \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Ip\-Address@{Ip\-Address}}
+\index{Ip\-Address@{Ip\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Ip\-Address}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Ip\-Address\-::\-Ip\-Address (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{address}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_ip_address_a92f2a9be74334a61b96c2fc79fe6eb78}
+
+
+Construct the address from a string. 
+
+Here {\itshape address} can be either a decimal address (ex\-: \char`\"{}192.\-168.\-1.\-56\char`\"{}) or a network name (ex\-: \char`\"{}localhost\char`\"{}). This is equivalent to the constructor taking a std\-::string parameter, it is defined for convenience so that the implicit conversions from literal strings to \hyperlink{classsf_1_1_ip_address}{Ip\-Address} work.
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & I\-P address or network name \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Ip\-Address@{Ip\-Address}}
+\index{Ip\-Address@{Ip\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Ip\-Address}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Ip\-Address\-::\-Ip\-Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint8}}]{byte0, }
+\item[{{\bf Uint8}}]{byte1, }
+\item[{{\bf Uint8}}]{byte2, }
+\item[{{\bf Uint8}}]{byte3}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_ip_address_a1d289dcb9ce7a64c600c6f84cba88cc6}
+
+
+Construct the address from 4 bytes. 
+
+Calling Ip\-Address(a, b, c, d) is equivalent to calling \hyperlink{classsf_1_1_ip_address}{Ip\-Address}(\char`\"{}a.\-b.\-c.\-d\char`\"{}), but safer as it doesn't have to parse a string to get the address components.
+
+
+\begin{DoxyParams}{Parameters}
+{\em byte0} & First byte of the address \\
+\hline
+{\em byte1} & Second byte of the address \\
+\hline
+{\em byte2} & Third byte of the address \\
+\hline
+{\em byte3} & Fourth byte of the address \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Ip\-Address@{Ip\-Address}}
+\index{Ip\-Address@{Ip\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Ip\-Address}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Ip\-Address\-::\-Ip\-Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Uint32}}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_ip_address_a8ed34ba3a40d70eb9f09ac5ae779a162}
+
+
+Construct the address from a 32-\/bits integer. 
+
+This constructor uses the internal representation of the address directly. It should be used for optimization purposes, and only if you got that representation from Ip\-Address\-::\-To\-Integer().
+
+
+\begin{DoxyParams}{Parameters}
+{\em address} & 4 bytes of the address packed into a 32-\/bits integer\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_ip_address_af42678b08b23def2560aed7d98b24d89}{to\-Integer} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!get\-Local\-Address@{get\-Local\-Address}}
+\index{get\-Local\-Address@{get\-Local\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{get\-Local\-Address}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ip\-Address} sf\-::\-Ip\-Address\-::get\-Local\-Address (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}
+
+
+Get the computer's local address. 
+
+The local address is the address of the computer from the L\-A\-N point of view, i.\-e. something like 192.\-168.\-1.\-56. It is meaningful only for communications over the local network. Unlike get\-Public\-Address, this function is fast and may be used safely anywhere.
+
+\begin{DoxyReturn}{Returns}
+Local I\-P address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{get\-Public\-Address} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!get\-Public\-Address@{get\-Public\-Address}}
+\index{get\-Public\-Address@{get\-Public\-Address}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{get\-Public\-Address}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ip\-Address} sf\-::\-Ip\-Address\-::get\-Public\-Address (
+\begin{DoxyParamCaption}
+\item[{{\bf Time}}]{timeout = {\ttfamily {\bf Time\-::\-Zero}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_ip_address_a5c5cbf67e4aacf23c24f2ad991df4c55}
+
+
+Get the computer's public address. 
+
+The public address is the address of the computer from the internet point of view, i.\-e. something like 89.\-54.\-1.\-169. It is necessary for communications over the world wide web. The only way to get a public address is to ask it to a distant website; as a consequence, this function depends on both your network connection and the server, and may be very slow. You should use it as few as possible. Because this function depends on the network connection and on a distant server, you may use a time limit if you don't want your program to be possibly stuck waiting in case there is a problem; this limit is deactivated by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & Maximum time to wait\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Public I\-P address of the computer
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_ip_address_a4c31622ad87edca48adbb8e8ed00ee4a}{get\-Local\-Address} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_ip_address_af42678b08b23def2560aed7d98b24d89}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!to\-Integer@{to\-Integer}}
+\index{to\-Integer@{to\-Integer}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{to\-Integer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uint32} sf\-::\-Ip\-Address\-::to\-Integer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_ip_address_af42678b08b23def2560aed7d98b24d89}
+
+
+Get an integer representation of the address. 
+
+The returned number is the internal representation of the address, and should be used for optimization purposes only (like sending the address through a socket). The integer produced by this function can then be converted back to a \hyperlink{classsf_1_1_ip_address}{sf\-::\-Ip\-Address} with the proper constructor.
+
+\begin{DoxyReturn}{Returns}
+32-\/bits unsigned integer representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}{to\-String} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}{\bf std\-::string} sf\-::\-Ip\-Address\-::to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_ip_address_a52f4be92fb0ceb689abc469e4a85fd82}
+
+
+Get a string representation of the address. 
+
+The returned string is the decimal representation of the I\-P address (like \char`\"{}192.\-168.\-1.\-56\char`\"{}), even if it was constructed from a host name.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_string}{String} representation of the address
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_ip_address_af42678b08b23def2560aed7d98b24d89}{to\-Integer} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_ip_address_aa93d1d57b65d243f2baf804b6035465c}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Broadcast@{Broadcast}}
+\index{Broadcast@{Broadcast}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Broadcast}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ip\-Address} sf\-::\-Ip\-Address\-::\-Broadcast\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_ip_address_aa93d1d57b65d243f2baf804b6035465c}
+
+
+The \char`\"{}broadcast\char`\"{} address (for sending U\-D\-P messages to everyone on a local network) 
+
+
+
+Definition at line 186 of file Ip\-Address.\-hpp.
+
+\hypertarget{classsf_1_1_ip_address_a594d3a8e2559f8fa8ab0a96fa597333b}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!Local\-Host@{Local\-Host}}
+\index{Local\-Host@{Local\-Host}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{Local\-Host}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ip\-Address} sf\-::\-Ip\-Address\-::\-Local\-Host\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_ip_address_a594d3a8e2559f8fa8ab0a96fa597333b}
+
+
+The \char`\"{}localhost\char`\"{} address (for connecting a computer to itself locally) 
+
+
+
+Definition at line 185 of file Ip\-Address.\-hpp.
+
+\hypertarget{classsf_1_1_ip_address_a4619b4abbe3c8fef056e7299db967404}{\index{sf\-::\-Ip\-Address@{sf\-::\-Ip\-Address}!None@{None}}
+\index{None@{None}!sf::IpAddress@{sf\-::\-Ip\-Address}}
+\subsubsection[{None}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Ip\-Address} sf\-::\-Ip\-Address\-::\-None\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_ip_address_a4619b4abbe3c8fef056e7299db967404}
+
+
+Value representing an empty/invalid address. 
+
+
+
+Definition at line 184 of file Ip\-Address.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Network/\hyperlink{_ip_address_8hpp}{Ip\-Address.\-hpp}\end{DoxyCompactItemize}

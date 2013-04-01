@@ -1,0 +1,777 @@
+\hypertarget{classsf_1_1_shader}{\section{sf\-:\-:Shader Class Reference}
+\label{classsf_1_1_shader}\index{sf\-::\-Shader@{sf\-::\-Shader}}
+}
+
+
+\hyperlink{classsf_1_1_shader}{Shader} class (vertex and fragment)  
+
+
+
+
+{\ttfamily \#include $<$Shader.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Shader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsf_1_1_shader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Shader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsf_1_1_shader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\-Texture\-Type}
+\begin{DoxyCompactList}\small\item\em Special type/value that can be passed to set\-Parameter, and that represents the texture of the object being drawn. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type} \{ \hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3a8718008f827eb32e29bbdd1791c62dce}{Vertex}, 
+\hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ace6e88eec3a56b2e55ee3c8e64e9b89a}{Fragment}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}{Shader} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}{$\sim$\-Shader} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\-From\-File} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&filename, \hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type})
+\begin{DoxyCompactList}\small\item\em Load either the vertex or fragment shader from a file. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}{load\-From\-File} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&vertex\-Shader\-Filename, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&fragment\-Shader\-Filename)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from files. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\-From\-Memory} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}, \hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type})
+\begin{DoxyCompactList}\small\item\em Load either the vertex or fragment shader from a source code in memory. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}{load\-From\-Memory} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&vertex\-Shader, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&fragment\-Shader)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from source codes in memory. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\-From\-Stream} (\hyperlink{classsf_1_1_input_stream}{Input\-Stream} \&stream, \hyperlink{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{Type} \hyperlink{gl3_8h_a984aabed544368e7fe0e566d7cf014a7}{type})
+\begin{DoxyCompactList}\small\item\em Load either the vertex or fragment shader from a custom stream. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}{load\-From\-Stream} (\hyperlink{classsf_1_1_input_stream}{Input\-Stream} \&vertex\-Shader\-Stream, \hyperlink{classsf_1_1_input_stream}{Input\-Stream} \&fragment\-Shader\-Stream)
+\begin{DoxyCompactList}\small\item\em Load both the vertex and fragment shaders from custom streams. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a47e4dd78f0752ae08664b4ee616db1cf}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x})
+\begin{DoxyCompactList}\small\item\em Change a float parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_ab8d379f40810b8e3eadebee81aedd231}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y})
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a7e36e044d6b8adca8339f40c5a4b1801}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, float \hyperlink{gl3_8h_acb78bf1972d3eaf07da34ff2e0a2f133}{z})
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_aeb468f1bc2d26750b96b74f1e19027fb}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, float \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, float \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, float \hyperlink{gl3_8h_acb78bf1972d3eaf07da34ff2e0a2f133}{z}, float \hyperlink{gl3_8h_a1d0296e9e835f2e1ee17634af95fc1ec}{w})
+\begin{DoxyCompactList}\small\item\em Change a 4-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a3ac473ece2c6fa26dc5032c07fd7288e}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, const \hyperlink{namespacesf_acf03098c2577b869e2fa6836cc48f1a0}{Vector2f} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 2-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a87d4a0c6dc70ae68aecc0dda3f343c07}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, const \hyperlink{namespacesf_af97357d7d32e7d6a700d03be2f3b4811}{Vector3f} \&vector)
+\begin{DoxyCompactList}\small\item\em Change a 3-\/components vector parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_aa8618119ed4399df3fd33e78ee96b4fc}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color})
+\begin{DoxyCompactList}\small\item\em Change a color parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a39c387cc30e249b22a0c478703b8cc9a}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, const \hyperlink{classsf_1_1_transform}{sf\-::\-Transform} \&transform)
+\begin{DoxyCompactList}\small\item\em Change a matrix parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a7f58ab5c0a1084f238dfcec86602daa1}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, const \hyperlink{classsf_1_1_texture}{Texture} \&\hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture})
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_af06b4cba0bab915fa01032b063909044}{set\-Parameter} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&\hyperlink{gl3_8h_aaced7cfc21e7d37775d6921bb8177239}{name}, \hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\-Texture\-Type})
+\begin{DoxyCompactList}\small\item\em Change a texture parameter of the shader. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_ab170f43610b4fcc7c69a55575650fb95}{bind} () const 
+\begin{DoxyCompactList}\small\item\em Bind the shader for rendering (activate it) \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_shader_a86f6ce37c2ad74250c9ee9fdd18452a5}{unbind} () const 
+\begin{DoxyCompactList}\small\item\em Unbind the shader (deactivate it) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{is\-Available} ()
+\begin{DoxyCompactList}\small\item\em Tell whether or not the system supports shaders. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structsf_1_1_shader_1_1_current_texture_type}{Current\-Texture\-Type} \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{Current\-Texture}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsf_1_1_shader}{Shader} class (vertex and fragment) 
+
+Shaders are programs written using a specific language, executed directly by the graphics card and allowing to apply real-\/time operations to the rendered entities.
+
+There are two kinds of shaders\-: \begin{DoxyItemize}
+\item \hyperlink{classsf_1_1_vertex}{Vertex} shaders, that process vertices \item Fragment (pixel) shaders, that process pixels\end{DoxyItemize}
+A \hyperlink{classsf_1_1_shader}{sf\-::\-Shader} can be composed of either a vertex shader alone, a fragment shader alone, or both combined (see the variants of the Load functions).
+
+Shaders are written in G\-L\-S\-L, which is a C-\/like language dedicated to Open\-G\-L shaders. You'll probably need to learn its basics before writing your own shaders for S\-F\-M\-L.
+
+Like any C/\-C++ program, a shader has its own variables that you can set from your C++ application. \hyperlink{classsf_1_1_shader}{sf\-::\-Shader} handles 4 different types of variables\-: \begin{DoxyItemize}
+\item floats \item vectors (2, 3 or 4 components) \item textures \item transforms (matrices)\end{DoxyItemize}
+The value of the variables can be changed at any time with either the various overloads of the set\-Parameter function\-: 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"offset"}, 2.f);
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"color"}, 0.5f, 0.8f, 0.3f);
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"matrix"}, transform); \textcolor{comment}{// transform is a sf::Transform}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"overlay"}, texture); \textcolor{comment}{// texture is a sf::Texture}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"texture"}, \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{sf::Shader::CurrentTexture});
+\end{DoxyCode}
+
+
+The special \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{Shader\-::\-Current\-Texture} argument maps the given texture variable to the current texture of the object being drawn (which cannot be known in advance).
+
+To apply a shader to a drawable, you must pass it as an additional parameter to the Draw function\-: 
+\begin{DoxyCode}
+window.draw(sprite, \hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader});
+\end{DoxyCode}
+
+
+... which is in fact just a shortcut for this\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_render_states}{sf::RenderStates} states;
+states.\hyperlink{classsf_1_1_render_states_ad4f79ecdd0c60ed0d24fbe555b221bd8}{shader} = \hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader};
+window.draw(sprite, states);
+\end{DoxyCode}
+
+
+Shaders can be used on any drawable, but some combinations are not interesting. For example, using a vertex shader on a \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite} is limited because there are only 4 vertices, the sprite would have to be subdivided in order to apply wave effects. Another bad example is a fragment shader with \hyperlink{classsf_1_1_text}{sf\-::\-Text}\-: the texture of the text is not the actual text that you see on screen, it is a big texture containing all the characters of the font in an arbitrary order; thus, texture lookups on pixels other than the current one may not give you the expected result.
+
+Shaders can also be used to apply global post-\/effects to the current contents of the target (like the old sf\-::\-Post\-Fx class in S\-F\-M\-L 1). This can be done in two different ways\-: \begin{DoxyItemize}
+\item draw everything to a \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture}, then draw it to the main target using the shader \item draw everything directly to the main target, then use sf\-::\-Texture\-::update(\-Window\&) to copy its contents to a texture and draw it to the main target using the shader\end{DoxyItemize}
+The first technique is more optimized because it doesn't involve retrieving the target's pixels to system memory, but the second one doesn't impact the rendering process and can be easily inserted anywhere without impacting all the code.
+
+Like \hyperlink{classsf_1_1_texture}{sf\-::\-Texture} that can be used as a raw Open\-G\-L texture, \hyperlink{classsf_1_1_shader}{sf\-::\-Shader} can also be used directly as a raw shader for custom Open\-G\-L geometry. 
+\begin{DoxyCode}
+window.setActive();
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.bind();
+... render OpenGL geometry ...
+shader.unbind();
+\end{DoxyCode}
+ 
+
+Definition at line 51 of file Shader.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}{\index{sf\-::\-Shader@{sf\-::\-Shader}!Type@{Type}}
+\index{Type@{Type}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Shader\-::\-Type}}}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3}
+
+
+Types of shaders. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Vertex@{Vertex}!sf\-::\-Shader@{sf\-::\-Shader}}\index{sf\-::\-Shader@{sf\-::\-Shader}!Vertex@{Vertex}}\item[{\em 
+\hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3a8718008f827eb32e29bbdd1791c62dce}{Vertex}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3a8718008f827eb32e29bbdd1791c62dce}
+}]\hyperlink{classsf_1_1_vertex}{Vertex} shader. \index{Fragment@{Fragment}!sf\-::\-Shader@{sf\-::\-Shader}}\index{sf\-::\-Shader@{sf\-::\-Shader}!Fragment@{Fragment}}\item[{\em 
+\hypertarget{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ace6e88eec3a56b2e55ee3c8e64e9b89a}{Fragment}\label{classsf_1_1_shader_afaa1aa65e5de37b74d047da9def9f9b3ace6e88eec3a56b2e55ee3c8e64e9b89a}
+}]Fragment (pixel) shader. \end{description}
+\end{Desc}
+
+
+Definition at line 59 of file Shader.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}{\index{sf\-::\-Shader@{sf\-::\-Shader}!Shader@{Shader}}
+\index{Shader@{Shader}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{Shader}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Shader\-::\-Shader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a1d7f28f26b4122959fcafec871c2c3c5}
+
+
+Default constructor. 
+
+This constructor creates an invalid shader. \hypertarget{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}{\index{sf\-::\-Shader@{sf\-::\-Shader}!$\sim$\-Shader@{$\sim$\-Shader}}
+\index{$\sim$\-Shader@{$\sim$\-Shader}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{$\sim$\-Shader}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Shader\-::$\sim$\-Shader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a4bac6cc8b046ecd8fb967c145a2380e6}
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_shader_ab170f43610b4fcc7c69a55575650fb95}{\index{sf\-::\-Shader@{sf\-::\-Shader}!bind@{bind}}
+\index{bind@{bind}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::bind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shader_ab170f43610b4fcc7c69a55575650fb95}
+
+
+Bind the shader for rendering (activate it) 
+
+This function is normally for internal use only, unless you want to use the shader with a custom Open\-G\-L rendering instead of a S\-F\-M\-L drawable. 
+\begin{DoxyCode}
+window.setActive();
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.bind();
+... render OpenGL geometry ...
+shader.unbind();
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_a86f6ce37c2ad74250c9ee9fdd18452a5}{unbind} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}{\index{sf\-::\-Shader@{sf\-::\-Shader}!is\-Available@{is\-Available}}
+\index{is\-Available@{is\-Available}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{is\-Available}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Shader\-::is\-Available (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_shader_ad22474690bafe4a305c1b9826b1bd86a}
+
+
+Tell whether or not the system supports shaders. 
+
+This function should always be called before using the shader features. If it returns false, then any attempt to use \hyperlink{classsf_1_1_shader}{sf\-::\-Shader} will fail.
+
+\begin{DoxyReturn}{Returns}
+True if shaders are supported, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-File@{load\-From\-File}}
+\index{load\-From\-File@{load\-From\-File}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{filename, }
+\item[{{\bf Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}
+
+
+Load either the vertex or fragment shader from a file. 
+
+This function loads a single shader, either vertex or fragment, identified by the second argument. The source must be a text file containing a valid shader in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the vertex or fragment shader file to load \\
+\hline
+{\em type} & Type of shader (vertex or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\-From\-Memory}, \hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-File@{load\-From\-File}}
+\index{load\-From\-File@{load\-From\-File}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{vertex\-Shader\-Filename, }
+\item[{const {\bf std\-::string} \&}]{fragment\-Shader\-Filename}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_ac9d7289966fcef562eeb92271c03e3dc}
+
+
+Load both the vertex and fragment shaders from files. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be text files containing valid shaders in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\-Shader\-Filename} & Path of the vertex shader file to load \\
+\hline
+{\em fragment\-Shader\-Filename} & Path of the fragment shader file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\-From\-Memory}, \hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-Memory@{load\-From\-Memory}}
+\index{load\-From\-Memory@{load\-From\-Memory}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-Memory (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{shader, }
+\item[{{\bf Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}
+
+
+Load either the vertex or fragment shader from a source code in memory. 
+
+This function loads a single shader, either vertex or fragment, identified by the second argument. The source code must be a valid shader in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shader} & \hyperlink{classsf_1_1_string}{String} containing the source code of the shader \\
+\hline
+{\em type} & Type of shader (vertex or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\-From\-File}, \hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-Memory@{load\-From\-Memory}}
+\index{load\-From\-Memory@{load\-From\-Memory}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-Memory (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{vertex\-Shader, }
+\item[{const {\bf std\-::string} \&}]{fragment\-Shader}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_ae34e94070d7547a890166b7993658a9b}
+
+
+Load both the vertex and fragment shaders from source codes in memory. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The sources must be valid shaders in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\-Shader} & \hyperlink{classsf_1_1_string}{String} containing the source code of the vertex shader \\
+\hline
+{\em fragment\-Shader} & \hyperlink{classsf_1_1_string}{String} containing the source code of the fragment shader\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\-From\-File}, \hyperlink{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{load\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-Stream@{load\-From\-Stream}}
+\index{load\-From\-Stream@{load\-From\-Stream}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Stream} \&}]{stream, }
+\item[{{\bf Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a2ee1b130c0606e4f8bcdf65c1efc2a53}
+
+
+Load either the vertex or fragment shader from a custom stream. 
+
+This function loads a single shader, either vertex or fragment, identified by the second argument. The source code must be a valid shader in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from \\
+\hline
+{\em type} & Type of shader (vertex or fragment)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\-From\-File}, \hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\-From\-Memory} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}{\index{sf\-::\-Shader@{sf\-::\-Shader}!load\-From\-Stream@{load\-From\-Stream}}
+\index{load\-From\-Stream@{load\-From\-Stream}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{load\-From\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Shader\-::load\-From\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Stream} \&}]{vertex\-Shader\-Stream, }
+\item[{{\bf Input\-Stream} \&}]{fragment\-Shader\-Stream}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a3b7958159ffb5596c4babc3052e35465}
+
+
+Load both the vertex and fragment shaders from custom streams. 
+
+This function loads both the vertex and the fragment shaders. If one of them fails to load, the shader is left empty (the valid shader is unloaded). The source codes must be valid shaders in G\-L\-S\-L language. G\-L\-S\-L is a C-\/like language dedicated to Open\-G\-L shaders; you'll probably need to read a good documentation for it before writing your own shaders.
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertex\-Shader\-Stream} & Source stream to read the vertex shader from \\
+\hline
+{\em fragment\-Shader\-Stream} & Source stream to read the fragment shader from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading succeeded, false if it failed
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_a053a5632848ebaca2fcd8ba29abe9e6e}{load\-From\-File}, \hyperlink{classsf_1_1_shader_ac92d46bf71dff2d791117e4e472148aa}{load\-From\-Memory} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_shader_a47e4dd78f0752ae08664b4ee616db1cf}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{float}]{x}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a47e4dd78f0752ae08664b4ee616db1cf}
+
+
+Change a float parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a float (float G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform \textcolor{keywordtype}{float} myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, 5.2f);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em x} & Value to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_ab8d379f40810b8e3eadebee81aedd231}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_ab8d379f40810b8e3eadebee81aedd231}
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 2x1 vector (vec2 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec2 myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, 5.2f, 6.0f);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em x} & First component of the value to assign \\
+\hline
+{\em y} & Second component of the value to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a7e36e044d6b8adca8339f40c5a4b1801}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a7e36e044d6b8adca8339f40c5a4b1801}
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 3x1 vector (vec3 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec3 myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, 5.2f, 6.0f, -8.1f);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em x} & First component of the value to assign \\
+\hline
+{\em y} & Second component of the value to assign \\
+\hline
+{\em z} & Third component of the value to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_aeb468f1bc2d26750b96b74f1e19027fb}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{float}]{x, }
+\item[{float}]{y, }
+\item[{float}]{z, }
+\item[{float}]{w}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_aeb468f1bc2d26750b96b74f1e19027fb}
+
+
+Change a 4-\/components vector parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 4x1 vector (vec4 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec4 myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, 5.2f, 6.0f, -8.1f, 0.4f);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em x} & First component of the value to assign \\
+\hline
+{\em y} & Second component of the value to assign \\
+\hline
+{\em z} & Third component of the value to assign \\
+\hline
+{\em w} & Fourth component of the value to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a3ac473ece2c6fa26dc5032c07fd7288e}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{const {\bf Vector2f} \&}]{vector}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a3ac473ece2c6fa26dc5032c07fd7288e}
+
+
+Change a 2-\/components vector parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 2x1 vector (vec2 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec2 myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, \hyperlink{classsf_1_1_vector2}{sf::Vector2f}(5.2f, 6.0f));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em vector} & Vector to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a87d4a0c6dc70ae68aecc0dda3f343c07}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{const {\bf Vector3f} \&}]{vector}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a87d4a0c6dc70ae68aecc0dda3f343c07}
+
+
+Change a 3-\/components vector parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 3x1 vector (vec3 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec3 myparam; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"myparam"}, \hyperlink{classsf_1_1_vector3}{sf::Vector3f}(5.2f, 6.0f, -8.1f));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em vector} & Vector to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_aa8618119ed4399df3fd33e78ee96b4fc}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{const {\bf Color} \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_aa8618119ed4399df3fd33e78ee96b4fc}
+
+
+Change a color parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 4x1 vector (vec4 G\-L\-S\-L type).
+
+It is important to note that the components of the color are normalized before being passed to the shader. Therefore, they are converted from range \mbox{[}0 .. 255\mbox{]} to range \mbox{[}0 .. 1\mbox{]}. For example, a sf\-::\-Color(255, 125, 0, 255) will be transformed to a vec4(1.\-0, 0.\-5, 0.\-0, 1.\-0) in the shader.
+
+Example\-: 
+\begin{DoxyCode}
+uniform vec4 \hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color}; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"color"}, \hyperlink{classsf_1_1_color}{sf::Color}(255, 128, 0, 255));
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em color} & \hyperlink{classsf_1_1_color}{Color} to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a39c387cc30e249b22a0c478703b8cc9a}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{const {\bf sf\-::\-Transform} \&}]{transform}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a39c387cc30e249b22a0c478703b8cc9a}
+
+
+Change a matrix parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 4x4 matrix (mat4 G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform mat4 matrix; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_transform}{sf::Transform} transform;
+transform.Translate(5, 10);
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"matrix"}, transform);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the parameter in the shader \\
+\hline
+{\em transform} & \hyperlink{classsf_1_1_transform}{Transform} to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a7f58ab5c0a1084f238dfcec86602daa1}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{const {\bf Texture} \&}]{texture}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_a7f58ab5c0a1084f238dfcec86602daa1}
+
+
+Change a texture parameter of the shader. 
+
+{\itshape name} is the name of the variable to change in the shader. The corresponding parameter in the shader must be a 2\-D texture (sampler2\-D G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform sampler2D the\_texture; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_texture}{sf::Texture} \hyperlink{gl3_8h_ab21590c4736d1459a5a0674a42b5a655}{texture};
+...
+shader.setParameter(\textcolor{stringliteral}{"the\_texture"}, texture);
+\end{DoxyCode}
+ It is important to note that {\itshape texture} must remain alive as long as the shader uses it, no copy is made internally.
+
+To use the texture of the object being draw, which cannot be known in advance, you can pass the special value \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{sf\-::\-Shader\-::\-Current\-Texture}\-: 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"the\_texture"}, \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{sf::Shader::CurrentTexture}).
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+{\em texture} & \hyperlink{classsf_1_1_texture}{Texture} to assign \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_af06b4cba0bab915fa01032b063909044}{\index{sf\-::\-Shader@{sf\-::\-Shader}!set\-Parameter@{set\-Parameter}}
+\index{set\-Parameter@{set\-Parameter}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{set\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::set\-Parameter (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{name, }
+\item[{{\bf Current\-Texture\-Type}}]{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_shader_af06b4cba0bab915fa01032b063909044}
+
+
+Change a texture parameter of the shader. 
+
+This overload maps a shader texture variable to the texture of the object being drawn, which cannot be known in advance. The second argument must be \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{sf\-::\-Shader\-::\-Current\-Texture}. The corresponding parameter in the shader must be a 2\-D texture (sampler2\-D G\-L\-S\-L type).
+
+Example\-: 
+\begin{DoxyCode}
+uniform sampler2D current; \textcolor{comment}{// this is the variable in the shader}
+\end{DoxyCode}
+ 
+\begin{DoxyCode}
+\hyperlink{gl3_8h_a57b2a96adb1d51204909a82d861e395e}{shader}.setParameter(\textcolor{stringliteral}{"current"}, \hyperlink{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{sf::Shader::CurrentTexture});
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the texture in the shader \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_shader_a86f6ce37c2ad74250c9ee9fdd18452a5}{\index{sf\-::\-Shader@{sf\-::\-Shader}!unbind@{unbind}}
+\index{unbind@{unbind}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{unbind}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Shader\-::unbind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_shader_a86f6ce37c2ad74250c9ee9fdd18452a5}
+
+
+Unbind the shader (deactivate it) 
+
+This function is normally for internal use only, unless you want to use the shader with a custom Open\-G\-L rendering instead of a S\-F\-M\-L drawable.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_shader_ab170f43610b4fcc7c69a55575650fb95}{bind} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}{\index{sf\-::\-Shader@{sf\-::\-Shader}!Current\-Texture@{Current\-Texture}}
+\index{Current\-Texture@{Current\-Texture}!sf::Shader@{sf\-::\-Shader}}
+\subsubsection[{Current\-Texture}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Current\-Texture\-Type} sf\-::\-Shader\-::\-Current\-Texture\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_shader_ac84c7953eec2e19358ea6e2cc5385b8d}
+
+
+Definition at line 71 of file Shader.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_shader_8hpp}{Shader.\-hpp}\end{DoxyCompactItemize}

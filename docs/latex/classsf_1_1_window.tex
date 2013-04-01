@@ -1,0 +1,697 @@
+\hypertarget{classsf_1_1_window}{\section{sf\-:\-:Window Class Reference}
+\label{classsf_1_1_window}\index{sf\-::\-Window@{sf\-::\-Window}}
+}
+
+
+\hyperlink{classsf_1_1_window}{Window} that serves as a target for Open\-G\-L rendering.  
+
+
+
+
+{\ttfamily \#include $<$Window.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsf_1_1_window__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Window\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsf_1_1_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_window_a5359122166b4dc492c3d25caf08ccfc4}{Window} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_window_a33341e43c1282a698a39c587f14a2b72}{Window} (\hyperlink{classsf_1_1_video_mode}{Video\-Mode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&title, \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} style=\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}{Style\-::\-Default}, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Construct a new window. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_window_a6d60912633bff9d33cf3ade4e0201de4}{Window} (Window\-Handle handle, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Construct the window from an existing control. \end{DoxyCompactList}\item 
+virtual \hyperlink{classsf_1_1_window_ac30eb6ea5f5594204944d09d4bd69a97}{$\sim$\-Window} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}{create} (\hyperlink{classsf_1_1_video_mode}{Video\-Mode} \hyperlink{gl3_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}, const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&title, \hyperlink{namespacesf_aa746fb1ddef4410bddf198ebb27e727c}{Uint32} style=\hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a5597cd420fc461807e4a201c92adea37}{Style\-::\-Default}, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Create (or recreate) the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_acf67483dc21f08d65c8835b3889b41b2}{create} (Window\-Handle handle, const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \&settings=\hyperlink{structsf_1_1_context_settings}{Context\-Settings}())
+\begin{DoxyCompactList}\small\item\em Create (or recreate) the window from an existing control. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close} ()
+\begin{DoxyCompactList}\small\item\em Close the window and destroy all the attached resources. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_window_a5aa9c2b2b0e51d3423c2b66c80253337}{is\-Open} () const 
+\begin{DoxyCompactList}\small\item\em Tell whether or not the window is open. \end{DoxyCompactList}\item 
+const \hyperlink{structsf_1_1_context_settings}{Context\-Settings} \& \hyperlink{classsf_1_1_window_a5a9d5c15facf25ad4d9b2b30caa0a2db}{get\-Settings} () const 
+\begin{DoxyCompactList}\small\item\em Get the settings of the Open\-G\-L context of the window. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\-Event} (\hyperlink{classsf_1_1_event}{Event} \&event)
+\begin{DoxyCompactList}\small\item\em Pop the event on top of events stack, if any, and return it. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{wait\-Event} (\hyperlink{classsf_1_1_event}{Event} \&event)
+\begin{DoxyCompactList}\small\item\em Wait for an event and return it. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \hyperlink{classsf_1_1_window_a2e6bc12612ea289afea8268fe37c8678}{get\-Position} () const 
+\begin{DoxyCompactList}\small\item\em Get the position of the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a6c4078bfbf61c29bfc4b4732ce764f17}{set\-Position} (const \hyperlink{namespacesf_ace09dd1447d74c6e9ba56ae874c094e1}{Vector2i} \&position)
+\begin{DoxyCompactList}\small\item\em Change the position of the window on screen. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{classsf_1_1_window_ad2b55a731ba1680fe67292991ef1610e}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Get the size of the rendering region of the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_ad6513418bb2963347cd1819a1810524d}{set\-Size} (const \hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Change the size of the rendering region of the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a7f419f99a799424376aba838abfbd273}{set\-Title} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&title)
+\begin{DoxyCompactList}\small\item\em Change the title of the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a63af61e026fba08e3153fd013620bcc0}{set\-Icon} (unsigned int \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, unsigned int \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height}, const \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} $\ast$\hyperlink{gl3_8h_ada7ad693ea2e311b8103f4693fc35f80}{pixels})
+\begin{DoxyCompactList}\small\item\em Change the window's icon. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a160f7f11a207603d7e99ce606e749703}{set\-Visible} (bool visible)
+\begin{DoxyCompactList}\small\item\em Show or hide the window. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{set\-Vertical\-Sync\-Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable or disable vertical synchronization. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_aad3991c25e0a83afbb4d62febf9b7b14}{set\-Mouse\-Cursor\-Visible} (bool visible)
+\begin{DoxyCompactList}\small\item\em Show or hide the mouse cursor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_aef9f2b14c10ecba8a8df95dd51c5bb73}{set\-Key\-Repeat\-Enabled} (bool enabled)
+\begin{DoxyCompactList}\small\item\em Enable or disable automatic key-\/repeat. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_af4322d315baf93405bf0d5087ad5e784}{set\-Framerate\-Limit} (unsigned int limit)
+\begin{DoxyCompactList}\small\item\em Limit the framerate to a maximum fixed frequency. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_aa45b8f54e29a6f59f1fc7ee66b2fab68}{set\-Joystick\-Threshold} (float threshold)
+\begin{DoxyCompactList}\small\item\em Change the joystick threshold. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_window_a17ccf8ece0ce0bf2f1e6698bcfa29731}{set\-Active} (bool active=true) const 
+\begin{DoxyCompactList}\small\item\em Activate or deactivate the window as the current target for Open\-G\-L rendering. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display} ()
+\begin{DoxyCompactList}\small\item\em Display on screen what has been rendered to the window so far. \end{DoxyCompactList}\item 
+Window\-Handle \hyperlink{classsf_1_1_window_a26368e7162229f8637c34d80ab0f138e}{get\-System\-Handle} () const 
+\begin{DoxyCompactList}\small\item\em Get the O\-S-\/specific handle of the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a106633b9be49b27f83d4712689b493eb}{on\-Create} ()
+\begin{DoxyCompactList}\small\item\em Function called after the window has been created. \end{DoxyCompactList}\item 
+virtual \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_window_a10f567a387da7b49f417f73321fcf64d}{on\-Resize} ()
+\begin{DoxyCompactList}\small\item\em Function called after the window has been resized. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classsf_1_1_window}{Window} that serves as a target for Open\-G\-L rendering. 
+
+\hyperlink{classsf_1_1_window}{sf\-::\-Window} is the main class of the \hyperlink{classsf_1_1_window}{Window} module. It defines an O\-S window that is able to receive an Open\-G\-L rendering.
+
+A \hyperlink{classsf_1_1_window}{sf\-::\-Window} can create its own new window, or be embedded into an already existing control using the create(handle) function. This can be useful for embedding an Open\-G\-L rendering area into a view which is part of a bigger G\-U\-I with existing windows, controls, etc. It can also serve as embedding an Open\-G\-L rendering area into a window created by another (probably richer) G\-U\-I library like Qt or wx\-Widgets.
+
+The \hyperlink{classsf_1_1_window}{sf\-::\-Window} class provides a simple interface for manipulating the window\-: move, resize, show/hide, control mouse cursor, etc. It also provides event handling through its \hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\-Event()} and \hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{wait\-Event()} functions.
+
+Note that Open\-G\-L experts can pass their own parameters (antialiasing level, bits for the depth and stencil buffers, etc.) to the Open\-G\-L context attached to the window, with the \hyperlink{structsf_1_1_context_settings}{sf\-::\-Context\-Settings} structure which is passed as an optional argument when creating the window.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Declare and create a new window}
+\hyperlink{classsf_1_1_window}{sf::Window} window(\hyperlink{classsf_1_1_video_mode}{sf::VideoMode}(800, 600), \textcolor{stringliteral}{"SFML window"});
+
+\textcolor{comment}{// Limit the framerate to 60 frames per second (this step is optional)}
+window.\hyperlink{classsf_1_1_window_af4322d315baf93405bf0d5087ad5e784}{setFramerateLimit}(60);
+
+\textcolor{comment}{// The main loop - ends as soon as the window is closed}
+\textcolor{keywordflow}{while} (window.\hyperlink{classsf_1_1_window_a5aa9c2b2b0e51d3423c2b66c80253337}{isOpen}())
+\{
+   \textcolor{comment}{// Event processing}
+   \hyperlink{classsf_1_1_event}{sf::Event} event;
+   \textcolor{keywordflow}{while} (window.\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}(event))
+   \{
+       \textcolor{comment}{// Request for closing the window}
+       \textcolor{keywordflow}{if} (event.\hyperlink{classsf_1_1_event_adf2f8044f713fd9d6019077b0d1ffe0a}{type} == \hyperlink{classsf_1_1_event_af41fa9ed45c02449030699f671331d4aa316e4212e083f1dce79efd8d9e9c0a95}{sf::Event::Closed})
+           window.\hyperlink{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{close}();
+   \}
+
+   \textcolor{comment}{// Activate the window for OpenGL rendering}
+   window.\hyperlink{classsf_1_1_window_a17ccf8ece0ce0bf2f1e6698bcfa29731}{setActive}();
+
+   \textcolor{comment}{// OpenGL drawing commands go here...}
+
+   \textcolor{comment}{// End the current frame and display its contents on screen}
+   window.\hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display}();
+\}
+\end{DoxyCode}
+ 
+
+Definition at line 57 of file Window.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_window_a5359122166b4dc492c3d25caf08ccfc4}{\index{sf\-::\-Window@{sf\-::\-Window}!Window@{Window}}
+\index{Window@{Window}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Window\-::\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a5359122166b4dc492c3d25caf08ccfc4}
+
+
+Default constructor. 
+
+This constructor doesn't actually create the window, use the other constructors or call create to do so. \hypertarget{classsf_1_1_window_a33341e43c1282a698a39c587f14a2b72}{\index{sf\-::\-Window@{sf\-::\-Window}!Window@{Window}}
+\index{Window@{Window}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Window\-::\-Window (
+\begin{DoxyParamCaption}
+\item[{{\bf Video\-Mode}}]{mode, }
+\item[{const {\bf std\-::string} \&}]{title, }
+\item[{{\bf Uint32}}]{style = {\ttfamily {\bf Style\-::\-Default}}, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a33341e43c1282a698a39c587f14a2b72}
+
+
+Construct a new window. 
+
+This constructor creates the window with the size and pixel depth defined in {\itshape mode}. An optional style can be passed to customize the look and behaviour of the window (borders, title bar, resizable, closable, ...). If {\itshape style} contains \hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a6288ec86830245cf957e2d234f79f50d}{Style\-::\-Fullscreen}, then {\itshape mode} must be a valid video mode.
+
+The fourth parameter is an optional structure specifying advanced Open\-G\-L context settings such as antialiasing, depth-\/buffer bits, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Video mode to use (defines the width, height and depth of the rendering area of the window) \\
+\hline
+{\em title} & Title of the window \\
+\hline
+{\em style} & \hyperlink{classsf_1_1_window}{Window} style \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_a6d60912633bff9d33cf3ade4e0201de4}{\index{sf\-::\-Window@{sf\-::\-Window}!Window@{Window}}
+\index{Window@{Window}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{Window}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Window\-::\-Window (
+\begin{DoxyParamCaption}
+\item[{Window\-Handle}]{handle, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classsf_1_1_window_a6d60912633bff9d33cf3ade4e0201de4}
+
+
+Construct the window from an existing control. 
+
+Use this constructor if you want to create an Open\-G\-L rendering area into an already existing control.
+
+The second parameter is an optional structure specifying advanced Open\-G\-L context settings such as antialiasing, depth-\/buffer bits, etc.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Platform-\/specific handle of the control \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_ac30eb6ea5f5594204944d09d4bd69a97}{\index{sf\-::\-Window@{sf\-::\-Window}!$\sim$\-Window@{$\sim$\-Window}}
+\index{$\sim$\-Window@{$\sim$\-Window}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{$\sim$\-Window}]{\setlength{\rightskip}{0pt plus 5cm}virtual sf\-::\-Window\-::$\sim$\-Window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classsf_1_1_window_ac30eb6ea5f5594204944d09d4bd69a97}
+
+
+Destructor. 
+
+Closes the window and free all the resources attached to it. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}{\index{sf\-::\-Window@{sf\-::\-Window}!close@{close}}
+\index{close@{close}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a99d1e030387b0c26f5995670504fe7b5}
+
+
+Close the window and destroy all the attached resources. 
+
+After calling this function, the \hyperlink{classsf_1_1_window}{sf\-::\-Window} instance remains valid and you can call \hyperlink{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}{create()} to recreate the window. All other functions such as \hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\-Event()} or \hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display()} will still work (i.\-e. you don't have to test \hyperlink{classsf_1_1_window_a5aa9c2b2b0e51d3423c2b66c80253337}{is\-Open()} every time), and will have no effect on closed windows. \hypertarget{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}{\index{sf\-::\-Window@{sf\-::\-Window}!create@{create}}
+\index{create@{create}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf Video\-Mode}}]{mode, }
+\item[{const {\bf std\-::string} \&}]{title, }
+\item[{{\bf Uint32}}]{style = {\ttfamily {\bf Style\-::\-Default}}, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}
+
+
+Create (or recreate) the window. 
+
+If the window was already created, it closes it first. If {\itshape style} contains \hyperlink{group__window_ggae1db07091f9745bd223882ba55e7fae2a6288ec86830245cf957e2d234f79f50d}{Style\-::\-Fullscreen}, then {\itshape mode} must be a valid video mode.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & Video mode to use (defines the width, height and depth of the rendering area of the window) \\
+\hline
+{\em title} & Title of the window \\
+\hline
+{\em style} & \hyperlink{classsf_1_1_window}{Window} style \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_acf67483dc21f08d65c8835b3889b41b2}{\index{sf\-::\-Window@{sf\-::\-Window}!create@{create}}
+\index{create@{create}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::create (
+\begin{DoxyParamCaption}
+\item[{Window\-Handle}]{handle, }
+\item[{const {\bf Context\-Settings} \&}]{settings = {\ttfamily {\bf Context\-Settings}()}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_acf67483dc21f08d65c8835b3889b41b2}
+
+
+Create (or recreate) the window from an existing control. 
+
+Use this function if you want to create an Open\-G\-L rendering area into an already existing control. If the window was already created, it closes it first.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Platform-\/specific handle of the control \\
+\hline
+{\em settings} & Additional settings for the underlying Open\-G\-L context \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{\index{sf\-::\-Window@{sf\-::\-Window}!display@{display}}
+\index{display@{display}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{display}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::display (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}
+
+
+Display on screen what has been rendered to the window so far. 
+
+This function is typically called after all Open\-G\-L rendering has been done for the current frame, in order to show it on screen. \hypertarget{classsf_1_1_window_a2e6bc12612ea289afea8268fe37c8678}{\index{sf\-::\-Window@{sf\-::\-Window}!get\-Position@{get\-Position}}
+\index{get\-Position@{get\-Position}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{get\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2i} sf\-::\-Window\-::get\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_a2e6bc12612ea289afea8268fe37c8678}
+
+
+Get the position of the window. 
+
+\begin{DoxyReturn}{Returns}
+Position of the window, in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_a6c4078bfbf61c29bfc4b4732ce764f17}{set\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_a5a9d5c15facf25ad4d9b2b30caa0a2db}{\index{sf\-::\-Window@{sf\-::\-Window}!get\-Settings@{get\-Settings}}
+\index{get\-Settings@{get\-Settings}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{get\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Context\-Settings}\& sf\-::\-Window\-::get\-Settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_a5a9d5c15facf25ad4d9b2b30caa0a2db}
+
+
+Get the settings of the Open\-G\-L context of the window. 
+
+Note that these settings may be different from what was passed to the constructor or the \hyperlink{classsf_1_1_window_a21c51afab5ae676c9c8b325d453958d5}{create()} function, if one or more settings were not supported. In this case, S\-F\-M\-L chose the closest match.
+
+\begin{DoxyReturn}{Returns}
+Structure containing the Open\-G\-L context settings 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_window_ad2b55a731ba1680fe67292991ef1610e}{\index{sf\-::\-Window@{sf\-::\-Window}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2u} sf\-::\-Window\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_ad2b55a731ba1680fe67292991ef1610e}
+
+
+Get the size of the rendering region of the window. 
+
+The size doesn't include the titlebar and borders of the window.
+
+\begin{DoxyReturn}{Returns}
+Size in pixels
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_ad6513418bb2963347cd1819a1810524d}{set\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_a26368e7162229f8637c34d80ab0f138e}{\index{sf\-::\-Window@{sf\-::\-Window}!get\-System\-Handle@{get\-System\-Handle}}
+\index{get\-System\-Handle@{get\-System\-Handle}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{get\-System\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}Window\-Handle sf\-::\-Window\-::get\-System\-Handle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_a26368e7162229f8637c34d80ab0f138e}
+
+
+Get the O\-S-\/specific handle of the window. 
+
+The type of the returned handle is sf\-::\-Window\-Handle, which is a typedef to the handle type defined by the O\-S. You shouldn't need to use this function, unless you have very specific stuff to implement that S\-F\-M\-L doesn't support, or implement a temporary workaround until a bug is fixed.
+
+\begin{DoxyReturn}{Returns}
+System handle of the window 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_window_a5aa9c2b2b0e51d3423c2b66c80253337}{\index{sf\-::\-Window@{sf\-::\-Window}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Window\-::is\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_a5aa9c2b2b0e51d3423c2b66c80253337}
+
+
+Tell whether or not the window is open. 
+
+This function returns whether or not the window exists. Note that a hidden window (set\-Visible(false)) is open (therefore this function would return true).
+
+\begin{DoxyReturn}{Returns}
+True if the window is open, false if it has been closed 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_window_a106633b9be49b27f83d4712689b493eb}{\index{sf\-::\-Window@{sf\-::\-Window}!on\-Create@{on\-Create}}
+\index{on\-Create@{on\-Create}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{on\-Create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Window\-::on\-Create (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_window_a106633b9be49b27f83d4712689b493eb}
+
+
+Function called after the window has been created. 
+
+This function is called so that derived classes can perform their own specific initialization as soon as the window is created. 
+
+Reimplemented in \hyperlink{classsf_1_1_render_window_a5bef0040b0fa87bed9fbd459c980d53a}{sf\-::\-Render\-Window}.
+
+\hypertarget{classsf_1_1_window_a10f567a387da7b49f417f73321fcf64d}{\index{sf\-::\-Window@{sf\-::\-Window}!on\-Resize@{on\-Resize}}
+\index{on\-Resize@{on\-Resize}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{on\-Resize}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf void} sf\-::\-Window\-::on\-Resize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classsf_1_1_window_a10f567a387da7b49f417f73321fcf64d}
+
+
+Function called after the window has been resized. 
+
+This function is called so that derived classes can perform custom actions when the size of the window changes. 
+
+Reimplemented in \hyperlink{classsf_1_1_render_window_a5c85fe482313562d33ffd24a194b6fef}{sf\-::\-Render\-Window}.
+
+\hypertarget{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{\index{sf\-::\-Window@{sf\-::\-Window}!poll\-Event@{poll\-Event}}
+\index{poll\-Event@{poll\-Event}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{poll\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Window\-::poll\-Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event} \&}]{event}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}
+
+
+Pop the event on top of events stack, if any, and return it. 
+
+This function is not blocking\-: if there's no pending event then it will return false and leave {\itshape event} unmodified. Note that more than one event may be present in the events stack, thus you should always call this function in a loop to make sure that you process every pending event. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_event}{sf::Event} event;
+\textcolor{keywordflow}{while} (window.\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{pollEvent}(event))
+\{
+   \textcolor{comment}{// process event...}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classsf_1_1_event}{Event} to be returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if an event was returned, or false if the events stack was empty
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{wait\-Event} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_a17ccf8ece0ce0bf2f1e6698bcfa29731}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Active@{set\-Active}}
+\index{set\-Active@{set\-Active}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Active}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Window\-::set\-Active (
+\begin{DoxyParamCaption}
+\item[{bool}]{active = {\ttfamily true}}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_window_a17ccf8ece0ce0bf2f1e6698bcfa29731}
+
+
+Activate or deactivate the window as the current target for Open\-G\-L rendering. 
+
+A window is active only on the current thread, if you want to make it active on another thread you have to deactivate it on the previous thread first if it was active. Only one window can be active on a thread at a time, thus the window previously active (if any) automatically gets deactivated.
+
+
+\begin{DoxyParams}{Parameters}
+{\em active} & True to activate, false to deactivate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if operation was successful, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_window_af4322d315baf93405bf0d5087ad5e784}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Framerate\-Limit@{set\-Framerate\-Limit}}
+\index{set\-Framerate\-Limit@{set\-Framerate\-Limit}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Framerate\-Limit}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Framerate\-Limit (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{limit}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_af4322d315baf93405bf0d5087ad5e784}
+
+
+Limit the framerate to a maximum fixed frequency. 
+
+If a limit is set, the window will use a small delay after each call to \hyperlink{classsf_1_1_window_adabf839cb103ac96cfc82f781638772a}{display()} to ensure that the current frame lasted long enough to match the framerate limit. S\-F\-M\-L will try to match the given limit as much as it can, but since it internally uses \hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf\-::sleep}, whose precision depends on the underlying O\-S, the results may be a little unprecise as well (for example, you can get 65 F\-P\-S when requesting 60).
+
+
+\begin{DoxyParams}{Parameters}
+{\em limit} & Framerate limit, in frames per seconds (use 0 to disable limit) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_a63af61e026fba08e3153fd013620bcc0}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Icon@{set\-Icon}}
+\index{set\-Icon@{set\-Icon}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Icon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Icon (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{height, }
+\item[{const {\bf Uint8} $\ast$}]{pixels}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a63af61e026fba08e3153fd013620bcc0}
+
+
+Change the window's icon. 
+
+{\itshape pixels} must be an array of {\itshape width} x {\itshape height} pixels in 32-\/bits R\-G\-B\-A format.
+
+The O\-S default icon is used by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Icon's width, in pixels \\
+\hline
+{\em height} & Icon's height, in pixels \\
+\hline
+{\em pixels} & Pointer to the array of pixels in memory\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_a7f419f99a799424376aba838abfbd273}{set\-Title} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_aa45b8f54e29a6f59f1fc7ee66b2fab68}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Joystick\-Threshold@{set\-Joystick\-Threshold}}
+\index{set\-Joystick\-Threshold@{set\-Joystick\-Threshold}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Joystick\-Threshold}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Joystick\-Threshold (
+\begin{DoxyParamCaption}
+\item[{float}]{threshold}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_aa45b8f54e29a6f59f1fc7ee66b2fab68}
+
+
+Change the joystick threshold. 
+
+The joystick threshold is the value below which no Joystick\-Moved event will be generated.
+
+The threshold value is 0.\-1 by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & New threshold, in the range \mbox{[}0, 100\mbox{]} \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_aef9f2b14c10ecba8a8df95dd51c5bb73}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Key\-Repeat\-Enabled@{set\-Key\-Repeat\-Enabled}}
+\index{set\-Key\-Repeat\-Enabled@{set\-Key\-Repeat\-Enabled}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Key\-Repeat\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Key\-Repeat\-Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_aef9f2b14c10ecba8a8df95dd51c5bb73}
+
+
+Enable or disable automatic key-\/repeat. 
+
+If key repeat is enabled, you will receive repeated Key\-Pressed events while keeping a key pressed. If it is disabled, you will only get a single event when the key is pressed.
+
+Key repeat is enabled by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True to enable, false to disable \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_aad3991c25e0a83afbb4d62febf9b7b14}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Mouse\-Cursor\-Visible@{set\-Mouse\-Cursor\-Visible}}
+\index{set\-Mouse\-Cursor\-Visible@{set\-Mouse\-Cursor\-Visible}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Mouse\-Cursor\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Mouse\-Cursor\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_aad3991c25e0a83afbb4d62febf9b7b14}
+
+
+Show or hide the mouse cursor. 
+
+The mouse cursor is visible by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & True to show the mouse cursor, false to hide it \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_a6c4078bfbf61c29bfc4b4732ce764f17}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Position@{set\-Position}}
+\index{set\-Position@{set\-Position}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Position}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Position (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2i} \&}]{position}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a6c4078bfbf61c29bfc4b4732ce764f17}
+
+
+Change the position of the window on screen. 
+
+This function only works for top-\/level windows (i.\-e. it will be ignored for windows created from the handle of a child window/control).
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & New position, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_a2e6bc12612ea289afea8268fe37c8678}{get\-Position} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_ad6513418bb2963347cd1819a1810524d}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Size@{set\-Size}}
+\index{set\-Size@{set\-Size}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Size (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector2u}}]{size}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_ad6513418bb2963347cd1819a1810524d}
+
+
+Change the size of the rendering region of the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & New size, in pixels\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_ad2b55a731ba1680fe67292991ef1610e}{get\-Size} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_a7f419f99a799424376aba838abfbd273}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Title@{set\-Title}}
+\index{set\-Title@{set\-Title}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Title}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Title (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{title}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a7f419f99a799424376aba838abfbd273}
+
+
+Change the title of the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & New title\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_a63af61e026fba08e3153fd013620bcc0}{set\-Icon} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Vertical\-Sync\-Enabled@{set\-Vertical\-Sync\-Enabled}}
+\index{set\-Vertical\-Sync\-Enabled@{set\-Vertical\-Sync\-Enabled}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Vertical\-Sync\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Vertical\-Sync\-Enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{enabled}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a59041c4556e0351048f8aff366034f61}
+
+
+Enable or disable vertical synchronization. 
+
+Activating vertical synchronization will limit the number of frames displayed to the refresh rate of the monitor. This can avoid some visual artifacts, and limit the framerate to a good value (but not constant across different computers).
+
+Vertical synchronization is disabled by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled} & True to enable v-\/sync, false to deactivate it \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_a160f7f11a207603d7e99ce606e749703}{\index{sf\-::\-Window@{sf\-::\-Window}!set\-Visible@{set\-Visible}}
+\index{set\-Visible@{set\-Visible}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{set\-Visible}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Window\-::set\-Visible (
+\begin{DoxyParamCaption}
+\item[{bool}]{visible}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_a160f7f11a207603d7e99ce606e749703}
+
+
+Show or hide the window. 
+
+The window is shown by default.
+
+
+\begin{DoxyParams}{Parameters}
+{\em visible} & True to show the window, false to hide it \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{\index{sf\-::\-Window@{sf\-::\-Window}!wait\-Event@{wait\-Event}}
+\index{wait\-Event@{wait\-Event}!sf::Window@{sf\-::\-Window}}
+\subsubsection[{wait\-Event}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Window\-::wait\-Event (
+\begin{DoxyParamCaption}
+\item[{{\bf Event} \&}]{event}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}
+
+
+Wait for an event and return it. 
+
+This function is blocking\-: if there's no pending event then it will wait until an event is received. After this function returns (and no error occured), the {\itshape event} object is always valid and filled properly. This function is typically used when you have a thread that is dedicated to events handling\-: you want to make this thread sleep as long as no new event is received. 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_event}{sf::Event} event;
+\textcolor{keywordflow}{if} (window.\hyperlink{classsf_1_1_window_aaf02ab64fbc1d374eef3696df54137bc}{waitEvent}(event))
+\{
+   \textcolor{comment}{// process event...}
+\}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \hyperlink{classsf_1_1_event}{Event} to be returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if any error occured
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_window_a338e996585faf82e93069858e3b531b7}{poll\-Event} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_window_2_window_8hpp}{Window.\-hpp}\end{DoxyCompactItemize}

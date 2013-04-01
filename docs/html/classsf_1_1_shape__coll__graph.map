@@ -1,0 +1,4 @@
+<map id="sf::Shape" name="sf::Shape">
+<area shape="rect" id="node2" href="$classsf_1_1_drawable.html" title="Abstract base class for objects that can be drawn to a render target." alt="" coords="5,5,101,32"/>
+<area shape="rect" id="node3" href="$classsf_1_1_transformable.html" title="Decomposed transform defined by a position, a rotation and a scale." alt="" coords="125,5,251,32"/>
+</map>

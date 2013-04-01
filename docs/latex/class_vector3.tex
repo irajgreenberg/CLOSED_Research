@@ -1,0 +1,795 @@
+\hypertarget{class_vector3}{\section{Vector3 Class Reference}
+\label{class_vector3}\index{Vector3@{Vector3}}
+}
+
+
+{\ttfamily \#include $<$Vector3.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vector3_a4fa53cd9ec543e9bd6c8304e87303ce3}{Vector3} (double \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}=0.\-0f, double y=0.\-0f, double z=0.\-0f, float r=0.\-0f, float g=0.\-0f, float b=0.\-0f, float a=0.\-0f)
+\item 
+\hyperlink{class_vector3_a1116d2e181b0226afb2a68bb54fbdaca}{Vector3} (double xyz\mbox{[}3\mbox{]})
+\item 
+\hyperlink{class_vector3_a8ecc8e350589010821aef55516765cdf}{Vector3} (double xyz\mbox{[}3\mbox{]}, float R\-G\-B\-A\mbox{[}4\mbox{]})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a105b045dd7469eac3c90e8df11a81999}{operator+=} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a6ccc84a70e65457505f799a0fdcd46d5}{operator+=} (double f)
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a76473ea93f630b84e63b2150bd60b201}{operator-\/=} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a26ad5830cf0dd55fa3cadb378e2756b3}{operator-\/=} (double f)
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a48bda2370f2b649018795021c29e679c}{operator$\ast$=} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a8b30951eb85503a0aec6b6727a8b32ff}{operator$\ast$=} (double f)
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_ad28b76c61257badf6f9480e294c80e06}{operator/=} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_ab234b3dcf661eabde1a5368bc6a1e939}{operator/=} (double f)
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a39803eb3719ea203d828bb26a5c19999}{operator++} ()
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_a2ce8b2c7a59bbc61c2f468b8e5ee8136}{operator-\/-\/} ()
+\item 
+double \hyperlink{class_vector3_a41371c19335a2b41f565e0dcf5d30aa2}{operator\mbox{[}$\,$\mbox{]}} (int \hyperlink{gl3_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index})
+\item 
+bool \hyperlink{class_vector3_a684d974559c22f3fffdcc663b670b868}{operator==} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v}) const 
+\item 
+double \hyperlink{class_vector3_a22fd55d826ef5160851d7188d2f6db9b}{mag} ()
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_vector3_a27f9aa009d2bc1bcb04b0ec131808e4e}{normalize} ()
+\item 
+double \hyperlink{class_vector3_a0f12d551c4d051507ae0c88dc6765198}{angle} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+double \hyperlink{class_vector3_af533d5da2a49df3c19a1046a20565707}{dot} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \hyperlink{class_vector3_ad2a9b10b8f2f2781005cd75d0298484e}{cross} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{class_vector3_ab1567207b84c2f773c949eaf5de7c0c3}{cross\-This} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+double \hyperlink{class_vector3_a2cc9e80bdae8582ebd003fe0d15d2a38}{dist} (const \hyperlink{class_vector3}{Vector3} \&\hyperlink{gl3_8h_a14cfbe2fc2234f5504618905b69d1e06}{v})
+\item 
+\hyperlink{class_vector3}{Vector3} \& \hyperlink{class_vector3_af9d6bad195eab03996d30bf6635c8b29}{rotate} (double theta, const \hyperlink{class_vector3}{Vector3} \&axis)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}{x}
+\item 
+double \hyperlink{class_vector3_ae4965693beffdb6069e0618222cae459}{y}
+\item 
+double \hyperlink{class_vector3_aa5f4108b2839a110eeaec8606780eaff}{z}
+\item 
+float \hyperlink{class_vector3_a83d49327a46971813ef59a9d96f99d1a}{r}
+\item 
+float \hyperlink{class_vector3_a8a37d2d94360d873e5eae2afcebddfdd}{g}
+\item 
+float \hyperlink{class_vector3_acef6bb205980d2e29d3d781805b84344}{b}
+\item 
+float \hyperlink{class_vector3_a109d6f958e8b10613c83af9f6d5e196b}{a}
+\item 
+float \hyperlink{class_vector3_a37a489d4fcc8044f95ae8520fb0974d4}{rgba} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{class_vector3_a3142c9bdfeaa6eff51cbd02bf583603b}{totol\-Vector3\-Count} = 0
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& \hyperlink{class_vector3_a450dd24aa70715d0db6a773973bae2df}{operator$<$$<$} (std\-::ostream \&output, const \hyperlink{class_vector3}{Vector3} \&vec)
+\end{DoxyCompactItemize}
+\subsection*{Related Functions}
+(Note that these are not member functions.) \begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_a9b75d2fb9b0f2fd9fe33f8f06f9dda75}{operator-\/} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left)
+\begin{DoxyCompactList}\small\item\em Overload of unary operator -\/. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \& \hyperlink{class_vector3_abc28859af163c63318ea2723b81c5ad9}{operator+=} (\hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator +=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \& \hyperlink{class_vector3_aa465672d2a4ee5fd354e585cf08d2ab9}{operator-\/=} (\hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator -\/=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_a6500a0cb00e07801e9e9d7e96852ddd3}{operator+} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator +. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_abe0b9411c00cf807bf8a5f835874bd2a}{operator-\/} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator -\/. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_a44ec312b31c1a85dcff4863795f98329}{operator$\ast$} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_aa6f2b0d9f79c1b9774759b7087affbb1}{operator$\ast$} (T left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \& \hyperlink{class_vector3_ad5fb972775ce8ab58cd9670789e806a7}{operator$\ast$=} (\hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator $\ast$=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \hyperlink{class_vector3_ad4ba4a83de236ddeb92a7b759187e90d}{operator/} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator /. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\\hyperlink{class_vector3}{Vector3}$<$ T $>$ \& \hyperlink{class_vector3_a8995a700f9dffccc6dddb3696ae17b64}{operator/=} (\hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, T right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator /=. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{class_vector3_a388d72db973306a35ba467016b3dee30}{operator==} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator ==. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\bool \hyperlink{class_vector3_a608500d1ad3b78082cb5bb4356742bd4}{operator!=} (const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&left, const \hyperlink{class_vector3}{Vector3}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Overload of binary operator !=. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 45 of file Vector3.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_vector3_a4fa53cd9ec543e9bd6c8304e87303ce3}{\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}Vector3\-::\-Vector3 (
+\begin{DoxyParamCaption}
+\item[{double}]{x = {\ttfamily 0.0f}, }
+\item[{double}]{y = {\ttfamily 0.0f}, }
+\item[{double}]{z = {\ttfamily 0.0f}, }
+\item[{float}]{r = {\ttfamily 0.0f}, }
+\item[{float}]{g = {\ttfamily 0.0f}, }
+\item[{float}]{b = {\ttfamily 0.0f}, }
+\item[{float}]{a = {\ttfamily 0.0f}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_vector3_a4fa53cd9ec543e9bd6c8304e87303ce3}
+
+
+Definition at line 116 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a1116d2e181b0226afb2a68bb54fbdaca}{\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}Vector3\-::\-Vector3 (
+\begin{DoxyParamCaption}
+\item[{double}]{xyz\mbox{[}3\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{class_vector3_a1116d2e181b0226afb2a68bb54fbdaca}
+
+
+Definition at line 122 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a8ecc8e350589010821aef55516765cdf}{\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\index{Vector3@{Vector3}!Vector3@{Vector3}}
+\subsubsection[{Vector3}]{\setlength{\rightskip}{0pt plus 5cm}Vector3\-::\-Vector3 (
+\begin{DoxyParamCaption}
+\item[{double}]{xyz\mbox{[}3\mbox{]}, }
+\item[{float}]{R\-G\-B\-A\mbox{[}4\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a8ecc8e350589010821aef55516765cdf}
+
+
+Definition at line 131 of file Vector3.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_vector3_a0f12d551c4d051507ae0c88dc6765198}{\index{Vector3@{Vector3}!angle@{angle}}
+\index{angle@{angle}!Vector3@{Vector3}}
+\subsubsection[{angle}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::angle (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a0f12d551c4d051507ae0c88dc6765198}
+
+
+Definition at line 266 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_ad2a9b10b8f2f2781005cd75d0298484e}{\index{Vector3@{Vector3}!cross@{cross}}
+\index{cross@{cross}!Vector3@{Vector3}}
+\subsubsection[{cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} Vector3\-::cross (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_ad2a9b10b8f2f2781005cd75d0298484e}
+
+
+Definition at line 296 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_ab1567207b84c2f773c949eaf5de7c0c3}{\index{Vector3@{Vector3}!cross\-This@{cross\-This}}
+\index{cross\-This@{cross\-This}!Vector3@{Vector3}}
+\subsubsection[{cross\-This}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Vector3\-::cross\-This (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_ab1567207b84c2f773c949eaf5de7c0c3}
+
+
+Definition at line 304 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a2cc9e80bdae8582ebd003fe0d15d2a38}{\index{Vector3@{Vector3}!dist@{dist}}
+\index{dist@{dist}!Vector3@{Vector3}}
+\subsubsection[{dist}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::dist (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a2cc9e80bdae8582ebd003fe0d15d2a38}
+
+
+Definition at line 312 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_af533d5da2a49df3c19a1046a20565707}{\index{Vector3@{Vector3}!dot@{dot}}
+\index{dot@{dot}!Vector3@{Vector3}}
+\subsubsection[{dot}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::dot (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_af533d5da2a49df3c19a1046a20565707}
+
+
+Definition at line 284 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a22fd55d826ef5160851d7188d2f6db9b}{\index{Vector3@{Vector3}!mag@{mag}}
+\index{mag@{mag}!Vector3@{Vector3}}
+\subsubsection[{mag}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::mag (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a22fd55d826ef5160851d7188d2f6db9b}
+
+
+Definition at line 256 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a27f9aa009d2bc1bcb04b0ec131808e4e}{\index{Vector3@{Vector3}!normalize@{normalize}}
+\index{normalize@{normalize}!Vector3@{Vector3}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} Vector3\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a27f9aa009d2bc1bcb04b0ec131808e4e}
+
+
+Definition at line 261 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a48bda2370f2b649018795021c29e679c}{\index{Vector3@{Vector3}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector3@{Vector3}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a48bda2370f2b649018795021c29e679c}
+
+
+Definition at line 174 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a8b30951eb85503a0aec6b6727a8b32ff}{\index{Vector3@{Vector3}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector3@{Vector3}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a8b30951eb85503a0aec6b6727a8b32ff}
+
+
+Definition at line 181 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a39803eb3719ea203d828bb26a5c19999}{\index{Vector3@{Vector3}!operator++@{operator++}}
+\index{operator++@{operator++}!Vector3@{Vector3}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a39803eb3719ea203d828bb26a5c19999}
+
+
+Definition at line 202 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a105b045dd7469eac3c90e8df11a81999}{\index{Vector3@{Vector3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector3@{Vector3}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a105b045dd7469eac3c90e8df11a81999}
+
+
+Definition at line 146 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a6ccc84a70e65457505f799a0fdcd46d5}{\index{Vector3@{Vector3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector3@{Vector3}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a6ccc84a70e65457505f799a0fdcd46d5}
+
+
+Definition at line 153 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a2ce8b2c7a59bbc61c2f468b8e5ee8136}{\index{Vector3@{Vector3}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!Vector3@{Vector3}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a2ce8b2c7a59bbc61c2f468b8e5ee8136}
+
+
+Definition at line 209 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a76473ea93f630b84e63b2150bd60b201}{\index{Vector3@{Vector3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vector3@{Vector3}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a76473ea93f630b84e63b2150bd60b201}
+
+
+Definition at line 160 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a26ad5830cf0dd55fa3cadb378e2756b3}{\index{Vector3@{Vector3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vector3@{Vector3}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a26ad5830cf0dd55fa3cadb378e2756b3}
+
+
+Definition at line 167 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_ad28b76c61257badf6f9480e294c80e06}{\index{Vector3@{Vector3}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Vector3@{Vector3}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_ad28b76c61257badf6f9480e294c80e06}
+
+
+Definition at line 188 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_ab234b3dcf661eabde1a5368bc6a1e939}{\index{Vector3@{Vector3}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Vector3@{Vector3}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::operator/= (
+\begin{DoxyParamCaption}
+\item[{double}]{f}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_ab234b3dcf661eabde1a5368bc6a1e939}
+
+
+Definition at line 195 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a684d974559c22f3fffdcc663b670b868}{\index{Vector3@{Vector3}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector3@{Vector3}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Vector3\-::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3} \&}]{v}
+\end{DoxyParamCaption}
+) const}}\label{class_vector3_a684d974559c22f3fffdcc663b670b868}
+
+
+Definition at line 238 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a41371c19335a2b41f565e0dcf5d30aa2}{\index{Vector3@{Vector3}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Vector3@{Vector3}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_a41371c19335a2b41f565e0dcf5d30aa2}
+
+
+Definition at line 216 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_af9d6bad195eab03996d30bf6635c8b29}{\index{Vector3@{Vector3}!rotate@{rotate}}
+\index{rotate@{rotate}!Vector3@{Vector3}}
+\subsubsection[{rotate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector3} \& Vector3\-::rotate (
+\begin{DoxyParamCaption}
+\item[{double}]{theta, }
+\item[{const {\bf Vector3} \&}]{axis}
+\end{DoxyParamCaption}
+)}}\label{class_vector3_af9d6bad195eab03996d30bf6635c8b29}
+
+
+Definition at line 321 of file Vector3.\-cpp.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_vector3_a608500d1ad3b78082cb5bb4356742bd4}{\index{Vector3@{Vector3}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Vector3@{Vector3}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a608500d1ad3b78082cb5bb4356742bd4}
+
+
+Overload of binary operator !=. 
+
+This operator compares strict difference between two vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is not equal to {\itshape right} 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_a44ec312b31c1a85dcff4863795f98329}{\index{Vector3@{Vector3}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector3@{Vector3}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{T}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a44ec312b31c1a85dcff4863795f98329}
+
+
+Overload of binary operator $\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise multiplication by {\itshape right} 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_aa6f2b0d9f79c1b9774759b7087affbb1}{\index{Vector3@{Vector3}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Vector3@{Vector3}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{T}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_aa6f2b0d9f79c1b9774759b7087affbb1}
+
+
+Overload of binary operator $\ast$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a scalar value) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise multiplication by {\itshape left} 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_ad5fb972775ce8ab58cd9670789e806a7}{\index{Vector3@{Vector3}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Vector3@{Vector3}}
+\subsubsection[{operator$\ast$=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ \& operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{T}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_ad5fb972775ce8ab58cd9670789e806a7}
+
+
+Overload of binary operator $\ast$=. 
+
+This operator performs a memberwise multiplication by {\itshape right}, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_a6500a0cb00e07801e9e9d7e96852ddd3}{\index{Vector3@{Vector3}!operator+@{operator+}}
+\index{operator+@{operator+}!Vector3@{Vector3}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a6500a0cb00e07801e9e9d7e96852ddd3}
+
+
+Overload of binary operator +. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise addition of both vectors 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_abc28859af163c63318ea2723b81c5ad9}{\index{Vector3@{Vector3}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Vector3@{Vector3}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ \& operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_abc28859af163c63318ea2723b81c5ad9}
+
+
+Overload of binary operator +=. 
+
+This operator performs a memberwise addition of both vectors, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+
+
+Definition at line 69 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_a9b75d2fb9b0f2fd9fe33f8f06f9dda75}{\index{Vector3@{Vector3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3@{Vector3}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a9b75d2fb9b0f2fd9fe33f8f06f9dda75}
+
+
+Overload of unary operator -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Vector to negate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise opposite of the vector 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_abe0b9411c00cf807bf8a5f835874bd2a}{\index{Vector3@{Vector3}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Vector3@{Vector3}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_abe0b9411c00cf807bf8a5f835874bd2a}
+
+
+Overload of binary operator -\/. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise subtraction of both vectors 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_aa465672d2a4ee5fd354e585cf08d2ab9}{\index{Vector3@{Vector3}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Vector3@{Vector3}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ \& operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_aa465672d2a4ee5fd354e585cf08d2ab9}
+
+
+Overload of binary operator -\/=. 
+
+This operator performs a memberwise subtraction of both vectors, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_ad4ba4a83de236ddeb92a7b759187e90d}{\index{Vector3@{Vector3}!operator/@{operator/}}
+\index{operator/@{operator/}!Vector3@{Vector3}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ operator/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{T}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_ad4ba4a83de236ddeb92a7b759187e90d}
+
+
+Overload of binary operator /. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a scalar value) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Memberwise division by {\itshape right} 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_a8995a700f9dffccc6dddb3696ae17b64}{\index{Vector3@{Vector3}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Vector3@{Vector3}}
+\subsubsection[{operator/=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Vector3}$<$ T $>$ \& operator/= (
+\begin{DoxyParamCaption}
+\item[{{\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{T}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a8995a700f9dffccc6dddb3696ae17b64}
+
+
+Overload of binary operator /=. 
+
+This operator performs a memberwise division by {\itshape right}, and assigns the result to {\itshape left}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a scalar value)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to {\itshape left} 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file Vector3.\-inl.
+
+\hypertarget{class_vector3_a450dd24aa70715d0db6a773973bae2df}{\index{Vector3@{Vector3}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Vector3@{Vector3}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output, }
+\item[{const {\bf Vector3} \&}]{vec}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_vector3_a450dd24aa70715d0db6a773973bae2df}
+
+
+Definition at line 247 of file Vector3.\-cpp.
+
+\hypertarget{class_vector3_a388d72db973306a35ba467016b3dee30}{\index{Vector3@{Vector3}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector3@{Vector3}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ bool operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{left, }
+\item[{const {\bf Vector3}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [related]}}}\label{class_vector3_a388d72db973306a35ba467016b3dee30}
+
+
+Overload of binary operator ==. 
+
+This operator compares strict equality between two vectors.
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & Left operand (a vector) \\
+\hline
+{\em right} & Right operand (a vector)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if {\itshape left} is equal to {\itshape right} 
+\end{DoxyReturn}
+
+
+Definition at line 157 of file Vector3.\-inl.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_vector3_a109d6f958e8b10613c83af9f6d5e196b}{\index{Vector3@{Vector3}!a@{a}}
+\index{a@{a}!Vector3@{Vector3}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}float Vector3\-::a}}\label{class_vector3_a109d6f958e8b10613c83af9f6d5e196b}
+
+
+Definition at line 60 of file Vector3.\-h.
+
+\hypertarget{class_vector3_acef6bb205980d2e29d3d781805b84344}{\index{Vector3@{Vector3}!b@{b}}
+\index{b@{b}!Vector3@{Vector3}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}float Vector3\-::b}}\label{class_vector3_acef6bb205980d2e29d3d781805b84344}
+
+
+Definition at line 60 of file Vector3.\-h.
+
+\hypertarget{class_vector3_a8a37d2d94360d873e5eae2afcebddfdd}{\index{Vector3@{Vector3}!g@{g}}
+\index{g@{g}!Vector3@{Vector3}}
+\subsubsection[{g}]{\setlength{\rightskip}{0pt plus 5cm}float Vector3\-::g}}\label{class_vector3_a8a37d2d94360d873e5eae2afcebddfdd}
+
+
+Definition at line 60 of file Vector3.\-h.
+
+\hypertarget{class_vector3_a83d49327a46971813ef59a9d96f99d1a}{\index{Vector3@{Vector3}!r@{r}}
+\index{r@{r}!Vector3@{Vector3}}
+\subsubsection[{r}]{\setlength{\rightskip}{0pt plus 5cm}float Vector3\-::r}}\label{class_vector3_a83d49327a46971813ef59a9d96f99d1a}
+
+
+Definition at line 60 of file Vector3.\-h.
+
+\hypertarget{class_vector3_a37a489d4fcc8044f95ae8520fb0974d4}{\index{Vector3@{Vector3}!rgba@{rgba}}
+\index{rgba@{rgba}!Vector3@{Vector3}}
+\subsubsection[{rgba}]{\setlength{\rightskip}{0pt plus 5cm}float Vector3\-::rgba\mbox{[}4\mbox{]}}}\label{class_vector3_a37a489d4fcc8044f95ae8520fb0974d4}
+
+
+Definition at line 61 of file Vector3.\-h.
+
+\hypertarget{class_vector3_a3142c9bdfeaa6eff51cbd02bf583603b}{\index{Vector3@{Vector3}!totol\-Vector3\-Count@{totol\-Vector3\-Count}}
+\index{totol\-Vector3\-Count@{totol\-Vector3\-Count}!Vector3@{Vector3}}
+\subsubsection[{totol\-Vector3\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int Vector3\-::totol\-Vector3\-Count = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{class_vector3_a3142c9bdfeaa6eff51cbd02bf583603b}
+
+
+Definition at line 54 of file Vector3.\-h.
+
+\hypertarget{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}{\index{Vector3@{Vector3}!x@{x}}
+\index{x@{x}!Vector3@{Vector3}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::x}}\label{class_vector3_a60aa84ebc037dec9faba617f8ddb231d}
+
+
+Definition at line 57 of file Vector3.\-h.
+
+\hypertarget{class_vector3_ae4965693beffdb6069e0618222cae459}{\index{Vector3@{Vector3}!y@{y}}
+\index{y@{y}!Vector3@{Vector3}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::y}}\label{class_vector3_ae4965693beffdb6069e0618222cae459}
+
+
+Definition at line 57 of file Vector3.\-h.
+
+\hypertarget{class_vector3_aa5f4108b2839a110eeaec8606780eaff}{\index{Vector3@{Vector3}!z@{z}}
+\index{z@{z}!Vector3@{Vector3}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}double Vector3\-::z}}\label{class_vector3_aa5f4108b2839a110eeaec8606780eaff}
+
+
+Definition at line 57 of file Vector3.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_vector3_8h}{Vector3.\-h}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_vector3_8hpp}{Vector3.\-hpp}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/\-Protobyte/\hyperlink{_vector3_8cpp}{Vector3.\-cpp}\end{DoxyCompactItemize}

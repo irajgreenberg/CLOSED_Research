@@ -1,0 +1,103 @@
+\hypertarget{classsf_1_1_clock}{\section{sf\-:\-:Clock Class Reference}
+\label{classsf_1_1_clock}\index{sf\-::\-Clock@{sf\-::\-Clock}}
+}
+
+
+Utility class that measures the elapsed time.  
+
+
+
+
+{\ttfamily \#include $<$Clock.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}{Clock} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_time}{Time} \hyperlink{classsf_1_1_clock_a799feb6acb099b57b58d8d20984fce11}{get\-Elapsed\-Time} () const 
+\begin{DoxyCompactList}\small\item\em Get the elapsed time. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_time}{Time} \hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart} ()
+\begin{DoxyCompactList}\small\item\em Restart the clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class that measures the elapsed time. 
+
+\hyperlink{classsf_1_1_clock}{sf\-::\-Clock} is a lightweight class for measuring time.
+
+Its provides the most precise time that the underlying O\-S can achieve (generally microseconds or nanoseconds). It also ensures monotonicity, which means that the returned time can never go backward, even if the system time is changed.
+
+Usage example\-: 
+\begin{DoxyCode}
+\hyperlink{classsf_1_1_clock}{sf::Clock} clock;
+...
+Time time1 = clock.\hyperlink{classsf_1_1_clock_a799feb6acb099b57b58d8d20984fce11}{getElapsedTime}();
+...
+\hyperlink{classsf_1_1_time_acba0cfbc49e3a09a22a8e079eb67a05c}{Time} time2 = clock.\hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart}();
+\end{DoxyCode}
+
+
+The \hyperlink{classsf_1_1_time}{sf\-::\-Time} value returned by the clock can then be converted to a number of seconds, milliseconds or even microseconds.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_time}{sf\-::\-Time} 
+\end{DoxySeeAlso}
+
+
+Definition at line 41 of file Clock.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}{\index{sf\-::\-Clock@{sf\-::\-Clock}!Clock@{Clock}}
+\index{Clock@{Clock}!sf::Clock@{sf\-::\-Clock}}
+\subsubsection[{Clock}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Clock\-::\-Clock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_clock_abbc959c7830ca7c3a4da133cb506d3fd}
+
+
+Default constructor. 
+
+The clock starts automatically after being constructed. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_clock_a799feb6acb099b57b58d8d20984fce11}{\index{sf\-::\-Clock@{sf\-::\-Clock}!get\-Elapsed\-Time@{get\-Elapsed\-Time}}
+\index{get\-Elapsed\-Time@{get\-Elapsed\-Time}!sf::Clock@{sf\-::\-Clock}}
+\subsubsection[{get\-Elapsed\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} sf\-::\-Clock\-::get\-Elapsed\-Time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_clock_a799feb6acb099b57b58d8d20984fce11}
+
+
+Get the elapsed time. 
+
+This function returns the time elapsed since the last call to \hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()} (or the construction of the instance if \hyperlink{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{restart()} has not been called).
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_time}{Time} elapsed 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}{\index{sf\-::\-Clock@{sf\-::\-Clock}!restart@{restart}}
+\index{restart@{restart}!sf::Clock@{sf\-::\-Clock}}
+\subsubsection[{restart}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Time} sf\-::\-Clock\-::restart (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_clock_a123e2627f2943e5ecaa1db0c7df3231b}
+
+
+Restart the clock. 
+
+This function puts the time counter back to zero. It also returns the time elapsed since the clock was started.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_time}{Time} elapsed 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_clock_8hpp}{Clock.\-hpp}\end{DoxyCompactItemize}

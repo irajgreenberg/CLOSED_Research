@@ -1,0 +1,145 @@
+\hypertarget{structsf_1_1_context_settings}{\section{sf\-:\-:Context\-Settings Class Reference}
+\label{structsf_1_1_context_settings}\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}}
+}
+
+
+Structure defining the settings of the Open\-G\-L context attached to a window.  
+
+
+
+
+{\ttfamily \#include $<$Context\-Settings.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structsf_1_1_context_settings_aafe35f8e257f9d1e496ed64e33e2ee9f}{Context\-Settings} (unsigned int \hyperlink{gl3_8h_a6fe5f09cdb51e330bab7eae97ac343a3}{depth}=0, unsigned int \hyperlink{gl3_8h_aecd18db993a66d833647945966799ca5}{stencil}=0, unsigned int antialiasing=0, unsigned int major=2, unsigned int minor=0)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{structsf_1_1_context_settings_a4809e22089c2af7276b8809b5aede7bb}{depth\-Bits}
+\begin{DoxyCompactList}\small\item\em Bits of the depth buffer. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structsf_1_1_context_settings_ac2e788c201ca20e84fd38a28071abd29}{stencil\-Bits}
+\begin{DoxyCompactList}\small\item\em Bits of the stencil buffer. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structsf_1_1_context_settings_ac4a097be18994dba38d73f36b0418bdc}{antialiasing\-Level}
+\begin{DoxyCompactList}\small\item\em Level of antialiasing. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structsf_1_1_context_settings_a99a680d5c15a7e34c935654155dd5166}{major\-Version}
+\begin{DoxyCompactList}\small\item\em Major number of the context version to create. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{structsf_1_1_context_settings_aaeb0efe9d2658b840da93b30554b100f}{minor\-Version}
+\begin{DoxyCompactList}\small\item\em Minor number of the context version to create. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure defining the settings of the Open\-G\-L context attached to a window. 
+
+\hyperlink{structsf_1_1_context_settings}{Context\-Settings} allows to define several advanced settings of the Open\-G\-L context attached to a window. All these settings have no impact on the regular S\-F\-M\-L rendering (graphics module) -- except the anti-\/aliasing level, so you may need to use this structure only if you're using S\-F\-M\-L as a windowing system for custom Open\-G\-L rendering.
+
+The depth\-Bits and stencil\-Bits members define the number of bits per pixel requested for the (respectively) depth and stencil buffers.
+
+antialiasing\-Level represents the requested number of multisampling levels for anti-\/aliasing.
+
+major\-Version and minor\-Version define the version of the Open\-G\-L context that you want. Only versions greater or equal to 3.\-0 are relevant; versions lesser than 3.\-0 are all handled the same way (i.\-e. you can use any version $<$ 3.\-0 if you don't want an Open\-G\-L 3 context).
+
+Please note that these values are only a hint. No failure will be reported if one or more of these values are not supported by the system; instead, S\-F\-M\-L will try to find the closest valid match. You can then retrieve the settings that the window actually used to create its context, with \hyperlink{classsf_1_1_window_a5a9d5c15facf25ad4d9b2b30caa0a2db}{Window\-::get\-Settings()}. 
+
+Definition at line 36 of file Context\-Settings.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{structsf_1_1_context_settings_aafe35f8e257f9d1e496ed64e33e2ee9f}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!Context\-Settings@{Context\-Settings}}
+\index{Context\-Settings@{Context\-Settings}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{Context\-Settings}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Context\-Settings\-::\-Context\-Settings (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{depth = {\ttfamily 0}, }
+\item[{unsigned int}]{stencil = {\ttfamily 0}, }
+\item[{unsigned int}]{antialiasing = {\ttfamily 0}, }
+\item[{unsigned int}]{major = {\ttfamily 2}, }
+\item[{unsigned int}]{minor = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{structsf_1_1_context_settings_aafe35f8e257f9d1e496ed64e33e2ee9f}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & Depth buffer bits \\
+\hline
+{\em stencil} & Stencil buffer bits \\
+\hline
+{\em antialiasing} & Antialiasing level \\
+\hline
+{\em major} & Major number of the context version \\
+\hline
+{\em minor} & Minor number of the context version \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 48 of file Context\-Settings.\-hpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structsf_1_1_context_settings_ac4a097be18994dba38d73f36b0418bdc}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!antialiasing\-Level@{antialiasing\-Level}}
+\index{antialiasing\-Level@{antialiasing\-Level}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{antialiasing\-Level}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Context\-Settings\-::antialiasing\-Level}}\label{structsf_1_1_context_settings_ac4a097be18994dba38d73f36b0418bdc}
+
+
+Level of antialiasing. 
+
+
+
+Definition at line 62 of file Context\-Settings.\-hpp.
+
+\hypertarget{structsf_1_1_context_settings_a4809e22089c2af7276b8809b5aede7bb}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!depth\-Bits@{depth\-Bits}}
+\index{depth\-Bits@{depth\-Bits}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{depth\-Bits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Context\-Settings\-::depth\-Bits}}\label{structsf_1_1_context_settings_a4809e22089c2af7276b8809b5aede7bb}
+
+
+Bits of the depth buffer. 
+
+
+
+Definition at line 60 of file Context\-Settings.\-hpp.
+
+\hypertarget{structsf_1_1_context_settings_a99a680d5c15a7e34c935654155dd5166}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!major\-Version@{major\-Version}}
+\index{major\-Version@{major\-Version}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{major\-Version}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Context\-Settings\-::major\-Version}}\label{structsf_1_1_context_settings_a99a680d5c15a7e34c935654155dd5166}
+
+
+Major number of the context version to create. 
+
+
+
+Definition at line 63 of file Context\-Settings.\-hpp.
+
+\hypertarget{structsf_1_1_context_settings_aaeb0efe9d2658b840da93b30554b100f}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!minor\-Version@{minor\-Version}}
+\index{minor\-Version@{minor\-Version}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{minor\-Version}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Context\-Settings\-::minor\-Version}}\label{structsf_1_1_context_settings_aaeb0efe9d2658b840da93b30554b100f}
+
+
+Minor number of the context version to create. 
+
+
+
+Definition at line 64 of file Context\-Settings.\-hpp.
+
+\hypertarget{structsf_1_1_context_settings_ac2e788c201ca20e84fd38a28071abd29}{\index{sf\-::\-Context\-Settings@{sf\-::\-Context\-Settings}!stencil\-Bits@{stencil\-Bits}}
+\index{stencil\-Bits@{stencil\-Bits}!sf::ContextSettings@{sf\-::\-Context\-Settings}}
+\subsubsection[{stencil\-Bits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sf\-::\-Context\-Settings\-::stencil\-Bits}}\label{structsf_1_1_context_settings_ac2e788c201ca20e84fd38a28071abd29}
+
+
+Bits of the stencil buffer. 
+
+
+
+Definition at line 61 of file Context\-Settings.\-hpp.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_context_settings_8hpp}{Context\-Settings.\-hpp}\end{DoxyCompactItemize}

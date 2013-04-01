@@ -1,0 +1,36 @@
+<map id="/Users/ira/Dropbox/ira_dev/protobyte_research/other_libs/SFML/dylibs/root/usr/local/include/SFML/Network.hpp" name="/Users/ira/Dropbox/ira_dev/protobyte_research/other_libs/SFML/dylibs/root/usr/local/include/SFML/Network.hpp">
+<area shape="rect" id="node2" href="$_system_8hpp.html" title="SFML/System.hpp" alt="" coords="1374,125,1506,152"/>
+<area shape="rect" id="node30" href="$_ftp_8hpp.html" title="SFML/Network/Ftp.hpp" alt="" coords="3058,125,3216,152"/>
+<area shape="rect" id="node36" href="$_http_8hpp.html" title="SFML/Network/Http.hpp" alt="" coords="2753,125,2916,152"/>
+<area shape="rect" id="node37" href="$_ip_address_8hpp.html" title="SFML/Network/IpAddress.hpp" alt="" coords="2819,200,3019,227"/>
+<area shape="rect" id="node40" href="$_packet_8hpp.html" title="SFML/Network/Packet.hpp" alt="" coords="3473,200,3652,227"/>
+<area shape="rect" id="node41" href="$_socket_selector_8hpp.html" title="SFML/Network/SocketSelector.hpp" alt="" coords="2392,200,2622,227"/>
+<area shape="rect" id="node42" href="$_tcp_listener_8hpp.html" title="SFML/Network/TcpListener.hpp" alt="" coords="3677,200,3886,227"/>
+<area shape="rect" id="node32" href="$_tcp_socket_8hpp.html" title="SFML/Network/TcpSocket.hpp" alt="" coords="3246,200,3448,227"/>
+<area shape="rect" id="node43" href="$_udp_socket_8hpp.html" title="SFML/Network/UdpSocket.hpp" alt="" coords="3911,200,4116,227"/>
+<area shape="rect" id="node3" href="$_config_8hpp.html" title="SFML/Config.hpp" alt="" coords="2171,499,2296,525"/>
+<area shape="rect" id="node4" href="$_clock_8hpp.html" title="SFML/System/Clock.hpp" alt="" coords="1478,200,1647,227"/>
+<area shape="rect" id="node7" href="$_err_8hpp.html" title="SFML/System/Err.hpp" alt="" coords="1672,200,1824,227"/>
+<area shape="rect" id="node9" href="$_input_stream_8hpp.html" title="SFML/System/InputStream.hpp" alt="" coords="2059,424,2267,451"/>
+<area shape="rect" id="node10" href="$_lock_8hpp.html" title="SFML/System/Lock.hpp" alt="" coords="1657,275,1820,301"/>
+<area shape="rect" id="node12" href="$_mutex_8hpp.html" title="SFML/System/Mutex.hpp" alt="" coords="1897,275,2068,301"/>
+<area shape="rect" id="node13" href="$_sleep_8hpp.html" title="SFML/System/Sleep.hpp" alt="" coords="1849,200,2018,227"/>
+<area shape="rect" id="node14" href="$_string_8hpp.html" title="SFML/System/String.hpp" alt="" coords="422,200,592,227"/>
+<area shape="rect" id="node17" href="$_thread_8hpp.html" title="SFML/System/Thread.hpp" alt="" coords="733,275,910,301"/>
+<area shape="rect" id="node20" href="$_thread_local_8hpp.html" title="SFML/System/ThreadLocal.hpp" alt="" coords="1130,275,1339,301"/>
+<area shape="rect" id="node21" href="$_thread_local_ptr_8hpp.html" title="SFML/System/ThreadLocalPtr.hpp" alt="" coords="1176,200,1403,227"/>
+<area shape="rect" id="node23" href="$_utf_8hpp.html" title="SFML/System/Utf.hpp" alt="" coords="238,200,390,227"/>
+<area shape="rect" id="node26" href="$_vector2_8hpp.html" title="SFML/System/Vector2.hpp" alt="" coords="920,200,1102,227"/>
+<area shape="rect" id="node28" href="$_vector3_8hpp.html" title="SFML/System/Vector3.hpp" alt="" coords="623,200,804,227"/>
+<area shape="rect" id="node5" href="$_system_2_export_8hpp.html" title="SFML/System/Export.hpp" alt="" coords="1634,424,1807,451"/>
+<area shape="rect" id="node6" href="$_time_8hpp.html" title="SFML/System/Time.hpp" alt="" coords="2560,275,2726,301"/>
+<area shape="rect" id="node11" href="$_non_copyable_8hpp.html" title="SFML/System/NonCopyable.hpp" alt="" coords="1859,349,2075,376"/>
+<area shape="rect" id="node19" href="$_thread_8inl.html" title="SFML/System/Thread.inl" alt="" coords="736,349,904,376"/>
+<area shape="rect" id="node22" href="$_thread_local_ptr_8inl.html" title="SFML/System/ThreadLocalPtr.inl" alt="" coords="1364,275,1580,301"/>
+<area shape="rect" id="node25" href="$_utf_8inl.html" title="SFML/System/Utf.inl" alt="" coords="132,275,276,301"/>
+<area shape="rect" id="node27" href="$_vector2_8inl.html" title="SFML/System/Vector2.inl" alt="" coords="934,275,1106,301"/>
+<area shape="rect" id="node29" href="$_vector3_8inl.html" title="SFML/System/Vector3.inl" alt="" coords="485,275,656,301"/>
+<area shape="rect" id="node31" href="$_network_2_export_8hpp.html" title="SFML/Network/Export.hpp" alt="" coords="3144,349,3323,376"/>
+<area shape="rect" id="node33" href="$_socket_8hpp.html" title="SFML/Network/Socket.hpp" alt="" coords="3398,275,3578,301"/>
+<area shape="rect" id="node34" href="$_socket_handle_8hpp.html" title="SFML/Network/SocketHandle.hpp" alt="" coords="3066,424,3288,451"/>
+</map>

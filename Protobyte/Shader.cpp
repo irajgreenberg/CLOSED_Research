@@ -6,7 +6,7 @@
 //  Copyright 2011 SMU. All rights reserved.
 //
 
-#include "shader.h"
+#include "Shader.h"
 #include <string.h>
 #include <iostream>
 
@@ -44,6 +44,7 @@ Shader::Shader(const char *vsFile, const char *fsFile) {
 }
 
 void Shader::init(const char *vsFile, const char *fsFile) {
+    GLenum err = glewInit();
 	shader_vp = glCreateShader(GL_VERTEX_SHADER);
 	shader_fp = glCreateShader(GL_FRAGMENT_SHADER);
     

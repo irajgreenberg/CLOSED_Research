@@ -1,0 +1,230 @@
+\hypertarget{classsf_1_1_thread_local_ptr}{\section{sf\-:\-:Thread\-Local\-Ptr$<$ T $>$ Class Template Reference}
+\label{classsf_1_1_thread_local_ptr}\index{sf\-::\-Thread\-Local\-Ptr$<$ T $>$@{sf\-::\-Thread\-Local\-Ptr$<$ T $>$}}
+}
+
+
+Pointer to a thread-\/local variable.  
+
+
+
+
+{\ttfamily \#include $<$Thread\-Local\-Ptr.\-hpp$>$}
+
+
+
+Inheritance diagram for sf\-:\-:Thread\-Local\-Ptr$<$ T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classsf_1_1_thread_local_ptr__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sf\-:\-:Thread\-Local\-Ptr$<$ T $>$\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{classsf_1_1_thread_local_ptr__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_thread_local_ptr_a8c678211d7828d2a8c41cb534422d649}{Thread\-Local\-Ptr} (T $\ast$\hyperlink{gl3_8h_a8ad81492d410ff2ac11f754f4042150f}{value}=N\-U\-L\-L)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+T \& \hyperlink{classsf_1_1_thread_local_ptr_aa3bac9a08e8739613961659d10e0fadd}{operator$\ast$} () const 
+\begin{DoxyCompactList}\small\item\em Overload of unary operator $\ast$. \end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{classsf_1_1_thread_local_ptr_aa0b559f78929b22cb2585cb2966edfb2}{operator-\/$>$} () const 
+\begin{DoxyCompactList}\small\item\em Overload of operator -\/$>$ \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_thread_local_ptr_ab4a6a341c26b58f0ed3ef86502bd9572}{operator T $\ast$} () const 
+\begin{DoxyCompactList}\small\item\em Cast operator to implicitely convert the pointer to its raw pointer type (T$\ast$) \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr}$<$ T $>$ \& \hyperlink{classsf_1_1_thread_local_ptr_a14dcf1cdf5f6b3bcdd633014b2b671f5}{operator=} (T $\ast$\hyperlink{gl3_8h_a8ad81492d410ff2ac11f754f4042150f}{value})
+\begin{DoxyCompactList}\small\item\em Assignment operator for a raw pointer parameter. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr}$<$ T $>$ \& \hyperlink{classsf_1_1_thread_local_ptr_a6792a6a808af06f0d13e3ceecf2fc947}{operator=} (const \hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr}$<$ T $>$ \&right)
+\begin{DoxyCompactList}\small\item\em Assignment operator for a \hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr} parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class sf\-::\-Thread\-Local\-Ptr$<$ T $>$}
+
+Pointer to a thread-\/local variable. 
+
+\hyperlink{classsf_1_1_thread_local_ptr}{sf\-::\-Thread\-Local\-Ptr} is a type-\/safe wrapper for storing pointers to thread-\/local variables. A thread-\/local variable holds a different value for each different thread, unlike normal variable that are shared.
+
+Its usage is completely transparent, so that it is similar to manipulating the raw pointer directly (like any smart pointer).
+
+Usage example\-: 
+\begin{DoxyCode}
+MyClass object1;
+MyClass object2;
+\hyperlink{classsf_1_1_thread_local_ptr}{sf::ThreadLocalPtr<MyClass>} objectPtr;
+
+\textcolor{keywordtype}{void} thread1()
+\{
+    objectPtr = &object1; \textcolor{comment}{// doesn't impact thread2}
+    ...
+\}
+
+\textcolor{keywordtype}{void} thread2()
+\{
+    objectPtr = &object2; \textcolor{comment}{// doesn't impact thread1}
+    ...
+\}
+
+\textcolor{keywordtype}{int} \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}()
+\{
+    \textcolor{comment}{// Create and launch the two threads}
+    \hyperlink{classsf_1_1_thread}{sf::Thread} t1(&thread1);
+    \hyperlink{classsf_1_1_thread}{sf::Thread} t2(&thread2);
+    t1.launch();
+    t2.launch();
+
+    \textcolor{keywordflow}{return} 0;
+\}
+\end{DoxyCode}
+
+
+\hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr} is designed for internal use; however you can use it if you feel like it fits well your implementation. 
+
+Definition at line 41 of file Thread\-Local\-Ptr.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_thread_local_ptr_a8c678211d7828d2a8c41cb534422d649}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!Thread\-Local\-Ptr@{Thread\-Local\-Ptr}}
+\index{Thread\-Local\-Ptr@{Thread\-Local\-Ptr}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{Thread\-Local\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::{\bf Thread\-Local\-Ptr} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{value = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_local_ptr_a8c678211d7828d2a8c41cb534422d649}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Optional value to initalize the variable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file Thread\-Local\-Ptr.\-inl.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_thread_local_ptr_ab4a6a341c26b58f0ed3ef86502bd9572}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!operator T $\ast$@{operator T $\ast$}}
+\index{operator T $\ast$@{operator T $\ast$}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{operator T $\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::operator T $\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_thread_local_ptr_ab4a6a341c26b58f0ed3ef86502bd9572}
+
+
+Cast operator to implicitely convert the pointer to its raw pointer type (T$\ast$) 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the actual object 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file Thread\-Local\-Ptr.\-inl.
+
+\hypertarget{classsf_1_1_thread_local_ptr_aa3bac9a08e8739613961659d10e0fadd}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T \& {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_thread_local_ptr_aa3bac9a08e8739613961659d10e0fadd}
+
+
+Overload of unary operator $\ast$. 
+
+Like raw pointers, applying the $\ast$ operator returns a reference to the pointed object.
+
+\begin{DoxyReturn}{Returns}
+Reference to the pointed object 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Thread\-Local\-Ptr.\-inl.
+
+\hypertarget{classsf_1_1_thread_local_ptr_aa0b559f78929b22cb2585cb2966edfb2}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T $\ast$ {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_thread_local_ptr_aa0b559f78929b22cb2585cb2966edfb2}
+
+
+Overload of operator -\/$>$ 
+
+Like raw pointers, applying the -\/$>$ operator returns the pointed object.
+
+\begin{DoxyReturn}{Returns}
+Pointed object 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Thread\-Local\-Ptr.\-inl.
+
+\hypertarget{classsf_1_1_thread_local_ptr_a14dcf1cdf5f6b3bcdd633014b2b671f5}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Thread\-Local\-Ptr}$<$ T $>$ \& {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{value}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_local_ptr_a14dcf1cdf5f6b3bcdd633014b2b671f5}
+
+
+Assignment operator for a raw pointer parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Pointer to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 62 of file Thread\-Local\-Ptr.\-inl.
+
+\hypertarget{classsf_1_1_thread_local_ptr_a6792a6a808af06f0d13e3ceecf2fc947}{\index{sf\-::\-Thread\-Local\-Ptr@{sf\-::\-Thread\-Local\-Ptr}!operator=@{operator=}}
+\index{operator=@{operator=}!sf::ThreadLocalPtr@{sf\-::\-Thread\-Local\-Ptr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf Thread\-Local\-Ptr}$<$ T $>$ \& {\bf sf\-::\-Thread\-Local\-Ptr}$<$ T $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Thread\-Local\-Ptr}$<$ T $>$ \&}]{right}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_thread_local_ptr_a6792a6a808af06f0d13e3ceecf2fc947}
+
+
+Assignment operator for a \hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr} parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em right} & \hyperlink{classsf_1_1_thread_local_ptr}{Thread\-Local\-Ptr} to assign\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to self 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Thread\-Local\-Ptr.\-inl.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_thread_local_ptr_8hpp}{Thread\-Local\-Ptr.\-hpp}\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-System/\hyperlink{_thread_local_ptr_8inl}{Thread\-Local\-Ptr.\-inl}\end{DoxyCompactItemize}

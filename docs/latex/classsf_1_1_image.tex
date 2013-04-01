@@ -1,0 +1,415 @@
+\hypertarget{classsf_1_1_image}{\section{sf\-:\-:Image Class Reference}
+\label{classsf_1_1_image}\index{sf\-::\-Image@{sf\-::\-Image}}
+}
+
+
+Class for loading, manipulating and saving images.  
+
+
+
+
+{\ttfamily \#include $<$Image.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classsf_1_1_image_abb4caf3cb167b613345ebe36fc883f12}{Image} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}{create} (unsigned int \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, unsigned int \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height}, const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color}=\hyperlink{classsf_1_1_color}{Color}(0, 0, 0))
+\begin{DoxyCompactList}\small\item\em Create the image and fill it with a unique color. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a1c2b960ea12bdbb29e80934ce5268ebf}{create} (unsigned int \hyperlink{gl3_8h_a9d14ddc31c6c8b61f3fe3679ab976133}{width}, unsigned int \hyperlink{gl3_8h_a67001679ebf2bb0ba972db4d29c6550c}{height}, const \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} $\ast$\hyperlink{gl3_8h_ada7ad693ea2e311b8103f4693fc35f80}{pixels})
+\begin{DoxyCompactList}\small\item\em Create the image from an array of pixels. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\-From\-File} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&filename)
+\begin{DoxyCompactList}\small\item\em Load the image from a file on disk. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}{load\-From\-Memory} (const \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} $\ast$\hyperlink{gl3_8h_a0f78eecb0891cce3bdfc815b971866a1}{data}, std\-::size\-\_\-t \hyperlink{gl3_8h_a79ef9eb3e59c4bb34c4b9fbeb8d28ff7}{size})
+\begin{DoxyCompactList}\small\item\em Load the image from a file in memory. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_image_a21122ded0e8368bb06ed3b9acfbfb501}{load\-From\-Stream} (\hyperlink{classsf_1_1_input_stream}{Input\-Stream} \&stream)
+\begin{DoxyCompactList}\small\item\em Load the image from a custom stream. \end{DoxyCompactList}\item 
+bool \hyperlink{classsf_1_1_image_aec0ed16b67df7b512aaa5c53388ba14e}{save\-To\-File} (const \hyperlink{gl3_8h_ac83513893df92266f79a515488701770}{std\-::string} \&filename) const 
+\begin{DoxyCompactList}\small\item\em Save the image to a file on disk. \end{DoxyCompactList}\item 
+\hyperlink{namespacesf_aaa02ba42bf79b001a376fe9d79254cb3}{Vector2u} \hyperlink{classsf_1_1_image_a5c3e9bebdc001c3ebf85ca97039fc86b}{get\-Size} () const 
+\begin{DoxyCompactList}\small\item\em Return the size of the image. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a22f13f8c242a6b38eb73cc176b37ae34}{create\-Mask\-From\-Color} (const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color}, \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} \hyperlink{gl3_8h_a090ebe65994a3ee4bb60ae3472abffc5}{alpha}=0)
+\begin{DoxyCompactList}\small\item\em Create a transparency mask from a specified color-\/key. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}{copy} (const \hyperlink{classsf_1_1_image}{Image} \&\hyperlink{gl3_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}, unsigned int dest\-X, unsigned int dest\-Y, const \hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect} \&source\-Rect=\hyperlink{namespacesf_aae67411782674934f78d55fa3af18403}{Int\-Rect}(0, 0, 0, 0), bool apply\-Alpha=false)
+\begin{DoxyCompactList}\small\item\em Copy pixels from another image onto this one. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a9fd329b8cd7d4439e07fb5d3bb2d9744}{set\-Pixel} (unsigned int \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, unsigned int \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}, const \hyperlink{classsf_1_1_color}{Color} \&\hyperlink{gl3_8h_a3ea846f998d64f079b86052b6c4193a8}{color})
+\begin{DoxyCompactList}\small\item\em Change the color of a pixel. \end{DoxyCompactList}\item 
+\hyperlink{classsf_1_1_color}{Color} \hyperlink{classsf_1_1_image_a8c8460e311dcb00557cb00a81c29163d}{get\-Pixel} (unsigned int \hyperlink{gl3_8h_a92d0386e5c19fb81ea88c9f99644ab1d}{x}, unsigned int \hyperlink{gl3_8h_a66ddd433d2cacfe27f5906b7e86faeed}{y}) const 
+\begin{DoxyCompactList}\small\item\em Get the color of a pixel. \end{DoxyCompactList}\item 
+const \hyperlink{namespacesf_a4ef3d630785c4f296f9b4f274c33d78e}{Uint8} $\ast$ \hyperlink{classsf_1_1_image_ac6137a608a9efaae2735c13ff259c214}{get\-Pixels\-Ptr} () const 
+\begin{DoxyCompactList}\small\item\em Get a read-\/only pointer to the array of pixels. \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a57168e7bc29190e08bbd6c9c19f4bb2c}{flip\-Horizontally} ()
+\begin{DoxyCompactList}\small\item\em Flip the image horizontally (left $<$-\/$>$ right) \end{DoxyCompactList}\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_image_a78a702a7e49d1de2dec9894da99d279c}{flip\-Vertically} ()
+\begin{DoxyCompactList}\small\item\em Flip the image vertically (top $<$-\/$>$ bottom) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for loading, manipulating and saving images. 
+
+\hyperlink{classsf_1_1_image}{sf\-::\-Image} is an abstraction to manipulate images as bidimensional arrays of pixels. The class provides functions to load, read, write and save pixels, as well as many other useful functions.
+
+\hyperlink{classsf_1_1_image}{sf\-::\-Image} can handle a unique internal representation of pixels, which is R\-G\-B\-A 32 bits. This means that a pixel must be composed of 8 bits red, green, blue and alpha channels -- just like a \hyperlink{classsf_1_1_color}{sf\-::\-Color}. All the functions that return an array of pixels follow this rule, and all parameters that you pass to \hyperlink{classsf_1_1_image}{sf\-::\-Image} functions (such as load\-From\-Pixels) must use this representation as well.
+
+A \hyperlink{classsf_1_1_image}{sf\-::\-Image} can be copied, but it is a heavy resource and if possible you should always use \mbox{[}const\mbox{]} references to pass or return them to avoid useless copies.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Load an image file from a file}
+\hyperlink{classsf_1_1_image}{sf::Image} background;
+\textcolor{keywordflow}{if} (!background.\hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{loadFromFile}(\textcolor{stringliteral}{"background.jpg"}))
+    \textcolor{keywordflow}{return} -1;
+
+\textcolor{comment}{// Create a 20x20 image filled with black color}
+\hyperlink{classsf_1_1_image}{sf::Image} image;
+\textcolor{keywordflow}{if} (!image.\hyperlink{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}{create}(20, 20, \hyperlink{classsf_1_1_color_a77c688197b981338f0b19dc58bd2facd}{sf::Color::Black}))
+    \textcolor{keywordflow}{return} -1;
+
+\textcolor{comment}{// Copy image1 on image2 at position (10, 10)}
+image.\hyperlink{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}{copy}(background, 10, 10);
+
+\textcolor{comment}{// Make the top-left pixel transparent}
+\hyperlink{classsf_1_1_color}{sf::Color} color = image.\hyperlink{classsf_1_1_image_a8c8460e311dcb00557cb00a81c29163d}{getPixel}(0, 0);
+color.\hyperlink{classsf_1_1_color_a56dbdb47d5f040d9b78ac6a0b8b3a831}{a} = 0;
+image.\hyperlink{classsf_1_1_image_a9fd329b8cd7d4439e07fb5d3bb2d9744}{setPixel}(0, 0, color);
+
+\textcolor{comment}{// Save the image to a file}
+\textcolor{keywordflow}{if} (!image.\hyperlink{classsf_1_1_image_aec0ed16b67df7b512aaa5c53388ba14e}{saveToFile}(\textcolor{stringliteral}{"result.png"}))
+    \textcolor{keywordflow}{return} -1;
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_texture}{sf\-::\-Texture} 
+\end{DoxySeeAlso}
+
+
+Definition at line 46 of file Image.\-hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classsf_1_1_image_abb4caf3cb167b613345ebe36fc883f12}{\index{sf\-::\-Image@{sf\-::\-Image}!Image@{Image}}
+\index{Image@{Image}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{Image}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::\-Image\-::\-Image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_abb4caf3cb167b613345ebe36fc883f12}
+
+
+Default constructor. 
+
+Creates an empty image. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}{\index{sf\-::\-Image@{sf\-::\-Image}!copy@{copy}}
+\index{copy@{copy}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf Image} \&}]{source, }
+\item[{unsigned int}]{dest\-X, }
+\item[{unsigned int}]{dest\-Y, }
+\item[{const {\bf Int\-Rect} \&}]{source\-Rect = {\ttfamily {\bf Int\-Rect}(0,~0,~0,~0)}, }
+\item[{bool}]{apply\-Alpha = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_ab2fa337c956f85f93377dcb52153a45a}
+
+
+Copy pixels from another image onto this one. 
+
+This function does a slow pixel copy and should not be used intensively. It can be used to prepare a complex static image from several others, but if you need this kind of feature in real-\/time you'd better use \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture}.
+
+If {\itshape source\-Rect} is empty, the whole image is copied. If {\itshape apply\-Alpha} is set to true, the transparency of source pixels is applied. If it is false, the pixels are copied unchanged with their alpha value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & Source image to copy \\
+\hline
+{\em dest\-X} & X coordinate of the destination position \\
+\hline
+{\em dest\-Y} & Y coordinate of the destination position \\
+\hline
+{\em source\-Rect} & Sub-\/rectangle of the source image to copy \\
+\hline
+{\em apply\-Alpha} & Should the copy take in account the source transparency? \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}{\index{sf\-::\-Image@{sf\-::\-Image}!create@{create}}
+\index{create@{create}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::create (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{height, }
+\item[{const {\bf Color} \&}]{color = {\ttfamily {\bf Color}(0,~0,~0)}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}
+
+
+Create the image and fill it with a unique color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em color} & Fill color \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_image_a1c2b960ea12bdbb29e80934ce5268ebf}{\index{sf\-::\-Image@{sf\-::\-Image}!create@{create}}
+\index{create@{create}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::create (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{width, }
+\item[{unsigned int}]{height, }
+\item[{const {\bf Uint8} $\ast$}]{pixels}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a1c2b960ea12bdbb29e80934ce5268ebf}
+
+
+Create the image from an array of pixels. 
+
+The {\itshape pixel} array is assumed to contain 32-\/bits R\-G\-B\-A pixels, and have the given {\itshape width} and {\itshape height}. If not, this is an undefined behaviour. If {\itshape pixels} is null, an empty image is created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & Width of the image \\
+\hline
+{\em height} & Height of the image \\
+\hline
+{\em pixels} & Array of pixels to copy to the image \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_image_a22f13f8c242a6b38eb73cc176b37ae34}{\index{sf\-::\-Image@{sf\-::\-Image}!create\-Mask\-From\-Color@{create\-Mask\-From\-Color}}
+\index{create\-Mask\-From\-Color@{create\-Mask\-From\-Color}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{create\-Mask\-From\-Color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::create\-Mask\-From\-Color (
+\begin{DoxyParamCaption}
+\item[{const {\bf Color} \&}]{color, }
+\item[{{\bf Uint8}}]{alpha = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a22f13f8c242a6b38eb73cc176b37ae34}
+
+
+Create a transparency mask from a specified color-\/key. 
+
+This function sets the alpha value of every pixel matching the given color to {\itshape alpha} (0 by default), so that they become transparent.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & \hyperlink{classsf_1_1_color}{Color} to make transparent \\
+\hline
+{\em alpha} & Alpha value to assign to transparent pixels \\
+\hline
+\end{DoxyParams}
+\hypertarget{classsf_1_1_image_a57168e7bc29190e08bbd6c9c19f4bb2c}{\index{sf\-::\-Image@{sf\-::\-Image}!flip\-Horizontally@{flip\-Horizontally}}
+\index{flip\-Horizontally@{flip\-Horizontally}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{flip\-Horizontally}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::flip\-Horizontally (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a57168e7bc29190e08bbd6c9c19f4bb2c}
+
+
+Flip the image horizontally (left $<$-\/$>$ right) 
+
+\hypertarget{classsf_1_1_image_a78a702a7e49d1de2dec9894da99d279c}{\index{sf\-::\-Image@{sf\-::\-Image}!flip\-Vertically@{flip\-Vertically}}
+\index{flip\-Vertically@{flip\-Vertically}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{flip\-Vertically}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::flip\-Vertically (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a78a702a7e49d1de2dec9894da99d279c}
+
+
+Flip the image vertically (top $<$-\/$>$ bottom) 
+
+\hypertarget{classsf_1_1_image_a8c8460e311dcb00557cb00a81c29163d}{\index{sf\-::\-Image@{sf\-::\-Image}!get\-Pixel@{get\-Pixel}}
+\index{get\-Pixel@{get\-Pixel}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{get\-Pixel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Color} sf\-::\-Image\-::get\-Pixel (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{x, }
+\item[{unsigned int}]{y}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_image_a8c8460e311dcb00557cb00a81c29163d}
+
+
+Get the color of a pixel. 
+
+This function doesn't check the validity of the pixel coordinates, using out-\/of-\/range values will result in an undefined behaviour.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of pixel to get \\
+\hline
+{\em y} & Y coordinate of pixel to get\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classsf_1_1_color}{Color} of the pixel at coordinates (x, y)
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_a9fd329b8cd7d4439e07fb5d3bb2d9744}{set\-Pixel} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_image_ac6137a608a9efaae2735c13ff259c214}{\index{sf\-::\-Image@{sf\-::\-Image}!get\-Pixels\-Ptr@{get\-Pixels\-Ptr}}
+\index{get\-Pixels\-Ptr@{get\-Pixels\-Ptr}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{get\-Pixels\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Uint8}$\ast$ sf\-::\-Image\-::get\-Pixels\-Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_image_ac6137a608a9efaae2735c13ff259c214}
+
+
+Get a read-\/only pointer to the array of pixels. 
+
+The returned value points to an array of R\-G\-B\-A pixels made of 8 bits integers components. The size of the array is Get\-Width() $\ast$ Get\-Height() $\ast$ 4. Warning\-: the returned pointer may become invalid if you modify the image, so you should never store it for too long. If the image is empty, a null pointer is returned.
+
+\begin{DoxyReturn}{Returns}
+Read-\/only pointer to the array of pixels 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_image_a5c3e9bebdc001c3ebf85ca97039fc86b}{\index{sf\-::\-Image@{sf\-::\-Image}!get\-Size@{get\-Size}}
+\index{get\-Size@{get\-Size}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{get\-Size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vector2u} sf\-::\-Image\-::get\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_image_a5c3e9bebdc001c3ebf85ca97039fc86b}
+
+
+Return the size of the image. 
+
+\begin{DoxyReturn}{Returns}
+Size in pixels 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{\index{sf\-::\-Image@{sf\-::\-Image}!load\-From\-File@{load\-From\-File}}
+\index{load\-From\-File@{load\-From\-File}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{load\-From\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Image\-::load\-From\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}
+
+
+Load the image from a file on disk. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the image file to load\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}{load\-From\-Memory}, \hyperlink{classsf_1_1_image_a21122ded0e8368bb06ed3b9acfbfb501}{load\-From\-Stream}, \hyperlink{classsf_1_1_image_aec0ed16b67df7b512aaa5c53388ba14e}{save\-To\-File} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}{\index{sf\-::\-Image@{sf\-::\-Image}!load\-From\-Memory@{load\-From\-Memory}}
+\index{load\-From\-Memory@{load\-From\-Memory}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{load\-From\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Image\-::load\-From\-Memory (
+\begin{DoxyParamCaption}
+\item[{const {\bf void} $\ast$}]{data, }
+\item[{std\-::size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}
+
+
+Load the image from a file in memory. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the file data in memory \\
+\hline
+{\em size} & Size of the data to load, in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\-From\-File}, \hyperlink{classsf_1_1_image_a21122ded0e8368bb06ed3b9acfbfb501}{load\-From\-Stream} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_image_a21122ded0e8368bb06ed3b9acfbfb501}{\index{sf\-::\-Image@{sf\-::\-Image}!load\-From\-Stream@{load\-From\-Stream}}
+\index{load\-From\-Stream@{load\-From\-Stream}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{load\-From\-Stream}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Image\-::load\-From\-Stream (
+\begin{DoxyParamCaption}
+\item[{{\bf Input\-Stream} \&}]{stream}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a21122ded0e8368bb06ed3b9acfbfb501}
+
+
+Load the image from a custom stream. 
+
+The supported image formats are bmp, png, tga, jpg, gif, psd, hdr and pic. Some format options are not supported, like progressive jpeg. If this function fails, the image is left unchanged.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & Source stream to read from\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if loading was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\-From\-File}, \hyperlink{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}{load\-From\-Memory} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_image_aec0ed16b67df7b512aaa5c53388ba14e}{\index{sf\-::\-Image@{sf\-::\-Image}!save\-To\-File@{save\-To\-File}}
+\index{save\-To\-File@{save\-To\-File}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{save\-To\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool sf\-::\-Image\-::save\-To\-File (
+\begin{DoxyParamCaption}
+\item[{const {\bf std\-::string} \&}]{filename}
+\end{DoxyParamCaption}
+) const}}\label{classsf_1_1_image_aec0ed16b67df7b512aaa5c53388ba14e}
+
+
+Save the image to a file on disk. 
+
+The format of the image is automatically deduced from the extension. The supported image formats are bmp, png, tga and jpg. The destination file is overwritten if it already exists. This function fails if the image is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Path of the file to save\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if saving was successful
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_a2a67930e2fd9ad97cf004e918cf5832b}{create}, \hyperlink{classsf_1_1_image_a9e4f2aa8e36d0cabde5ed5a4ef80290b}{load\-From\-File}, \hyperlink{classsf_1_1_image_aaa6c7afa5851a51cec6ab438faa7354c}{load\-From\-Memory} 
+\end{DoxySeeAlso}
+\hypertarget{classsf_1_1_image_a9fd329b8cd7d4439e07fb5d3bb2d9744}{\index{sf\-::\-Image@{sf\-::\-Image}!set\-Pixel@{set\-Pixel}}
+\index{set\-Pixel@{set\-Pixel}!sf::Image@{sf\-::\-Image}}
+\subsubsection[{set\-Pixel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} sf\-::\-Image\-::set\-Pixel (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{x, }
+\item[{unsigned int}]{y, }
+\item[{const {\bf Color} \&}]{color}
+\end{DoxyParamCaption}
+)}}\label{classsf_1_1_image_a9fd329b8cd7d4439e07fb5d3bb2d9744}
+
+
+Change the color of a pixel. 
+
+This function doesn't check the validity of the pixel coordinates, using out-\/of-\/range values will result in an undefined behaviour.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of pixel to change \\
+\hline
+{\em y} & Y coordinate of pixel to change \\
+\hline
+{\em color} & New color of the pixel\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_image_a8c8460e311dcb00557cb00a81c29163d}{get\-Pixel} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Graphics/\hyperlink{_image_8hpp}{Image.\-hpp}\end{DoxyCompactItemize}

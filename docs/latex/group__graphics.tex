@@ -1,0 +1,132 @@
+\hypertarget{group__graphics}{\section{Graphics module}
+\label{group__graphics}\index{Graphics module@{Graphics module}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_circle_shape}{sf\-::\-Circle\-Shape}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a circle. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_color}{sf\-::\-Color}
+\begin{DoxyCompactList}\small\item\em Utility class for manpulating R\-G\-B\-A colors. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_convex_shape}{sf\-::\-Convex\-Shape}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a convex polygon. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_drawable}{sf\-::\-Drawable}
+\begin{DoxyCompactList}\small\item\em Abstract base class for objects that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_font}{sf\-::\-Font}
+\begin{DoxyCompactList}\small\item\em Class for loading and manipulating character fonts. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_glyph}{sf\-::\-Glyph}
+\begin{DoxyCompactList}\small\item\em Structure describing a glyph. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_image}{sf\-::\-Image}
+\begin{DoxyCompactList}\small\item\em Class for loading, manipulating and saving images. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_rect}{sf\-::\-Rect$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Utility class for manipulating 2\-D axis aligned rectangles. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_rectangle_shape}{sf\-::\-Rectangle\-Shape}
+\begin{DoxyCompactList}\small\item\em Specialized shape representing a rectangle. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_render_states}{sf\-::\-Render\-States}
+\begin{DoxyCompactList}\small\item\em Define the states used for drawing to a \hyperlink{classsf_1_1_render_target}{Render\-Target}. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_render_target}{sf\-::\-Render\-Target}
+\begin{DoxyCompactList}\small\item\em Base class for all render targets (window, texture, ...) \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_render_texture}{sf\-::\-Render\-Texture}
+\begin{DoxyCompactList}\small\item\em Target for off-\/screen 2\-D rendering into an texture. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_render_window}{sf\-::\-Render\-Window}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_window}{Window} that can serve as a target for 2\-D drawing. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_shader}{sf\-::\-Shader}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_shader}{Shader} class (vertex and fragment) \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_shape}{sf\-::\-Shape}
+\begin{DoxyCompactList}\small\item\em Base class for textured shapes with outline. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_sprite}{sf\-::\-Sprite}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_drawable}{Drawable} representation of a texture, with its own transformations, color, etc. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_text}{sf\-::\-Text}
+\begin{DoxyCompactList}\small\item\em Graphical text that can be drawn to a render target. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_texture}{sf\-::\-Texture}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classsf_1_1_image}{Image} living on the graphics card that can be used for drawing. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_transform}{sf\-::\-Transform}
+\begin{DoxyCompactList}\small\item\em Define a 3x3 transform matrix. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_transformable}{sf\-::\-Transformable}
+\begin{DoxyCompactList}\small\item\em Decomposed transform defined by a position, a rotation and a scale. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_vertex}{sf\-::\-Vertex}
+\begin{DoxyCompactList}\small\item\em Define a point with color and texture coordinates. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_vertex_array}{sf\-::\-Vertex\-Array}
+\begin{DoxyCompactList}\small\item\em Define a set of one or more 2\-D primitives. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_view}{sf\-::\-View}
+\begin{DoxyCompactList}\small\item\em 2\-D camera that defines what region is shown on screen \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{sf\-::\-Blend\-Mode} \{ \hyperlink{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388aaf30f92cf1471a031fce5d61e8674996}{sf\-::\-Blend\-Alpha}, 
+\hyperlink{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388afc35de7c9fe26776b839cfe0027b16da}{sf\-::\-Blend\-Add}, 
+\hyperlink{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388a8adc43071db8f20e508c35e172195234}{sf\-::\-Blend\-Multiply}, 
+\hyperlink{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388abe282fb5f49c20b6439cbec9d4f63722}{sf\-::\-Blend\-None}
+ \}
+\begin{DoxyCompactList}\small\item\em Available blending modes for drawing. \end{DoxyCompactList}\item 
+enum \hyperlink{group__graphics_ga5ee56ac1339984909610713096283b1b}{sf\-::\-Primitive\-Type} \{ \\*
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}{sf\-::\-Points}, 
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e}{sf\-::\-Lines}, 
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}{sf\-::\-Lines\-Strip}, 
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}{sf\-::\-Triangles}, 
+\\*
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0}{sf\-::\-Triangles\-Strip}, 
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20}{sf\-::\-Triangles\-Fan}, 
+\hyperlink{group__graphics_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}{sf\-::\-Quads}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of primitives that a \hyperlink{classsf_1_1_vertex_array}{sf\-::\-Vertex\-Array} can render. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}{\index{Graphics module@{Graphics module}!Blend\-Mode@{Blend\-Mode}}
+\index{Blend\-Mode@{Blend\-Mode}!Graphics module@{Graphics module}}
+\subsubsection[{Blend\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Blend\-Mode}}}\label{group__graphics_ga80c52fe2f7050d7f7573b7ed3c995388}
+
+
+Available blending modes for drawing. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Blend\-Alpha@{Blend\-Alpha}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Blend\-Alpha@{Blend\-Alpha}}\item[{\em 
+\hypertarget{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388aaf30f92cf1471a031fce5d61e8674996}{Blend\-Alpha}\label{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388aaf30f92cf1471a031fce5d61e8674996}
+}]Pixel = Source $\ast$ Source.\-a + Dest $\ast$ (1 -\/ Source.\-a) \index{Blend\-Add@{Blend\-Add}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Blend\-Add@{Blend\-Add}}\item[{\em 
+\hypertarget{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388afc35de7c9fe26776b839cfe0027b16da}{Blend\-Add}\label{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388afc35de7c9fe26776b839cfe0027b16da}
+}]Pixel = Source + Dest. \index{Blend\-Multiply@{Blend\-Multiply}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Blend\-Multiply@{Blend\-Multiply}}\item[{\em 
+\hypertarget{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388a8adc43071db8f20e508c35e172195234}{Blend\-Multiply}\label{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388a8adc43071db8f20e508c35e172195234}
+}]Pixel = Source $\ast$ Dest. \index{Blend\-None@{Blend\-None}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Blend\-None@{Blend\-None}}\item[{\em 
+\hypertarget{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388abe282fb5f49c20b6439cbec9d4f63722}{Blend\-None}\label{group__graphics_gga80c52fe2f7050d7f7573b7ed3c995388abe282fb5f49c20b6439cbec9d4f63722}
+}]Pixel = Source. \end{description}
+\end{Desc}
+
+
+Definition at line 35 of file Blend\-Mode.\-hpp.
+
+\hypertarget{group__graphics_ga5ee56ac1339984909610713096283b1b}{\index{Graphics module@{Graphics module}!Primitive\-Type@{Primitive\-Type}}
+\index{Primitive\-Type@{Primitive\-Type}!Graphics module@{Graphics module}}
+\subsubsection[{Primitive\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Primitive\-Type}}}\label{group__graphics_ga5ee56ac1339984909610713096283b1b}
+
+
+Types of primitives that a \hyperlink{classsf_1_1_vertex_array}{sf\-::\-Vertex\-Array} can render. 
+
+Points and lines have no area, therefore their thickness will always be 1 pixel, regarldess the current transform and view. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Points@{Points}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Points@{Points}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}{Points}\label{group__graphics_gga5ee56ac1339984909610713096283b1bac7097d3e01778b9318def1f7ac35a785}
+}]List of individual points. \index{Lines@{Lines}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines@{Lines}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e}{Lines}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba2bf015eeff9f798dfc3d6d744d669f1e}
+}]List of individual lines. \index{Lines\-Strip@{Lines\-Strip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Lines\-Strip@{Lines\-Strip}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}{Lines\-Strip}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba5b09910f5d0f39641342184ccd0d1de3}
+}]List of connected lines, a point uses the previous point to form a line. \index{Triangles@{Triangles}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles@{Triangles}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}{Triangles}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba880a7aa72c20b9f9beb7eb64d2434670}
+}]List of individual triangles. \index{Triangles\-Strip@{Triangles\-Strip}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles\-Strip@{Triangles\-Strip}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0}{Triangles\-Strip}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba66643dbbb24bbacb405973ed80eebae0}
+}]List of connected triangles, a point uses the two previous points to form a triangle. \index{Triangles\-Fan@{Triangles\-Fan}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Triangles\-Fan@{Triangles\-Fan}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20}{Triangles\-Fan}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba5338a2c6d922151fe50f235036af8a20}
+}]List of connected triangles, a point uses the common center and the previous point to form a triangle. \index{Quads@{Quads}!Graphics module@{Graphics module}}\index{Graphics module@{Graphics module}!Quads@{Quads}}\item[{\em 
+\hypertarget{group__graphics_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}{Quads}\label{group__graphics_gga5ee56ac1339984909610713096283b1ba5041359b76b4bd3d3e6ef738826b8743}
+}]List of individual quads. \end{description}
+\end{Desc}
+
+
+Definition at line 39 of file Primitive\-Type.\-hpp.
+

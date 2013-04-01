@@ -1,0 +1,273 @@
+\hypertarget{classsf_1_1_joystick}{\section{sf\-:\-:Joystick Class Reference}
+\label{classsf_1_1_joystick}\index{sf\-::\-Joystick@{sf\-::\-Joystick}}
+}
+
+
+Give access to the real-\/time state of the joysticks.  
+
+
+
+
+{\ttfamily \#include $<$Joystick.\-hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a6e0a2a95bc1da277610c04d80f52715e}{Count} = 8, 
+\hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a2f1b8a0a59f2c12a4775c0e1e69e1816}{Button\-Count} = 32, 
+\hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6accf3e487c9f6ee2f384351323626a42c}{Axis\-Count} = 8
+ \}
+\begin{DoxyCompactList}\small\item\em Constants related to joysticks capabilities. \end{DoxyCompactList}\item 
+enum \hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis} \{ \\*
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a95dc8b9bf7b0a2157fc67891c54c401e}{X}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a51ef1455f7511ad4a78ba241d66593ce}{Y}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a7c37a1240b2dafbbfc5c1a0e23911315}{Z}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aeebbcdb0828850f4d69e6a084801fab8}{R}, 
+\\*
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0a901f61e75292dd2f642b6e4f33a214}{U}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aa2e2c8ffa1837e7911ee0c7d045bf8f4}{V}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a06420f7714e4dfd8b841885a0b5f3954}{Pov\-X}, 
+\hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0f8ffb2dcddf91b98ab910a4f8327ad9}{Pov\-Y}
+ \}
+\begin{DoxyCompactList}\small\item\em Axes supported by S\-F\-M\-L joysticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{is\-Connected} (unsigned int joystick)
+\begin{DoxyCompactList}\small\item\em Check if a joystick is connected. \end{DoxyCompactList}\item 
+static unsigned int \hyperlink{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{get\-Button\-Count} (unsigned int joystick)
+\begin{DoxyCompactList}\small\item\em Return the number of buttons supported by a joystick. \end{DoxyCompactList}\item 
+static bool \hyperlink{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{has\-Axis} (unsigned int joystick, \hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis} axis)
+\begin{DoxyCompactList}\small\item\em Check if a joystick supports a given axis. \end{DoxyCompactList}\item 
+static bool \hyperlink{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{is\-Button\-Pressed} (unsigned int joystick, unsigned int button)
+\begin{DoxyCompactList}\small\item\em Check if a joystick button is pressed. \end{DoxyCompactList}\item 
+static float \hyperlink{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{get\-Axis\-Position} (unsigned int joystick, \hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{Axis} axis)
+\begin{DoxyCompactList}\small\item\em Get the current position of a joystick axis. \end{DoxyCompactList}\item 
+static \hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{update} ()
+\begin{DoxyCompactList}\small\item\em Update the states of all joysticks. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Give access to the real-\/time state of the joysticks. 
+
+\hyperlink{classsf_1_1_joystick}{sf\-::\-Joystick} provides an interface to the state of the joysticks. It only contains static functions, so it's not meant to be instanciated. Instead, each joystick is identified by an index that is passed to the functions of this class.
+
+This class allows users to query the state of joysticks at any time and directly, without having to deal with a window and its events. Compared to the Joystick\-Moved, Joystick\-Button\-Pressed and Joystick\-Button\-Released events, \hyperlink{classsf_1_1_joystick}{sf\-::\-Joystick} can retrieve the state of axes and buttons of joysticks at any time (you don't need to store and update a boolean on your side in order to know if a button is pressed or released), and you always get the real state of joysticks, even if they are moved, pressed or released when your window is out of focus and no event is triggered.
+
+S\-F\-M\-L supports\-: \begin{DoxyItemize}
+\item 8 joysticks (\hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a6e0a2a95bc1da277610c04d80f52715e}{sf\-::\-Joystick\-::\-Count}) \item 32 buttons per joystick (\hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a2f1b8a0a59f2c12a4775c0e1e69e1816}{sf\-::\-Joystick\-::\-Button\-Count}) \item 8 axes per joystick (\hyperlink{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6accf3e487c9f6ee2f384351323626a42c}{sf\-::\-Joystick\-::\-Axis\-Count})\end{DoxyItemize}
+Unlike the keyboard or mouse, the state of joysticks is sometimes not directly available (depending on the O\-S), therefore an \hyperlink{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{update()} function must be called in order to update the current state of joysticks. When you have a window with event handling, this is done automatically, you don't need to call anything. But if you have no window, or if you want to check joysticks state before creating one, you must call \hyperlink{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{sf\-::\-Joystick\-::update} explicitely.
+
+Usage example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Is joystick #0 connected?}
+\textcolor{keywordtype}{bool} connected = \hyperlink{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{sf::Joystick::isConnected}(0);
+
+\textcolor{comment}{// How many buttons does joystick #0 support?}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} buttons = \hyperlink{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{sf::Joystick::getButtonCount}(0);
+
+\textcolor{comment}{// Does joystick #0 define a X axis?}
+\textcolor{keywordtype}{bool} hasX = \hyperlink{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{sf::Joystick::hasAxis}(0, \hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a95dc8b9bf7b0a2157fc67891c54c401e}{sf::Joystick::X});
+
+\textcolor{comment}{// Is button #2 pressed on joystick #0?}
+\textcolor{keywordtype}{bool} pressed = \hyperlink{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{sf::Joystick::isButtonPressed}(0, 2);
+
+\textcolor{comment}{// What's the current position of the Y axis on joystick #0?}
+\textcolor{keywordtype}{float} position = \hyperlink{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{sf::Joystick::getAxisPosition}(0, 
+      \hyperlink{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a51ef1455f7511ad4a78ba241d66593ce}{sf::Joystick::Y});
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classsf_1_1_keyboard}{sf\-::\-Keyboard}, \hyperlink{classsf_1_1_mouse}{sf\-::\-Mouse} 
+\end{DoxySeeAlso}
+
+
+Definition at line 40 of file Joystick.\-hpp.
+
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6}{\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}}\label{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6}
+
+
+Constants related to joysticks capabilities. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Count@{Count}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Count@{Count}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a6e0a2a95bc1da277610c04d80f52715e}{Count}\label{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a6e0a2a95bc1da277610c04d80f52715e}
+}]Maximum number of supported joysticks. \index{Button\-Count@{Button\-Count}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Button\-Count@{Button\-Count}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a2f1b8a0a59f2c12a4775c0e1e69e1816}{Button\-Count}\label{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6a2f1b8a0a59f2c12a4775c0e1e69e1816}
+}]Maximum number of supported buttons. \index{Axis\-Count@{Axis\-Count}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Axis\-Count@{Axis\-Count}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6accf3e487c9f6ee2f384351323626a42c}{Axis\-Count}\label{classsf_1_1_joystick_ac4ca4ee36e2cf04ecf931316e4463ca6accf3e487c9f6ee2f384351323626a42c}
+}]Maximum number of supported axes. \end{description}
+\end{Desc}
+
+
+Definition at line 48 of file Joystick.\-hpp.
+
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Axis@{Axis}}
+\index{Axis@{Axis}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{Axis}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sf\-::\-Joystick\-::\-Axis}}}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7}
+
+
+Axes supported by S\-F\-M\-L joysticks. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{X@{X}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!X@{X}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a95dc8b9bf7b0a2157fc67891c54c401e}{X}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a95dc8b9bf7b0a2157fc67891c54c401e}
+}]The X axis. \index{Y@{Y}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Y@{Y}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a51ef1455f7511ad4a78ba241d66593ce}{Y}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a51ef1455f7511ad4a78ba241d66593ce}
+}]The Y axis. \index{Z@{Z}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Z@{Z}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a7c37a1240b2dafbbfc5c1a0e23911315}{Z}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a7c37a1240b2dafbbfc5c1a0e23911315}
+}]The Z axis. \index{R@{R}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!R@{R}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aeebbcdb0828850f4d69e6a084801fab8}{R}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aeebbcdb0828850f4d69e6a084801fab8}
+}]The R axis. \index{U@{U}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!U@{U}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0a901f61e75292dd2f642b6e4f33a214}{U}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0a901f61e75292dd2f642b6e4f33a214}
+}]The U axis. \index{V@{V}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!V@{V}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aa2e2c8ffa1837e7911ee0c7d045bf8f4}{V}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7aa2e2c8ffa1837e7911ee0c7d045bf8f4}
+}]The V axis. \index{Pov\-X@{Pov\-X}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Pov\-X@{Pov\-X}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a06420f7714e4dfd8b841885a0b5f3954}{Pov\-X}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a06420f7714e4dfd8b841885a0b5f3954}
+}]The X axis of the point-\/of-\/view hat. \index{Pov\-Y@{Pov\-Y}!sf\-::\-Joystick@{sf\-::\-Joystick}}\index{sf\-::\-Joystick@{sf\-::\-Joystick}!Pov\-Y@{Pov\-Y}}\item[{\em 
+\hypertarget{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0f8ffb2dcddf91b98ab910a4f8327ad9}{Pov\-Y}\label{classsf_1_1_joystick_a48db337092c2e263774f94de6d50baa7a0f8ffb2dcddf91b98ab910a4f8327ad9}
+}]The Y axis of the point-\/of-\/view hat. \end{description}
+\end{Desc}
+
+
+Definition at line 59 of file Joystick.\-hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!get\-Axis\-Position@{get\-Axis\-Position}}
+\index{get\-Axis\-Position@{get\-Axis\-Position}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{get\-Axis\-Position}]{\setlength{\rightskip}{0pt plus 5cm}static float sf\-::\-Joystick\-::get\-Axis\-Position (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{joystick, }
+\item[{{\bf Axis}}]{axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_aea4930193331df1851b709f3060ba58b}
+
+
+Get the current position of a joystick axis. 
+
+If the joystick is not connected, this function returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joystick} & Index of the joystick \\
+\hline
+{\em axis} & Axis to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current position of the axis, in range \mbox{[}-\/100 .. 100\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!get\-Button\-Count@{get\-Button\-Count}}
+\index{get\-Button\-Count@{get\-Button\-Count}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{get\-Button\-Count}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned int sf\-::\-Joystick\-::get\-Button\-Count (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{joystick}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_a4de9f445c6582bfe9f0873f695682885}
+
+
+Return the number of buttons supported by a joystick. 
+
+If the joystick is not connected, this function returns 0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joystick} & Index of the joystick\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of buttons supported by the joystick 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!has\-Axis@{has\-Axis}}
+\index{has\-Axis@{has\-Axis}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{has\-Axis}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Joystick\-::has\-Axis (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{joystick, }
+\item[{{\bf Axis}}]{axis}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_a268e8f2a11ae6af4a47c727cb4ab4d95}
+
+
+Check if a joystick supports a given axis. 
+
+If the joystick is not connected, this function returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joystick} & Index of the joystick \\
+\hline
+{\em axis} & Axis to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the joystick supports the axis, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!is\-Button\-Pressed@{is\-Button\-Pressed}}
+\index{is\-Button\-Pressed@{is\-Button\-Pressed}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{is\-Button\-Pressed}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Joystick\-::is\-Button\-Pressed (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{joystick, }
+\item[{unsigned int}]{button}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_ae0d97a4b84268cbe6a7078e1b2717835}
+
+
+Check if a joystick button is pressed. 
+
+If the joystick is not connected, this function returns false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em joystick} & Index of the joystick \\
+\hline
+{\em button} & Button to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the button is pressed, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!is\-Connected@{is\-Connected}}
+\index{is\-Connected@{is\-Connected}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{is\-Connected}]{\setlength{\rightskip}{0pt plus 5cm}static bool sf\-::\-Joystick\-::is\-Connected (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{joystick}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_ac7d4e1923e9f9420174f26703ea63d6c}
+
+
+Check if a joystick is connected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em joystick} & Index of the joystick to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the joystick is connected, false otherwise 
+\end{DoxyReturn}
+\hypertarget{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}{\index{sf\-::\-Joystick@{sf\-::\-Joystick}!update@{update}}
+\index{update@{update}!sf::Joystick@{sf\-::\-Joystick}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf void} sf\-::\-Joystick\-::update (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classsf_1_1_joystick_ab85fa9175b4edd3e5a07ee3cde0b0f48}
+
+
+Update the states of all joysticks. 
+
+This function is used internally by S\-F\-M\-L, so you normally don't have to call it explicitely. However, you may need to call it if you have no window yet (or no window at all)\-: in this case the joysticks states are not updated automatically. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/\-Users/ira/\-Dropbox/ira\-\_\-dev/protobyte\-\_\-research/other\-\_\-libs/\-S\-F\-M\-L/dylibs/root/usr/local/include/\-S\-F\-M\-L/\-Window/\hyperlink{_joystick_8hpp}{Joystick.\-hpp}\end{DoxyCompactItemize}

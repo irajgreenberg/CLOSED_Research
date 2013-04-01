@@ -1,0 +1,92 @@
+\hypertarget{group__system}{\section{System module}
+\label{group__system}\index{System module@{System module}}
+}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classsf_1_1_clock}{sf\-::\-Clock}
+\begin{DoxyCompactList}\small\item\em Utility class that measures the elapsed time. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_input_stream}{sf\-::\-Input\-Stream}
+\begin{DoxyCompactList}\small\item\em Abstract class for custom file input streams. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_lock}{sf\-::\-Lock}
+\begin{DoxyCompactList}\small\item\em Automatic wrapper for locking and unlocking mutexes. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_mutex}{sf\-::\-Mutex}
+\begin{DoxyCompactList}\small\item\em Blocks concurrent access to shared resources from multiple threads. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_non_copyable}{sf\-::\-Non\-Copyable}
+\begin{DoxyCompactList}\small\item\em Utility class that makes any derived class non-\/copyable. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_string}{sf\-::\-String}
+\begin{DoxyCompactList}\small\item\em Utility string class that automatically handles conversions between types and encodings. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_thread}{sf\-::\-Thread}
+\begin{DoxyCompactList}\small\item\em Utility class to manipulate threads. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_thread_local}{sf\-::\-Thread\-Local}
+\begin{DoxyCompactList}\small\item\em Defines variables with thread-\/local storage. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_thread_local_ptr}{sf\-::\-Thread\-Local\-Ptr$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Pointer to a thread-\/local variable. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_time}{sf\-::\-Time}
+\begin{DoxyCompactList}\small\item\em Represents a time value. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_utf}{sf\-::\-Utf$<$ N $>$}
+\item 
+class \hyperlink{classsf_1_1_vector2}{sf\-::\-Vector2$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 2-\/dimensional vectors. \end{DoxyCompactList}\item 
+class \hyperlink{classsf_1_1_vector3}{sf\-::\-Vector3$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em Utility template class for manipulating 3-\/dimensional vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{glutf90_8h_ac778d6f63f1aaf8ebda0ce6ac821b56e}{void} \hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} \hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf\-::sleep} (Time duration)
+\begin{DoxyCompactList}\small\item\em Make the current thread sleep for a given duration. \end{DoxyCompactList}\item 
+\hyperlink{_system_2_export_8hpp_a6476c9e422606477a4c23d92b1d79a1f}{S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} std\-::ostream \& \hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\-::err} ()
+\begin{DoxyCompactList}\small\item\em Standard stream used by S\-F\-M\-L to output warnings and errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__system_ga7fe7f475639e26334606b5142c29551f}{\index{System module@{System module}!err@{err}}
+\index{err@{err}!System module@{System module}}
+\subsubsection[{err}]{\setlength{\rightskip}{0pt plus 5cm}sf\-::err (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{group__system_ga7fe7f475639e26334606b5142c29551f}
+
+
+Standard stream used by S\-F\-M\-L to output warnings and errors. 
+
+By default, \hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\-::err()} outputs to the same location as std\-::cerr, (-\/$>$ the stderr descriptor) which is the console if there's one available.
+
+It is a standard std\-::ostream instance, so it supports all the insertion operations defined by the S\-T\-L (operator $<$$<$, manipulators, etc.).
+
+\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf\-::err()} can be redirected to write to another output, independantly of std\-::cerr, by using the rdbuf() function provided by the std\-::ostream class.
+
+Example\-: 
+\begin{DoxyCode}
+\textcolor{comment}{// Redirect to a file}
+std::ofstream file(\textcolor{stringliteral}{"sfml-log.txt"});
+std::streambuf* previous = \hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}().rdbuf(file.rdbuf());
+
+\textcolor{comment}{// Redirect to nothing}
+\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}().rdbuf(NULL);
+
+\textcolor{comment}{// Restore the original output}
+\hyperlink{group__system_ga7fe7f475639e26334606b5142c29551f}{sf::err}().rdbuf(previous);
+\end{DoxyCode}
+ \hypertarget{group__system_ga2f2620831533dee0ed432ed982342e09}{\index{System module@{System module}!sleep@{sleep}}
+\index{sleep@{sleep}!System module@{System module}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}{\bf void} {\bf S\-F\-M\-L\-\_\-\-S\-Y\-S\-T\-E\-M\-\_\-\-A\-P\-I} sf\-::sleep (
+\begin{DoxyParamCaption}
+\item[{Time}]{duration}
+\end{DoxyParamCaption}
+)}}\label{group__system_ga2f2620831533dee0ed432ed982342e09}
+
+
+Make the current thread sleep for a given duration. 
+
+\hyperlink{group__system_ga2f2620831533dee0ed432ed982342e09}{sf\-::sleep} is the best way to block a program or one of its threads, as it doesn't consume any C\-P\-U power.
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & \hyperlink{classsf_1_1_time}{Time} to sleep \\
+\hline
+\end{DoxyParams}
