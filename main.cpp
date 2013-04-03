@@ -1,8 +1,9 @@
-#ifdef  __APPLE__ || __MACH__
+#ifdef  __APPLE__
   #include <GLUT/glut.h>
-#elif defined __linux__
+#elif __linux__
+  #include <GL/glew.h>
   #include <GL/glut.h>
-#elif defined _WIN32
+#elif _WIN32
   #include <GL/glut.h>
 #else
 #error "unknown platform"
@@ -60,7 +61,7 @@ void setShaders();
  *********************************/
 // Light01
 GLfloat light01_ambient[] = {0.0, 0.0, 0.0, 1.0};
-GLfloat light01_diffuse[] = {.7, .2, .2, 1.0};
+GLfloat light01_diffuse[] = {.5, .2, .2, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
@@ -78,7 +79,7 @@ Tube tube2;
 
 void setGeom() {
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .2), 60, 60, .87, .22);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -128,10 +129,10 @@ void setGeom() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 3;
+    interpDetail = 4;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 100/*400*/;
+    int segs = 200/*400*/;
 
 
     //int loops = 4;
@@ -176,7 +177,7 @@ void setGeom() {
     }
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
+    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
 }
 
 void init() {
@@ -191,7 +192,7 @@ void init() {
 void initGL() {
 
     // GLEW
-    #ifdef  __linux__ || _WIN32
+    #ifdef  __linux__
      GLenum err = glewInit();
     if (GLEW_OK != err) {
         fprintf(stderr, "Error %s\n", glewGetErrorString(err));
@@ -293,7 +294,7 @@ void display() {
     setLights();
    
     shader.bind();
-   // tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
    
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
@@ -312,7 +313,7 @@ int main(int argc, char **argv) {
     win.y = 0;
     win.w = 1280;
     win.h = 800;
-    win.title = "Protobyte Glut Project";
+    win.title = (char*)"Protobyte Glut Project";
     win.fovAngle = 65;
     win.nearClipPlane = .1f;
     win.farClipPlane = 50000.0f;
@@ -388,8 +389,8 @@ void setLights() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/phong_shader.vert";
-    const char* frag = "resources/shaders/phong_shader.frag";
+    const char* vert = "resources/shaders/singleLight.vert";
+    const char* frag = "resources/shaders/singleLight.frag";
 
     shader.init(vert, frag);
 }

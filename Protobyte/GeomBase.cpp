@@ -20,6 +20,15 @@ GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<floa
 pos(pos), rot(rot), size(size), col4s(col4s) {
 }
 
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2):
+pos(pos), rot(rot), size(size), col4(col4), tex2(tex2) {
+}
+
+// pass array of colors
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2):
+pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2) {
+}
+
 GeomBase::~GeomBase() {
    // glDeleteLists(displayListIndex, 1);
 }
@@ -45,7 +54,9 @@ void GeomBase::init() {
     // generate vertex buffer objects
     // vector data - use GL_ARRAY_BUFFER
     //glGenBuffers(1, &vboID); // Create the buffer ID // OSX
-   //glewInit();
+   #ifdef  __linux__
+    glewInit();
+   #endif
    glGenBuffers(1, &vboID); // Create the buffer ID
     
 

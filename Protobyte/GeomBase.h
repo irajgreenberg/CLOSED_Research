@@ -10,19 +10,20 @@
 #define __SFML_simple_renderer_06__GeomBase__
 
 
-#ifdef  __APPLE__ || __MACH__
-  #include <OpenGL/gl.h>
-  #include <OpenGL/glu.h>
-#elif defined __linux__
-  #include <GL/gl.h>
-  #include <GL/glu.h>
-  #define GL_GLEXT_PROTOTYPES
-  #include <GL/glext.h>
-#elif defined _WIN32
-  #include <GL/gl.h>
-  #include <GL/glu.h>
-  #define GL_GLEXT_PROTOTYPES
-  #include <GL/glext.h>
+#ifdef  __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#elif  __linux__
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GL/glext.h>
+#elif  _WIN32
+#include <GL/gl.h>
+#include <GL/glu.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GL/glext.h>
 #else
 #error "unknown platform"
 #endif
@@ -34,6 +35,7 @@
 #include "Tuple3.h"
 #include "Dimension3.h"
 #include "Color4.h"
+#include "Texture2.h"
 
 
 
@@ -42,12 +44,13 @@
 
 class GeomBase {
 protected:
-    
+
     Vector3 pos, rot;
     Vector3 spd, rotSpd;
     Dimension3<float> size;
     Color4<float> col4;
     std::vector< Color4<float> > col4s;
+    Texture2 tex2;
 
     virtual void init();
     virtual void calcVerts() = 0;
@@ -81,6 +84,8 @@ protected:
 
 
 
+
+
 public:
 
     /**********************************
@@ -100,13 +105,19 @@ public:
     };
 
     GeomBase();
-    
+
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const Color4<float> col4);
 
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const std::vector< Color4<float> > col4s);
-    
+
+    GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+            const Color4<float> col4, const Texture2& tex2);
+
+    GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+            const std::vector< Color4<float> > col4s, const Texture2& tex2);
+
     virtual ~GeomBase();
 
     void move(const Vector3& v);

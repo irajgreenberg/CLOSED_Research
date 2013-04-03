@@ -9,11 +9,11 @@
 #ifndef __SFML_simple_renderer_03__Face3__
 #define __SFML_simple_renderer_03__Face3__
 
-#ifdef  __APPLE__ || __MACH__
+#ifdef __APPLE__
   #include <OpenGL/gl.h>
-#elif defined __linux__
+#elif __linux__
   #include <GL/gl.h>
-#elif defined _WIN32
+#elif _WIN32
   #include <GL/gl.h>
 #else
 #error "unknown platform"

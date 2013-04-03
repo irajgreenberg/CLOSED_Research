@@ -13,15 +13,22 @@
 
 Toroid::Toroid() {}
 
-Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
-                int ringCount, int ringDetail, float ringRadius, float ringThickness):
+Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius, float ringThickness):
 GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
-
+    
     init();
 }
 
+/*Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex2):
+GeomBase(pos, rot, size, col4, tex2), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
+
+    init();
+}*/
+
+
 
 void Toroid::calcVerts() {
+   // std::cout << "tex2 = " << tex2 << std::endl;
     // vertices
     float x, y, z;
     float phi = 0; // ring rotations

@@ -44,8 +44,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
-	${OBJECTDIR}/Protobyte/GeomBase.o \
+	${OBJECTDIR}/Protobyte/Texture2.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
+	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
 	${OBJECTDIR}/Protobyte/FrenetFrame.o
@@ -124,15 +125,20 @@ ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix3.o Protobyte/Matrix3.cpp
 
-${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
+${OBJECTDIR}/Protobyte/Texture2.o: Protobyte/Texture2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Texture2.o Protobyte/Texture2.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix4.o: Protobyte/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix4.o Protobyte/Matrix4.cpp
+
+${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
 
 ${OBJECTDIR}/Protobyte/Vertex.o: Protobyte/Vertex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
