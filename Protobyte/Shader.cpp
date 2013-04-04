@@ -10,31 +10,6 @@
 #include <string.h>
 #include <iostream>
 
-static char* textFileRead(const char *fileName) {
-
-
-    char* text;
-
-    if (fileName != NULL) {
-
-        FILE *file = fopen(fileName, "rt");
-        std::cout << "file = " << file << std::endl;
-
-        if (file != NULL) {
-            fseek(file, 0, SEEK_END);
-            int count = (int) ftell(file);
-            rewind(file);
-
-            if (count > 0) {
-                text = (char*) malloc(sizeof (char) * (count + 1));
-                count = (int) fread(text, sizeof (char), count, file);
-                text[count] = '\0';
-            }
-            fclose(file);
-        }
-    }
-    return text;
-}
 
 Shader::Shader() {
 }
@@ -45,18 +20,21 @@ Shader::Shader(const char *vsFile, const char *fsFile) {
 
 void Shader::init(const char *vsFile, const char *fsFile) {
     // bad code that should be changed (eventually!)
-    #ifdef  __linux__ 
-      GLenum err = glewInit();
-    #elif defined _WIN32
-      GLenum err = glewInit();
-    #endif
+#ifdef  __linux__ 
+    GLenum err = glewInit();
+#elif defined _WIN32
+    GLenum err = glewInit();
+#endif
 
 
     shader_vp = glCreateShader(GL_VERTEX_SHADER);
     shader_fp = glCreateShader(GL_FRAGMENT_SHADER);
 
-    const char* vsText = textFileRead(vsFile);
-    const char* fsText = textFileRead(fsFile);
+    std::string vText = Utility::getStringFromURL(vsFile);
+    std::string fText = Utility::getStringFromURL(fsFile);
+
+    const char* vsText = vText.c_str();
+    const char* fsText = fText.c_str();
 
 
     if (vsText == NULL || fsText == NULL) {

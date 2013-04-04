@@ -18,8 +18,8 @@ public:
     Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
             int ringCount, int ringDetail, float ringRadius, float ringThickness);
     
-    /*Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
-            int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex2);*/
+    Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
+            int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex);
 
     // get/sets inlined below class
     void setRingThickness(float ringThickness);

@@ -36,6 +36,7 @@
 #include "Dimension3.h"
 #include "Color4.h"
 #include "Texture2.h"
+#include "GLInfo.h"
 
 
 
@@ -78,12 +79,9 @@ protected:
 
     // VBO stuff
     GLuint vboID, indexVBOID;
-
-
-
-
-
-
+    
+    // Utility for extension support
+    GLInfo glInfo;
 
 
 public:

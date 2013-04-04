@@ -12,16 +12,20 @@
 
 # ifdef  __APPLE__
       #include <OpenGL/gl.h>
+      #include <OpenGL/glu.h>
 #elif __linux__
         #include <GL/gl.h>
+        #include <GL/glu.h>
 #elif _WIN32
         #include <GL/gl.h>
+        #include <GL/glu.h>
 #else
         #error "unknown platform"
 # endif
 
 #include <iostream>
 #include <string>
+#include <stdio.h> // for File input
 
 class Texture2 {
     
@@ -30,24 +34,27 @@ public:
     friend std::ostream& operator<<(std::ostream& output, const Texture2& texture2);
     
     Texture2();
-    Texture2(std::string texturePath, GLuint w, GLuint h);
+    Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
 
     // getters/setters
     void SetH(GLuint h);
     GLuint GetH() const;
     void SetW(GLuint w);
     GLuint GetW() const;
-    void SetTexturePath(std::string texturePath);
-    std::string GetTexturePath() const;
+    void SetTextureURL(std::string textureURL);
+    std::string GetTextureURL() const;
     void SetTextureID(GLuint textureID);
     GLuint GetTextureID() const;
 
 
 private:
-    std::string texturePath;
+    std::string textureURL;
     GLuint w;
     GLuint h;
     GLuint textureID;
+    bool isWrap;
+    
+    void init();
 };
 
 inline void Texture2::SetH(GLuint h) {
@@ -66,12 +73,12 @@ inline GLuint Texture2::GetW() const {
     return w;
 }
 
-inline void Texture2::SetTexturePath(std::string texturePath) {
-    this->texturePath = texturePath;
+inline void Texture2::SetTextureURL(std::string textureURL) {
+    this->textureURL = textureURL;
 }
 
-inline std::string Texture2::GetTexturePath() const {
-    return texturePath;
+inline std::string Texture2::GetTextureURL() const {
+    return textureURL;
 }
 
 inline void Texture2::SetTextureID(GLuint textureID) {

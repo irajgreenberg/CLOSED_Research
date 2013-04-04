@@ -37,6 +37,7 @@
       <itemPath>Protobyte/Tube.h</itemPath>
       <itemPath>Protobyte/Tuple2.h</itemPath>
       <itemPath>Protobyte/Tuple3.h</itemPath>
+      <itemPath>Protobyte/Utility.h</itemPath>
       <itemPath>Protobyte/Vector3.cpp</itemPath>
       <itemPath>Protobyte/Vector3.h</itemPath>
       <itemPath>Protobyte/Vertex.cpp</itemPath>

@@ -19,45 +19,44 @@
 #define Protobyte_Library_V01_Shader_h
 
 #ifdef  __linux__ 
-  #include <GL/glew.h>
-  #include <GL/gl.h>
-  #define GL_GLEXT_PROTOTYPES
-  #include <GL/glext.h>
+#include <GL/glew.h>
+#include <GL/gl.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GL/glext.h>
 #elif defined _WIN32
-  #include <GL/glew.h>
-  #include <GL/gl.h>
-  #define GL_GLEXT_PROTOTYPES
-  #include <GL/glext.h>
+#include <GL/glew.h>
+#include <GL/gl.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GL/glext.h>
 #elif defined __APPLE__ || __MACH__
-  #include <OpenGL/gl.h>
+#include <OpenGL/gl.h>
 #else
-  #error "unknown platform"
+#error "unknown platform"
 #endif
 
 
 #include <stdlib.h>
-#include <stdio.h> // for File input
 #include <string>
+#include "Utility.h"
 
 class Shader {
-    
 public:
-	Shader();
-	Shader(const char *vsFile, const char *fsFile);
-	~Shader();
-	
+    Shader();
+    Shader(const char *vsFile, const char *fsFile);
+    ~Shader();
+
     void init(const char *vsFile, const char *fsFile);
-    
-	void bind();
-	void unbind();
-	
-	unsigned int id();
-	
+
+    void bind();
+    void unbind();
+
+    unsigned int id();
+
 private:
-	unsigned int shader_id;
-	unsigned int shader_vp;
-	unsigned int shader_fp;
-    
+    unsigned int shader_id;
+    unsigned int shader_vp;
+    unsigned int shader_fp;
+
 };
 
 

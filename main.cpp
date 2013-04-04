@@ -1,10 +1,10 @@
 #ifdef  __APPLE__
-  #include <GLUT/glut.h>
+#include <GLUT/glut.h>
 #elif __linux__
-  #include <GL/glew.h>
-  #include <GL/glut.h>
+#include <GL/glew.h>
+#include <GL/glut.h>
 #elif _WIN32
-  #include <GL/glut.h>
+#include <GL/glut.h>
 #else
 #error "unknown platform"
 #endif
@@ -18,6 +18,7 @@
 #include <ctime>
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
+#include "Protobyte/Texture2.h"
 
 /**********************************
  *           Window             *
@@ -38,7 +39,7 @@ glutWindow win;
 /**********************************
  *      animation and timer       *
  *********************************/
-int interframeDelay = 15;
+int interframeDelay = 5;
 void animationLoop(int delay);
 
 
@@ -77,9 +78,15 @@ void setGeom();
 Toroid toroid;
 Tube tube2;
 
+// const std::string& textureURL, GLuint w, GLuint h, bool isWrap
+Texture2 tex("resources/imgs/ship_plate.raw", 256, 256, true);
+Toroid toroid2;
+
 void setGeom() {
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
             Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22);
+    toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -129,10 +136,10 @@ void setGeom() {
     //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
-    interpDetail = 4;
+    interpDetail = 3;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 200/*400*/;
+    int segs = 100/*400*/;
 
 
     //int loops = 4;
@@ -181,19 +188,21 @@ void setGeom() {
 }
 
 void init() {
-    
+
     initGL();
     setLights();
     srand(time(0)); // seed random, should only be called once
     setGeom();
     setShaders();
+    
+   std::cout << "glGetString(GL_VERSION) = " << glGetString(GL_VERSION) << std::endl;
 }
 
 void initGL() {
 
     // GLEW
-    #ifdef  __linux__
-     GLenum err = glewInit();
+#ifdef  __linux__
+    GLenum err = glewInit();
     if (GLEW_OK != err) {
         fprintf(stderr, "Error %s\n", glewGetErrorString(err));
         exit(1);
@@ -207,12 +216,11 @@ void initGL() {
         fprintf(stdout, "Status: ARB fragment programs available.\n");
 
     if (glewIsSupported("GL_VERSION_1_4  GL_ARB_point_sprite"))
-        fprintf(stdout, "Status: ARB point sprites available.\n"); 
-    #endif
+        fprintf(stdout, "Status: ARB point sprites available.\n");
 
-      
+#endif
 
-    
+
     // make projection matrix active
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
@@ -254,20 +262,20 @@ void reshape(int w, int h) {
 
     // make projection matrix active
     glMatrixMode(GL_PROJECTION);
-    
+
     // set projection matrix to identity
     glLoadIdentity();
-    
+
     // update projection matrix with perspective values
     setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
 
 
     // make Modelview matrix active
     glMatrixMode(GL_MODELVIEW);
-    
+
     // set modelvioew matrix to identity
     glLoadIdentity();
-    
+
     // Define a viewing transformation
     gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
 
@@ -292,32 +300,32 @@ void display() {
     light01_diffuse[1] = 1.0;
     light01_diffuse[2] = 1.0;
     setLights();
-   
+
     shader.bind();
     tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-   
+
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
     toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
-    
+
     // required by glut
     glutSwapBuffers();
 }
 
 int main(int argc, char **argv) {
 
-     // set window values
+    // set window values
     win.x = 0;
     win.y = 0;
     win.w = 1280;
     win.h = 800;
-    win.title = (char*)"Protobyte Glut Project";
+    win.title = (char*) "Protobyte Glut Project";
     win.fovAngle = 65;
     win.nearClipPlane = .1f;
     win.farClipPlane = 50000.0f;
-    
+
     // set up GLUT
 
     glutInit(&argc, argv); // Initializes glut
@@ -352,11 +360,11 @@ int main(int argc, char **argv) {
 
 
 // animation based on internal timer
-void animationLoop(int delay) 
-{
-   glutPostRedisplay();
-   glutTimerFunc(delay, animationLoop, 0);
-   return;
+
+void animationLoop(int delay) {
+    glutPostRedisplay();
+    glutTimerFunc(delay, animationLoop, 0);
+    return;
 }
 
 

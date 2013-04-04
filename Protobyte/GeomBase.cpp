@@ -8,29 +8,31 @@
 
 #include "GeomBase.h"
 
+GeomBase::GeomBase() {
+}
 
-GeomBase::GeomBase() {}
-
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4):
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
 pos(pos), rot(rot), size(size), col4(col4) {
 }
 
 // pass array of colors
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s):
+
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
 pos(pos), rot(rot), size(size), col4s(col4s) {
 }
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2):
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2) :
 pos(pos), rot(rot), size(size), col4(col4), tex2(tex2) {
 }
 
 // pass array of colors
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2):
+
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2) :
 pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2) {
 }
 
 GeomBase::~GeomBase() {
-   // glDeleteLists(displayListIndex, 1);
+    // glDeleteLists(displayListIndex, 1);
 }
 
 void GeomBase::init() {
@@ -41,26 +43,22 @@ void GeomBase::init() {
     calcPrimitives();
     fillDisplayLists(); // just in case we want to render with display Lists: Data can't be changed though
 
- /*     if(glInfo.isExtensionSupported("GL_vertex_buffer_object"))
-    {
-        vboSupported = vboUsed = true;
+#ifdef  __linux__
+    // Call to utilize all the neato things in Linux/Win - loads extensions
+    glewInit();
+    
+    /* screwy and not working
+    if (glInfo.isExtensionSupported("GL_vertex_buffer_object")) {
+        //vboSupported = vboUsed = true;
         std::cout << "Video card supports GL_vertex_buffer_object." << std::endl;
-    }
-    else
-    {
-        vboSupported = vboUsed = false;
+    } else {
+        //vboSupported = vboUsed = false;
         std::cout << "Video card does NOT support GL_vertex_buffer_object." << std::endl;
     }*/
-    // generate vertex buffer objects
-    // vector data - use GL_ARRAY_BUFFER
-    //glGenBuffers(1, &vboID); // Create the buffer ID // OSX
-   #ifdef  __linux__
-    glewInit();
-   #endif
-   glGenBuffers(1, &vboID); // Create the buffer ID
+#endif
     
-
-
+    
+    glGenBuffers(1, &vboID); // Create the buffer ID
     glBindBuffer(GL_ARRAY_BUFFER, vboID); // Bind the buffer (vertex array data)
     int vertsDataSize = sizeof (float) *interleavedPrims.size();
     glBufferData(GL_ARRAY_BUFFER, vertsDataSize, NULL, GL_STATIC_DRAW); // allocate space
@@ -77,10 +75,9 @@ void GeomBase::init() {
 
 }
 
-
 void GeomBase::calcFaces() {
-   // pass vertex addresses
-     for (int i = 0; i < inds.size(); i++) {
+    // pass vertex addresses
+    for (int i = 0; i < inds.size(); i++) {
         faces.push_back(Face3(&verts.at(inds.at(i).elem0), &verts.at(inds.at(i).elem1),
                 &verts.at(inds.at(i).elem2)));
     }
@@ -122,7 +119,7 @@ void GeomBase::sortFaces() {
 void GeomBase::calcPrimitives() {
 
     for (int i = 0; i < verts.size(); i++) {
-        
+
         vertPrims.push_back(verts.at(i).pos.x);
         vertPrims.push_back(verts.at(i).pos.y);
         vertPrims.push_back(verts.at(i).pos.z);
@@ -222,10 +219,10 @@ void GeomBase::display(displayMode mode, renderMode render) {
             // ensure data not bound to VBO
             glBindBuffer(GL_ARRAY_BUFFER, 0);
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-            
+
             // ensure Diaplsy list released 
             glDeleteLists(displayListIndex, 1);
-            
+
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
             glEnableClientState(GL_VERTEX_ARRAY);
@@ -244,10 +241,10 @@ void GeomBase::display(displayMode mode, renderMode render) {
             break;
 
         case VERTEX_ARRAY_INTERLEAVED:
-             // ensure data not bound to VBO
+            // ensure data not bound to VBO
             glBindBuffer(GL_ARRAY_BUFFER, 0);
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-            
+
             // ensure Diaplsy list released 
             glDeleteLists(displayListIndex, 1);
 
@@ -306,10 +303,10 @@ void GeomBase::display(displayMode mode, renderMode render) {
 
     }
     glPopMatrix();
-    
+
     // reset fill and lighting
-     glEnable(GL_LIGHTING);
-     glPolygonMode(GL_FRONT, GL_FILL);
+    glEnable(GL_LIGHTING);
+    glPolygonMode(GL_FRONT, GL_FILL);
 }
 
 void GeomBase::move(const Vector3& v) {
