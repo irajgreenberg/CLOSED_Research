@@ -32,7 +32,7 @@ public:
 private:
     // Ends of branch
     Vertex terminalBegin, terminalEnd;
-    Vertex terminals[2];
+    Vertex* terminals;
     
     // Number of segments defining branch spline
     int segs;
