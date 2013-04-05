@@ -9,7 +9,6 @@
 #ifndef SFML_simple_renderer_06_Color3_h
 #define SFML_simple_renderer_06_Color3_h
 
-
 #include <iostream>
 
 template <class T>

@@ -1,32 +1,29 @@
 //
 //  GeomBase.h
 //  Protobyte Library Development
-//
-//  Created by Ira on 2/13/13.
+//  Ira on 2/13/13.
 //  Copyright (c) 2013 Ira Greenberg. All rights reserved.
+// VBO config code from 
+// /Song Ho Ahn (song.ahn@gmail.com)
+// CREATED: 2006-11-14
+// UPDATED: 2012-04-11
+// UPDATED: 2012-04-11
 //
 
 #ifndef __SFML_simple_renderer_06__GeomBase__
 #define __SFML_simple_renderer_06__GeomBase__
 
+#define GL_GLEXT_PROTOTYPES // must come before including glext.h
 
-#ifdef  __APPLE__
-#include <OpenGL/gl.h>
-#include <OpenGL/glu.h>
-#elif  __linux__
-#include <GL/glew.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-#define GL_GLEXT_PROTOTYPES
-#include <GL/glext.h>
-#elif  _WIN32
-#include <GL/gl.h>
-#include <GL/glu.h>
-#define GL_GLEXT_PROTOTYPES
-#include <GL/glext.h>
+#include "GLInfo.h"
+#ifdef __APPLE__
+#include <glut/glut.h>
 #else
-#error "unknown platform"
+#include <GL/glut.h>
+#include <GL/glu.h>
+#include <GL/glext.h>
 #endif
+
 
 #include <iostream>
 #include <vector>
@@ -35,23 +32,48 @@
 #include "Tuple3.h"
 #include "Dimension3.h"
 #include "Color4.h"
-#include "Texture2.h"
-#include "GLInfo.h"
+
 
 
 
 // for offset into the FBO interleaved buffer (ugly I know!)
 #define BUFFER_OFFSET(i) ((void*)(i)) 
 
+
+// function pointers for VBO Extension
+// Windows needs to get function pointers from ICD OpenGL drivers,
+// because opengl32.dll does not support extensions higher than v1.1.
+#ifdef _WIN32
+PFNGLGENBUFFERSARBPROC            pglGenBuffersARB = 0;             // VBO Name Generation Procedure
+PFNGLBINDBUFFERARBPROC            pglBindBufferARB = 0;             // VBO Bind Procedure
+PFNGLBUFFERDATAARBPROC            pglBufferDataARB = 0;             // VBO Data Loading Procedure
+PFNGLBUFFERSUBDATAARBPROC         pglBufferSubDataARB = 0;          // VBO Sub Data Loading Procedure
+PFNGLDELETEBUFFERSARBPROC         pglDeleteBuffersARB = 0;          // VBO Deletion Procedure
+PFNGLGETBUFFERPARAMETERIVARBPROC  pglGetBufferParameterivARB = 0;   // return various parameters of VBO
+PFNGLMAPBUFFERARBPROC             pglMapBufferARB = 0;              // map VBO procedure
+PFNGLUNMAPBUFFERARBPROC           pglUnmapBufferARB = 0;            // unmap VBO procedure
+
+#define glGenBuffersARB           pglGenBuffersARB
+#define glBindBufferARB           pglBindBufferARB
+#define glBufferDataARB           pglBufferDataARB
+#define glBufferSubDataARB        pglBufferSubDataARB
+#define glDeleteBuffersARB        pglDeleteBuffersARB
+#define glGetBufferParameterivARB pglGetBufferParameterivARB
+#define glMapBufferARB            pglMapBufferARB
+#define glUnmapBufferARB          pglUnmapBufferARB
+
+#endif
+
+
+
 class GeomBase {
 protected:
-
+    
     Vector3 pos, rot;
     Vector3 spd, rotSpd;
     Dimension3<float> size;
     Color4<float> col4;
     std::vector< Color4<float> > col4s;
-    Texture2 tex2;
 
     virtual void init();
     virtual void calcVerts() = 0;
@@ -79,9 +101,12 @@ protected:
 
     // VBO stuff
     GLuint vboID, indexVBOID;
-    
-    // Utility for extension support
-    GLInfo glInfo;
+    bool vboSupported, vboUsed;
+    ;
+
+
+
+
 
 
 public:
@@ -103,38 +128,32 @@ public:
     };
 
     GeomBase();
-
+    
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const Color4<float> col4);
 
     GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
             const std::vector< Color4<float> > col4s);
-
-    GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-            const Color4<float> col4, const Texture2& tex2);
-
-    GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-            const std::vector< Color4<float> > col4s, const Texture2& tex2);
-
+    
     virtual ~GeomBase();
 
-    virtual void move(const Vector3& v);
-    virtual void rotate(const Vector3& r);
-    virtual void scale(const Dimension3<float>& s);
+    void move(const Vector3& v);
+    void rotate(const Vector3& r);
+    void scale(const Dimension3<float>& s);
 
     // vertex arrays are implemented by default
     virtual void display(displayMode mode = VERTEX_ARRAY, renderMode render = SURFACE);
 
     // setters/getters
-    virtual void setPosition(const Vector3& pos);
-    virtual void setRotation(const Vector3& rot);
-    virtual void setSize(const Dimension3<float> size);
-    virtual void setColor(const Color4<float> col4);
+    void setPosition(const Vector3& pos);
+    void setRotation(const Vector3& rot);
+    void setSize(const Dimension3<float> size);
+    void setColor(const Color4<float> col4);
 
-    virtual Vector3& getPosition();
-    virtual Vector3& getRotation();
-    virtual Dimension3<float>& getSize();
-    virtual Color4<float>& getColor();
+    Vector3& getPosition();
+    Vector3& getRotation();
+    Dimension3<float>& getSize();
+    Color4<float>& getColor();
 
     // a bit dangerous to return references, so be careful
     // justification, you got no 3d if you delete this stuff
@@ -142,7 +161,7 @@ public:
     std::vector<Face3>& getFaces();
     std::vector<Vertex>& getVertices();
 
-    virtual void sortFaces();
+    void sortFaces();
 
 
 

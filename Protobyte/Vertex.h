@@ -20,6 +20,7 @@ public:
     Vertex();
     Vertex(const Vector3& pos);
     Vertex(const Vector3& pos, const Color4<float>& col4);
+    Vertex(const Vector3& pos, const Color4<float>& col4, const Tuple2<float>& uv);
     
     Vector3 pos;
     
@@ -30,13 +31,11 @@ public:
     void setColor(const Color4<float>& col4);
     
 private:
-    Tuple2<float> uv;
-    Vector3 norm;
     Color4<float> col4;
+    Vector3 norm;
+    Tuple2<float> uv;
     
     void init();
-    
-    
 };
 
 #endif	/* VERTEX_H */

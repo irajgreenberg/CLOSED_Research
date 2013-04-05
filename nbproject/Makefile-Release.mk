@@ -49,7 +49,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
-	${OBJECTDIR}/Protobyte/FrenetFrame.o
+	${OBJECTDIR}/Protobyte/FrenetFrame.o \
+	${OBJECTDIR}/Protobyte/Branch.o
 
 
 # C Compiler Flags
@@ -154,6 +155,11 @@ ${OBJECTDIR}/Protobyte/FrenetFrame.o: Protobyte/FrenetFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
+
+${OBJECTDIR}/Protobyte/Branch.o: Protobyte/Branch.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Branch.o Protobyte/Branch.cpp
 
 # Subprojects
 .build-subprojects:

@@ -17,8 +17,8 @@ GeomBase(pos, rot, size, col4), ringCount(ringCount), ringDetail(ringDetail), ri
     init();
 }
 
-Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex):
-GeomBase(pos, rot, size, col4, tex), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
+Toroid::Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex2):
+GeomBase(pos, rot, size, col4, tex2), ringCount(ringCount), ringDetail(ringDetail), ringRadius(ringRadius), ringThickness(ringThickness) {
 
     init();
 }
@@ -28,7 +28,7 @@ GeomBase(pos, rot, size, col4, tex), ringCount(ringCount), ringDetail(ringDetail
 void Toroid::calcVerts() {
    // std::cout << "tex2 = " << tex2 << std::endl;
     // vertices
-    float x, y, z;
+    float x, y, z, u, v;
     float phi = 0; // ring rotations
     for (int i = 0, k=0; i < ringCount; i++) {
         float theta = 0;
@@ -44,7 +44,10 @@ void Toroid::calcVerts() {
             float z2 = float(z * sin(phi) + x * cos(phi));
 
 
-            // fill vertices with floats
+            if (tex2.getW() > 0 && tex2.getH() > 0){
+                
+            }
+                    // fill vertices with floats
             verts.push_back( Vertex(Vector3(x2, y, z2), 
                         Color4<float>(col4.getR(), col4.getG(), col4.getB(), col4.getA())) );
 

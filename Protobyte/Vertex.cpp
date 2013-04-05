@@ -19,6 +19,11 @@ pos(pos), col4(col4)
 {
 }
 
+Vertex::Vertex(const Vector3& pos, const Color4<float>& col4, const Tuple2<float>& uv):
+pos(pos), col4(col4), uv(uv) 
+{
+}
+
 Vertex::Vertex(const Vector3& pos):
 pos(pos) 
 {

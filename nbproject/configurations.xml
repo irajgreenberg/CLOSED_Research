@@ -46,10 +46,14 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>resources/shaders/perFragmentLighting_02.frag</itemPath>
+      <itemPath>resources/shaders/perFragmentLighting_02.vert</itemPath>
       <itemPath>resources/shaders/phong_shader.frag</itemPath>
       <itemPath>resources/shaders/phong_shader.vert</itemPath>
       <itemPath>resources/shaders/shader.frag</itemPath>
       <itemPath>resources/shaders/shader.vert</itemPath>
+      <itemPath>resources/shaders/singleLight.frag</itemPath>
+      <itemPath>resources/shaders/singleLight.vert</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"

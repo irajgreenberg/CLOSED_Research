@@ -1,12 +1,8 @@
-#ifdef  __APPLE__
-#include <GLUT/glut.h>
-#elif __linux__
-#include <GL/glew.h>
-#include <GL/glut.h>
-#elif _WIN32
-#include <GL/glut.h>
+
+#ifdef __APPLE__
+#include "glut/glut.h"
 #else
-#error "unknown platform"
+#include <GL/glut.h>
 #endif
 
 #include <cmath>
@@ -18,11 +14,11 @@
 #include <ctime>
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
-#include "Protobyte/Texture2.h"
 
 /**********************************
  *           Window             *
  *********************************/
+
 struct glutWindow {
     int x;
     int y;
@@ -39,7 +35,7 @@ glutWindow win;
 /**********************************
  *      animation and timer       *
  *********************************/
-int interframeDelay = 5;
+int interframeDelay = 15;
 void animationLoop(int delay);
 
 
@@ -61,14 +57,14 @@ void setShaders();
  *           LIGHTING             *
  *********************************/
 // Light01
-GLfloat light01_ambient[] = {0.5, 0.3, 0.3, 1.0};
-GLfloat light01_diffuse[] = {.5, .2, .2, 1.0};
+GLfloat light01_ambient[] = {0.0, 0.0, 0.0, 1.0};
+GLfloat light01_diffuse[] = {.7, .2, .2, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {69}; // max 128
+GLfloat light01_mat_shininess[] = {128}; // max 128
 
 void setLights();
 
@@ -78,18 +74,9 @@ void setGeom();
 Toroid toroid;
 Tube tube2;
 
-// const std::string& textureURL, GLuint w, GLuint h, bool isWrap
-Texture2 tex;
-Toroid toroid2;
-
 void setGeom() {
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.3, 0.3, 1.0), 60, 60, .87, .22);
-    
-    
-    tex = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
-   // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-           // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .2), 60, 60, .87, .22);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -187,42 +174,20 @@ void setGeom() {
     }
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
+    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 12);
 }
 
 void init() {
-
+    
+    
     initGL();
     setLights();
     srand(time(0)); // seed random, should only be called once
     setGeom();
     setShaders();
-    
-   std::cout << "glGetString(GL_VERSION) = " << glGetString(GL_VERSION) << std::endl;
 }
 
 void initGL() {
-
-    // GLEW
-#ifdef  __linux__
-    GLenum err = glewInit();
-    if (GLEW_OK != err) {
-        fprintf(stderr, "Error %s\n", glewGetErrorString(err));
-        exit(1);
-    }
-    fprintf(stdout, "Status: Using GLEW %s\n", glewGetString(GLEW_VERSION));
-
-    if (GLEW_ARB_vertex_program)
-        fprintf(stdout, "Status: ARB vertex programs available.\n");
-
-    if (glewGetExtension("GL_ARB_fragment_program"))
-        fprintf(stdout, "Status: ARB fragment programs available.\n");
-
-    if (glewIsSupported("GL_VERSION_1_4  GL_ARB_point_sprite"))
-        fprintf(stdout, "Status: ARB point sprites available.\n");
-
-#endif
-
 
     // make projection matrix active
     glMatrixMode(GL_PROJECTION);
@@ -251,7 +216,6 @@ void initGL() {
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_NORMALIZE); //  good for uniform scaling
-    //glEnable(GL_TEXTURE_2D);
 
     glClearColor(.2, 1, 1, 1); // background color
     glClearStencil(0); // clear stencil buffer
@@ -266,22 +230,23 @@ void reshape(int w, int h) {
 
     // make projection matrix active
     glMatrixMode(GL_PROJECTION);
-
+    
     // set projection matrix to identity
     glLoadIdentity();
-
+    
     // update projection matrix with perspective values
     setView(win.fovAngle, win.w / win.h, win.nearClipPlane, win.farClipPlane);
 
 
     // make Modelview matrix active
     glMatrixMode(GL_MODELVIEW);
-
+    
     // set modelvioew matrix to identity
     glLoadIdentity();
-
+    
     // Define a viewing transformation
     gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+
 }
 
 
@@ -303,32 +268,32 @@ void display() {
     light01_diffuse[1] = 1.0;
     light01_diffuse[2] = 1.0;
     setLights();
-
+   
     shader.bind();
-    tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-
+   // tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+   
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
     toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
-
+    
     // required by glut
     glutSwapBuffers();
 }
 
 int main(int argc, char **argv) {
 
-    // set window values
+     // set window values
     win.x = 0;
     win.y = 0;
     win.w = 1280;
     win.h = 800;
-    win.title = (char*) "Protobyte Glut Project";
+    win.title = "Protobyte Glut Project";
     win.fovAngle = 65;
     win.nearClipPlane = .1f;
     win.farClipPlane = 50000.0f;
-
+    
     // set up GLUT
 
     glutInit(&argc, argv); // Initializes glut
@@ -363,11 +328,11 @@ int main(int argc, char **argv) {
 
 
 // animation based on internal timer
-
-void animationLoop(int delay) {
-    glutPostRedisplay();
-    glutTimerFunc(delay, animationLoop, 0);
-    return;
+void animationLoop(int delay) 
+{
+   glutPostRedisplay();
+   glutTimerFunc(delay, animationLoop, 0);
+   return;
 }
 
 
@@ -400,8 +365,8 @@ void setLights() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/perFragmentLighting_02.vert";
-    const char* frag = "resources/shaders/perFragmentLighting_02.frag";
+    const char* vert = "resources/shaders/phong_shader.vert";
+    const char* frag = "resources/shaders/phong_shader.frag";
 
     shader.init(vert, frag);
 }

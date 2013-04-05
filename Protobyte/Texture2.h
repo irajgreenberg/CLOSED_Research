@@ -37,55 +37,57 @@ public:
     Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
 
     // getters/setters
-    void SetH(GLuint h);
-    GLuint GetH() const;
-    void SetW(GLuint w);
-    GLuint GetW() const;
-    void SetTextureURL(std::string textureURL);
-    std::string GetTextureURL() const;
-    void SetTextureID(GLuint textureID);
-    GLuint GetTextureID() const;
+    void setH(GLuint h);
+    GLuint getH() const;
+    void setW(GLuint w);
+    GLuint getW() const;
+    void setTextureURL(std::string textureURL);
+    std::string getTextureURL() const;
+    void setTextureID(GLuint textureID);
+    GLuint getTextureID() const;
+    
+   
 
 
 private:
     std::string textureURL;
     GLuint w;
     GLuint h;
-    GLuint textureID;
     bool isWrap;
+    GLuint textureID;
     
     void init();
 };
 
-inline void Texture2::SetH(GLuint h) {
+inline void Texture2::setH(GLuint h) {
     this->h = h;
 }
 
-inline GLuint Texture2::GetH() const {
+inline GLuint Texture2::getH() const {
     return h;
 }
 
-inline void Texture2::SetW(GLuint w) {
+inline void Texture2::setW(GLuint w) {
     this->w = w;
 }
 
-inline GLuint Texture2::GetW() const {
+inline GLuint Texture2::getW() const {
     return w;
 }
 
-inline void Texture2::SetTextureURL(std::string textureURL) {
+inline void Texture2::setTextureURL(std::string textureURL) {
     this->textureURL = textureURL;
 }
 
-inline std::string Texture2::GetTextureURL() const {
+inline std::string Texture2::getTextureURL() const {
     return textureURL;
 }
 
-inline void Texture2::SetTextureID(GLuint textureID) {
+inline void Texture2::setTextureID(GLuint textureID) {
     this->textureID = textureID;
 }
 
-inline GLuint Texture2::GetTextureID() const {
+inline GLuint Texture2::getTextureID() const {
     return textureID;
 }
 

@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="88">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
+      <itemPath>Protobyte/Color3.h</itemPath>
+      <itemPath>Protobyte/Color4.h</itemPath>
+      <itemPath>Protobyte/Curve3.cpp</itemPath>
+      <itemPath>Protobyte/Curve3.h</itemPath>
+      <itemPath>Protobyte/Dimension3.h</itemPath>
+      <itemPath>Protobyte/Face3.cpp</itemPath>
+      <itemPath>Protobyte/Face3.h</itemPath>
+      <itemPath>Protobyte/FrenetFrame.cpp</itemPath>
+      <itemPath>Protobyte/FrenetFrame.h</itemPath>
+      <itemPath>Protobyte/GLInfo.h</itemPath>
+      <itemPath>Protobyte/GeomBase.cpp</itemPath>
+      <itemPath>Protobyte/GeomBase.h</itemPath>
+      <itemPath>Protobyte/IGConstants.h</itemPath>
+      <itemPath>Protobyte/Math.h</itemPath>
+      <itemPath>Protobyte/Matrix3.cpp</itemPath>
+      <itemPath>Protobyte/Matrix3.h</itemPath>
+      <itemPath>Protobyte/Matrix4.cpp</itemPath>
+      <itemPath>Protobyte/Matrix4.h</itemPath>
+      <itemPath>Protobyte/Shader.cpp</itemPath>
+      <itemPath>Protobyte/Shader.h</itemPath>
+      <itemPath>Protobyte/Spline3.cpp</itemPath>
+      <itemPath>Protobyte/Spline3.h</itemPath>
+      <itemPath>Protobyte/Tendril.cpp</itemPath>
+      <itemPath>Protobyte/Tendril.h</itemPath>
+      <itemPath>Protobyte/Toroid.cpp</itemPath>
+      <itemPath>Protobyte/Toroid.h</itemPath>
+      <itemPath>Protobyte/Tube.cpp</itemPath>
+      <itemPath>Protobyte/Tube.h</itemPath>
+      <itemPath>Protobyte/Tuple2.h</itemPath>
+      <itemPath>Protobyte/Tuple3.h</itemPath>
+      <itemPath>Protobyte/Vector3.cpp</itemPath>
+      <itemPath>Protobyte/Vector3.h</itemPath>
+      <itemPath>Protobyte/Vertex.cpp</itemPath>
+      <itemPath>Protobyte/Vertex.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <itemPath>resources/shaders/phong_shader.frag</itemPath>
+      <itemPath>resources/shaders/phong_shader.vert</itemPath>
+      <itemPath>resources/shaders/shader.frag</itemPath>
+      <itemPath>resources/shaders/shader.vert</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>Protobyte</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>/usr/include/GL</pElem>
+            <pElem>Protobyte</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>-lGLEW -lglut -lGL -lGLU -lX11 -lpthread -lXxf86vm -lm</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="Protobyte/Color3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Color4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Curve3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Curve3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Dimension3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Face3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Face3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/FrenetFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/FrenetFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/GLInfo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/GeomBase.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/GeomBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/IGConstants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Math.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Shader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Shader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Spline3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Spline3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tendril.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Tendril.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Toroid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Toroid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tube.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Tube.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tuple2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tuple3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Vector3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Vector3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Vertex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Vertex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="resources/shaders/phong_shader.frag"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/shaders/phong_shader.vert"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/shaders/shader.frag" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/shaders/shader.vert" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>/usr/include/GL</pElem>
+            <pElem>Protobyte</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>-lGLEW -lglut -lGL -lGLU -lX11 -lpthread -lXxf86vm -lm</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="Protobyte/Color3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Color4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Curve3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Curve3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Dimension3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Face3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Face3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/FrenetFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/FrenetFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/GLInfo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/GeomBase.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/GeomBase.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/IGConstants.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Math.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix4.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Matrix4.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Shader.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Shader.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Spline3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Spline3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tendril.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Tendril.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Toroid.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Toroid.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tube.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Tube.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tuple2.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Tuple3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Vector3.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Vector3.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Protobyte/Vertex.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Protobyte/Vertex.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="resources/shaders/phong_shader.frag"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/shaders/phong_shader.vert"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/shaders/shader.frag" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/shaders/shader.vert" ex="false" tool="3" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

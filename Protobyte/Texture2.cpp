@@ -23,6 +23,7 @@ Texture2::Texture2() {
 
 Texture2::Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap) :
 textureURL(textureURL), w(w), h(h), isWrap(isWrap) {
+
     init();
 }
 
@@ -30,11 +31,11 @@ void Texture2::init() {
     // texture creation/loading code from: 
     // http://www.nullterminator.net/gltexture.html
 
-    GLbyte * data;
+    unsigned char* data;
     FILE * file;
 
     // allocate buffer
-    data = new GLbyte[w * h * 3];
+    data = new unsigned char[w * h * 3];
 
     // open texture data
     file = fopen(textureURL.c_str(), "rb");
@@ -67,11 +68,14 @@ void Texture2::init() {
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
             isWrap ? GL_REPEAT : GL_CLAMP);
 
-    // build our texture mipmaps
-    gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h,
-            GL_RGB, GL_UNSIGNED_BYTE, data);
+    // give opengl the texture
+    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+     
+     // build our texture mipmaps
+   /* gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h,
+            GL_RGB, GL_UNSIGNED_BYTE, data);*/
 
-    // free buffer
+    // free memory
     delete [] data;
 }
 
