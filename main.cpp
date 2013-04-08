@@ -19,6 +19,9 @@
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
 #include "Protobyte/Texture2.h"
+#include "Protobyte/Block.h"
+
+using namespace proto;
 
 /**********************************
  *           Window             *
@@ -62,13 +65,13 @@ void setShaders();
  *********************************/
 // Light01
 GLfloat light01_ambient[] = {0.5, 0.3, 0.3, 1.0};
-GLfloat light01_diffuse[] = {.5, .2, .2, 1.0};
+GLfloat light01_diffuse[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
 GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {69}; // max 128
+GLfloat light01_mat_shininess[] = {104}; // max 128
 
 void setLights();
 
@@ -79,17 +82,23 @@ Toroid toroid;
 Tube tube2;
 
 // const std::string& textureURL, GLuint w, GLuint h, bool isWrap
-Texture2 tex;
+Texture2 tex2;
 Toroid toroid2;
 
+
+Block block;
+
 void setGeom() {
+
+  
+
     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.3, 0.3, 1.0), 60, 60, .87, .22);
-    
-    
-    tex = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
-   // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-           // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
+            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, 1.0), 60, 60, .87, .22);
+
+
+    tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+    // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -188,6 +197,9 @@ void setGeom() {
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
     tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
+
+    block = Block(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(20, 20, 20), Color4<float>(0.4, 0.3, 0.85, 1.0), tex2);
 }
 
 void init() {
@@ -197,8 +209,8 @@ void init() {
     srand(time(0)); // seed random, should only be called once
     setGeom();
     setShaders();
-    
-   std::cout << "glGetString(GL_VERSION) = " << glGetString(GL_VERSION) << std::endl;
+
+    std::cout << "glGetString(GL_VERSION) = " << glGetString(GL_VERSION) << std::endl;
 }
 
 void initGL() {
@@ -305,12 +317,48 @@ void display() {
     setLights();
 
     shader.bind();
+    
+    /*
+     // set uniform variables for shaders
+    GLint loc1, loc2, loc3, loc4;
+    float BrickColor[4] = {0.9, 0.3, 0.1, 1.0};
+    float MortarColor[4] = {0.7, 0.7, 0.6, 1.0};
+    float BrickSize[2] = {10.2, 8.1};
+    float BrickPct[2] = {0.5, 0.5};
+
+    loc1 = glGetUniformLocation(shader.shader_id, "BrickColor");
+    
+    glUniform4fv(loc1, 1, BrickColor);
+
+    loc2 = glGetUniformLocation(shader.shader_id, "MotarColor");
+    glUniform4fv(loc2, 1, MortarColor);
+
+    loc3 = glGetUniformLocation(shader.shader_id, "BrickSize");
+    glUniform2fv(loc3, 1, BrickSize);
+
+    loc4 = glGetUniformLocation(shader.shader_id, "BrickPct");
+    glUniform2fv(loc4, 1, BrickPct);
+    
+    std::cout << "loc1 = " << loc1 << std::endl;
+    std::cout << "loc2 = " << loc2 << std::endl;
+    std::cout << "loc3 = " << loc3 << std::endl;
+    std::cout << "loc4 = " << loc4 << std::endl;
+    */
+    
+
+    
     tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
     toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+
+
+    glShadeModel(GL_FLAT);
+    block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    glShadeModel(GL_SMOOTH); // smooth by default
+
     shader.unbind();
 
     // required by glut
@@ -400,8 +448,8 @@ void setLights() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/perFragmentLighting_02.vert";
-    const char* frag = "resources/shaders/perFragmentLighting_02.frag";
+    const char* vert = "resources/shaders/shader_bricks.vert";
+    const char* frag = "resources/shaders/shader_bricks.frag";
 
     shader.init(vert, frag);
 }

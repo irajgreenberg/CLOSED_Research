@@ -50,7 +50,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
 	${OBJECTDIR}/Protobyte/FrenetFrame.o \
-	${OBJECTDIR}/Protobyte/Branch.o
+	${OBJECTDIR}/Protobyte/Tree.o \
+	${OBJECTDIR}/Protobyte/Branch.o \
+	${OBJECTDIR}/Protobyte/Block.o
 
 
 # C Compiler Flags
@@ -71,15 +73,15 @@ LDLIBSOPTIONS=/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT /System/
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /System/Library/Frameworks/GLUT.framework/Versions/A/GLUT
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: /System/Library/Frameworks/OpenGL.framework/OpenGL
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /System/Library/Frameworks/OpenGL.framework/OpenGL
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research ${OBJECTFILES} ${LDLIBSOPTIONS} 
 
 ${OBJECTDIR}/Protobyte/Tendril.o: Protobyte/Tendril.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
@@ -156,10 +158,20 @@ ${OBJECTDIR}/Protobyte/FrenetFrame.o: Protobyte/FrenetFrame.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
 
+${OBJECTDIR}/Protobyte/Tree.o: Protobyte/Tree.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tree.o Protobyte/Tree.cpp
+
 ${OBJECTDIR}/Protobyte/Branch.o: Protobyte/Branch.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Branch.o Protobyte/Branch.cpp
+
+${OBJECTDIR}/Protobyte/Block.o: Protobyte/Block.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Block.o Protobyte/Block.cpp
 
 # Subprojects
 .build-subprojects:
@@ -167,7 +179,7 @@ ${OBJECTDIR}/Protobyte/Branch.o: Protobyte/Branch.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/protobyte_research
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research
 
 # Subprojects
 .clean-subprojects:

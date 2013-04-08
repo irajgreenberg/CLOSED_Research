@@ -15,20 +15,21 @@
 #ifndef Protobyte_iig001_Tuple3_h
 #define Protobyte_iig001_Tuple3_h
 
+namespace proto {
 
-template <class T>
-class Tuple3 {
-    
-public:
-    T elem0, elem1, elem2;
-    T elems[3];
-    
-    
-    Tuple3(T elem0 = 0, T elem1 = 0, T elem2 = 0):
-    elem0(elem0), elem1(elem1), elem2(elem2) {
-        
-    }
-    
-};
+    template <class T>
+    class Tuple3 {
+    public:
+        T elem0, elem1, elem2;
+        T elems[3];
+
+        Tuple3(T elem0 = 0, T elem1 = 0, T elem2 = 0) :
+        elem0(elem0), elem1(elem1), elem2(elem2) {
+
+        }
+
+    };
+
+}
 
 #endif

@@ -8,6 +8,7 @@
 #include "Toroid.h"
 
 
+using namespace proto;
 
 Toroid::Toroid() {}
 

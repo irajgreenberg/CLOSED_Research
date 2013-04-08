@@ -11,32 +11,36 @@
 #include <iostream>
 #include <fstream>
 
-class Utility {
-public:
+namespace proto {
 
-    Utility() {
-    }
+    class Utility {
+    public:
 
-    static std::string getStringFromURL(const char* URL) {
-        std::ifstream file(URL);
-        std::string line, block;
-        if (file.is_open()) {
-
-            while (!file.eof()) {
-                std::getline(file, line);
-                block.append(line);
-                block.append(std::string("\n"));
-            }
-            file.close();
-            return block;
-        } else {
-            std::cout << "Unable to open file";
+        Utility() {
         }
-    }
 
-private:
+        static std::string getStringFromURL(const char* URL) {
+            std::ifstream file(URL);
+            std::string line, block;
+            if (file.is_open()) {
 
-};
+                while (!file.eof()) {
+                    std::getline(file, line);
+                    block.append(line);
+                    block.append(std::string("\n"));
+                }
+                file.close();
+                return block;
+            } else {
+                std::cout << "Unable to open file";
+            }
+        }
+
+    private:
+
+    };
+
+}
 
 #endif	/* UTILITY_H */
 

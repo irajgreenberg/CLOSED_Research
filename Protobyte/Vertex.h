@@ -12,31 +12,34 @@
 #include "Color4.h"
 #include "Tuple2.h"
 
-class Vertex {
-    
-public:
-    friend std::ostream& operator<<(std::ostream& output, const Vertex& vertex);
-    
-    Vertex();
-    Vertex(const Vector3& pos);
-    Vertex(const Vector3& pos, const Color4<float>& col4);
-    Vertex(const Vector3& pos, const Color4<float>& col4, const Tuple2<float>& uv);
-    
-    Vector3 pos;
-    
-    const Vector3& getNormal() const;
-    Color4<float> getColor() const;
-    
-    void setNormal(const  Vector3& norm);
-    void setColor(const Color4<float>& col4);
-    
-private:
-    Color4<float> col4;
-    Vector3 norm;
-    Tuple2<float> uv;
-    
-    void init();
-};
+namespace proto {
+
+    class Vertex {
+    public:
+        friend std::ostream& operator<<(std::ostream& output, const Vertex& vertex);
+
+        Vertex();
+        Vertex(const Vector3& pos);
+        Vertex(const Vector3& pos, const Color4<float>& col4);
+        Vertex(const Vector3& pos, const Color4<float>& col4, const Tuple2<float>& uv);
+
+        Vector3 pos;
+
+        const Vector3& getNormal() const;
+        Color4<float> getColor() const;
+
+        void setNormal(const Vector3& norm);
+        void setColor(const Color4<float>& col4);
+
+    private:
+        Color4<float> col4;
+        Vector3 norm;
+        Tuple2<float> uv;
+
+        void init();
+    };
+
+}
 
 #endif	/* VERTEX_H */
 

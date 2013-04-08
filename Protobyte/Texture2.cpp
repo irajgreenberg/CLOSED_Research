@@ -7,13 +7,21 @@
 
 #include "Texture2.h"
 
-std::ostream& operator<<(std::ostream& output, const Texture2& texture2) {
-    output << "texture2.textureURL: " << texture2.textureURL <<
-            ", texture2.w: " << texture2.w <<
-            ", texture2.h: " << texture2.h <<
-            ", texture2.textureID: " << texture2.textureID;
-    return output;
+
+
+namespace proto {
+
+    std::ostream& operator<<(std::ostream& output, const Texture2& texture2) {
+        output << "texture2.textureURL: " << texture2.textureURL <<
+                ", texture2.w: " << texture2.w <<
+                ", texture2.h: " << texture2.h <<
+                ", texture2.textureID: " << texture2.textureID;
+        return output;
+    }
+
 }
+
+using namespace proto;
 
 Texture2::Texture2() {
     textureURL = "";
@@ -69,11 +77,11 @@ void Texture2::init() {
             isWrap ? GL_REPEAT : GL_CLAMP);
 
     // give opengl the texture
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
-     
-     // build our texture mipmaps
-   /* gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h,
-            GL_RGB, GL_UNSIGNED_BYTE, data);*/
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+
+    // build our texture mipmaps
+    /* gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h,
+             GL_RGB, GL_UNSIGNED_BYTE, data);*/
 
     // free memory
     delete [] data;

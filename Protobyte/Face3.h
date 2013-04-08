@@ -10,11 +10,11 @@
 #define __SFML_simple_renderer_03__Face3__
 
 #ifdef __APPLE__
-  #include <OpenGL/gl.h>
+#include <OpenGL/gl.h>
 #elif __linux__
-  #include <GL/gl.h>
+#include <GL/gl.h>
 #elif _WIN32
-  #include <GL/gl.h>
+#include <GL/gl.h>
 #else
 #error "unknown platform"
 #endif
@@ -25,35 +25,38 @@
 #include <cmath>
 #include <iostream>
 
-class Face3 {
-private:
-    //Vector3 vecs[3];
-   // Vector3 v0, v1, v2;
-    Vertex vecs[3];
-    //Vertex v0, v1, v2;
-    Vertex *v0_p, *v1_p, *v2_p;
-    Vector3 norm, centroid;
+namespace proto {
 
-    void init();
+    class Face3 {
+    private:
+        //Vector3 vecs[3];
+        // Vector3 v0, v1, v2;
+        Vertex vecs[3];
+        //Vertex v0, v1, v2;
+        Vertex *v0_p, *v1_p, *v2_p;
+        Vector3 norm, centroid;
 
-    void calcNorm();
-    void calcCentroid();
+        void init();
+
+        void calcNorm();
+        void calcCentroid();
 
 
-public:
-    friend std::ostream& operator<<(std::ostream& output, const Face3& face3);
+    public:
+        friend std::ostream& operator<<(std::ostream& output, const Face3& face3);
 
-    //Face3(Vertex& v0, Vertex& v1, Vertex& v2);
-    Face3(Vertex* v0_p, Vertex* v1_p, Vertex* v2_p);
-    void display();
+        //Face3(Vertex& v0, Vertex& v1, Vertex& v2);
+        Face3(Vertex* v0_p, Vertex* v1_p, Vertex* v2_p);
+        void display();
 
-    const Vector3& getNorm() const;
-    const Vector3& getCentroid() const;
-    
-    
-    //const Vertex& operator[](int index);
-    const Vertex* operator[](int index);
+        const Vector3& getNorm() const;
+        const Vector3& getCentroid() const;
 
-};
+
+        //const Vertex& operator[](int index);
+        const Vertex* operator[](int index);
+
+    };
+}
 
 #endif /* defined(__SFML_simple_renderer_03__Face3__) */

@@ -8,7 +8,7 @@
 
 #include "Matrix4.h"
 
-//using namespace ijg;
+using namespace proto;
 
 // non member function
 

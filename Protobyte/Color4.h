@@ -12,58 +12,61 @@
 
 #include <iostream>
 
-template <class T>
-class Color4 {
+namespace proto {
 
-private:
-    T r, g, b, a;
+    template <class T>
+    class Color4 {
+    private:
+        T r, g, b, a;
 
-public:
+    public:
 
-    friend std::ostream& operator<<(std::ostream& output, const Color4<T>& col4) {
-        output << "col4.r: " << col4.r << ", col4.g: " <<
-                col4.g << ", col4.b: " << col4.b << ", col4.a: " << col4.a;
-        return output;
-    }
+        friend std::ostream& operator<<(std::ostream& output, const Color4<T>& col4) {
+            output << "col4.r: " << col4.r << ", col4.g: " <<
+                    col4.g << ", col4.b: " << col4.b << ", col4.a: " << col4.a;
+            return output;
+        }
 
-    explicit Color4(T r = 0, T g = 0, T b = 0, T a = 0) :
-    r(r), g(g), b(b), a(a) {
-    }
+        explicit Color4(T r = 0, T g = 0, T b = 0, T a = 0) :
+        r(r), g(g), b(b), a(a) {
+        }
 
-    void setR(T r) {
-        this->r = r;
-    }
+        void setR(T r) {
+            this->r = r;
+        }
 
-    void setG(T g) {
-        this->g = g;
-    }
+        void setG(T g) {
+            this->g = g;
+        }
 
-    void setB(T b) {
-        this->b = b;
-    }
+        void setB(T b) {
+            this->b = b;
+        }
 
-    void setA(T a) {
-        this->a = a;
-    }
+        void setA(T a) {
+            this->a = a;
+        }
 
-    T getR() const {
-        return r;
-    }
+        T getR() const {
+            return r;
+        }
 
-    T getG() const {
-        return g;
-    }
+        T getG() const {
+            return g;
+        }
 
-    T getB() const {
-        return b;
-    }
+        T getB() const {
+            return b;
+        }
 
-    T getA() const {
-        return a;
-    }
+        T getA() const {
+            return a;
+        }
 
 
-};
+    };
+
+}
 
 #endif /* defined(__SFML_simple_renderer_06__Color4__) */
 

@@ -8,7 +8,7 @@
 
 #include "Tube.h"
 
-//using namespace ijg;
+using namespace proto;
 
 std::ostream& operator<<(std::ostream& out, const Tube& tube) {
     out << "No Information to report at the moment";

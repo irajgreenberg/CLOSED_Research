@@ -12,26 +12,30 @@
 #include "GeomBase.h"
 #include "Tube.h"
 
-class Tendril: public GeomBase{
-public:
-    //Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, 
+namespace proto {
+
+    class Tendril : public GeomBase {
+    public:
+        //Tube(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, 
         //const std::vector< Color4<float> > col4s, const Spline3& path, 
         // std::vector<float> radii, int crossSectionDetail); // varied thickness & color
 
-    Tendril(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, int recursionLevel, int maxBranchingLevel);
-    
-     // overrides base class
-    void calcVerts();
-    void calcInds();
-    
-private:
-    int recursionLevel;
-    int maxBranchingLevel;
-    std::vector<Tube> stems;
-    
-   
+        Tendril(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, int recursionLevel, int maxBranchingLevel);
 
-};
+        // overrides base class
+        void calcVerts();
+        void calcInds();
+
+    private:
+        int recursionLevel;
+        int maxBranchingLevel;
+        std::vector<Tube> stems;
+
+
+
+    };
+
+}
 
 #endif	/* TENDRIL_H */
 

@@ -11,25 +11,26 @@
 
 #include "Vector3.h"
 
+namespace proto {
 
-// non member function
-void transpose(float mat4[16]);
+    // non member function
+    void transpose(float mat4[16]);
 
-class Matrix4 {
-    
-public:
-    Matrix4();
-    Matrix4(float mat4[16]);
-    void transpose();
-    void determinent();
-    void mult(const Matrix4& m);
-    Vector3 mult(const Vector3& vec);
-    void add();
-    void identity();
+    class Matrix4 {
+    public:
+        Matrix4();
+        Matrix4(float mat4[16]);
+        void transpose();
+        void determinent();
+        void mult(const Matrix4& m);
+        Vector3 mult(const Vector3& vec);
+        void add();
+        void identity();
 
-private:
-    float mat4[16];
-};
+    private:
+        float mat4[16];
+    };
 
+}
 
 #endif

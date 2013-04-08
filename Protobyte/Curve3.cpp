@@ -9,7 +9,7 @@
 #include "Curve3.h"
 #include <iostream>
 
-//using namespace ijg;
+using namespace proto;
 
 //
 

@@ -10,85 +10,88 @@
 
 
 
-# ifdef  __APPLE__
-      #include <OpenGL/gl.h>
-      #include <OpenGL/glu.h>
+#ifdef  __APPLE__
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
 #elif __linux__
-        #include <GL/gl.h>
-        #include <GL/glu.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 #elif _WIN32
-        #include <GL/gl.h>
-        #include <GL/glu.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 #else
-        #error "unknown platform"
-# endif
+#error "unknown platform"
+#endif
 
 #include <iostream>
 #include <string>
 #include <stdio.h> // for File input
 
-class Texture2 {
-    
-public:
-    
-    friend std::ostream& operator<<(std::ostream& output, const Texture2& texture2);
-    
-    Texture2();
-    Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
+namespace proto {
 
-    // getters/setters
-    void setH(GLuint h);
-    GLuint getH() const;
-    void setW(GLuint w);
-    GLuint getW() const;
-    void setTextureURL(std::string textureURL);
-    std::string getTextureURL() const;
-    void setTextureID(GLuint textureID);
-    GLuint getTextureID() const;
-    
-   
+    class Texture2 {
+    public:
+
+        friend std::ostream& operator<<(std::ostream& output, const Texture2& texture2);
+
+        Texture2();
+        Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
+
+        // getters/setters
+        void setH(GLuint h);
+        GLuint getH() const;
+        void setW(GLuint w);
+        GLuint getW() const;
+        void setTextureURL(std::string textureURL);
+        std::string getTextureURL() const;
+        void setTextureID(GLuint textureID);
+        GLuint getTextureID() const;
 
 
-private:
-    std::string textureURL;
-    GLuint w;
-    GLuint h;
-    bool isWrap;
-    GLuint textureID;
-    
-    void init();
-};
 
-inline void Texture2::setH(GLuint h) {
-    this->h = h;
-}
 
-inline GLuint Texture2::getH() const {
-    return h;
-}
+    private:
+        std::string textureURL;
+        GLuint w;
+        GLuint h;
+        bool isWrap;
+        GLuint textureID;
 
-inline void Texture2::setW(GLuint w) {
-    this->w = w;
-}
+        void init();
+    };
 
-inline GLuint Texture2::getW() const {
-    return w;
-}
+    inline void Texture2::setH(GLuint h) {
+        this->h = h;
+    }
 
-inline void Texture2::setTextureURL(std::string textureURL) {
-    this->textureURL = textureURL;
-}
+    inline GLuint Texture2::getH() const {
+        return h;
+    }
 
-inline std::string Texture2::getTextureURL() const {
-    return textureURL;
-}
+    inline void Texture2::setW(GLuint w) {
+        this->w = w;
+    }
 
-inline void Texture2::setTextureID(GLuint textureID) {
-    this->textureID = textureID;
-}
+    inline GLuint Texture2::getW() const {
+        return w;
+    }
 
-inline GLuint Texture2::getTextureID() const {
-    return textureID;
+    inline void Texture2::setTextureURL(std::string textureURL) {
+        this->textureURL = textureURL;
+    }
+
+    inline std::string Texture2::getTextureURL() const {
+        return textureURL;
+    }
+
+    inline void Texture2::setTextureID(GLuint textureID) {
+        this->textureID = textureID;
+    }
+
+    inline GLuint Texture2::getTextureID() const {
+        return textureID;
+    }
+
 }
 
 #endif	/* TEXTURE2_H */

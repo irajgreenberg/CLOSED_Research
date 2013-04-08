@@ -24,8 +24,8 @@
 #include "Vector3.h"
 
 
-//namespace ijg {
-    
+namespace proto {   
+
     class FrenetFrame {
     private:
         Vector3 p, T, N, B;
@@ -44,6 +44,6 @@
         void display(float len = 10);
         
     };
-//}
+}
 
 #endif

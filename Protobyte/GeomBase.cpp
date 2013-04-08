@@ -8,6 +8,8 @@
 
 #include "GeomBase.h"
 
+using namespace proto;
+
 GeomBase::GeomBase() {
 }
 
@@ -56,8 +58,6 @@ void GeomBase::init() {
         std::cout << "Video card does NOT support GL_vertex_buffer_object." << std::endl;
     }*/
 #endif
-    
-    
     glGenBuffers(1, &vboID); // Create the buffer ID
     glBindBuffer(GL_ARRAY_BUFFER, vboID); // Bind the buffer (vertex array data)
     int vertsDataSize = sizeof (float) *interleavedPrims.size();

@@ -26,96 +26,96 @@
  * <p>
  */
 
-//namespace ijg {
+namespace proto {
 
-class Spline3 : public Curve3 {
-    
-public:
+    class Spline3 : public Curve3 {
+    public:
 
-    Spline3();
-            
-    Spline3(const std::vector<Vector3>& controlPts, int interpDetail, bool isCurveClosed, float smoothness);
+        Spline3();
 
-
-    /**
-     * Set flag for Curve at Terminals to be continuous
-     * 
-     * @param isTerminalSmooth
-     *            boolean value
-     */
-    void setTerminalSmooth(bool isTerminalSmooth);
-
-    /**
-     * Draw the curve.
-     * 
-     */
-    void display();
-
-    /**
-     * Draw the control points.
-     * 
-     */
-    void displayControlPts();
-
-    /**
-     * Draw the interpolated points.
-     * 
-     */
-    void displayInterpPts();
-
-    /**
-     * Draw the Frenet Frames.
-     *
-     */
-    void displayFrenetFrames(float len = 20);
-
-    /**
-     * Set the smoothenss value.
-     * 
-     */
-    void setSmoothness(float smoothness);
-
-    /**
-     * get the smoothenss value.
-     * 
-     */
-    float getSmoothness(float smoothness) const;
-
-    /**
-     * sets flag for curve closed
-     * 
-     */
-    void setCurveClosed(bool isCurveClosed);
-
-    /**
-     * Draw cross-section extruded along the spline path.
-     * Default cross-section is an ellipse
-     */
-    void drawCrossSections(); // temp
+        Spline3(const std::vector<Vector3>& controlPts, int interpDetail, bool isCurveClosed, float smoothness);
 
 
+        /**
+         * Set flag for Curve at Terminals to be continuous
+         * 
+         * @param isTerminalSmooth
+         *            boolean value
+         */
+        void setTerminalSmooth(bool isTerminalSmooth);
 
-private:
+        /**
+         * Draw the curve.
+         * 
+         */
+        void display();
 
-    /**
-     * Controls spline curve curvature.
-     */
-    float smoothness;
+        /**
+         * Draw the control points.
+         * 
+         */
+        void displayControlPts();
 
-    /**
-     * allocate memory and initialize stuff.
-     */
-    void init();
+        /**
+         * Draw the interpolated points.
+         * 
+         */
+        void displayInterpPts();
 
-    /**
-     * Frenet frame is used to calcuate extrusions
-     * along spline path (Tubes & Tendrils baby!).
-     * Called automatically by init()
-     */
-    void parallelTransport();
+        /**
+         * Draw the Frenet Frames.
+         *
+         */
+        void displayFrenetFrames(float len = 20);
 
-};
-//}
+        /**
+         * Set the smoothenss value.
+         * 
+         */
+        void setSmoothness(float smoothness);
+
+        /**
+         * get the smoothenss value.
+         * 
+         */
+        float getSmoothness(float smoothness) const;
+
+        /**
+         * sets flag for curve closed
+         * 
+         */
+        void setCurveClosed(bool isCurveClosed);
+
+        /**
+         * Draw cross-section extruded along the spline path.
+         * Default cross-section is an ellipse
+         */
+        void drawCrossSections(); // temp
+
+
+
+    private:
+
+        /**
+         * Controls spline curve curvature.
+         */
+        float smoothness;
+
+        /**
+         * allocate memory and initialize stuff.
+         */
+        void init();
+
+        /**
+         * Frenet frame is used to calcuate extrusions
+         * along spline path (Tubes & Tendrils baby!).
+         * Called automatically by init()
+         */
+        void parallelTransport();
+
+    };
+
+}
 
 
 #endif

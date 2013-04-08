@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-MacOSX
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-MacOSX
-CND_ARTIFACT_NAME_Debug=protobyte_research
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/protobyte_research
+CND_ARTIFACT_NAME_Debug=research
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-MacOSX/research
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-MacOSX/package
-CND_PACKAGE_NAME_Debug=protobyteresearch.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/protobyteresearch.tar
+CND_PACKAGE_NAME_Debug=research.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-MacOSX/package/research.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-MacOSX
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-MacOSX
-CND_ARTIFACT_NAME_Release=protobyte_research
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/protobyte_research
+CND_ARTIFACT_NAME_Release=research
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-MacOSX/research
 CND_PACKAGE_DIR_Release=dist/Release/GNU-MacOSX/package
-CND_PACKAGE_NAME_Release=protobyteresearch.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/protobyteresearch.tar
+CND_PACKAGE_NAME_Release=research.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-MacOSX/package/research.tar
 #
 # include compiler specific variables
 #

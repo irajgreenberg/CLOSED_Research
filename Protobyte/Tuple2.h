@@ -16,19 +16,20 @@
 #define Protobyte_iig001_Tuple2_h
 
 
-template <class T>
-class Tuple2 {
-    
-public:
-    T elem0, elem1;
-    T elems[2];
-    
-    
-    Tuple2(T elem0 = 0, T elem1 = 0):
-    elem0(elem0), elem1(elem1) {
-        
-    }
-    
-};
+namespace proto {
 
+    template <class T>
+    class Tuple2 {
+    public:
+        T elem0, elem1;
+        T elems[2];
+
+        Tuple2(T elem0 = 0, T elem1 = 0) :
+        elem0(elem0), elem1(elem1) {
+
+        }
+
+    };
+
+}
 #endif

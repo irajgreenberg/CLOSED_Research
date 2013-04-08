@@ -12,7 +12,7 @@
 
 #include <iostream>
 
-//using namespace ijg;
+using namespace proto;
 //Matrix4 m;;
 
 /**

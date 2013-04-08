@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=protobyte_research
+PROJECTNAME=Research
 
 # Active Configuration
 DEFAULTCONF=Debug

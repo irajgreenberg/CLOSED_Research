@@ -39,25 +39,29 @@
 #include <string>
 #include "Utility.h"
 
-class Shader {
-public:
-    Shader();
-    Shader(const char *vsFile, const char *fsFile);
-    ~Shader();
+namespace proto {
 
-    void init(const char *vsFile, const char *fsFile);
+    class Shader {
+    public:
+        Shader();
+        Shader(const char *vsFile, const char *fsFile);
+        ~Shader();
 
-    void bind();
-    void unbind();
+        void init(const char *vsFile, const char *fsFile);
 
-    unsigned int id();
+        void bind();
+        void unbind();
 
-private:
-    unsigned int shader_id;
-    unsigned int shader_vp;
-    unsigned int shader_fp;
+        unsigned int id();
+        unsigned int shader_id;
+    private:
+        //unsigned int shader_id;
+        unsigned int shader_vp;
+        unsigned int shader_fp;
 
-};
+    };
+
+}
 
 
 #endif

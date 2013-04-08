@@ -10,67 +10,72 @@
 
 #include "GeomBase.h"
 
-class Toroid : public GeomBase {
-public:
+namespace proto {
 
-    Toroid();
-    
-    Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
-            int ringCount, int ringDetail, float ringRadius, float ringThickness);
-    
-    Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4, 
-            int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex);
+    class Toroid : public GeomBase {
+    public:
 
-    // get/sets inlined below class
-    void setRingThickness(float ringThickness);
-    float getRingThickness() const;
-    void setRingRadius(float ringRadius);
-    float getRingRadius() const;
-    void setRingDetail(int ringDetail);
-    int getRingDetail() const;
-    void setRingCount(int ringCount);
-    int getRingCount() const;
+        Toroid();
 
-private:
-    int ringCount, ringDetail;
-    float ringRadius, ringThickness;
+        Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4,
+                int ringCount, int ringDetail, float ringRadius, float ringThickness);
 
-    void calcVerts(); // overrides virtual method in base class
-    void calcInds(); // overrides virtual method in base class
-};
+        Toroid(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size, const Color4<float>& col4,
+                int ringCount, int ringDetail, float ringRadius, float ringThickness, const Texture2& tex);
+
+        // get/sets inlined below class
+        void setRingThickness(float ringThickness);
+        float getRingThickness() const;
+        void setRingRadius(float ringRadius);
+        float getRingRadius() const;
+        void setRingDetail(int ringDetail);
+        int getRingDetail() const;
+        void setRingCount(int ringCount);
+        int getRingCount() const;
+
+    private:
+        int ringCount, ringDetail;
+        float ringRadius, ringThickness;
+
+        void calcVerts(); // overrides virtual method in base class
+        void calcInds(); // overrides virtual method in base class
+    };
 
 
-//inlined gets/sets
-inline void Toroid::setRingThickness(float ringThickness) {
-    this->ringThickness = ringThickness;
-}
+    //inlined gets/sets
 
-inline float Toroid::getRingThickness() const {
-    return ringThickness;
-}
+    inline void Toroid::setRingThickness(float ringThickness) {
+        this->ringThickness = ringThickness;
+    }
 
-inline void Toroid::setRingRadius(float ringRadius) {
-    this->ringRadius = ringRadius;
-}
+    inline float Toroid::getRingThickness() const {
+        return ringThickness;
+    }
 
-inline float Toroid::getRingRadius() const {
-    return ringRadius;
-}
+    inline void Toroid::setRingRadius(float ringRadius) {
+        this->ringRadius = ringRadius;
+    }
 
-inline void Toroid::setRingDetail(int ringDetail) {
-    this->ringDetail = ringDetail;
-}
+    inline float Toroid::getRingRadius() const {
+        return ringRadius;
+    }
 
-inline int Toroid::getRingDetail() const {
-    return ringDetail;
-}
+    inline void Toroid::setRingDetail(int ringDetail) {
+        this->ringDetail = ringDetail;
+    }
 
-inline void Toroid::setRingCount(int ringCount) {
-    this->ringCount = ringCount;
-}
+    inline int Toroid::getRingDetail() const {
+        return ringDetail;
+    }
 
-inline int Toroid::getRingCount() const {
-    return ringCount;
+    inline void Toroid::setRingCount(int ringCount) {
+        this->ringCount = ringCount;
+    }
+
+    inline int Toroid::getRingCount() const {
+        return ringCount;
+    }
+
 }
 
 

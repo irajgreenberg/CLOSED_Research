@@ -8,7 +8,7 @@
 
 #include "Matrix3.h"
 
-//using namespace ijg;
+using namespace proto;
 
 
 // column 

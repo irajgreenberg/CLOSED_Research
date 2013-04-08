@@ -7,6 +7,8 @@
 
 #include "Branch.h"
 
+using namespace proto;
+
 Branch::Branch() {
 }
 

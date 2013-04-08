@@ -9,11 +9,16 @@
 #include "Face3.h"
 
 
-// overloaded << operator for outputting field values in objects
-std::ostream& operator<<(std::ostream& output, const Face3& face3) {
-    output << "[ V0: " << *(face3.v0_p) << ", " << *(face3.v1_p) << ", " << *(face3.v2_p) << " ]";
-    return output;
+namespace proto {
+    // overloaded << operator for outputting field values in objects
+
+    std::ostream& operator<<(std::ostream& output, const Face3& face3) {
+        output << "[ V0: " << *(face3.v0_p) << ", " << *(face3.v1_p) << ", " << *(face3.v2_p) << " ]";
+        return output;
+    }
 }
+
+using namespace proto;
 
 Face3::Face3(Vertex* v0_p, Vertex* v1_p, Vertex* v2_p) {
     // get vertex addresses
@@ -43,8 +48,8 @@ void Face3::display() {
     //glNormal3f(v2_p->getNormal().x, v2_p->getNormal().y, v2_p->getNormal().z);
     glVertex3f(v2_p->pos.x, v2_p->pos.y, v2_p->pos.z);
     glEnd();*/
-    
-    
+
+
     // smooth shading
     glBegin(GL_TRIANGLES);
     glColor3f(.2, .3, 1.0); // for face normals

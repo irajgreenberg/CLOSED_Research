@@ -6,6 +6,10 @@
                    projectFiles="true">
     </logicalFolder>
     <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
+      <itemPath>Protobyte/Block.cpp</itemPath>
+      <itemPath>Protobyte/Block.h</itemPath>
+      <itemPath>Protobyte/Branch.cpp</itemPath>
+      <itemPath>Protobyte/Branch.h</itemPath>
       <itemPath>Protobyte/Color3.h</itemPath>
       <itemPath>Protobyte/Color4.h</itemPath>
       <itemPath>Protobyte/Curve3.cpp</itemPath>
@@ -33,6 +37,8 @@
       <itemPath>Protobyte/Texture2.h</itemPath>
       <itemPath>Protobyte/Toroid.cpp</itemPath>
       <itemPath>Protobyte/Toroid.h</itemPath>
+      <itemPath>Protobyte/Tree.cpp</itemPath>
+      <itemPath>Protobyte/Tree.h</itemPath>
       <itemPath>Protobyte/Tube.cpp</itemPath>
       <itemPath>Protobyte/Tube.h</itemPath>
       <itemPath>Protobyte/Tuple2.h</itemPath>
@@ -52,6 +58,8 @@
       <itemPath>resources/shaders/phong_shader.vert</itemPath>
       <itemPath>resources/shaders/shader.frag</itemPath>
       <itemPath>resources/shaders/shader.vert</itemPath>
+      <itemPath>resources/shaders/shader_bricks.frag</itemPath>
+      <itemPath>resources/shaders/shader_bricks.vert</itemPath>
       <itemPath>resources/shaders/singleLight.frag</itemPath>
       <itemPath>resources/shaders/singleLight.vert</itemPath>
     </logicalFolder>
