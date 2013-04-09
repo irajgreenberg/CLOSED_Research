@@ -45,12 +45,9 @@ void Toroid::calcVerts() {
             float z2 = float(z * sin(phi) + x * cos(phi));
 
 
-            if (tex2.getW() > 0 && tex2.getH() > 0){
-                
-            }
                     // fill vertices with floats
             verts.push_back( Vertex(Vector3(x2, y, z2), 
-                        Color4<float>(col4.getR(), col4.getG(), col4.getB(), col4.getA())) );
+                        Color4<float>(col4.getR(), col4.getG(), col4.getB(), col4.getA()), Tuple2<float>(x2*4, y*4)));
 
             theta += float(M_PI * 2 / ringDetail);
         }

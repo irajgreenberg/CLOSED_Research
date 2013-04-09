@@ -74,6 +74,7 @@ namespace proto {
         std::vector<unsigned int> indPrims;
         std::vector<float> normPrims;
         std::vector<float> colorPrims;
+        std::vector<float> texturePrims;
         std::vector<float> interleavedPrims;
 
         // Display List var

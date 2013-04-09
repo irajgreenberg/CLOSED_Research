@@ -92,11 +92,16 @@ void setGeom() {
 
   
 
-    toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, 1.0), 60, 60, .87, .22);
+   
 
 
     tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
+    
+     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
+     
+     
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
@@ -151,7 +156,7 @@ void setGeom() {
     interpDetail = 3;
     smoothness = .55;
     std::vector<Vector3> cps2;
-    int segs = 100/*400*/;
+    int segs = 200/*400*/;
 
 
     //int loops = 4;
@@ -263,7 +268,11 @@ void initGL() {
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_NORMALIZE); //  good for uniform scaling
-    //glEnable(GL_TEXTURE_2D);
+    
+    // texture
+    glEnable(GL_TEXTURE_2D);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 
     glClearColor(.2, 1, 1, 1); // background color
     glClearStencil(0); // clear stencil buffer
@@ -316,7 +325,7 @@ void display() {
     light01_diffuse[2] = 1.0;
     setLights();
 
-    shader.bind();
+   // shader.bind();
     
     /*
      // set uniform variables for shaders
@@ -347,19 +356,27 @@ void display() {
     
 
     
+    glDisable(GL_TEXTURE_2D);
+    shader.bind();
     tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    shader.unbind();
 
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
+    
+    glEnable(GL_TEXTURE_2D);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
 
+    
     glShadeModel(GL_FLAT);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
 
-    shader.unbind();
+    //shader.unbind();
 
     // required by glut
     glutSwapBuffers();
@@ -448,8 +465,8 @@ void setLights() {
 //============================================================================
 
 void setShaders() {
-    const char* vert = "resources/shaders/shader_bricks.vert";
-    const char* frag = "resources/shaders/shader_bricks.frag";
+    const char* vert = "resources/shaders/singleLight.vert";
+    const char* frag = "resources/shaders/singleLight.frag";
 
     shader.init(vert, frag);
 }

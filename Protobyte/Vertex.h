@@ -27,9 +27,11 @@ namespace proto {
 
         const Vector3& getNormal() const;
         Color4<float> getColor() const;
+        Tuple2<float> getUV() const;
 
         void setNormal(const Vector3& norm);
         void setColor(const Color4<float>& col4);
+        void setUV(const Tuple2<float>& uv);
 
     private:
         Color4<float> col4;
@@ -38,8 +40,34 @@ namespace proto {
 
         void init();
     };
+    
+    // inline getters/setters
+
+    inline const Vector3& Vertex::getNormal() const {
+        return norm;
+    }
+
+    inline void Vertex::setNormal(const Vector3& norm) {
+        this->norm = norm;
+    }
+
+    inline Color4<float> Vertex::getColor() const {
+        return col4;
+    }
+
+    inline void Vertex::setColor(const Color4<float>& col4) {
+        this->col4 = col4;
+    }
+    
+    inline Tuple2<float> Vertex::getUV() const {
+        return uv;
+    }
+    
+    inline void Vertex::setUV(const Tuple2<float>& uv){
+        this->uv = uv;
+    }
+
 
 }
-
 #endif	/* VERTEX_H */
 

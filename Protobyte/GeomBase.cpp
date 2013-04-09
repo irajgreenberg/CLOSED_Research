@@ -15,12 +15,16 @@ GeomBase::GeomBase() {
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
 pos(pos), rot(rot), size(size), col4(col4) {
+    // default empty texture
+   // tex2 = Texture2("", 0, 0, false);
 }
 
 // pass array of colors
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
 pos(pos), rot(rot), size(size), col4s(col4s) {
+    // default empty texture
+   // tex2 = Texture2("", 0, 0, false);
 }
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2) :
@@ -28,7 +32,6 @@ pos(pos), rot(rot), size(size), col4(col4), tex2(tex2) {
 }
 
 // pass array of colors
-
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2) :
 pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2) {
 }
@@ -48,7 +51,7 @@ void GeomBase::init() {
 #ifdef  __linux__
     // Call to utilize all the neato things in Linux/Win - loads extensions
     glewInit();
-    
+
     /* screwy and not working
     if (glInfo.isExtensionSupported("GL_vertex_buffer_object")) {
         //vboSupported = vboUsed = true;
@@ -117,44 +120,57 @@ void GeomBase::sortFaces() {
 }
 
 void GeomBase::calcPrimitives() {
+    vertPrims.resize(verts.size()*3);
+    normPrims.resize(verts.size()*3);
+    colorPrims.resize(verts.size()*4);
+    texturePrims.resize(verts.size()*2);
+    interleavedPrims.resize(verts.size()*12);
+    
+    indPrims.resize(inds.size()*3);
+    
+    for (int i=0, j=0, k=0, l=0, m=0, n=0; i < verts.size(); i++) {
 
-    for (int i = 0; i < verts.size(); i++) {
+        // fill individual primitive arrays - eventually remove
+        vertPrims.at(j++) = verts.at(i).pos.x;
+        vertPrims.at(j++) = verts.at(i).pos.y;
+        vertPrims.at(j++) = verts.at(i).pos.z;
 
-        vertPrims.push_back(verts.at(i).pos.x);
-        vertPrims.push_back(verts.at(i).pos.y);
-        vertPrims.push_back(verts.at(i).pos.z);
+        normPrims.at(k++) = verts.at(i).getNormal().x;
+        normPrims.at(k++) = verts.at(i).getNormal().y;
+        normPrims.at(k++) = verts.at(i).getNormal().z;
 
-        normPrims.push_back(verts.at(i).getNormal().x);
-        normPrims.push_back(verts.at(i).getNormal().y);
-        normPrims.push_back(verts.at(i).getNormal().z);
+        colorPrims.at(l++) = verts.at(i).getColor().getR();
+        colorPrims.at(l++) = verts.at(i).getColor().getG();
+        colorPrims.at(l++) = verts.at(i).getColor().getB();
+        colorPrims.at(l++) = verts.at(i).getColor().getA();
 
-        colorPrims.push_back(verts.at(i).getColor().getR());
-        colorPrims.push_back(verts.at(i).getColor().getG());
-        colorPrims.push_back(verts.at(i).getColor().getB());
-        colorPrims.push_back(verts.at(i).getColor().getA());
-
+        texturePrims.at(m++) = verts.at(i).getUV().elem0;
+        texturePrims.at(m++) = verts.at(i).getUV().elem1;
 
         // fill interleaved primitive arrays
-        interleavedPrims.push_back(verts.at(i).pos.x);
-        interleavedPrims.push_back(verts.at(i).pos.y);
-        interleavedPrims.push_back(verts.at(i).pos.z);
+        interleavedPrims.at(n++) = verts.at(i).pos.x;
+        interleavedPrims.at(n++) = verts.at(i).pos.y;
+        interleavedPrims.at(n++) = verts.at(i).pos.z;
 
-        interleavedPrims.push_back(verts.at(i).getNormal().x);
-        interleavedPrims.push_back(verts.at(i).getNormal().y);
-        interleavedPrims.push_back(verts.at(i).getNormal().z);
+        interleavedPrims.at(n++) = verts.at(i).getNormal().x;
+        interleavedPrims.at(n++) = verts.at(i).getNormal().y;
+        interleavedPrims.at(n++) = verts.at(i).getNormal().z;
 
-        interleavedPrims.push_back(verts.at(i).getColor().getR());
-        interleavedPrims.push_back(verts.at(i).getColor().getG());
-        interleavedPrims.push_back(verts.at(i).getColor().getB());
-        interleavedPrims.push_back(verts.at(i).getColor().getA());
+        interleavedPrims.at(n++) = verts.at(i).getColor().getR();
+        interleavedPrims.at(n++) = verts.at(i).getColor().getG();
+        interleavedPrims.at(n++) = verts.at(i).getColor().getB();
+        interleavedPrims.at(n++) = verts.at(i).getColor().getA();
+        
+        interleavedPrims.at(n++) = verts.at(i).getUV().elem0;
+        interleavedPrims.at(n++) = verts.at(i).getUV().elem1;
     }
 
 
     // explode inds arrays to primitives
-    for (int i = 0; i < inds.size(); i++) {
-        indPrims.push_back(inds.at(i).elem0);
-        indPrims.push_back(inds.at(i).elem1);
-        indPrims.push_back(inds.at(i).elem2);
+    for (int i=0, j=0; i <inds.size(); i++) {
+        indPrims.at(j++) = inds.at(i).elem0;
+        indPrims.at(j++) = inds.at(i).elem1;
+        indPrims.at(j++) = inds.at(i).elem2;
     }
 }
 
@@ -226,11 +242,13 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
             glEnableClientState(GL_VERTEX_ARRAY);
+            glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
 
             glNormalPointer(GL_FLOAT, 0, &normPrims[0]);
             glColorPointer(4, GL_FLOAT, 0, &colorPrims[0]);
             glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
+            glTexCoordPointer(2, GL_FLOAT, 0, &texturePrims[0]);
 
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
 
@@ -238,6 +256,7 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glDisableClientState(GL_VERTEX_ARRAY); // disable vertex arrays
             glDisableClientState(GL_NORMAL_ARRAY);
             glDisableClientState(GL_COLOR_ARRAY);
+            glDisableClientState(GL_TEXTURE_COORD_ARRAY);
             break;
 
         case VERTEX_ARRAY_INTERLEAVED:
@@ -251,12 +270,14 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
             glEnableClientState(GL_VERTEX_ARRAY);
+            glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-            // stride is 10 : (x, y, z, nx, ny, nz, r, g, b, a)
-            // // vertices, normals, color
-            glVertexPointer(3, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0]);
-            glNormalPointer(GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 3);
-            glColorPointer(4, GL_FLOAT, 10 * sizeof (GLfloat), &interleavedPrims[0] + 6);
+            // stride is 12 : (x, y, z, nx, ny, nz, r, g, b, a, u, v)
+            // // vertices, normals, color, texture
+            glVertexPointer(3, GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0]);
+            glNormalPointer(GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0] + 3);
+            glColorPointer(4, GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0] + 6);
+            glTexCoordPointer(2, GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0] + 10);
 
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
 
@@ -264,6 +285,7 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glDisableClientState(GL_NORMAL_ARRAY);
             glDisableClientState(GL_COLOR_ARRAY);
             glDisableClientState(GL_VERTEX_ARRAY);
+            glDisableClientState(GL_TEXTURE_COORD_ARRAY);
             break;
 
         case DISPLAY_LIST:
@@ -281,19 +303,21 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glEnableClientState(GL_VERTEX_ARRAY);
             glEnableClientState(GL_NORMAL_ARRAY);
             glEnableClientState(GL_COLOR_ARRAY);
+            glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 
-            // stride is 10 : (x, y, z, nx, ny, nz, r, g, b, a)
-
+            // stride is 12 : (x, y, z, nx, ny, nz, r, g, b, a, u, v)
             // vertices, normals, color
-            glVertexPointer(3, GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(0));
-            glNormalPointer(GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(12)); // step over 3 bytes
-            glColorPointer(4, GL_FLOAT, 10 * sizeof (GLfloat), BUFFER_OFFSET(24)); // step over 6 bytes
+            glVertexPointer(3, GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(0));
+            glNormalPointer(GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(12)); // step over 3 bytes
+            glColorPointer(4, GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(24)); // step over 6 bytes
+            glTexCoordPointer(2, GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(40)); // step over 10 bytes
 
             glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, BUFFER_OFFSET(0));
 
             glDisableClientState(GL_NORMAL_ARRAY);
             glDisableClientState(GL_COLOR_ARRAY);
             glDisableClientState(GL_VERTEX_ARRAY);
+            glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 
             // free pointers to data
             glBindBuffer(GL_ARRAY_BUFFER, 0);
