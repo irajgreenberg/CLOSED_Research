@@ -21,6 +21,8 @@
       <itemPath>Protobyte/FrenetFrame.h</itemPath>
       <itemPath>Protobyte/GeomBase.cpp</itemPath>
       <itemPath>Protobyte/GeomBase.h</itemPath>
+      <itemPath>Protobyte/GroundPlane.cpp</itemPath>
+      <itemPath>Protobyte/GroundPlane.h</itemPath>
       <itemPath>Protobyte/IGConstants.h</itemPath>
       <itemPath>Protobyte/Math.h</itemPath>
       <itemPath>Protobyte/Matrix3.cpp</itemPath>
@@ -52,6 +54,14 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <logicalFolder name="imgs" displayName="imgs" projectFiles="true">
+        <itemPath>resources/imgs/fields.raw</itemPath>
+        <itemPath>resources/imgs/landscape.raw</itemPath>
+        <itemPath>resources/imgs/peaks.raw</itemPath>
+        <itemPath>resources/imgs/ship_plate.raw</itemPath>
+        <itemPath>resources/imgs/smallScape.raw</itemPath>
+        <itemPath>resources/imgs/white_texture.raw</itemPath>
+      </logicalFolder>
       <itemPath>resources/shaders/perFragmentLighting_02.frag</itemPath>
       <itemPath>resources/shaders/perFragmentLighting_02.vert</itemPath>
       <itemPath>resources/shaders/phong_shader.frag</itemPath>
@@ -78,10 +88,12 @@
                    projectFiles="false"
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
+      <itemPath>runProtobyte.sh</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>Protobyte</Elem>
+    <Elem>resources/imgs</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

@@ -213,9 +213,9 @@ void GeomBase::display(displayMode mode, renderMode render) {
     glRotatef(rot.x, 1, 0, 0); // x-axis
     glRotatef(rot.y, 0, 1, 0); // y-axis
     glRotatef(rot.z, 0, 0, 1); // z-axis
-    rot.x += rx;
-    rot.y += ry;
-    rot.z += rz;
+    //rot.x += rx;
+    //rot.y += ry;
+    //rot.z += rz;
 
     //sortFaces(); 
     /* NOTE:: sorting here is not solving self-overlap highlighting with alpha

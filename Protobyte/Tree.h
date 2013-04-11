@@ -43,7 +43,7 @@ namespace proto {
          * Declared pure virtual in GeomBase base class
          * and must be implemented in all derived classes.
          * 
-         * Generates all vertices for tree.*/
+         * Generates all vertices.*/
         void calcVerts();
 
         /*!

@@ -40,14 +40,14 @@ GeomBase(pos, rot, size, col4, tex2) {
 
 void Block::calcVerts() {
     verts.resize(8);
-    verts.at(0) = Vertex(Vector3(-.5, .5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(-1.0, 1.0));
-    verts.at(1) = Vertex(Vector3(-.5, -.5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(-1.0, -1.0));
-    verts.at(2) = Vertex(Vector3(.5, -.5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, -1.0));
+    verts.at(0) = Vertex(Vector3(-.5, .5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(0, 1.0));
+    verts.at(1) = Vertex(Vector3(-.5, -.5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(0, 0));
+    verts.at(2) = Vertex(Vector3(.5, -.5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, 0));
     verts.at(3) = Vertex(Vector3(.5, .5, .5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, 1.0));
     verts.at(4) = Vertex(Vector3(.5, .5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, 1.0));
-    verts.at(5) = Vertex(Vector3(.5, -.5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, -1.0));
-    verts.at(6) = Vertex(Vector3(-.5, -.5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(-1.0, -1.0));
-    verts.at(7) = Vertex(Vector3(-.5, .5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(-1.0, 1.0));
+    verts.at(5) = Vertex(Vector3(.5, -.5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(1.0, 0));
+    verts.at(6) = Vertex(Vector3(-.5, -.5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(0, 0));
+    verts.at(7) = Vertex(Vector3(-.5, .5, -.5), Color4<float>(1.0, 0.5, 0.0, 1.0), Tuple2<float>(0, 1.0));
 
 }
 

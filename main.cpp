@@ -16,10 +16,12 @@
 #include "Protobyte/Spline3.h"
 #include "Protobyte/Tube.h"
 #include <ctime>
+//#include <OpenGL.framework/headers/gl.h>
 #include "Protobyte/Math.h"
 #include "Protobyte/Shader.h"
 #include "Protobyte/Texture2.h"
 #include "Protobyte/Block.h"
+#include "Protobyte/GroundPlane.h"
 
 using namespace proto;
 
@@ -37,6 +39,15 @@ struct glutWindow {
     float farClipPlane;
 };
 glutWindow win;
+
+// event behavior
+void glutMouseFunc(int button, int state, int x, int y);
+bool isMouseDown = 0, isMouseUp = 1;
+int mouseXIn, mouseXOut, mouseYIn, mouseYOut;
+float liveRotX, liveRotY;
+float worldRotX, worldRotY;
+float mouseRotX, mouseRotY;
+float transX, transY, transZ;
 
 
 /**********************************
@@ -88,20 +99,21 @@ Toroid toroid2;
 
 Block block;
 
+GroundPlane plane;
+Texture2 texScape;
+
 void setGeom() {
-
-  
-
-   
-
 
     tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
-    
-     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+
+    toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
             Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
-     
-     
+
+    texScape = Texture2("resources/imgs/smallScape.raw", 64, 64, true);
+
+    plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
+            Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
@@ -201,7 +213,7 @@ void setGeom() {
     }
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
+    // tube2 = Tube(Vector3(0, 0, -60), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
 
     block = Block(Vector3(0, 0, -60), Vector3(100, 180, 0),
             Dimension3<float>(20, 20, 20), Color4<float>(0.4, 0.3, 0.85, 1.0), tex2);
@@ -268,7 +280,7 @@ void initGL() {
     glEnable(GL_BLEND);
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_NORMALIZE); //  good for uniform scaling
-    
+
     // texture
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
@@ -317,7 +329,7 @@ void display() {
     glLoadIdentity();
 
     // Define a viewing transformation
-    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+    gluLookAt(0, 0, -110, 0, 30, 0, 0, -1, 0);
 
     // use different lighting on the different geometry
     light01_diffuse[0] = 1.0;
@@ -325,8 +337,8 @@ void display() {
     light01_diffuse[2] = 1.0;
     setLights();
 
-   // shader.bind();
-    
+    // shader.bind();
+
     /*
      // set uniform variables for shaders
     GLint loc1, loc2, loc3, loc4;
@@ -352,34 +364,116 @@ void display() {
     std::cout << "loc2 = " << loc2 << std::endl;
     std::cout << "loc3 = " << loc3 << std::endl;
     std::cout << "loc4 = " << loc4 << std::endl;
-    */
-    
+     */
+    glPushMatrix();
 
-    
+    glTranslatef(transX, transY, transZ);
+    glRotatef(liveRotX, 0, 1, 0);
+    glRotatef(liveRotY, 1, 0, 0);
+
+
     glDisable(GL_TEXTURE_2D);
     shader.bind();
-    tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
 
     light01_diffuse[1] = .2;
     light01_diffuse[2] = .2;
     setLights();
-    
+
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-    toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
 
-    
     glShadeModel(GL_FLAT);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
-    block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
+
+    plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
     //shader.unbind();
 
+    glPopMatrix();
     // required by glut
     glutSwapBuffers();
+}
+
+void handleMouseEvent(int button, int state, int mx, int my) {
+    std::cout << "button = " << button << std::endl;
+    std::cout << "state = " << state << std::endl;
+
+    switch (state) {
+            //mouse down
+        case 0:
+            isMouseDown = 1;
+            isMouseUp = 0;
+
+            worldRotX = liveRotX;
+            worldRotY = liveRotY;
+
+            // capture mouse press position
+            mouseXIn = mx;
+            mouseYIn = my;
+            break;
+            // mouse up
+        case 1:
+            isMouseDown = 0;
+            isMouseUp = 1;
+
+            // capture mouse release position
+            mouseXOut = mx;
+            mouseYOut = my;
+
+
+            break;
+    }
+
+}
+
+void handleMouseMotionEvent(int mx, int my) {
+    if (isMouseDown) {
+        mouseRotX = mx - mouseXIn;
+        mouseRotY = my - mouseYIn;
+
+        liveRotX = worldRotX + mouseRotX;
+        liveRotY = worldRotY + mouseRotY;
+    }
+
+}
+
+void handleKeyPressEvent(unsigned char key, int x, int y) {
+
+    switch (key) {
+        case 'x':
+            transZ++;
+            break;
+        case 'z':
+            transZ--;
+            break;
+        case 'q':
+            exit(0);
+            break;
+    }
+
+}
+
+void handleSpecialKeyPressEvent(int key, int x, int y) {
+    switch (key) {
+        case GLUT_KEY_LEFT:
+            transX--;
+            break;
+        case GLUT_KEY_RIGHT:
+            transX++;
+            break;
+        case GLUT_KEY_UP:
+            transY++;
+            break;
+        case GLUT_KEY_DOWN:
+            transY--;
+            break;
+    }
 }
 
 int main(int argc, char **argv) {
@@ -415,6 +509,14 @@ int main(int argc, char **argv) {
     glutReshapeFunc(reshape);
     glutDisplayFunc(display); //call display
     glutTimerFunc(interframeDelay, animationLoop, 0); // start animation
+
+    // mouse events
+    glutMouseFunc(handleMouseEvent);
+    glutMotionFunc(handleMouseMotionEvent);
+    // key events
+    glutKeyboardFunc(handleKeyPressEvent);
+    glutSpecialFunc(handleSpecialKeyPressEvent);
+
 
     init();
 
@@ -470,3 +572,4 @@ void setShaders() {
 
     shader.init(vert, frag);
 }
+

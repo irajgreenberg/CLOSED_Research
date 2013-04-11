@@ -54,9 +54,9 @@ void Texture2::init() {
     // read texture data
     fread(data, w * h * 3, 1, file);
     fclose(file);
-    for( int i=0; i<300; i++){
-        std::cout << "pixel val = " << (int)data[i] << std::endl;
-    }
+   // for( int i=0; i<300; i++){
+       // std::cout << "pixel val = " << (int)data[i] << std::endl;
+   // }
     //Now that we have loaded our texture data from the RAW file, we can call the GLU(OpenGL Utility) function gluBuild2DMipmaps.
 
     // allocate a texture name
@@ -82,16 +82,16 @@ void Texture2::init() {
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
             isWrap ? GL_REPEAT : GL_CLAMP);
 
-    /*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);*/
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
     
     // give opengl the texture
-    //glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
 
     // build our texture mipmaps
-     gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+     //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
 
     // free memory
     delete [] data;

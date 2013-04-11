@@ -38,15 +38,16 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Tendril.o \
 	${OBJECTDIR}/Protobyte/Shader.o \
 	${OBJECTDIR}/Protobyte/Face3.o \
+	${OBJECTDIR}/Protobyte/Spline3.o \
+	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
-	${OBJECTDIR}/Protobyte/Spline3.o \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/Texture2.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
 	${OBJECTDIR}/Protobyte/GeomBase.o \
+	${OBJECTDIR}/Protobyte/GroundPlane.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
 	${OBJECTDIR}/Protobyte/FrenetFrame.o \
@@ -98,6 +99,16 @@ ${OBJECTDIR}/Protobyte/Face3.o: Protobyte/Face3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Face3.o Protobyte/Face3.cpp
 
+${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
+
+${OBJECTDIR}/Protobyte/Tube.o: Protobyte/Tube.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tube.o Protobyte/Tube.cpp
+
 ${OBJECTDIR}/Protobyte/Curve3.o: Protobyte/Curve3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
@@ -108,20 +119,10 @@ ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
 
-${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Protobyte
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
-
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
-
-${OBJECTDIR}/Protobyte/Tube.o: Protobyte/Tube.cpp 
-	${MKDIR} -p ${OBJECTDIR}/Protobyte
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tube.o Protobyte/Tube.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
@@ -142,6 +143,11 @@ ${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
+
+${OBJECTDIR}/Protobyte/GroundPlane.o: Protobyte/GroundPlane.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GroundPlane.o Protobyte/GroundPlane.cpp
 
 ${OBJECTDIR}/Protobyte/Vertex.o: Protobyte/Vertex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
