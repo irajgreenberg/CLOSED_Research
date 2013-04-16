@@ -10,8 +10,7 @@
 
 namespace proto {
 
-    
-     std::ostream& operator<<(std::ostream& out, const Block& block) {
+    std::ostream& operator<<(std::ostream& out, const Block& block) {
         out << "pos: " << block.pos << "\n" <<
                 "rot: " << block.rot << "\n" <<
                 "size: " << block.size << "\n" <<

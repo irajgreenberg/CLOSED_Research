@@ -18,20 +18,18 @@
 #ifndef Protobyte_Library_V01_Shader_h
 #define Protobyte_Library_V01_Shader_h
 
-#ifdef  __linux__ 
+#ifdef  __linux 
 #include <GL/glew.h>
 #include <GL/gl.h>
 #define GL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
-#elif defined _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
 #include <GL/glew.h>
 #include <GL/gl.h>
 #define GL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
-#elif defined __APPLE__ || __MACH__
+#elif __APPLE__
 #include <OpenGL/gl.h>
-#else
-#error "unknown platform"
 #endif
 
 

@@ -11,13 +11,9 @@
 
 #ifdef  __APPLE__
   #include <OpenGL/gl.h>
-#endif
-
-#ifdef __linux__
+#elif __linux
   #include <GL/gl.h>
-#endif
-
-#ifdef _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
   #include <GL/gl.h>
 #endif
 

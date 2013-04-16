@@ -50,10 +50,13 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/GroundPlane.o \
 	${OBJECTDIR}/Protobyte/Vertex.o \
 	${OBJECTDIR}/Protobyte/Toroid.o \
+	${OBJECTDIR}/Protobyte/Image.o \
 	${OBJECTDIR}/Protobyte/FrenetFrame.o \
 	${OBJECTDIR}/Protobyte/Tree.o \
+	${OBJECTDIR}/Protobyte/ConvolveFilter.o \
 	${OBJECTDIR}/Protobyte/Branch.o \
-	${OBJECTDIR}/Protobyte/Block.o
+	${OBJECTDIR}/Protobyte/Block.o \
+	${OBJECTDIR}/Protobyte/FilterBase.o
 
 
 # C Compiler Flags
@@ -70,7 +73,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT /System/Library/Frameworks/OpenGL.framework/OpenGL
+LDLIBSOPTIONS=/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT /System/Library/Frameworks/OpenGL.framework/OpenGL /Library/Frameworks/sfml-graphics.framework/sfml-graphics /Library/Frameworks/sfml-window.framework/sfml-window /Library/Frameworks/sfml-system.framework/sfml-system
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -80,6 +83,12 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /System/Library/Frameworks/
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /System/Library/Frameworks/OpenGL.framework/OpenGL
 
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /Library/Frameworks/sfml-graphics.framework/sfml-graphics
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /Library/Frameworks/sfml-window.framework/sfml-window
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: /Library/Frameworks/sfml-system.framework/sfml-system
+
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research ${OBJECTFILES} ${LDLIBSOPTIONS} 
@@ -87,97 +96,112 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research: ${OBJECTFILES}
 ${OBJECTDIR}/Protobyte/Tendril.o: Protobyte/Tendril.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tendril.o Protobyte/Tendril.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tendril.o Protobyte/Tendril.cpp
 
 ${OBJECTDIR}/Protobyte/Shader.o: Protobyte/Shader.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Shader.o Protobyte/Shader.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Shader.o Protobyte/Shader.cpp
 
 ${OBJECTDIR}/Protobyte/Face3.o: Protobyte/Face3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Face3.o Protobyte/Face3.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Face3.o Protobyte/Face3.cpp
 
 ${OBJECTDIR}/Protobyte/Spline3.o: Protobyte/Spline3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Spline3.o Protobyte/Spline3.cpp
 
 ${OBJECTDIR}/Protobyte/Tube.o: Protobyte/Tube.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tube.o Protobyte/Tube.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tube.o Protobyte/Tube.cpp
 
 ${OBJECTDIR}/Protobyte/Curve3.o: Protobyte/Curve3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Curve3.o Protobyte/Curve3.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Curve3.o Protobyte/Curve3.cpp
 
 ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix3.o Protobyte/Matrix3.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix3.o Protobyte/Matrix3.cpp
 
 ${OBJECTDIR}/Protobyte/Texture2.o: Protobyte/Texture2.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Texture2.o Protobyte/Texture2.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Texture2.o Protobyte/Texture2.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix4.o: Protobyte/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix4.o Protobyte/Matrix4.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Matrix4.o Protobyte/Matrix4.cpp
 
 ${OBJECTDIR}/Protobyte/GeomBase.o: Protobyte/GeomBase.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GeomBase.o Protobyte/GeomBase.cpp
 
 ${OBJECTDIR}/Protobyte/GroundPlane.o: Protobyte/GroundPlane.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GroundPlane.o Protobyte/GroundPlane.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/GroundPlane.o Protobyte/GroundPlane.cpp
 
 ${OBJECTDIR}/Protobyte/Vertex.o: Protobyte/Vertex.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vertex.o Protobyte/Vertex.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vertex.o Protobyte/Vertex.cpp
 
 ${OBJECTDIR}/Protobyte/Toroid.o: Protobyte/Toroid.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Toroid.o Protobyte/Toroid.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Toroid.o Protobyte/Toroid.cpp
+
+${OBJECTDIR}/Protobyte/Image.o: Protobyte/Image.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Image.o Protobyte/Image.cpp
 
 ${OBJECTDIR}/Protobyte/FrenetFrame.o: Protobyte/FrenetFrame.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FrenetFrame.o Protobyte/FrenetFrame.cpp
 
 ${OBJECTDIR}/Protobyte/Tree.o: Protobyte/Tree.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tree.o Protobyte/Tree.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tree.o Protobyte/Tree.cpp
+
+${OBJECTDIR}/Protobyte/ConvolveFilter.o: Protobyte/ConvolveFilter.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/ConvolveFilter.o Protobyte/ConvolveFilter.cpp
 
 ${OBJECTDIR}/Protobyte/Branch.o: Protobyte/Branch.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Branch.o Protobyte/Branch.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Branch.o Protobyte/Branch.cpp
 
 ${OBJECTDIR}/Protobyte/Block.o: Protobyte/Block.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/usr/include/GL -IProtobyte -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Block.o Protobyte/Block.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Block.o Protobyte/Block.cpp
+
+${OBJECTDIR}/Protobyte/FilterBase.o: Protobyte/FilterBase.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/FilterBase.o Protobyte/FilterBase.cpp
 
 # Subprojects
 .build-subprojects:

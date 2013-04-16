@@ -33,30 +33,63 @@ Texture2::Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWra
 textureURL(textureURL), w(w), h(h), isWrap(isWrap) {
 
     if (w > 0 && h > 0 && textureURL != "") {
-        init();
+        // texture creation/loading code from: 
+        // http://www.nullterminator.net/gltexture.html
+
+        unsigned char* data;
+        FILE * file;
+
+        // allocate buffer
+        data = new unsigned char[w * h * 3];
+
+        // open texture data
+        file = fopen(textureURL.c_str(), "rb");
+        if (file == NULL) std::cout << "no file data";
+
+        // read texture data
+        fread(data, w * h * 3, 1, file);
+        fclose(file);
+
+        // allocate a texture name
+        glGenTextures(1, &textureID);
+
+        // select our current texture
+        glBindTexture(GL_TEXTURE_2D, textureID);
+
+
+        // select modulate to mix texture with color for shading
+        //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
+        // when texture area is small, bilinear filter the closest MIP map
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                GL_LINEAR_MIPMAP_NEAREST);
+        // when texture area is large, bilinear filter the first MIP map
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+        // if wrap is true, the texture wraps over at the edges (repeat)
+        //       ... false, the texture ends at the edges (clamp)
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
+                isWrap ? GL_REPEAT : GL_CLAMP);
+        glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
+                isWrap ? GL_REPEAT : GL_CLAMP);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+        // give opengl the texture
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+
+        // build our texture mipmaps
+        //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+
+        // free memory
+        delete [] data;
     }
 }
 
-void Texture2::init() {
-    // texture creation/loading code from: 
-    // http://www.nullterminator.net/gltexture.html
-
-    unsigned char* data;
-    FILE * file;
-
-    // allocate buffer
-    data = new unsigned char[w * h * 3];
-
-    // open texture data
-    file = fopen(textureURL.c_str(), "rb");
-    if (file == NULL) std::cout << "no file data";
-
-    // read texture data
-    fread(data, w * h * 3, 1, file);
-    fclose(file);
-   // for( int i=0; i<300; i++){
-       // std::cout << "pixel val = " << (int)data[i] << std::endl;
-   // }
+Texture2::Texture2(unsigned char*& data, GLuint w, GLuint h, bool isWrap) {
     //Now that we have loaded our texture data from the RAW file, we can call the GLU(OpenGL Utility) function gluBuild2DMipmaps.
 
     // allocate a texture name
@@ -65,8 +98,7 @@ void Texture2::init() {
     // select our current texture
     glBindTexture(GL_TEXTURE_2D, textureID);
 
-    
-     // select modulate to mix texture with color for shading
+    // select modulate to mix texture with color for shading
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
     // when texture area is small, bilinear filter the closest MIP map
@@ -86,15 +118,17 @@ void Texture2::init() {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    
+
     // give opengl the texture
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
 
     // build our texture mipmaps
-     //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+    //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+}
 
-    // free memory
-    delete [] data;
+void Texture2::init() {
+
+
 }
 
 

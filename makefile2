@@ -1,0 +1,19 @@
+CC=g++
+CFLAGS=-c -wall -Wextra -pedantic
+OS=$(uname -s)
+case $( uname -s ) in
+Darwin) LDFLAGS=-framework GLUT -framework OpenGL;;
+*)      LDFLAGS=-lGLEW -lGL -lglut -lGLU;;
+esac
+
+SOURCES=main.cpp Protobyte/Vector3.cpp Protobyte/Face3.cpp Protobyte/Block.cpp Protobyte/Matrix3.cpp Protobyte/FilterBase.cpp Protobyte/convolveFilter.cpp Protobyte/FrenetFrame.cpp Protobyte/Vertex.cpp Protobyte/GeomBase.cpp Protobyte/Branch.cpp Protobyte/Texture2.cpp Protobyte/Toroid.cpp Protobyte/Tube.cpp Protobyte/Curve3.cpp Protobyte/GroundPlane.cpp Protobyte/Shader.cpp Protobyte/Spline3.cpp
+OBJECTS=$(SOURCES:.cpp=.o)
+EXECUTABLE=protobyteApp
+
+all: $(SOURCES) $(EXECUTABLE)
+	
+$(EXECUTABLE): $(OBJECTS) 
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@

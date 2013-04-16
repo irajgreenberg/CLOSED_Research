@@ -13,20 +13,19 @@
 #ifdef  __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-#elif  __linux__
+#elif __linux
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #define GL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
-#elif  _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
 #include <GL/gl.h>
 #include <GL/glu.h>
 #define GL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
-#else
-#error "unknown platform"
 #endif
+
 
 #include <iostream>
 #include <vector>

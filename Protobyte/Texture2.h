@@ -13,18 +13,17 @@
 #ifdef  __APPLE__
 #include <OpenGL/gl.h>
 #include <OpenGL/glu.h>
-#elif __linux__
+#elif __linux
 #include <GL/gl.h>
 #include <GL/glu.h>
-#elif _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
 #include <GL/gl.h>
 #include <GL/glu.h>
-#else
-#error "unknown platform"
 #endif
 
 #include <iostream>
 #include <string>
+#include <vector>
 #include <stdio.h> // for File input
 
 namespace proto {
@@ -36,6 +35,7 @@ namespace proto {
 
         Texture2();
         Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
+        Texture2(unsigned char*& data, GLuint w, GLuint h, bool isWrap);
 
         // getters/setters
         void setH(GLuint h);

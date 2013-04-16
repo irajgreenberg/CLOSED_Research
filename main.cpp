@@ -1,13 +1,17 @@
 #ifdef  __APPLE__
 #include <GLUT/glut.h>
-#elif __linux__
+#elif __linux
 #include <GL/glew.h>
 #include <GL/glut.h>
-#elif _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
+#include <GL/glew.h>
 #include <GL/glut.h>
-#else
-#error "unknown platform"
 #endif
+
+// eventually go back to SFML
+//#include <SFML/Window.hpp>
+//#include <SFML/OpenGL.hpp>
+
 
 #include <cmath>
 #include "Protobyte/Toroid.h"
@@ -22,6 +26,8 @@
 #include "Protobyte/Texture2.h"
 #include "Protobyte/Block.h"
 #include "Protobyte/GroundPlane.h"
+
+#include "Protobyte/utilityFunctions.h"
 
 using namespace proto;
 
@@ -104,16 +110,23 @@ Texture2 texScape;
 
 void setGeom() {
 
-    tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    //tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
 
-    toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
+   // toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+            //Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
 
-    texScape = Texture2("resources/imgs/smallScape.raw", 64, 64, true);
-
+    
+    
+    texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
+    // filter texture image
+    //unsigned char* data = new unsigned char[1024*768*3];
+   // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
+   // texScape = Texture2(data, 1024, 768, true);
+   
     plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
             Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
+     //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 

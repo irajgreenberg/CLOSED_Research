@@ -12,11 +12,15 @@
       <itemPath>Protobyte/Branch.h</itemPath>
       <itemPath>Protobyte/Color3.h</itemPath>
       <itemPath>Protobyte/Color4.h</itemPath>
+      <itemPath>Protobyte/ConvolveFilter.cpp</itemPath>
+      <itemPath>Protobyte/ConvolveFilter.h</itemPath>
       <itemPath>Protobyte/Curve3.cpp</itemPath>
       <itemPath>Protobyte/Curve3.h</itemPath>
       <itemPath>Protobyte/Dimension3.h</itemPath>
       <itemPath>Protobyte/Face3.cpp</itemPath>
       <itemPath>Protobyte/Face3.h</itemPath>
+      <itemPath>Protobyte/FilterBase.cpp</itemPath>
+      <itemPath>Protobyte/FilterBase.h</itemPath>
       <itemPath>Protobyte/FrenetFrame.cpp</itemPath>
       <itemPath>Protobyte/FrenetFrame.h</itemPath>
       <itemPath>Protobyte/GeomBase.cpp</itemPath>
@@ -24,6 +28,8 @@
       <itemPath>Protobyte/GroundPlane.cpp</itemPath>
       <itemPath>Protobyte/GroundPlane.h</itemPath>
       <itemPath>Protobyte/IGConstants.h</itemPath>
+      <itemPath>Protobyte/Image.cpp</itemPath>
+      <itemPath>Protobyte/Image.h</itemPath>
       <itemPath>Protobyte/Math.h</itemPath>
       <itemPath>Protobyte/Matrix3.cpp</itemPath>
       <itemPath>Protobyte/Matrix3.h</itemPath>
@@ -107,12 +113,18 @@
           <incDir>
             <pElem>/System/Library/Frameworks/OpenGL.framework/Headers</pElem>
             <pElem>/System/Library/Frameworks/GLUT.framework/Headers</pElem>
+            <pElem>/Library/Frameworks/SFML.framework/Headers</pElem>
           </incDir>
         </ccTool>
         <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/research</output>
+          <commandlineTool>g++</commandlineTool>
           <linkerLibItems>
             <linkerLibFileItem>/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT</linkerLibFileItem>
             <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-graphics.framework/sfml-graphics</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-window.framework/sfml-window</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-system.framework/sfml-system</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -129,8 +141,9 @@
         <ccTool>
           <developmentMode>5</developmentMode>
           <incDir>
-            <pElem>/usr/include/GL</pElem>
-            <pElem>Protobyte</pElem>
+            <pElem>/System/Library/Frameworks/OpenGL.framework/Headers</pElem>
+            <pElem>/System/Library/Frameworks/GLUT.framework/Headers</pElem>
+            <pElem>/Library/Frameworks/SFML.framework/Headers</pElem>
           </incDir>
         </ccTool>
         <fortranCompilerTool>
@@ -143,6 +156,9 @@
           <linkerLibItems>
             <linkerLibFileItem>/System/Library/Frameworks/GLUT.framework/Versions/A/GLUT</linkerLibFileItem>
             <linkerLibFileItem>/System/Library/Frameworks/OpenGL.framework/OpenGL</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-graphics.framework/sfml-graphics</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-window.framework/sfml-window</linkerLibFileItem>
+            <linkerLibFileItem>/Library/Frameworks/sfml-system.framework/sfml-system</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

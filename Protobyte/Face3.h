@@ -11,12 +11,10 @@
 
 #ifdef __APPLE__
 #include <OpenGL/gl.h>
-#elif __linux__
+#elif __linux
 #include <GL/gl.h>
-#elif _WIN32
+#elif defined(_WIN32) || defined(_WIN64)
 #include <GL/gl.h>
-#else
-#error "unknown platform"
 #endif
 
 #include <vector>
