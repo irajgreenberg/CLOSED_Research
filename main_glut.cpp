@@ -88,7 +88,7 @@ GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {104}; // max 128
+GLfloat light01_mat_shininess[] = {128}; // max 128
 
 void setLights();
 
@@ -110,23 +110,23 @@ Texture2 texScape;
 
 void setGeom() {
 
-    //tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
 
-   // toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-            //Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
+     toroid = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
+    Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 60, 60, .87, .22, tex2);
 
-    
-    
+
+
     texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
     // filter texture image
     //unsigned char* data = new unsigned char[1024*768*3];
-   // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
-   // texScape = Texture2(data, 1024, 768, true);
-   
+    // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
+    // texScape = Texture2(data, 1024, 768, true);
+
     plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
             Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
-     //delete [] data;
+    //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
@@ -387,6 +387,8 @@ void display() {
 
     glDisable(GL_TEXTURE_2D);
     shader.bind();
+        toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+
     //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
 
@@ -396,7 +398,7 @@ void display() {
 
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-    //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+ //   toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
 
     glShadeModel(GL_FLAT);
@@ -404,7 +406,7 @@ void display() {
     //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
 
-    plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
     //shader.unbind();
 
@@ -443,6 +445,8 @@ void handleMouseEvent(int button, int state, int mx, int my) {
             break;
     }
 
+    glutPostRedisplay();
+
 }
 
 void handleMouseMotionEvent(int mx, int my) {
@@ -453,7 +457,7 @@ void handleMouseMotionEvent(int mx, int my) {
         liveRotX = worldRotX + mouseRotX;
         liveRotY = worldRotY + mouseRotY;
     }
-
+    glutPostRedisplay();
 }
 
 void handleKeyPressEvent(unsigned char key, int x, int y) {
@@ -469,7 +473,7 @@ void handleKeyPressEvent(unsigned char key, int x, int y) {
             exit(0);
             break;
     }
-
+    glutPostRedisplay();
 }
 
 void handleSpecialKeyPressEvent(int key, int x, int y) {
@@ -487,6 +491,7 @@ void handleSpecialKeyPressEvent(int key, int x, int y) {
             transY--;
             break;
     }
+    glutPostRedisplay();
 }
 
 int main(int argc, char **argv) {

@@ -42,7 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
-	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/main_sfml.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/Texture2.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
@@ -128,10 +128,10 @@ ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main_sfml.o: main_sfml.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_sfml.o main_sfml.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

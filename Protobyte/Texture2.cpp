@@ -126,6 +126,43 @@ Texture2::Texture2(unsigned char*& data, GLuint w, GLuint h, bool isWrap) {
     //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
 }
 
+/*Texture2::Texture2(unsigned int*& data, GLuint w, GLuint h, bool isWrap) {
+    //Now that we have loaded our texture data from the RAW file, we can call the GLU(OpenGL Utility) function gluBuild2DMipmaps.
+
+    // allocate a texture name
+    glGenTextures(1, &textureID);
+
+    // select our current texture
+    glBindTexture(GL_TEXTURE_2D, textureID);
+
+    // select modulate to mix texture with color for shading
+    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+
+    // when texture area is small, bilinear filter the closest MIP map
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+            GL_LINEAR_MIPMAP_NEAREST);
+    // when texture area is large, bilinear filter the first MIP map
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+    // if wrap is true, the texture wraps over at the edges (repeat)
+    //       ... false, the texture ends at the edges (clamp)
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,
+            isWrap ? GL_REPEAT : GL_CLAMP);
+    glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,
+            isWrap ? GL_REPEAT : GL_CLAMP);
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+    // give opengl the texture
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+
+    // build our texture mipmaps
+    //gluBuild2DMipmaps(GL_TEXTURE_2D, 3, w, h, GL_RGB, GL_UNSIGNED_BYTE, data);
+}*/
+
 void Texture2::init() {
 
 

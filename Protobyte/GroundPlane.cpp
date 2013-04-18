@@ -58,12 +58,12 @@ void GroundPlane::calcVerts() {
     // std::cout<<  "rgbLen = " << rgbLen << std::endl;
 
     // NOTE: + op automatically promotes char to int
-    for (int i = 0, j = 0; i < pixelLen; ++i, j += 3) {
+    for (int i = 0, j = 0; i < pixelLen; ++i, j += 1) {
         avgData[i] = ((rgbData[j] + rgbData[j + 1] + rgbData[j + 2]) / 3);
     }
 
     for (int i = 0; i < verts.size(); ++i) {
-        //verts.at(i).pos.y = (-122 + avgData[i])*.5;
+        //verts.at(i).pos.y = avgData[i]*.2;
     }
 
 

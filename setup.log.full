@@ -1,0 +1,9 @@
+2013/04/16 14:42:49 Starting cygwin install, version 2.774
+2013/04/16 14:42:49 User has backup/restore rights
+2013/04/16 14:42:49 io_stream_cygfile: fopen(/etc/setup/net-proxy-host) failed 2 No such file or directory
+2013/04/16 14:42:49 io_stream_cygfile: fopen(/etc/setup/net-proxy-port) failed 2 No such file or directory
+2013/04/16 14:42:49 io_stream_cygfile: fopen(/etc/setup/extrakeys) failed 2 No such file or directory
+2013/04/16 14:42:49 io_stream_cygfile: fopen(/etc/setup/chooser_window_settings) failed 2 No such file or directory
+2013/04/16 14:42:49 Current Directory: C:\Users\Ira\Downloads
+2013/04/16 14:42:49 Could not open service McShield for query, start and stop. McAfee may not be installed, or we don't have access.
+2013/04/16 14:42:57 Ending cygwin install
