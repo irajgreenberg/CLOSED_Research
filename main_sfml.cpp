@@ -109,7 +109,7 @@ Toroid toroid;
 Tube tube2;
 
 // const std::string& textureURL, GLuint w, GLuint h, bool isWrap
-Texture2 tex2;
+Texture2 tex2, tex3, tex4;
 Toroid toroid2;
 
 
@@ -137,7 +137,10 @@ void draw();
 
 
 void setGeom() {
-    tex2 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    tex2 = Texture2("resources/imgs/shipPlate.raw", 400, 300, true);
+    tex3 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    tex4 = Texture2("resources/imgs/glassCubes.raw", 400, 400, true);
+    //tex4 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
 
     //toroid = Toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
@@ -145,7 +148,7 @@ void setGeom() {
 
 
 
-    texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
+    //texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
     // filter texture image
     //unsigned char* data = new unsigned char[1024*768*3];
     // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
@@ -182,8 +185,8 @@ void setGeom() {
 
     //texScape = Texture2(label, 1024, 768, true);
 
-    plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
-            Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
+    //plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
+     //       Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
     //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
@@ -286,8 +289,8 @@ void setGeom() {
     Spline3 spline2(cps2, interpDetail, false, smoothness);
     //tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
 
-    //block = Block(Vector3(0, 0, -60), Vector3(100, 180, 0),
-    //Dimension3<float>(20, 20, 20), Color4<float>(0.4, 0.3, 0.85, 1.0), tex2);
+    block = Block(Vector3(0, 0, 0), Vector3(100, 180, 0),
+    Dimension3<float>(60, 60, 60), Color4<float>(.9, 1.0, 1.0, .75), tex2, 1);
 }
 
 //============================================================================
@@ -396,8 +399,9 @@ void initGL() {
 
     // texture
     glEnable(GL_TEXTURE_2D);
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    glBindTexture(GL_TEXTURE_2D, tex4.getTextureID());
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 
     glClearColor(.2, 1, 1, 1); // background color
     glClearStencil(0); // clear stencil buffer
@@ -498,11 +502,13 @@ void draw() {
 
 
     glShadeModel(GL_FLAT);
+    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    glBindTexture(GL_TEXTURE_2D, tex4.getTextureID());
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
-    //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
 
-    plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
     //shader.unbind();
 

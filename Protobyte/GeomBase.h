@@ -52,7 +52,8 @@ namespace proto {
         Dimension3<float> size;
         Color4<float> col4;
         std::vector< Color4<float> > col4s;
-        Texture2 tex2;
+        Texture2 tex2, bumpMap;
+        float textureScale;
 
         virtual void init();
         virtual void calcVerts() = 0;
@@ -118,6 +119,12 @@ namespace proto {
         GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
                 const std::vector< Color4<float> > col4s, const Texture2& tex2);
 
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+                const Color4<float> col4, const Texture2& tex2, float textureScale);
+
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+                const std::vector< Color4<float> > col4s, const Texture2& tex2, float textureScale);
+
         virtual ~GeomBase();
 
         virtual void move(const Vector3& v);
@@ -146,9 +153,72 @@ namespace proto {
 
         virtual void sortFaces();
 
+        void setTextureScale(float textureScale);
+        float getTextureScale() const;
+        void setBumpMap(Texture2 bumpMap);
+        Texture2 getBumpMap() const;
+
 
 
     };
+
+    // setters/getters
+
+    inline void GeomBase::setPosition(const Vector3& pos) {
+        this->pos = pos;
+    }
+
+    inline void GeomBase::setRotation(const Vector3& rot) {
+        this->rot = rot;
+    }
+
+    inline void GeomBase::setSize(const Dimension3<float> size) {
+        this->size = size;
+    }
+
+    inline void GeomBase::setColor(const Color4<float> col4) {
+        this->col4 = col4;
+    }
+
+    inline Vector3& GeomBase::getPosition() {
+        return pos;
+    }
+
+    inline Vector3& GeomBase::getRotation() {
+        return rot;
+    }
+
+    inline Dimension3<float>& GeomBase::getSize() {
+        return size;
+    }
+
+    inline Color4<float>& GeomBase::getColor() {
+        return col4;
+    }
+
+    inline std::vector<Face3>& GeomBase::getFaces() {
+        return faces;
+    }
+
+    inline std::vector<Vertex>& GeomBase::getVertices() {
+        return verts;
+    }
+
+    inline void GeomBase::setTextureScale(float textureScale) {
+        this->textureScale = textureScale;
+    }
+
+    inline float GeomBase::getTextureScale() const {
+        return textureScale;
+    }
+
+    inline void GeomBase::setBumpMap(Texture2 bumpMap) {
+        this->bumpMap = bumpMap;
+    }
+
+    inline Texture2 GeomBase::getBumpMap() const {
+        return bumpMap;
+    }
 
 }
 #endif /* defined(__SFML_simple_renderer_06__GeomBase__) */

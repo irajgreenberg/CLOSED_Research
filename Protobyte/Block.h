@@ -28,7 +28,7 @@ namespace proto {
         /*!
          * Constructor */
         Block(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
-                const Color4<float>& col4, const Texture2& tex2);
+                const Color4<float>& col4, const Texture2& tex2, float textureScale);
 
         /*!
          * Declared pure virtual in GeomBase base class
@@ -44,6 +44,7 @@ namespace proto {
          * 
          * Generates indices to group vertices to triangle faces.*/
         void calcInds();
+      
 
     };
 }

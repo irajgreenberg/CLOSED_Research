@@ -16,7 +16,7 @@ GeomBase::GeomBase() {
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
 pos(pos), rot(rot), size(size), col4(col4) {
     // default empty texture
-   // tex2 = Texture2("", 0, 0, false);
+    // tex2 = Texture2("", 0, 0, false);
 }
 
 // pass array of colors
@@ -24,7 +24,7 @@ pos(pos), rot(rot), size(size), col4(col4) {
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
 pos(pos), rot(rot), size(size), col4s(col4s) {
     // default empty texture
-   // tex2 = Texture2("", 0, 0, false);
+    // tex2 = Texture2("", 0, 0, false);
 }
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2) :
@@ -32,8 +32,18 @@ pos(pos), rot(rot), size(size), col4(col4), tex2(tex2) {
 }
 
 // pass array of colors
+
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2) :
 pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2) {
+}
+
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2, float textureScale) :
+pos(pos), rot(rot), size(size), col4(col4), tex2(tex2), textureScale(textureScale) {
+}
+
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
+        const std::vector< Color4<float> > col4s, const Texture2& tex2, float textureScale) :
+pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2), textureScale(textureScale) {
 }
 
 GeomBase::~GeomBase() {
@@ -125,10 +135,10 @@ void GeomBase::calcPrimitives() {
     colorPrims.resize(verts.size()*4);
     texturePrims.resize(verts.size()*2);
     interleavedPrims.resize(verts.size()*12);
-    
+
     indPrims.resize(inds.size()*3);
-    
-    for (int i=0, j=0, k=0, l=0, m=0, n=0; i < verts.size(); i++) {
+
+    for (int i = 0, j = 0, k = 0, l = 0, m = 0, n = 0; i < verts.size(); i++) {
 
         // fill individual primitive arrays - eventually remove
         vertPrims.at(j++) = verts.at(i).pos.x;
@@ -160,14 +170,14 @@ void GeomBase::calcPrimitives() {
         interleavedPrims.at(n++) = verts.at(i).getColor().getG();
         interleavedPrims.at(n++) = verts.at(i).getColor().getB();
         interleavedPrims.at(n++) = verts.at(i).getColor().getA();
-        
+
         interleavedPrims.at(n++) = verts.at(i).getUV().elem0;
         interleavedPrims.at(n++) = verts.at(i).getUV().elem1;
     }
 
 
     // explode inds arrays to primitives
-    for (int i=0, j=0; i <inds.size(); i++) {
+    for (int i = 0, j = 0; i < inds.size(); i++) {
         indPrims.at(j++) = inds.at(i).elem0;
         indPrims.at(j++) = inds.at(i).elem1;
         indPrims.at(j++) = inds.at(i).elem2;
@@ -345,45 +355,5 @@ void GeomBase::scale(const Dimension3<float>& s) {
     size += s;
 }
 
-// setters/getters
 
-void GeomBase::setPosition(const Vector3& pos) {
-    this->pos = pos;
-}
-
-void GeomBase::setRotation(const Vector3& rot) {
-    this->rot = rot;
-}
-
-void GeomBase::setSize(const Dimension3<float> size) {
-    this->size = size;
-}
-
-void GeomBase::setColor(const Color4<float> col4) {
-    this->col4 = col4;
-}
-
-Vector3& GeomBase::getPosition() {
-    return pos;
-}
-
-Vector3& GeomBase::getRotation() {
-    return rot;
-}
-
-Dimension3<float>& GeomBase::getSize() {
-    return size;
-}
-
-Color4<float>& GeomBase::getColor() {
-    return col4;
-}
-
-std::vector<Face3>& GeomBase::getFaces() {
-    return faces;
-}
-
-std::vector<Vertex>& GeomBase::getVertices() {
-    return verts;
-}
 
