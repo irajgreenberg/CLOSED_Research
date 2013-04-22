@@ -31,16 +31,14 @@ terminalBegin(terminalBegin), terminalEnd(terminalEnd), segs(segs), radiiBegin(r
 
 }
 
-Branch::Branch(Vertex terminals[2], int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s, const Texture2& tex2) :
+Branch::Branch(Vertex terminals[2], int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s) :
 terminals(terminals), segs(segs), radiiBegin(radiiBegin), radiiEnd(radiiEnd), jitter(jitter) {
     this->col4s = col4s;
-    this->tex2 = tex2;
 }
 
-Branch::Branch(Vertex terminalBegin, Vertex terminalEnd, int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s, const Texture2& tex2) :
+Branch::Branch(Vertex terminalBegin, Vertex terminalEnd, int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s) :
 terminalBegin(terminalBegin), terminalEnd(terminalEnd), segs(segs), radiiBegin(radiiBegin), radiiEnd(radiiEnd), jitter(jitter) {
     this->col4s = col4s;
-    this->tex2 = tex2;
 }
 
 // required overrides from base class

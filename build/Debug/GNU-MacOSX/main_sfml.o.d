@@ -6,7 +6,8 @@ build/Debug/GNU-MacOSX/main_sfml.o: main_sfml.cpp Protobyte/Toroid.h \
   Protobyte/Curve3.h Protobyte/FrenetFrame.h Protobyte/Tube.h \
   Protobyte/Spline3.h Protobyte/Math.h Protobyte/Shader.h \
   Protobyte/Utility.h Protobyte/Texture2.h Protobyte/Block.h \
-  Protobyte/GroundPlane.h Protobyte/utilityFunctions.h
+  Protobyte/BlockGrid.h Protobyte/GroundPlane.h Protobyte/GroundPlane.h \
+  Protobyte/utilityFunctions.h
 
 Protobyte/Toroid.h:
 
@@ -51,6 +52,10 @@ Protobyte/Utility.h:
 Protobyte/Texture2.h:
 
 Protobyte/Block.h:
+
+Protobyte/BlockGrid.h:
+
+Protobyte/GroundPlane.h:
 
 Protobyte/GroundPlane.h:
 

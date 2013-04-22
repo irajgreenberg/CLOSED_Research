@@ -8,6 +8,8 @@
     <logicalFolder name="Protobyte" displayName="Protobyte" projectFiles="true">
       <itemPath>Protobyte/Block.cpp</itemPath>
       <itemPath>Protobyte/Block.h</itemPath>
+      <itemPath>Protobyte/BlockGrid.cpp</itemPath>
+      <itemPath>Protobyte/BlockGrid.h</itemPath>
       <itemPath>Protobyte/Branch.cpp</itemPath>
       <itemPath>Protobyte/Branch.h</itemPath>
       <itemPath>Protobyte/Color3.h</itemPath>

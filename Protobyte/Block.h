@@ -28,7 +28,7 @@ namespace proto {
         /*!
          * Constructor */
         Block(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
-                const Color4<float>& col4, const Texture2& tex2, float textureScale);
+                const Color4<float>& col4, float textureScale);
 
         /*!
          * Declared pure virtual in GeomBase base class

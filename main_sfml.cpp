@@ -32,6 +32,7 @@
 #include "Protobyte/Shader.h"
 #include "Protobyte/Texture2.h"
 #include "Protobyte/Block.h"
+#include "Protobyte/BlockGrid.h"
 #include "Protobyte/GroundPlane.h"
 
 #include "Protobyte/utilityFunctions.h"
@@ -99,7 +100,7 @@ static Shader shader;
 GLfloat light01_ambient[] = {0.3, 0.1, 0.1, 1.0};
 GLfloat light01_diffuse[] = {.85, .85, .85, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_position[] = {1.0, 10.0, 1.0, 0.0};
+GLfloat light01_position[] = {.2, 4.0, 5.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
@@ -115,8 +116,12 @@ Toroid toroid2;
 
 Block block;
 
-GroundPlane plane;
+//GroundPlane plane;
 Texture2 texScape;
+
+BlockGrid grid;
+std::vector<Texture2> skyTextures;
+std::vector<Texture2> horses;
 
 /**********************************
  *       FUNCTION PROTOTYPES      *
@@ -144,11 +149,42 @@ void setGeom() {
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
 
     //toroid = Toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
-    //Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 10, 10, .87, .22, tex2);
+    //Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 10, 10, .87, .22);
+
+    /*  grid  */
+
+    skyTextures.resize(6);
+    skyTextures.at(0) = Texture2("resources/imgs/clouds_01.raw", 400, 400, true);
+    skyTextures.at(1) = Texture2("resources/imgs/clouds_02.raw", 400, 400, true);
+    skyTextures.at(2) = Texture2("resources/imgs/clouds_03.raw", 400, 400, true);
+    skyTextures.at(3) = Texture2("resources/imgs/clouds_04.raw", 400, 400, true);
+    skyTextures.at(4) = Texture2("resources/imgs/clouds_05.raw", 400, 400, true);
+    skyTextures.at(5) = Texture2("resources/imgs/clouds_06.raw", 400, 400, true);
+   
+    std::vector<float> textureScales;
+    textureScales.resize(6);
+    textureScales.at(0) = 1;
+    textureScales.at(1) = 2;
+    textureScales.at(2) = 3;
+    textureScales.at(3) = 4;
+    textureScales.at(4) = 5;
+    textureScales.at(5) = 6;
+
+    horses.resize(6);
+    horses.at(0) = Texture2("resources/imgs/horse01.raw", 400, 400, true);
+   horses.at(1) = Texture2("resources/imgs/horse02.raw", 400, 400, true);
+    horses.at(2) = Texture2("resources/imgs/horse03.raw", 400, 400, true);
+    horses.at(3) = Texture2("resources/imgs/horse04.raw", 400, 400, true);
+   horses.at(4) = Texture2("resources/imgs/horse05.raw", 400, 400, true);
+   horses.at(5) = Texture2("resources/imgs/horse06.raw", 400, 400, true);
 
 
 
-    //texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
+
+    grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3<float>(10, 10, 10), Color4<float>(1.0, 1.0, 1.0, 1.0), horses, 1, 30, 30);
+    //grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), skyTextures, textureScales, 5, 5);
+
+    texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
     // filter texture image
     //unsigned char* data = new unsigned char[1024*768*3];
     // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
@@ -157,9 +193,10 @@ void setGeom() {
     sf::Image img;
     img.loadFromFile("imgs/graham.jpg");
 
-    
+
     // test for color storage
     // better than bitwise ops
+
     typedef struct packed_int {
         unsigned char r;
         unsigned char g;
@@ -171,13 +208,13 @@ void setGeom() {
         unsigned int i;
         packed_int col;
     } packed;
-    
+
     packed c;
     c.i = 3232235881UL;
-    
-    printf("%d\n", c.col.r);
-    std::cout << "c.col.r = " << int(c.col.r) << std::endl;
-// end test
+
+   // printf("%d\n", c.col.r);
+   // std::cout << "c.col.r = " << int(c.col.r) << std::endl;
+    // end test
 
 
 
@@ -185,8 +222,8 @@ void setGeom() {
 
     //texScape = Texture2(label, 1024, 768, true);
 
-    //plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
-     //       Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, texScape);
+    /*plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
+            Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, tex4);*/
     //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
@@ -290,7 +327,7 @@ void setGeom() {
     //tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
 
     block = Block(Vector3(0, 0, 0), Vector3(100, 180, 0),
-    Dimension3<float>(60, 60, 60), Color4<float>(.9, 1.0, 1.0, .75), tex2, 1);
+            Dimension3<float>(60, 60, 60), Color4<float>(.9, 1.0, 1.0, .75), 1);
 }
 
 //============================================================================
@@ -442,7 +479,7 @@ void draw() {
     glLoadIdentity();
 
     // Define a viewing transformation
-    gluLookAt(0, 0, -100, 0, 0, 0, 0, -1, 0);
+    //gluLookAt(0, 0, -15, 0, 0, 0, 0, -1, 0);
 
     // use different lighting on the different geometry
     light01_diffuse[0] = 1.0;
@@ -479,10 +516,16 @@ void draw() {
     std::cout << "loc4 = " << loc4 << std::endl;
      */
     glPushMatrix();
+    
+    gluLookAt(0, 0, -17, 0, 0, 0, 0, -1, 0);
+    
+    
 
     glTranslatef(transX, transY, transZ);
     glRotatef(liveRotX, 0, 1, 0);
     glRotatef(liveRotY, 1, 0, 0);
+    
+    
 
 
     glDisable(GL_TEXTURE_2D);
@@ -492,10 +535,7 @@ void draw() {
     //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
 
-    light01_diffuse[1] = .2;
-    light01_diffuse[2] = .2;
-    setLights();
-
+    
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     //   toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
@@ -504,12 +544,12 @@ void draw() {
     glShadeModel(GL_FLAT);
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     glBindTexture(GL_TEXTURE_2D, tex4.getTextureID());
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
-    block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
+    //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
 
-    //plane.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-
+    grid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+    //
     //shader.unbind();
 
     glPopMatrix();

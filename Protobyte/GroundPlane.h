@@ -17,10 +17,18 @@ namespace proto {
         friend std::ostream& operator<<(std::ostream& out, const GroundPlane& plane);
 
         GroundPlane();
+        
         GroundPlane(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
                 const Color4<float>& col4, int rows, int columns);
+        
         GroundPlane(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
-                const Color4<float>& col4, int rows, int columns, const Texture2& tex2);
+                const Color4<float>& col4, int rows, int columns, float textureScale);
+         
+        GroundPlane(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
+                const Color4<float>& col4, int rows, int columns, const Texture2& bumpMap);
+        
+        GroundPlane(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
+                const Color4<float>& col4, int rows, int columns, const Texture2& bumpMap, float textureScale);
 
         void calcVerts();
         void calcInds();

@@ -14,8 +14,7 @@ namespace proto {
         out << "pos: " << block.pos << "\n" <<
                 "rot: " << block.rot << "\n" <<
                 "size: " << block.size << "\n" <<
-                "col4: " << block.col4 << "\n" <<
-                "tex2: " << block.tex2;
+                "col4: " << block.col4;
         return out;
     }
 }
@@ -33,8 +32,8 @@ GeomBase(pos, rot, size, col4) {
 }
 
 Block::Block(const Vector3& pos, const Vector3& rot, const Dimension3<float>& size,
-        const Color4<float>& col4, const Texture2& tex2, float textureScale) :
-GeomBase(pos, rot, size, col4, tex2, textureScale) {
+        const Color4<float>& col4, float textureScale) :
+GeomBase(pos, rot, size, col4, textureScale) {
     init();
 }
 

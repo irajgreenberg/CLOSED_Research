@@ -53,6 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Image.o \
 	${OBJECTDIR}/Protobyte/FrenetFrame.o \
 	${OBJECTDIR}/Protobyte/Tree.o \
+	${OBJECTDIR}/Protobyte/BlockGrid.o \
 	${OBJECTDIR}/Protobyte/ConvolveFilter.o \
 	${OBJECTDIR}/Protobyte/Branch.o \
 	${OBJECTDIR}/Protobyte/Block.o \
@@ -182,6 +183,11 @@ ${OBJECTDIR}/Protobyte/Tree.o: Protobyte/Tree.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Tree.o Protobyte/Tree.cpp
+
+${OBJECTDIR}/Protobyte/BlockGrid.o: Protobyte/BlockGrid.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/BlockGrid.o Protobyte/BlockGrid.cpp
 
 ${OBJECTDIR}/Protobyte/ConvolveFilter.o: Protobyte/ConvolveFilter.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

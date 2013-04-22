@@ -19,7 +19,12 @@
 #include <GL/glu.h>
 #define GL_GLEXT_PROTOTYPES
 #include <GL/glext.h>
-#elif defined(_WIN32) || defined(_WIN64)
+#elif _WIN32
+#include <GL/gl.h>
+#include <GL/glu.h>
+#define GL_GLEXT_PROTOTYPES
+#include <GL/glext.h>
+#elif _WIN64
 #include <GL/gl.h>
 #include <GL/glu.h>
 #define GL_GLEXT_PROTOTYPES
@@ -52,7 +57,7 @@ namespace proto {
         Dimension3<float> size;
         Color4<float> col4;
         std::vector< Color4<float> > col4s;
-        Texture2 tex2, bumpMap;
+        Texture2 bumpMap;
         float textureScale;
 
         virtual void init();
@@ -114,16 +119,10 @@ namespace proto {
                 const std::vector< Color4<float> > col4s);
 
         GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const Color4<float> col4, const Texture2& tex2);
+                const Color4<float> col4, float textureScale);
 
         GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const std::vector< Color4<float> > col4s, const Texture2& tex2);
-
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const Color4<float> col4, const Texture2& tex2, float textureScale);
-
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const std::vector< Color4<float> > col4s, const Texture2& tex2, float textureScale);
+                const std::vector< Color4<float> > col4s, float textureScale);
 
         virtual ~GeomBase();
 
@@ -155,6 +154,7 @@ namespace proto {
 
         void setTextureScale(float textureScale);
         float getTextureScale() const;
+        
         void setBumpMap(Texture2 bumpMap);
         Texture2 getBumpMap() const;
 

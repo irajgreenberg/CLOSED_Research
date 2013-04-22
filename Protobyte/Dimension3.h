@@ -171,6 +171,10 @@ namespace proto {
         bool operator==(const Dimension3<T>& v) const;
 
     };
+    
+    // most common usages
+    #define Dimension3f Dimension3<float>
+    #define Dimension3i Dimension3<int>
 
 }
 #endif /* defined(__SFML_simple_renderer_06__Dimension3__) */

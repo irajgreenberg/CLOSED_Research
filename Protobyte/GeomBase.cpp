@@ -13,37 +13,25 @@ using namespace proto;
 GeomBase::GeomBase() {
 }
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
-pos(pos), rot(rot), size(size), col4(col4) {
-    // default empty texture
-    // tex2 = Texture2("", 0, 0, false);
-}
 
 // pass array of colors
+
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
+pos(pos), rot(rot), size(size), col4(col4){
+}
+
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
 pos(pos), rot(rot), size(size), col4s(col4s) {
-    // default empty texture
-    // tex2 = Texture2("", 0, 0, false);
 }
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2) :
-pos(pos), rot(rot), size(size), col4(col4), tex2(tex2) {
-}
-
-// pass array of colors
-
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s, const Texture2& tex2) :
-pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2) {
-}
-
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, const Texture2& tex2, float textureScale) :
-pos(pos), rot(rot), size(size), col4(col4), tex2(tex2), textureScale(textureScale) {
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, float textureScale) :
+pos(pos), rot(rot), size(size), col4(col4), textureScale(textureScale) {
 }
 
 GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-        const std::vector< Color4<float> > col4s, const Texture2& tex2, float textureScale) :
-pos(pos), rot(rot), size(size), col4s(col4s), tex2(tex2), textureScale(textureScale) {
+        const std::vector< Color4<float> > col4s, float textureScale) :
+pos(pos), rot(rot), size(size), col4s(col4s), textureScale(textureScale) {
 }
 
 GeomBase::~GeomBase() {
@@ -218,11 +206,16 @@ void GeomBase::display(displayMode mode, renderMode render) {
     static float rz = .04;
     glPushMatrix();
     //glLoadIdentity();
-    glTranslatef(pos.x, pos.y, pos.z);
-    glScalef(size.w, size.h, size.d);
+   
+    glTranslatef(pos.x, pos.y, pos.z); 
     glRotatef(rot.x, 1, 0, 0); // x-axis
     glRotatef(rot.y, 0, 1, 0); // y-axis
     glRotatef(rot.z, 0, 0, 1); // z-axis
+    glScalef(size.w, size.h, size.d);
+     
+   
+    
+    
     //rot.x += rx;
     //rot.y += ry;
     //rot.z += rz;

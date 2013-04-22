@@ -23,8 +23,8 @@ namespace proto {
         Branch(Vertex terminalBegin, Vertex terminalEnd, int segs);
         Branch(Vertex terminals[2], int segs, float* radiiBegin, float* radiiEnd, float jitter);
         Branch(Vertex terminalBegin, Vertex terminalEnd, int segs, float* radiiBegin, float* radiiEnd, float jitter);
-        Branch(Vertex terminals[2], int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s, const Texture2& tex2);
-        Branch(Vertex terminalBegin, Vertex terminalEnd, int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s, const Texture2& tex2);
+        Branch(Vertex terminals[2], int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s);
+        Branch(Vertex terminalBegin, Vertex terminalEnd, int segs, float* radiiBegin, float* radiiEnd, float jitter, std::vector< Color4<float> > col4s);
 
         // required overrides from base class
         void calcVerts();
