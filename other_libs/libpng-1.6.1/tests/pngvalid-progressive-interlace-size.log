@@ -1,0 +1,1 @@
+PASS: pngvalid --size --progressive-read (floating point arithmetic)

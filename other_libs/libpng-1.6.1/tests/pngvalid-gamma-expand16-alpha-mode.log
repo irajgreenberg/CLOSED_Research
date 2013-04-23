@@ -1,0 +1,9 @@
+Gamma correction with alpha mode:
+  2 bit gray:  0.00000
+  4 bit gray:  0.00000
+  8 bit gray:  4493.00481
+  8 bit color: 4493.00481
+  indexed:     0.00000
+ 16 bit gray:  309.24044
+ 16 bit color: 310.97330
+PASS: pngvalid --gamma-alpha-mode --expand16 (floating point arithmetic)

@@ -65,6 +65,10 @@ namespace proto {
 
 
     };
+    
+    #define Color4f Color4<float>
+    #define Color4b Color4<unsigned char>
+    #define Color4i Color4<int>
 
 }
 

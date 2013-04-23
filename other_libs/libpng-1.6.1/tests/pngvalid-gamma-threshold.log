@@ -1,0 +1,1 @@
+PASS: pngvalid --gamma-threshold (floating point arithmetic)

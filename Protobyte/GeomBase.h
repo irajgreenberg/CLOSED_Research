@@ -54,9 +54,9 @@ namespace proto {
 
         Vector3 pos, rot;
         Vector3 spd, rotSpd;
-        Dimension3<float> size;
-        Color4<float> col4;
-        std::vector< Color4<float> > col4s;
+        Dimension3f size;
+        Color4f col4;
+        std::vector< Color4f > col4s;
         Texture2 bumpMap;
         float textureScale;
 
@@ -112,23 +112,23 @@ namespace proto {
 
         GeomBase();
 
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const Color4<float> col4);
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size,
+                const Color4f col4);
 
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const std::vector< Color4<float> > col4s);
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size,
+                const std::vector< Color4f > col4s);
 
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const Color4<float> col4, float textureScale);
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size,
+                const Color4f col4, float textureScale);
 
-        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-                const std::vector< Color4<float> > col4s, float textureScale);
+        GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size,
+                const std::vector< Color4f > col4s, float textureScale);
 
         virtual ~GeomBase();
 
         virtual void move(const Vector3& v);
         virtual void rotate(const Vector3& r);
-        virtual void scale(const Dimension3<float>& s);
+        virtual void scale(const Dimension3f& s);
 
         // vertex arrays are implemented by default
         virtual void display(displayMode mode = VERTEX_ARRAY, renderMode render = SURFACE);
@@ -136,13 +136,13 @@ namespace proto {
         // setters/getters
         virtual void setPosition(const Vector3& pos);
         virtual void setRotation(const Vector3& rot);
-        virtual void setSize(const Dimension3<float> size);
-        virtual void setColor(const Color4<float> col4);
+        virtual void setSize(const Dimension3f size);
+        virtual void setColor(const Color4f col4);
 
         virtual Vector3& getPosition();
         virtual Vector3& getRotation();
-        virtual Dimension3<float>& getSize();
-        virtual Color4<float>& getColor();
+        virtual Dimension3f& getSize();
+        virtual Color4f& getColor();
 
         // a bit dangerous to return references, so be careful
         // justification, you got no 3d if you delete this stuff
@@ -172,11 +172,11 @@ namespace proto {
         this->rot = rot;
     }
 
-    inline void GeomBase::setSize(const Dimension3<float> size) {
+    inline void GeomBase::setSize(const Dimension3f size) {
         this->size = size;
     }
 
-    inline void GeomBase::setColor(const Color4<float> col4) {
+    inline void GeomBase::setColor(const Color4f col4) {
         this->col4 = col4;
     }
 
@@ -188,11 +188,11 @@ namespace proto {
         return rot;
     }
 
-    inline Dimension3<float>& GeomBase::getSize() {
+    inline Dimension3f& GeomBase::getSize() {
         return size;
     }
 
-    inline Color4<float>& GeomBase::getColor() {
+    inline Color4f& GeomBase::getColor() {
         return col4;
     }
 

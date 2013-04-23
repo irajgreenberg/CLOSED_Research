@@ -142,6 +142,31 @@ void draw();
 
 
 void setGeom() {
+   /* Image tests not fully implemented
+    *  sf::Image img;
+    img.loadFromFile("imgs/graham.jpg");
+
+    int w = img.getSize().x;
+    int h = img.getSize().y;
+    std::cout << " w = " << w << std::endl;
+    std::cout << " h = " << h << std::endl;
+    std::vector<unsigned char> testImg;
+   
+    testImg.resize(w * h * 3);
+     std::cout << " testImg.size() = " << testImg.size() << std::endl;
+
+    int k = 0;
+    for (int i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).r);
+           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).g);
+           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).b);
+        }
+    }
+     END Image Tests */
+
+
+
     tex2 = Texture2("resources/imgs/shipPlate.raw", 400, 300, true);
     tex3 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
     tex4 = Texture2("resources/imgs/glassCubes.raw", 400, 400, true);
@@ -149,7 +174,7 @@ void setGeom() {
     //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
 
     //toroid = Toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
-    //Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 10, 10, .87, .22);
+    //Dimension3f(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 10, 10, .87, .22);
 
     /*  grid  */
 
@@ -160,7 +185,7 @@ void setGeom() {
     skyTextures.at(3) = Texture2("resources/imgs/clouds_04.raw", 400, 400, true);
     skyTextures.at(4) = Texture2("resources/imgs/clouds_05.raw", 400, 400, true);
     skyTextures.at(5) = Texture2("resources/imgs/clouds_06.raw", 400, 400, true);
-   
+
     std::vector<float> textureScales;
     textureScales.resize(6);
     textureScales.at(0) = 1;
@@ -172,17 +197,18 @@ void setGeom() {
 
     horses.resize(6);
     horses.at(0) = Texture2("resources/imgs/horse01.raw", 400, 400, true);
-   horses.at(1) = Texture2("resources/imgs/horse02.raw", 400, 400, true);
+    horses.at(1) = Texture2("resources/imgs/horse02.raw", 400, 400, true);
     horses.at(2) = Texture2("resources/imgs/horse03.raw", 400, 400, true);
     horses.at(3) = Texture2("resources/imgs/horse04.raw", 400, 400, true);
-   horses.at(4) = Texture2("resources/imgs/horse05.raw", 400, 400, true);
-   horses.at(5) = Texture2("resources/imgs/horse06.raw", 400, 400, true);
+    horses.at(4) = Texture2("resources/imgs/horse05.raw", 400, 400, true);
+    horses.at(5) = Texture2("resources/imgs/horse06.raw", 400, 400, true);
 
 
 
 
-    grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3<float>(10, 10, 10), Color4<float>(1.0, 1.0, 1.0, 1.0), horses, 1, 30, 30);
-    //grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3<float>(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), skyTextures, textureScales, 5, 5);
+    grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3f(10, 10, 10),
+            Color4<float>(1.0, 1.0, 1.0, 1.0), horses, textureScales, 7, 7);
+    //grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3f(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), skyTextures, textureScales, 5, 5);
 
     texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
     // filter texture image
@@ -190,8 +216,7 @@ void setGeom() {
     // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
     // texScape = Texture2(data, 1024, 768, true);
 
-    sf::Image img;
-    img.loadFromFile("imgs/graham.jpg");
+
 
 
     // test for color storage
@@ -212,8 +237,8 @@ void setGeom() {
     packed c;
     c.i = 3232235881UL;
 
-   // printf("%d\n", c.col.r);
-   // std::cout << "c.col.r = " << int(c.col.r) << std::endl;
+    // printf("%d\n", c.col.r);
+    // std::cout << "c.col.r = " << int(c.col.r) << std::endl;
     // end test
 
 
@@ -223,10 +248,10 @@ void setGeom() {
     //texScape = Texture2(label, 1024, 768, true);
 
     /*plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
-            Dimension3<float>(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, tex4);*/
+            Dimension3f(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, tex4);*/
     //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
-    // Dimension3<float>(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
+    // Dimension3f(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
     // test spline curve
     std::vector<Vector3> cps;
@@ -255,7 +280,7 @@ void setGeom() {
     int totalSegCount = (controlPts - 1) * interpDetail + controlPts;
     std::vector<float> radii;
     radii.resize(totalSegCount);
-    std::vector< Color4<float> > cols;
+    std::vector< Color4f > cols;
     cols.resize(totalSegCount);
 
 
@@ -269,11 +294,11 @@ void setGeom() {
         // mult colors
         static float r = 0.0, g = 0.0, b = 0.0, a = 1.0;
         static float nudger = 1.0 / totalSegCount;
-        cols.at(i) = Color4<float>(r += nudger, g += nudger, b += nudger, a);
+        cols.at(i) = Color4f(r += nudger, g += nudger, b += nudger, a);
     }
 
-    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
-    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3<float>(40, 40, 40), cols, spline, radii, 24);
+    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3f(40, 40, 40), Color4<float>(0.7, 0.2, 0.3, 1.0), spline, radii, 24);
+    //Tube tube(Vector3(0, 0, -200), Vector3(0, 0, 0), Dimension3f(40, 40, 40), cols, spline, radii, 24);
 
     // tube around toroid
     interpDetail = 3;
@@ -320,14 +345,14 @@ void setGeom() {
         // mult colors
         static float r = 0.0, g = 0.0, b = 0.0, a = 1.0;
         static float nudger = 1.0 / totalSegCount;
-        cols.at(i) = Color4<float>(r += nudger, g += nudger, b += nudger, a);
+        cols.at(i) = Color4f(r += nudger, g += nudger, b += nudger, a);
     }
 
     Spline3 spline2(cps2, interpDetail, false, smoothness);
-    //tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3<float>(30, 30, 30), cols, spline2, radii, 18);
+    //tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3f(30, 30, 30), cols, spline2, radii, 18);
 
     block = Block(Vector3(0, 0, 0), Vector3(100, 180, 0),
-            Dimension3<float>(60, 60, 60), Color4<float>(.9, 1.0, 1.0, .75), 1);
+            Dimension3f(60, 60, 60), Color4f(.9, 1.0, 1.0, .75), 1);
 }
 
 //============================================================================
@@ -516,16 +541,16 @@ void draw() {
     std::cout << "loc4 = " << loc4 << std::endl;
      */
     glPushMatrix();
-    
+
     gluLookAt(0, 0, -17, 0, 0, 0, 0, -1, 0);
-    
-    
+
+
 
     glTranslatef(transX, transY, transZ);
     glRotatef(liveRotX, 0, 1, 0);
     glRotatef(liveRotY, 1, 0, 0);
-    
-    
+
+
 
 
     glDisable(GL_TEXTURE_2D);
@@ -535,7 +560,7 @@ void draw() {
     //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     shader.unbind();
 
-    
+
     glEnable(GL_TEXTURE_2D);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     //   toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);

@@ -13,6 +13,7 @@
 #include "Color3.h"
 #include "Color4.h"
 
+
 namespace proto {
 
     class Image {
@@ -25,8 +26,8 @@ namespace proto {
 
 
     private:
-        std::vector< Color3<unsigned char> > pixels3;
-        std::vector< Color4<unsigned char> > pixels4;
+        std::vector< Color3b > pixels3;
+        std::vector< Color4b > pixels4;
 
     };
 

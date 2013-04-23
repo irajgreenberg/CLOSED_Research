@@ -55,6 +55,11 @@ namespace proto {
         }
 
     };
+    
+        // most common usages
+    #define Color3f Color3<float>
+    #define Color3b Color3<unsigned char>
+    #define Color3i Color3<int>
 }
 
 #endif /* defined(__SFML_simple_renderer_06__Color3__) */

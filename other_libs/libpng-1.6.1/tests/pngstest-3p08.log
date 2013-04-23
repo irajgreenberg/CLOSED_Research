@@ -1,0 +1,7 @@
+PASS: --strict ./contrib/pngsuite/basn3p08.png
+PASS: --strict ./contrib/pngsuite/ftbbn3p08.png
+PASS: --strict ./contrib/pngsuite/ftbgn3p08.png
+PASS: --strict ./contrib/pngsuite/ftbwn3p08.png
+PASS: --strict ./contrib/pngsuite/ftbyn3p08.png
+PASS: --strict ./contrib/pngsuite/ftp0n3p08.png
+PASS: --strict ./contrib/pngsuite/ftp1n3p08.png

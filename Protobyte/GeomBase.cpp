@@ -16,21 +16,21 @@ GeomBase::GeomBase() {
 
 // pass array of colors
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4) :
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size, const Color4f col4) :
 pos(pos), rot(rot), size(size), col4(col4){
 }
 
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const std::vector< Color4<float> > col4s) :
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size, const std::vector< Color4f > col4s) :
 pos(pos), rot(rot), size(size), col4s(col4s) {
 }
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size, const Color4<float> col4, float textureScale) :
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size, const Color4f col4, float textureScale) :
 pos(pos), rot(rot), size(size), col4(col4), textureScale(textureScale) {
 }
 
-GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3<float> size,
-        const std::vector< Color4<float> > col4s, float textureScale) :
+GeomBase::GeomBase(const Vector3& pos, const Vector3& rot, const Dimension3f size,
+        const std::vector< Color4f > col4s, float textureScale) :
 pos(pos), rot(rot), size(size), col4s(col4s), textureScale(textureScale) {
 }
 
@@ -344,7 +344,7 @@ void GeomBase::rotate(const Vector3& r) {
     rot += r;
 }
 
-void GeomBase::scale(const Dimension3<float>& s) {
+void GeomBase::scale(const Dimension3f& s) {
     size += s;
 }
 

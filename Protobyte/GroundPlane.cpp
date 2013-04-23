@@ -60,7 +60,8 @@ void GroundPlane::calcVerts() {
             z = -.5 + rowSpan * i;
 
             if (i > 0 && i < rows - 1 && j != 0 && j < columns - 1) {
-                y = proto::Math::random(.7);
+                //y = proto::Math::random(.7);
+                y = abs(sin((i*columns+j)*M_PI/180.0)*.8)+abs(cos((j*rows+i)*M_PI/180.0)*03)+proto::Math::random(-.8, .8);
             } else {
                 y = 0;
             }
@@ -91,7 +92,7 @@ void GroundPlane::calcVerts() {
          }
 
          for (int i = 0; i < verts.size(); ++i) {
-             //verts.at(i).pos.y = avgData[i]*.2;
+             verts.at(i).pos.y = avgData[i]*.2;
          }
 
 

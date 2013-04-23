@@ -1,0 +1,4 @@
+Gamma correction with sBIT:
+ 16 bit gray:  0.74058
+ 16 bit color: 0.74058
+PASS: pngvalid --gamma-sbit (floating point arithmetic)
