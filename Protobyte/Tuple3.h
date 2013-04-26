@@ -15,6 +15,8 @@
 #ifndef Protobyte_iig001_Tuple3_h
 #define Protobyte_iig001_Tuple3_h
 
+#include <iostream>
+
 namespace proto {
 
     template <class T>
@@ -28,7 +30,20 @@ namespace proto {
 
         }
 
+       // std::ostream& operator<<(std::ostream& out, const Tuple3<T>& tuple3);
+
     };
+
+#define Tuple3f Tuple3<float>
+#define Tuple3i Tuple3<int>
+#define Tuple3b Tuple3<unsigned char>
+
+    template<typename T>
+    std::ostream& operator<<(std::ostream& out, const Tuple3<T>& tuple3) {
+        out << tuple3.elem0 << ", " << tuple3.elem1 << ", " << tuple3.elem2;
+        return out;
+    }
+
 
 }
 

@@ -31,5 +31,9 @@ namespace proto {
 
     };
 
+#define Tuple2f Tuple2<float>
+#define Tuple2i Tuple2<int>
+#define Tuple2b Tuple2<unsigned char>
+
 }
 #endif

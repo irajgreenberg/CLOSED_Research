@@ -32,6 +32,8 @@
       <itemPath>Protobyte/IGConstants.h</itemPath>
       <itemPath>Protobyte/Image.cpp</itemPath>
       <itemPath>Protobyte/Image.h</itemPath>
+      <itemPath>Protobyte/Lindenmayer.cpp</itemPath>
+      <itemPath>Protobyte/Lindenmayer.h</itemPath>
       <itemPath>Protobyte/Math.h</itemPath>
       <itemPath>Protobyte/Matrix3.cpp</itemPath>
       <itemPath>Protobyte/Matrix3.h</itemPath>
@@ -39,6 +41,8 @@
       <itemPath>Protobyte/Matrix4.h</itemPath>
       <itemPath>Protobyte/Shader.cpp</itemPath>
       <itemPath>Protobyte/Shader.h</itemPath>
+      <itemPath>Protobyte/Sphere.cpp</itemPath>
+      <itemPath>Protobyte/Sphere.h</itemPath>
       <itemPath>Protobyte/Spline3.cpp</itemPath>
       <itemPath>Protobyte/Spline3.h</itemPath>
       <itemPath>Protobyte/Tendril.cpp</itemPath>

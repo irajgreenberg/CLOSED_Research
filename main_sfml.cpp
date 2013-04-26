@@ -34,6 +34,7 @@
 #include "Protobyte/Block.h"
 #include "Protobyte/BlockGrid.h"
 #include "Protobyte/GroundPlane.h"
+#include "Protobyte/Sphere.h"
 
 #include "Protobyte/utilityFunctions.h"
 
@@ -123,6 +124,8 @@ BlockGrid grid;
 std::vector<Texture2> skyTextures;
 std::vector<Texture2> horses;
 
+Sphere sphere;
+
 /**********************************
  *       FUNCTION PROTOTYPES      *
  *********************************/
@@ -142,42 +145,46 @@ void draw();
 
 
 void setGeom() {
-   /* Image tests not fully implemented
-    *  sf::Image img;
-    img.loadFromFile("imgs/graham.jpg");
+    /*******************************************
+     *    Image loading tests for texturing    *
+     *    using SFML library ONLY in main      *
+     *******************************************/
 
+    // load image using SFML
+    sf::Image img;
+    img.loadFromFile("resources/imgs/graham.jpg");
     int w = img.getSize().x;
     int h = img.getSize().y;
-    std::cout << " w = " << w << std::endl;
-    std::cout << " h = " << h << std::endl;
-    std::vector<unsigned char> testImg;
-   
-    testImg.resize(w * h * 3);
-     std::cout << " testImg.size() = " << testImg.size() << std::endl;
 
+    // Send pointer to packed 32 bit integer (stored ABGR)
+    int* imgPixels_ptr = (int*) (img.getPixelsPtr());
+    tex2 = Texture2(imgPixels_ptr, w, h, true);
+
+
+    // Send vector of unsigned chars
+    std::vector<unsigned char> imgPixels_vector;
+    imgPixels_vector.resize(w * h * 3);
     int k = 0;
     for (int i = 0; i < h; ++i) {
         for (int j = 0; j < w; ++j) {
-           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).r);
-           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).g);
-           // testImg.at(k++) = (unsigned char)(img.getPixel(i, j).b);
+            imgPixels_vector.at(k++) = (unsigned char) (img.getPixel(j, i).r);
+            imgPixels_vector.at(k++) = (unsigned char) (img.getPixel(j, i).g);
+            imgPixels_vector.at(k++) = (unsigned char) (img.getPixel(j, i).b);
         }
     }
-     END Image Tests */
+    tex3 = Texture2(imgPixels_vector, w, h, true);
 
-
-
-    tex2 = Texture2("resources/imgs/shipPlate.raw", 400, 300, true);
-    tex3 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
+    // Load raw format processed internally
     tex4 = Texture2("resources/imgs/glassCubes.raw", 400, 400, true);
-    //tex4 = Texture2("resources/imgs/ship_plate.raw", 256, 256, true);
-    //tex2 = Texture2("resources/imgs/white_texture.raw", 256, 256, true);
+    texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
 
-    //toroid = Toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
-    //Dimension3f(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 10, 10, .87, .22);
 
-    /*  grid  */
 
+
+    toroid = Toroid(Vector3(0, 0, 0), Vector3(100, 180, 0),
+            Dimension3f(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), 30, 30, .87, .22);
+
+    /*  BlockGrid  */
     skyTextures.resize(6);
     skyTextures.at(0) = Texture2("resources/imgs/clouds_01.raw", 400, 400, true);
     skyTextures.at(1) = Texture2("resources/imgs/clouds_02.raw", 400, 400, true);
@@ -189,7 +196,7 @@ void setGeom() {
     std::vector<float> textureScales;
     textureScales.resize(6);
     textureScales.at(0) = 1;
-    textureScales.at(1) = 2;
+    textureScales.at(1) = .5;
     textureScales.at(2) = 3;
     textureScales.at(3) = 4;
     textureScales.at(4) = 5;
@@ -207,20 +214,10 @@ void setGeom() {
 
 
     grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3f(10, 10, 10),
-            Color4<float>(1.0, 1.0, 1.0, 1.0), horses, textureScales, 7, 7);
-    //grid = BlockGrid(Vector3(0, 0, 0), Vector3(0, 0, 0), Dimension3f(30, 30, 30), Color4<float>(0.9, 0.1, 0.1, .75), skyTextures, textureScales, 5, 5);
-
-    texScape = Texture2("resources/imgs/graham.raw", 1024, 768, true);
-    // filter texture image
-    //unsigned char* data = new unsigned char[1024*768*3];
-    // loadRaw("resources/imgs/graham.raw", 1024, 768, data);
-    // texScape = Texture2(data, 1024, 768, true);
-
-
-
+            Color4<float>(1.0, 1.0, 1.0, 1.0), tex3, 1, 7, 7);
 
     // test for color storage
-    // better than bitwise ops
+    // supposdly better than bitwise ops
 
     typedef struct packed_int {
         unsigned char r;
@@ -237,19 +234,8 @@ void setGeom() {
     packed c;
     c.i = 3232235881UL;
 
-    // printf("%d\n", c.col.r);
-    // std::cout << "c.col.r = " << int(c.col.r) << std::endl;
-    // end test
 
 
-
-    //unsigned char* label = (unsigned char*) img.getPixelsPtr();
-
-    //texScape = Texture2(label, 1024, 768, true);
-
-    /*plane = GroundPlane(Vector3(0, 0, 0), Vector3(180, 0, 0),
-            Dimension3f(150, 1, 150), Color4<float>(.3, .3, .3, 1.0), 64, 64, tex4);*/
-    //delete [] data;
     // toroid2 = Toroid(Vector3(0, 0, -60), Vector3(100, 180, 0),
     // Dimension3f(30, 30, 30), Color4<float>(0.3, 0.3, 0.8, .85), 60, 60, .87, .22, tex);
 
@@ -353,6 +339,9 @@ void setGeom() {
 
     block = Block(Vector3(0, 0, 0), Vector3(100, 180, 0),
             Dimension3f(60, 60, 60), Color4f(.9, 1.0, 1.0, .75), 1);
+    
+    sphere = Sphere(Vector3(0, 0, 0), Vector3(0,0,0),
+            Dimension3f(10, 10, 10), Color4f(.9, 1.0, 1.0, 1.0), 1, 4, 4);
 }
 
 //============================================================================
@@ -542,13 +531,14 @@ void draw() {
      */
     glPushMatrix();
 
-    gluLookAt(0, 0, -17, 0, 0, 0, 0, -1, 0);
 
 
-
+    gluLookAt(0, 0, -157, 0, 0, 0, 0, -1, 0);
     glTranslatef(transX, transY, transZ);
     glRotatef(liveRotX, 0, 1, 0);
     glRotatef(liveRotY, 1, 0, 0);
+
+
 
 
 
@@ -562,19 +552,22 @@ void draw() {
 
 
     glEnable(GL_TEXTURE_2D);
-    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+    glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     //   toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
 
     glShadeModel(GL_FLAT);
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-    glBindTexture(GL_TEXTURE_2D, tex4.getTextureID());
+    glBindTexture(GL_TEXTURE_2D, tex2.getTextureID());
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     glShadeModel(GL_SMOOTH); // smooth by default
 
-    grid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-    //
+    //grid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
+   
+    //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+    
+    sphere.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
     //shader.unbind();
 
     glPopMatrix();

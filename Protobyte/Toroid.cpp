@@ -41,7 +41,7 @@ void Toroid::calcVerts() {
 
                     // fill vertices with floats
             verts.push_back( Vertex(Vector3(x2, y, z2), 
-                        Color4<float>(col4.getR(), col4.getG(), col4.getB(), col4.getA()), Tuple2<float>(x2*4, y*4)));
+                        Color4f(col4.getR(), col4.getG(), col4.getB(), col4.getA()), Tuple2f(x2*.5, z2*.5)));
 
             theta += float(M_PI * 2 / ringDetail);
         }
@@ -68,24 +68,24 @@ void Toroid::calcInds() {
 
             if (i < ringCount - 1) {
                 if (j < ringDetail - 1) {
-                    inds.push_back(Tuple3<int>(i0, i2, i3));
-                    inds.push_back(Tuple3<int>(i0, i3, i1));
+                    inds.push_back(Tuple3i(i0, i2, i3));
+                    inds.push_back(Tuple3i(i0, i3, i1));
 
                 } else {
                     // j+1 = 0
-                    inds.push_back(Tuple3<int>(i0, i5, i7));
-                    inds.push_back(Tuple3<int>(i0, i7, i1));
+                    inds.push_back(Tuple3i(i0, i5, i7));
+                    inds.push_back(Tuple3i(i0, i7, i1));
                 }
             } else {
                 if (j < ringDetail - 1) {
                     //i+1 = 0// HERE
-                    inds.push_back(Tuple3<int>(i0, i2, i8));
-                    inds.push_back(Tuple3<int>(i0, i8, i4));
+                    inds.push_back(Tuple3i(i0, i2, i8));
+                    inds.push_back(Tuple3i(i0, i8, i4));
 
                 } else {
                     //i+1 =0, j+1 = 0
-                    inds.push_back(Tuple3<int>(i0, i5, 0));
-                    inds.push_back(Tuple3<int>(i0, 0, i4));
+                    inds.push_back(Tuple3i(i0, i5, 0));
+                    inds.push_back(Tuple3i(i0, 0, i4));
                 }
             }
         }

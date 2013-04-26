@@ -38,9 +38,9 @@ namespace proto {
 
     class BlockGrid {
     private:
+        int rows, columns;
         std::vector<Texture2> textures;
         std::vector<float> textureScales;
-        int rows, columns;
         std::vector<GroundPlane> planes;
 
     public:
@@ -53,7 +53,12 @@ namespace proto {
         /*!
          * Constructor */
         BlockGrid(const Vector3& pos, const Vector3& rot, const Dimension3f& size,
-                const Color4<float>& col4, Texture2 tex2, int rows, int columns);
+                const Color4<float>& col4, const Texture2& tex2, int rows, int columns);
+
+        /*!
+         * Constructor */
+        BlockGrid(const Vector3& pos, const Vector3& rot, const Dimension3f& size,
+                const Color4<float>& col4, const Texture2& tex2, float textureScale, int rows, int columns);
 
         /*!
          * Constructor */
@@ -63,13 +68,18 @@ namespace proto {
         /*!
          * Constructor */
         BlockGrid(const Vector3& pos, const Vector3& rot, const Dimension3f& size,
+                const Color4<float>& col4, const Texture2& tex2, std::vector<float>& textureScales, int rows, int columns);
+
+        /*!
+         * Constructor */
+        BlockGrid(const Vector3& pos, const Vector3& rot, const Dimension3f& size,
                 const Color4<float>& col4, const std::vector<Texture2>& textures, std::vector<float> textureScales, int rows, int columns);
 
-        
+
         /*!
          * Delegates calls to display() on composed GroundPlanes */
         void display(GeomBase::displayMode mode, GeomBase::renderMode render);
-        
+
         /*!
          * Accessor and mutator prototypes*/
         void setColumns(int columns);

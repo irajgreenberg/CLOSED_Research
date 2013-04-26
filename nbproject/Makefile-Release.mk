@@ -45,6 +45,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main_sfml.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/Texture2.o \
+	${OBJECTDIR}/Protobyte/Lindenmayer.o \
 	${OBJECTDIR}/Protobyte/Matrix4.o \
 	${OBJECTDIR}/Protobyte/GeomBase.o \
 	${OBJECTDIR}/Protobyte/GroundPlane.o \
@@ -56,6 +57,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/BlockGrid.o \
 	${OBJECTDIR}/Protobyte/ConvolveFilter.o \
 	${OBJECTDIR}/Protobyte/Branch.o \
+	${OBJECTDIR}/Protobyte/Sphere.o \
 	${OBJECTDIR}/Protobyte/Block.o \
 	${OBJECTDIR}/Protobyte/FilterBase.o
 
@@ -144,6 +146,11 @@ ${OBJECTDIR}/Protobyte/Texture2.o: Protobyte/Texture2.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Texture2.o Protobyte/Texture2.cpp
 
+${OBJECTDIR}/Protobyte/Lindenmayer.o: Protobyte/Lindenmayer.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Lindenmayer.o Protobyte/Lindenmayer.cpp
+
 ${OBJECTDIR}/Protobyte/Matrix4.o: Protobyte/Matrix4.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
@@ -198,6 +205,11 @@ ${OBJECTDIR}/Protobyte/Branch.o: Protobyte/Branch.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Branch.o Protobyte/Branch.cpp
+
+${OBJECTDIR}/Protobyte/Sphere.o: Protobyte/Sphere.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Protobyte
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Sphere.o Protobyte/Sphere.cpp
 
 ${OBJECTDIR}/Protobyte/Block.o: Protobyte/Block.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte

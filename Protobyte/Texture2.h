@@ -36,6 +36,8 @@ namespace proto {
         Texture2();
         Texture2(const std::string& textureURL, GLuint w, GLuint h, bool isWrap);
         Texture2(unsigned char*& data, GLuint w, GLuint h, bool isWrap);
+        Texture2(std::vector<unsigned char>& data, GLuint w, GLuint h, bool isWrap);
+        Texture2(const int* packedData32, GLuint w, GLuint h, bool isWrap);
 
         // getters/setters
         void setH(GLuint h);

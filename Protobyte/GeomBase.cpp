@@ -184,10 +184,15 @@ void GeomBase::fillDisplayLists() {
 /* NOTE:: Drawing will eventually get delegated to a 
  world type class, to enable aggregate face sorting and 
  and primitive processing*/
-void GeomBase::display(displayMode mode, renderMode render) {
+void GeomBase::display(displayMode mode, renderMode render, float pointSize) {
     switch (render) {
-        case WIREFRAME:
+        case POINT_CLOUD:
+            glDisable(GL_CULL_FACE);
+            glDisable(GL_LIGHTING);
+            glPointSize(pointSize);
+            break;
 
+        case WIREFRAME:
             glDisable(GL_CULL_FACE);
             glDisable(GL_LIGHTING);
             glLineWidth(1.0f);
@@ -206,16 +211,16 @@ void GeomBase::display(displayMode mode, renderMode render) {
     static float rz = .04;
     glPushMatrix();
     //glLoadIdentity();
-   
-    glTranslatef(pos.x, pos.y, pos.z); 
+
+    glTranslatef(pos.x, pos.y, pos.z);
     glRotatef(rot.x, 1, 0, 0); // x-axis
     glRotatef(rot.y, 0, 1, 0); // y-axis
     glRotatef(rot.z, 0, 0, 1); // z-axis
     glScalef(size.w, size.h, size.d);
-     
-   
-    
-    
+
+
+
+
     //rot.x += rx;
     //rot.y += ry;
     //rot.z += rz;
@@ -253,7 +258,13 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glVertexPointer(3, GL_FLOAT, 0, &vertPrims[0]);
             glTexCoordPointer(2, GL_FLOAT, 0, &texturePrims[0]);
 
-            glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+            if (render == POINT_CLOUD) {
+                glDrawElements(GL_POINTS, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+            } else {
+                glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+
+
+            }
 
             // deactivate arrays after drawing
             glDisableClientState(GL_VERTEX_ARRAY); // disable vertex arrays
@@ -282,7 +293,11 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glColorPointer(4, GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0] + 6);
             glTexCoordPointer(2, GL_FLOAT, 12 * sizeof (GLfloat), &interleavedPrims[0] + 10);
 
-            glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+            if (render == POINT_CLOUD) {
+                glDrawElements(GL_POINTS, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+            } else {
+                glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, &indPrims[0]);
+            }
 
             // disable stuff
             glDisableClientState(GL_NORMAL_ARRAY);
@@ -315,7 +330,11 @@ void GeomBase::display(displayMode mode, renderMode render) {
             glColorPointer(4, GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(24)); // step over 6 bytes
             glTexCoordPointer(2, GL_FLOAT, 12 * sizeof (GLfloat), BUFFER_OFFSET(40)); // step over 10 bytes
 
-            glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, BUFFER_OFFSET(0));
+            if (render == POINT_CLOUD) {
+                glDrawElements(GL_POINTS, inds.size()*3, GL_UNSIGNED_INT, BUFFER_OFFSET(0));
+            } else {
+                glDrawElements(GL_TRIANGLES, inds.size()*3, GL_UNSIGNED_INT, BUFFER_OFFSET(0));
+            }
 
             glDisableClientState(GL_NORMAL_ARRAY);
             glDisableClientState(GL_COLOR_ARRAY);

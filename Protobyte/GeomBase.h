@@ -106,6 +106,7 @@ namespace proto {
         };
 
         enum renderMode {
+            POINT_CLOUD,
             WIREFRAME, // begin at 0
             SURFACE
         };
@@ -131,7 +132,7 @@ namespace proto {
         virtual void scale(const Dimension3f& s);
 
         // vertex arrays are implemented by default
-        virtual void display(displayMode mode = VERTEX_ARRAY, renderMode render = SURFACE);
+        virtual void display(displayMode mode = VERTEX_ARRAY, renderMode render = SURFACE, float pointSize = 3.5f);
 
         // setters/getters
         virtual void setPosition(const Vector3& pos);
