@@ -29,6 +29,7 @@
 #include <ctime>
 //#include <OpenGL.framework/headers/gl.h>
 #include "Protobyte/Math.h"
+#include "Protobyte/Color4.h"
 #include "Protobyte/Shader.h"
 #include "Protobyte/Texture2.h"
 #include "Protobyte/Block.h"
@@ -46,13 +47,13 @@ using namespace proto;
  *********************************/
 struct WindowValues {
     // constructor
-
-    WindowValues() : x(0), y(0), w(1028), h(768),
+    WindowValues() : x(0), y(0), w(800), h(800), bgCol(0.0, 0.0, 0.0, 1.0),
     title("Protobyte Library .0001a"), fovAngle(65),
     nearClipPlane(.1f), farClipPlane(5000), running(true) {
     }
     //fields
     int x, y, w, h;
+    Color4f bgCol;
     std::string title;
     float fovAngle;
     float nearClipPlane;
@@ -101,11 +102,11 @@ static Shader shader;
 GLfloat light01_ambient[] = {0.3, 0.1, 0.1, 1.0};
 GLfloat light01_diffuse[] = {.85, .85, .85, 1.0};
 GLfloat light01_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_position[] = {.2, 4.0, 5.0, 0.0};
+GLfloat light01_position[] = {-20, 10, 5.0, 0.0};
 
 //materials
 GLfloat light01_mat_specular[] = {1.0, 1.0, 1.0, 1.0};
-GLfloat light01_mat_shininess[] = {128}; // max 128
+GLfloat light01_mat_shininess[] = {109}; // max 128
 
 Toroid toroid;
 Tube tube2;
@@ -152,7 +153,7 @@ void setGeom() {
 
     // load image using SFML
     sf::Image img;
-    img.loadFromFile("resources/imgs/graham.jpg");
+    img.loadFromFile("resources/imgs/earth.jpg");
     int w = img.getSize().x;
     int h = img.getSize().y;
 
@@ -334,14 +335,26 @@ void setGeom() {
         cols.at(i) = Color4f(r += nudger, g += nudger, b += nudger, a);
     }
 
-    Spline3 spline2(cps2, interpDetail, false, smoothness);
-    //tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3f(30, 30, 30), cols, spline2, radii, 18);
+    //Spline3 spline2(cps2, interpDetail, false, smoothness);
+    
+    std::vector<Vector3> path;
+    path.resize(100);
+    float ht = -10;
+    float ang = 0.0;
+    
+    for(int i=0; i<100; i++) {
+       path.at(i) = Vector3(sin(ang)*2, ht+=1, cos(ang)*2);
+       ang += 5*M_PI/180.0;
+    }
+    
+    Spline3 spline2(path, interpDetail, false, smoothness);
+    tube2 = Tube(Vector3(0, 0, 0), Vector3(100, 180, 0), Dimension3f(30, 30, 30), cols, spline2, 12, 12);
 
     block = Block(Vector3(0, 0, 0), Vector3(100, 180, 0),
             Dimension3f(60, 60, 60), Color4f(.9, 1.0, 1.0, .75), 1);
     
-    sphere = Sphere(Vector3(0, 0, 0), Vector3(0,0,0),
-            Dimension3f(10, 10, 10), Color4f(.9, 1.0, 1.0, 1.0), 1, 4, 4);
+    sphere = Sphere(Vector3(0, 0, 0), Vector3(180,0,0),
+            Dimension3f(10, 10, 10), Color4f(.9, .5, .2, 1.0), 1, 36, 36);
 }
 
 //============================================================================
@@ -454,7 +467,7 @@ void initGL() {
     glBindTexture(GL_TEXTURE_2D, tex4.getTextureID());
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
 
-    glClearColor(.2, 1, 1, 1); // background color
+    glClearColor(win.bgCol.getR(), win.bgCol.getG(), win.bgCol.getB(), win.bgCol.getA()); // background color
     glClearStencil(0); // clear stencil buffer
     glClearDepth(1.0f); // 0 is near, 1 is far
     glDepthFunc(GL_LEQUAL);
@@ -481,7 +494,7 @@ void resize() {
     glLoadIdentity();
 
     // Define a viewing transformation
-    gluLookAt(0, 0, 5, 0, 0, 0, 0, 1, 0);
+    gluLookAt(0, 0, 100, 0, 0, 0, 0, 1, 0);
 }
 
 void draw() {
@@ -533,7 +546,7 @@ void draw() {
 
 
 
-    gluLookAt(0, 0, -157, 0, 0, 0, 0, -1, 0);
+    gluLookAt(0, 0, 150, 0, 0, 0, 0, -1, 0);
     glTranslatef(transX, transY, transZ);
     glRotatef(liveRotX, 0, 1, 0);
     glRotatef(liveRotY, 1, 0, 0);
@@ -544,11 +557,11 @@ void draw() {
 
 
     glDisable(GL_TEXTURE_2D);
-    shader.bind();
+    //shader.bind();
     //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
 
-    //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-    shader.unbind();
+    //tube2.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+    //shader.unbind();
 
 
     glEnable(GL_TEXTURE_2D);
@@ -561,13 +574,15 @@ void draw() {
     glBindTexture(GL_TEXTURE_2D, tex2.getTextureID());
     //glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL);
     //block.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
-    glShadeModel(GL_SMOOTH); // smooth by default
+    //glShadeModel(GL_SMOOTH); // smooth by default
 
     //grid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
    
     //toroid.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
     
-    sphere.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::WIREFRAME);
+    //glDisable(GL_TEXTURE_2D);
+    //shader.bind();
+    sphere.display(GeomBase::VERTEX_BUFFER_OBJECT, GeomBase::SURFACE);
     //shader.unbind();
 
     glPopMatrix();

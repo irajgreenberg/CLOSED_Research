@@ -34,6 +34,12 @@ namespace proto {
 #define Tuple2f Tuple2<float>
 #define Tuple2i Tuple2<int>
 #define Tuple2b Tuple2<unsigned char>
+    
+    template<typename T>
+    std::ostream& operator<<(std::ostream& out, const Tuple2<T>& tuple2) {
+        out << tuple2.elem0 << ", " << tuple2.elem1;
+        return out;
+    }
 
 }
 #endif

@@ -22,9 +22,13 @@ namespace proto {
         Sphere(const Vector3& pos, const Vector3& rot, const Dimension3f size,
                 const Color4f col4, float textureScale, int spines, int spineNodes);
 
-        //void init(); // temp override
+//        void init(); // temp override
         void calcVerts();
         void calcInds();
+        
+        // testing only 
+        void calcVerts2();
+        void calcInds2();
 
     private:
         int spines;
