@@ -181,7 +181,7 @@ void GeomBase::fillDisplayLists() {
 }
 // Includes multiple display implementations
 
-/* NOTE:: Drawing will eventually get delegated to a 
+/* NOTE:: Drawing will/MAY eventually get delegated to a 
  world type class, to enable aggregate face sorting and 
  and primitive processing*/
 void GeomBase::display(displayMode mode, renderMode render, float pointSize) {

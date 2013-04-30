@@ -22,6 +22,12 @@ namespace proto {
         return Vector3(lhs) += rhs;
     }
 
+    Vector3 operator-(const Vector3& rhs)
+    // postcondition: returns lhs -= rhs
+    {
+        return Vector3(-rhs.x, -rhs.y, -rhs.z);
+    }
+    
     Vector3 operator-(const Vector3& lhs, const Vector3& rhs)
     // postcondition: returns lhs -= rhs
     {
@@ -32,6 +38,11 @@ namespace proto {
     // postcondition: returns lhs *= rhs
     {
         return Vector3(lhs) *= rhs;
+    }
+    
+    Vector3 operator*(double lhs, const Vector3& rhs)
+    {
+        return Vector3(rhs) *= lhs;
     }
 
     Vector3 operator*(const Vector3& lhs, const Vector3& rhs)

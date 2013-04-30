@@ -31,9 +31,11 @@ namespace proto {
     class Vector3; // forward declare class for non-member prototypes
 
     Vector3 operator+(const Vector3& lhs, const Vector3& rhs);
+    Vector3 operator-(const Vector3& rhs);
     Vector3 operator-(const Vector3& lhs, const Vector3& rhs);
     Vector3 operator*(const Vector3& lhs, const Vector3& vrhs);
-    Vector3 operator*(const Vector3& lhs, double rhs);
+    Vector3 operator*(const Vector3& lhs, double rhs); // is this Kosher?
+    Vector3 operator*(double lhs, const Vector3& rhs);
     Vector3 operator/(const Vector3& lhs, const Vector3& rhs);
     Vector3 cross(const Vector3& lhs, const Vector3& rhs);
     double mag(const Vector3& v);

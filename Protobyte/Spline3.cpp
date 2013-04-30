@@ -22,8 +22,10 @@ using namespace proto;
  */
 
 
-Spline3::Spline3() {}
+Spline3::Spline3() {
+}
 
+// requires 4 control points to work
 
 Spline3::Spline3(const std::vector<Vector3>& controlPts, int interpDetail, bool isCurveClosed, float smoothness) :
 Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
@@ -34,33 +36,16 @@ Curve3(controlPts, interpDetail, isCurveClosed), smoothness(smoothness) {
  * Calculate the interpolated curve points populating the uniqueVerts array.
  */
 void Spline3::init() {
-    for (int i = 0; i < controlPts.size(); i++) {
-        //std::cout << "pre: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
-    }
+
 
 
     // double up first and last control points
     controlPts.insert(controlPts.begin(), controlPts.at(0));
     controlPts.push_back(controlPts.at(controlPts.size() - 1));
 
-    /*
-    // add begin and end points based on vectors v1-v0 and v(n-1)-vn
-    Vector3 delta = controlPts.at(1);
-    delta -= controlPts.at(0);
-    Vector3 newVec = controlPts.at(0) - delta;
-    controlPts.insert(controlPts.begin(), newVec);
-
-    delta = controlPts.at(controlPts.size() - 2);
-    delta -= controlPts.at(controlPts.size() - 1);
-    newVec = controlPts.at(controlPts.size() - 1) - delta;
-    controlPts.push_back(newVec);
-     */
-
-    for (int i = 0; i < controlPts.size(); i++) {
-        //std::cout << "Post: controlPts.at(" << i << ") = " << controlPts.at(i) << std::endl;
-    }
-
+ 
     Vector3 v0, v1, v2, v3;
+    float t2 = 0, t3 = 0;
     float step = 1.0 / (interpDetail + 1);
 
     for (int i = 0; i < controlPts.size() - 3; i++) {
@@ -70,20 +55,22 @@ void Spline3::init() {
         v3 = controlPts.at(i + 3);
 
         for (float t = 0; t < 1; t += step) {
-            // new point between vn-vn+1
-            Vector3 pt = (
-                    ((v0*-1) + (v1 * 3) - (v2 * 3) + v3) * (t * t * t) +
-                    ((v0 * 2) - (v1 * 5) + (v2 * 4) - v3) * (t * t) +
-                    ((v0*-1) + v2) * t +
-                    v1 * 2) * smoothness;
-            verts.push_back(pt);
+            t2 = t*t;
+            t3 = t2*t;
+            // from: http://www.mvps.org/directx/articles/catmull/
+            Vector3 v = smoothness * ((2 * v1) +
+                    (-v0 + v2) * t +
+                    (2 * v0 - 5 * v1 + 4 * v2 - v3) * t2 +
+                    (-v0 + 3 * v1 - 3 * v2 + v3) * t3);
+
+                    verts.push_back(v);
         }
     }
     // add last control point to verts vector
     verts.push_back(controlPts.at(controlPts.size() - 2));
 
     for (int i = 0; i < verts.size(); i++) {
-        //  std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
+        std::cout << "verts.at(" << i << ") = " << verts.at(i) << std::endl;
     }
     /* ensure tube section don't flip */
     parallelTransport();
@@ -116,6 +103,11 @@ void Spline3::setTerminalSmooth(bool isTerminalSmooth) {
  *
  */
 void Spline3::display() {
+
+    glDisable(GL_CULL_FACE);
+    glDisable(GL_LIGHTING);
+    glLineWidth(4.0f);
+    glColor3f(1, 1, 0);
     // int len = vertsLength;
     glBegin(GL_LINE_STRIP);
     glColor3f(1, 1, 0);
@@ -134,6 +126,30 @@ void Spline3::display() {
         }
     }
     glEnd();
+
+
+    //Start VBO's
+    //    glDisable(GL_CULL_FACE);
+    //    glDisable(GL_LIGHTING);
+    //    glLineWidth(4.0f);
+    //    glColor3f(1, 1, 0);
+    //    
+    //    unsigned int vboID = 0;
+    //    glGenBuffers(1, &vboID);
+    //    glBindBuffer(GL_ARRAY_BUFFER, vboID);
+    //    glBufferData(GL_ARRAY_BUFFER, sizeof(verts.size()) * 4 * sizeof(float), &verts[0], GL_STATIC_DRAW);
+    //
+    //    glEnableClientState(GL_VERTEX_ARRAY);
+    //    glVertexPointer(3, GL_FLOAT, 0, &verts[0]);
+    //
+    //    glDrawArrays(GL_LINES, 0, verts.size());
+    //
+    //    glDisableClientState(GL_VERTEX_ARRAY);
+    //
+    //    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    //    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+    //END VBO
 }
 
 /**
@@ -141,21 +157,16 @@ void Spline3::display() {
  *
  */
 void Spline3::displayControlPts() {
+    glDisable(GL_CULL_FACE);
+    glDisable(GL_LIGHTING);
+    glPointSize(20);
+    glColor3f(.5, .5, 1.0);
     // draw points
+    glBegin(GL_POINTS);
     for (int i = 0; i < controlPts.size(); i++) {
-        if (i != 0) {
-            glColor3f(1, 1, 1); // enables ends points to be rendered differently
-            //vertRad = 5;
-        } else {
-            glColor3f(1, 1, 0);
-            //vertRad = 2.5;
-        }
-        glPushMatrix();
-        glTranslatef(controlPts.at(i).x, controlPts.at(i).y, controlPts.at(i).z);
-        glRectd(-vertRad, -vertRad, vertRad * 2, vertRad * 2);
-        glPopMatrix();
+        glVertex3f(controlPts.at(i).x, controlPts.at(i).y, controlPts.at(i).z);
     }
-
+    glEnd();
 }
 
 /**
@@ -163,15 +174,16 @@ void Spline3::displayControlPts() {
  *
  */
 void Spline3::displayInterpPts() {
-    glColor3f(0, 1, 1);
-
+    glDisable(GL_CULL_FACE);
+    glDisable(GL_LIGHTING);
+    glPointSize(7);
+    glColor3f(1, .5, .3);
     // draw points
+    glBegin(GL_POINTS);
     for (int i = 0; i < verts.size(); i++) {
-        glPushMatrix();
-        glTranslatef(verts.at(i).x, verts.at(i).y, verts.at(i).z);
-        glRectd(-vertRad * .5, -vertRad * .5, vertRad, vertRad);
-        glPopMatrix();
+        glVertex3f(verts.at(i).x, verts.at(i).y, verts.at(i).z);
     }
+    glEnd();
 }
 
 /**
@@ -198,9 +210,9 @@ void Spline3::drawCrossSections() {
             float x = cos(th)*10;
             float y = sin(th)*10;
             float z = 0;
-            float px = verts.at(i+1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
-            float py = verts.at(i+1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
-            float pz = verts.at(i+1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
+            float px = verts.at(i + 1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
+            float py = verts.at(i + 1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
+            float pz = verts.at(i + 1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
             glVertex3f(px, py, pz);
             th += M_PI * 2.0 / 6.0;
         }
@@ -216,9 +228,9 @@ void Spline3::drawCrossSections() {
             float x = cos(th)*10;
             float y = sin(th)*10;
             float z = 0;
-            float px = verts.at(i+1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
-            float py = verts.at(i+1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
-            float pz = verts.at(i+1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
+            float px = verts.at(i + 1).x + x * frenetFrames.at(i).getN().x + y * frenetFrames.at(i).getB().x;
+            float py = verts.at(i + 1).y + x * frenetFrames.at(i).getN().y + y * frenetFrames.at(i).getB().y;
+            float pz = verts.at(i + 1).z + x * frenetFrames.at(i).getN().z + y * frenetFrames.at(i).getB().z;
             glColor3f(0, 1 - 1 / (j + 1), 1 / (j + 1));
             glVertex3f(px, py, pz);
             th += M_PI * 2 / 6;
@@ -255,26 +267,27 @@ void Spline3::parallelTransport() {
     //verts.push_back(verts.at(verts.size() - 1));
 
     //frenetFrames.push_back(FrenetFrame(verts.at(0), Vector3(1,0,0), Vector3(0,-1,0), Vector3(0,0,-1))); // add first vert
-   // std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
+    // std::cout << "in createFrenetFrame():  verts.size() = " << verts.size() << std::endl;
     std::vector<Vector3> tans;
     float theta;
     Vector3 cp0, cp1, cp2;
     Vector3 tan, biNorm, norm, nextBiNorm, nextNorm;
 
 
-    for (int i = 1; i < verts.size()-1; i++) {
+    for (int i = 0; i < verts.size(); i++) {
         if (i == 0) {
-            cp0 = verts[verts.size()-1];
+            //cp0 = verts[verts.size() - 1];
+            cp0 = verts.at(i);
             cp1 = verts.at(i);
-            cp2 = verts.at(i+1);
+            cp2 = verts.at(i + 1);
         } else if (i == verts.size() - 1) {
-            cp0 = verts.at(i-1);
+            cp0 = verts.at(i - 1);
             cp1 = verts.at(i);
             cp2 = verts.at(0);
         } else {
-            cp0 = verts.at(i-1);
+            cp0 = verts.at(i - 1);
             cp1 = verts.at(i);
-            cp2 = verts.at(i+1);
+            cp2 = verts.at(i + 1);
         }
         // fill tangents
         tan = cp2 - cp0;
@@ -292,10 +305,10 @@ void Spline3::parallelTransport() {
     }
     // rotate frame
 
-  //  std::cout << "tans.size() = " << tans.size() << std::endl;
+    //  std::cout << "tans.size() = " << tans.size() << std::endl;
     for (int i = 0; i < tans.size() - 1; i++) {
         if (biNorm.mag() == 0) {
-          //  std::cout << "in HERE " << std::endl;
+            //  std::cout << "in HERE " << std::endl;
             nextNorm = norm;
         } else {
             theta = acos(tans.at(i).dot(tans.at(i + 1)));
@@ -316,6 +329,6 @@ void Spline3::parallelTransport() {
         norm = nextNorm;
         biNorm = nextBiNorm;
     }
-   // std::cout << "in createFrenetFrame():  frenetFrames.size() = " << frenetFrames.size() << std::endl;
+    // std::cout << "in createFrenetFrame():  frenetFrames.size() = " << frenetFrames.size() << std::endl;
 
 }

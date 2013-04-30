@@ -42,7 +42,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Tube.o \
 	${OBJECTDIR}/Protobyte/Curve3.o \
 	${OBJECTDIR}/Protobyte/Vector3.o \
-	${OBJECTDIR}/main_sfml.o \
 	${OBJECTDIR}/Protobyte/Matrix3.o \
 	${OBJECTDIR}/Protobyte/Texture2.o \
 	${OBJECTDIR}/Protobyte/Lindenmayer.o \
@@ -59,6 +58,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/Protobyte/Branch.o \
 	${OBJECTDIR}/Protobyte/Sphere.o \
 	${OBJECTDIR}/Protobyte/Block.o \
+	${OBJECTDIR}/main_growthTendril_01.o \
 	${OBJECTDIR}/Protobyte/FilterBase.o
 
 
@@ -130,11 +130,6 @@ ${OBJECTDIR}/Protobyte/Vector3.o: Protobyte/Vector3.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Vector3.o Protobyte/Vector3.cpp
-
-${OBJECTDIR}/main_sfml.o: main_sfml.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_sfml.o main_sfml.cpp
 
 ${OBJECTDIR}/Protobyte/Matrix3.o: Protobyte/Matrix3.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
@@ -215,6 +210,11 @@ ${OBJECTDIR}/Protobyte/Block.o: Protobyte/Block.cpp
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/Protobyte/Block.o Protobyte/Block.cpp
+
+${OBJECTDIR}/main_growthTendril_01.o: main_growthTendril_01.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -I/System/Library/Frameworks/OpenGL.framework/Headers -I/System/Library/Frameworks/GLUT.framework/Headers -I/Library/Frameworks/SFML.framework/Headers -MMD -MP -MF $@.d -o ${OBJECTDIR}/main_growthTendril_01.o main_growthTendril_01.cpp
 
 ${OBJECTDIR}/Protobyte/FilterBase.o: Protobyte/FilterBase.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Protobyte
