@@ -1,0 +1,30 @@
+dependencies: \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/proto_main.cpp \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoMath.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoWorld.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoBounds.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoCamera.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoVector3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoPoint3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoLight.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoColor4.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoShader.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoUtility.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoRenderer.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoGeom3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoFace3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoVertex3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoTuple2.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoTuple3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoDimension3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoTexture2.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoShape3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoVector2.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoPoint2.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoToroid.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoSpline3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoCurve3.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoFrenetFrame.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoSphere.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoTube.h \
+  /Users/ira/Dropbox/ira_dev/Protobyte_dev_v02_OSX/Protobyte_dev_v02/../../Protobyte_v02/ProtoTransformFunction.h
